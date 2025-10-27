@@ -1,0 +1,23 @@
+[
+    {
+        "id": "e001",
+        "title": "Innledning til Digital Etterforskning",
+        "description": "Første episode om grunnleggende digitale spor.",
+        "mp3URL": "https://trompettre.tunnelbane.0x@icloud.com.github.io/Spor-i-skyen/episode1.mp3",
+        "releaseDate": "2024-01-01T12:00:00Z"
+    },
+    {
+        "id": "e002",
+        "title": "Skyen og Bevis",
+        "description": "Slik sikrer du bevis fra skylagringstjenester.",
+        "mp3URL": "https://Polishofficechair.github.io/Spor-i-skyen/episode2.mp3",
+        "releaseDate": "2025-10-28T12:00:00Z"
+    },
+    {
+        "id": "e003",
+        "title": "Deepfake-Utfordringen (LÅST)",
+        "description": "Hvordan identifisere og motbevise generert innhold.",
+        "mp3URL": "https://[DITT_BRUKERNAVN].github.io/[DITT_REPO_NAVN]/episode3.mp3",
+        "releaseDate": "2025-11-03T10:00:00Z" 
+    }
+]
