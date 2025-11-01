@@ -1,351 +1,351 @@
 [
   {
     "id": "e001",
-    "title": "Innledning til Digital Etterforskning",
-    "description": "Første episode om grunnleggende digitale spor. En nødvendig start for alle etterforskere.",
+    "title": "ÅK på øret",
+    "description": "Første episode. En manuelt laget fagpod men med AI - stemmer. En forklaring på konseptet og gjennomføringen.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode01.mp3",
     "releaseDate": "2023-11-03T08:00:00Z"
   },
   {
     "id": "e002",
-    "title": "Skyen og Bevis: Sikring av Google Drive",
-    "description": "Lær de beste metodene for å sikre data og bevis fra Google Drive og relaterte tjenester.",
+    "title": "Grunnfjellet",
+    "description": "oversikt over innholdet og en presentasjon av instruktøren.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode02.mp3",
     "releaseDate": "2023-11-05T08:00:00Z"
   },
   {
     "id": "e003",
-    "title": "Mobilanalyse: iOS vs. Android Forskjeller",
-    "description": "En dypdykk i hvordan data struktureres på Apple- og Android-enheter, og hvor du finner viktige spor.",
+    "title": "BRÅK: Bruk av Åpne Kilder",
+    "description": "ÅK metodikk og prosedyrer, inkludert en fem-faset saksgang, med vekt på prinsippet om å samle først og analysere senere.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode03.mp3",
-    "releaseDate": "2023-11-10T08:00:00Z"
+    "releaseDate": "2025-11-10T08:00:00Z"
   },
   {
     "id": "e004",
-    "title": "Metadataspor: Tidslinjer og Lokasjon",
-    "description": "Hvordan metadata fra bilder, dokumenter og systemfiler kan bygge en nøyaktig tidslinje for hendelser.",
+    "title": "Fra tastatur til tiltale",
+    "description": "Juridisk rammerverk: Definisjonen av "åpent tilgjengelig informasjon" og hjemmelen for ransaking av nettkontoer. Lovlige praksiser for bruk av åpne kilder.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode04.mp3",
-    "releaseDate": "2023-11-12T08:00:00Z"
+    "releaseDate": "2025-11-12T08:00:00Z"
   },
   {
     "id": "e005",
-    "title": "Sikre Nettverksbevis: Wi-Fi og IP-adresser",
-    "description": "Gjennomgang av hvordan man tolker nettverkslogger, DHCP og routerdata i en etterforskning.",
+    "title": "ÅK LAB",
+    "description": "Lag din egen ÅK lab, .",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode05.mp3",
-    "releaseDate": "2023-11-17T08:00:00Z"
+    "releaseDate": "2025-11-17T08:00:00Z"
   },
   {
     "id": "e006",
-    "title": "Kryptering og Låser: Praktisk Håndtering",
-    "description": "Strategier for lovlig tilgang til krypterte enheter og skydata.",
+    "title": "ÅK OS",
+    "description": "Operativsystemet tilrettelagt for ÅK i Øst politidistrikt.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode06.mp3",
     "releaseDate": "2025-11-19T08:00:00Z"
   },
   {
     "id": "e007",
-    "title": "Blockchain og Krypto: Sporing av Transaksjoner",
-    "description": "Hvordan etterforskere kan følge pengestrømmer på desentraliserte plattformer.",
+    "title": "Notater: Fra Kaos til Kontroll",
+    "description": "Effektive notatteknikker for digital etterforskning sikrer hierarkisk struktur og bevisenes integritet i ÅK etterforskninger.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode07.mp3",
     "releaseDate": "2025-11-24T08:00:00Z"
   },
   {
     "id": "e008",
-    "title": "App-data: Messenger, WhatsApp og Telegram",
-    "description": "Spesifikke stier og metoder for å hente ut bevis fra populære meldingsapplikasjoner.",
+    "title": "OPSEC: Fra jeger til Bytte",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode08.mp3",
     "releaseDate": "2025-11-26T08:00:00Z"
   },
   {
     "id": "e009",
-    "title": "IoT-Enheter: Bevis fra Smart-Hjem",
-    "description": "Analyse av data fra smarte høyttalere, kameraer og termostater i en bolig.",
+    "title": "Hunchly: En digital loggbok",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode09.mp3",
     "releaseDate": "2025-12-01T08:00:00Z"
   },
   {
     "id": "e010",
-    "title": "Skjulte Filer og Partisjoner",
+    "title": "Sokkedukker",
     "description": "Teknikker for å avdekke filer som bevisst er gjemt av mistenkte.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode10.mp3",
     "releaseDate": "2025-12-03T08:00:00Z"
   },
   {
     "id": "e011",
-    "title": "Cloud Forensics for Azure og AWS",
-    "description": "Utdyping av skyetterforskning, med fokus på kommersielle skytjenester.",
+    "title": "Metodekart",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode11.mp3",
     "releaseDate": "2025-12-08T08:00:00Z"
   },
   {
     "id": "e012",
-    "title": "Web Browser Historikk: Dyp Analyse",
+    "title": "Undersøkelsesplan",
     "description": "Utvinning og rekonstruksjon av slettede nettleserdata og inkognitomodus-spor.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode12.mp3",
     "releaseDate": "2025-12-10T08:00:00Z"
   },
   {
     "id": "e013",
-    "title": "Virtuelle Maskiner og Container Sporelementer",
+    "title": "OMF Metoden",
     "description": "Slik etterforsker du bevis gjemt i virtuelle miljøer som Docker og VMware.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode13.mp3",
     "releaseDate": "2025-12-15T08:00:00Z"
   },
   {
     "id": "e014",
-    "title": "E-post Etterforskning: Header Analyse",
+    "title": "tidslinje",
     "description": "Hvordan spore avsender, tidspunkt og ruting av e-poster ved hjelp av meldingshodet.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode14.mp3",
     "releaseDate": "2025-12-17T08:00:00Z"
   },
   {
     "id": "e015",
-    "title": "Remote Access Bevis: RDP og SSH Logger",
-    "description": "Identifisering av ekstern tilgang og brukeraktivitet på servere og datamaskiner.",
+    "title": "Søkemotor",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode15.mp3",
     "releaseDate": "2025-12-22T08:00:00Z"
   },
   {
     "id": "e016",
-    "title": "Drone og UAV Forensics",
-    "description": "Hente ut flylogger og GPS-data fra droner brukt i kriminell aktivitet.",
+    "title": "Arkiv og wayback funksjon",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode16.mp3",
     "releaseDate": "2025-12-24T08:00:00Z"
   },
   {
     "id": "e017",
-    "title": "RAM-Analyse: Volatile Data Bevaring",
-    "description": "Teknikker for å fange og analysere data i flyktig minne (RAM) før det går tapt.",
+    "title": "Bildesøk",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode17.mp3",
     "releaseDate": "2025-12-29T08:00:00Z"
   },
   {
     "id": "e018",
-    "title": "Sosiale Medier: Innsamling og Rettssikkerhet",
-    "description": "Hvordan hente bevis fra Facebook, Instagram og X (Twitter) på en lovlig måte.",
+    "title": "Geolokalisering",
+    "description": "",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode18.mp3",
     "releaseDate": "2025-12-31T08:00:00Z"
   },
   {
     "id": "e019",
-    "title": "Datamaskinens Tidslinje: Prefetch og Shimcache",
-    "description": "Bruke Windows' innebygde logger for å rekonstruere programkjøring og aktivitetshistorikk.",
+    "title": "ÅK på person",
+    "description": "",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode19.mp3",
     "releaseDate": "2026-01-05T08:00:00Z"
   },
   {
     "id": "e020",
-    "title": "Digital Bildeanalyse: Forfalskning vs. Ekte",
-    "description": "Verktøy og metoder for å identifisere om et digitalt bilde har blitt manipulert.",
+    "title": "Åk på telefon",
+    "description": "",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode20.mp3",
     "releaseDate": "2026-01-07T08:00:00Z"
   },
   {
     "id": "e021",
-    "title": "GPS-sporing og Geo-lokalisering",
-    "description": "Utvinning av posisjonsdata fra mobiltelefoner, biler og spesifikke GPS-enheter.",
+    "title": "Åk på nettside",
+    "description": "",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode21.mp3",
     "releaseDate": "2026-01-12T08:00:00Z"
   },
   {
     "id": "e022",
-    "title": "Disk-Image og Kloning: Bevaring av Integritet",
-    "description": "Den juridiske og tekniske prosessen med å skape en bit-for-bit-kopi av en bevisdisk.",
+    "title": "Sosiale medier intro",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode22.mp3",
     "releaseDate": "2026-01-14T08:00:00Z"
   },
   {
     "id": "e023",
-    "title": "Malware-analyse: Basale Identifikasjonstrinn",
-    "description": "Første skritt for å identifisere og isolere ondsinnede programmer i et system.",
+    "title": "Facebook",
+    "description": "",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode23.mp3",
     "releaseDate": "2026-01-19T08:00:00Z"
   },
   {
     "id": "e024",
-    "title": "Smartklokker og Wearables Forensics",
-    "description": "Henting av bevis knyttet til helse, bevegelse og kommunikasjon fra smartklokker.",
+    "title": "Instagram",
+    "description": "",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode24.mp3",
     "releaseDate": "2026-01-21T08:00:00Z"
   },
   {
     "id": "e025",
-    "title": "Deepfake og Syntetisk Media: Avsløring",
-    "description": "Hvordan man teknisk kan identifisere bruk av kunstig intelligens for å manipulere video og lyd.",
+    "title": "Telegram",
+    "description": "",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode25.mp3",
     "releaseDate": "2026-01-26T08:00:00Z"
   },
   {
     "id": "e026",
-    "title": "Trafikkanalyse: Tolke Nettverkspakker",
-    "description": "Bruke verktøy som Wireshark for å se hva som faktisk skjedde på nettverket.",
+    "title": "Tiktok",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode26.mp3",
     "releaseDate": "2026-01-28T08:00:00Z"
   },
   {
     "id": "e027",
-    "title": "Slettet Data: Gjenopprettingsteknikker",
-    "description": "Gjennomgang av hvordan data merket som slettet faktisk kan hentes frem igjen fra disken.",
+    "title": "Discord",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode27.mp3",
     "releaseDate": "2026-02-02T08:00:00Z"
   },
   {
     "id": "e028",
-    "title": "Windows Registry: Gullgruven for Bevis",
-    "description": "Hva registeret forteller om nylig brukte enheter, programmer og brukerpreferanser.",
+    "title": "Snapchat",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode28.mp3",
     "releaseDate": "2026-02-04T08:00:00Z"
   },
   {
     "id": "e029",
-    "title": "Mac OS Forensics: plist og FSEvents",
-    "description": "Spesifikke Apple-filer som gir innsikt i brukeraktivitet, som nylig åpnet filer og apper.",
+    "title": "Reddit",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode29.mp3",
     "releaseDate": "2026-02-09T08:00:00Z"
   },
   {
     "id": "e030",
-    "title": "Tjenestemiljøer: Azure AD og Microsoft 365 Logger",
-    "description": "Hvordan hente ut meningsfulle logger fra enterprise-skytjenester.",
+    "title": "X",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode30.mp3",
     "releaseDate": "2026-02-11T08:00:00Z"
   },
   {
     "id": "e031",
-    "title": "Biometrisk Data: Fingeravtrykk og Ansiktsgjenkjenning",
-    "description": "Etterforskning av tilgangslogger knyttet til biometriske systemer.",
+    "title": "Whatsapp",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode31.mp3",
     "releaseDate": "2026-02-16T08:00:00Z"
   },
   {
     "id": "e032",
-    "title": "Digital Autentisering: Passord-Hash og Tokens",
-    "description": "Forståelse av hvordan passord lagres og de juridiske rammene for å få tilgang til dem.",
+    "title": "LinkedIn",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode32.mp3",
     "releaseDate": "2026-02-18T08:00:00Z"
   },
   {
     "id": "e033",
-    "title": "Linux Forensics: Journalføring og Shell History",
-    "description": "Sporing av kommandoer og aktivitet på Linux-baserte systemer og servere.",
+    "title": "VK",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode33.mp3",
     "releaseDate": "2026-02-23T08:00:00Z"
   },
   {
     "id": "e034",
-    "title": "USB-minne Analyse: Device History",
-    "description": "Identifisering av hvilke eksterne enheter som har vært koblet til en datamaskin.",
+    "title": "Only-fans",
+    "description": "",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode34.mp3",
     "releaseDate": "2026-02-25T08:00:00Z"
   },
   {
     "id": "e035",
-    "title": "Ransomware og Extortionware Spor",
-    "description": "Hvordan spore de første bevegelsene til ransomware og identifisere angrepsvektorer.",
+    "title": "Datalekasjer",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode35.mp3",
     "releaseDate": "2026-03-02T08:00:00Z"
   },
   {
     "id": "e036",
-    "title": "Digital Signatur og Sertifikatanalyse",
-    "description": "Verifisering av digital identitet og ektheten av dokumenter og programmer.",
+    "title": "Tokens",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode36.mp3",
     "releaseDate": "2026-03-04T08:00:00Z"
   },
   {
     "id": "e037",
-    "title": "Geofencing og Cell Tower Triangulation",
-    "description": "Bruk av mobildata for å plassere mistenkte i et spesifikt geografisk område.",
+    "title": "IP",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode37.mp3",
     "releaseDate": "2026-03-09T08:00:00Z"
   },
   {
     "id": "e038",
-    "title": "Logg-Aggregering og Korrelasjon",
-    "description": "Sammenkobling av hendelser fra forskjellige systemer for å danne et helhetlig bilde.",
+    "title": "Epost analyse",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode38.mp3",
     "releaseDate": "2026-03-11T08:00:00Z"
   },
   {
     "id": "e039",
-    "title": "Voice over IP (VoIP) Forensics",
-    "description": "Sporing av anrop, meldinger og metadata fra Skype, Zoom og andre VoIP-tjenester.",
+    "title": "Crypto",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode39.mp3",
     "releaseDate": "2026-03-16T08:00:00Z"
   },
   {
     "id": "e040",
-    "title": "Database Forensics: SQL og NoSQL",
-    "description": "Hente ut og analysere slettet eller modifisert data fra databaser.",
+    "title": "Savnede personer",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode40.mp3",
     "releaseDate": "2026-03-18T08:00:00Z"
   },
   {
     "id": "e041",
-    "title": "Automatisert Kjøretøy Forensics (Biler)",
-    "description": "Utvinning av data fra bilers infotainmentsystemer, GPS og Black Boxes.",
+    "title": "Darkweb",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode41.mp3",
     "releaseDate": "2026-03-23T08:00:00Z"
   },
   {
     "id": "e042",
-    "title": "Anti-Forensics: Identifisering av Dekningsforsøk",
-    "description": "Slik gjenkjenner du mistenkte som har forsøkt å slette eller skjule sine spor.",
+    "title": "Analyse",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode42.mp3",
     "releaseDate": "2026-03-25T08:00:00Z"
   },
   {
     "id": "e043",
-    "title": "Cloud Service Providers (CSP) Responshåndtering",
-    "description": "Protokoller og samarbeid med store skyleverandører for å hente ut bevis raskt.",
+    "title": "Rapportering",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode43.mp3",
     "releaseDate": "2026-03-30T08:00:00Z"
   },
   {
     "id": "e044",
-    "title": "Digitalt Spor i Finansielle Systemer",
-    "description": "Etterforskning av nettbanker, betalingstjenester og svindelspor.",
+    "title": "Åk og AI",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode44.mp3",
     "releaseDate": "2026-04-01T08:00:00Z"
   },
   {
     "id": "e045",
-    "title": "Internet of Things (IoT) Sikkerhetslogger",
-    "description": "Henting av bevis fra bedrifts-IoT-nettverk og industrielle kontrollsystemer.",
+    "title": "Avansert ÅK",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode45.mp3",
     "releaseDate": "2026-04-06T08:00:00Z"
   },
   {
     "id": "e046",
-    "title": "Digital Kjededokumentasjon",
-    "description": "Den juridiske nødvendigheten av nøyaktig dokumentasjon fra beslag til analyse.",
+    "title": "ÅK og SQL",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode46.mp3",
     "releaseDate": "2026-04-08T08:00:00Z"
   },
   {
     "id": "e047",
-    "title": "API-logger og Tredjeparts Tjenester",
-    "description": "Hvordan utnytte API-logging for å spore interaksjoner mellom forskjellige tjenester.",
+    "title": "Innhenting fra Tilbyder",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode47.mp3",
     "releaseDate": "2026-04-13T08:00:00Z"
   },
   {
     "id": "e048",
-    "title": "Webserver-logger: Apache, Nginx og IIS",
-    "description": "Analyse av tilgangslogger for å spore angripere eller mistenkt aktivitet på nettsider.",
+    "title": "Historien om OSINT",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode48.mp3",
     "releaseDate": "2026-04-15T08:00:00Z"
   },
   {
     "id": "e049",
-    "title": "Digital Krigsforbrytelse Etterforskning",
-    "description": "Bruk av digital bevisinnsamling i internasjonale konflikter og menneskerettighetsbrudd.",
+    "title": "Ledig",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode49.mp3",
     "releaseDate": "2026-04-20T08:00:00Z"
   },
   {
     "id": "e050",
-    "title": "Fremtiden for Forensics: AI og Maskinlæring",
-    "description": "Oppsummering og blikk fremover: Hvordan nye teknologier endrer etterforskningsarbeidet.",
+    "title": "Ledig",
+    "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode50.mp3",
     "releaseDate": "2026-04-22T08:00:00Z"
   }
