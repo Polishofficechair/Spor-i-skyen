@@ -1,0 +1,138 @@
+
+{
+  "title": "Quiz: Episode e013",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er hovedmålet med STADIE 1: Søkemaskiner i OFM-metodikken?",
+      "choices": [
+        "Å samle inn mer PII (Personlig Identifiserbar Informasjon, f.eks. e-postadresser og/eller brukernavn).",
+        "Å utforske den mørke delen av nettet via Tor-nettverket.",
+        "Å finne databrudd som målets e-postadresse har vært en del av.",
+        "Å identifisere betalte spesialiserte SOCMINT-verktøy.",
+        "Å analysere bilder og lokasjoner funnet på sosiale medieprofiler."
+      ],
+      "correctIndex": 0,
+      "explanation": "Hovedmålet med Fase 1 er å samle inn PII (Personlig Identifiserbar Informasjon), som e-postadresser og/eller brukernavn, for å mate til spesialiserte verktøy i senere faser."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilket av disse er et typisk verktøy nevnt for STADIE 4: Databreacher?",
+      "choices": [
+        "Sherlock",
+        "Tor Browser",
+        "HaveIBeenPwned",
+        "osintr (for G.R.A.S.S.)",
+        "SocialLinks"
+      ],
+      "correctIndex": 2,
+      "explanation": "Typiske verktøy i Fase 4, som omhandler databrudd og pastes, inkluderer HaveIBeenPwned, IntelligenceX og Dehashed."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilken tilnærming er OFM (Open Source Framework Methodology) ment å følges i?",
+      "choices": [
+        "En bunn-opp tilnærming, som starter med spesialiserte verktøy.",
+        "En rekursiv tilnærming, hvor alle faser kjøres samtidig.",
+        "En tilnærming fokusert kun på manuell research.",
+        "En topp-ned tilnærming, som starter med bred søking og gradvis implementerer spesialiserte verktøy.",
+        "En tilnærming som kun bruker API-basert automatisering."
+      ],
+      "correctIndex": 3,
+      "explanation": "OFM skal følges i en topp-ned (top-down) tilnærming, som begynner med de bredeste søketypene og gradvis implementerer mer spesialiserte verktøy og teknikker."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilket sosialt nettverk er nevnt som et sekundært eller fremvoksende nettverk i STADIE 3: Sosiale medier?",
+      "choices": [
+        "Facebook",
+        "Instagram",
+        "Reddit",
+        "Bluesky",
+        "Slack (som er et chatrom)"
+      ],
+      "correctIndex": 3,
+      "explanation": "Sekundære eller fremvoksende sosiale nettverk som er nevnt inkluderer Bluesky og Truth Social."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken prosentandel av data antas å ligge på det klare nettet, ifølge beskrivelsen av STADIE 5: Dark Web?",
+      "choices": [
+        "10%",
+        "50%",
+        "75%",
+        "90%",
+        "99%"
+      ],
+      "correctIndex": 4,
+      "explanation": "Det mørke nettet (Dark Web) er ofte unødvendig å dykke ned i, siden 99% av dataene befinner seg på det klare nettet."
+    },
+    {
+      "id": "q6",
+      "text": "Hvilket av disse verktøyene er spesifikt oppført under listen for e-postsøk i STADIE 2: Spesialiserte verktøy?",
+      "choices": [
+        "Sherlock (Brukernavn)",
+        "PhoneInfoga (Telefonnummer)",
+        "osintr (Fase 1)",
+        "Holehe (E-post)",
+        "Neotas (Betalt SOCMINT)"
+      ],
+      "correctIndex": 3,
+      "explanation": "Holehe, Epieos, Ghunt og theHarvester er eksempler på verktøy som er nevnt for e-postsøk i Fase 2."
+    },
+    {
+      "id": "q7",
+      "text": "Hva er den primære utfordringen som har ført til at de fleste eldre SOCMINT (Social Media OSINT)-verktøy har sluttet å fungere fullt ut, ifølge kilden?",
+      "choices": [
+        "Økt API-kostnad for bruk av Python-skript.",
+        "Mangel på betalte spesialiserte verktøy i markedet.",
+        "Manglende evne til å organisere data i JSON-formater.",
+        "Sosiale medieplattformer har blitt mer restriktive når det gjelder søkefunksjonalitet, API-tilgang og personverntiltak.",
+        "Etterforskere foretrekker å søke gjennom GitHub og Reddit i timevis."
+      ],
+      "correctIndex": 3,
+      "explanation": "Sosiale medieplattformer har blitt mer restriktive med tanke på søkefunksjonalitet, API-tilgang og personverntiltak, noe som har ført til at mange eldre SOCMINT-verktøy har mistet funksjonalitet."
+    },
+    {
+      "id": "q8",
+      "text": "I STADIE 3: Sosiale medier, hvilken type innsikt kan innhentes, i tillegg til personlig informasjon (som alder eller bilder)?",
+      "choices": [
+        "Kun informasjon fra offisielle firmaregnskaper.",
+        "Detaljerte API-kostnader for automatisering.",
+        "Ideologisk informasjon, som politiske, kulturelle, religiøse eller seksuelle preferanser.",
+        "Krypterte data fra Tor-nettverket.",
+        "Utelukkende informasjon om brukernavnssøk på tvers av plattformer."
+      ],
+      "correctIndex": 2,
+      "explanation": "Informasjon samlet i Fase 3 kan inkludere personlige detaljer, men også ideologiske preferanser som politiske, kulturelle, religiøse eller seksuelle preferanser."
+    },
+    {
+      "id": "q9",
+      "text": "Hvilke to faser kan lettest kontrasteres med hensyn til automatiseringsnivået, hvor den ene kan 'enkelt automatiseres via Python-skript' og den andre 'er for det meste manuell' og utføres gjennom Tor-nettverket?",
+      "choices": [
+        "STADIE 4: Databreacher og STADIE 5: Dark Web.",
+        "STADIE 1: Søkemaskiner og STADIE 3: Sosiale medier.",
+        "STADIE 2: Spesialiserte verktøy og STADIE 4: Databreacher.",
+        "STADIE 1: Søkemaskiner og STADIE 5: Dark Web.",
+        "STADIE 3: Sosiale medier og STADIE 4: Databreacher."
+      ],
+      "correctIndex": 0,
+      "explanation": "Fase 4 (Databrudd) nevnes som lett automatiserbar via Python-skript, mens Fase 5 (Dark Web) beskrives som for det meste manuell forskning som utføres gjennom Tor-nettverket og innebærer risiko."
+    },
+    {
+      "id": "q10",
+      "text": "Hva er den uttalte hensikten med OFM (Open Source Framework Methodology), ifølge kilden, i kontrast til å blindt liste opp hvert tilgjengelige verktøy?",
+      "choices": [
+        "Å sikre at alle etterforskere utelukkende bruker betalte, spesialiserte verktøy.",
+        "Å garantere at alt innsamlet data organiseres i JSON-format.",
+        "Å fokusere på data som ligger i det mørke nettet (Dark Web).",
+        "Å sørge for at all research er 100% manuell, uten automatisering.",
+        "Å tilby en pragmatisk og nyttig vei for å utføre OSINT-etterforskninger."
+      ],
+      "correctIndex": 4,
+      "explanation": "Formålet med OFM er å gi en pragmatisk og nyttig vei for å utføre OSINT-etterforskninger, og ikke blindt å liste opp alle tilgjengelige verktøy."
+    }
+  ]
+}
+```
