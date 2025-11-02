@@ -1,0 +1,145 @@
+{
+  "title": "Quiz: Kurset og instruktøren",
+  "episodeId": "e002",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hvilket verktøy er spesifikt fremhevet som kritisk for automatisk loggføring av alle etterforskningssteg, for å sikre sporbarhet og bevisintegritet?",
+      "choices": [
+        "Hunchly",
+        "Python (CLI)",
+        "Metodekart",
+        "Rapporteringsmal",
+        "Wayback Machine"
+      ],
+      "correctIndex": 0,
+      "explanation": "Hunchly er et kritisk verktøy nevnt for automatisk loggføring av alle steg, i tråd med prinsippet om å dokumentere alt [1, 2]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilket av de fire hovedprinsippene i etterforskning på åpne kilder sikrer at funnene har bevisverdi?",
+      "choices": [
+        "Planlegg før du handler",
+        "Bruk Python (CLI)",
+        "Jus og etikk først",
+        "Bruk tidslinjer",
+        "Analyser Darkweb"
+      ],
+      "correctIndex": 2,
+      "explanation": "Prinsippet 'Jus og etikk først' er avgjørende for at funnene dine skal ha bevisverdi og for å sikre rettssikkerheten [3, 4]."
+    },
+    {
+      "id": "q3",
+      "text": "Ifølge kursets metodikk, hva er definert som det første og viktigste steget i en vellykket undersøkelse på åpne kilder?",
+      "choices": [
+        "Starte søk på Google",
+        "Å definere informasjonsbehov og lage en undersøkelsesplan",
+        "Loggføre alt med Hunchly",
+        "Anvende avansert Python (CLI)",
+        "Finne riktig rapporteringsmal"
+      ],
+      "correctIndex": 1"id": "q3",
+      "text": "Ifølge kursets metodikk, hva er definert som det første og viktigste steget i en vellykket undersøkelse på åpne kilder?",
+      "choices": [
+        "Starte søk på Google",
+        "Å definere informasjonsbehov og lage en undersøkelsesplan",
+        "Loggføre alt med Hunchly",
+        "Anvende avansert Python (CLI)",
+        "Finne riktig rapporteringsmal"
+      ],
+      "correctIndex": 1,
+      "explanation": "En solid undersøkelsesplan, basert på et tydelig definert informasjonsbehov, er den viktigste enkeltfaktoren for et vellykket resultat og hindrer at man går seg vill [5, 6]."
+    },
+    {
+      "id": "q4",
+      "text": "Hva er den enkle huskeregelen som oppsummerer kjernen i en profesjonell, fire-stegs etterforskningsprosess for åpne kilder?",
+      "choices": [
+        "SOCMINT",
+        "OSINT",
+        "Exifdata",
+        "PIAR-modellen",
+        "CLI-systemet"
+      ],
+      "correctIndex": 3,
+      "explanation": "PIAR-modellen (Planlegg, Innhent, Analyser, Rapporter) er huskeregelen som brukes for å holde arbeidet strukturert [2, 7]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva refererer 'Arkivdata' til under Fase 4 (Dypdykk) i kurset?",
+      "choices": [
+        "Analyser av e-post headere",
+        "Gjenoppretting av slettede nettsider (f.eks. ved bruk av Wayback Machine)",
+        "Data funnet på Darkweb",
+        "Lekkede databaser ('Breached data')",
+        "Innhenting fra tjenestetilbydere"
+      ],
+      "correctIndex": 1,
+      "explanation": "Arkivdata innebærer bruk av verktøy som Wayback Machine for å se slettede nettsider [8]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvilken spesifikk teknikk under Fase 3 innebærer å stedsbestemme et bilde eller en video kun basert på visuelle holdepunkter i selve mediet, som landemerker og skilter?",
+      "choices": [
+        "Omvendt bildesøk",
+        "Steganografi",
+        "Metadata (Exifdata) analyse",
+        "Geolokalisering",
+        "Tidslinje visualisering"
+      ],
+      "correctIndex": 3,
+      "explanation": "Geolokalisering er 'kunsten å stedsbestemme et bilde eller en video kun basert på visuelle holdepunkter i selve mediet' [9]."
+    },
+    {
+      "id": "q7",
+      "text": "Hva er Steganografi, som det undervises i under analyse av mediefiler?",
+      "choices": [
+        "Metoden for å finne opphavet til et bilde",
+        "Prosessen for å gjenskape slettede nettsider",
+        "Teknikken for å skjule informasjon (tekst, filer) inne i en annen fil, som et bilde",
+        "Analyse av Exifdata for tidspunkt og lokasjon",
+        "Søketeknikker for å finne Darkweb-adresser"
+      ],
+      "correctIndex": 2,
+      "explanation": "Steganografi er teknikken for å skjule informasjon inne i en annen fil, for eksempel et bilde [10]."
+    },
+    {
+      "id": "q8",
+      "text": "Hva representerer bokstaven 'A' i PIAR-modellen, og hva er hovedformålet med dette steget?",
+      "choices": [
+        "Autentisering: Verifisere kilden før innhenting",
+        "Arkivering: Lagre alle funn i en sikker database",
+        "Analyse: Bearbeid og forstå informasjonen du har funnet",
+        "Anvendelse: Bruke funnene i en rettssak",
+        "Avhør: Koble funnene til avhør av mistenkte"
+      ],
+      "correctIndex": 2,
+      "explanation": "'A' i PIAR står for Analyser, hvis formål er å bearbeide og forstå informasjonen som er innhentet systematisk [7]."
+    },
+    {
+      "id": "q9",
+      "text": "Hvilken kritisk feil adresseres av løsningen om å bruke 'et verktøy som Hunchly fra første klikk'?",
+      "choices": [
+        "Å starte søk uten en klar plan",
+        "Å unnlate å forankre innhentingen i gjeldende lovverk",
+        "Å samle inn store mengder data uten å dokumentere hvor, når og hvordan funnene ble gjort",
+        "Å kun bruke arkivdata uten å sjekke levende kilder",
+        "Å anta at all åpent tilgjengelig informasjon er fritt frem å bruke"
+      ],
+      "correctIndex": 2,
+      "explanation": "Den spesifikke feilen som løses ved systematisk bruk av Hunchly er 'Å samle inn store mengder data uten å dokumentere hvor, når og hvordan funnene ble gjort' [11]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvilken av disse kombinasjonene av verktøy og konsepter er eksklusivt plassert i Fase 4 (Dypdykk), og ikke i Fase 2 (Innhenting) eller Fase 3 (Analyse av Media)?",
+      "choices": [
+        "Tidslinjer og Søkemotorteknikker",
+        "Exifdata og Geolokalisering",
+        "Darkweb og Innhenting fra tjenestetilbydere",
+        "Hunchly og Python (CLI)",
+        "Metodekart og Rapporteringsmal"
+      ],
+      "correctIndex": 2,
+      "explanation": "Darkweb, innhenting fra tilbydere, breached data, og SIM-swap er plassert i den mest avanserte fasen (Fase 4) [8, 12]. De andre alternativene er fordelt på Fase 1, 2 og 3 [1, 10, 12-14]."
+    }
+  ]
+}
