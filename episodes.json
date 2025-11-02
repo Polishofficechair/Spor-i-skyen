@@ -165,7 +165,7 @@
     "title": "Instagram",
     "description": "Omhandler teknikker spesifikt rettet mot Instagram. Tekstene forklarer hvordan man finner og analyserer informasjon fra Instagram-profiler, inkludert metoder for å håndtere både offentlige og private kontoer ved å pivotere til assosierte profiler. Detaljerte guider dekker strategier for å laste ned digitale artefakter som bilder og videoer i full oppløsning, i tillegg til bruk av eksterne verktøy for å finne en kontoens permanente bruker-ID og identifisere e-poster. Flere kilder diskuterer også hvordan man kan avsløre falske kontoer gjennom omvendt bildesøk og hvordan man bruker søkemotorer som Google for å finne bufret eller slettet innhold utenfor plattformen. I tillegg belyser kildene metoder for å søke etter profiler ved hjelp av telefonnummer og hvordan man analyserer nettverk, tagger og geografisk informasjon for etterforskning.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode24.mp3",
-    "releaseDate": "2026-01-21T08:00:00Z"
+    "releaseDate": "2023-01-21T08:00:00Z"
   },
   {
     "id": "e025",
@@ -179,7 +179,7 @@
     "title": "Tiktok",
     "description": "Omhandler metoder på TikTok, inkludert plattformens tekniske struktur og juridiske rammeverk. Tekstene forklarer hvordan man kan ekstrahere skjult brukerinformasjon som unike ID-numre og nøyaktige opplastingstidspunkter ved hjelp av kildekodeanalyse og avanserte søketeknikker som Google Dorks. Dokumentene beskriver også TikToks historie, fra den svært usikre forgjengeren Musically til dagens mer låste plattform, og understreker at til tross for økt sikkerhet, er grunnleggende BRÅK som omvendt bildesøk av profilbilder fortsatt effektive. I tillegg gis det en juridisk forklaring på TikTok som informasjonssamfunnstjeneste, detaljer om bruk av TikTok Coins som digital valuta, og veiledning om digital personforfølgelse (stalking) etter norsk rett.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode26.mp3",
-    "releaseDate": "2026-01-28T08:00:00Z"
+    "releaseDate": "2023-01-28T08:00:00Z"
   },
   {
     "id": "e027",
@@ -200,7 +200,7 @@
     "title": "Reddit",
     "description": "Episoden fremhever Reddit som en gullgruve av offentlig tilgjengelig informasjon på grunn av plattformens enorme brukerbase og den store mengden brukergenerert innhold. De beskriver i detalj både Reddits arkitektur, inkludert subreddits og brukerelementer som Karma og Cake Day, og spesifikke etterforskningsteknikker. Sentrale metoder inkluderer bruken av Google Fu med site:reddit.com for mer effektive søk enn Reddits interne funksjon, samt viktigheten av å analysere en brukers fullstendige innleggs- og kommentarhistorikk for å samle fragmentert informasjon. Flere kilder presenterer en casestudie der kombinasjonen av små, tilsynelatende uskyldige databiter (som utdanning og sertifisering) førte til vellykket de-anonymisering av en bruker, og understreker dermed risikoen ved å dele personlig informasjon på plattformen.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode29.mp3",
-    "releaseDate": "2026-02-09T08:00:00Z"
+    "releaseDate": "2023-02-09T08:00:00Z"
   },
   {
     "id": "e030",
@@ -228,7 +228,7 @@
     "title": "VK",
     "description": "Episoden er en guide til å bruke ÅK på det russiske sosiale mediet VKontakte (VK). Den forklarer at VK er et multifunksjonelt knutepunkt som skiller seg fra vestlige plattformer ved å inkludere detaljert brukerinformasjon og være dypt integrert i russisk kultur. Teksten skisserer spesifikke OSINT-teknikker for å finne russiske brukerdetaljer, telefonnumre og e-postadresser fra VK-kontoer, inkludert bruk av avanserte søk (dorking), VKs interne søkefunksjoner, og spesialiserte OSINT-verktøy. Det understrekes at VK er en rik etterretningsskattkiste på grunn av høyt nivå av offentlig delt innhold og plattformens fokus på lokalisering og fellesskapsdynamikk. Metoder for å krysstaste data mot andre sosiale medier som Telegram og Instagram er også nevnt, spesielt for å omgå VKs standardinnstillinger for personvern..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode33.mp3",
-    "releaseDate": "2026-02-23T08:00:00Z"
+    "releaseDate": "2023-02-23T08:00:00Z"
   },
   {
     "id": "e034",
