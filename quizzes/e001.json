@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Konseptet",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hvem er initiativtaker og spesialetterforskeren som har utviklet det konseptuelle gjenopplæringsprogrammet for ÅK/OSINT i Øst politidistrikt?",
+      "choices": [
+        "Trygve Justad Bjørntvedt",
+        "Per Helge Kvendseth",
+        "Huong Tran",
+        "En ekstern konsulent fra PST",
+        "En kunstig programleder fra podcasten"
+      ],
+      "correctIndex": 0,
+      "explanation": "Systemet er beskrevet som tenkt ut av spesialetterforsker Trygve Justad Bjørntvedt, som jobber ved avsnittet for digitalt politiarbeid i Øst politidistrikt [1-6]."
+    },
+    {
+      "id": "q2",
+      "text": "Hva trekkes frem som den mest umiddelbare strategiske gevinsten for Øst politidistrikt ved innføring av podcastmodellen for læring?",
+      "choices": [
+        "Økt operativ tilgjengelighet, da etterforskere unngår reising og dagsfravær for kurs",
+        "Reduserte kostnader knyttet til kursmateriell og trykksaker",
+        "Garanti for at ingen etterforskere glemmer detaljer fra kurset",
+        "Enklere rekruttering av nytt personell til avsnittet",
+        "Muligheten til å fjerne alle andre former for kompetanseheving"
+      ],
+      "correctIndex": 0,
+      "explanation": "Den mest umiddelbare strategiske gevinsten er økt operativ tilgjengelighet, ettersom etterforskere slipper å reise bort på kurs i dagsvis, noe som betyr flere timer tilgjengelig for politiarbeid [7-11]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilket av disse problemene med tradisjonelle kurs (den 'klassiske kurseffekten') søker podcastmodellen å løse gjennom repetisjon?",
+      "choices": [
+        "Detaljer fra intensive fysiske kurs har en tendens til å forsvinne over tid hvis de ikke brukes jevnlig",
+        "Kursholderne var generelt for utrente i digitalt politiarbeid",
+        "Fysiske kurs var alltid plassert på en ubeleilig lokasjon",
+        "Manglende evne til å integrere kunstig intelligens i klasseromsundervisning",
+        "De ansatte klaget på for høy vanskelighetsgrad på eksamen"
+      ],
+      "correctIndex": 0,
+      "explanation": "En av utfordringene med dagens modell er den 'klassiske kurseffekten', hvor detaljer fra intensive fysiske kurs forsvinner over tid hvis de ikke brukes jevnlig [12-16]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvordan er det tenkt at den visuelle klarheten for tekniske prosesser skal sikres i podcastformatet, ifølge konseptet?",
+      "choices": [
+        "Hver lydmodul skal følges av en steg-for-steg bildeserie (typisk skjermbilder) synkronisert via tidsanvisninger i podcastspilleren",
+        "Læringen skjer kun gjennom lyd, og visuelle hjelpemidler er utelatt for å styrke auditivt minne",
+        "Lytteren må delta på en obligatorisk fysisk sesjon for å se bildene",
+        "Det brukes kun analoge, trykte bilder som sendes ut i posten",
+        "Visuell klarhet sikres kun gjennom hyperdetaljerte muntlige beskrivelser"
+      ],
+      "correctIndex": 0,
+      "explanation": "Tanken er at hver lydmodul skal følges av en steg-for-steg bildeserie (typisk skjermbilder) som er synkronisert med lyden via tidsanvisninger i podcastspilleren [17-23]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken kjernefordel oppnås ved at podcastene kan lyttes til 'igjen og igjen', og dermed friske opp en spesifikk teknikk rett før den skal brukes?",
+      "choices": [
+        "Forsterkning gjennom repetisjon (som styrker langtidsminnet og dybdeforståelsen)",
+        "Økt passiv underholdning i arbeidshverdagen",
+        "Redusert behov for teknisk utstyr på kontoret",
+        "Sikring av at programlederne får flere lyttere",
+        "Fokusering på færre, men mer komplekse, verktøy"
+      ],
+      "correctIndex": 0,
+      "explanation": "Muligheten for å lytte igjen og igjen, og høre ting forklart flere ganger i kontekst av forskjellige caser, styrker langtidsminnet og dybdeforståelsen, og er en kjernefordel kalt 'forsterkning gjennom repetisjon' [24-32]."
+    },
+    {
+      "id": "q6",
+      "text": "I et felt som ÅK/OSINT, hvor verktøy og plattformer er i konstant bevegelse, hva sikrer podcastmodellen ved at den kan distribuere ny informasjon nesten umiddelbart, i motsetning til årlige kurs?",
+      "choices": [
+        "Taktisk relevans",
+        "Juridisk immunitet",
+        "Akademisk integritet",
+        "Organisatorisk konsensus",
+        "Maksimal profitt"
+      ],
+      "correctIndex": 0,
+      "explanation": "Kontinuerlig oppdatering av informasjon, mye kjappere enn årlige eller halvårlige kurs, sikrer det dokumentet kaller 'taktisk relevans' – at det man lærer funker mot de metodene og plattformene som er relevante nå [33-38]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilket begrep brukes for å beskrive at læringen er fleksibel og kan flettes inn i hverdagen (f.eks. mens man pendler eller trener), i stedet for å kreve store separate tidsblokker?",
+      "choices": [
+        "Accessible on-the-go learning",
+        "Tradisjonell klasseromsundervisning",
+        "Intensiv helgeworkshop",
+        "Rigid kursstruktur",
+        "Fullstendig teoretisk abstraksjon"
+      ],
+      "correctIndex": 0,
+      "explanation": "Kilden bruker begrepet 'accessible on the go learning' (læring på farten) for å beskrive fleksibiliteten og tilgjengeligheten, hvor læring kan integreres i en travel hverdag mens man pendler, trener eller gjør rutinearbeid [21, 32, 39-42]."
+    },
+    {
+      "id": "q8",
+      "text": "Den foreslåtte kvalitetssikringen i slutten av hver modul er ikke en formell stress-eksamen. Hva er hovedpoenget med denne lavterskel-kvalitetssikringen (som quiz eller refleksjonsspørsmål)?",
+      "choices": [
+        "Å aktivisere lytteren og sjekke egen forståelse på en uformell måte",
+        "Å erstatte all obligatorisk praksis på arbeidsplassen",
+        "Å tvinge lytteren til å bruke det meste av fritiden sin på læring",
+        "Å generere data for ledelsen om hvilke ansatte som presterer dårligst",
+        "Å fjerne behovet for kritisk tenkning"
+      ],
+      "correctIndex": 0,
+      "explanation": "Poenget med små quiz, refleksjonsspørsmål eller praktiske øvelser er å aktivisere lytteren, få dem til å tenke gjennom stoffet og sjekke egen forståelse på en uformell måte, uten presset fra en tradisjonell prøve [43-49]."
+    },
+    {
+      "id": "q9",
+      "text": "Utover tekniske ferdigheter, hvilke tre sentrale elementer legges det vekt på for å bygge et helhetlig 'etterforskende tankesett' (Investigativ mindset) gjennom podcasten?",
+      "choices": [
+        "Kritisk tenkning, etiske grenser og etterforskende tankesett",
+        "Fokus på verktøy, plattformer og metoder",
+        "Digitalisering, patruljering og saksbehandling",
+        "Organisert kriminalitet, økonomi og personvern",
+        "Fysisk oppmøte, juridisk sanksjon og internrevisjon"
+      ],
+      "correctIndex": 0,
+      "explanation": "Det legges like mye vekt på å bygge og vedlikeholde det rette etterforskende tankesettet (investigativ mindset), kritisk tenkning og etiske grenser. Dette er essensielt for å sikre ansvarlig og lovlig bruk av verktøyene [31, 50-57]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvordan bidrar podcastformatet til å fremme tverrfaglig forståelse og 'bryte ned siloer' mellom ulike fagmiljøer?",
+      "choices": [
+        "Ved å enkelt kunne invitere inn gjester og eksperter fra andre avsnitt (som øko/organisert kriminalitet) eller eksterne fagfolk (som journalister/akademikere)",
+        "Ved å kun fokusere på interne retningslinjer utarbeidet av én enkelt seksjon",
+        "Ved å kreve at alle ansatte bytter avsnitt hvert halvår",
+        "Ved å fjerne all kommunikasjon med eksterne parter",
+        "Ved å utelukkende dekke historiske saker og unngå moderne problemstillinger"
+      ],
+      "correctIndex": 0,
+      "explanation": "En podcast kan enkelt invitere inn gjester fra andre fagfelt internt (øko-krim) eller eksterne eksperter (PST, Kripos, journalister, akademikere), noe som åpner for kunnskapsdeling, fremmer tverrfaglig forståelse og bidrar til å bryte ned siloer [58-65]."
+    }
+  ]
+}
