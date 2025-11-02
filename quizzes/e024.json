@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e024",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hvilket av følgende er et typisk tegn på en falsk Instagram-konto, ifølge kildene?",
+      "choices": [
+        "Lavt eller null engasjement (få likes/kommentarer) [1]",
+        "Profilen har et bekreftelsesmerke (blått merke) [2]",
+        "Kontoen følger svært få, men har mange tusen følgere [3]",
+        "Bruk av et gjennomtenkt og unikt brukernavn [4]",
+        "Bio inneholder en gyldig lenke til en ekstern bedriftsside [1]"
+      ],
+      "correctIndex": 0,
+      "explanation": "Uekte kontoer har nesten alltid lavt engasjement (få likes, kommentarer eller delinger) på innleggene sine, ofte fordi de har inaktive følgere eller bot-følgere [1]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvor lenge forblir en Instagram Story vanligvis synlig for følgerne før den automatisk fjernes?",
+      "choices": [
+        "24 timer [5, 6]",
+        "48 timer",
+        "7 dager",
+        "Inntil brukeren sletter den",
+        "12 timer"
+      ],
+      "correctIndex": 0,
+      "explanation": "Stories er en funksjon som lar brukere dele bilder og videoer som er synlige for følgerne i 24 timer etter publisering, før de forsvinner automatisk [5, 6]."
+    },
+    {
+      "id": "q3",
+      "text": "Hva er hovedformålet med å skaffe seg e-postadressen til en falsk Instagram-konto i en OSINT-etterforskning?",
+      "choices": [
+        "For å rapportere e-posten til Meta for brudd på personvernregler",
+        "For å bruke den til å starte en omvendt e-postsøk for å finne den ekte identiteten bak kontoen [7, 8]",
+        "For å bekrefte om kontoen har tofaktorautentisering aktivert",
+        "For å sende en offisiell forespørsel til ISP-en (Internett-leverandøren)",
+        "For å logge inn på kontoen ved hjelp av 'Glemt passord'-funksjonen"
+      ],
+      "correctIndex": 1,
+      "explanation": "Å søke etter e-posten er ofte det beste alternativet for å avsløre den virkelige identiteten, da den samme adressen kan være brukt for andre sosiale medier og tjenester som leder til navnet på bakpersonen [7, 8]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilket verktøy eller hvilken metode nevnes som nyttig for å finne en brukers permanente Instagram User ID?",
+      "choices": [
+        "codeofaninja.com [9-13]",
+        "TinEye",
+        "Inflact Profile Analyzer",
+        "Google Dorks (site:instagram.com)",
+        "Stori Stalker"
+      ],
+      "correctIndex": 0,
+      "explanation": "Verktøyet codeofaninja.com nevnes spesifikt som en metode for å finne den permanente Instagram User ID-en. Denne ID-en endres aldri, selv om brukeren bytter brukernavn [9-11, 13]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva kan en OSINT-etterforsker finne ved å klikke på de tre prikkene i hjørnet av en profil og navigere til 'Om denne kontoen' ('About This Account')?",
+      "choices": [
+        "Målets passord og IP-adresse",
+        "Kontoopprettelsesdato og land [14-16]",
+        "En liste over alle slettede innlegg",
+        "En liste over de som har sett profilen",
+        "Direkte lenker til alle private meldinger (DM)"
+      ],
+      "correctIndex": 1,
+      "explanation": "Man kan sjekke kontoens opprettelsesdato og kontoinnehaverens land ved å gå til 'Om denne kontoen'-seksjonen, i tillegg til eventuelle tidligere brukernavn og når kontoen ble bekreftet [14-16]."
+    },
+    {
+      "id": "q6",
+      "text": "Hva er den anbefalte strategien for å samle informasjon om en person hvis Instagram-profil er satt til 'privat'?",
+      "choices": [
+        "Bruke BeenVerified til å omgå personverninnstillingene",
+        "Kontakte Instagram Support for å be om tilgang til privat innhold [17]",
+        "Logge inn med en emulator for å utnytte en app-spesifikk sårbarhet",
+        "Identifisere og undersøke offentlige profiler til personens venner eller familiemedlemmer [9, 18-21]",
+        "Sende en direktemelding og spørre om å bli akseptert som følger, uten å ha en plan B"
+      ],
+      "correctIndex": 3,
+      "explanation": "Hvis profilen er privat, er strategien å identifisere venner eller familiemedlemmer med offentlige profiler. Ved å undersøke disse tilknyttede, offentlige profilene kan man potensielt finne bilder av eller informasjon om personen man etterforsker [9, 19-21]."
+    },
+    {
+      "id": "q7",
+      "text": "Hva er den tekniske utfordringen ved å forsøke å laste ned et bilde i full oppløsning direkte fra Instagrams nettside (uten å bruke tredjepartsverktøy)?",
+      "choices": [
+        "Filen lagres automatisk med feil metadata (EXIF)",
+        "Instagram krever en betalt nedlastingslisens for innlegg",
+        "Høyreklikk og lagre kan lagre filen i et ubrukelig format som HTML i stedet for bildefilen [9, 10, 12, 13, 22]",
+        "Alle nedlastinger er automatisk kryptert og krever en kode for å åpnes",
+        "Nedlastede bilder har automatisk vannmerke med IP-adressen din"
+      ],
+      "correctIndex": 2,
+      "explanation": "Når man prøver å høyreklikke og lagre et bilde direkte fra Instagrams nettside, kan filen bli lagret i et ubrukelig format som HTML. Verktøy som imagein.com eller Imginn løser dette ved å sikre den originale bildefilen i full kvalitet [9, 10, 12, 13, 22]."
+    },
+    {
+      "id": "q8",
+      "text": "Hva er den viktigste funksjonelle forskjellen som gjør mobilappen overlegen nettstedet for analyse av en brukers følger- og 'following'-lister?",
+      "choices": [
+        "Mobilappen viser følgerne i kronologisk rekkefølge (eldste først)",
+        "Nettstedet krever at man er logget inn, mens appen ikke gjør det",
+        "Mobilappen har en søkefunksjon for å søke i disse listene, som mangler på nettstedet [18, 20, 21, 23]",
+        "Mobilappen viser de virkelige navnene til følgerne",
+        "Nettstedet viser kun de 100 nyeste følgerne"
+      ],
+      "correctIndex": 2,
+      "explanation": "Mobilappen har en søkefunksjon for å søke innad i en brukers følgerliste. Denne funksjonaliteten manglet (eller var begrenset) på nettstedet, noe som gjør mobilappen mer effektiv for nettverksanalyse [18, 20, 21, 23]."
+    },
+    {
+      "id": "q9",
+      "text": "For å finne Instagram-innhold som Google har lagret (bufret) eller som er slettet fra profilen, hvilken Google Dork-operator skal brukes for å begrense søket utelukkende til Instagrams domene?",
+      "choices": [
+        "inurl:instagram.com [24]",
+        "site:instagram.com [12, 13, 25-28]",
+        "cache:instagram.com",
+        "filetype:instagram.com",
+        "NOT instagram.com"
+      ],
+      "correctIndex": 1,
+      "explanation": "Søkeoperatoren site:instagram.com brukes til å begrense søket til Instagrams domene. Dette kan avdekke omtaler av et brukernavn eller finne bufrede versjoner av siden som Google har lagret [12, 13, 25-28]."
+    },
+    {
+      "id": "q10",
+      "text": "Ifølge kildene, hvilken etisk grense bør man unngå når man undersøker en persons e-post eller identitet bak en falsk konto?",
+      "choices": [
+        "Å bruke OSINT-teknikker fra åpent tilgjengelige kilder",
+        "Å utføre omvendt bildesøk med stjålne bilder",
+        "Å unngå plattformer eller metoder som omgår personverninnstillinger eller utnytter sårbarheter for å hacke kontoen [29]",
+        "Å bruke Google Dorks for å finne offentlig informasjon",
+        "Å dele resultatene av etterforskningen med andre etterforskere"
+      ],
+      "correctIndex": 2,
+      "explanation": "Hovedregelen er å respektere personvernet til målet. Man skal unngå plattformer eller metoder som omgår personverninnstillinger eller utnytter sårbarheter for å hacke Instagram-kontoen, da dette kan lede til juridiske konsekvenser [29]."
+    }
+  ]
+}
