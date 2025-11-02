@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Bruk av Åpne Kilder (BRÅK)",
+  "episodeId": "e003",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er den norske forkortelsen som brukes for fagfeltet «Bruk av Åpne Kilder»?",
+      "choices": [
+        "BRÅK (eller ÅK)",
+        "OSINF",
+        "FOI",
+        "HUMINT",
+        "DIGINT"
+      ],
+      "correctIndex": 0,
+      "explanation": "Det norske fagfeltet kalles «Bruk av Åpne Kilder» (BRÅK) eller bare ÅK [1-3]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilken type resultat innhenter politiet gjennom bruk av Åpne Kilder (ÅK)?",
+      "choices": [
+        "Etterretning",
+        "Informasjon",
+        "Skjult overvåking",
+        "Ransakelsesresultater",
+        "Sensitive militærdata"
+      ],
+      "correctIndex": 1,
+      "explanation": "Gjennom ÅK innhenter politiet informasjon, og innhenter ikke etterretning [2-4]."
+    },
+    {
+      "id": "q3",
+      "text": "Ifølge den forenklede saksgangen for bruk av åpne kilder, hva er den aller første fasen i etterforskningsprosessen?",
+      "choices": [
+        "Innhenting",
+        "Forberedelser",
+        "Bestilling/Forespørsel om informasjon (FOI)",
+        "Prosessering",
+        "Rapportering/Formidling"
+      ],
+      "correctIndex": 2,
+      "explanation": "Den forenklede saksgangen består av fem faser, hvor den første er Bestilling/Forespørsel om informasjon (FOI) [5-7]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilket av følgende eksempler regnes ikke som bruk av Åpne Kilder (ÅK), men krever andre juridiske fullmakter, som ransaking?",
+      "choices": [
+        "Offentlig tilgjengelige passordlekkasjer",
+        "Slettede data på Wayback Machine",
+        "En publisert løpetur på Strava",
+        "Få tilgang på Google-konto og sikre Google Takeout",
+        "Opprette en profil på Facebook for innsyn på en åpen profil"
+      ],
+      "correctIndex": 3,
+      "explanation": "Å få tilgang til en Google-konto for å sikre Google Takeout klassifiseres som ransaking, ikke Åpne Kilder, da det krever uautorisert tilgang [2, 8, 9]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken uttrykt fordel ved ÅK-metoden oppsummeres av sitatet «Do not send a spy where a schoolboy can go»?",
+      "choices": [
+        "Det løser alltid saken alene.",
+        "Det eliminerer behovet for analyse.",
+        "Det gir tilgang til hemmelig informasjon.",
+        "Det er alltid tidkrevende.",
+        "Metoden innebærer vanligvis lav risiko og er gratis/billig."
+      ],
+      "correctIndex": 4,
+      "explanation": "Sitatet reflekterer fordelen om at ÅK-metoden innebærer lav risiko, kan utføres med lite utstyr, og er gratis eller billig [6, 10, 11]."
+    },
+    {
+      "id": "q6",
+      "text": "Hva identifiseres som den største utfordringen med ÅK knyttet til informasjonsmengden?",
+      "choices": [
+        "Informasjonen er alltid hemmelig.",
+        "Mangel på nye plattformer.",
+        "Fraværet av juridiske konsekvenser.",
+        "Etterforskningsprosessen er aldri tidkrevende.",
+        "Enorm mengde informasjon som skaper mye 'støy', og informasjonen må verifiseres."
+      ],
+      "correctIndex": 0,
+      "explanation": "Ulempen med ÅK er at det er 'enormt mye informasjon' som skaper 'mye støy', noe som gjør verifisering og saksbehandling utfordrende [9-12]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilken del av internettet, som utgjør anslagsvis 95-98% av nettet og ikke er søkbart i søkemotorer, kan likevel inngå i OSINT-begrepet?",
+      "choices": [
+        "Clearweb/Surface Web",
+        "Dyp-web (Deep Web)",
+        "Mørk-web (Dark Web)",
+        "Kun TOR-nettverket",
+        "Kun e-postkorrespondanse"
+      ],
+      "correctIndex": 1,
+      "explanation": "Dyp-web defineres som den delen av internett som ikke er søkbar gjennom søkemotorer. Informasjon derfra kan inngå i OSINT så lenge kilden er åpent tilgjengelig, selv om den krever betaling eller brukerkonto [13-16]."
+    },
+    {
+      "id": "q8",
+      "text": "Hva er hovedprinsippet for Innhentingsfasen (Fase 3) i ÅK-etterforskningen, ifølge kildematerialet?",
+      "choices": [
+        "Analyser først, samle senere.",
+        "Verifiser uten å dokumentere.",
+        "Samle først, analyser senere.",
+        "Bestem sluttmålet uten en søkeplan.",
+        "Fokuser kun på tekstlig informasjon."
+      ],
+      "correctIndex": 2,
+      "explanation": "Hovedprinsippet for innhentingsfasen er å 'Samle først, analyser senere' [17, 18]. Denne fasen inkluderer Lokalisere, Dokumentere og Verifisere [6, 18]."
+    },
+    {
+      "id": "q9",
+      "text": "I de etiske 'JAPAN-prinsippene' for OSINT, som sikrer at operasjoner følger juridisk og etisk praksis, hva står 'A' for?",
+      "choices": [
+        "Auditable (Reviderbar)",
+        "Justifiable (Forsvarlig)",
+        "Necessary (Nødvendig)",
+        "Authorised (Autorisert/Lovlig)",
+        "Proportionate (Proporsjonal)"
+      ],
+      "correctIndex": 3,
+      "explanation": "JAPAN-prinsippene inkluderer Justifiable, Authorised, Proportionate, Auditable og Necessary [19, 20]. 'A' står for Authorised, som betyr at alle etterforskningsaktiviteter må overholde juridiske rammeverk og være lovlig tillatt [20]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvilken organisatorisk barriere for effektiv bruk av ÅK peker på en skjevhet i ressursfokuset innenfor politiet?",
+      "choices": [
+        "Fremmedspråklige barrierer",
+        "Mangelfull kompetanse innen EXIF-data",
+        "Overdreven tillit til tradisjonelle avhør",
+        "Utilstrekkelig kildebevissthet ved valg av verktøy",
+        "Vedvarende vektlegging av innhenting, på bekostning av analyse"
+      ],
+      "correctIndex": 4,
+      "explanation": "En organisatorisk begrensning er den vedvarende vektleggingen av innhenting (Collection), på bekostning av analyse (Processing og Production), som hindrer full utnyttelse av innsamlet data [5, 11, 21, 22]."
+    }
+  ]
+}
