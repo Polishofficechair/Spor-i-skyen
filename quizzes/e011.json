@@ -1,0 +1,144 @@
+{
+  "title": "Quiz: Metodekartet for OSINT-etterforskning",
+  "episodeId": "e011",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva kalles det obligatoriske og universelle utgangspunktet for enhver ny undersøkelse i Metodekartet?",
+      "choices": [
+        "Startnode",
+        "Inngangsverdi",
+        "Fase i oppdraget",
+        "Metodevalg",
+        "ABC-veilederen"
+      ],
+      "correctIndex": 0,
+      "explanation": "Startnode fungerer som det universelle og obligatoriske utgangspunktet for enhver ny undersøkelse i metodekartet. All navigasjon starter her [1-7]."
+    },
+    {
+      "id": "q2",
+      "text": "Hva er Metodekartets status angående økonomi og tilgang til verktøy?",
+      "choices": [
+        "Det er gratis og krever ingen kjøpeprogrammer.",
+        "Det krever årlig lisensavgift, men ingen kjøpeprogrammer.",
+        "Det er gratis, men krever spesialprogramvare lisensiert av politiet.",
+        "Det er gratis for førstelinje, men krever betalt abonnement for utvidet funksjonalitet.",
+        "Det er en betalt tjeneste for å sikre uavhengighet fra tredjepartsverktøy."
+      ],
+      "correctIndex": 0,
+      "explanation": "Metodekartet er helt gratis og krever ingen kjøpeprogrammer, noe som gjør det tilgjengelig for alle etterforskere [7-15]."
+    },
+    {
+      "id": "q3",
+      "text": "Metodekartet ble spesifikt utviklet for førstelinjeetterforskere i hvilket politidistrikt?",
+      "choices": [
+        "Øst Politidistrikt",
+        "Oslo Politidistrikt",
+        "Vest Politidistrikt",
+        "Metodekartet er utviklet nasjonalt for alle distrikter",
+        "Sør-Øst Politidistrikt"
+      ],
+      "correctIndex": 0,
+      "explanation": "Metodekartet er et strategisk verktøy designet spesifikt for førstelinjeetterforskere i Øst Politidistrikt [16-21]."
+    },
+    {
+      "id": "q4",
+      "text": "Hva er fagbegrepet for den konkrete informasjonen eller identifikatoren som starter selve undersøkelsen, for eksempel et brukernavn eller en video?",
+      "choices": [
+        "Inngangsverdi",
+        "Startnode",
+        "Mål med fasen",
+        "Metodisk veikart",
+        "FOI/IB"
+      ],
+      "correctIndex": 0,
+      "explanation": "Inngangsverdi er den konkrete informasjonen eller identifikatoren som starter undersøkelsen, og valget av denne styrer hvilke spesifikke metoder kartet presenterer [2, 4, 6, 22-25]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilket kjernebegrep beskriver verdien av å følge en forhåndsdefinert prosess, noe som gjør det mulig å se tilbake på valgte metoder og dokumentere funn?",
+      "choices": [
+        "Sporbarhet",
+        "Standardisering",
+        "Tilgjengelighet",ke spesifikke metoder kartet presenterer [2, 4, 6, 22-25]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilket kjernebegrep beskriver verdien av å følge en forhåndsdefinert prosess, noe som gjør det mulig å se tilbake på valgte metoder og dokumentere funn?",
+      "choices": [
+        "Sporbarhet",
+        "Standardisering",
+        "Tilgjengelighet",
+        "Intuitivt Design",
+        "Kvalitetssikring"
+      ],
+      "correctIndex": 0,
+      "explanation": "Sporbarhet er en kjernefordel og gjør det mulig å se tilbake på hvilke valg man tok og hvilke metoder man brukte underveis. Dette er avgjørende for dokumentasjon i straffesaker [16, 17, 26, 27]."
+    },
+    {
+      "id": "q6",
+      "text": "Metodekartet er et 'levende verktøy', men det oppdaterer seg ikke automatisk. Hva er den eneste måten brukeren kan sikre at de får tilgang til nye metoder, rettelser og oppdateringer?",
+      "choices": [
+        "De må fysisk hente en ny kopi av metodekartet fra originalkilden.",
+        "Kartet oppdateres automatisk hver gang man logger på politinettet.",
+        "Man må abonnere på et varsel for nye versjoner.",
+        "Man må laste ned en patch-fil fra internserveren.",
+        "Metodekartet er utstyrt med et innebygd oppdateringsprogram som må kjøres manuelt."
+      ],
+      "correctIndex": 0,
+      "explanation": "Fordi brukeren jobber med en lokal kopi, må de fysisk hente en ny kopi fra originalkilden for å få tilgang til oppdateringer [13, 28-35]."
+    },
+    {
+      "id": "q7",
+      "text": "Ved undersøkelser i sosiale medier presenterer Metodekartet to veivalg: 'Undersøke' og 'ABC'. Hva er hovedfunksjonen til 'ABC'?",
+      "choices": [
+        "ABC fungerer som en utvidet, visuell veileder som gir beskrivelser av tjenesten og eksemplifiserende bilder.",
+        "ABC er for erfarne etterforskere og fokuserer kun på ren, teknisk metodikk.",
+        "ABC står for 'Analyse, Bevis og Kontroll' og brukes kun til verifiseringsfasen.",
+        "ABC brukes utelukkende for tredjepartsverktøy som krever lisens.",
+        "ABC er et valg for å angi at man ikke har funnet en inngangsverdi, men ønsker å starte bredt."
+      ],
+      "correctIndex": 0,
+      "explanation": "Valget 'ABC' fungerer som en utvidet veileder for tjenesten, og ved å klikke «Vis neste node» vises bilder som eksemplifiserer det som er lest [30, 36-41]."
+    },
+    {
+      "id": "q8",
+      "text": "Hva er den logiske sekvensen av de tre kjernekomponentene som strukturerer Methodkartets veiledning fra et generelt utgangspunkt til en spesifikk metodisk handling?",
+      "choices": [
+        "Startnode, Faser i undersøkelsen, Inngangsverdi",
+        "Faser i undersøkelsen, Inngangsverdi, Startnode",
+        "Inngangsverdi, Startnode, Faser i undersøkelsen",
+        "Startnode, Mål med fasen, Metoder spesifikt for tjenesten",
+        "Fase, Metodevalg, Inngangsverdi"
+      ],
+      "correctIndex": 0,
+      "explanation": "Metodekartet er bygget opp av de tre komponentene Startnode, Faser i undersøkelsen, og Inngangsverdi, som veileder brukeren i en logisk sekvens [1-3, 5-7, 22-25]. Prosessen starter alltid ved Startnode, etterfulgt av definering av Fase og Inngangsverdi [42-44]."
+    },
+    {
+      "id": "q9",
+      "text": "For en gitt problemstilling (som å finne posteringstidspunktet for en TikTok-video) presenterer Metodekartet ofte flere forskjellige metoder. Hva er den strategiske verdien av dette designvalget?",
+      "choices": [
+        "Det styrker verifiseringsprosessen og reduserer avhengigheten av tredjepartsverktøy.",
+        "Det sikrer at etterforskeren alltid har et betalt alternativ dersom de gratis metodene feiler.",
+        "Det lar etterforskeren velge den metoden som gir minst sporbarhet i saken.",
+        "Det er et krav fra plattformene (som TikTok) for å sikre at politiet ikke kun bruker én teknikk.",
+        "Det gir en oversikt over alle de internasjonale verktøyene som er tilgjengelige, inkludert de som krever spesialkompetanse."
+      ],
+      "correctIndex": 0,
+      "explanation": "Å få presentert flere metoder (f.eks. tre for TikTok-videoen) styrker verifiseringsprosessen ved at funn kan kryssjekkes, og det er verdifullt for utelatelse/reduksjon av avhengigheten av tredjepartsverktøy [36-38, 40, 41, 45-48]."
+    },
+    {
+      "id": "q10",
+      "text": "Metodekartet er utviklet slik at brukeren jobber med en lokal kopi, og må manuelt hente en ny versjon. Hvorfor er denne 'analoge' versjonskontrollen en bevisst strategisk fordel for etterforskning?",
+      "choices": [
+        "Det garanterer at metoden som brukes i en spesifikk sak er låst til en kjent og dokumentert versjon, hvilket sikrer metodisk konsistens og sporbarhet.",
+        "Det reduserer belastningen på politinettet ved at færre automatiske oppdateringer sendes ut.",
+        "Dette er kun en midlertidig løsning; automatiske oppdateringer er under utvikling.",
+        "Det tvinger etterforskeren til å lese gjennom endringsloggen før de starter en ny sak.",
+        "Det er billigere for politiet enn å implementere en sentralisert, automatisk oppdateringsløsning."
+      ],
+      "correctIndex": 0,
+      "explanation": "Å jobbe med en lokal kopi og kreve manuell oppdatering sikrer full sporbarhet og metodisk konsistens ved å garantere at metoden som brukes i saken er låst til en kjent og dokumentert versjon, slik at plutselige oppdateringer ikke endrer forutsetningene midt i en kritisk etterforskning [33, 34, 48]."
+    }
+  ]
+}
