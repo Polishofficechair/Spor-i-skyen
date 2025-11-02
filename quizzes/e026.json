@@ -1,0 +1,159 @@
+{
+  "title": "Quiz: TikTok",
+  "episodeId": "e026",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hvilket selskap er definert som eieren og utvikleren av TikTok-plattformen, ifølge den juridiske forklaringen?",
+      "choices": [
+        "Beijing ByteDance Technology Co., Ltd.",
+        "TikTok Inc. (USA)",
+        "Tencent Holdings Ltd.",
+        "TikTok Pte. Ltd. (Singapore)",
+```json
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hvilket selskap er definert som eieren og utvikleren av TikTok-plattformen, ifølge den juridiske forklaringen?",
+      "choices": [
+        "Beijing ByteDance Technology Co., Ltd.",
+        "TikTok Inc. (USA)",
+        "Tencent Holdings Ltd.",
+        "TikTok Pte. Ltd. (Singapore)",
+        "Meta Platforms, Inc."
+      ],
+      "correctIndex": 0,
+      "explanation": "TikTok er utviklet og eid av det kinesiske selskapet Beijing ByteDance Technology Co., Ltd. [1]. Internasjonalt drives den gjennom datterselskaper som TikTok Pte. Ltd. og TikTok Inc. [1].",
+      "difficulty": "Lett"
+    },
+    {
+      "id": "q2",
+      "text": "Hva er det primære formålet med TikTok 'Coins' (mynter) på plattformen, ifølge kildematerialet?",
+      "choices": [
+        "Kjøpe utvidede videofunksjoner eller effekter.",
+        "Kjøpe virtuelle gaver under live-sendinger.",
+        "Betale for målrettet annonsering.",
+        "Kjøpe følgere (followers) og kommentarer.",
+        "Konvertere til ekte penger direkte av den som kjøper Coins."
+      ],
+      "correctIndex": 1,
+      "explanation": "Coins er en digital valuta som brukes til å kjøpe virtuelle gaver (Virtual Gifts) som kan sendes til andre brukere under live-sendinger (TikTok Live) [2, 3]. De kan ikke brukes til å kjøpe vanlige videoer, likes eller kommentarer [3, 4].",
+      "difficulty": "Lett"
+    },
+    {
+      "id": "q3",
+      "text": "Hvilket kjennetegn er unikt for TikTok Brukernavn (Username) sammenlignet med Visningsnavn (Display Name/Alias)?",
+      "choices": [
+        "Brukernavnet kan endres når som helst i innstillingene.",
+        "Brukernavnet trenger ikke være unikt, i motsetning til Visningsnavnet.",
+        "Brukernavnet vises uten '@'-tegnet i URL-en.",
+        "Brukernavnet er unikt for å identifisere brukeren på plattformen og vises i profilens URL etter '@'-tegnet.",
+        "Brukernavnet kan inneholde mellomrom og emojier."
+      ],
+      "correctIndex": 3,
+      "explanation": "Brukernavnet (Username) er et unikt navn som identifiserer brukeren på plattformen og vises i profilens URL etter '@'-tegnet [5-7]. Visningsnavnet (Display name) trenger ikke være unikt [7, 8].",
+      "difficulty": "Lett"
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken applikasjon het TikTok opprinnelig, og hva kjennetegnet den i de tidligste fasene?",
+      "choices": [
+        "Vine, kjennetegnet av videoer på maks 60 sekunder.",
+        "Douyin, kjennetegnet av fokus på det kinesiske markedet.",
+        "Musical.ly, kjennetegnet av ekstrem åpenhet og manglende datasikkerhet.",
+        "Snapchat, kjennetegnet av flyktig innhold.",
+        "Instagram, kjennetegnet av at den fokuserte på bilder."
+      ],
+      "correctIndex": 2,
+      "explanation": "TikTok het opprinnelig Musical.ly [9-11]. Plattformen var da et digitalt 'ville vesten' med ekstrem åpenhet og omfattende datalekkasjer [10, 12].",
+      "difficulty": "Lett"
+    },
+    {
+      "id": "q5",
+      "text": "Når man bruker TikToks interne søkefunksjon, hvilke fire hovedkategorier grupperes søkeresultatene i?",
+      "choices": [
+        "Profiler, Musikk, Venner, Steder",
+        "Top, Hashtags, Brukere, Spørsmål",
+        "Topp, Brukere, Videoer, Live",
+        "Følgere, Følger, Videoer, Lyder",
+        "Nylig, Populært, Anbefalt, Arkiv"
+      ],
+      "correctIndex": 2,
+      "explanation": "Når man søker i TikTok-søkefeltet, grupperes resultatene i fire kategorier: Topp, Brukere, Videoer og Live [13].",
+      "difficulty": "Lett"
+    },
+    {
+      "id": "q6",
+      "text": "Hvilken spesifikk personvernsvakhet fantes i TikTok (tidligere Musical.ly), relatert til slettet innhold?",
+      "choices": [
+        "Slettede kommentarer forble synlige for alle som hadde delt videoen.",
+        "Videoer som ble slettet av opplasteren, forble tilgjengelige og synlige i 'Likes'-listen til andre brukere som hadde likt dem.",
+        "Brukeres telefonnumre ble lagret i kildekoden selv etter at de ble fjernet fra profilen.",
+        "En bruker kunne se hvem som besøkte profilen deres i sanntid uten aktivering.",
+        "Alle private meldinger ble rutinemessig arkivert av plattformen og var tilgjengelig via Google Dorks."
+      ],
+      "correctIndex": 1,
+      "explanation": "Tidligere, hvis en bruker slettet en video, forble den likevel tilgjengelig og lagret i 'likes'-listen til enhver annen bruker som hadde likt den. Dette gjaldt selv om profilen ble satt til privat [9, 10, 14, 15].",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "q7",
+      "text": "Hvilken OSINT-teknikk, betraktet som en av de mest effektive på TikTok i dag, innebærer å 'høyreklikke på profilbildet og velge åpne bildet i en ny fane'?",
+      "choices": [
+        "Innholdsanalyse.",
+        "Geolokalisering ved bruk av Mapillary.",
+        "Omvendt bildesøk.",
+        "Kildekodesøk etter UNIX-tidsstempel.",
+        "Sentimentanalyse."
+      ],
+      "correctIndex": 2,
+      "explanation": "Fremgangsmåten med å åpne profilbildet i full størrelse i en ny fane (via høyreklikk) er nødvendig for å gjennomføre et omvendt bildesøk (Reverst Bildesøk) for å koble profilen til andre kontoer på tvers av plattformer [16-19].",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "q8",
+      "text": "Hva er den anbefalte strategien for etterforskere for å omgå TikToks 'filterboble' og maksimere utbyttet ved undersøkelse av nisjetemaer?",
+      "choices": [
+        "Bruke kun en enkelt, gammel konto med et bredt spekter av interesser.",
+        "Søke ved å bruke Google Dorks i stedet for plattformens interne søkefunksjon.",
+        "Aktivere 2-trinnsbekreftelse og sette kontoen til privat.",
+        "Logge inn på en ny enhet ved hver undersøkelse for å unngå mistenkelig aktivitet.",
+        "Opprette en ny konto spesifikt for forskningstemaet og lære algoritmen å vise relatert innhold (ved å søke og klikke på relevante videoer)."
+      ],
+      "correctIndex": 4,
+      "explanation": "TikTok er ansett som en filterboble designet for å personalisere innholdet. For å utnytte dette til etterforskning, foreslås det å åpne nye kontoer og trene algoritmen til å servere mer innhold om det spesifikke emnet ved å søke og gjentatte ganger klikke på lovende videoer [20-22].",
+      "difficulty": "Medium"
+    },
+    {
+      "id": "q9",
+      "text": "For å finne en TikTok-videos nøyaktige opplastingstidspunkt (i UTC), hvilken spesifikk informasjon må en OSINT-etterforsker hente ut fra sidens kildekode?",
+      "choices": [
+        "Enhets-ID-en fra koden 'user/profile'.",
+        "Videoens 19-sifrede ID-nummer og konvertere det til binært.",
+        "UNIX-tidsstempelet (et 10-sifret nummer) funnet under taggen 'createtime'.",
+        "IP-adressen fra det eldste loggdata-oppføringen.",
+        "Lenken til videoen, åpne den i Wayback Machine, og notere Wayback-tidspunktet."
+      ],
+      "correctIndex": 2,
+      "explanation": "Det nøyaktige opplastingstidspunktet kan finnes ved å se på sidens kildekode og søke etter UNIX-tidsstempelet, som er et 10-sifret tall funnet under taggen 'createtime'. Dette kan konverteres til en lesbar dato og klokkeslett [5, 23].",
+      "difficulty": "Vanskelig"
+    },
+    {
+      "id": "q10",
+      "text": "Hvilket kodesegment, funnet i kildekoden til en TikTok-profilside, kan avsløre både brukerens mobiloperativsystem ('iOS'/'android') og hvilken sosial medieplattform ('refer') de brukte ved registrering?",
+      "choices": [
+        "`<meta property='og:description'`",
+        "`'user/profile' id:`",
+        "`'authorId':`",
+        "`<meta property='al:ios:url' content='snssdk1233://user/profile/...?refer=facebook'>`",
+        "`TikTok’s Law Enforcement Guidelines`"
+      ],
+      "correctIndex": 3,
+      "explanation": "Ved å høyreklikke og velge 'View page source' og søke etter 'user/profile', finner man kodelinjen som inneholder `<meta property='al:ios:url' ...>`. Denne viser enhets-ID ('iOS' eller 'android') og hvilken sosial medieplattform ('refer', f.eks. 'facebook') som ble brukt ved pålogging/registrering [24, 25].",
+      "difficulty": "Vanskelig"
+    }
+  ]
+}
