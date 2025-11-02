@@ -4,28 +4,28 @@
     "title": "ÅK på øret",
     "description": "Første episode. En manuelt laget fagpod men med AI - stemmer. En forklaring på konseptet og gjennomføringen. Prosjektet innebærer bruk av podcaster (lydbasert læring) for kontinuerlig repetisjon og oppdatering av kunnskap innen Åpne Kilder (ÅK/OSINT), et felt i rask endring. Denne modellen er designet for å overvinne utfordringer knyttet til foreldet kursmateriell, glemsel, og logistikken med tidkrevende fysiske kurs, ved å tilby fleksibel on-the-go læring. Pedagogisk sett vektlegges historiefortelling, repetisjon og en hybridløsning med steg-for-steg bildeserier, samt fokus på kritisk tenkning og etiske grenser..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode01.mp3",
-    "releaseDate": "2023-11-03T08:00:00Z"
+    "releaseDate": "2023-10-01T08:00:00Z"
   },
   {
     "id": "e002",
     "title": "Grunnfjellet",
     "description": "oversikt over innholdet og en presentasjon av instruktøren. Kurset fokuserer på informasjon fra åpne kilder og Social Media Investigation (SMI), med mål om å gjøre deltakerne i stand til selvstendig å gjennomføre undersøkelser i åpne kilder. Kursplanen viser en detaljert gjennomgang av emner som jus og etikk, avansert innhenting, bruk av verktøy som Hunchly og Python, samt spesifikke teknikker for søk i bilder, video og sosiale medier som TikTok og Darkweb. I tillegg presenteres en tidslinje og kort faktaoppsummering om instruktøren, som inkluderer bakgrunn fra Telemarksbataljonen, studier i digital forensic og hans spesialistrolle i politiet.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode02.mp3",
-    "releaseDate": "2023-11-05T08:00:00Z"
+    "releaseDate": "2023-10-05T08:00:00Z"
   },
   {
     "id": "e003",
     "title": "BRÅK: Bruk av Åpne Kilder",
     "description": "En detaljert veiledning i metodikk og prosedyrer, inkludert en fem-faset saksgang (bestilling, forberedelser, innhenting, prosessering og rapportering), med vekt på prinsippet om å samle først og analysere senere. Materialet diskuterer omfattende de klare fordelene (kostnadseffektivitet, lav risiko) og de betydelige ulempene (enorm informasjonsmengde, behov for spesialisering og verifisering), og fremhever viktigheten av tilstrekkelig opplæring for å sikre analytisk dyktighet og juridisk overholdelse. Til slutt presiseres at ÅK-søk gjelder åpent tilgjengelig informasjon på tvers av Clearweb, Deepweb og Darkweb, men at det må unngås ulovlig tilgang..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode03.mp3",
-    "releaseDate": "2025-11-10T08:00:00Z"
+    "releaseDate": "2025-10-10T08:00:00Z"
   },
   {
     "id": "e004",
     "title": "Fra tastatur til tiltale: Lovlige praksiser for bruk av åpne kilder",
     "description": "Juridisk rammerverk: Episoden behandler detaljert de juridiske rammene for å innhente informasjon fra både åpne og lukkede kilder, inkludert definisjonen av åpent tilgjengelig informasjon og hjemmelen for ransaking av nettkontoer. En betydelig del av materialet omhandler grensekryssende bevisinnhenting, hvor begreper som suverenitetsprinsippet og de minimis-terskelen forklares i lys av høyesterettspraksis som Tidal-saken. Til slutt beskrives prinsippene for behandling av opplysninger (formålsbestemthet, nødvendighet og kvalitet), samt kravene til risikovurdering og databehandleravtaler.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode04.mp3",
-    "releaseDate": "2025-11-12T08:00:00Z"
+    "releaseDate": "2025-10-12T08:00:00Z"
   },
   {
     "id": "e005",
@@ -46,21 +46,21 @@
     "title": "Notater: Fra Kaos til Kontroll",
     "description": "Episoden handler om å ta effektive digitale notater. Hovedformålet er å transformere notater fra enkle referater til et kraftig etterforskningsverktøy ved å adressere kaoset som oppstår fra en overflod av digital informasjon. episoden understreker tre nøkkelprinsipper: viktigheten av en hierarkisk struktur for organisering, bruken av systematiske skjermbilder som visuelle bevis, og valg av riktige digitale verktøy som støtter samarbeid og enkel tilgang. Til slutt oppsummeres læringen gjennom huskereglene FINN og SPOR, som sikrer at informasjonen er funnbar og robust som bevis..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode07.mp3",
-    "releaseDate": "2025-11-24T08:00:00Z"
+    "releaseDate": "2025-10-24T08:00:00Z"
   },
   {
     "id": "e008",
     "title": "OPSEC: Fra jeger til Bytte",
     "description": "Episoden legger vekt på at etterforskere er potensielle mål og at de må beskytte sin digitale identitet for å unngå å kompromittere seg selv eller etterforskningen. De sentrale temaene inkluderer risikovurdering, samt detaljerte trinn for å minimere digitale spor som IP-adresse, nettleseravtrykk og metadata. Dette involverer bruk av isolerte miljøer (som virtuelle maskiner), sterke passord, og spesifikke instrukser for å opprette og modne anonyme søkeprofiler på sosiale medier uten å etterlate spor. Til slutt diskuterer kildene viktigheten av juridisk samsvar (som GDPR) og hvordan OSINT-teknikker kan brukes til å undersøke komplekse mål som stråselskaper, samtidig som man opprettholder strenge sikkerhetsprotokoller..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode08.mp3",
-    "releaseDate": "2025-11-26T08:00:00Z"
+    "releaseDate": "2025-10-26T08:00:00Z"
   },
   {
     "id": "e009",
     "title": "Hunchly: En digital loggbok",
     "description": "Episoden tar for seg bruk av Hunchly, et spesialisert verktøy for digital bevisinnhenting og Open Source Intelligence (OSINT). Materialet forklarer Hunchlys kjernefunksjoner for å strukturere og dokumentere bevis, inkludert automatisk, lokal lagring av nettsider for å sikre bevisintegritet. Sentrale organisatoriske funksjoner som Selektorer (for automatisk fremheving av nøkkelord) og Tagger (for manuell kategorisering) beskrives inngående. I tillegg behandles avanserte teknikker, som bruk av Regulære Uttrykk (Regex) for fleksibelt mønstersøk, samt metoder for å håndtere plattformspesifikke utfordringer på nettsteder som Facebook og Twitter for å sikre komplett innhold. Til slutt beskrives hvordan Hunchly kan integreres med analyseverktøyet Maltego og hvordan data kan eksporteres for rapportering og arkivering..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode09.mp3",
-    "releaseDate": "2025-12-01T08:00:00Z"
+    "releaseDate": "2025-10-27T08:00:00Z"
   },
   {
     "id": "e010",
@@ -74,7 +74,7 @@
     "title": "Metodekart",
     "description": "Dette verktøyet er gratis, plattformuavhengig og fungerer gjennom en strukturert prosess som alltid starter ved en Startnode. Etterforskere må definere en Fase i undersøkelsen og en Inngangsverdi (for eksempel en TikTok-video) for å bli veiledet til spesifikke metoder, inkludert funksjoner som ABC for visuell veiledning. Det understrekes sterkt at Metodekartet er et levende verktøy som krever at brukeren manuelt henter en ny kopi for å få tilgang til oppdateringer, da den lokale filen ikke oppdateres automatisk. Målet er å bygge individuell og kollektiv kompetanse, samtidig som sporbarhet og høy kvalitet sikres gjennom bruk av alternative metoder for verifisering..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode11.mp3",
-    "releaseDate": "2025-12-08T08:00:00Z"
+    "releaseDate": "2025-10-28T08:00:00Z"
   },
   {
     "id": "e012",
@@ -88,7 +88,7 @@
     "title": "OMF Metoden",
     "description": "Metodikken starter med den bredeste tilnærmingen, Stage 1: Search Engines, hvor målet er å samle inn personlig identifiserbar informasjon (PII) som brukernavn og e-postadresser. Etter dette går prosessen over til Stage 2: Specialized Tools for å filtrere og få ny innsikt fra de innsamlede dataene. Deretter fokuseres det på Stage 3: Social Avenues (sosiale medier) for å oppdage personlig og ideologisk informasjon, hvor det bemerkes at mange tidligere gratisverktøy ikke lenger fungerer, noe som fører til økt avhengighet av betalte, spesialiserte verktøy for profesjonelle etterforskere. De to siste fasene inkluderer Stage 4: Data Breaches for å finne kontoinformasjon via lekkasjer, og til slutt, Stage 5: Dark Web, som er en for det meste manuell og risikabel prosess som bare er nødvendig i sjeldne tilfeller.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode13.mp3",
-    "releaseDate": "2025-12-15T08:00:00Z"
+    "releaseDate": "2025-10-15T08:00:00Z"
   },
   {
     "id": "e014",
