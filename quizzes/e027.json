@@ -1,0 +1,138 @@
+```json
+{
+  "title": "Quiz: Discord OSINT-grunnlag",
+  "episodeId": "e027",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva var Discord opprinnelig utviklet for?",
+      "choices": [
+        "VoIP- og tekstkommunikasjon for online-gamere",
+        "Profesjonelle konferanser og videodeling",
+        "Å være en rival til Reddit og Twitter",
+        "En plattform for deling av kryptert, hemmelig informasjon",
+        "Prosjektstyring og samarbeid for IT-utviklere"
+      ],
+      "correctIndex": 0,
+      "explanation": "Discord ble opprinnelig utviklet for å legge til rette for VoIP (Voice over Internet Protocol) og tekstkommunikasjon for online-gamere, selv om det siden har utvidet seg til andre områder."
+    },
+    {
+      "id": "q2",
+      "text": "Hvor mange Discord-servere kan en gratisbruker maksimalt bli med i?",
+      "choices": [
+        "50 servere",
+        "100 servere",
+        "200 servere",
+        "Ubegrenset antall",
+        "150 servere"
+      ],
+      "correctIndex": 1,
+      "explanation": "Gratis Discord-brukere kan bli med i opptil 100 servere. Betalte brukere (Nitro-abonnenter) kan bli med i opptil 200 servere."
+    },
+    {
+      "id": "q3",
+      "text": "I en Discord-kanal, hvor finner man vanligvis søkefunksjonen?",
+      "choices": [
+        "Nederst til venstre i kanallisten",
+        "På brukerens profilside",
+        "Øverst til høyre i Discord-grensesnittet",
+        "Innebygd i chatteredigeringsfeltet",
+        "I serverinnstillingene"
+      ],
+      "correctIndex": 2,
+      "explanation": "Søkefunksjonen finnes vanligvis øverst til høyre i Discord-grensesnittet."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken søkeoperator i Discord brukes til å søke etter koblinger til andre Discord-servere (invitasjoner)?",
+      "choices": [
+        "Search: Invite",
+        "URL: discord.gg/",
+        "In: Invites",
+        "Link: external",
+        "Søk med 'discord.gg/'"
+      ],
+      "correctIndex": 4,
+      "explanation": "Man kan finne andre Discorder koblet til av eiere/mods/administratorer ved å søke med 'discord.gg/' i søkefunksjonen."
+    },
+    {
+      "id": "q5",
+      "text": "Hva er en av de viktigste datakildene som kan hjelpe OSINT-etterforskere med å utlede interessene til en Person av Interesse (POI)?",
+      "choices": [
+        "Personens profillogo",
+        "Datoen brukeren ble med i Discord",
+        "Deres statusmelding ('Status Message')",
+        "Chat-historikken på hver server de er med på",
+        "Antall venner de har"
+      ],
+      "correctIndex": 3,
+      "explanation": "Man bør søke etter objektets chat-historikk på hver server de er på for å prøve å finne interesser, ved å bruke søkeoperatørene i Discord-søket."
+    },
+    {
+      "id": "q6",
+      "text": "Hvordan kan man i OSINT-sammenheng bruke profilen til en person for å finne potensielle aliaser eller ulike kallenavn?",
+      "choices": [
+        "Gjennom å sjekke Discord Staff Badge (Discord-ansattmerket)",
+        "Ved å bruke Google Dorks til å søke etter brukerens diskriminator",
+        "Ved å undersøke felles servere (Mutual Servers), da Discord-brukere kan angi forskjellige kallenavn på forskjellige servere",
+        "Ved å analysere personens Nitro-merke",
+        "Ved å sjekke hvor mange bots som er på serveren"
+      ],
+      "correctIndex": 2,
+      "explanation": "Gjennom felles servere (Mutual Servers) kan man få en idé om hva personen er interessert i. Discord-brukere kan også angi forskjellige kallenavn for seg selv i forskjellige servere, noe som kan avsløre forskjellige brukernavn og aliaser."
+    },
+    {
+      "id": "q7",
+      "text": "Når man undersøker en Discord-brukerprofil, hvilke av følgende opplysninger er ikke umiddelbart tilgjengelig, men krever et ekstra klikk på de tre prikkene øverst til høyre i vinduet for å få tilgang til?",
+      "choices": [
+        "Brukerens 'About me'-seksjon",
+        "Profilbildet",
+        "Datoen brukeren ble med i Discord",
+        "Felles venner ('Mutual Friends') mellom brukeren og OSINT-etterforskeren",
+        "Brukerens Discord ID"
+      ],
+      "correctIndex": 4,
+      "explanation": "Brukerens Discord ID er tilgjengelig ved å klikke på de tre prikkene øverst til høyre i vinduet når man inspiserer profilen."
+    },
+    {
+      "id": "q8",
+      "text": "I OSINT-sammenheng, hva menes med 'Discord Leaks'?",
+      "choices": [
+        "Brudd på Discord TOS ved bruk av selv-bots",
+        "Automatisert datainnsamling ved hjelp av en C2C-infrastruktur",
+        "Å bruke X-Ray Contact for å tolke metadata",
+        "Tilfeller der informasjon, samtaler eller media fra serveren gjøres offentlig tilgjengelig eller deles utenfor tiltenkt publikum",
+        "Å identifisere moderatorer og administratorer på en server"
+      ],
+      "correctIndex": 3,
+      "explanation": "Discord-lekkasjer refererer til tilfeller der informasjon, samtaler eller media fra serveren gjøres offentlig tilgjengelig eller på annen måte deles utenfor det tiltenkte publikummet, ofte på eksterne plattformer som sosiale medier."
+    },
+    {
+      "id": "q9",
+      "text": "Hva er en sentral utfordring for OSINT-etterforskere som forsøker å skalere og automatisere datainnsamling i stor skala ved bruk av gratis Discord-kontoer, gitt begrensningene i serverantall?",
+      "choices": [
+        "Vanskeligheten med å overbevise administratorer om å legge til mistenkelige bots",
+        "Discord TOS forbyr opprettelse av bots gjennom ekte kontoer (Self-bots)",
+        "Det store antallet ubrukelig støy fra servere med færre enn 15 medlemmer",
+        "Behovet for å utvikle en fullt funksjonell C2C-infrastruktur",
+        "Behovet for et svært stort antall gratis Discord-kontoer for å dekke et meningsfullt utvalg av servere"
+      ],
+      "correctIndex": 4,
+      "explanation": "Den store utfordringen med skalering er at Discord-kontoer har en servergrense på 100 (200 med Nitro). Å dekke 950 000 servere ville kreve omtrent 9 500 gratis kontoer, noe som gjør tilnærmingen manuelt intensiv og logistisk krevende."
+    },
+    {
+      "id": "q10",
+      "text": "Hvilke to kriterier må en Discord-server oppfylle for å bli inkludert i den offentlige serveroppdagelsen (Server Discovery)?",
+      "choices": [
+        "Serveren må ha minst 1000 medlemmer og kontoen må være minst åtte uker gammel",
+        "Serveren må ha et verifisert telefonnummer knyttet til eieren og minst 500 medlemmer",
+        "Den må ha et aktivt fellesskap (Active Channels) og et Nitro Boost-nivå på minst 1",
+        "Den må deaktivere medlemskanallisten og ha minst 250 medlemmer",
+        "Den må være fokusert på et nisjeområde og kreve en @psu.edu e-postadresse for å bli med (som Student Hubs)"
+      ],
+      "correctIndex": 0,
+      "explanation": "En Discord-server må oppfylle seks krav for å bli inkludert i offentlig serveroppdagelse, hvorav to er at den må ha minst 1000 medlemmer og kontoen må være minst åtte uker gammel."
+    }
+  ]
+}
+```
