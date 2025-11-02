@@ -4,14 +4,14 @@
     "title": "ÅK på øret",
     "description": "Første episode. En manuelt laget fagpod men med AI - stemmer. En forklaring på konseptet og gjennomføringen. Prosjektet innebærer bruk av podcaster (lydbasert læring) for kontinuerlig repetisjon og oppdatering av kunnskap innen Åpne Kilder (ÅK/OSINT), et felt i rask endring. Denne modellen er designet for å overvinne utfordringer knyttet til foreldet kursmateriell, glemsel, og logistikken med tidkrevende fysiske kurs, ved å tilby fleksibel on-the-go læring. Pedagogisk sett vektlegges historiefortelling, repetisjon og en hybridløsning med steg-for-steg bildeserier, samt fokus på kritisk tenkning og etiske grenser..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode01.mp3",
-    "releaseDate": "2023-10-01T08:00:00Z"
+    "releaseDate": "2025-10-01T08:00:00Z"
   },
   {
     "id": "e002",
     "title": "Grunnfjellet",
     "description": "oversikt over innholdet og en presentasjon av instruktøren. Kurset fokuserer på informasjon fra åpne kilder og Social Media Investigation (SMI), med mål om å gjøre deltakerne i stand til selvstendig å gjennomføre undersøkelser i åpne kilder. Kursplanen viser en detaljert gjennomgang av emner som jus og etikk, avansert innhenting, bruk av verktøy som Hunchly og Python, samt spesifikke teknikker for søk i bilder, video og sosiale medier som TikTok og Darkweb. I tillegg presenteres en tidslinje og kort faktaoppsummering om instruktøren, som inkluderer bakgrunn fra Telemarksbataljonen, studier i digital forensic og hans spesialistrolle i politiet.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode02.mp3",
-    "releaseDate": "2023-10-05T08:00:00Z"
+    "releaseDate": "2025-10-05T08:00:00Z"
   },
   {
     "id": "e003",
