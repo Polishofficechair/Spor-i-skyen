@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er den «absolutte hovedregelen» for politiets informasjonsinnhenting i åpne kilder (OSINT) når det gjelder bruk av profiler?",
+      "choices": [
+        "Aldri benytt en personlig profil til tjenesteformål.",
+        "Profiler skal alltid være satt til privat visning.",
+        "Det er obligatorisk å bruke backstoppede mobilnumre ved opprettelse.",
+        "Alltid interager direkte med målpersonen for å sikre respons.",
+        "Profiler skal kun brukes på offentlige Wi-Fi-nettverk."
+      ],
+      "correctIndex": 0,
+      "explanation": "Manualens absolutt hovedregel er: Aldri benytt en personlig profil til tjenesteformål, da dette utgjør en betydelig risiko for etterforskningen og tjenestepersonens sikkerhet [1]."
+    },
+    {
+      "id": "q2",
+      "text": "Hva kalles de rutinemessige praksisene og forholdsreglene som enkeltpersoner og organisasjoner tar for å opprettholde sikkerheten i sine digitale miljøer?",
+      "choices": [
+        "Digital Kontaminering",
+        "Operasjonell Autentisering (OA)",
+        "Open Source Intelligence (OSINT)",
+        "Cyberhygiene",
+        "Trusselanalyse"
+      ],
+      "correctIndex": 3,
+      "explanation": "Disse privacy-tiltakene og rutinene for å sikre digitale omgivelser er kjent som 'cyberhygiene' [2-5]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilket teknisk tiltak anbefales under forberedelsesfasen for å oppnå en delt, ikke-sporbar IP-adresse for opprettelse av en anonym profil?",
+      "choices": [
+        "Bruk av politiets faste nettverk med identifiserbar IP.",
+        "Deaktivering av alle brannmurer.",
+        "Bruk av en VPN (Virtual Private Network).",
+        "Bruk av en 4G-ruter.",
+        "Bruk av en dedikert IP-adresse leid fra et datasenter."
+      ],
+      "correctIndex": 3,
+      "explanation": "Bruk av en 4G-ruter gir en mobil internettilkobling der IP-adressen deles med mange andre brukere, noe som øker sjansen for vellykket registrering og unngår den identifiserbare faste nettverks-IP-en [6]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilket av følgende elementer er et eksempel på kritisk informasjon som metadata i et bilde eller dokument kan inneholde, og som kan avsløre geografisk plassering av etterforskeren?",
+      "choices": [
+        "Operativsystemets versjon.",
+        "Tidssonen.",
+        "GPS-koordinater.",
+        "Installerte fonter.",
+        "Nettleserens fingeravtrykk."
+      ],
+      "correctIndex": 2,
+      "explanation": "GPS-koordinatene, datoer og enhetsdetaljer i bildemetadata er en gullgruve, da de 'could even pinpoint you in geographical space with GPS' [7]. Metadata kan også avsløre tidspunktet for etterforskningen og maskinen som ble brukt [7, 8]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva innebærer 'Null-Kontakt Politikken' (Zero-Contact Policy) for en OSINT-søkeprofil?",
+      "choices": [
+        "Å kun poste generisk innhold for å holde profilen levende.",
+        "Å aldri logge inn på profilen fra samme IP-adresse to ganger.",
+        "Å unngå å lagre innsamlet data.",
+        "Forbud mot å legge til venner, like innlegg, kommentere eller tagge målpersoner eller andre profiler.",
+        "Å bruke Tor-nettleseren for all aktivitet."
+      ],
+      "correctIndex": 3,
+      "explanation": "Null-Kontakt Politikken innebærer at man aldri skal interaksjonere direkte med målpersoner, inkludert forbud mot å legge til venner, like innlegg eller kommentere [9]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvorfor skal all VPN-programvare være helt skrudd av under selve opprettelsesprosessen av en anonym profil?",
+      "choices": [
+        "VPN er forbeholdt bruk i høyrisikosaker.",
+        "VPN hindrer deg i å bruke en 4G-ruter.",
+        "VPN blir ofte assosiert med forsøk på å omgå plattformenes sikkerhetssystemer og vil nesten garantert føre til at registreringen blir flagget som mistenkelig.",
+        "VPN reduserer profilenes evne til å bygge en troverdig historikk.",
+        "VPN øker faren for krysskontaminering av data."
+      ],
+      "correctIndex": 2,
+      "explanation": "Bruk av VPN blir ofte assosiert med forsøk på å omgå plattformenes sikkerhetssystemer, og vil 'nesten garantert føre til at registreringsforsøket blir flagget som mistenkelig' [6]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilke to nettbaserte verktøy nevnes spesifikt i kildene som kan brukes før et oppdrag for å sjekke hvor unikt ditt digitale fingeravtrykk (browser fingerprint) er?",
+      "choices": [
+        "ExifTool og MAT2.",
+        "Gmail og Proton.",
+        "amiunique.org og coveryourtracks.eff.org.",
+        "GDPR og CCPA.",
+        "Firefox og Chrome."
+      ],
+      "correctIndex": 2,
+      "explanation": "Før oppdrag kan man sjekke verktøyene https://amiunique.org og https://coveryourtracks.eff.org/ for å vurdere hvor unik man er [10]."
+    },
+    {
+      "id": "q8",
+      "text": "Hva er den primære fordelen med å bruke en virtuell maskin (VM) eller isolerte systemer for OSINT-arbeid?",
+      "choices": [
+        "Det gjør det enklere å dele sensitive data med klienter.",
+        "Det reduserer behovet for sterke passord.",
+        "Det tillater direkte interaksjon med målpersoner uten risiko.",
+        "Det skaper et ekstra lag med fjerning og sikkerhet, og bidrar til å forhindre krysskontaminering mellom personlig og tjenstlig liv.",
+        "Det garanterer at ingen metadata blir liggende igjen i skjermdumper."
+      ],
+      "correctIndex": 3,
+      "explanation": "Bruk av VM-er eller isolerte systemer gir et ekstra lag med sikkerhet (layer of remove) [11] og bidrar til å forhindre krysskontaminering (cross-contamination) mellom personlige og etterforskningsmessige liv [12, 13]."
+    },
+    {
+      "id": "q9",
+      "text": "Hvilken spesifikk personverninnstilling er obligatorisk å sette til «Only me» i en nyopprettet profil for å forhindre at eventuelle fremtidige, utilsiktede koblinger blir synlige for andre?",
+      "choices": [
+        "Hvem som kan sende deg venneforespørsler (Who can send you friend requests).",
+        "Hvem som kan se dine fremtidige innlegg (Who can see your future posts).",
+        "Hvem som kan se e-postadressen din.",
+        "Vennelisten (Friend List) og Hvem du følger (Following).",
+        "Språket på profilen."
+      ],
+      "correctIndex": 3,
+      "explanation": "Selv om profilen ikke skal ha venner, er det en kritisk forholdsregel å gå til profilsiden og sette både 'Friend List' og 'Following' til 'Only me' [14]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvilket kjent tilfelle fra 2016 brukes i kildene som et eksempel for å illustrere utfordringen med eksponering for avanserte vedvarende trusler (APTs), hvor forskere ble målrettet av sofistikerte spyd-phishing-angrep knyttet til statlig overvåking?",
+      "choices": [
+        "Clearview AI-skandalen i 2020.",
+        "Overvåkingen av aktivister under Den arabiske våren i 2011.",
+        "Phishing-kampanjen rettet mot Citizen Lab-forskere.",
+        "Etterforskningen av en stor idrettsorganisasjon.",
+        "Bruddet på CCPA-reguleringer."
+      ],
+      "correctIndex": 2,
+      "explanation": "Hendelsen fra 2016 der cybersecurity-forskere ved Citizen Lab ble målrettet av sofistikerte spyd-phishing-e-poster, er brukt som eksempel på utfordringen med APTs og eksponering for trusler i OSINT-arbeid [15-17]."
+    }
+  ]
+}
