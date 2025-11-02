@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Reddit",
+  "episodeId": "e029",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er en 'subreddit' på Reddit?",
+      "choices": [
+        "En individuell brukerkonto",
+        "Et spesifikt fellesskap på Reddit dedikert til et bestemt emne eller interesseområde",
+        "En lenke til en ekstern sosial medieplattform",
+        "En spesiell type trofé tildelt brukere",
+        "Et skjult arkiv for slettet innhold"
+      ],
+      "correctIndex": 1,
+      "explanation": "En subreddit er et spesifikt fellesskap på Reddit dedikert til et bestemt emne eller interesseområde, og de utgjør kjernen i Reddits arkitektur [1-3]."
+    },
+    {
+      "id": "q2",
+      "text": "Hva refererer 'Cake Day' til på en Reddit-profil?",
+      "choices": [
+        "Brukerens totale Karma-poeng",
+        "Datoen brukeren sist postet en kommentar",
+        "Datoen da Reddit-profilen ble opprettet",
+        "Antall dager siden brukeren sist fikk et Trofé",
+        "En feiring for moderatorer"
+      ],
+      "correctIndex": 2,
+      "explanation": "'Cake Day' er datoen da Reddit-profilen ble opprettet, som markerer jubileet for brukerens registrering [4-7]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilken registreringsmetode for en ny Reddit-konto anses å være det 'perfekte valget' for å bevare anonymitet?",
+      "choices": [
+        "Bruk av telefonnummer",
+        "Bruk av Google-konto",
+        "Bruk av Apple-konto",
+        "Bruk av e-postadresse",
+        "Bruk av en VPN-tjeneste"
+      ],
+      "correctIndex": 3,
+      "explanation": "Å registrere seg med en e-postadresse er det beste valget for å bevare identiteten anonym, og tillater opprettelse av flere kontoer med samme e-post [8, 9]."
+    },
+    {
+      "id": "q4",
+      "text": "Hva er den grunnleggende funksjonen til oppstemmer (upvotes) og nedstemmer (downvotes) på Reddit?",
+      "choices": [
+        "Å tildele brukere trofeer",
+        "Å bestemme fargen på brukerens avatar",
+        "Å måle en brukers nettverksaktivitet i sanntid",
+        "Å bestemme synligheten av innlegg og diskusjoner",
+        "Å initiere en privat chat"
+      ],
+      "correctIndex": 3,
+      "explanation": "Brukerstemmer avgjør synligheten av innlegg og diskusjoner; oppstemmer øker synligheten, mens nedstemmer reduserer den [8-10]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken Google-søkeoperator er fundamental for 'Google Fu' for å spesifikt søke etter innhold kun på Reddit-domenet?",
+      "choices": [
+        "intext:reddit.com",
+        "author:reddit.com",
+        "inurl:reddit.com",
+        "cache:reddit.com",
+        "site:reddit.com"
+      ],
+      "correctIndex": 4,
+      "explanation": "Ved å bruke operatoren site:reddit.com begrenses søket til kun å inkludere resultater fra Reddit-plattformen [9, 11-13]."
+    },
+    {
+      "id": "q6",
+      "text": "Hva er det vanligvis mest verdifulle området for en OSINT-etterforsker å analysere på en Reddit-brukers profil for å avdekke ufiltrerte meninger og utilsiktet PII (personlig identifiserbar informasjon)?",
+      "choices": [
+        "Trophy Case (Trofékasse)",
+        "Post Karma-oversikten",
+        "Lenkene til andre sosiale medier",
+        "Kommentarhistorikken ('Comments')",
+        "Display Name"
+      ],
+      "correctIndex": 3,
+      "explanation": "Kommentarhistorikken er der gullet ofte ligger, da kommentarer avslører brukerens ufiltrerte meninger, reaksjoner og små, utilsiktede informasjonsbiter (PII) over tid, i motsetning til de ofte mer gjennomtenkte innleggene [11, 14-16]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilken av disse Reddit-spesifikke søkeoperatorene brukes for å søke etter nøkkelord kun innenfor *innholdet* i et innlegg (ikke tittelen)?",
+      "choices": [
+        "site:",
+        "author:",
+        "title:",
+        "selftext:",
+        "subreddit:"
+      ],
+      "correctIndex": 3,
+      "explanation": "Operatoren 'selftext:' brukes til å søke etter nøkkelord spesifikt innenfor postens innhold, som vist i eksempelet 'selftext:OSINT book' [17]."
+    },
+    {
+      "id": "q8",
+      "text": "Hva kan analyse av en brukers 'Karma vs. Account age ratio' (Forholdet mellom Karma og kontots alder) potensielt indikere for en OSINT-etterforsker?",
+      "choices": [
+        "Brukerens bosted",
+        "Brukerens favoritt-subreddit",
+        "At brukeren har verifisert e-postadressen sin",
+        "Potensial for organisert desinformasjon eller stemmemanipulasjon (f.eks. ved bruk av bots)",
+        "Datoen for neste 'Cake Day'"
+      ],
+      "correctIndex": 3,
+      "explanation": "Et høyt Karma-til-kontoralder-forhold kan indikere at poengene ble tilegnet ved hjelp av bots eller andre falske teknikker, ofte som en del av organiserte forsøk på å bygge troverdighet for desinformasjonskampanjer [4, 7]."
+    },
+    {
+      "id": "q9",
+      "text": "Hva er 'Mosaikkeffekten' (Mosaic Effect) slik den manifesterer seg i Reddit OSINT-etterforskning, ifølge kildenes casestudier?",
+      "choices": [
+        "Den automatiske prosessen der Reddit-algoritmen fjerner innhold som mottar for mange nedstemmer.",
+        "Prosessen med å samle små, tilsynelatende ufarlige, urelaterte informasjonsfragmenter (PII) over tid for å bryte ned en brukers anonymitet og avsløre identiteten.",
+        "Teknikken der en bruker oppretter flere 'sock puppet'-kontoer for å manipulere avstemninger.",
+        "Den visuelle effekten av at et profilbilde forstørres ved hjelp av AI-verktøy.",
+        "Kravet om at politi og myndigheter må samle flere rettslige forespørsler for å få utlevert brukerdata."
+      ],
+      "correctIndex": 1,
+      "explanation": "Mosaikkeffekten beskriver hvordan tilsynelatende uskyldige, fragmenterte informasjonsbiter (f.eks. masterstudent ved skole X + spesifikk sertifisering) settes sammen av en etterforsker for å de-anonymisere en bruker. Dette er et sentralt prinsipp i OSINT [11, 18-20]."
+    },
+    {
+      "id": "q10",
+      "text": "Når man bruker den avanserte søkeoperatoren 'site:', hva er den *spesifikke* funksjonelle forskjellen mellom Reddit-søket ('site:authentic8.com') og Google-søket ('site:reddit.com')?",
+      "choices": [
+        "Googles 'site:' begrenser søket til et domene, mens Reddits 'site:' finner innlegg som *inneholder lenker til* det spesifiserte domenet.",
+        "Reddits 'site:' virker bare i private subreddits, mens Googles 'site:' bare virker i offentlige subreddits.",
+        "Googles 'site:' er ment for å finne slettet innhold, mens Reddits 'site:' er for aktive innlegg.",
+        "Reddits 'site:' kan kombineres med 'author:', men Googles 'site:' kan det ikke.",
+        "Det er ingen forskjell; i begge tilfeller søker man etter innhold *innenfor* det spesifiserte domenet."
+      ],
+      "correctIndex": 0,
+      "explanation": "Reddits 'site:'-operator er ulik Googles, da den søker etter innlegg som inneholder *lenker* til det spesifiserte domenet (f.eks. authentic8.com) [21]. Googles 'site:' brukes for å begrense søket til sider innenfor et bestemt domene (f.eks. site:reddit.com) [9, 11]."
+    }
+  ]
+}
