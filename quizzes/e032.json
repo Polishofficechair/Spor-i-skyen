@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: LinkedIn OSINT-teknikker",
+  "episodeId": "e032",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er den primære funksjonen til å aktivere 'Light Mode' (Lysmodus) når man utfører OSINT-etterforskning på LinkedIn?",
+      "choices": [
+        "Sikre klare skjermbilder og forbedre fargenøyaktigheten for utskrift.",
+        "Gjøre profilbildet mer synlig for 3. grads forbindelser.",
+        "Øke hastigheten på plattformen for raskere navigering.",
+        "Aktivere avanserte søkefiltre som 'People You May Know'.",
+        "Gjør profilen din usynlig for Premium-brukere.",
+      ],
+      "correctIndex": 0,
+      "explanation": "Light Mode justerer fargene på skjermen for et lysere utseende, noe som forbedrer klarheten og fargenøyaktigheten, spesielt for skjermbilder og utskrift [1, 2]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilken handling kan brukere med betalt (Premium) konto se at du har utført på profilen deres, med mindre du justerer dine personverninnstillinger?",
+      "choices": [
+        "Liking av et innlegg eller en kommentar.",
+        "Medlemskap i en felles gruppe.",
+        "Visning av deres profil.",
+        "Lagring av deres profilbilde.",
+        "Søking etter deres brukernavn på Google.",
+      ],
+      "correctIndex": 2,
+      "explanation": "Brukere kan se når du ser profilen deres når de har en betalt (Premium) konto. Du kan imidlertid justere personverninnstillingene for å gjøre visningene dine anonyme [3, 4]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilket OSINT-verktøy eller teknikk brukes på profilbilder og bannerbilder for å identifisere andre steder bildet er brukt på internett?",
+      "choices": [
+        "Pivoting-analyse.",
+        "Nettverksinfiltrasjon.",
+        "Omvendt bildesøk (Reverse Image Search).",
+        "Kontaktsynkronisering med Outlook.",
+        "Kartlegging av Ferdighetsanerkjennelser (Endorsements).",
+      ],
+      "correctIndex": 2,
+      "explanation": "Omvendt bildesøk innebærer å lagre bildet fra profilen og bruke en søkemotor for å finne identiske eller lignende bilder andre steder på nettet, noe som kan avsløre andre sosiale kontoer [5-8]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken seksjon på en LinkedIn-profil er kildene gjentatte ganger omtaler som en 'gullgruve' for sensitive personopplysninger som e-postadresser og fødselsdatoer?",
+      "choices": [
+        "Aktivitet (Activity).",
+        "Kontaktinformasjon (Contact Info).",
+        "Utdanning (Education).",
+        "Anbefalinger (Recommendations).",
+        "Grupper (Groups).",
+      ],
+      "correctIndex": 1,
+      "explanation": "Seksjonen for 'Kontaktinformasjon' er en primærkilde for svært sensitive data, da brukere ofte utilsiktet deler personlige e-postadresser, telefonnumre og fødselsdatoer der [9-13]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva innebærer 'pivoting' (pivotering) i en OSINT-etterforskning på LinkedIn?",
+      "choices": [
+        "Å bytte visuell modus fra mørk til lys.",
+        "Å bruke en falsk profil ('sock account').",
+        "Å bruke én spesifikk informasjonsbit (f.eks. et firmanavn) til å avdekke mer informasjon (f.eks. andre ansatte).",
+        "Å skrive en anbefaling til et mål.",
+        "Å slette all aktivitetshistorikk.",
+      ],
+      "correctIndex": 2,
+      "explanation": "Pivoting er prosessen der man tar en spesifikk databit, for eksempel et brukernavn eller et selskapsnavn, for å avdekke dypere informasjon eller identifisere ytterligere kilder relatert til målet [14-16]."
+    },
+    {
+      "id": "q6",
+      "text": "En OSINT-etterforsker ønsker å identifisere året en profil ble opprettet (joined date). Hvilken prosedyre må følges på profilsiden for å finne denne datoen?",
+      "choices": [
+        "Se i profilens URL.",
+        "Gjennomføre et Sales Navigator-søk.",
+        "Klikke på 'mer'-seksjonen på hovedsiden og velge 'om denne profilen'.",
+        "Søke på Google med brukernavnet og søkeordet 'Joined'.",
+        "Sjekke seksjonen for 'Utdanning'.",
+      ],
+      "correctIndex": 2,
+      "explanation": "Man finner året en profil ble opprettet ved å klikke på 'mer'-seksjonen på hovedsiden og deretter velge 'om denne profilen'. Dette gir også datoene for når kontaktinformasjon og profilbilde sist ble oppdatert [17, 18]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvordan kan en OSINT-etterforsker bruke Outlook til å sjekke om en e-postadresse er koblet til en LinkedIn-profil?",
+      "choices": [
+        "Laste opp e-posten i Sales Navigator.",
+        "Søke direkte i LinkedIn-søkelinjen med e-posten i anførselstegn.",
+        "Opprette en ny Outlook-kontakt, klikke på kontakten og deretter på LinkedIn-fanen.",
+        "Kontakte LinkedIn support med e-postadressen.",
+        "Utføre omvendt bildesøk på Outlook-profilbildet.",
+      ],
+      "correctIndex": 2,
+      "explanation": "En metode er å opprette en ny Outlook-kontakt, klikke på kontakten og deretter på LinkedIn-fanen. Hvis e-posten er koblet, vil profilen vises der [3, 4]."
+    },
+    {
+      "id": "q8",
+      "text": "En etterforsker legger merke til at en målpersons gruppetilhørighet inkluderer et 'veteran network'. Hvilken logisk slutning, basert på kildematerialet, er dette en sterk indikasjon på?",
+      "choices": [
+        "At personen er en betalende Premium-bruker.",
+        "At personen jobber innen IT-sikkerhet.",
+        "At personen har militær bakgrunn.",
+        "At personen er en aktiv 'LION' (Open Networker).",
+        "At personen nylig har flyttet geografisk.",
+      ],
+      "correctIndex": 2,
+      "explanation": "Medlemskap i spesifikke grupper, som et 'veteran network', kan avsløre personlige detaljer og tilhørigheter som ikke er nevnt andre steder i profilen, og er en sterk indikasjon på militær bakgrunn [13, 16, 19-21]."
+    },
+    {
+      "id": "q9",
+      "text": "For en etterforsker som kartlegger et mål, hvorfor har 'Anbefalinger' (Recommendations) høyere etterretningsverdi enn 'Ferdighetsanerkjennelser' (Endorsements)?",
+      "choices": [
+        "Anerkjennelser kan brukes til å starte phishing-angrep, mens anbefalinger ikke kan.",
+        "Anbefalinger kan inneholde villedende informasjon (desinformasjon) oftere enn anerkjennelser.",
+        "Anbefalinger gir konkret bevis på et verifiserbart, direkte arbeidsforhold og kan avsløre interne teamstrukturer.",
+        "Anerkjennelser er kun synlige for 1. grads forbindelser.",
+        "Anbefalinger er de eneste elementene som er synlige for 3.+ grads forbindelser.",
+      ],
+      "correctIndex": 2,
+      "explanation": "Anbefalinger er verdifulle fordi de er skriftlige attester som bekrefter arbeidsforhold og ofte spesifiserer relasjonen, for eksempel at de 'worked directly... in the same group', noe som gir verifisert informasjon om nære kolleger [13, 19, 22-24]."
+    },
+    {
+      "id": "q10",
+      "text": "Dersom en etterforsker er en '3.+ grads forbindelse' til målet, hva er det strategiske målet med å koble seg til en 'LION' (LinkedIn Open Networker) eller en annen felles bekjent?",
+      "choices": [
+        "Å få tilgang til målets personlige e-postadresse via 'Kontaktinfo'-fanen.",
+        "Å utløse en 'shadowban' på målets konto.",
+        "Å umiddelbart redusere avstanden for å bli en 2. grads forbindelse, og dermed låse opp mer av målets profildata.",
+        "Å få tilgang til selskapets fortrolige interne dokumenter.",
+        "Å laste ned alle målets private meldinger.",
+      ],
+      "correctIndex": 2,
+      "explanation": "Nettverksbygging med LIONs brukes for å øke sjansen for å få en felles forbindelse med målet. Dette endrer observatørens status fra 3.+ til 2. grad, noe som øker synligheten av profilinformasjonen betraktelig [13, 25-28]."
+    }
+  ]
+}
