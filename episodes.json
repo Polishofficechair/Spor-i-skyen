@@ -107,28 +107,28 @@
   {
     "id": "e016",
     "title": "Arkiv og wayback funksjon",
-    "description": ".",
+    "description": "Episoden beskriver bruken av Internet Archive og spesielt Wayback Machine som et essensielt verktøy innenfor åpne kilder og digital etterforskning. De forklarer at Internet Archive er en ideell organisasjon dedikert til å bevare digital informasjon, og at Wayback Machine tillater brukere å se historiske versjoner av nettsider som er slettet eller endret. Kildene fremhever flere praktiske anvendelser, inkludert gjenfinning av slettet bevismateriale i politisaker, sporing av manipulasjon av offentlige uttalelser, og faktasjekking av historiske påstander. Videre gir tekstene veiledning i avanserte søketeknikker og påpeker viktige begrensninger ved verktøyet, slik som manglende arkivering av dynamisk innhold og tidsforsinkelser i oppdateringer. Oppsummert posisjonerer kildene Wayback Machine som et uunnværlig verktøy for etterforskere og analytikere som trenger tilgang til nettets fortid..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode16.mp3",
     "releaseDate": "2025-12-24T08:00:00Z"
   },
   {
     "id": "e017",
     "title": "Bildesøk",
-    "description": ".",
+    "description": "Episoden gir en oversikt over teknikkene og verktøyene som brukes for omvendt bildesøk, spesielt fokusert på ansiktsgjenkjenning og etterforskning. En kilde forklarer i detalj hvorfor det er viktig å utføre omvendte ansiktssøk for å unngå svindel og identitetstyveri, og den presenterer flere metoder, inkludert bruk av generelle verktøy som Google Images og Microsoft Azure Face API. En annen kilde lister opp en rekke andre søkemotorer og AI-redigeringsverktøy som kan brukes til å manipulere bilder for å forbedre søkeresultatene, som å endre ansiktstrekk eller oppskalere uskarpe bilder. I tillegg presenterer de to siste kildene en visuell flytdiagram for bildeanalyse og en sjekkliste for steganografi, som illustrerer bredden av metoder som brukes for å undersøke og autentisere digitale bilder, inkludert analyse av metadata og skjulte filer. Til sammen belyser kildene både fordelene og begrensningene ved ansiktsgjenkjenningsteknologi.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode17.mp3",
     "releaseDate": "2025-12-29T08:00:00Z"
   },
   {
     "id": "e018",
     "title": "Geolokalisering",
-    "description": "",
+    "description": "mMtodikk for å fastslå et geografisk sted utelukkende basert på visuelle ledetråder i et bilde, inkludert analyse av kjøretøy, arkitektur og veimerking. En sentral komponent i denne analysen er bruken av Google Earth og Street View, hvor kildene fremhever verktøyets funksjoner som 3D-visning og historisk funksjon. Den andre hovedtematikken fokuserer på fysisk lokasjons-OSINT, ofte fra perspektivet til en penetrasjonstester, ved å analysere et måls svakheter – som tilgangspunkter, parkeringsmønstre og utnyttelse av menneskelig atferd ved steder som røykeområder. Gjennomgående vektlegges et analytisk tankesett som dekonstruerer bilder til søkbare datapakker.,",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode18.mp3",
     "releaseDate": "2025-12-31T08:00:00Z"
   },
   {
     "id": "e019",
     "title": "ÅK på person",
-    "description": "",
+    "description": "Et sentralt tema er viktigheten av kritisk verifisering av alle funn, da automatiserte verktøy ofte produserer falske positiver grunnet tekniske feil eller omdirigeringer. Kilden understreker at den mest effektive strategien er å bruke flere verktøy for bredest mulig dekning og deretter kjede sammen informasjon for å bygge en helhetlig og bekreftet profil. ",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode19.mp3",
     "releaseDate": "2026-01-05T08:00:00Z"
   },
@@ -142,105 +142,105 @@
   {
     "id": "e021",
     "title": "Åk på nettside",
-    "description": "",
+    "description": "Episodengir en omfattende oversikt over to hovedtemaer: for det første, de tekniske stegene bak en nettleserforespørsel, fra et tastetrykk til siden er fullstendig rendret, inkludert DNS-oppslag, TCP/IP-kommunikasjon, TLS-håndtrykk og parsing av HTML/CSS. For det andre presenteres en systematisk og etisk metodikk for åpne kilder på nettsteder, med fokus på passiv rekognosering. Kildene understreker viktigheten av å kombinere flere verktøy for å skape et komplett bilde av en organisasjons digitale fotavtrykk.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode21.mp3",
     "releaseDate": "2026-01-12T08:00:00Z"
   },
   {
     "id": "e022",
     "title": "Sosiale medier intro",
-    "description": ".",
+    "description": "Episoden beskriver de spesifikke datapunktene en etterforsker bør registrere fra en sosial medieprofil, inkludert profil-URL, bilde, bio, følgerlister og tidspunkt for siste innlegg. Den omhandler Google Dorking og spesialverktøy (som Maltego og OSINT Industries) for å identifisere og kartlegge skjulte eller falske profiler. I tillegg adresserer kildene nye trusler som deepfake-innhold og algoritmisk manipulasjon, og understreker viktigheten av å bruke etiske og juridiske retningslinjer ved innsamling av informasjon. Det gis også praktiske tips for å skaffe større profilbilder fra ulike plattformer for effektiv omvendt bildesøk..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode22.mp3",
     "releaseDate": "2026-01-14T08:00:00Z"
   },
   {
     "id": "e023",
     "title": "Facebook",
-    "description": "",
+    "description": "Episoden understreker at til tross for økt personvern og fjerning av verktøy som Graph Search, forblir Facebook en uvurderlig datakilde på grunn av sin enorme brukerbase og dybden i brukerdata. Sentrale etterforskningsteknikker som beskrives inkluderer Google Dorking, analyse av Facebook Marketplace for å avdekke lokasjon og økonomi, samt bruken av eksterne verktøy som Maltego. En nøkkelstrategi er å finne en brukers permanente numeriske ID via kildekode, siden denne er uforanderlig og nødvendig for avanserte søk, spesielt når profiler er private, hvilket tvinger etterforskere til å fokusere på taggede bilder og nettverket rundt målpersonen. ",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode23.mp3",
     "releaseDate": "2026-01-19T08:00:00Z"
   },
   {
     "id": "e024",
     "title": "Instagram",
-    "description": "",
+    "description": "Omhandler teknikker spesifikt rettet mot Instagram. Tekstene forklarer hvordan man finner og analyserer informasjon fra Instagram-profiler, inkludert metoder for å håndtere både offentlige og private kontoer ved å pivotere til assosierte profiler. Detaljerte guider dekker strategier for å laste ned digitale artefakter som bilder og videoer i full oppløsning, i tillegg til bruk av eksterne verktøy for å finne en kontoens permanente bruker-ID og identifisere e-poster. Flere kilder diskuterer også hvordan man kan avsløre falske kontoer gjennom omvendt bildesøk og hvordan man bruker søkemotorer som Google for å finne bufret eller slettet innhold utenfor plattformen. I tillegg belyser kildene metoder for å søke etter profiler ved hjelp av telefonnummer og hvordan man analyserer nettverk, tagger og geografisk informasjon for etterforskning.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode24.mp3",
     "releaseDate": "2026-01-21T08:00:00Z"
   },
   {
     "id": "e025",
     "title": "Telegram",
-    "description": "",
+    "description": "Episoden gir en omfattende oversikt over Telegram som plattform, både fra et teknisk og et etterforskningsperspektiv. Flere guider beskriver detaljert hvordan man utfører BRÅK på Telegram-brukere, inkludert metoder for å finne brukernavn, profilinformasjon, telefonnumre og e-postadresser ved bruk av tredjepartsverktøy og Google Dorks. Kildene understreker at til tross for Telegrams fokus på personvern, utgjør offentlige grupper og kanaler en rik kilde for etterretning, spesielt innen bekjempelse av alvorlig kriminalitet som terrorisme og cyberkriminalitet. De norske og engelske tekstene understreker viktigheten av å respektere etiske og juridiske rammer ved innsamling av informasjon.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode25.mp3",
     "releaseDate": "2026-01-26T08:00:00Z"
   },
   {
     "id": "e026",
     "title": "Tiktok",
-    "description": ".",
+    "description": "Omhandler metoder på TikTok, inkludert plattformens tekniske struktur og juridiske rammeverk. Tekstene forklarer hvordan man kan ekstrahere skjult brukerinformasjon som unike ID-numre og nøyaktige opplastingstidspunkter ved hjelp av kildekodeanalyse og avanserte søketeknikker som Google Dorks. Dokumentene beskriver også TikToks historie, fra den svært usikre forgjengeren Musically til dagens mer låste plattform, og understreker at til tross for økt sikkerhet, er grunnleggende BRÅK som omvendt bildesøk av profilbilder fortsatt effektive. I tillegg gis det en juridisk forklaring på TikTok som informasjonssamfunnstjeneste, detaljer om bruk av TikTok Coins som digital valuta, og veiledning om digital personforfølgelse (stalking) etter norsk rett.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode26.mp3",
     "releaseDate": "2026-01-28T08:00:00Z"
   },
   {
     "id": "e027",
     "title": "Discord",
-    "description": ".",
+    "description": "Episoden er rettet spesifikt mot kommunikasjonsplattformen Discord. Tekstene forklarer Discords arkitektur, som er bygget rundt servere og kanaler, og understreker plattformens verdi for etterforskning på grunn av det store antallet brukere og den uformelle kommunikasjonsstilen. Flere kilder beskriver detaljerte metoder for informasjonsinnhenting, inkludert bruk av Discords innebygde søkeoperatorer, Google dorking for å finne skjulte servere, og analyse av brukerprofiler for å avdekke tilknyttede kontoer, kallenavn og medlemskap i felles servere. Kildene diskuterer også hvordan man kan identifisere brukere av interesse ved å kartlegge deres samfunnsøkosystemer og servere basert på geografisk plassering eller nisjeinteresser.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode27.mp3",
     "releaseDate": "2026-02-02T08:00:00Z"
   },
   {
     "id": "e028",
     "title": "Snapchat",
-    "description": ".",
+    "description": "Episoden omhandler etterforskning på Snapchat, og gir detaljerte metoder for å finne informasjon om brukere og innhold. Tekstene forklarer hvordan man kan søke etter Snapchat-kontoer ved hjelp av brukernavn, telefonnumre eller synkroniserte kontakter, og understreker at appens innebygde søkefunksjoner er begrensede. En betydelig del av materialet beskriver bruken av Snapchat Map og Stories for å samle inn geolokalisert innhold og hvordan man kan lagre flyktige Snaps og videoer ved å utnytte nettleserens utviklerverktøy for å hente mediefiler, enten med eller uten grafiske overlegg. Kildene advarer også om personvernrisikoer knyttet til mobilappen, som at brukere blir varslet ved skjermopptak, og foreslår bruk av emulering eller ekstern programvare for å sikre data anonymt.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode28.mp3",
     "releaseDate": "2026-02-04T08:00:00Z"
   },
   {
     "id": "e029",
     "title": "Reddit",
-    "description": ".",
+    "description": "Episoden fremhever Reddit som en gullgruve av offentlig tilgjengelig informasjon på grunn av plattformens enorme brukerbase og den store mengden brukergenerert innhold. De beskriver i detalj både Reddits arkitektur, inkludert subreddits og brukerelementer som Karma og Cake Day, og spesifikke etterforskningsteknikker. Sentrale metoder inkluderer bruken av Google Fu med site:reddit.com for mer effektive søk enn Reddits interne funksjon, samt viktigheten av å analysere en brukers fullstendige innleggs- og kommentarhistorikk for å samle fragmentert informasjon. Flere kilder presenterer en casestudie der kombinasjonen av små, tilsynelatende uskyldige databiter (som utdanning og sertifisering) førte til vellykket de-anonymisering av en bruker, og understreker dermed risikoen ved å dele personlig informasjon på plattformen.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode29.mp3",
     "releaseDate": "2026-02-09T08:00:00Z"
   },
   {
     "id": "e030",
     "title": "X",
-    "description": ".",
+    "description": "BRÅK brukt på plattformen kjent som Twitter eller X. De forklarer hvordan man finner Twitter-kontoer, e-postadresser og telefonnumre ved hjelp av både innebygde søkefunksjoner og eksterne verktøy. En stor del av innholdet beskriver hvordan man utnytter avanserte søkeoperatorer (som from:, to: og geocode:) for å filtrere data, samt viktigheten av profilanalyse (Media, Likes og Replies) for å avdekke personlige detaljer.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode30.mp3",
     "releaseDate": "2026-02-11T08:00:00Z"
   },
   {
     "id": "e031",
     "title": "Whatsapp",
-    "description": ".",
+    "description": "Episoden omhandler folks WhatsApp-kontoer og detaljer, samt hvordan man eksporterer og overfører WhatsApp-chattelogger for etterforskning eller migrering. Den gir detaljerte instruksjoner for å eksportere chatdata fra enheten for bevisformål og veileder om overføring av chatter mellom iOS- og Android-enheter, spesielt i sammenheng med beslaglagte telefoner. De nevner også at en WhatsApp-konto er nødvendig for tilgang og at endringer i profilbilder kan avsløre informasjon om målet, selv om plattformen ikke viser profilvisninger..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode31.mp3",
     "releaseDate": "2026-02-16T08:00:00Z"
   },
   {
     "id": "e032",
     "title": "LinkedIn",
-    "description": ".",
+    "description": "Episoden omhandler hvordan LinkedIn fungerer som et kraftig verktøy for åpen kildekode-etterforskning. Dokumentene beskriver systematisk alle elementer i en profil—fra visuelle spor som profil- og bannerbilder brukt i omvendt bildesøk, til nøkkelinformasjon som brukernavn, kontaktdata og karrierehistorikk—og forklarer deres etterretningsverdi. En sentral tematikk er viktigheten av å analysere nettverk og aktivitet, inkludert grupper og anbefalinger, for å kartlegge profesjonelle bånd og interesser. Flere kilder diskuterer strategiske metoder for å omgå LinkedIns personvernbegrensninger, ofte gjennom bruk av falske profiler og tilkobling til «Lions» (LinkedIn Open Networkers), men advarer samtidig om risikoen for utestengelse dersom man er for aggressiv. Samlet sett understrekes prinsippet om at all informasjon er verdifull og kan brukes som et utgangspunkt for å bygge en helhetlig og detaljert profil av et mål..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode32.mp3",
     "releaseDate": "2026-02-18T08:00:00Z"
   },
   {
     "id": "e033",
     "title": "VK",
-    "description": ".",
+    "description": "Episoden er en guide til å bruke ÅK på det russiske sosiale mediet VKontakte (VK). Den forklarer at VK er et multifunksjonelt knutepunkt som skiller seg fra vestlige plattformer ved å inkludere detaljert brukerinformasjon og være dypt integrert i russisk kultur. Teksten skisserer spesifikke OSINT-teknikker for å finne russiske brukerdetaljer, telefonnumre og e-postadresser fra VK-kontoer, inkludert bruk av avanserte søk (dorking), VKs interne søkefunksjoner, og spesialiserte OSINT-verktøy. Det understrekes at VK er en rik etterretningsskattkiste på grunn av høyt nivå av offentlig delt innhold og plattformens fokus på lokalisering og fellesskapsdynamikk. Metoder for å krysstaste data mot andre sosiale medier som Telegram og Instagram er også nevnt, spesielt for å omgå VKs standardinnstillinger for personvern..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode33.mp3",
     "releaseDate": "2026-02-23T08:00:00Z"
   },
   {
     "id": "e034",
     "title": "Only-fans",
-    "description": "",
+    "description": "Episoden omhandler åpne kilder og politimetoder for å etterforske og innhente bevis fra OnlyFans, en plattform kjent for sitt lukkede, abonnementsbaserte innhold. Instruktørene forklarer hvorfor OnlyFans' interne søkefunksjon er utilstrekkelig på grunn av selskapets forretningsmodell, som tvinger skapere til å promotere seg andre steder. De presenterer detaljerte, operative metoder for å finne OnlyFans-profiler uten brukernavn, inkludert bruk av tredjepartsverktøy som OnlyFinder, Google-dorks, og søk på andre sosiale medier som Reddit. For etterforskere understrekes det juridiske rammeverket, spesielt skillet mellom åpne og betalte kilder, og nødvendigheten av å ha juridisk hjemmel før man abonnerer eller bruker falske identiteter. En sentral instruks er bruk av Hash-verdier for å bevise digital integritet av innhentede bevis i saker som omhandler økonomisk kriminalitet, utpressing og overgrep.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode34.mp3",
     "releaseDate": "2026-02-25T08:00:00Z"
   },
   {
     "id": "e035",
     "title": "Datalekasjer",
-    "description": ".",
+    "description": " Episoden legger spesiell vekt på datainnhenting, rensing, lagring og søk i lekkede databaser og logger. Veiledningen forklarer etiske metoder for å skaffe seg store mengder stjålne data, som for eksempel stealer logs fra Telegram-kanaler, ved hjelp av kommandolinjeverktøy som Ripgrep og Cut. Den understreker viktigheten av sikkerhetstiltak (som bruk av VPN og dedikert maskinvare) og gir praktiske instruksjoner for organisering og spørring av datamengder for etterforskning. Den overordnede hensikten er å utstyre etterforskere med verktøy for å bruke data som allerede er i kriminelles hender til å bekjempe kriminalitet..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode35.mp3",
     "releaseDate": "2026-03-02T08:00:00Z"
   },
@@ -254,42 +254,42 @@
   {
     "id": "e037",
     "title": "IP",
-    "description": ".",
+    "description": "Episoden gir en oversikt over forskjellige aspekter ved IP-adresser og deres bruk innen etterretning og sikkerhet. En kilde beskriver detaljerte metoder og verktøy for å samle informasjon om en IP-adresse, inkludert bruk av Whois, online skannere som Shodan og Censys, og teknikker for å finne den reelle opprinnelses-IP-en bak tjenester som CloudFlare eller Tor ved å utnytte feil i SSL-sertifikater eller DNS-poster. En annen kilde forklarer hvordan banker bruker IP-adresser for sikkerhet, svindeloppdagelse og for å tilrettelegge for elektroniske overføringer, kjent som IPIP-overføringer, samtidig som de må overholde GDPR-prinsippene. Det visuelle materialet presenterer en flytskjema som strukturerer prosessen med å undersøke en IP-adresse, og klassifiserer dens grunnleggende attributter (som IPv4/IPv6 og statisk/dynamisk) og ulike søkemetoder for å identifisere assosiasjoner som spam eller trusselaktører..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode37.mp3",
     "releaseDate": "2026-03-09T08:00:00Z"
   },
   {
     "id": "e038",
     "title": "Epost analyse",
-    "description": ".",
+    "description": "Åpne kilder metoder knyttet til e-postadresser for etterforskning, sikkerhetsanalyse og informasjonsinnhenting. Episoden forklarer at en e-postadresse er en sentral digital identifikator som kan kobles til sosiale medier, datalekkasjer, domeneinformasjon og geografiske bevegelser. Sentrale teknikker inkluderer manuelle søk som «Google Dorking», bruk av funksjoner for glemt passord for å bekrefte kontotilknytning, og analyse av e-posthoder for å avsløre avsenderens IP-adresse og autentisitet via protokoller som SPF og DKIM. Flere kilder beskriver spesifikke kommandolinjeverktøy som theHarvester for innledende innsamling av domeneinformasjon, samt breach-parse og H8mail for å søke i massive, lokale datalekkasjebaser.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode38.mp3",
     "releaseDate": "2026-03-11T08:00:00Z"
   },
   {
     "id": "e039",
     "title": "Crypto",
-    "description": ".",
+    "description": "Cryptovaluta, en spesialisert etterforskningsgren som bruker offentlig tilgjengelig informasjon fra blokkjeder og tilknyttede plattformer for å spore kryptovalutatransaksjoner. Flere kilder forklarer de grunnleggende mekanismene i kryptovaluta, som desentralisering, blokkjeder og pseudonymitet, der brukere forblir anonyme, men deres transaksjoner er offentlig sporbare, noe som er et nøkkelkonsept for etterforskere. Episoden fokuserer på hvordan politiet kan bruke blokkjedeanalyse for å spore finansielle forbrytelser, inkludert detaljer om Bitcoin-transaksjonsmodellen med inputs og outputs og viktigheten av å identifisere skiftadresser for å gruppere adresser. Den omhandler også at det er mulig å hente ut informasjon fra kryptobørser som Binance via e-post eller telefonnummer..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode39.mp3",
     "releaseDate": "2026-03-16T08:00:00Z"
   },
   {
     "id": "e040",
     "title": "Savnede personer",
-    "description": ".",
+    "description": "Episoden presenterer en omfattende introduksjon til BRÅK for å bistå i etterforskninger av savnede personer, særlig rettet mot nybegynnere. Den beskriver hvordan man samler inn innledende data (selektorer) som navn og lokasjon, og gir detaljerte instruksjoner om etterforskningsmetoder, inkludert bruk av Google Dorking for å spore digital tilstedeværelse på sosiale medier som Facebook og X. Videre lister kilden opp spesifikke verktøy for å søke etter brukernavn (WhatsMyName, Maigret), gjette og sjekke e-postadresser (Epieos, osint.industries), utføre visuell analyse av fotografier, og bruke kilder som bruddsdata og Telegram-roboter. Til slutt fremheves BRÅKs rolle som et verdifullt supplement til tradisjonelle etterforskningsteknikker.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode40.mp3",
     "releaseDate": "2026-03-18T08:00:00Z"
   },
   {
     "id": "e041",
     "title": "Darkweb",
-    "description": ".",
+    "description": "Episoden gir en omfattende introduksjon til Dark Web Intelligence (DARKInt), som er etterretningsinnhenting fra det skjulte og krypterte mørke nettet, og hvordan det supplerer informasjon fra åpne kilder. De forklarer det digitale landskapet ved å bruke isfjell-metaforen, der mørkenettet er den dypeste, mest anonyme delen, og understreker at tilgang er den primære forskjellen mellom DARKInt og OSINF. Flere kilder beskriver de spesialiserte teknikkene som brukes i DARKInt, inkludert dataskraping, deanonymisering og kryptovaluta-sporing, og identifiserer politi, etterretning og cybersikkerhet som hovedbrukerne. I tillegg presenterer kildene og en tilhørende video sikkerhetsprotokoller for etterforskere, og anbefaler den mest robuste metoden ved å bruke isolerte virtuelle maskiner (VM) med Whonix Gateway for å tvinge all trafikk gjennom Tor og forhindre IP-lekkasjer, samtidig som de anerkjenner de etiske og juridiske utfordringene knyttet til arbeidet i anonyme nettverk..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode41.mp3",
     "releaseDate": "2026-03-23T08:00:00Z"
   },
   {
     "id": "e042",
     "title": "Analyse",
-    "description": ".",
+    "description": "Episoden fokuserer på de psykologiske faktorene som påvirker informasjonsdeling på nettet, og forklarer hvordan emosjonelle tilstander, gruppepress og ekkokamre får individer til å avsløre sensitiv informasjon. Den anbefaler også bruk av 5W1H-metoden for å systematisk analysere konteksten og motivasjonen bak informasjonslekkasjer i et emosjonelt ladet miljø.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode42.mp3",
     "releaseDate": "2026-03-25T08:00:00Z"
   },
@@ -303,28 +303,28 @@
   {
     "id": "e044",
     "title": "Åk og AI",
-    "description": ".",
+    "description": "Episoden gir et todelt perspektiv på kunstig intelligens og digital etterforskning, hvor den ene fokuserer på automatisering av BRÅK)rapporter ved bruk av ChatGPT og Python. Denne kilden gir steg-for-steg veiledning for å samle inn og analysere data systematisk, inkludert bruk av biblioteker som Pandas og BeautifulSoup for databehandling og visualisering. Den andre kilden fungerer som en detaljert håndbok for å gjenkjenne AI-generert feilinformasjon (deepfakes), og beskriver syv avanserte strategier for etterforskere og journalister. Disse strategiene spenner fra å identifisere anatomiske feil og brudd på fysiske lover, som feilaktig perspektiv og skygger, til å bruke teknisk analyse av pikselmønstre og stole på intuitiv mønstergjenkjenning. Begge tekstene erkjenner den pågående kampen mellom AI-utviklere og detektorer, og foreslår praktiske metoder for å bekjempe feilinformasjon ved å bruke AI for både rapportering og verifisering..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode44.mp3",
     "releaseDate": "2026-04-01T08:00:00Z"
   },
   {
     "id": "e045",
     "title": "Avansert ÅK",
-    "description": ".",
+    "description": "Episoden beskriver metoder for å hente ut spesifikk brukerinformasjon fra nettbaserte plattformer som Duolingo, PayPal og Snapchat ved bruk av en brukers e-postadresse som inngangsverdi, ofte med POSTMAN som verktøy. Det fjerde, mer omfattende dokumentet, gir en detaljert veiledning i bruk av terminalkommandoer som cd, ls, mkdir, rm, Cat, Sed, Cut, Sort, Split, Awk, wc og Ripgrep for å navigere, manipulere, rense og søke i store datasett, med spesifikke hensyn til forskjellene mellom macOS/Linux og Windows-systemer. Samlet sett dekker kildene både praktiske metoder for å avdekke informasjon fra nettjenester og de tekniske ferdighetene som er nødvendige for å behandle store mengder data..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode45.mp3",
     "releaseDate": "2026-04-06T08:00:00Z"
   },
   {
     "id": "e046",
     "title": "ÅK og SQL",
-    "description": ".",
+    "description": "Episoden diskuterer hvordan Structured Query Language (SQL) er et essensielt verktøy for åpne kilder-analytikere i håndtering av store og komplekse datasett. Teksten forklarer at SQL er standardprogrammeringsspråket for å administrere relasjonsdatabaser og er nødvendig for å behandle informasjon innhentet via lovlige prosesser, som for eksempel poster fra kryptovalutabørser eller internettleverandører. Gjennom bruk av SQL kan analytikere organisere, spørre og analysere data for å spore transaksjoner, korrelere IP-logger med lokasjoner, og koble sammen informasjon fra flere kilder for å bygge en komplett profil. Videre presenteres en oversikt over grunnleggende SQL-kommandoer og ti spesifikke SQL-spørringer som er skreddersydd for OSINT-analyse. Til syvende og sist understreker kilden at kunnskap i SQL er avgjørende for effektivitet, nøyaktighet og overholdelse av juridiske krav i etterforskninger..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode46.mp3",
     "releaseDate": "2026-04-08T08:00:00Z"
   },
   {
     "id": "e047",
     "title": "Innhenting fra Tilbyder",
-    "description": ".",
+    "description": "Episoden vider en oversikt over metoder og prosedyrer for digital sporsikring og etterforskning. Teksten beskriver ulike strategier for å skaffe tilgang til arkiver, SPOCit-anmodninger, og pålogging via informasjonskapsler (cookies), samt trinnene for å tilbakestille passord for en rekke populære sosiale medier og kommunikasjonstjenester som Facebook, Gmail, Snapchat, og TikTok. Videre forklares metoden for å sikre innhold og hvordan man anmoder om utlevering av data fra tilbydere som Google og Windows via SPOCit-systemet.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode47.mp3",
     "releaseDate": "2026-04-13T08:00:00Z"
   },
