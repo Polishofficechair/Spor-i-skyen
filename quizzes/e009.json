@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Hunchly Kjernefunksjoner og Metoder",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hvilken nettleser er Hunchly utelukkende bygget for å fungere som et programtillegg for?",
+      "choices": [
+        "Google Chrome",
+        "Mozilla Firefox",
+        "Microsoft Edge",
+        "Safari",
+        "Opera"
+      ],
+      "correctIndex": 0,
+      "explanation": "Hunchly fungerer utelukkende som en utvidelse for Google Chrome og kan ikke brukes i andre nettlesere [1-4]."
+    },
+    {
+      "id": "q2",
+      "text": "Hva er hovedfunksjonen til en 'Selector' i Hunchly-arbeidsflyten?",
+      "choices": [
+        "Å manuelt kategorisere en side med en merkelapp.",
+        "Å automatisk markere og spore forhåndsdefinerte nøkkelord på nettsider",
+        "Å eksportere en ferdig rapport til PDF-format.",
+        "Å tvinge nettleseren inn i mobilmodus.",
+        "Å laste ned videofiler automatisk."
+      ],
+      "correctIndex": 1,
+      "explanation": "Selektorer er nøkkelord eller fraser som Hunchly automatisk søker etter og fremhever på nettsidene som besøkes, for raskt å identifisere relevant informasjon [5-7]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvor lagres all saksdata som Hunchly samler inn som standard?",
+      "choices": [
+        "I en sikker, skybasert lagringstjeneste hos Hunchly.",
+        "På en ekstern, kryptert server.",
+        "Lokalt på etterforskerens egen datamaskin",
+        "På en sentral politiserver.",
+        "Midlertidig i nettleserens hurtigbuffer."
+      ],
+      "correctIndex": 2,
+      "explanation": "All saksdata, inkludert fullstendige nettsider, lagres utelukkende lokalt (offline) på etterforskerens maskin. Dette er et fundamentalt prinsipp for å sikre full kontroll og bevisintegritet [2, 8-10]."
+    },
+    {
+      "id": "q4",
+      "text": "Hva er formålet med 'Tags' (Merkelapper) i Hunchly?",
+      "choices": [
+        "Å fungere som en automatisk søkevarsling.",
+        "Å automatisk hente inn metadata fra bilder.",
+        "Å definere regler for regulære uttrykk (Regex).",
+        "Å manuelt kategorisere og gruppere sider tematisk",
+        "Å sette opp en sjekkliste for etterforskningen."
+      ],
+      "correctIndex": 3,
+      "explanation": "Tagger er manuelle merkelapper du legger på sider (f.eks. 'sosiale medier') for å kategorisere og organisere dataene i saken din [6, 11, 12]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilket av Hunchlys eksportformater gir den teknisk mest nøyaktige og feilfrie kopien av en nettside, som er viktig for bevisintegriteten?",
+      "choices": [
+        "DOCX",
+        "PDF",
+        "CSV",
+        "MHTML",
+        "JSON"
+      ],
+      "correctIndex": 3,
+      "explanation": "MHTML-eksporten er den rå, komplette og teknisk nøyaktige kopien av siden slik Hunchly sikret den, i motsetning til PDF-eksporten som kan inneholde visuelle feil ('artifacts') [13-15]."
+    },
+    {
+      "id": "q6",
+      "text": "Du har lagt til en Regex-velger for å fange telefonnumre på en side du allerede har sikret, men ingen treff vises. Hva er det første du må gjøre for å se treffene?",
+      "choices": [
+        "Justere Regex-mønsteret for å gjøre det bredere.",
+        "Eksportere saken og importere den på nytt.",
+        "Gå til Hunchly Dashboard og slette den gamle velgeren.",
+        "Laste inn eller 'fange' siden på nytt ('capture this page again')",
+        "Deaktivere alle andre aktive Selektorer."
+      ],
+      "correctIndex": 3,
+      "explanation": "Hvis du legger til en Regex-velger (eller en hvilken som helst velger) for en side du allerede har besøkt og sikret, må du laste inn eller 'fange' siden på nytt for at Hunchly skal kjøre det nye mønstersøket mot sidens innhold og vise deg treffene [16, 17]."
+    },
+    {
+      "id": "q7",
+      "text": "Hva er den fundamentale begrensningen som krever at etterforskere må bruke metoder som «Ta et notat» eller mobil-modus for å sikre lange Facebook- og Twitter-tidslinjer?",
+      "choices": [
+        "Hunchly er ikke autorisert til å fange innhold fra sosiale medier.",
+        "Sosiale medier-sider krever manuell pålogging for hvert innlegg.",
+        "Hunchly-databasen er for liten til å lagre lange tidslinjer.",
+        "Plattformene skjuler aktivt eldre innlegg fra sidens kode når du ruller langt ned",
+        "MHTML-formatet støtter ikke dynamisk JavaScript-innhold."
+      ],
+      "correctIndex": 3,
+      "explanation": "Årsaken er en bevisst designfunksjon fra plattformene som aktivt skjuler eldre innlegg fra sidens kode når du ruller langt ned, for å spare ressurser, noe som resulterer i ufullstendige opptak [18-21]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvilken av de to eksporttypene i Hunchly er den *eneste* som kan brukes til å importere eller gjenopprette en sak på en annen maskin?",
+      "choices": [
+        "Rapporter fra Report Builder i DOCX-format.",
+        "Enkelte MHTML-filer.",
+        "Selektiv eksport i CSV-format.",
+        "Selektiv eksport (Selective Export)",
+        "Full sakseksportering (Full Case Export)"
+      ],
+      "correctIndex": 4,
+      "explanation": "En full sakseksportering tar med seg alt innhold og den komplette rådatastrukturen, og er den eneste måten å flytte eller gjenopprette en hel sak på. En selektiv eksport kan ikke brukes til import [22-25]."
+    },
+    {
+      "id": "q9",
+      "text": "Når Maltego Transform 'To Exif Info' kjøres på bilder hentet fra Hunchly, hva er den kritiske forskjellen mellom EXIF-dataen Maltego returnerer, og den EXIF-dataen Hunchly allerede har lagret?",
+      "choices": [
+        "Hunchly lagrer kun GPS-koordinater; Maltego henter kameramodell.",
+        "Maltego henter ut kun nylig oppdatert EXIF; Hunchly henter bare original EXIF.",
+        "Hunchly sikrer tilgjengelig EXIF som *bevis* ved fangsttidspunktet, mens Maltego henter EXIF fra *kildebildet* på internett i sanntid for *berikelse*.",
+        "Hunchly har en dypere inspeksjon og større database for EXIF-verdier enn Maltego.",
+        "Maltego henter kun metadata hvis Hunchly ikke fant noen data ved fangst."
+      ],
+      "correctIndex": 2,
+      "explanation": "Hunchly sikrer EXIF-data som bevis ved fangsttidspunktet (ground truth), mens Maltego-transformen går ut på internett for å hente (fersk) EXIF-data fra kildebildet for ytterligere berikelse [26, 27]."
+    },
+    {
+      "id": "q10",
+      "text": "Hva er det kritiske tekniske kravet som må oppfylles for at Hunchly-transforms skal fungere korrekt ved import av en sak i Maltego?",
+      "choices": [
+        "Hunchly-saken må være eksportert som en Selektiv eksport (Selective Export).",
+        "Etterforskeren må ha Python 2.7 installert på maskinen.",
+        "Hunchly Case-entiteten i Maltego-grafen må ha et navn som er nøyaktig identisk med saksnavnet i Hunchly",
+        "Maltego må være satt til å kun bruke skybaserte Transform-biblioteker.",
+        "Alle Hunchly Transforms må settes til 'Local Transform' i Maltego."
+      ],
+      "correctIndex": 2,
+      "explanation": "Det er kritisk viktig at navnet på Hunchly Case-entiteten i Maltego er helt identisk med navnet på saken i Hunchly, slik at API-et vet nøyaktig hvilken lokal database den skal hente data fra [28-31]."
+    }
+  ]
+}
