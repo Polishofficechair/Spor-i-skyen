@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Innhenting og Behandling av Digitale Opplysninger",
+  "episodeId": "e004",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er det overordnede målet med leksjonen om innhenting av opplysninger fra internett? (Lett)",
+      "choices": [
+        "Å forstå hvordan man legger igjen digitale spor på internett som en motpart kan bruke.",
+        "Å standardisere bruken av tekniske hjelpemidler for passordforsering.",
+        "Å sikre at all grensekryssende innhenting skjer via formelt internasjonalt samarbeid.",
+        "Å definere forskjellen mellom etterforskning og etterretning på nett.",
+        "Å utarbeide en mal for databehandleravtaler med utenlandske leverandører."
+      ],
+      "correctIndex": 0,
+      "explanation": "Målet er å forstå de digitale sporene politiet etterlater og hvordan en motpart kan bruke disse til å bygge profil eller oppdage etterforskning [1, 2]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilket forhold gjør at informasjon *ikke* anses som åpent tilgjengelig, ifølge E-tjenesteloven § 6-2? (Lett)",
+      "choices": [
+        "At det kreves abonnement på en nettavis.",
+        "At tilgang krever aktiv fordekt opptreden eller forsering av passord.",
+        "At det kreves registrering av en bruker på et sosialt medie.",
+        "At informasjonen er publisert i et kommentarfelt på en blogg.",
+        "At informasjonen er tilgjengelig, men kun ment for allmennheten utenfor Norge."
+      ],
+      "correctIndex": 1,
+      "explanation": "Informasjon er ikke åpent tilgjengelig dersom tilgang krever aktiv fordekt opptreden eller forsering av passord eller lignende beskyttelsesmekanismer [3, 4]."
+    },
+    {
+      "id": "q3",
+      "text": "Hva er den primære juridiske hjemmelen politiet benytter for å ransake eller ta beslag i innhold fra en digital nettkonto? (Lett)",
+      "choices": [
+        "E-tjenesteloven § 6-2 (Åpne kilder).",
+        "Politiinstruksen, kapittel 5 (Akutt fare).",
+        "Straffeprosessloven (Strpl.) §205, jf. §203.",
+        "Personopplysningsloven (GDPR) artikkel 6.",
+        "Suverenitetsprinsippet i Folkeretten."
+      ],
+      "correctIndex": 2,
+      "explanation": "Politiet har hjemmel til å ransake/ta beslag i en digital nettkonto på lik linje med fysisk ransaking, hjemlet i Strpl. §205, jf. §203 [2, 5]."
+    },
+    {
+      "id": "q4",
+      "text": "I personvernvurderingen, hvilket av grunnkravene for behandling av opplysninger spør 'Hva skal behandlingen av opplysninger tilføre saken?' (Lett)",
+      "choices": [
+        "Formålsbestemthet.",
+        "Dataminimering.",
+        "Kvalitet.",
+        "Nødvendighet.",
+        "Risikovurdering."
+      ],
+      "correctIndex": 3,
+      "explanation": "Nødvendighet handler om hva behandlingen av opplysninger skal tilføre saken [6, 7]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva er rollen til 'Databehandler' i sammenheng med en databehandleravtale? (Lett)",
+      "choices": [
+        "Parten som bestemmer formålet med behandlingen av personopplysninger.",
+        "Parten som er den registrerte.",
+        "Parten som behandler personopplysninger på vegne av den behandlingsansvarlige.",
+        "Parten som garanterer for overføring til tredjeland.",
+        "Parten som utfører systematisk innsamling og analyse for strategisk beslutningsstøtte."
+      ],
+      "correctIndex": 2,
+      "explanation": "Databehandler er den parten som behandler personopplysninger på vegne av den behandlingsansvarlige [8, 9]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvilket folkerettslig prinsipp utgjør hovedutfordringen ved grensekryssende bevisinnhenting ved bruk av tvangsmidler? (Medium)",
+      "choices": [
+        "Prinsippet om ekstraterritoriell metodebruk.",
+        "Suverenitetsprinsippet.",
+        "Prinsippet om formålsbestemthet.",
+        "Effektivitetshensynet.",
+        "De minimis-terskelen."
+      ],
+      "correctIndex": 1,
+      "explanation": "Hovedutfordringen er suverenitetsprinsippet, som forbyr enhver stat å anvende tvangsmidler på en annen stats territorium uten samtykke [10, 11]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilke to hovedområder må det skilles mellom når politiet gjennomfører en risikovurdering ved bruk av skarpe data? (Medium)",
+      "choices": [
+        "Risiko knyttet til fysisk utstyr og risiko knyttet til programvare.",
+        "Risiko knyttet til Formålsbestemthet og risiko knyttet til Nødvendighet.",
+        "Risiko knyttet til selve verktøyet/leverandøren og risiko knyttet til vår egen bruk av verktøyet/leverandøren.",
+        "Risiko knyttet til Kripos og risiko knyttet til Politiets distrikter.",
+        "Risiko knyttet til åpen kilde og risiko knyttet til lukket kilde."
+      ],
+      "correctIndex": 2,
+      "explanation": "Man må skille mellom risiko knyttet til selve verktøyet/leverandøren og risiko knyttet til politiets egen bruk av verktøyet [8, 12]."
+    },
+    {
+      "id": "q8",
+      "text": "Hva er hensikten med 'de minimis'-terskelen i folkerettslig sammenheng knyttet til digital etterforskning? (Medium)",
+      "choices": [
+        "Å kreve formelt internasjonalt samarbeid for alle tiltak over en viss finansiell verdi.",
+        "Å fastslå at digitale spor alltid regnes som en suverenitetskrenkelse uansett omfang.",
+        "Å sikre at bevisinnhenting kun skjer i kjent og samarbeidende jurisdiksjon.",
+        "Et unntak der handlinger har så liten og ubetydelig tilknytning til en annen stat at de ikke regnes som suverenitetskrenkelse.",
+        "En regel som kun gjelder når bevisinnhentingen krever bruk av passordforsering."
+      ],
+      "correctIndex": 3,
+      "explanation": "De minimis-terskelen er et unntak for å unngå at enhver digital handling på tvers av landegrenser blir en komplisert internasjonal affære, ved at ubetydelige handlinger ikke utgjør en krenkelse [11, 13]."
+    },
+    {
+      "id": "q9",
+      "text": "Hvilket av disse konkrete eksemplene på informasjonsinnhenting på nett er nevnt i kildene som et tiltak der politiet 'sannsynligvis ja' kan foreta seg? (Vanskelig)",
+      "choices": [
+        "Aktiv interaksjon med en bestemt person over tid og systematisk.",
+        "Innhenting av data mot et privat område uten samtykke.",
+        "Melde seg inn i en Telegram-gruppe med 30 personer (Kanskje).",
+        "Følge en Instagram-profil med 3000 følgere.",
+        "Bruk av tekniske hjelpemidler for å bryte seg inn med passord."
+      ],
+      "correctIndex": 3,
+      "explanation": "Kildene oppgir at det sannsynligvis er OK å følge en Instagram-profil med 3000 følgere, mens for eksempel å melde seg inn i en Telegram-gruppe med 30 personer rangeres som 'Kanskje' [14]."
+    },
+    {
+      "id": "q10",
+      "text": "I 'Tidal-saken' (HR-2019-610-A) konkluderte Høyesterett med at tiltaket ikke var en suverenitetskrenkelse. Hvilket sentralt moment ble vektlagt i rettens konkrete helhetsvurdering? (Vanskelig)",
+      "choices": [
+        "At effektivitetshensyn alltid overstyrer suverenitetsprinsippet i hastesaker.",
+        "At dataene var kryptert, men politiet fikk tilgang via et dedikert SIM-kort.",
+        "At tiltaket var rettet mot et norsk selskap med kontor i Norge.",
+        "At 'de minimis'-terskelen alltid gjelder for nedlasting av data.",
+        "At politiet hadde innhentet formelt samtykke fra den utenlandske databehandleren."
+      ],
+      "correctIndex": 2,
+      "explanation": "Høyesterett foretok en konkret helhetsvurdering, og vektla blant annet at tiltaket var rettet mot et norsk selskap med kontor i Norge, selv om dataene lå på en utenlandsk server [7, 15, 16]."
+    }
+  ]
+}
