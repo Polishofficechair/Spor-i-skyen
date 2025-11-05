@@ -1,0 +1,137 @@
+
+{
+  "title": "Quiz: Avansert Dorking og OSINT-teknikker",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hvilken søkeoperator begrenser et Google Dork-søk til resultater fra ett spesifikt domene eller nettsted?",
+      "choices": [
+        "site:",
+        "filetype:",
+        "intext:",
+        "intitle:",
+        "cache:"
+      ],
+      "correctIndex": 0,
+      "explanation": "Operatoren `site:` er designet for å begrense søket til et enkelt domene, for eksempel `site:reddit.com` [1-4]."
+    },
+    {
+      "id": "q2",
+      "text": "Hva er den primære effekten av å omslutte en søkefrase med anførselstegn (\"\") i Google Dorking?",
+      "choices": [
+        "Det tvinger søkemotoren til å søke etter nøyaktig den spesifiserte ordsekvensen.",
+        "Det fjerner alle resultater som inneholder frasen.",
+        "Det gjør frasen til et jokertegn (*) for å finne ukjente ord.",
+        "Det sikrer at søkeordene kun finnes i sidens URL-adresse.",
+        "Det utvider søket ved å inkludere synonymer og relaterte termer."
+      ],
+      "correctIndex": 0,
+      "explanation": "Anførselstegn (`\" \"`) brukes for å tvinge søkemotoren til å finne en eksakt frase i den spesifiserte rekkefølgen, noe som gir mer presise resultater [1, 5-7]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilken operator brukes for å fjerne spesifikke ord eller nettsteder fra søkeresultatene for å redusere støy?",
+      "choices": [
+        "Jokertegnet (`*`)",
+        "Pluss-tegnet (`+`)",
+        "Minustegnet (`-`)",
+        "OR-operatoren",
+        "AND-operatoren"
+      ],
+      "correctIndex": 2,
+      "explanation": "Minustegnet (`-`) plasseres foran et ord eller en operator for å ekskludere resultater som inneholder den spesifiserte termen, som i `site:tesla.com -www` [1, 8-10]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken søkemotor anbefales som standard for de fleste OSINT-oppgaver rettet mot vestlige mål, ifølge kildematerialet?",
+      "choices": [
+        "DuckDuckGo (på grunn av personvernfokus)",
+        "Yandex (på grunn av overlegen bildesøk)",
+        "Google (på grunn av nøyaktighet og omfattende resultater)",
+        "Baidu (på grunn av stor markedsandel)",
+        "Bing (på grunn av mindre restriktiv filtrering)"
+      ],
+      "correctIndex": 2,
+      "explanation": "Google anbefales som standard søkemotor for vestlige mål på grunn av overlegen nøyaktighet og de mest omfattende resultatene sammenlignet med alternativer som DuckDuckGo eller Bing [11-14]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken av de følgende filtypene er et vanlig mål for å finne lekkede PII-dokumenter ved hjelp av `filetype:`-operatoren?",
+      "choices": [
+        "JSON-filer",
+        "XLSX-filer (Excel-regneark)",
+        "HTML-filer",
+        "TXT-filer",
+        "GIF-filer"
+      ],
+      "correctIndex": 1,
+      "explanation": "Vanlige filtyper som brukes for å finne potensielt sensitiv informasjon, som regneark, er XLSX, PDF og DOCX [1, 8, 15, 16]."
+    },
+    {
+      "id": "q6",
+      "text": "Hva er den mest effektive Dork-strengen for å finne Excel-regneark som inneholder ordet 'personnummer' på et domene kalt 'kommunenavn.no'?",
+      "choices": [
+        "intitle:personnummer OR site:kommunenavn.no filetype:xlsx",
+        "site:kommunenavn.no filetype:xlsx 'personnummer'",
+        "filetype:xlsx site:kommunenavn.no intitle:regnskap",
+        "inurl:xlsx kommunenavn.no personnummer",
+        "cache:kommunenavn.no filetype:xlsx"
+      ],
+      "correctIndex": 1,
+      "explanation": "Den mest presise kombinasjonen bruker `site:` for å begrense domenet, `filetype:xlsx` for filtypen, og anførselstegn eller søkeordet 'personnummer' for innholdet [17, 18]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvis du leter etter en spesifikk wallet-adresse koblet til 'Ola Nordmann' i foruminnlegg, hvilken operatør sikrer at ordet 'wallet' dukker opp i selve innholdet på siden, i stedet for bare i URL-en eller tittelen?",
+      "choices": [
+        "inurl:",
+        "intitle:",
+        "site:",
+        "intext:",
+        "cache:"
+      ],
+      "correctIndex": 3,
+      "explanation": "Operatoren `intext:` søker spesifikt etter et ord eller en frase i brødteksten på en nettside, noe som er ideelt for å finne spesifikke referanser eller diskusjoner i foruminnlegg [18-21]."
+    },
+    {
+      "id": "q8",
+      "text": "I Google Dorking-prosedyren, når er det et krav å starte kontinuerlig skjermopptak (video)?",
+      "choices": [
+        "Før du starter den formelle loggen.",
+        "Etter at filen er sikret med Hash-verifisering.",
+        "Før du trykker Enter etter å ha limt inn Dork-strengen.",
+        "Før du setter opp det isolerte miljøet.",
+        "Kun når funnet krever innlogging."
+      ],
+      "correctIndex": 2,
+      "explanation": "For å sikre søkets integritet og dokumentasjon må kontinuerlig skjermopptak startes *før* man trykker Enter på den fullstendige Dork-strengen [22-24]."
+    },
+    {
+      "id": "q9",
+      "text": "Hva er det juridisk-operative skillet ('Kilde-stopp') en etterforsker MÅ respektere hvis et Dork-søk avdekker en åpenbart feilkonfigurert serverkatalog med sensitive, konfidensielle filer?",
+      "choices": [
+        "Laste ned de sensitive filene umiddelbart for å sikre beviset, og deretter hashe dem.",
+        "Stoppe aksjonen umiddelbart, dokumentere at feilen eksisterer (URL/tittel), men ikke laste ned innholdet, og rapportere for beslag/ransaking.",
+        "Bruke en annen søkemotor for å se om de samme filene er indeksert der.",
+        "Logge inn på den feilkonfigurerte serveren for å varsle administratoren.",
+        "Fortsette søket på samme serverkatalog, men kun for å finne filer uten sensitivt innhold."
+      ],
+      "correctIndex": 1,
+      "explanation": "Du skal dokumentere at feilen eksisterer (URL/tittel), men ikke utnytte sårbarheten ved å laste ned konfidensielt innhold. Dette skiller lovlig bruk av åpne kilder fra ulovlig tilgang/tilegnelse, og krever rapportering til påtalemyndigheten [24-27]."
+    },
+    {
+      "id": "q10",
+      "text": "Hva er den ultimate hensikten med å generere og loggføre SHA-256 hash-verdien for en fil umiddelbart etter at den er sikret i en Dork-operasjon?",
+      "choices": [
+        "Å bevise at etterforskeren brukte inkognito-modus under søket.",
+        "Å sikre filens juridiske holdbarhet ved å bevise at den er uendret siden den ble funnet (kjeden av forvaring).",
+        "Å slette alle metadata fra filen for å beskytte kilden.",
+        "Å redusere filstørrelsen for enklere lagring på den isolerte maskinen.",
+        "Å tidsstemple filen med nøyaktig UTC-tidspunkt."
+      ],
+      "correctIndex": 1,
+      "explanation": "Hash-verdien er avgjørende for bevisets integritet. Den beviser at filen du fant og sikret (åpen kilde) er nøyaktig den samme filen du leverer som bevis, og opprettholder dermed kjeden av forvaring [24, 28, 29]."
+    }
+  ]
+}

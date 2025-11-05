@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er den anbefalte metoden for å finne noens WhatsApp-tilstedeværelse med minimalt med inngangsdata, ifølge kildene?",
+      "choices": [
+        "OSINT (Open Source Intelligence)",
+        "Direkte hacking av WhatsApp-servere",
+        "Bruke WhatsApps innebygde profilvisningsfunksjon",
+        "Kjøpe en rapport fra en privat etterforsker",
+        "Utføre en Sim-Swap uten tilgang til den gamle enheten"
+      ],
+      "correctIndex": 0,
+      "explanation": "OSINT er den riktige måten hvis man ønsker å finne noen på WhatsApp med minimalt med inngangsdata, som for eksempel et telefonnummer eller brukernavn [1]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilken spesifikk type melding vil ikke bli inkludert når en bruker eksporterer en individuell chat eller gruppechat fra WhatsApp?",
+      "choices": [
+        "Talemeldinger",
+        "Eldre meldinger (over ett år gamle)",
+        "Meldinger sendt av administratorer",
+        "Meldinger med valget «vis en gang»",
+        "Alle meldinger som inneholder videoer"
+      ],
+      "correctIndex": 3,
+      "explanation": "Meldinger med valget «vis en gang» vil ikke bli eksportert når chatteloggen eksporteres [2]."
+    },
+    {
+      "id": "q3",
+      "text": "Ifølge kildene, hvilken funksjon tillater WhatsApp brukere å utføre?",
+      "choices": [
+        "Kun å sende tekstmeldinger",
+        "Sende tekstmeldinger, talemeldinger, tale- og videosamtaler, samt dele bilder og dokumenter",
+        "Kun anonymiserte chats med kryptering",
+        "Se hvem som har sett profilen deres",
+        "Logge seg inn kun ved hjelp av en e-postadresse"
+      ],
+      "correctIndex": 1,
+      "explanation": "WhatsApp er en meldingsapp som lar brukere sende tekstmeldinger, talemeldinger, foreta tale- og videosamtaler, og dele bilder og dokumenter [3]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken type enhet anbefales for politiet å installere WhatsApp på for å sjekke målpersonens profilbilde?",
+      "choices": [
+        "En tjenestetelefon med det offisielle tjenestenummeret",
+        "Målpersonens beslaglagte telefon",
+        "En eldre fasttelefon",
+        "En 'burner phone' (reservetelefon)",
+        "En stasjonær datamaskin med WhatsApp Web"
+      ],
+      "correctIndex": 3,
+      "explanation": "Det anbefales å installere WhatsApp på en 'burner phone' for å sjekke profilbildet som målpersonen bruker [4]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken av disse er nevnt som en legitim og rettferdiggjort grunn til å søke etter noens WhatsApp-konto gjennom OSINT?",
+      "choices": [
+        "Sjekke personens bankhistorikk",
+        "Utføre media- eller private undersøkelser (Investigations)",
+        "Å stjele personens identitet",
+        "Å endre personens personverninnstillinger",
+        "Å kjøpe aksjer i WhatsApp"
+      ],
+      "correctIndex": 1,
+      "explanation": "Legitime grunner inkluderer å gjennomføre undersøkelser (Conducting Investigations) for å samle bevis eller rapportere til myndighetene [5]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvilken avansert søkeoperatør anbefaler kildene å bruke sammen med Google for å søke etter spesifikk WhatsApp-informasjon innenfor et begrenset nettsted (f.eks. LinkedIn)?",
+      "choices": [
+        "inurl:",
+        "cache:",
+        "intitle:",
+        "site:",
+        "filetype:"
+      ],
+      "correctIndex": 3,
+      "explanation": "Man anbefaler å bruke avanserte operatorer som `site:` for å søke innenfor et spesifikt nettsted [6, 7]."
+    },
+    {
+      "id": "q7",
+      "text": "Hva er et absolutt krav knyttet til telefonnummeret når man skal overføre chatter fra en beslaglagt iPhone til en ny tjenestetelefon (Android/iPhone)?",
+      "choices": [
+        "Overføringen krever at man får et helt nytt telefonnummer tildelt av politiet.",
+        "Det er ikke mulig å overføre chatteloggen via kabel uten å endre telefonnummeret.",
+        "Man må bruke samme telefonnummer på den nye enheten som ble brukt på den gamle enheten.",
+        "Telefonnummeret må endres på tjenestetelefonen etter overføring, men før aktivering.",
+        "Det er bare mulig å overføre til et nummer som er registrert i et annet land."
+      ],
+      "correctIndex": 2,
+      "explanation": "Det er ikke mulig å overføre chattene dine til et nytt telefonnummer som er forskjellig fra det originale telefonnummeret [8]. Man må bruke samme nummer på den nye telefonen som den gamle [9]."
+    },
+    {
+      "id": "q8",
+      "text": "Når man eksporterer en WhatsApp-chatteloggen, blir resultatet eksportert som en ZIP-fil. Hva blir formatet på selve chatteloggen inne i denne ZIP-filen?",
+      "choices": [
+        "En PDF-fil",
+        "En Excel-regneark",
+        "En tekstfil (.txt)",
+        "En kryptert binærfil",
+        "En JSON-struktur"
+      ],
+      "correctIndex": 2,
+      "explanation": "Chattloggen vil bli eksportert som en ZIP-fil. Resultatene blir en tekstfil [2]."
+    },
+    {
+      "id": "q9",
+      "text": "Hva er en sentral begrensning knyttet til gjenoppretting av chatteloggen når man overfører fra iPhone til Android, spesifikt angående aktivering av WhatsApp på den nye enheten?",
+      "choices": [
+        "Gjenoppretting må gjøres via iCloud, ikke kabel, for å bevare alle data.",
+        "Du kan bare gjenopprette chattene etter at du har startet nye samtaler på Android-enheten.",
+        "Gjenoppretting må skje før du har aktivert WhatsApp på den nye Android-enheten din, og sammenslåing av nye og gamle chatter er ikke mulig.",
+        "Den gamle enheten sletter automatisk dataene rett etter overføring, uavhengig av aktivering.",
+        "Denne overføringsmetoden er utelukkende for WhatsApp Business."
+      ],
+      "correctIndex": 2,
+      "explanation": "Du kan bare gjenopprette chattene dine før du har aktivert WhatsApp på den nye Android-enheten. Hvis du vil gjenopprette de gamle chattene dine, må du først avinstallere WhatsApp på den nye enheten din. Du kan ikke slå sammen nye chatter fra den nye telefonen og gamle chatter fra den gamle telefonen [10]."
+    },
+    {
+      "id": "q10",
+      "text": "Hva skjer med de overførte chatteloggedataene når overføringen foregår via kabel mellom to enheter (f.eks. iPhone til iPhone eller iPhone til Android)?",
+      "choices": [
+        "Dataene sendes automatisk til Google Drive, selv om brukeren ikke har aktivert sikkerhetskopiering.",
+        "Dataene går direkte til skyen (f.eks. iCloud eller Google Drive) uten unntak.",
+        "WhatsApp lagrer en kryptert kopi av dataene på sine egne servere i 24 timer.",
+        "Overførte data går ikke til skylagring med mindre det opprettes en separat sikkerhetskopi.",
+        "Meldingene slettes permanent fra begge enhetene etter overføring."
+      ],
+      "correctIndex": 3,
+      "explanation": "Overføring av chatter via kabel betyr at overførte data ikke går til skylagring [10, 11]. De går kun til skylagring hvis man oppretter en separat sikkerhetskopi (f.eks. iCloud-sikkerhetskopi) [8, 11]."
+    }
+  ]
+}
