@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva betyr forkortelsen BRÅK?",
+      "choices": [
+        "Bare Riktig Åpne Kilder",
+        "Blålys Refleks Åpner Kaos",
+        "Bruk Av Åpne Kilder",
+        "Operative Search and Investigation Techniques",
+        "Bryter Av Åpen Kommunikasjon"
+      ],
+      "correctIndex": 2,
+      "explanation": "OSINT står for 'Open Source Intelligence' og handler om å samle og analysere informasjon som er fritt tilgjengelig for allmennheten [1, 2]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilken informasjon er obligatorisk for å registrere en vanlig individuell brukerkonto på Telegram?",
+      "choices": [
+        "Et unikt brukernavn",
+        "En gyldig e-postadresse",
+        "Et gyldig telefonnummer",
+        "En kobling til en sosial medieprofil",
+        "Et passord for to-trinns bekreftelse"
+      ],
+      "correctIndex": 2,
+      "explanation": "Telegram-kontoer er basert på telefonnummer; man må spesifisere og bekrefte et gyldig mobilnummer ved registrering [3-6]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilken spesifikk Telegram-bruker må man kontakte for å opprette og administrere en ny Telegram-bot?",
+      "choices": [
+        "Telegram Support",
+        "BotManager",
+        "BotFather",
+        "AdminBot",
+        "TeleBot API"
+      ],
+      "correctIndex": 2,
+      "explanation": "Alle kan opprette og administrere Telegram-bots ved hjelp av verktøyet 'BotFather' [7, 8]."
+    },
+    {
+      "id": "q4",
+      "text": "Hva er maksimumsgrensen for antall medlemmer i en 'normal' (grunnleggende) Telegram-gruppe, i motsetning til en 'supergruppe'?",
+      "choices": [
+        "50 medlemmer",
+        "200 medlemmer",
+        "1000 medlemmer",
+        "100 000 medlemmer",
+        "Ubegrenset"
+      ],
+      "correctIndex": 1,
+      "explanation": "En normal (grunnleggende) gruppe kan ha opptil 200 medlemmer, mens en supergruppe kan ha opptil 200 000 medlemmer [9]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva er formålet med 'CommandHandler' i et grunnleggende Python-skript for en Telegram-bot?",
+      "choices": [
+        "Å lagre brukerpreferanser i en database",
+        "Å definere hvilke API-er boten skal integreres med",
+        "Å registrere en funksjon for å svare på en spesifikk kommando (f.eks. /start)",
+        "Å starte botens tilkobling til Telegrams servere",
+        "Å håndtere videresending av meldinger"
+      ],
+      "correctIndex": 2,
+      "explanation": "Dispatcher i botkoden brukes til å registrere CommandHandler, som knytter en kommando (som /start) til en definert funksjon [10, 11]."
+    },
+    {
+      "id": "q6",
+      "text": "I Telegrams 'Sist sett'-funksjon, hvilken av følgende tidsrammer tilsvarer statusen 'Sist sett for lenge siden'?",
+      "choices": [
+        "Mellom 1 sekund og 2-3 dager",
+        "Innenfor de siste 12 timene",
+        "Mellom 6-7 dager og en måned",
+        "Mer enn en måned",
+        "Innenfor den siste uken"
+      ],
+      "correctIndex": 3,
+      "explanation": "Statusen 'Sist sett for lenge siden' vises når brukeren har vært inaktiv i mer enn en måned. Den vises også alltid til blokkerte brukere [12]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilken teknikk eller innstilling i Telegrams personvern kan en bruker aktivere for å skjule sin faktiske IP-adresse fra samtalepartnere under taleanrop?",
+      "choices": [
+        "Aktivere Peer-to-peer (P2P) for alle brukere",
+        "Deaktivere P2P-anrop",
+        "Bare tillate taleanrop fra 'Alle'",
+        "Bruke en 'Hemmelig chat' for å sikre IP-en",
+        "Endre sin sist sett-status til 'Ingen'"
+      ],
+      "correctIndex": 1,
+      "explanation": "Man bør deaktivere P2P-anrop for alle, da P2P kan avsløre IP-en til samtalepartnere. Peer-to-peer kan rutes gjennom Telegram-servere som et alternativ [13-15]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvilken informasjon om en bruker kan en Telegram Bot, i en normal situasjon (uten webapp-integrasjon eller brukerdeling), *ikke* gjenkjenne?",
+      "choices": [
+        "Brukerens ID-nummer",
+        "Brukerens brukernavn (hvis offentlig)",
+        "Brukerens navn (hvis oppgitt)",
+        "Brukerens IP-adresse",
+        "Om brukeren er en bot"
+      ],
+      "correctIndex": 3,
+      "explanation": "I en normal situasjon har ikke boten tilgang til IP-adressen din. Tilgang til IP-adresse skjer kun ved bytte til webapplikasjon inne i boten, hvor Telegram vil varsle brukeren på forhånd [16]."
+    },
+    {
+      "id": "q9",
+      "text": "Når man utfører OSINT, hva er den primære strategiske grunnen til å bruke Telegrams offentlige metadata til å kryssreferere og bekrefte informasjon funnet på andre sosiale medier som LinkedIn eller Facebook?",
+      "choices": [
+        "Telegram fjerner automatisk EXIF-data, noe som gjør informasjonen mer pålitelig.",
+        "Telegram er den eneste sosiale medieplattformen som inneholder offentlige metadata.",
+        "Telegram tillater automatisk nedlasting av alle bilder, uansett personverninnstillinger.",
+        "Metadata fra andre plattformer er generelt kryptert.",
+        "Metadata i Telegram kan kun sees av politimyndigheter."
+      ],
+      "correctIndex": 1,
+      "explanation": "Telegram er den eneste plattformen blant de mest brukte sosiale medienettverkene som inneholder offentlige metadata, noe som gjør det fornuftig å bruke Telegram for å bekrefte informasjon funnet på LinkedIn, Facebook, TikTok og Instagram [17]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvordan kan en OSINT-etterforsker redigere URL-en til en Telegram-kanal for å søke etter innlegg som inneholder et spesifikt søkeord ('searchterm') i kanalens historie?",
+      "choices": [
+        "Legge til '?q=[searchterm]'",
+        "Legge til '?search=[searchterm]'",
+        "Legge til '?filter=keyword:[searchterm]'",
+        "Legge til '?query=[searchterm]'",
+        "Legge til '?find=[searchterm]'"
+      ],
+      "correctIndex": 0,
+      "explanation": "Man kan legge til '?q=[searchterm]' i en kanals URL (uten anførselstegn) for å søke i kanalens innhold, inkludert filnavn [18]."
+    }
+  ]
+}
