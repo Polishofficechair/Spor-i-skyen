@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er den omtrentlige daglige innloggingen (i millioner) for russere på VKontakte (VK)?",
+      "choices": [
+        "10 millioner",
+        "25 millioner",
+        "50 millioner",
+        "100 millioner",
+        "250 millioner"
+      ],
+      "correctIndex": 2,
+      "explanation": "Kilden oppgir at rundt 50 millioner russere logger seg på VK hver eneste dag [1]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilken vestlig plattformfunksjonalitet er nevnt som integrert i VKs multifunksjonalitet, sammen med Facebook, Instagram og YouTube?",
+      "choices": [
+        "LinkedIn for profesjonell nettverksbygging",
+        "Spotify for musikkbiblioteker",
+        "Twitch for direktesendt spill",
+        "Reddit for anonyme diskusjoner",
+        "Netflix for betalt streaming"
+      ],
+      "correctIndex": 1,
+      "explanation": "VKs multifunksjonalitet er beskrevet som en kombinasjon av Facebooks tilkobling, Instagrams fotodeling, YouTubes videoinnhold og Spotifys musikkbibliotek [2]."
+    },
+    {
+      "id": "q3",
+      "text": "Hva er en faktor som gjør VK til et 'etterretningsskattkammer' for OSINT, ifølge kildene?",
+      "choices": [
+        "Plattformen er kun tilgjengelig på russisk",
+        "VK har strengere personvernkontroller enn vestlige plattformer",
+        "VK er det dominerende sosiale nettverket i hele Europa",
+        "Brukere har en tendens til å laste opp livene sine og dele omfattende personlig informasjon (f.eks. arbeidshistorikk, familieforhold)",
+        "Det er obligatorisk å betale for tilgang til profilinformasjon"
+      ],
+      "correctIndex": 3,
+      "explanation": "VK-profiler har en tendens til å være mer detaljerte, og det er vanlig å poste omfattende personlig informasjon, noe som gjør VK til et 'intelligence treasure trove' [1, 3]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken type skrift forventes å dominere innholdet på VK, gitt dens kulturelle integrasjon i Russland?",
+      "choices": [
+        "Latinsk skrift",
+        "Gotisk skrift",
+        "Kyrillisk skrift",
+        "Kinesiske tegn",
+        "Gresk skrift"
+      ],
+      "correctIndex": 2,
+      "explanation": "VK er dypt integrert i russisk kultur, og etterforskere bør forvente mye kyrillisk ('Expect a lot of Cyrillic') [4, 5]."
+    },
+    {
+      "id": "q5",
+      "text": "En konto på VK garanterer nesten utelukkende en tilknytning til hvilken region for OSINT-etterforskere?",
+      "choices": [
+        "Nord-Amerika",
+        "Vest-Europa",
+        "Russland og omkringliggende post-sovjetiske stater",
+        "Sør-Amerika",
+        "Sørøst-Asia"
+      ],
+      "correctIndex": 2,
+      "explanation": "VK er et russisk nettverk, og en konto 'pretty much guarantees a Russian connection', med lite etterretning på subjekter andre steder [5]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvilket spesifikt søkeverktøy eller teknikk brukes for å sjekke om et VK-subjekt har gjenbrukt brukernavnet sitt på vestlige plattformer som Instagram eller Telegram?",
+      "choices": [
+        "VKs innebygde aldersfilter",
+        "Reverse Image Lookup",
+        "Google Dorking",
+        "Python-biblioteket 'vk_api'",
+        "VK Marketplace-søk"
+      ],
+      "correctIndex": 2,
+      "explanation": "En Google Dork (som f.eks. 'site:vk.com [username]') kan avsløre at mange VK-brukere gjenbruker brukernavn på tvers av plattformer [6]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilke to russiskspråklige transaksjonsuttrykk (kjøp/salg) brukes i VK Ads og Marketplace for å finne innlegg som ofte inneholder telefonnumre?",
+      "choices": [
+        "«Привет» (Hei) og «Пожалуйста» (Vennligst)",
+        "«Город» (By) og «Работа» (Jobb)",
+        "«продам» (selge) og «куплю» (kjøpe)",
+        "«Технологии» (Teknologi) og «Дизайн» (Design)",
+        "«Семья» (Familie) og «Друзья» (Venner)"
+      ],
+      "correctIndex": 2,
+      "explanation": "Ved å søke etter transaksjonsuttrykk som 'продам' (selge) eller 'куплю' (kjøpe) i Marketplace, kan etterforskere avdekke telefonnumre [7]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvilken type oppslag er det vanskeligere å finne på VK enn på vestlige plattformer, fordi de ikke er synlige som standardinnstilling for brukere som ikke har delt dem offentlig?",
+      "choices": [
+        "Alma Mater (Utdanningssted)",
+        "Geotaggede bilder",
+        "Gruppemedlemskap",
+        "Telefonnumre",
+        "Arbeidshistorikk"
+      ],
+      "correctIndex": 3,
+      "explanation": "Telefonnumre er ikke offentlig synlige som standardinnstilling på VK, og etterforskere må bruke OSINT-teknikker for å utlede eller lokalisere dem hvis de ikke er delt [8]."
+    },
+    {
+      "id": "q9",
+      "text": "Hvilket kyrillisk søkeord, relatert til generell kommunikasjon, kan brukes av OSINT-etterforskere i gruppediskusjoner for å finne e-postadresser delt av brukere?",
+      "choices": [
+        "«Адрес» (Adresse)",
+        "«Контакт» (Kontakt)",
+        "«Фотография» (Fotografi)",
+        "«Профиль» (Profil)",
+        "«Секрет» (Hemmelighet)"
+      ],
+      "correctIndex": 1,
+      "explanation": "OSINT-etterforskere kan søke i gruppediskusjoner ved hjelp av nøkkelord som 'Электронная почта' (E-post) eller 'Контакт' (kontakt) for å finne e-postadresser [9]."
+    },
+    {
+      "id": "q10",
+      "text": "I motsetning til vestlige plattformer som drives av algoritmer, hvordan beskrives interaksjoner og innhold på VK i kildene?",
+      "choices": [
+        "De er primært hemmelige og lukkede",
+        "De er drevet av betalte annonser",
+        "De er mer samfunnsorienterte (communal) enn algoritmedrevet",
+        "De er strengt begrenset til kun tekstbaserte innlegg",
+        "De er dominert av politiske diskusjoner"
+      ],
+      "correctIndex": 2,
+      "explanation": "Interaksjoner og innhold på VK beskrives som 'more communal than algorithm-driven' ettersom offentlige sider eller fellesskap er den primære metoden for tilkobling [10]."
+    }
+  ]
+}
