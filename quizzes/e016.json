@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e016",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er hovedmålet til Internet Archive, som en ideell organisasjon?",
+      "choices": [
+        "Arkivere alt digitalt innhold for å bevare den digitale arven og dele kunnskap [1, 2]",
+        "Utvikle nye betalingsløsninger for kryptert webinnhold",
+        "Etablere et globalt nettverk for sanntidsarkivering av sosiale medier",
+        "Kun bevare programvare, spill og digitale applikasjoner",
+        "Sikre at alle nettsteder blir arkivert i sanntid"
+      ],
+      "correctIndex": 0,
+      "explanation": "Internet Archive er en ideell organisasjon hvis oppgave er å arkivere alt digitalt innhold for å bevare den digitale arven [1, 2]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilket verktøy er kjernen i Internet Archive for OSINT-profesjonelle for å utføre temporal analyse (tidsanalyse) av nettressurser?",
+      "choices": [
+        "Digital Library",
+        "Software Preservation",
+        "Video & Audio Archives",
+        "Wayback Machine [3-6]",
+        "ExifTool"
+      ],
+      "correctIndex": 3,
+      "explanation": "Wayback Machine er kjernen i Internet Archive og brukes til å utføre temporal analyse av nettressurser, ofte beskrevet som 'Internett-tidsreise' [3-6]."
+    },
+    {
+      "id": "q3",
+      "text": "Hva slags type organisasjon er Internet Archive?",
+      "choices": [
+        "Et statlig forskningsorgan",
+        "En ideell organisasjon (nonprofit organization) [1, 2]",
+        "Et kommersielt arkivfirma",
+        "Et akademisk forlag",
+        "En kryptovaluta-plattform"
+      ],
+      "correctIndex": 1,
+      "explanation": "Internet Archive er definert som en ideell organisasjon (nonprofit organization) [1, 2]."
+    },
+    {
+      "id": "q4",
+      "text": "I hvilket år ble Internet Archive grunnlagt?",
+      "choices": [
+        "1990",
+        "2001",
+        "1996 [1, 2]",
+        "2005",
+        "1989"
+      ],
+      "correctIndex": 2,
+      "explanation": "Internet Archive ble grunnlagt i 1996 [1, 2]."
+    },
+    {
+      "id": "q5",
+      "text": "I OSINT-sammenheng beskrives Internet Archive som en uunnværlig ressurs. Hvordan omtales den for sin funksjon som bevarer historiske webdata?",
+      "choices": [
+        "En global skyportal",
+        "En digital notisblokk",
+        "En DNS-oppslagsdatabase",
+        "Et krypto-valideringssystem",
+        "En tidskapsel av web-økosystemet [7, 8]"
+      ],
+      "correctIndex": 4,
+      "explanation": "Internet Archive beskrives som en tidskapsel av web-økosystemet, og gir tilgang til historiske webdata som ellers er utilgjengelige [7, 8]."
+    },
+    {
+      "id": "q6",
+      "text": "Når OSINT-profesjonelle benytter Wayback Machine, hvilken begrensning knyttet til 'dynamic content' (f.eks. JavaScript-tunge sider) er viktig å vurdere?",
+      "choices": [
+        "Innholdet blir arkivert i sanntid, men kun i tekstformat.",
+        "Innholdet fanges kanskje ikke opp fullt ut, noe som fører til ufullstendige sider [9, 10].",
+        "JavaScript-tunge sider arkiveres kun hvis brukeren betaler en avgift.",
+        "Wayback Machine konverterer dynamisk innhold til PDF-filer før arkivering.",
+        "Problemet er kun relevant for sider som er eldre enn fem år."
+      ],
+      "correctIndex": 1,
+      "explanation": "Dynamisk innhold, som JavaScript-tunge sider, kan ikke fanges opp fullt ut av arkivet, noe som resulterer i ufullstendige eller ufullkomne sider [9, 10]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilket dedikert verktøy har Internet Archive utviklet for å forenkle OSINT-oppgaven med å identifisere modifikasjoner og rettelser ved å fremheve endringer mellom to forskjellige arkiverte versjoner av samme nettside?",
+      "choices": [
+        "Compare-verktøyet [11, 12]",
+        "Metadata Extractor",
+        "The Timeline Tracker",
+        "The Snapshot Viewer",
+        "Digital Forensics Suite"
+      ],
+      "correctIndex": 0,
+      "explanation": "Internet Archive har utviklet et dedikert Compare-verktøy som fremhever endringer mellom to ulike opptak av samme nettside, nyttig for å spore endringer i retningslinjer eller pressemeldinger [11, 12]."
+    },
+    {
+      "id": "q8",
+      "text": "Innen cybersikkerhetsundersøkelser, hvilken spesifikk type historiske data kan sikkerhetsteam hente ut fra Wayback Machine for å forstå hvordan angripere manipulerte et nettsted som har vært utsatt for et brudd?",
+      "choices": [
+        "Sanntids loggtrafikk fra angrepsøyeblikket",
+        "Krypterte passordlister som er arkivert",
+        "Fremtidige trusselsvarsler",
+        "Tidligere, utdaterte innloggingsportaler for kompromitterte nettsteder [13, 14]",
+        "Personopplysninger fra nåværende brukere"
+      ],
+      "correctIndex": 3,
+      "explanation": "Sikkerhetsteam kan hente tidligere, utdaterte innloggingsportaler for nettsteder som er brutt for å forstå hvordan angriperne manipulerte dem [13, 14]."
+    },
+    {
+      "id": "q9",
+      "text": "Ved å bruke den avanserte OSINT-teknikken 'Extract Embedded Metadata', hvilke av følgende er et spesifikt eksempel på skjult metadata som kan trekkes ut fra arkiverte nettsider ved hjelp av verktøy som ExifTool?",
+      "choices": [
+        "Nåværende SEO-rangeringer",
+        "Kopier av personlige e-poster sendt via nettstedet",
+        "Sanntidsposisjonen til nettstedets server",
+        "Eierens nåværende IP-adresse",
+        "Bilde EXIF-data [15, 16]"
+      ],
+      "correctIndex": 4,
+      "explanation": "Eksempler på metadata som kan trekkes ut er bilde EXIF-data, innebygde fillenker og historiske JavaScript-endringer [15, 16]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvis Wayback Machine ikke er tilgjengelig, kan archive.today brukes som et alternativ. Hvilken av de avanserte søkestrukturene som er spesifisert for archive.today brukes for å søke etter en liste over subdomener (subdomains)?",
+      "choices": [
+        "http://example.com/",
+        "http://example.com/*",
+        "*.example.com [17, 18]",
+        "https://archive.is/example.com",
+        "web.archive.org/web/*"
+      ],
+      "correctIndex": 2,
+      "explanation": "For å søke etter en liste over subdomener på archive.today brukes søkestrukturen `*.example.com` [17, 18]."
+    }
+  ]
+}
