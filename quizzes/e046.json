@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er hovedformålet med SQL (Structured Query Language) for en OSINT-analytiker?",
+      "choices": [
+        "Å håndtere og manipulere relasjonsdatabaser.",
+        "Å skrive programmeringslogikk for webapplikasjoner.",
+        "Å kryptere sensitive etterretningsdata.",
+        "Å utføre avansert statistisk analyse.",
+        "Å overvåke nettverkstrafikk i sanntid."
+      ],
+      "correctIndex": 0,
+      "explanation": "SQL er standard programmeringsspråk for å håndtere og manipulere relasjonsdatabaser, og fungerer som ryggraden i mange databasesystemer [1-3]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilken SQL-kommando brukes for å spesifisere hvilke kolonner (datafelt) du ønsker å hente ut fra en database?",
+      "choices": [
+        "SELECT",
+        "FROM",
+        "WHERE",
+        "GROUP BY",
+        "RETRIEVE"
+      ],
+      "correctIndex": 0,
+      "explanation": "SELECT-kommandoen angir nøyaktig hvilke kolonner eller data du vil hente ut fra databasen [4-7]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilken SQL-kommando brukes til å filtrere rader basert på en spesifikk betingelse, for eksempel å finne data for en bestemt bruker-ID før aggregering?",
+      "choices": [
+        "JOIN",
+        "GROUP BY",
+        "WHERE",
+        "HAVING",
+        "FILTER"
+      ],
+      "correctIndex": 2,
+      "explanation": "WHERE-klausulen filtrerer radene i databasen og returnerer kun de som oppfyller en gitt betingelse, slik som WHERE user_id = 'user123' [4, 7-10]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken fordel med SQL sikrer at analytikeren kan redusere sannsynligheten for feil ved databehandling, sammenlignet med manuell gjennomgang?",
+      "choices": [
+        "Effektivitet",
+        "Juridisk etterlevelse",
+        "Datakorrelasjon",
+        "Nøyaktighet",
+        "Mønstergjenkjenning"
+      ],
+      "correctIndex": 3,
+      "explanation": "Nøyaktighet er en sentral fordel; ved å automatisere spørringer reduseres risikoen for menneskelige feil, og resultatene blir konsistente og pålitelige [11-15]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken type datakilder er ofte fokus for OSINT-analytikere som bruker SQL, da dataene ofte er innhentet via rettslige prosesser (legal process returns)?",
+      "choices": [
+        "Sosiale medie-feeder og nyhetsartikler.",
+        "Store regneark uten struktur.",
+        "Data fra kryptobørser, ISP-er og e-posttjenester.",
+        "Manuelle avhørsrapporter.",
+        "Geografiske kartdata."
+      ],
+      "correctIndex": 2,
+      "explanation": "De primære eksemplene på datakilder innhentet via rettslige prosesser inkluderer data fra kryptovalutabørser, Internett-leverandører (ISP-er) og e-posttjenesteleverandører [1, 16-18]."
+    },
+    {
+      "id": "q6",
+      "text": "I SQL-spørringer som innebærer gruppering, hva er den spesifikke rollen til HAVING-klausulen?",
+      "choices": [
+        "Den brukes til å koble to tabeller sammen.",
+        "Den filtrerer individuelle rader før de grupperes.",
+        "Den teller antall unike verdier i en kolonne.",
+        "Den filtrerer grupperte resultater, etter at GROUP BY har opprettet gruppene.",
+        "Den endrer eksisterende data i gruppene."
+      ],
+      "correctIndex": 3,
+      "explanation": "HAVING brukes til å filtrere grupperte resultater og brukes alltid etter GROUP BY, i motsetning til WHERE som filtrerer rader før aggregering [4, 10, 19, 20]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilken logisk operator er essensiell for å spore flyten av kryptovaluta for en konto 'account_abc123', ved å sikre at spørringen henter transaksjoner der kontoen er enten avsender eller mottaker?",
+      "choices": [
+        "AND",
+        "LIKE",
+        "EXCEPT",
+        "NOT",
+        "OR"
+      ],
+      "correctIndex": 4,
+      "explanation": "For å fange opp begge sider av transaksjonen (både inn- og utgående), er OR-operatoren nødvendig i WHERE-klausulen (f.eks. WHERE from_account = 'X' OR to_account = 'X') [21-24]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvilken SQL-kommando brukes for å bygge et helhetlig bilde av en mistenkt ved å koble sammen e-postmetadata og ISP-logger basert på felles IP-adresser?",
+      "choices": [
+        "APPEND",
+        "UNION",
+        "JOIN",
+        "GROUP BY",
+        "SELECT"
+      ],
+      "correctIndex": 2,
+      "explanation": "JOIN-kommandoen er kritisk for datakorrelasjon. Den kombinerer rader fra to eller flere tabeller (f.eks. email_metadata og isp_logs) basert på en felles relatert kolonne, slik som IP-adressen [4, 10, 20, 25-27]."
+    },
+    {
+      "id": "q9",
+      "text": "Når man analyserer innloggingsmønstre på tvers av internettleverandører, brukes spørringen COUNT(DISTINCT isp_name). Hvorfor er bruken av DISTINCT i denne funksjonen avgjørende?",
+      "choices": [
+        "Fordi DISTINCT tvinger databasen til å gruppere resultatene etter bruker-ID.",
+        "Fordi DISTINCT sikrer at kun innlogginger fra europeiske ISP-er telles.",
+        "Fordi uten DISTINCT ville spørringen telt hver eneste innlogging i stedet for hver unike ISP én gang per bruker.",
+        "Fordi DISTINCT hindrer brukere i å logge inn fra mer enn to forskjellige ISP-er.",
+        "Fordi DISTINCT er nødvendig for å bruke HAVING-klausulen etterpå."
+      ],
+      "correctIndex": 2,
+      "explanation": "DISTINCT brukes for å telle antall unike ISP-navn (COUNT(DISTINCT isp_name)), slik at man unngår å telle hver innlogging separat. Uten DISTINCT ville man talt hver gang en bruker logget inn, uavhengig av om ISP-en var den samme [28-31]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvilke tre av de ti grunnleggende SQL-kommandoene er vanligvis IKKE en del av en etterforskers daglige arbeid med bevismateriale, fordi de endrer data?",
+      "choices": [
+        "SELECT, FROM, WHERE",
+        "JOIN, GROUP BY, HAVING",
+        "COUNT, SELECT, FROM",
+        "INSERT, UPDATE, DELETE",
+        "WHERE, JOIN, COUNT"
+      ],
+      "correctIndex": 3,
+      "explanation": "Kommandoene INSERT, UPDATE og DELETE brukes til å endre data. Dette er sterkt frarådet, da man aldri skal endre originalt bevismateriale. Etterforskere bruker primært SELECT, FROM, WHERE, JOIN, GROUP BY, HAVING og COUNT [20, 32-34]."
+    }
+  ]
+}

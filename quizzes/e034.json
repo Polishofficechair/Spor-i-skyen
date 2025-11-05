@@ -1,0 +1,137 @@
+
+{
+  "title": "Quiz: Etterforskning og Søk på OnlyFans",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hvilken prosentandel av inntjeningen, inkludert tips, beholder OnlyFans fra innholdsskapernes inntekter ifølge kildene?",
+      "choices": [
+        "20%",
+        "10%",
+        "30%",
+        "15%",
+        "25%"
+      ],
+      "correctIndex": 0,
+      "explanation": "OnlyFans får 20% av hver dollar innholdsskaperen tjener, inkludert tips [1]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilket spesifikt tredjepartsverktøy kan ifølge kildene brukes til å finne OnlyFans-profiler ved å velge et geografisk område på et kart?",
+      "choices": [
+        "UserSearch",
+        "PimEyes",
+        "FansMetrics",
+        "OnlyFinder",
+        "X-Ray Contact"
+      ],
+      "correctIndex": 3,
+      "explanation": "OnlyFinder har et 'Map'-alternativ som gir et verdenskart hvor man kan velge regioner for å finne skapere som jobber fra det stedet [2]."
+    },
+    {
+      "id": "q3",
+      "text": "I etterforskningssammenheng, hva defineres som 'åpne kilder' når det gjelder OnlyFans?",
+      "choices": [
+        "Metadata som krever rettslig kjennelse",
+        "Lekket innhold funnet på Reddit",
+        "Informasjon som er fritt tilgjengelig uten spesielle restriksjoner eller betaling",
+        "Innhold kjøpt via et politi-godkjent abonnement",
+        "Bruker-ID-en funnet i nettleserens Inspektør-verktøy"
+      ],
+      "correctIndex": 2,
+      "explanation": "Åpne kilder er informasjon som er fritt tilgjengelig for allmennheten uten spesielle restriksjoner eller betaling [3]."
+    },
+    {
+      "id": "q4",
+      "text": "Hva er den viktigste og umiddelbare instruksen etterforskere skal gi til en fornærmet i en sak om seksuell utpressing via plattformen?",
+      "choices": [
+        "Skaffe en rettslig kjennelse for beslag av data",
+        "Umiddelbart slette alle kontoer og meldinger",
+        "Generere en hash-verdi for alt innhold",
+        "Bryte kontakten med utpresseren og ikke slette digitale spor",
+        "Endre brukernavn på alle sosiale medier"
+      ],
+      "correctIndex": 3,
+      "explanation": "Det er avgjørende å instruere den fornærmede om å ikke slette programvare eller kontoer, og å bryte kontakten med utpresseren for å bevare digitale spor [4-6]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken type digitalt verktøy kan brukes for å søke etter OnlyFans-profilbilder og header-bilder basert på ansiktsgjenkjenning?",
+      "choices": [
+        "SingleFile",
+        "OnlyFinder",
+        "PimEyes",
+        "HashCalc",
+        "X-Ray Contact"
+      ],
+      "correctIndex": 2,
+      "explanation": "PimEyes nevnes som den eneste tjenesten (per kildens dato) som indekserer OnlyFans profil- og header-bilder for ansiktsgjenkjenningssøk [7]."
+    },
+    {
+      "id": "q6",
+      "text": "Hva er hovedårsaken til at OnlyFans har begrensede interne søkefunksjoner?",
+      "choices": [
+        "De mangler den nødvendige teknologiske infrastrukturen.",
+        "Det er et lovkrav for å beskytte mindreårige brukere.",
+        "For å tvinge innholdsskaperne til å markedsføre kontoene sine utenfor plattformen (self-promote), og dermed også markedsføre OnlyFans selv.",
+        "Plattformens betalingsmur gjør ekstern indeksering umulig.",
+        "For å beskytte den generelle personvernet til vanlige brukere, ikke skapere."
+      ],
+      "correctIndex": 2,
+      "explanation": "OnlyFans ønsker at skaperne skal 'linke til' og selvpromotere profilen sin i stedet for å stole på at nettstedet gjør det, noe som annonserer OnlyFans sin forretningsmodell [1, 8]."
+    },
+    {
+      "id": "q7",
+      "text": "Når en etterforsker har lovlig tilgang til lukket OnlyFans-innhold og sikrer dette, hvilket element er kritisk for å bevise for retten at den digitale filen ikke er endret siden innhentingen (sikring av bevisets integritet)?",
+      "choices": [
+        "Inkludering av vannmerker på innholdet.",
+        "En skriftlig bekreftelse fra OnlyFans Support.",
+        "En referanse til saksnummeret i filnavnet.",
+        "Generering og loggføring av Hash-verdien (f.eks. SHA-256).",
+        "Bruk av en anonym VPN-tilkobling."
+      ],
+      "correctIndex": 3,
+      "explanation": "Hash-verdien (f.eks. SHA-256) er en unik digital signatur som er essensiell for å bevise at dataen ikke er endret, og er kritisk for kjeden av forvaring ('Chain of Custody') [9-11]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvilken type dokumentasjon er ifølge etterforskningsveiledningen kritisk for å bevise autentisitet og sanntidskontekst når man navigerer inne på en OnlyFans-profil?",
+      "choices": [
+        "Et statisk skjermbilde av profilsiden med klokkeslett.",
+        "Kun JSON-data fra nettleserens Inspektør-verktøy.",
+        "Kontinuerlig skjermopptak (video) som viser navigasjon, full URL og klokkeslett/dato.",
+        "En utskrift av nettleserloggen.",
+        "En kopi av OnlyFans' Tjenestevilkår."
+      ],
+      "correctIndex": 2,
+      "explanation": "Et statisk skjermbilde er ikke nok; det kreves kontinuerlig skjermopptak (video) av navigasjonen, inkludert full URL og klokkeslett, for å bevise at ingenting er manipulert i etterkant og at navigeringen skjer i sanntid [12, 13]."
+    },
+    {
+      "id": "q9",
+      "text": "Hvilken situasjon krever ifølge de juridiske veiledningene en klar juridisk hjemmel og godkjenning fra påtalemyndigheten i Norge før etterforskeren kan fortsette?",
+      "choices": [
+        "Søke på OnlyFans via OnlyFinder.",
+        "Gjøre et Google Dork-søk for å finne en konto.",
+        "Begjære utlevering av metadata (transaksjonslogger) fra OnlyFans.",
+        "Lese en åpen profil uten betalingsmur.",
+        "Instruere fornærmede om å ikke slette kontoer."
+      ],
+      "correctIndex": 2,
+      "explanation": "Begjæring om utlevering av lukkede data som metadata/finansdata fra OnlyFans krever en rettslig kjennelse (tvangsmiddel) [14, 15]. Bruk av falsk identitet for å abonnere krever også hjemmel, men utlevering av data fra tredjepart (selskapet) er den typiske høye terskelen [14, 15]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvordan kan en etterforsker diskret sjekke om en person har en OnlyFans-konto tilknyttet en kjent e-postadresse, og hvilket svar indikerer at kontoen eksisterer?",
+      "choices": [
+        "Gjennom å bruke OnlyFinder for e-postsøk, som bekrefter eksistensen.",
+        "Ved å sende en e-post til support som vil bekrefte eller avkrefte kontoen.",
+        "Ved å bruke e-postadressen under 'Create an Account' på OnlyFans.com, hvor 'Proposal Denied' indikerer at e-posten er i bruk.",
+        "Ved å sjekke om e-postadressen er indeksert av Google Dorks.",
+        "Ved å be den fornærmede om å logge inn med e-posten, som alltid er tillatt i etterforskning."
+      ],
+      "correctIndex": 2,
+      "explanation": "Ved å forsøke å opprette en konto med e-postadressen, vil resultatet enten være 'Successful Account Activation' (fravær av autorisert bruker) eller 'Proposal Denied', hvor sistnevnte bekrefter at en OnlyFans-konto er tilknyttet e-post-ID-en [16]."
+    }
+  ]
+}
