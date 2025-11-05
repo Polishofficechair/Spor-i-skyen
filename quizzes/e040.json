@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hvilken etisk/juridisk forutsetning må være på plass før man starter en OSINT-etterforskning av en savnet person?",
+      "choices": [
+        "Tillatelse må innhentes fra de relevante myndighetene eller en verge.",
+        "Målet må ha en betydelig digitalt fotavtrykk.",
+        "Betaling må gjøres til en leverandør av brudte data (breached data repositories).",
+        "Alle selektorer (selectors) må være fullstendige ved start.",
+        "Alle sosiale medier må sjekkes med Wayback Machine."
+      ],
+      "correctIndex": 0,
+      "explanation": "Det er avgjørende å innhente tillatelse fra de aktuelle myndighetene (som en verge eller et offentlig organ) før man går i gang med etterforskningen, som en del av etisk og juridisk ansvar [1, 2]."
+    },
+    {
+      "id": "q2",
+      "text": "Hva kalles de innledende detaljene man har ved starten av en OSINT-etterforskning for å identifisere målet?",
+      "choices": [
+        "Digitalt fotavtrykk (Digital Footprint)",
+        "Dorking-kommandoer (Dorking Commands)",
+        "Selektorer (Selectors)",
+        "Pivotpunkter (Pivot Points)",
+        "Breached Data"
+      ],
+      "correctIndex": 2,
+      "explanation": "De innledende detaljene som brukes for å identifisere målet i en OSINT-etterforskning kalles 'selectors' [3]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilket sosialt medium er nevnt som utgangspunkt for etterforskninger på grunn av dets enorme brukerbase?",
+      "choices": [
+        "Instagram",
+        "X / Twitter",
+        "Facebook",
+        "TikTok",
+        "LinkedIn"
+      ],
+      "correctIndex": 2,
+      "explanation": "Facebook, med sin enorme brukerbase, er et uvurderlig utgangspunkt og en av de første plattformene man søker på navn eller navn og by [4]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilket av følgende verktøy brukes for å automatisere søket etter brukernavn på tvers av hundrevis av plattformer?",
+      "choices": [
+        "Google Lens",
+        "GeoSpy AI",
+        "Holehe",
+        "Osint.Industries",
+        "HaveIBeenPwned"
+      ],
+      "correctIndex": 3,
+      "explanation": "Osint.industries er et verktøy som hjelper til med å identifisere brukernavn på tvers av mange nettsteder ved å gi lenker til potensielle treff [5]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva er en grunnleggende begrensning ved OSINT-etterforskninger, ifølge kilden?",
+      "choices": [
+        "De kan kun brukes i Storbritannia (UK).",
+        "De løser alle saker ettersom alle har et digitalt fotavtrykk.",
+        "De kan ikke brukes i samarbeid med offentlige etater.",
+        "De er helt avhengige av informasjon som er offentlig tilgjengelig, og ikke alle saker kan løses utelukkende med OSINT.",
+        "De krever alltid betaling med kryptovaluta."
+      ],
+      "correctIndex": 3,
+      "explanation": "OSINT-etterforskninger er helt avhengige av offentlig tilgjengelig informasjon, og mangel på et digitalt fotavtrykk kan bety at saken ikke kan løses rent med OSINT [1, 2]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvilket verktøy er designet for å sjekke om en e-postadresse er knyttet til kontoer på over 120 nettsteder ved å utnytte 'glemt passord'-funksjonen for å hente ut delvis informasjon uten å varsle målet?",
+      "choices": [
+        "Maigret",
+        "GHunt",
+        "Holehe",
+        "SnusBase",
+        "Epieos"
+      ],
+      "correctIndex": 2,
+      "explanation": "Holehe er et CLI-verktøy som bruker 'glemt passord'-funksjonen på over 120 nettsteder for å samle delvis data (som gjenopprettings-e-poster/telefonnumre) uten å varsle personen [6]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvordan kan etterforskere snevre inn resultatene av Google Dorking hvis et søk gir for mange treff?",
+      "choices": [
+        "De bør utelukkende bruke verktøy som WhatsMyName i stedet for Google Dorks.",
+        "De bør kun søke på 'Location' uten 'Name'.",
+        "De bør bruke 'Google Lens' for å filtrere resultatene.",
+        "De bør snevre inn dorkene og starte med de som returnerer minst data, for deretter å jobbe seg tilbake til de bredere søkene.",
+        "De må betale for tilgang til DeHashed."
+      ],
+      "correctIndex": 3,
+      "explanation": "Hvis det er for mange resultater å gjennomgå, bør etterforskere snevre inn dorkene sine og starte med de som returnerer minst data, og jobbe seg bakover til de bredere søkene [7]."
+    },
+    {
+      "id": "q8",
+      "text": "Hva er den primære funksjonen til Instagram i en OSINT-etterforskning av savnede personer, utover vanlig deling av bilder?",
+      "choices": [
+        "Det er det eneste stedet man finner BSSID-er for geolokalisering.",
+        "Det er spesielt nyttig for tidslinjeanalyse (timeline analysis) for å avsløre personens aktiviteter før de forsvant.",
+        "Det gir alltid tilgang til metadata, uansett om kontoen er privat.",
+        "Det er den eneste kilden som tillater bruk av Google Dorks.",
+        "Det fungerer som en primær kilde for brudte data (breached data)."
+      ],
+      "correctIndex": 1,
+      "explanation": "Instagram er nyttig for tidslinjeanalyse, da det kan avsløre en persons aktiviteter i tiden før de forsvant. Imidlertid kan private kontoer hindre fremgang [4]."
+    },
+    {
+      "id": "q9",
+      "text": "Hvilken unik funksjon skiller Maigret fra andre brukernavnsøkeverktøy nevnt i kilden, som WhatsMyName og Sherlock?",
+      "choices": [
+        "Maigret kan kun søke på 5 plattformer.",
+        "Maigret er kun tilgjengelig som en Telegram Bot, ikke via kommandolinjen.",
+        "Maigret kan generere detaljerte rapporter og kan brukes via en Telegram Bot, i tillegg til kommandolinjen.",
+        "Maigret brukes utelukkende for visuell analyse.",
+        "Maigret er det eneste verktøyet som garanterer at alle savnede personer blir funnet."
+      ],
+      "correctIndex": 2,
+      "explanation": "Maigret finner en persons digitale fotavtrykk, søker etter brukernavn og genererer detaljerte rapporter. Det kan brukes enten via kommandolinjen eller via Maigret Telegram Bot [8]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvilket av de nevnte e-post-/telefonnummer-verktøyene har den unike egenskapen å kunne hente ut detaljer fra Google-relaterte data, Google Drive-filer og geolokalisere enheter ved hjelp av BSSID-er?",
+      "choices": [
+        "HaveIBeenPwned",
+        "OSINT.Industries",
+        "GeoSpy AI",
+        "Epieos",
+        "emailGuesser"
+      ],
+      "correctIndex": 3,
+      "explanation": "Epieos er et kraftig verktøy som er designet for å trekke ut informasjon fra Google-relaterte data, inkludert Gaia ID-er, Google Drive-filer og geolokalisering av enheter ved hjelp av BSSID-er [9]."
+    }
+  ]
+}
