@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er Snapchat mest kjent for når det gjelder levetiden til innhold som meldinger, bilder og videoer?",
+      "choices": [
+        "Innholdet lagres permanent på brukerens profil.",
+        "Innholdet forsvinner (fleeting posting) etter å ha blitt sett.",
+        "Innholdet er tilgjengelig i 30 dager før det slettes.",
+        "Innholdet er kun synlig for venner.",
+        "Innholdet krever manuell sletting fra avsender."
+      ],
+      "correctIndex": 1,
+      "explanation": "Snapchat er godt kjent for sin 'fleeting posting' hvor meldinger, bilder og videoer forsvinner etter å ha blitt sett [1]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilket ikon kjennetegner Snapchat-applikasjonen?",
+      "choices": [
+        "En rød fugl.",
+        "Et kamera med blits.",
+        "Et spøkelse.",
+        "En gul trekant.",
+        "En forstørrelsesglass."
+      ],
+      "correctIndex": 2,
+      "explanation": "Snapchat kan gjenkjennes ved ikonet til et spøkelse [2, 3]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilke er de to primære inngangsdataene som oftest brukes for å finne en person på Snapchat, ifølge kildene?",
+      "choices": [
+        "E-postadresse og fullt navn.",
+        "Snap Score og Bitmoji.",
+        "Telefonnummer og brukernavn.",
+        "Bostedsadresse og fødselsdato.",
+        "Sosialt medier-lenke og profilbilde."
+      ],
+      "correctIndex": 2,
+      "explanation": "De to primære inngangskildene for å finne noen på Snapchat er telefonnummer og brukernavn [4]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken funksjon gir Snapchat’s Snap Map brukerne mulighet til å se, forutsatt at den er aktivert av brukeren?",
+      "choices": [
+        "Historiske data om alle slettede snaps.",
+        "Hvor vennene deres befinner seg i sanntid.",
+        "En liste over alle abonnenter i regionen.",
+        "Juridisk informasjon om kontoeieren.",
+        "Globale trender i brukervaner."
+      ],
+      "correctIndex": 1,
+      "explanation": "Snapchat’s Snap Map-funksjon lar brukere se hvor vennene deres befinner seg i sanntid, forutsatt at de har aktivert denne funksjonen [1]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva er konsekvensen når en bruker tar et skjermbilde av en Snap eller Story i Snapchat-mobilappen?",
+      "choices": [
+        "Skjermbildet blir automatisk slettet.",
+        "Ingenting, det er helt anonymt.",
+        "Brukeren som la ut innholdet blir varslet.",
+        "Appen låses i 24 timer.",
+        "Det resulterer i en bot fra Snapchat."
+      ],
+      "correctIndex": 2,
+      "explanation": "Når et skjermbilde tas på en mobil enhet (via emulator eller smarttelefonapp), varsles brukeren hvis innhold kopieres [5-7]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvilken plattform anbefales for å utføre de mest effektive søkene og undersøkelsene på Snapchat?",
+      "choices": [
+        "Nettstedets søkefunksjon.",
+        "Tredjeparts søkemotorer som Google.",
+        "Spesialiserte omvendte oppslagstjenester som Social Catfish.",
+        "Mobilapplikasjonen eller en Android-emulator.",
+        "Ved å kontakte Snapchat Support direkte."
+      ],
+      "correctIndex": 3,
+      "explanation": "Å søke i Snapchat fungerer best i mobilappen, da nettstedet tilbyr få muligheter, og derfor må du bruke en fysisk smarttelefon eller emulator for å gjøre undersøkelser [8-10]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvor lenge kan innhold på Snapchat Live Map eller offentlige Stories maksimalt forventes å være tilgjengelig, basert på Snapchat’s dataoppbevaringspolicy?",
+      "choices": [
+        "Maksimalt 24 timer.",
+        "Maksimalt 30 dager.",
+        "Ikke eldre enn 6 dager.",
+        "Ubeprenset tid hvis innholdet er offentlig.",
+        "Kun 10 sekunder."
+      ],
+      "correctIndex": 2,
+      "explanation": "På grunn av Snapchats dataoppbevaringspolicy kan materialer på kartet og offentlige stories sies å være ikke eldre enn 6 dager [11]."
+    },
+    {
+      "id": "q8",
+      "text": "Ved nedlasting av videoinnhold fra Snap Map via en nettlesers utviklerkonsoll, hvilken endring i URL-en er nødvendig for å se videoen i dens originalt opplastede format (med grafiske overlegg)?",
+      "choices": [
+        "Erstatte `media.mp4` med `clear.mp4`.",
+        "Legge til `?overlay=true` på slutten av URL-en.",
+        "Erstatte `media.mp4` med `embedded.mp4`.",
+        "Erstatte `media.mp4` med `original.mp4`.",
+        "Erstatte `media.mp4` med `source.mp4`."
+      ],
+      "correctIndex": 2,
+      "explanation": "Ved å endre URL-en og erstatte `media.mp4` med `embedded.mp4` er det mulig å se videoen i dens originalt opplastede format (med grafiske overlegg) [11, 12]."
+    },
+    {
+      "id": "q9",
+      "text": "Når en Snap har blitt sett mange ganger, byttes visningsoversikten fra individuelle brukernavn til en enkel teller. Hvor mange visninger må en Snap ha nådd før denne endringen skjer?",
+      "choices": [
+        "10 visninger.",
+        "50 visninger.",
+        "Mer enn 200 visninger.",
+        "1000 visninger.",
+        "Det er alltid en teller, aldri brukernavn."
+      ],
+      "correctIndex": 2,
+      "explanation": "Når en story er sett mer enn 200 ganger, vil det vises en enkel teller i stedet for brukernavn, slik at det ikke fungerer å se hvem som har sett den anonymt [13, 14]."
+    },
+    {
+      "id": "q10",
+      "text": "Hva er den kritiske begrensningen ved å bruke URL-en `snapchat.com/add/Brukernavn` for å bekrefte eksistensen av en Snapchat-profil?",
+      "choices": [
+        "Metoden fungerer kun på Android-enheter.",
+        "Snapchat varsler alltid brukeren om at profilen deres er søkt opp via denne URL-en.",
+        "URL-en viser en side med en Snap Code selv om brukernavnet ikke eksisterer.",
+        "Du kan kun se profilen hvis du er venn med brukeren fra før.",
+        "URL-en kan bare brukes én gang per økt."
+      ],
+      "correctIndex": 2,
+      "explanation": "Du må være forsiktig når du bruker denne metoden, da alle brukernavn som skrives inn etter 'snapchat.com/add/' vil resultere i en side med en Snap Code, og dette garanterer ikke at profilen faktisk eksisterer [15]."
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er den anbefalte metoden hvis man ønsker å finne noen på WhatsApp med minimalt inputdata som kun et telefonnummer eller brukernavn?",
+      "choices": [
+        "Social Engineering",
+        "Brute Force Angrep",
+        "BRÅK-strategier",
+        "Direkte henvendelse til WhatsApp-support",
+        "Sim-Swap uten tilgang til enheten"
+      ],
+      "correctIndex": 2,
+      "explanation": "BRÅK er den riktige metoden for å finne noens tilstedeværelse på WhatsApp med minimalt med informasjon [1]."
+    },
+    {
+      "id": "q2",
+      "text": "Hva er ett av de legitime og berettigede formålene for å søke etter noens WhatsApp-konto ifølge kildene?",
+      "choices": [
+        "Kjøpe ulovlige varer",
+        "Utføre data mining for salg",
+        "Gjenopprette forbindelser",
+        "Spionere på naboer",
+        "Utføre DDoS-angrep"
+      ],
+      "correctIndex": 2,
+      "explanation": "Legitimerte grunner for å slå opp noens WhatsApp inkluderer å gjenopprette forbindelser med mennesker man har mistet kontakten med [2]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilket av disse tekniske stegene er en del av prosedyren for å se om en målperson er i din kontaktliste på WhatsApp?",
+      "choices": [
+        "Logge ut og inn igjen",
+        "Endre personverninnstillingene",
+        "Trykke på «Ny Chat»-knappen",
+        "Skanne en QR-kode",
+        "Koble telefonen til en PC"
+      ],
+      "correctIndex": 2,
+      "explanation": "For å finne noen på WhatsApp via kontaktlisten, må man starte WhatsApp og velge «New Chat»-knappen for å se listen over kontakter som er på WhatsApp [3]."
+    },
+    {
+      "id": "q4",
+      "text": "Hva er et anbefalt operasjonelt sikkerhetstiltak når man sjekker en målpersons profilbilde på WhatsApp?",
+      "choices": [
+        "Bruke VPN",
+        "Deaktivere nettverkstillatelser",
+        "Installere WhatsApp på en 'burner phone'",
+        "Bruke inkognitomodus",
+        "Koble fra internett"
+      ],
+      "correctIndex": 2,
+      "explanation": "Kildene anbefaler å installere WhatsApp på en «burner phone» (engangstelefon) for å sjekke profilbildet, da det er operasjonelle sikkerhetsrisikoer ved bruk av appen [4]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvis chatteloggen eksporteres fra en WhatsApp-enhet (IB: Eksportere brukerinteragert data), hvilken filtype vil ZIP-filen primært inneholde?",
+      "choices": [
+        "PDF-fil",
+        "Bilde-fil (.jpeg)",
+        "Tekstfil",
+        "Databasefil (.db)",
+        "Kryptert binærfil"
+      ],
+      "correctIndex": 2,
+      "explanation": "Chattologgen blir eksportert som en ZIP-fil, og resultatene (innholdet) blir en tekstfil [5]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvilken spesiell Google-søkeoperator anbefales brukt i kombinasjon med søkeord for å fokusere søket innenfor et bestemt nettsted i en OSINT-undersøkelse?",
+      "choices": [
+        "cache:",
+        "filetype:",
+        "site:",
+        "related:",
+        "link:"
+      ],
+      "correctIndex": 2,
+      "explanation": "For å gjøre søkemotorundersøkelser mer fokuserte, anbefales det å bruke avanserte operatorer som «site:» for å søke innenfor et spesifikt nettsted [6, 7]."
+    },
+    {
+      "id": "q7",
+      "text": "Når man overfører chatter fra en beslaglagt iPhone til en ny Android-enhet ved hjelp av kabelmetoden, hva skjer med de overførte dataene i forhold til skylagring?",
+      "choices": [
+        "Dataene blir automatisk sikkerhetskopiert til iCloud",
+        "Dataene blir automatisk sikkerhetskopiert til Google Drive",
+        "Dataene går ikke til skylagring med mindre det opprettes en separat sikkerhetskopi",
+        "WhatsApp lagrer automatisk dataene i sin sentrale sky",
+        "Dataene blir slettet umiddelbart etter overføring"
+      ],
+      "correctIndex": 2,
+      "explanation": "Overføring av chatter via kabel betyr at overførte data ikke går til skylagring (iCloud/Google Drive). Brukeren må manuelt opprette en iCloud-sikkerhetskopi for at dataene skal havne i skyen [8-10]."
+    },
+    {
+      "id": "q8",
+      "text": "Når OSINT-etterforskere utfører en 'superficial check-up' av åpne kilder, hvor kan kontaktinformasjonen til målet være synlig ifølge kildene?",
+      "choices": [
+        "I krypterte meldinger",
+        "I private e-poster",
+        "På en tavle (whiteboard) eller visittkort i bakgrunnen av postede medier",
+        "Kun i direkte meldinger",
+        "I skjulte filer på telefonen"
+      ],
+      "correctIndex": 2,
+      "explanation": "Man bør granske media personen har postet, da kontaktinfo er synlig på en tavle (whiteboard), visittkort eller en telefonskjerm i bakgrunnen [11]."
+    },
+    {
+      "id": "q9",
+      "text": "Hvilke spesifikke typer meldinger vil ikke bli inkludert når man eksporterer en WhatsApp chatteloggen?",
+      "choices": [
+        "Gruppechatter",
+        "Tekstmeldinger",
+        "Meldinger med valget «vis en gang»",
+        "Stemmemeldinger",
+        "Lange meldinger"
+      ],
+      "correctIndex": 2,
+      "explanation": "Meldinger med valget «vis en gang» vil ikke bli eksportert når chatteloggen hentes ut [5]."
+    },
+    {
+      "id": "q10",
+      "text": "Hva er hovedbegrensningen knyttet til telefonnummeret når man forsøker å overføre chatteloggen fra en beslaglagt telefon til en tjenestetelefon?",
+      "choices": [
+        "Overføringen krever et nytt, ubrukt telefonnummer.",
+        "Telefonnummeret må være registrert hos politiet i minst 30 dager.",
+        "Det er ikke mulig å overføre chatter til et nytt telefonnummer som er forskjellig fra originaltelefonens nummer, uten å endre nummeret på den gamle enheten først.",
+        "Begge telefonene må ha forskjellige telefonnumre for å forhindre datakollisjon.",
+        "Det kreves to forskjellige telefonnumre for å aktivere QR-koden."
+      ],
+      "correctIndex": 2,
+      "explanation": "Du må bruke samme telefonnummer. Hvis man overfører til en tjenestetelefon, må kontoen på den beslaglagte enheten endres til tjenestetelefonens nummer FØR overføring [9]."
+    }
+  ]
+}

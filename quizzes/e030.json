@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: OSINT-teknikker og analyse på X (uten verktøy)",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er standard tegngrense for en post på X (tidligere Twitter) for en bruker uten Premium-abonnement?",
+      "choices": [
+        "140 tegn",
+        "200 tegn",
+        "280 tegn",
+        "4 000 tegn",
+        "25 000 tegn"
+      ],
+      "correctIndex": 2,
+      "explanation": "Standard tegngrense for posts (tidligere kalt tweets) på X er 280 tegn [1, 2]. Premium-abonnenter kan publisere lengre innlegg, opptil 25 000 tegn [1]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilken søkeoperator brukes for å finne alle tweets som *kun* er sendt fra én spesifikk brukerkonto?",
+      "choices": [
+        "`to:brukernavn`",
+        "`from:brukernavn`",
+        "`@brukernavn`",
+        "`#brukernavn`",
+        "`search:brukernavn`"
+      ],
+      "correctIndex": 1,
+      "explanation": "Operatøren `from:brukernavn` isolerer uttalelser og publiseringer sendt fra den spesifikke kontoen [3-6]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilken type informasjon må en bruker oppgi for å opprette en X-konto, i tillegg til et brukernavn?",
+      "choices": [
+        "Fødselsdato og nasjonalitet",
+        "En lenke til en LinkedIn-profil",
+        "Bankkontodetaljer",
+        "E-postadresse eller telefonnummer",
+        "En fysisk bostedsadresse"
+      ],
+      "correctIndex": 3,
+      "explanation": "Når man oppretter en X-konto, er det et krav å oppgi enten en e-postadresse eller et telefonnummer [7]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken søketeknikk brukes for å sikre at ordene i et søk vises i en *eksakt* rekkefølge i resultatene?",
+      "choices": [
+        "Å bruke operatøren `#` (hashtag)",
+        "Å bruke operatøren `-` (minus)",
+        "Å bruke operatøren `since:`",
+        "Å sette frasen i anførselstegn (\" \")",
+        "Å bruke stor bokstav i alle ord"
+      ],
+      "correctIndex": 3,
+      "explanation": "Ved å sette en frase i anførselstegn (f.eks. \"NBA draft pick\") søker man etter nøyaktig den sekvensen av ord, noe som sikrer at resultatene inneholder ordene i nøyaktig den rekkefølgen som er spesifisert [5, 8-10]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva står forkortelsen SOCMINF for i sammenheng med ÅK-etterforskning på sosiale medier?",
+      "choices": [
+        "Social Media Information",
+        "Source Media Interaction",
+        "Social Movement Indicators",
+        "Signal Correlation Mapping",
+        "Security Operations Center Monitoring"
+      ],
+      "correctIndex": 0,
+      "explanation": "SOCMINF er en populær gren av ÅK som omhandler praksisen med å etterforske individer, forstå offentlig sentiment og spore digitale fotavtrykk på sosiale medier [11]."
+    },
+    {
+      "id": "q6",
+      "text": "Hva kan en etterforsker potensielt avdekke om en brukers utdanning eller karriere ved å analysere innholdet i 'Media'-fanen på profilen deres?",
+      "choices": [
+        "Deres inntekt basert på antall følgere",
+        "Deres private direktemeldinger (DMs)",
+        "Hvilken tidssone de befinner seg i",
+        "Bilder av kursmateriell eller timeplaner som avslører fagfelt eller studiested",
+        "Deres unike, permanente Twitter-ID"
+      ],
+      "correctIndex": 3,
+      "explanation": "Medieinnhold som bilder av kursmateriell, fag eller timeplaner kan avsløre hvilket studiested eller hvilket studieprogram en person følger [12-14]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilken datooperator må brukes for å finne tweets som ble publisert *før* en bestemt dato (f.eks. for å finne aktivitet før en spesifikk hendelse)?",
+      "choices": [
+        "`since:ÅÅÅÅ-MM-DD`",
+        "`before:ÅÅÅÅ-MM-DD`",
+        "`until:ÅÅÅÅ-MM-DD`",
+        "`date:before-ÅÅÅÅ-MM-DD`",
+        "`older_than:ÅÅÅÅ-MM-DD`"
+      ],
+      "correctIndex": 2,
+      "explanation": "Operatøren `until:YYYY-MM-DD` brukes for å finne tweets publisert før den angitte datoen. Dette er avgjørende for å avgrense søket til en relevant tidsperiode, for eksempel før en hendelse [3, 15-17]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvorfor kan en person som er 'jobbsøker' (Job Seeker) velge å holde X-kontoen sin privat?",
+      "choices": [
+        "Fordi det er obligatorisk ifølge X's vilkår for bruk for jobbsøkere.",
+        "For å sikre at alle tweets blir automatisk geotagget.",
+        "For å få tilgang til Premium-funksjoner uten å betale.",
+        "For å forhindre at etterforskere finner den permanente Twitter-ID-en.",
+        "For å opprettholde et profesjonelt image og beskytte personlig informasjon fra potensielle arbeidsgivere."
+      ],
+      "correctIndex": 4,
+      "explanation": "Jobbsøkere kan holde kontoen privat for å bevare et profesjonelt image og beskytte personlig informasjon fra potensielle arbeidsgivere, spesielt hvis de har en tendens til å poste kontroversielt innhold [18]."
+    },
+    {
+      "id": "q9",
+      "text": "Hva oppnår en etterforsker ved å kombinere søkeoperatorene `to:brukernavn` og `geocode:lat,lon,radius` i ett enkelt søk?",
+      "choices": [
+        "Å hente ut alle tweets som *målpersonen* har geotagget innenfor det definerte området.",
+        "Å identifisere hvem målpersonen kommuniserer med på Twitter totalt sett.",
+        "Å finne alle tweets der målpersonen er nevnt av brukere i et hvilket som helst land.",
+        "Å kartlegge lokale nettverk ved å finne individer som kommuniserer *til* målpersonen fra et spesifikt geografisk område.",
+        "Å få tilgang til målpersonens slettede tweet-historikk."
+      ],
+      "correctIndex": 3,
+      "explanation": "Ved å kombinere `to:brukernavn` (hvem snakker til målet) og `geocode:` (fra et geografisk område) kan man avdekke lokale kontakter og nettverk som kommuniserer direkte med målpersonen i den virkelige verden [14, 15, 19]."
+    },
+    {
+      "id": "q10",
+      "text": "Hva er den primære begrensningen knyttet til bruken av `geocode:lat,lon,radius`-operatøren i moderne X-etterforskning, ifølge kildene?",
+      "choices": [
+        "Operatøren fungerer bare hvis etterforskeren har et Premium-abonnement.",
+        "Søket kan ikke kombineres med tidsfiltre som `since:` og `until:`.",
+        "Den kan kun brukes til å søke etter tweets som er nyere enn 24 timer.",
+        "Færre brukere deler nå posisjonsdata (geolokalisering) på sine tweets enn de gjorde tidligere.",
+        "Resultatene er alltid forsinket med minst 10 minutter, og egner seg derfor ikke for sanntidsovervåkning."
+      ],
+      "correctIndex": 3,
+      "explanation": "Selv om `geocode`-operatøren er kraftfull, har den blitt mindre effektiv over tid fordi færre brukere aktiverer geolokalisering på sine tweets. Dette begrenser datamengden i geosøk [12, 19, 20]."
+    }
+  ]
+}
