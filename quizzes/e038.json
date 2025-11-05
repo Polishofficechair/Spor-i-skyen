@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er kjernedataen man starter med i et omvendt e-postoppslag (Reverse Email Lookup)?",
+      "choices": [
+        "Selve e-postadressen man ønsker å spore [1-3]",
+        "Navn eller brukernavn knyttet til personen [4]",
+        "En lenke til en sosial medieprofil [1, 5]",
+        "Et IP-adresse hentet fra en e-posthodeanalyse [6, 7]",
+        "Et domenenavn knyttet til organisasjonen [4, 5]"
+      ],
+      "correctIndex": 0,
+      "explanation": "Et **omvendt e-postoppslag** starter med selve e-postadressen for å finne informasjon om eieren, i motsetning til et vanlig e-postsøk der man starter med et navn for å finne en e-postadresse [1-3]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilket felt i et e-posthode brukes primært til å verifisere om avsenderens IP-adresse har tillatelse til å sende e-post på vegne av domenet, og indikerer resultater som 'pass' eller 'fail/softfail'?",
+      "choices": [
+        "Received-SPF (Sender Policy Framework) [8, 9]",
+        "DKIM-Signature (DomainKeys Identified Mail) [8, 10]",
+        "Delivered-To [11, 12]",
+        "Return-Path [13, 14]",
+        "Message-ID [15, 16]"
+      ],
+      "correctIndex": 0,
+      "explanation": "**Received-SPF** (Sender Policy Framework) er protokollen som validerer om IP-adressen har tillatelse til å sende e-post på vegne av domenet. Et resultat som 'pass' indikerer autentisering, mens 'fail' eller 'softfail' indikerer at e-posten potensielt er forfalsket [8, 9]."
+    },
+    {
+      "id": "q3",
+      "text": "Hva kalles metoden der man bruker avanserte søkeoperatorer som anførselstegn (\") og 'site:' på søkemotorer som Google for å finne offentlige referanser til en spesifikk e-postadresse i foruminnlegg, blogger eller sosiale medier?",
+      "choices": [
+        "E-posthodeanalyse [17]",
+        "Credential Stuffing [18]",
+        "WHOIS-oppslag [19]",
+        "Password Spraying [20]",
+        "Google Dorking [21-25]"
+      ],
+      "correctIndex": 4,
+      "explanation": "Denne metoden kalles ofte **Google Dorking** eller avansert søketeknikk, og innebærer bruk av spesialiserte søkespørringer for å filtrere resultater i søkemotordatabaser [21-25]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken lovgivning stiller strenge krav til hvordan personopplysninger, inkludert e-postadresser, kan samles inn og brukes av aktører som politiet i EU og Norge?",
+      "choices": [
+        "Computer Fraud and Abuse Act (CFAA) [26, 27]",
+        "California Consumer Privacy Act (CCPA) [28, 29]",
+        "Electronic Communications Privacy Act (ECPA) [28, 30]",
+        "General Data Protection Regulation (GDPR) [28, 29, 31]",
+        "Computer Misuse Act (UK) [26, 27]"
+      ],
+      "correctIndex": 3,
+      "explanation": "I Norge og EU gjelder **Personvernforordningen (GDPR)**, som stiller strenge krav til hvordan personopplysninger kan samles inn og brukes, også i etterretningsarbeid [28, 29, 31]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva er den primære funksjonen til verktøy som Hunter.io i den innledende fasen av en e-postetterforskning, ifølge kildene?",
+      "choices": [
+        "Søke gjennom lekkasjedatabaser for å finne kompromitterte passord [32, 33]",
+        "Generere geografisk bevegelsesdata fra treningsapper [34, 35]",
+        "Identifisere det vanligste e-postformatet eller mønsteret for et gitt domene [36-39]",
+        "Utføre målrettede søk mot Pastebin-nettsteder [40, 41]",
+        "Sjekke e-postens omdømme (reputation scoring) for spam eller phishing [42, 43]"
+      ],
+      "correctIndex": 2,
+      "explanation": "Hunter.io er et anerkjent verktøy for å identifisere vanlige e-postmønstre i en organisasjon (f.eks. fornavn.etternavn@firma.no). Dette gjør det mulig å gjette seg til (guesstimate) e-postadressen til en spesifikk ansatt [36-39]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvilken smart, diskret teknikk kan en etterforsker bruke for å validere at en e-postadresse er knyttet til en aktiv konto og potensielt avdekke en sterk, beviselig kobling til en sekundær gjenopprettings-e-post (f.eks. en jobb-e-post)?",
+      "choices": [
+        "Sende en test-e-post og vente på en 'Out of Office'-respons [36, 44]",
+        "Utføre en WHOIS-sjekk på e-postens domene [19, 45]",
+        "Bruke funksjonen for å **gjenopprette/glemme passord** på plattformer som Google eller sosiale medier [21, 24, 25, 46-48]",
+        "Søke e-posten gjennom Maltego for å visualisere nettverkstilknytning [49]",
+        "Bruke tjenester som EmailRep.io for å sjekke om e-posten er disponibel [42]"
+      ],
+      "correctIndex": 2,
+      "explanation": "Bruk av **'Glemt passord'-funksjonen** på store plattformer kan bekrefte at kontoen eksisterer og avsløre en delvis sensurert gjenopprettingsadresse eller et telefonnummer. Dette skaper et sterkt bevis på en kobling mellom to kontoer uten direkte interaksjon med målet [21, 24, 25, 46-48]."
+    },
+    {
+      "id": "q7",
+      "text": "Når man analyserer e-posthoder for å spore e-postens rute (path), hvilken kritisk informasjon gir den *første* 'Received'-linjen, og hva kan denne IP-adressen brukes til i etterforskning?",
+      "choices": [
+        "Autentiseringsresultatene fra DKIM og DMARC [8, 10]",
+        "Den unike Message-IDen som serveren har tildelt meldingen [15, 16]",
+        "Den endelige mottakeradressen som er oppgitt i Delivered-To-feltet [11, 12]",
+        "Avsenders IP-adresse og tidsstempel, som kan brukes til å vurdere trusselnivået via IP-verktøy som Cisco SenderBase [6, 13, 50]",
+        "Krypteringsinformasjonen som ble brukt under overføringen (f.eks. TLS1_2) [14, 51]"
+      ],
+      "correctIndex": 3,
+      "explanation": "Den **første 'Received'-linjen** i e-posthodet indikerer vanligvis **avsenders IP-adresse** og tidsstempel [6, 13]. Etterforskere kan bruke denne IP-adressen (den originerende IP-en) til å vurdere om den er kjent for spam eller misbruk ved hjelp av verktøy som Cisco SenderBase [6, 7, 50, 52]."
+    },
+    {
+      "id": "q8",
+      "text": "Hva er den primære operasjonelle forskjellen mellom de kommandolinjebaserte OSINT-verktøyene Breach-Parse og H8mail når de brukes til å søke i den lokale, 44 GB store 'Breach Compilation'-databasen?",
+      "choices": [
+        "Breach-Parse er avhengig av API-nøkler, mens H8mail er gratis og helt offline [32, 53, 54]",
+        "Breach-Parse er laget for raskt å sjekke én spesifikk e-post, mens H8mail er bedre for å samle inn e-postadresser og underdomener [54-56]",
+        "Breach-Parse er optimalisert for å søke etter **et helt domene** (bredt søk), mens H8mail er best egnet for **målrettede søk** mot én eller en liste med spesifikke e-postadresser [32, 53, 54, 57]",
+        "Breach-Parse krever API-tilgang til online-tjenester, mens H8mail kun søker lokalt i Breach Compilation [33, 54, 58]",
+        "Breach-Parse kan bare søke i tekstfiler (.txt), mens H8mail støtter alle filtyper [32, 59]"
+      ],
+      "correctIndex": 2,
+      "explanation": "**Breach-Parse** er utviklet for å utføre brede søk mot et **helt domene** (f.eks. tesla.com) i den lokale 44 GB databasen for å få en helhetlig oversikt over lekkasjer. **H8mail** er derimot optimalisert for **målrettet søk** mot en enkelt e-postadresse eller en definert liste, og er ekstremt rask i denne oppgaven [32, 53, 54, 57, 58]."
+    },
+    {
+      "id": "q9",
+      "text": "I en OSINT-etterforskning, hvorfor er det etisk kritisk å følge prinsippet om **'Dataminimering'** og **'Proporsjonalitet'** når man bruker verktøy som Phonebook.cz for å hente ut store lister med potensielle e-postadresser for et helt domene?",
+      "choices": [
+        "Fordi massive lister raskt blir utdaterte og gir 'falske positiver' som ødelegger etterforskningen [60, 61]",
+        "Fordi slike verktøy er ulovlige i henhold til ECPA (Electronic Communications Privacy Act) [28, 30]",
+        "Fordi innsamling av et stort volum adresser uten et spesifikt, legitimt formål utgjør et brudd på personvernprinsippet og kan invitere til misbruk som 'password spraying' [26, 62-64]",
+        "Fordi Google og andre kilder vil 'shadow banne' etterforskeren for aggressiv bruk [55, 65]",
+        "Fordi GDPR bare gjelder for e-postadresser til offentlige ansatte, ikke private bedrifter [28, 29]"
+      ],
+      "correctIndex": 2,
+      "explanation": "Proporsjonalitetsprinsippet og dataminimering krever at man kun samler inn den informasjonen som er strengt nødvendig for et legitimt formål [26, 62]. Vilkårlig masseinnhenting av e-postadresser (slik Phonebook.cz tillater) for uspesifiserte fremtidige formål eller for å forberede angrep som 'password spraying', anses som et klart brudd på etiske retningslinjer og personvernansvaret [62-64]."
+    },
+    {
+      "id": "q10",
+      "text": "Ifølge den anbefalte arbeidsflyten ('bredt-til-smalt') for å etterforske lekkede data, som kombinerer kommandolinjeverktøy, hvilket verktøy bør en analytiker kjøre *først* for å etablere et grunnlag av historisk data før man går videre til mer målrettet analyse med theHarvester og H8mail?",
+      "choices": [
+        "theHarvester, for å samle inn de nyeste offentlige e-postene og subdomenene [53, 56, 66]",
+        "H8mail, for å raskt verifisere om en enkelt e-post finnes i lekkasjer via online API-er [67, 68]",
+        "Breach-Parse, for å utføre et bredt søk på hele måldomenet i den lokale Breach Compilation-databasen [53, 55, 66, 69]",
+        "Google Dorking for å starte den innledende rekognoseringen manuelt [22, 24]",
+        "Verktøy for å analysere e-posthoder (som MXTOOLBOX) for teknisk metadata [43, 70]"
+      ],
+      "correctIndex": 2,
+      "explanation": "Den anbefalte metodikken starter med et bredt søk for å etablere en grunnlinje av historisk data. Dette gjøres ved å kjøre **Breach-Parse** mot hele domenet i den lokale Breach Compilation-databasen [53, 55, 66, 69]. Først *etter* dette trinnet brukes theHarvester til å berike dataene med nåværende, offentlig informasjon, og deretter H8mail for målrettet verifisering [53, 66]."
+    }
+  ]
+}
