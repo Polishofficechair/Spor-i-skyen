@@ -1,0 +1,76 @@
+{
+"title": "Quiz: Effektiv Informasjonsinnhenting fra Facebook",
+"episodeId": "e001",
+"questions": [
+{ 
+"id": "q1", 
+"text": "Hva er det korrekte juridiske navnet etterforskere må rette formelle henvendelser til for plattformer som Facebook, Instagram og WhatsApp?", 
+"choices": ["Facebook, Inc.", "Facebook Norway AS", "Meta Platforms, Inc.", "The Facebook Group", "Meta & Partners International"], 
+"correctIndex": 2, 
+"explanation": "Alle formelle henvendelser og rettslige beslutninger må rettes til den juridiske hovedenheten, Meta Platforms, Inc., i USA [1-3]." 
+},
+{ 
+"id": "q2", 
+"text": "Hva er den mest effektive funksjonen på Facebook for å avdekke en persons omtrentlige geografiske plassering, vaner og økonomiske situasjon, ifølge kildene?", 
+"choices": ["Vennelister", "Offentlige innlegg (Timeline)", "Facebook Marketplace", "Facebook Stories", "Profilbilder"], 
+"correctIndex": 2, 
+"explanation": "Facebook Marketplace er det kraftigste, men mest undervurderte verktøyet, da det avslører konkret informasjon om lokasjon, økonomi, interesser og vaner som sjelden finnes på en vanlig profil [4-6]." 
+},
+{ 
+"id": "q3", 
+"text": "Hva er en kritisk indikasjon på at en selger på Facebook Marketplace kan være under økonomisk press eller desperat etter å kvitte seg med varer?", 
+"choices": ["Profesjonelt språk i annonsen", "Lav responsrate på meldinger", "Gjentatte prisreduksjoner på kort tid", "Manglende profilbilde", "Salg av nesten nye, dyre gjenstander"], 
+"correctIndex": 2, 
+"explanation": "Dersom prisen på en vare reduseres gjentatte ganger over kort tid, kan det indikere at selgeren er i en presset økonomisk situasjon eller ønsker å kvitte seg med varen raskt [24-26]." 
+},
+{ 
+"id": "q4", 
+"text": "Hva er den primære funksjonen til å bruke filtre som 'By', 'Utdanning' eller 'Arbeid' når man søker etter personer på Facebook?", 
+"choices": ["For å sikre at man får tilgang til privat innhold", "For å omgå personverninnstillingene", "For å snevre inn søkeresultatene og bekrefte identiteten til målpersonen", "For å starte Google Dorking", "For å automatisk finne brukerens kontaktinformasjon"], 
+"correctIndex": 2, 
+"explanation": "Filtrene brukes til å spisse søket mot Personer og dramatisk redusere antall irrelevante treff, slik at man kan identifisere riktig profil med høy grad av sikkerhet [11-13]." 
+},
+{ 
+"id": "q5", 
+"text": "Hva er det kritiske skillet mellom å bruke åpne kilder (OSINT) og en formell forespørsel til Meta?", 
+"choices": ["OSINT brukes kun til å finne Marketplace-annonser, formell forespørsel for profiler", "OSINT gir tilgang til offentlige data, formell forespørsel gir tilgang til private data som meldinger og IP-logger", "OSINT er tidsbegrenset til 24 timer, formell forespørsel er permanent", "OSINT krever en profil, formell forespørsel krever det ikke", "OSINT er lovlig, formell forespørsel er ulovlig uten rettskjennelse"], 
+"correctIndex": 1, 
+"explanation": "Åpne kilder gir tilgang til offentlige data, mens formelle forespørsler (som krever gyldig juridisk grunnlag) gir tilgang til beskyttede data som private meldinger, brukerinformasjon og IP-logger [14]." 
+},
+{ 
+"id": "q6", 
+"text": "Hva er den mest effektive søkestrategien for å omgå en målpersons lukkede profil og likevel finne visuelt innhold av dem?", 
+"choices": ["Søke etter 'photos of [personens navn]' i Facebooks søkefelt", "Sende en formell juridisk forespørsel til Meta Platforms, Inc.", "Bruke Google Dorking med site:facebook.com [navn] 'privat'", "Forsøke å gjenopprette passordet til profilen", "Lese innholdet i Facebook Stories før de slettes"], 
+"correctIndex": 0, 
+"explanation": "Søket 'photos of [personens navn]' (bilder av [navn]) finner bilder personen er tagget i, selv om de er publisert på venners åpne profiler, og omgår dermed målpersonens egne personverninnstillinger [15-17]." 
+},
+{ 
+"id": "q7", 
+"text": "Når etterforskere bruker eksterne søkeverktøy (som Sodust eller Intellex.io), hvilken teknisk identifikator er obligatorisk for at verktøyene skal fungere i dag?", 
+"choices": ["Den tilpassede URL-en ('User Vanity', f.eks. /zuck)", "E-postadressen tilknyttet kontoen", "Det unike numeriske Bruker-ID-nummeret (UID)", "En gyldig API-nøkkel fra Meta", "Brukerens nåværende by"], 
+"correctIndex": 2, 
+"explanation": "Moderne eksterne søkeverktøy krever den unike, permanente numeriske Bruker-ID-en, ettersom søk basert på den tilpassede URL-en ('User Vanity') ikke lenger fungerer i disse verktøyene [10, 18, 19]." 
+},
+{ 
+"id": "q8", 
+"text": "Hvilken teknikk brukes for å finne offentlig Facebook-innhold ved å benytte Googles søkemotor med spesifikke kommandoer som for eksempel site:facebook.com [navn]?", 
+"choices": ["Graph Search", "Reverse Lookup", "URL-manipulering", "Google Dorking", "Facebook Pixel Tracking"], 
+"correctIndex": 3, 
+"explanation": "Google Dorking innebærer å bruke spesifikke søkekommandoer som 'site:facebook.com' i Google for å filtrere resultatene til kun å vise offentlig innhold fra Facebook [20-22]." 
+},
+{ 
+"id": "q9", 
+"text": "Hvilken spesifikk teknisk metode anbefales for å finne en persons unike, permanente numeriske Bruker-ID (UID) direkte fra en profilside?", 
+"choices": ["Bruke Maltego for omvendt oppslag", "Sende en forespørsel via Facebook Messenger API", "Høyreklikke, velge 'Vis sidekilde' og søke etter 'user_id'", "Prøve seg frem med forskjellige URL-variasjoner", "Bruke passordgjenopprettingsverktøyet for å se den delvis skjulte e-posten"], 
+"correctIndex": 2, 
+"explanation": "For å finne UID, som er nødvendig for avanserte verktøy, skal man høyreklikke på profilsiden, se kildekoden, og søke etter tekststrengen 'user_id' for å hente ut den numeriske verdien [32-37]." 
+},
+{ 
+"id": "q10", 
+"text": "Hvilken teknikk for visuell analyse, illustrert ved eksempelet om Trace Labs CTF, kan avsløre skjulte detaljer om eiendeler eller omgivelser fra et bilde?", 
+"choices": ["Ved å bruke verktøy for omvendt søk for å finne EXIF-metadata", "Ved å kun fokusere på ansiktsgjenkjenning i hovedmotivet", "Ved å analysere den unike nettadressen (URL) til bildet", "Ved å studere refleksjoner i reflekterende overflater, som bilvinduer eller speil", "Ved å sjekke om bildet er tatt med Light Mode"], 
+"correctIndex": 3, 
+"explanation": "Et bilde kan inneholde en enorm mengde sekundærinformasjon; ved å analysere refleksjoner i vinduer eller speil kan man identifisere detaljer om omgivelser eller eiendeler (som bilmerke) [25-27]." 
+}
+]
+}
