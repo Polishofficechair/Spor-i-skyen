@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Dokumentet fremhever at læringsmodellen skal bygge helhetlig kompetanse. Utenom rene tekniske ferdigheter, hvilke tre sentrale kjerneområder skal podcasten særlig vektlegge for å sikre ansvarlig bruk av ÅK?",
+      "choices": [
+        "Etiske grenser, saksbehandling og kurslogistikk.",
+        "Nye plattformer, analyseverktøy og fysisk oppmøte.",
+        "Økonomisk kriminalitet, personvern og patruljering.",
+        "Internrevisjon, budsjettstyring og HR-prosedyrer.",
+        "Etterforskende tankesett, kritisk tenkning og juridiske rammer."
+      ],
+      "correctIndex": 4,
+      "explanation": "Ved siden av tekniske ferdigheter, legges det sterkt fokus på å bygge og vedlikeholde det etterforskende tankesettet (investigative mindset), kritisk tenkning og juridiske rammer [9, 42, 51-61]."
+    },
+    {
+      "id": "q2",
+      "text": "Hva er hovedformatet som benyttes i den nye læringsmodellen for å repetere kritisk kunnskap?",
+      "choices": [
+        "Intensive fysiske samlinger",
+        "Skriftlige kursmanualer (bøker)",
+        "E-læringsmoduler i Ransel",
+        "Podcaster/Lydfiler",
+        "Obligatoriske webinarer"
+      ],
+      "correctIndex": 3,
+      "explanation": "Modellen handler om å bruke podcaster som formidlingsmåte for å repetere og oppdatere kunnskap om etterforskning i åpne kilder [1-3, 5, 6]."
+    },
+    {    
+      "id": "q3",
+      "text": "Hvilket begrep brukes i kildene for å beskrive podcastens fleksibilitet, slik at læringen kan integreres i hverdagen (f.eks. under pendling eller trening)?",
+      "choices": [
+        "Accessible, On-the-Go Learning",
+        "Kontinuerlig Faglig Oppdatering",
+        "Lavterskel Re-engasjering",
+        "Taktisk Relevans",
+        "Multi-Angle Perspectives"
+      ],
+      "correctIndex": 0,
+      "explanation": "Kildene bruker spesifikt begrepet 'Accessible, On-the-Go Learning' for å beskrive fleksibiliteten ved å lytte til ÅK/OSINF-kunnskap mens man pendler, trener eller gjør rutinearbeid [1-9]."
+    },
+    {
+      "id": "q4",
+      "text": "En av de tre hovedutfordringene med dagens kursmodell er relatert til intensive kurs. Hva er 'kurseffekten' som beskrives?",
+      "choices": [
+        "Høy reisekostnad for politidistriktet",
+        "Mangel på kvalifiserte instruktører",
+        "Detaljer fra kurs forsvinner fort over tid (glemsel)",
+        "Utstyret på kurslokalene er utdatert",
+        "Umuligheten av å få nye eksperter som gjester"
+      ],
+      "correctIndex": 2,
+      "explanation": "Kurseffekten viser til at detaljer fra intensive fysiske kurs har en tendens til å forsvinne over tid hvis de ikke brukes jevnlig, og kunnskap 'lekker ut' [16-21]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilket begrep brukes for å beskrive podcastens evne til raskt å levere oppdateringer om nye verktøy og plattformer, slik at etterforskerne alltid opererer med relevante metoder?",
+      "choices": [
+        "Operativ kapasitet",
+        "Langtidsminneforsterkning",
+        "Taktisk relevans",
+        "Accessible, On-the-Go Learning",
+        "Lavterskel re-engasjering"
+      ],
+      "correctIndex": 2,
+      "explanation": "Podcastens evne til å distribuere ny informasjon nesten umiddelbart, i motsetning til årlige kurs, sikrer at etterforskerne opprettholder 'taktisk relevans' [29-36]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvilke to pedagogiske elementer kombineres i podcastformatet for å styrke langtidsminnet og dybdeforståelsen (utover kun fleksibilitet)?",
+      "choices": [
+        "Formelle eksamener og forelesninger.",
+        "Intensive gruppeøvelser og skriftlige rapporter.",
+        "Tilfeldig lytting og lyd uten bilde.",
+        "Kontinuerlig repetisjon og bruk av casestudier/historiefortelling.",
+        "Webinarer og ukentlige fysiske møter."
+      ],
+      "correctIndex": 3,
+      "explanation": "Podcast-formatet fremhever bruk av casestudier og historiefortelling (Storytelling) for å gjøre abstrakte metoder minneverdige [37-42], kombinert med mulighet for gjentatt lytting (repetisjon) for å styrke langtidsminnet og dybdeforståelsen [40-45]."
+    },
+    {
+      "id": "q7",
+      "text": "Hva er den viktigste strategiske gevinsten for Øst politidistrikt som helhet ved at etterforskere kan lære og repetere 'mellom slagene' uten å bli tatt helt ut av tjeneste for å reise til kurs?",
+      "choices": [
+        "Bedre kunnskapsbevaring og færre feil.",
+        "Posi¬sjo¬ne¬ring som nasjonal spydspiss.",
+        "Styrket etisk dannelse for etterforskere.",
+        "Økt operativ tilgjengelighet (flere timer til faktisk politiarbeid).",
+        "Bedre tverrfaglig samarbeid med PST og Kripos."
+      ],
+      "correctIndex": 3,
+      "explanation": "Den mest umiddelbare strategiske gevinsten er økt operativ tilgjengelighet, da etterforskere slipper å reise bort på kurs i dagesvis og dermed er mer tilgjengelige for politiarbeid [34, 36, 46-50]."
+    },
+   {
+      "id": "q8",
+      "text": "Hva er spesialetterforskeren som har utviklet systemet og er initiativtakeren til pilotprosjektet?",
+      "choices": [
+        "Per Helge Kvendseth",
+        "Huong Tran",
+        "Trygve Justad Bjørntvedt",
+        "Ransel",
+        "En kunstig programleder"
+      ],
+      "correctIndex": 2,
+      "explanation": "Systemet ble tenkt ut og utviklet av spesialetterforsker Trygve Justad Bjørntvedt, som jobber ved avsnittet for digitalt politiarbeid i Øst [4-9]."
+    }, 
+    {
+      "id": "q9",
+      "text": "Hva er det engelske akronymet for Åpne Kilder (ÅK) som ofte brukes i kildematerialet?",
+      "choices": [
+        "PST",
+        "Ransel",
+        "OSINF / OSINT",
+        "ØKOKRIM",
+        "POLIS"
+      ],
+      "correctIndex": 2,
+      "explanation": "Kunnskap om etterforskning i åpne kilder er kjent som ÅK eller OSINF (Open Source Information) / OSINT (Open Source Intelligence) [2-4, 10, 11]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvilken spesifikk pedagogisk metode, som gjør abstrakte konsepter konkrete og minneverdige, fremheves i kombinasjon med repetisjon for å styrke langtidsminnet?",
+      "choices": [
+        "Intensiv klasseromsundervisning",
+        "Uformelle gruppeøvelser",
+        "Formell eksaminering",
+        "Storytelling/casestudier",
+        "Webinarer i sanntid"
+      ],
+      "correctIndex": 3,
+      "explanation": "Kilden fremhever spesielt bruk av casestudier og historiefortelling (Storytelling) for å pakke inn teknikker og metoder i konkrete fortellinger, noe som gjør abstrakte konsepter mer levende og lettere å huske, og som i kombinasjon med repetisjon styrker langtidsminnet [25, 33-40]."
+     }
+  ]
+}
