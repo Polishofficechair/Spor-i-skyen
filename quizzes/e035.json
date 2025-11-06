@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Datainnbrudd og Passordlogger (Breaches & Logs)",
+  "episodeId": "e035",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er den kritiske etterforskningsfordelen som oppnås når man avdekker et gjenbrukt passord (eller passord-hash) på tvers av en mistenkts ulike nettbaserte kontoer?",
+      "choices": [
+        "Det beviser at målet benytter en VPN-tjeneste.",
+        "Det bekrefter at informasjonen er hentet fra Deepweb.",
+        "Det lar etterforskeren koble sammen digitale aliaser til samme person.",
+        "Det indikerer at passordet ble lagret i klartekst.",
+        "Det sikrer at ingen tredjepartsverktøy ble brukt."
+      ],
+      "correctIndex": 2,
+      "explanation": "Gjenbruk av passord er en 'rød tråd' som lar etterforskere koble sammen tilsynelatende uavhengige aliaser eller kontoer til én og samme person [1-4]."
+    },
+    {
+      "id": "q2",
+      "text": "Hva er hovedforskjellen mellom en 'Lekkasje' og et 'Datainnbrudd' (Breach) når det gjelder opprinnelsen til dataene?",
+      "choices": [
+        "Lekkasjer inneholder sensitive dokumenter, mens datainnbrudd kun inneholder passord.",
+        "Lekkasjer er ulovlige, mens datainnbrudd er etisk akseptable for etterforskere.",
+        "Datainnbrudd involverer en kriminell som stjeler innhold ulovlig, mens lekkasjer skjer utilsiktet (f.eks. via feilkonfigurert database).",
+        "Lekkasjer skjer kun på Clearweb, mens datainnbrudd skjer på Darkweb.",
+        "Datainnbrudd er alltid kryptert, mens lekkasjer er i klartekst."
+      ],
+      "correctIndex": 2,
+      "explanation": "Datainnbrudd (Breaches) skjer når en kriminell aktør ulovlig bryter seg inn og stjeler innhold, mens lekkasjer er data som utilsiktet blir offentliggjort (f.eks. via feilkonfigurerte databaser) [5-9]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilken type passorddata er mest sannsynlig å bli funnet i eldre, offentlig tilgjengelige datainnbrudd som er relativt enkle å 'knekke' for å finne klartekstpassordet?",
+      "choices": [
+        "BCRYPT",
+        "SHA512",
+        "SHA1 og MD5",
+        "AES-256",
+        "Argon2"
+      ],
+      "correctIndex": 2,
+      "explanation": "I eldre databaser som har blitt brutt, er det mest vanlig å finne MD5 og SHA1 hashede passord, som er kjent for å være enkle å knekke [5, 10, 11]."
+    },
+    {
+      "id": "q4",
+      "text": "Hva er den spesifikke digitale identifikator som er unik for et passord, og som tillater en etterforsker å koble sammen kontoer på tvers av forskjellige tjenester (pivoting)?",
+      "choices": [
+        "En passord-hash",
+        "En IP-adresse (Internet Protocol Address)",
+        "En VOIP-nummer",
+        "En URL for nettstedet",
+        "En brukerdefinert Salt"
+      ],
+      "correctIndex": 0,
+      "explanation": "En passord-hash er et unikt 'digitalt fingeravtrykk' for et passord som, når det gjenbrukes, kan brukes til å koble sammen kontoer til samme person i forskjellige lekkasjer [12-14]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilket av følgende datasett er mest sannsynlig å være nylig, nøyaktig og stammer fra en infisert maskin?",
+      "choices": [
+        "En stor 'Combo List' fra 2021 (f.eks. COMB).",
+        "Et velgerregister som er arkivert fra et tredjeparts nettsted.",
+        "Passordlogger (Stealer Logs).",
+        "En datalekkasje fra en feilkonfigurert Elasticsearch-server.",
+        "Et utdrag fra et offentliggjort Usenet-arkiv."
+      ],
+      "correctIndex": 2,
+      "explanation": "Passordlogger (Stealer Logs) er hentet fra infiserte maskiner og er 'mye mer sannsynlig å være nøyaktig' og 'oppdatert' enn kjente datainnbrudd [6, 9, 15]."
+    },
+    {
+      "id": "q6",
+      "text": "I en etterforskning av datainnbrudd, hva er teknikken som beskriver handlingen der man tar et unikt datapunkt (f.eks. en passord-hash eller et sjeldent brukernavn) fra én kilde og bruker det som inngangsverdi for å søke etter nye, relaterte kontoer i en annen database?",
+      "choices": [
+        "Credential Stuffing",
+        "Fulltekstsøk (Full Text Search)",
+        "Pivotering (Pivoting)",
+        "Data Harvesting",
+        "Hash Cracking"
+      ],
+      "correctIndex": 2,
+      "explanation": "Pivotering er kjerneteknikken i etterforskning av lekkede data. Det innebærer å bruke ett funn (som en hash) for å avdekke nye, tidligere ukjente kontoer eller identiteter [4, 16, 17]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilket element i en fullstendig passordlogg (Stealer Log) fra en infisert maskin gir etterforskeren et unikt 'fingeravtrykk' for selve maskinvaren og operativsystemet til offeret?",
+      "choices": [
+        "Filen 'Passwords.txt'",
+        "Cookie-data",
+        "Hardware Identifier (HWID)",
+        "Filen 'DomainDetects.txt'",
+        "Filen 'InstalledSoftware.txt'"
+      ],
+      "correctIndex": 2,
+      "explanation": "Stealer Logs inneholder en unik Hardware Identifier (HWID) generert av Microsoft ved Windows-aktivering, som er et 'prisverdig' maskinvarefingeravtrykk [18-21]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvilket av følgende felt er spesifikt funnet i filen 'UserInformation.txt' eller i loggens toppmappe i en Stealer Log, og bidrar til å bekrefte den geografiske og tekniske konteksten til offeret?",
+      "choices": [
+        "Fullstendige kredittkortdetaljer (CVV).",
+        "Unix time for passordbytte.",
+        "Offerets IP-adresse og skjermoppløsning.",
+        "Fulltekst passordet til alle e-postkontoer.",
+        "Salt-verdien for alle hashede passord."
+      ],
+      "correctIndex": 2,
+      "explanation": "Filen 'UserInformation.txt' viser generelle detaljer om systemet, inkludert offerets IP-adresse, skjermstørrelse (ScreenSize) og Operation System [22, 23]."
+    },
+    {
+      "id": "q9",
+      "text": "Stealer logs kan inneholde filen 'FileGrabber'. Hvilken type data er spesifikt funnet i denne mappen og anses som verdifullt for en etterforsker, men er fraværende i rene legitimasjonslister?",
+      "choices": [
+        "En liste over alle nettleserhasher (MD5/SHA1).",
+        "Skjermopptak (Screen captures) av offerets desktop.",
+        "Dokumenter og PDF-filer fra offerets 'Documents'- og 'Desktop'-mapper.",
+        "De fullstendige innloggingsdataene til Tor-nettverket.",
+        "En liste over alle kjøpte kryptovalutatransaksjoner."
+      ],
+      "correctIndex": 2,
+      "explanation": "Mappen 'FileGrabber' i stealer logs inneholder dokumenter (Word-filer og PDF-er) stjålet fra offerets standardmapper som 'Documents' og 'Desktop' [24, 25]."
+    },
+    {
+      "id": "q10",
+      "text": "I analyse av kompromitterte data er det en risiko for at passord-hasher fra eldre datainnbrudd, som LinkedIn, kan være vanskeligere å knekke hvis de ikke inneholder en 'salt'. Hva er definisjonen på en 'salt' i denne sammenhengen?",
+      "choices": [
+        "En matematisk formel som brukes for å dehashe passordet.",
+        "En unik maskin-ID knyttet til brukerkontoen.",
+        "En liten mengde data lagt til hashen for å gjøre passordknekking vanskeligere.",
+        "Et pseudonym brukt for å skjule brukerens virkelige identitet.",
+        "En tidsstempling som indikerer når passordet ble endret sist."
+      ],
+      "correctIndex": 2,
+      "explanation": "En 'salt' er en liten mengde data som legges til hashingen for å gjøre knekking av passordet vanskeligere. Hvis salt er fraværende, er passordene nesten umulige å knekke; hvis den er til stede, kreves det betydelige ressurser [10, 11]."
+    }
+  ]
+}

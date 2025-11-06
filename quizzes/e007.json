@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e007",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hvilket programmeringsspråk er OSINT Timeline Tool primært basert på?",
+      "choices": [
+        "Java",
+        "JavaScript",
+        "C++",
+        "Python",
+        "Ruby"
+      ],
+      "correctIndex": 3,
+      "explanation": "OSINT Timeline Tool er et Python-basert program [1, 2]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilken minimumsversjon av Python kreves som en forutsetning for å bruke OSINT Timeline Tool?",
+      "choices": [
+        "Python 2.7",
+        "Python 3.0",
+        "Python 3.7 eller nyere",
+        "Python 3.5",
+        "Python 4.0"
+      ],
+      "correctIndex": 2,
+      "explanation": "Forutsetningene for installasjon inkluderer 'Python 3.7 eller nyere' [3, 4]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilket av følgende formater er et gyldig eksportformat for tidslinjer eller spørringsresultater fra OSINT Timeline Tool?",
+      "choices": [
+        "XML",
+        "HTML",
+        "DOCX",
+        "PDF",
+        "JSON"
+      ],
+      "correctIndex": 3,
+      "explanation": "Verktøyet lar brukere eksportere til CSV, Excel og PDF-formater [1, 2, 5, 6]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilket verktøy er nødvendig for å installere avhengighetene som er listet i requirements.txt-filen?",
+      "choices": [
+        "npm",
+        "pip (Python-pakkeinstallatør)",
+        "Docker",
+        "brew",
+        "Anaconda"
+      ],
+      "correctIndex": 1,
+      "explanation": "Blant forutsetningene er 'pip (Python-pakkeinstallatør)' [3, 4]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva er standard lokaladresse og port for nettgrensesnittet når OSINT Timeline Tool startes?",
+      "choices": [
+        "http://localhost:8000/",
+        "http://127.0.0.1:8080/",
+        "http://0.0.0.0:5000/",
+        "http://127.0.0.1:5000/",
+        "http://localhost:443/"
+      ],
+      "correctIndex": 3,
+      "explanation": "Når applikasjonen startes, kjører den på `http://127.0.0.1:5000/` [7, 8]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvilken kommando brukes for å installere de nødvendige Python-avhengighetene fra requirements.txt-filen etter at depotet er klonet?",
+      "choices": [
+        "python install requirements.txt",
+        "pip install requirements",
+        "pip install -r requirements.txt",
+        "python setup.py install",
+        "pip download requirements"
+      ],
+      "correctIndex": 2,
+      "explanation": "Kommandoen for å installere avhengighetene er `pip install -r requirements.txt` [7, 8]."
+    },
+    {
+      "id": "q7",
+      "text": "Hva er den spesifikke definisjonen av 'Relasjonell visualisering' som tilbys av OSINT Timeline Tool?",
+      "choices": [
+        "Å se søkeresultater i tabellformat.",
+        "Generering av en PDF-oppsummering av tidslinjen.",
+        "Generering av interaktive visualiseringer som viser forbindelser mellom enheter og hendelser over tid.",
+        "Kloning av depotet fra GitHub.",
+        "Automatisk identifisering av steder via GPS-koordinater."
+      ],
+      "correctIndex": 2,
+      "explanation": "Relasjonell visualisering betyr å generere interaktive visualiseringer som viser forbindelser mellom enheter og hendelser over tid [5, 6]."
+    },
+    {
+      "id": "q8",
+      "text": "Til tross for eksistensen av fancy verktøy som Maltego, Hunchly og Darkside, hva hevder kilden at ingenting slår i OSINT-arbeid?",
+      "choices": [
+        "Det nyeste skinnende teknologiske verktøyet",
+        "Et enkelt egneark og hjernens naturlige evne til å skrive ting ned i kronologisk rekkefølge",
+        "Et team av erfarne dataforskere",
+        "Direkte tilgang til Dark Web",
+        "Google Dorking"
+      ],
+      "correctIndex": 1,
+      "explanation": "Kilden uttaler at 'ingenting slår et enkelt egneark og hjernens naturlige evne til å skrive ting ned i kronologisk rekkefølge' [9, 10]."
+    },
+    {
+      "id": "q9",
+      "text": "Hvilket datoformat må brukes når man legger til en ny hendelse til tidslinjen via nettgrensesnittet?",
+      "choices": [
+        "DD/MM/YYYY",
+        "MM-DD-YYYY",
+        "YYYY/MM/DD",
+        "YYYY-MM-DD",
+        "DD.MM.YYYY"
+      ],
+      "correctIndex": 3,
+      "explanation": "Datoen for hendelsen skal angis i formatet 'YYYY-MM-DD' [11, 12]."
+    },
+    {
+      "id": "q10",
+      "text": "I sammenheng med etterforskning og tidslinjer, hva er den 'ene enkle tingen' som kilden hevder alt koker ned til, uavhengig av avanserte verktøy?",
+      "choices": [
+        "Sted",
+        "Involverte enheter",
+        "Beskrivelser",
+        "Tid ('Når')",
+        "Kostnad"
+      ],
+      "correctIndex": 3,
+      "explanation": "Kilden fremhever at bak all fancy teknologi er det én enkel ting: tid, som koker ned til det enkle spørsmålet 'Når' [9, 10]."
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e047",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er den foretrukne rekkefølgen for det aller første steget for å få tilgang til en tjeneste, ifølge kildene?",
+      "choices": [
+        "Bruk oppgitt brukernavn og passord (Let på beslag/ransaking) [1]",
+        "Velg 'Glemt passord' [1]",
+        "Tipp passord (NB: Kan være X antall forsøk) [1]",
+        "Kontakt DPA / NC3 for andre metoder [1]",
+        "Prøv pålogging via Cookies [2]"
+      ],
+      "correctIndex": 0,
+      "explanation": "Den foretrukne rekkefølgen starter med å bruke oppgitt brukernavn og passord, hentet for eksempel ved beslag eller ransaking [1]."
+    },
+    {
+      "id": "q2",
+      "text": "Hva er en aktivitet som Politiets kilder anbefaler å utføre 'alltid' FØR pågripelse?",
+      "choices": [
+        "Utfør en digital kartlegging [2]",
+        "Sikre innholdsdata (tar uker/måneder/år) [2]",
+        "Gjenopprette kontoer via 'Glemt passord' [3]",
+        "Kontakte SPOCit for utlevering av BSI [4]",
+        "Sikre Cookies via UFDR-rapporten [5]"
+      ],
+      "correctIndex": 0,
+      "explanation": "FØR PÅGRIPELSE skal man 'alltid' utføre en digital kartlegging [2]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilke tre enheter/seksjoner er oppgitt å eie SPOCit (Single Point of Contact for internettilbydere)?",
+      "choices": [
+        "Kripos, NC3, Seksjon for inntak (SINN) [4]",
+        "DPA, NC3, Felles enhet for etterforskning (FEE)",
+        "ØKOKRIM, Politiets IKT-tjenester (PIT), Kripos",
+        "NC3, Politiets sikkerhetstjeneste (PST), Kripos",
+        "SINN, Nasjonal Etterforskningsenhet (NE), DPA"
+      ],
+      "correctIndex": 0,
+      "explanation": "SPOCit eies av Kripos, NC3, Seksjon for inntak (SINN) [4]."
+    },
+    {
+      "id": "q4",
+      "text": "Hva er den estimerte behandlingstiden for anmodninger sendt til Google via SPOCit?",
+      "choices": [
+        "1-2 uker [4]",
+        "2-4 måneder [4]",
+        "2-4 uker [5]",
+        "Minutter/dager/uker [2]",
+        "Dager/uker [2]"
+      ],
+      "correctIndex": 0,
+      "explanation": "Google krever påtaleskjema, og har en estimert behandlingstid på 1–2 uker via SPOCit [4]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken type data har den lengste estimerte sikringstiden (oppgitt i kildene som uker/måneder/år)?",
+      "choices": [
+        "Arkiv [2]",
+        "BSI (Basic Subscriber Information) [2]",
+        "Søk i åpne kilder [2]",
+        "Pålogging via Cookies [5]",
+        "Innholdsdata [2]"
+      ],
+      "correctIndex": 4,
+      "explanation": "Sikring av Innholdsdata tar uker/måneder/år, som er det lengste estimatet nevnt [2]."
+    },
+    {
+      "id": "q6",
+      "text": "Ved sikring av innhold, hva er den anbefalte prosedyren angående bytte av passord og e-post/mobilnummer?",
+      "choices": [
+        "Bruk politiets standardpassord for alle tjenester, og behold den opprinnelige e-posten.",
+        "Bruk @politiet.no kontoer for gjenoppretting, og bytt passord manuelt.",
+        "Anbefaler å bruke en online passord generator uten for avanserte tegn, bruke forskjellige passord per tjeneste, og opprette dedikerte e-poster (ikke @politiet.no) for gjenoppretting [6].",
+        "Unngå å bytte passord da dette kan varsle innehaveren; sikres kun via skjermopptak.",
+        "Bytt til det siktede hadde som passord fra før, men bruk en @politiet.no e-post for gjenoppretting."
+      ],
+      "correctIndex": 2,
+      "explanation": "Man anbefaler å bruke en online passord generator uten for avanserte tegn, bruke forskjellige passord per tjeneste, og opprette dedikerte e-poster (ikke @politiet.no kontoer) for gjenoppretting [6]."
+    },
+    {
+      "id": "q7",
+      "text": "Hva er en kjent problemstilling ved forsøk på tilgang til en konto som kan reagerer på utstyret som brukes av etterforsker, ifølge kildene?",
+      "choices": [
+        "Trenger informasjon om tilknyttet kredittkort for å komme inn [1]",
+        "Tjenesten reagerer på min VPN eller enhet [1]",
+        "Man får ikke mobilen ut av flymodus [1]",
+        "Innloggingsforsøk kan kun godkjennes via mobilnummer [1]",
+        "2FA er permanent aktivert etter tre mislykkede forsøk [1]"
+      ],
+      "correctIndex": 1,
+      "explanation": "En kjent problemstilling er at tjenesten kan reagere på etterforskerens VPN eller enhet [1]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvilken av disse plattformene har den lengste estimerte behandlingstiden for anmodninger via SPOCit, og hvor lang tid er det estimert å ta?",
+      "choices": [
+        "Google: 1-2 uker [4]",
+        "Snapchat: 2-4 uker [5]",
+        "Klarna: 1-2 dager",
+        "Windows: 2-4 måneder (gjelder hele Europa) [4]",
+        "Facebook: 1 uke"
+      ],
+      "correctIndex": 3,
+      "explanation": "Windows har en estimert behandlingstid på 2–4 måneder, som gjelder hele Europa, og er den lengste nevnte i SPOCit-sammenheng [4]."
+    },
+    {
+      "id": "q9",
+      "text": "Gjennom Klarna-metoden kan man be om detaljert betalingsinformasjon tilbake i tid. Hvilken av disse typene informasjon kan man potensielt finne omtrentlig lokasjon fra, og hvor langt tilbake i tid nevnes som et eksempel?",
+      "choices": [
+        "Full personalia, tilbake til 2018.",
+        "Leveringsadresse, uten tidsbegrensning.",
+        "Produktinformasjon, kun de siste 6 månedene.",
+        "IP-adresse benyttet ved gjennomført kjøp, tilbake til 2013 i eksempelet [7, 8].",
+        "Siktedes digital tilstedeværelse på sosiale medier."
+      ],
+      "correctIndex": 3,
+      "explanation": "Klarna kan gi IP-adresse benyttet ved gjennomført kjøp, tilbake til 2013 i det gitte eksempelet, som potensielt kan brukes til å finne omtrentlig lokasjon [7, 8]."
+    },
+    {
+      "id": "q10",
+      "text": "Ved tilbakestilling av passord, hvilken plattform gir som et av alternativene muligheten til å 'Identifiser deg selv gjennom en venn'?",
+      "choices": [
+        "Gmail (via sikkerhetsspørsmål) [9]",
+        "Facebook [10]",
+        "Twitter [11]",
+        "Instagram (via koblet Facebook-konto) [11]",
+        "Skype [12]"
+      ],
+      "correctIndex": 1,
+      "explanation": "Facebook gir alternativer for passordtilbakestilling, inkludert å sende bekreftelseskode via e-post/tekstmelding, samt muligheten til å identifisere deg selv gjennom en venn [10, 13]."
+    }
+  ]
+}

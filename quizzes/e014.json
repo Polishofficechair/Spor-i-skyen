@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e014",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er hovedformålet med OSINT Timeline Tool ifølge kildene?",
+      "choices": [
+        "Lage, administrere og visualisere tidslinjer for etterforskning av åpen kilde-intelligens (OSINT) [1, 2].",
+        "Utføre dyp pakkeinspeksjon og nettverksanalyse på krypterte kanaler.",
+        "Generere automatisk rapporter basert på kriminelle register.",
+        "Samle data direkte fra lukkede sosiale medieplattformer ved hjelp av en proprietær API.",
+        "Utvikle nye Python-biblioteker for maskinlæring."
+      ],
+      "correctIndex": 0,
+      "explanation": "Verktøyet er laget for å hjelpe deg med å lage, administrere og visualisere tidslinjer for OSINT-etterforskning [1, 2]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilke tre filformater nevnes spesifikt som eksportalternativer for tidslinjer eller spørringsresultater i OSINT Timeline Tool?",
+      "choices": [
+        "CSV, Excel og PDF [1-4].",
+        "HTML, XML og JSON.",
+        "DOCX, RTF og TXT.",
+        "MP4, AVI og MOV.",
+        "PNG, JPEG og GIF."
+      ],
+      "correctIndex": 0,
+      "explanation": "Tidslinjene og spørringsresultatene kan eksporteres i ulike formater, inkludert CSV, Excel og PDF [1-4]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilke to forutsetninger (pre-requisites) kreves for å installere OSINT Timeline Tool?",
+      "choices": [
+        "Python 3.7 eller nyere og pip (Python-pakkeinstallatør) [5, 6].",
+        "Java Development Kit (JDK) og Maven.",
+        "Ruby on Rails og PostgreSQL.",
+        "Windows 10 eller macOS og Docker.",
+        "En aktiv AWS-konto og Terraform."
+      ],
+      "correctIndex": 0,
+      "explanation": "Forutsetningene for installasjon er Python 3.7 eller nyere og pip (Python-pakkeinstallatør) [5, 6]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilket grunnleggende prinsipp hevdes å være den ene enkle tingen alt koker ned til i etterforskning, ifølge filosofien som presenteres i kilden?",
+      "choices": [
+        "Teknologi.",
+        "Tid ('Når') [7, 8].",
+        "Komplekse algoritmer.",
+        "Sosiale nettverk.",
+        "Budsjett."
+      ],
+      "correctIndex": 1,
+      "explanation": "Kilden hevder at bak all bravado og teknologi koker det hele ned til én enkel ting: tid, eller 'Når' [7, 8]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken type visualisering kan verktøyet generere for å vise sammenhenger mellom data?",
+      "choices": [
+        "Søylediagrammer for statistisk analyse.",
+        "Varmekart for geografisk datatetthet.",
+        "Relasjonell visualisering som viser forbindelser mellom enheter og hendelser over tid [3, 4].",
+        "Tekstbaserte skyer for nøkkelord.",
+        "Automatiske animasjoner av hendelsesforløp."
+      ],
+      "correctIndex": 2,
+      "explanation": "Verktøyet kan generere relasjonell visualisering som viser forbindelser mellom enheter og hendelser over tid [3, 4]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvilken spesifikk terminalkommando brukes for å starte den lokale webserveren for OSINT Timeline Tool, etter at alle avhengigheter er installert?",
+      "choices": [
+        "npm start",
+        "bash run.sh",
+        "python osint_timeline_tool.py [9, 10].",
+        "pip launch app",
+        "node server.js"
+      ],
+      "correctIndex": 2,
+      "explanation": "Etter at avhengighetene er installert, starter man applikasjonen ved å kjøre Python-skriptet: 'python osint_timeline_tool.py' [9, 10]."
+    },
+    {
+      "id": "q7",
+      "text": "Hva er den standard lokale nettadressen og porten som vises i terminalen når applikasjonen starter?",
+      "choices": [
+        "http://localhost:8080/",
+        "http://192.168.1.1:80/",
+        "http://127.0.0.1:5000/ [9, 10].",
+        "http://timeline.osint.com/",
+        "https://0.0.0.0:443/"
+      ],
+      "correctIndex": 2,
+      "explanation": "Når applikasjonen starter, kjører den på en lokal webserver, og adressen er 'http://127.0.0.1:5000/' [9, 10]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvilken Git-kommando kreves for å laste ned prosjektets depot til en lokal maskin, og hvilken kommando brukes deretter for å navigere inn i prosjektmappen?",
+      "choices": [
+        "git pull origin main; cd osint-timeline",
+        "git checkout -b new-branch; git clone",
+        "git clone https://github.com/your-username/osint-timeline-tool.git; cd osint-timeline-tool [5, 6].",
+        "git initialize; navigate folder",
+        "git commit -m 'Initial setup'; git push"
+      ],
+      "correctIndex": 2,
+      "explanation": "Man kloner depotet først med 'git clone...' og deretter navigerer man inn i prosjektmappen med 'cd osint-timeline-tool' [5, 6]."
+    },
+    {
+      "id": "q9",
+      "text": "I kasuseksemplet nevnes det at selskapet co-eid av Beth og Roger i utgangspunktet ble finansiert av en bestemt kilde. Hva var denne kilden?",
+      "choices": [
+        "Venturekapital fra Silicon Valley.",
+        "Amerikanske statlige teknologi-grant (tilskudd) [11].",
+        "Private lån fra en sveitsisk bank.",
+        "Rogers personlige oppsparte midler.",
+        "En crowdsourcing-kampanje."
+      ],
+      "correctIndex": 1,
+      "explanation": "Selskapet ble finansiert av amerikanske statlige teknologi-grant [11]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvilket spesifikt format kreves for 'Dato'-feltet når du legger til en ny oppføring i nettgrensesnittet til OSINT Timeline Tool?",
+      "choices": [
+        "MM/DD/YYYY (Måned/Dag/År).",
+        "YYYY/MM/DD (År/Måned/Dag).",
+        "DD-MM-YYYY (Dag-Måned-År).",
+        "YYYY-MM-DD (År-Måned-Dag) [12, 13].",
+        "Unix tidsstempel."
+      ],
+      "correctIndex": 3,
+      "explanation": "Datoen for hendelsen skal angis i formatet YYYY-MM-DD [12, 13]."
+    }
+  ]
+}
