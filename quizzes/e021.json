@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e021",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er hovedfunksjonen til Google-operatøren `site:domene.com` i OSINT-sammenheng?",
+      "choices": [
+        "Ekskluderer spesifikke ord eller underdomener fra søket.",
+        "Finner kun resultater der en eksakt frase er nevnt.",
+        "Begrenser søket til ett spesifikt domene.",
+        "Søker etter eierinformasjon (WHOIS).",
+        "Finner alle tilknyttede subdomener som ikke er indeksert."
+      ],
+      "correctIndex": 2,
+      "explanation": "Operatøren `site:` begrenser søkeresultatene til å gjelde kun sider innenfor det spesifiserte domenet, noe som er ideelt for å lete etter spesifikk informasjon på selve nettstedet [1-3]."
+    },
+    {
+      "id": "q2",
+      "text": "Hva er det første som skjer i tastaturet etter at 'Enter'-tasten trykkes helt ned i en USB-tilkoblet datamaskin?",
+      "choices": [
+        "Browseren parser URL-en.",
+        "En elektrisk krets lukkes.",
+        "Operativsystemet mottar en interrupt.",
+        "Tastaturet sender keycode 13 til USB-kontrolleren.",
+        "Browserens auto-complete maskineri aktiveres."
+      ],
+      "correctIndex": 1,
+      "explanation": "Når 'Enter'-tasten trykkes ned til bunnen av sitt bevegelsesområde, lukkes en elektrisk krets. Dette tillater en liten mengde strøm å flyte inn i tastaturets logikk, som deretter konverterer hendelsen til en keycode [4]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilken kjernekomponent i nettleserens arkitektur er ansvarlig for å tolke (parse) HTML og CSS, og vise det formaterte innholdet på skjermen?",
+      "choices": [
+        "User Interface.",
+        "Browser Engine.",
+        "Rendering Engine.",
+        "JavaScript Engine.",
+        "UI Backend."
+      ],
+      "correctIndex": 2,
+      "explanation": "Rendering Engine (Gjengivelsesmotor) er programvarekomponenten som er ansvarlig for å tolke (parse) HTML og CSS, og deretter vise det forespurte innholdet på skjermen [5, 6]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken etterretningsdisiplin baserer seg på innsamling og analyse av offentlig tilgjengelig informasjon uten å sende aktiv trafikk eller interagere direkte med målets systemer?",
+      "choices": [
+        "Aktiv rekognosering.",
+        "Penetrasjonstesting.",
+        "Directory Busting.",
+        "Bruk Av Åpne Kilder.",
+        "Sårbarhetsskanning."
+      ],
+      "correctIndex": 3,
+      "explanation": "BRÅK er disiplinen med å samle inn og analysere offentlig tilgjengelig informasjon passivt, uten direkte interaksjon med målets systemer [7-10]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilket Go-basert kommandolinjeverktøy brukes i OSINT-arbeidsflyten for å automatisk ta skjermbilder av en liste med aktive nettadresser, for å muliggjøre rask visuell analyse?",
+      "choices": [
+        "httprobe.",
+        "subfinder.",
+        "gowitness.",
+        "assetfinder.",
+        "amass."
+      ],
+      "correctIndex": 2,
+      "explanation": "gowitness tar en liste med nettadresser som input og automatiserer prosessen med å ta skjermbilder av dem. Dette muliggjør rask visuell triage av et stort antall aktive sider [11-14]."
+    },
+    {
+      "id": "q6",
+      "text": "I en standard DNS-oppslagsprosess, hvilken cache sjekkes for en DNS-post umiddelbart etter at nettleserens interne hurtigbuffer (Browser cache) er sjekket?",
+      "choices": [
+        "ISP DNS cache.",
+        "Router cache.",
+        "Rotnavneserveren.",
+        "OS cache.",
+        "Google’s nameserver."
+      ],
+      "correctIndex": 3,
+      "explanation": "DNS-oppslaget følger en hierarki som starter med Browser cache. Hvis posten ikke finnes der, gjør nettleseren et systemkall for å sjekke Operativsystemets (OS) cache, før forespørselen eventuelt går videre til ruteren [15]."
+    },
+    {
+      "id": "q7",
+      "text": "Hva er den primære funksjonelle forskjellen mellom Render Tree (gjengivelsestreet) og DOM-treet (Document Object Model) i nettleseren?",
+      "choices": [
+        "Render Tree er konstruert basert på JavaScript, mens DOM-treet er basert på HTML-koden.",
+        "DOM-treet inneholder layoutkoordinater, mens Render Tree utelukkende inneholder elementenes stil.",
+        "Render Tree inneholder bare visuelle elementer og deres layout, mens DOM-treet inneholder alle noder (inkludert ikke-visuelle elementer).",
+        "Render Tree er utelukkende for CSS-regler, mens DOM-treet er for innhold.",
+        "Render Tree bygges etter at painting er fullført, mens DOM-treet bygges først."
+      ],
+      "correctIndex": 2,
+      "explanation": "Render Tree er en visuell representasjon av dokumentet som inneholder elementer i den rekkefølgen de skal vises. Render Tree utelater ikke-visuelle DOM-elementer, for eksempel 'head'-elementet, eller elementer med 'display: none' [16, 17]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvilken BRÅK-teknikk utnytter offentlige logger for SSL/TLS-sertifikater (Certificate Transparency) for å avdekke underdomener, ofte funnet via verktøyet crt.sh?",
+      "choices": [
+        "Reversert IP-oppslag for å finne delt hosting.",
+        "Analyse av tilbakekoblinger (Backlinks) for å spore forretningsrelasjoner.",
+        "Søk i sertifikatlogger (Certificate Transparency Logs).",
+        "Korrelasjon via Google Analytics UA-koder.",
+        "Bruk av The Wayback Machine for historisk analyse."
+      ],
+      "correctIndex": 2,
+      "explanation": "Sertifikattransparens logger (Certificate Transparency Logs) brukes til å finne underdomener ved å søke i offentlige logger over utstedte SSL/TLS-sertifikater, ofte avslørende miljøer som sso-dev eller uat [18-22]."
+    },
+    {
+      "id": "q9",
+      "text": "Hvilken sekvens beskriver de fire korrekte trinnene nettleseren bruker for å konvertere rå HTML-bytes (hentet fra nettverket) til den endelige DOM-strukturen?",
+      "choices": [
+        "Lexing → Tokenizing → Conversion → DOM Construction.",
+        "Conversion → Tokenizing → Lexing → DOM Construction.",
+        "Parsing → Layout → Painting → DOM Construction.",
+        "Tokenizing → Lexing → Conversion → Rendering.",
+        "Conversion → Lexing → Tokenizing → DOM Construction."
+      ],
+      "correctIndex": 1,
+      "explanation": "Nettleserens parsing starter med Conversion (rå bytes til tegn), etterfulgt av Tokenizing (tegn til tokens), deretter Lexing (tokens til objekter), og til slutt DOM Construction (objektene lenkes i et tre) [23, 24]."
+    },
+    {
+      "id": "q10",
+      "text": "I den automatiserte BRÅK-arbeidsflyten for underdomener, hva er det strategiske formålet med å 'pipe' resultatet fra Subfinder/Assetfinder til verktøyet httprobe?",
+      "choices": [
+        "Å utføre en dybdesøk i historiske data for å finne utdaterte versjoner av protokollen.",
+        "Å fjerne duplikate oppføringer fra listen og sortere den alfabetisk.",
+        "Å filtrere bort inaktive subdomener og returnere kun de som har en aktiv webserver (HTTP/HTTPS).",
+        "Å ta skjermbilder av alle mulige domener før man tester om de er aktive.",
+        "Å identifisere hvilke domener som bruker PHP 7.3.24 som programmeringsspråk."
+      ],
+      "correctIndex": 2,
+      "explanation": "Ved å pipe resultatene til httprobe, verifiserer man raskt hvilke av de potensielle subdomenene som faktisk er 'i live' (har en aktiv webserver), og filtrerer bort alt støy. Dette forvandler en lang, rå liste til en håndterbar liste over aktive mål [12, 13, 25, 26]."
+    }
+  ]
+}
