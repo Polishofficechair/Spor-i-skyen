@@ -1,0 +1,45 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hvilket begrep brukes i kildene for å beskrive podcastens fleksibilitet, slik at læringen kan integreres i hverdagen (f.eks. under pendling eller trening)?",
+      "choices": [
+        "Accessible, On-the-Go Learning",
+        "Kontinuerlig Faglig Oppdatering",
+        "Lavterskel Re-engasjering",
+        "Taktisk Relevans",
+        "Multi-Angle Perspectives"
+      ],
+      "correctIndex": 0,
+      "explanation": "Kildene bruker spesifikt begrepet 'Accessible, On-the-Go Learning' for å beskrive fleksibiliteten ved å lytte til ÅK/OSINF-kunnskap mens man pendler, trener eller gjør rutinearbeid [1-9]."
+    },
+    {
+      "id": "q2",
+      "text": "En av de tre hovedutfordringene med dagens kursmodell er relatert til intensive kurs. Hva er 'kurseffekten' som beskrives?",
+      "choices": [
+        "Høy reisekostnad for politidistriktet",
+        "Mangel på kvalifiserte instruktører",
+        "Detaljer fra kurs forsvinner fort over tid (glemsel)",
+        "Utstyret på kurslokalene er utdatert",
+        "Umuligheten av å få nye eksperter som gjester"
+      ],
+      "correctIndex": 2,
+      "explanation": "Kurseffekten viser til at detaljer fra intensive fysiske kurs har en tendens til å forsvinne over tid hvis de ikke brukes jevnlig, og kunnskap 'lekker ut' [16-21]."
+    },    
+{
+      "id": "q3",
+      "text": "Dokumentet fremhever at læringsmodellen skal bygge helhetlig kompetanse. Utenom rene tekniske ferdigheter, hvilke tre sentrale kjerneområder skal podcasten særlig vektlegge for å sikre ansvarlig bruk av ÅK?",
+      "choices": [
+        "Juridiske rammer, saksbehandling og kurslogistikk.",
+        "Nye plattformer, analyseverktøy og fysisk oppmøte.",
+        "Økonomisk kriminalitet, personvern og patruljering.",
+        "Internrevisjon, budsjettstyring og HR-prosedyrer.",
+        "Etterforskende tankesett, kritisk tenkning og etiske grenser."
+      ],
+      "correctIndex": 4,
+      "explanation": "Ved siden av tekniske ferdigheter, legges det sterkt fokus på å bygge og vedlikeholde det etterforskende tankesettet (investigative mindset), kritisk tenkning og etiske grenser (ethical boundaries) [9, 42, 51-61]."
+    }
+  ]
+}
