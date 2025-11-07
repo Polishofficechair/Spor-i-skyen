@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: OSINT-verktøy og teknikker",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er en anbefalt fremgangsmåte for å undersøke en mistenkelig video, i henhold til kildematerialet?",
+      "choices": [
+        "Søk etter bildeteksten og beskrivelsen av videoen.",
+        "Undersøk kun EXIF-data for tids- og stedsbekreftelse.",
+        "Del videoen med kontaktnettverk for umiddelbar tilbakemelding.",
+        "Kjør en Whois-søk på domenet som er vert for videoen.",
+        "Sjekk kun eldre innlegg for inkonsekvenser eller anomalier."
+      ],
+      "correctIndex": 0,
+      "explanation": "Når man undersøker en video, skal man kjøre søk for bildeteksten og beskrivelsen av videoen, samt nøkkelord for hendelsen, tilsynelatende sted og objekter i videoen [1]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilken type Bitcoin-adresse starter med prefikset '1', og representerer den opprinnelige adresstypen introdusert i 2009?",
+      "choices": [
+        "Bech32 Adresser ('bc1q')",
+        "P2SH Adresser ('3...')",
+        "Taproot Adresser ('bc1p')",
+        "P2PKH Adresser ('1...')",
+        "Multi-signature Adresser"
+      ],
+      "correctIndex": 3,
+      "explanation": "P2PKH (Pay-to-Public-Key-Hash) adresser er den opprinnelige Bitcoin-adresstypen, introdusert i 2009, og starter med '1' [2]."
+    },
+    {
+      "id": "q3",
+      "text": "I Reddits innebygde søk, hvilket filter brukes for å begrense søkeresultatene til å inkludere kun innhold som er bilder, videoer eller GIF-er?",
+      "choices": [
+        "Innlegg",
+        "Fellesskap (subreddits)",
+        "Kommentarer",
+        "Medier",
+        "Personer"
+      ],
+      "correctIndex": 3,
+      "explanation": "Filteret 'Medier' returnerer innhold som bare er for medier (bilder, videoer, GIF-er) [3]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken enkel teknikk kan brukes for å laste ned et hvilket som helst Google-dokument for offline bruk i et spesifikt filformat?",
+      "choices": [
+        "Bruke en tredjeparts 'Google Downloader'-tjeneste.",
+        "Legge til `/export?format=<filtype>` i dokumentets URL.",
+        "Bruke 'ctrl + P' for å skrive ut som PDF.",
+        "Endre delingsinnstillingene til 'Offentlig nedlasting'.",
+        "Kopiere dokument-IDen og lime den inn i en arkiveringstjeneste."
+      ],
+      "correctIndex": 1,
+      "explanation": "Du kan enkelt laste ned et hvilket som helst Google-dokument for offline bruk ved å redigere nettadressen og legge til `/export?format=<filtype>` til dokumentets URL [4, 5]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken SQL-kommando brukes for å legge til nye poster (records) i en tabell?",
+      "choices": [
+        "SELECT",
+        "UPDATE",
+        "INSERT",
+        "DELETE",
+        "COUNT"
+      ],
+      "correctIndex": 2,
+      "explanation": "Kommandoen 'INSERT' brukes for å legge til nye poster i en tabell [6, 7]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvilken URL-modifierer lar deg se og laste ned et Instagram-innlegg i full oppløsning?",
+      "choices": [
+        "/?highres=true",
+        "/?resolution=max",
+        "/data/size=full",
+        "/media/?size=l",
+        "/?format=original"
+      ],
+      "correctIndex": 3,
+      "explanation": "Du kan se og laste ned et Instagram-innlegg i full oppløsning ved ganske enkelt å legge til `/media/?size=l` i nettadressen til innlegget [8, 9]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilken kombinasjon av SQL-kommandoer brukes for å gruppere rader med samme verdier og deretter filtrere de grupperte resultatene basert på en spesifikk betingelse (f.eks. antall forekomster)?",
+      "choices": [
+        "SELECT og WHERE",
+        "FROM og JOIN",
+        "GROUP BY og HAVING",
+        "INSERT og UPDATE",
+        "COUNT og SELECT"
+      ],
+      "correctIndex": 2,
+      "explanation": "GROUP BY samler rader med samme verdier i sammendragsrader, og HAVING brukes for å filtrere disse gruppene basert på en betingelse, ofte brukt i kombinasjon for å filtrere aggregerte data [7, 10]."
+    },
+    {
+      "id": "q8",
+      "text": "I Reddit-arkitekturen, hvilken fellesskapstype tillater brukere å se og kommentere innhold, men krever tillatelse fra moderatorer for å legge ut innhold?",
+      "choices": [
+        "Offentlig",
+        "Privat",
+        "Kun premium",
+        "Begrenset",
+        "Anonytm"
+      ],
+      "correctIndex": 3,
+      "explanation": "Et 'Begrenset' fellesskap betyr at brukere kan se og kommentere, men trenger tillatelse fra fellesskapsmoderatorene for å legge ut innhold [11]."
+    },
+    {
+      "id": "q9",
+      "text": "Når man undersøker en e-postadresse, hvilken teknikk, ifølge kildematerialet, utnytter hvordan Gmail håndterer tegn (prikker) for potensielt å avdekke ny informasjon og flere potensielle kunder?",
+      "choices": [
+        "PGP-nøkkelsøk via keys.openpgp.org.",
+        "Kryssreferering mot IP-adresser fra ISP-logger.",
+        "Søk i 'haveibeenpwned.com' for databrudd.",
+        "Ignorere prikker i Gmail-adresser, da de er identiske for Gmail, men behandles forskjellig av andre tjenester.",
+        "Bruke emojis i søket etter e-postrelaterte innlegg."
+      ],
+      "correctIndex": 3,
+      "explanation": "Gmail-adresser ignorerer prikker (f.eks. john.doe@gmail.com = johndoe@gmail.com), men alt annet gjør det vanligvis ikke. Dette kan potensielt oppdage ny informasjon og flere potensielle kunder ved å teste begge formatene [12-14]."
+    },
+    {
+      "id": "q10",
+      "text": "Hva er 'Microstructuring' i sammenheng med sporing av Bitcoin-transaksjoner, og hvorfor er det et rødt flagg?",
+      "choices": [
+        "Å bruke flere forskjellige kryptovekslere (on-road/off-road) for å unngå AML-regler.",
+        "Å splitte store transaksjoner i mange unødvendige små transaksjoner for å unngå å utløse overvåkingssystemer.",
+        "Å samle Bitcoin fra mange UTXO-er til én enkelt adresse.",
+        "Å bruke Base58-koding for å forkorte adresseformatet og øke anonymiteten.",
+        "Å endre transaksjonsgebyret for å sikre at transaksjonen går raskere gjennom nettverket."
+      ],
+      "correctIndex": 1,
+      "explanation": "Microstructuring er når transaksjoner splittes i mange mindre transaksjoner unødvendig (i likhet med finansiell microstructuring), noe som kan indikere et forsøk på å unngå overvåkingssystemer og er et betydelig rødt flagg [15]."
+    }
+  ]
+}
