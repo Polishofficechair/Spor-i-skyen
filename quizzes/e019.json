@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: OSINT Metoder for Brukernavn og Personer",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er den definerende egenskapen ved en \"falsk positiv\" i konteksten av automatiserte brukernavnsøk (som What's My Name? og Sherlock)?",
+      "choices": [
+        "Når verktøyet feilaktig rapporterer at en konto eksisterer, selv om den ikke gjør det [1-4].",
+        "Når en konto blir funnet, men den tilhører en annen person med samme brukernavn [5, 6].",
+        "Når søket returnerer en HTTP 404-feilkode, men verktøyet feiltolker det [7].",
+        "Når en lenke omdirigerer til en inaktiv landingsside [8].",
+        "Når verktøyet overser en faktisk eksisterende konto [5, 9, 10]."
+      ],
+      "correctIndex": 0,
+      "explanation": "En falsk positiv er når verktøyet feilaktig indikerer at en konto eksisterer, ofte fordi det registrerer en gyldig HTTP-respons selv om siden inneholder en feilmelding eller er utilgjengelig [1, 2, 4, 7]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilket kommandolinjeverktøy for brukernavnsøk ble spesifikt beskrevet som \"ganske tregt\" i kildematerialet?",
+      "choices": [
+        "What's My Name? [9, 11].",
+        "Sherlock [9, 12].",
+        "Namechk.com [13].",
+        "Recon-NG [14, 15].",
+        "grep [2]."
+      ],
+      "correctIndex": 0,
+      "explanation": "Verktøyet What's My Name? ble beskrevet som «ganske tregt» sammenlignet med alternativer som Sherlock [9, 11]."
+    },
+    {
+      "id": "q3",
+      "text": "Hva er hovedformålet med å bruke søkeoperatøren `site:twitter.com` i en OSINT-etterforskning for å finne fødselsdatoer?",
+      "choices": [
+        "Å tvinge søkemotoren til å kun returnere resultater fra Twitter [16, 17].",
+        "Å filtrere bort alle resultater som inneholder ordet «Twitter» [18].",
+        "Å søke etter eksakte fraser eller sitater [19].",
+        "Å begrense søket til kun innhold som er skrevet i brødteksten (`intext:`) [17, 20].",
+        "Å finne bufrede (cachede) versjoner av Twitter-sider [21]."
+      ],
+      "correctIndex": 0,
+      "explanation": "site:-operatoren er et sentralt verktøy for å avgrense et søk til ett enkelt domene for å maksimere relevans og minimere støy fra resten av internett [16, 17]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilke to gratis verktøy ble fremhevet i kildematerialet som de mest effektive spesialiserte søkemotorene for å finne personer (people search engines)?",
+      "choices": [
+        "White Pages og True People Search [22-24].",
+        "Sherlock og What's My Name? [25].",
+        "Spokio og Webme [23, 26].",
+        "PIPL og That's Them [23, 27].",
+        "Google Dorks og WaybackMachine [18, 28]."
+      ],
+      "correctIndex": 0,
+      "explanation": "White Pages og True People Search ble fremhevet som de to beste gratisressursene for personsøk på det tidspunktet kildematerialet ble laget [22-24]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken manuell OSINT-teknikk involverer det å utnytte en nettsides respons på innloggingssiden for å bekrefte om et brukernavn eksisterer basert på hvilken feilmelding systemet gir?",
+      "choices": [
+        "Brukernavnopplisting (Username Enumeration) [4, 29, 30].",
+        "Omvendt bildesøk (Reverse Image Search) [4, 31].",
+        "Informasjonskjedning (Information Chaining) [13, 32].",
+        "Stilometri (Stylometry) [33, 34].",
+        "Omvendt telefonsøk (Reverse Phone Search) [35, 36]."
+      ],
+      "correctIndex": 0,
+      "explanation": "Brukernavnopplisting (Username Enumeration) er teknikken der man analyserer systemets ulike svar (f.eks. 'cannot find the user' vs. be om passord) for å bekrefte om et brukernavn er gyldig [4, 29, 30]."
+    },
+    {
+      "id": "q6",
+      "text": "For å effektivisere analyse av rådata fra What's My Name? etter å ha omdirigert utdataene til en fil, hvilken Bash/kommandolinje-kombinasjon brukes for å filtrere filen slik at den KUN viser de positive funnene (\"user found\")?",
+      "choices": [
+        "cat [filnavn] | grep \"user found\" [37, 38].",
+        "what's my name -u [brukernavn] | filter-found",
+        "grep [filnavn] -v \"user not found\"",
+        "sherlock [filnavn] --only-positive",
+        "intext:\"user found\" site:[filnavn]"
+      ],
+      "correctIndex": 0,
+      "explanation": "Man omdirigerer først utdataene til en fil (>), og bruker deretter cat [filnavn] i kombinasjon med grep til å isolere linjene som inneholder nøyaktig frasen «user found» [2, 37, 38]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilken spesifikk søketeknikk førte til at Rita lin's nøyaktige fødselsdag (29. juni) og alder (31 år) ble funnet i eksempelet fra kildematerialet?",
+      "choices": [
+        "Et generisk Google-søk på `Rita lin bursdag` [39, 40].",
+        "Bruk av intext: operatoren sammen med et brukernavn [20, 41].",
+        "Bruk av personsøkemotorer som True People Search [42, 43].",
+        "Et eksakt frasesøk med anførselstegn: \"Rita lin bursdag\" [19, 44-46].",
+        "Kombinasjonen site:facebook.com med navnet hans [47, 48]."
+      ],
+      "correctIndex": 3,
+      "explanation": "Det var et eksakt frasesøk med anførselstegn, \"Rita lin bursdag\", som ledet til en tweet datert 29. juni der han selv annonserte sin bursdag og alder [19, 44-46]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvilken teknisk feil ved automatiserte verktøy (som What's My Name? og Sherlock) er den vanligste årsaken til at de rapporterer falske positiver?",
+      "choices": [
+        "Feil oppdagelse av URL-omdirigeringer (HTTP 301/302) [1, 5, 7].",
+        "At verktøyet kun sjekker for en gyldig HTTP-statuskode (som 200 OK) og ikke innholdet på siden [3, 5, 7, 12].",
+        "At verktøyene bruker utdaterte lister over nettsteder [5].",
+        "Feilklassifisering av «troll»-kontoer som autentiske funn [8].",
+        "At outputen er for fargerik til å skille mellom funn og støy [9, 12]."
+      ],
+      "correctIndex": 1,
+      "explanation": "Verktøyene sjekker primært om de får en vellykket HTTP-statuskode (200 OK). Hvis siden lastes, tolker verktøyet det som et treff, selv om siden inneholder en feilmelding som 'brukeren finnes ikke' [3, 5, 7, 12]."
+    },
+    {
+      "id": "q9",
+      "text": "Hvilken rekke av manuelle OSINT-teknikker er mest hensiktsmessig for å «kjede sammen» et pseudonym fra en mobilapp (som Kick) til en bekreftet reell identitet og utvide sporet?",
+      "choices": [
+        "Bruk av `grep` for å filtrere resultatene fra Sherlock, etterfulgt av et omvendt bildesøk på den funnede Keybase-profilen [5, 37].",
+        "Direkte URL-sjekk (`kick.me/mav`), utnyttelse av autofullfør-funksjonen, og deretter omvendt bildesøk på det ubeskårne profilbildet [49-54].",
+        "Søk i databruddregistre, etterfulgt av stilometri for å matche skrivemønstre på Reddit [33, 34].",
+        "Omvendt telefonsøk på det tilknyttede nummeret, etterfulgt av en sjekk i White Pages [35, 36].",
+        "Brukernavnopplisting på Snapchat, etterfulgt av analyse av IP-adresser fra en forumskommentar [50, 55, 56]."
+      ],
+      "correctIndex": 1,
+      "explanation": "Manuelle teknikker som direkte URL-sjekk og autofullfør kan avdekke fulle navn (som 'Virginia Thompson' fra 'Mav') [49, 50]. Deretter kan man hente ut det ubeskårne profilbildet for å kjøre omvendt bildesøk og koble til ytterligere profiler [51, 52, 54], som er kjernen i informasjonskjedning [13]."
+    },
+    {
+      "id": "q10",
+      "text": "Hva er den mest kritiske strategiske risikoen ved å stole på resultater fra spesialiserte personsøkemotorer (som True People Search), som krever absolutt verifisering gjennom uavhengige kilder?",
+      "choices": [
+        "At personsøkemotorene kun indekserer data fra velgerregistre og ignorerer datainnbrudd [57].",
+        "At de primært samler data fra IP-adresser, som kun gir omtrentlig geografisk lokasjon [58].",
+        "At nettsidene bevisst kan presentere utdatert eller falsk informasjon, inkludert usanne påstander om rulleblad, for å presse brukeren til å kjøpe dyre rapporter [21, 59-61].",
+        "At verktøyene ikke kan brukes av analytikere utenfor USA [59, 62].",
+        "At de ikke kan brukes til omvendt telefonsøk [24]."
+      ],
+      "correctIndex": 2,
+      "explanation": "Det er en betydelig risiko for at personsøkemotorer inneholder utdatert eller feilinformasjon, og at noen bevisst presenterer falske påstander (som rulleblad) for å motivere brukeren til å kjøpe en betalt, fullstendig rapport. Derfor må all informasjon verifiseres [21, 59-61]."
+    }
+  ]
+}
