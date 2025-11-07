@@ -1,0 +1,143 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva står forkortelsen SOCMINT for, i konteksten av etterretning?",
+      "choices": [
+        "Social Media Intelligence",
+        "Security Operations Center Monitoring",
+        "Source Open Command Management",
+        "Systematic Organized Crime Monitoring and Investigation Tools",
+        "Societal Online Communication Management"
+      ],
+      "correctIndex": 0,
+      "explanation": "SOCMINT står for Social Media Intelligence, og er en underkategori av OSINT som fokuserer på å samle, analysere og tolke data fra sosiale medier [1, 2]."
+    },
+    {
+      "id": "q2",
+      "text": "Når man undersøker en sosial medieside, hvilken informasjon nevnes spesifikt som viktig å registrere i tillegg til den fulle URL-en?",
+      "choices": [
+        "Det totale antallet innloggedcorrectIndex": 0,
+      "explanation": "SOCMINT står for Social Media Intelligence, og er en underkategori av OSINT som fokuserer på å samle, analysere og tolke data fra sosiale medier [1, 2]."
+    },
+    {
+      "id": "q2",
+      "text": "Når man undersøker en sosial medieside, hvilken informasjon nevnes spesifikt som viktig å registrere i tillegg til den fulle URL-en?",
+      "choices": [
+        "Det totale antallet innloggede økter de siste 30 dagene",
+        "Hele konto-ID-nummeret (Account ID Number)",
+        "Tidspunktet for da kontoen ble sist deaktivert",
+        "IP-adressen til brukerens siste pålogging",
+        "Den krypterte passord-hashen"
+      ],
+      "correctIndex": 1,
+      "explanation": "Man skal registrere den fulle URL-en for kontoen og skaffe konto-ID-nummeret (Account ID Number), i tilfelle kontoinnehaveren endrer sitt online brukernavn [3, 4]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilken spesifikk teknikk, som nevnes som nyttig for å spore skjulte profiler, innebærer å bruke Google eller TinEye?",
+      "choices": [
+        "Søk med e-post eller telefonnummer",
+        "Analyse av følgelister",
+        "Omvendt bildesøk (Reverse Image Search)",
+        "Analyse av metadata i den siste posten",
+        "Søk ved hjelp av geografiske data"
+      ],
+      "correctIndex": 2,
+      "explanation": "Manuelt søk inkluderer Omvendt bildesøk (Reverse Image Search), hvor man kan bruke Google eller TinEye til å finne profiler som bruker samme bilde [5, 6]."
+    },
+    {
+      "id": "q4",
+      "text": "Hva er formålet med søkeoperatoren 'site:' når man bruker Google Dorking i en etterforskning?",
+      "choices": [
+        "Å søke etter eksakte treff ved vanlige navn",
+        "Å inkludere resultater fra alle nettsider unntatt den spesifiserte",
+        "Å begrense søket til en spesifikk nettside",
+        "Å søke etter nettsider som er opprettet på et bestemt språk",
+        "Å finne geografiske data knyttet til nettsiden"
+      ],
+      "correctIndex": 2,
+      "explanation": "I Google Dorking brukes operatoren 'site:' for å begrense søket til en spesifikk nettside. Et eksempel er site:facebook.com 'Ola Nordmann' [7, 8]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilket av følgende er et nevnt formål for politiet når de leter etter skjulte profiler og kontoer?",
+      "choices": [
+        "Identifisere mistenkte",
+        "Overvåke offentlig økonomisk aktivitet",
+        "Avdekke ulovlige nettverk i dark web",
+        "Utføre rettslig bindende avhør digitalt",
+        "Teste nye sosiale medier-protokoller"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ved hjelp av SOCMINT får politiet mulighet til å blant annet identifisere mistenkte, avdekke nettverk og relasjoner, og kartlegge trusler [9, 10]."
+    },
+    {
+      "id": "q6",
+      "text": "Maltego beskrives som et avansert grafverktøy. Hva er dets primære funksjon nevnt i kildene for OSINT-etterforskning?",
+      "choices": [
+        "Automatisert innhenting og analyse av over 500 sosiale medier og nettsider",
+        "Å generere dypfake innhold for å teste algoritmer",
+        "Å spore forbindelser mellom enheter som e-post, telefon og brukernavn",
+        "Kun å utføre omvendt bildesøk med sanntidsdata",
+        "Å eksportere data utelukkende i XML-format"
+      ],
+      "correctIndex": 2,
+      "explanation": "Maltego er et avansert grafverktøy for å spore forbindelser mellom enheter som e-post, telefon og brukernavn [11-13]. OSINT Industries, derimot, samler data fra 500+ sosiale medier [11, 12]."
+    },
+    {
+      "id": "q7",
+      "text": "Ifølge kildene, hva er en fare knyttet til 'Algorithmic Manipulation' som OSINT-spesialister må se etter?",
+      "choices": [
+        "At algoritmer automatisk sletter alle spor av slettede data",
+        "At algoritmer lukker kontoer uten varsel basert på søkehistorikk",
+        "At algoritmer utilsiktet kan forsterke radikaliserende innhold ved å prioritere engasjement",
+        "At algoritmer kun promoterer innhold som er bekreftet av statlige organer",
+        "At algoritmer fjerner alle metadata fra bilder automatisk"
+      ],
+      "correctIndex": 2,
+      "explanation": "Algoritmer prioriterer innhold som skaper engasjement, men dette kan føre til at de utilsiktet forsterker radikalt innhold gjennom personlige anbefalinger. Dette utgjør en trussel som Social Media OSINT kan oppdage [14]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvilke tre eksportmuligheter nevnes for data hentet via spesialverktøy som OSINT Industries, og som er 'perfekt for dokumentasjon i straffesaker'?",
+      "choices": [
+        "HTML, CSV og TXT",
+        "PDF, XML og SQL",
+        "PDF, Excel og JSON",
+        "Word, RTF og ZIP",
+        "ODT, PNG og CSV"
+      ],
+      "correctIndex": 2,
+      "explanation": "Spesialverktøy har eksportmuligheter som lar brukeren laste ned data i **PDF, Excel eller JSON**, noe som er 'perfekt for dokumentasjon i straffesaker' [15, 16]."
+    },
+    {
+      "id": "q9",
+      "text": "Når man prøver å hente et større profilbilde fra en AirBnB URL som inneholder parameteren `?im_w=240`, hvilken metode anbefales for å få en større versjon av bildet?",
+      "choices": [
+        "Kjøre en JavaScript-kode for å tvinge frem større bilde",
+        "Endre URL-en til å inkludere en ny bruker-ID",
+        "Doble og re-doble nummeret på slutten av URL-en (f.eks. til 480 eller 960)",
+        "Fjerne hele `?im_w=` parameteren",
+        "Bruke Developer Tools (F12) for å søke etter 'Airbnb Large Image'"
+      ],
+      "correctIndex": 2,
+      "explanation": "For AirBnB anbefales det å doble og re-doble nummeret på slutten av URL-en (i eksempelet 240) til f.eks. 480 eller 960 for å se en mye større kopi av bildet [17]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvilken veiledende praksis anbefales for politiet ved bruk av OSINT, i henhold til kildens oppsummering?",
+      "choices": [
+        "Prioriter alltid OSINT-verktøy fremfor manuelle søk for å spare tid.",
+        "Søk aktivt etter private eller begrensede data, da dette er nødvendig for etterforskningen.",
+        "Start bredt med søkemotorer og manuelle metoder, deretter bruk OSINT-verktøy for dypere innsikt.",
+        "Unngå å dokumentere funn i JSON, da dette er et uegnet format for rettssaker.",
+        "Begrens alle OSINT-undersøkelser til kun å omfatte data som er eldre enn 6 måneder."
+      ],
+      "correctIndex": 2,
+      "explanation": "Anbefalt praksis for politiet er å 1. Starte bredt med søkemotorer og manuelle metoder. 2. Bruke OSINT-verktøy for dypere innsikt og raskere resultat. 3. Dokumentere funn strukturert og etterrettelig. 4. Etterleve etiske og juridiske retningslinjer [18, 19]."
+    }
+  ]
+}
