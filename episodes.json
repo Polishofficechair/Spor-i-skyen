@@ -121,7 +121,7 @@
   {
     "id": "e018",
     "title": "Geolokalisering",
-    "description": "mMtodikk for å fastslå et geografisk sted utelukkende basert på visuelle ledetråder i et bilde, inkludert analyse av kjøretøy, arkitektur og veimerking. En sentral komponent i denne analysen er bruken av Google Earth og Street View, hvor kildene fremhever verktøyets funksjoner som 3D-visning og historisk funksjon. Den andre hovedtematikken fokuserer på fysisk lokasjons-OSINT, ofte fra perspektivet til en penetrasjonstester, ved å analysere et måls svakheter – som tilgangspunkter, parkeringsmønstre og utnyttelse av menneskelig atferd ved steder som røykeområder. Gjennomgående vektlegges et analytisk tankesett som dekonstruerer bilder til søkbare datapakker.,",
+    "description": "Metodikk for å fastslå et geografisk sted utelukkende basert på visuelle ledetråder i et bilde, inkludert analyse av kjøretøy, arkitektur og veimerking. En sentral komponent i denne analysen er bruken av Google Earth og Street View, hvor kildene fremhever verktøyets funksjoner som 3D-visning og historisk funksjon. Den andre hovedtematikken fokuserer på fysisk lokasjons-OSINT, ofte fra perspektivet til en penetrasjonstester, ved å analysere et måls svakheter – som tilgangspunkter, parkeringsmønstre og utnyttelse av menneskelig atferd ved steder som røykeområder. Gjennomgående vektlegges et analytisk tankesett som dekonstruerer bilder til søkbare datapakker.,",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode18.mp3",
     "releaseDate": "2025-12-31T08:00:00Z"
   },
@@ -142,7 +142,7 @@
   {
     "id": "e021",
     "title": "Åk på nettside",
-    "description": "Episodengir en omfattende oversikt over to hovedtemaer: for det første, de tekniske stegene bak en nettleserforespørsel, fra et tastetrykk til siden er fullstendig rendret, inkludert DNS-oppslag, TCP/IP-kommunikasjon, TLS-håndtrykk og parsing av HTML/CSS. For det andre presenteres en systematisk og etisk metodikk for åpne kilder på nettsteder, med fokus på passiv rekognosering. Kildene understreker viktigheten av å kombinere flere verktøy for å skape et komplett bilde av en organisasjons digitale fotavtrykk.",
+    "description": "Episoden gir en omfattende oversikt over to hovedtemaer: for det første, de tekniske stegene bak en nettleserforespørsel, fra et tastetrykk til siden er fullstendig rendret, inkludert DNS-oppslag, TCP/IP-kommunikasjon, TLS-håndtrykk og parsing av HTML/CSS. For det andre presenteres en systematisk og etisk metodikk for åpne kilder på nettsteder, med fokus på passiv rekognosering. Kildene understreker viktigheten av å kombinere flere verktøy for å skape et komplett bilde av en organisasjons digitale fotavtrykk.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode21.mp3",
     "releaseDate": "2026-01-12T08:00:00Z"
   },
