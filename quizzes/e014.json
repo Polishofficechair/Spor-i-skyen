@@ -1,136 +1,136 @@
 {
   "title": "Quiz: Episode e001",
-  "episodeId": "e014",
+  "episodeId": "e001",
   "questions": [
     {
       "id": "q1",
-      "text": "Hva er hovedformålet med OSINT Timeline Tool ifølge kildene?",
+      "text": "Hvilket programmeringsspråk er OSINT Timeline Tool basert på?",
       "choices": [
-        "Lage, administrere og visualisere tidslinjer for etterforskning av åpen kilde-intelligens (OSINT) [1, 2].",
-        "Utføre dyp pakkeinspeksjon og nettverksanalyse på krypterte kanaler.",
-        "Generere automatisk rapporter basert på kriminelle register.",
-        "Samle data direkte fra lukkede sosiale medieplattformer ved hjelp av en proprietær API.",
-        "Utvikle nye Python-biblioteker for maskinlæring."
+        "Javascript",
+        "Java",
+        "Python",
+        "C#",
+        "Ruby"
       ],
-      "correctIndex": 0,
-      "explanation": "Verktøyet er laget for å hjelpe deg med å lage, administrere og visualisere tidslinjer for OSINT-etterforskning [1, 2]."
+      "correctIndex": 2,
+      "explanation": "OSINT Timeline Tool er et **Python**-basert program [1, 2]."
     },
     {
       "id": "q2",
-      "text": "Hvilke tre filformater nevnes spesifikt som eksportalternativer for tidslinjer eller spørringsresultater i OSINT Timeline Tool?",
+      "text": "Hva er minimumskravet for Python-versjonen for å installere OSINT Timeline Tool?",
       "choices": [
-        "CSV, Excel og PDF [1-4].",
-        "HTML, XML og JSON.",
-        "DOCX, RTF og TXT.",
-        "MP4, AVI og MOV.",
-        "PNG, JPEG og GIF."
+        "Python 2.7",
+        "Python 3.5",
+        "Python 3.6",
+        "Python 3.7 eller nyere",
+        "Python 4.0"
       ],
-      "correctIndex": 0,
-      "explanation": "Tidslinjene og spørringsresultatene kan eksporteres i ulike formater, inkludert CSV, Excel og PDF [1-4]."
+      "correctIndex": 3,
+      "explanation": "En av forutsetningene for installasjon er **Python 3.7 eller nyere** [3, 4]."
     },
     {
       "id": "q3",
-      "text": "Hvilke to forutsetninger (pre-requisites) kreves for å installere OSINT Timeline Tool?",
+      "text": "Hvilket av disse filformatene er et gyldig eksportformat for tidslinjer eller spørringsresultater?",
       "choices": [
-        "Python 3.7 eller nyere og pip (Python-pakkeinstallatør) [5, 6].",
-        "Java Development Kit (JDK) og Maven.",
-        "Ruby on Rails og PostgreSQL.",
-        "Windows 10 eller macOS og Docker.",
-        "En aktiv AWS-konto og Terraform."
+        "XML",
+        "TXT",
+        "PDF",
+        "JSON",
+        "HTML"
       ],
-      "correctIndex": 0,
-      "explanation": "Forutsetningene for installasjon er Python 3.7 eller nyere og pip (Python-pakkeinstallatør) [5, 6]."
+      "correctIndex": 2,
+      "explanation": "Verktøyet lar brukere eksportere til formatene CSV, Excel og **PDF** [1, 2, 5, 6]."
     },
     {
       "id": "q4",
-      "text": "Hvilket grunnleggende prinsipp hevdes å være den ene enkle tingen alt koker ned til i etterforskning, ifølge filosofien som presenteres i kilden?",
+      "text": "Hva er standard lokal nettadresse (URL) som applikasjonen kjører på etter at webserveren er startet?",
       "choices": [
-        "Teknologi.",
-        "Tid ('Når') [7, 8].",
-        "Komplekse algoritmer.",
-        "Sosiale nettverk.",
-        "Budsjett."
+        "http://localhost:8080/",
+        "http://127.0.0.1:8000/",
+        "http://localhost:5000/",
+        "http://127.0.0.1:5000/",
+        "http://osint.app:5000/"
       ],
-      "correctIndex": 1,
-      "explanation": "Kilden hevder at bak all bravado og teknologi koker det hele ned til én enkel ting: tid, eller 'Når' [7, 8]."
+      "correctIndex": 3,
+      "explanation": "Etter oppstart er applikasjonen tilgjengelig på **http://127.0.0.1:5000/** [7, 8]."
     },
     {
       "id": "q5",
-      "text": "Hvilken type visualisering kan verktøyet generere for å vise sammenhenger mellom data?",
+      "text": "Hva er den andre nødvendige programvareforutsetningen for installasjon, i tillegg til Python 3.7+?",
       "choices": [
-        "Søylediagrammer for statistisk analyse.",
-        "Varmekart for geografisk datatetthet.",
-        "Relasjonell visualisering som viser forbindelser mellom enheter og hendelser over tid [3, 4].",
-        "Tekstbaserte skyer for nøkkelord.",
-        "Automatiske animasjoner av hendelsesforløp."
+        "Node.js",
+        "Java Runtime Environment",
+        "Docker",
+        "Git",
+        "pip"
       ],
-      "correctIndex": 2,
-      "explanation": "Verktøyet kan generere relasjonell visualisering som viser forbindelser mellom enheter og hendelser over tid [3, 4]."
+      "correctIndex": 4,
+      "explanation": "Forutsetninger inkluderer Python 3.7 eller nyere og **pip** (Python-pakkeinstallatør) [3, 4]."
     },
     {
       "id": "q6",
-      "text": "Hvilken spesifikk terminalkommando brukes for å starte den lokale webserveren for OSINT Timeline Tool, etter at alle avhengigheter er installert?",
+      "text": "Hvilken terminalkommando brukes for å installere de nødvendige Python-pakkene listet i requirements.txt-filen?",
       "choices": [
-        "npm start",
-        "bash run.sh",
-        "python osint_timeline_tool.py [9, 10].",
-        "pip launch app",
-        "node server.js"
+        "python install requirements.txt",
+        "pip get requirements.txt",
+        "pip install -r requirements.txt",
+        "install --pip requirements",
+        "python setup requirements.txt"
       ],
       "correctIndex": 2,
-      "explanation": "Etter at avhengighetene er installert, starter man applikasjonen ved å kjøre Python-skriptet: 'python osint_timeline_tool.py' [9, 10]."
+      "explanation": "Kommandoen for å installere avhengighetene fra requirements.txt er **`pip install -r requirements.txt`** [7, 8]."
     },
     {
       "id": "q7",
-      "text": "Hva er den standard lokale nettadressen og porten som vises i terminalen når applikasjonen starter?",
+      "text": "Hvilke detaljer kan inkluderes når man dokumenterer en ny oppføring i tidslinjen?",
       "choices": [
-        "http://localhost:8080/",
-        "http://192.168.1.1:80/",
-        "http://127.0.0.1:5000/ [9, 10].",
-        "http://timeline.osint.com/",
-        "https://0.0.0.0:443/"
+        "Kun dato og beskrivelse",
+        "Kun IP-adresser og kildekode",
+        "Kun klokkeslett og Dato i YYYY-MM-DD format",
+        "Dato, klokkeslett, sted, involverte enheter, beskrivelser og mer",
+        "Filstørrelse og hashing-algoritme"
       ],
-      "correctIndex": 2,
-      "explanation": "Når applikasjonen starter, kjører den på en lokal webserver, og adressen er 'http://127.0.0.1:5000/' [9, 10]."
+      "correctIndex": 3,
+      "explanation": "Oppføringer kan legges til med **dato, klokkeslett, sted, involverte enheter, beskrivelser og mer** [5, 6]."
     },
     {
       "id": "q8",
-      "text": "Hvilken Git-kommando kreves for å laste ned prosjektets depot til en lokal maskin, og hvilken kommando brukes deretter for å navigere inn i prosjektmappen?",
+      "text": "Hva er hovedfunksjonen til 'Relasjonell visualisering' i OSINT Timeline Tool?",
       "choices": [
-        "git pull origin main; cd osint-timeline",
-        "git checkout -b new-branch; git clone",
-        "git clone https://github.com/your-username/osint-timeline-tool.git; cd osint-timeline-tool [5, 6].",
-        "git initialize; navigate folder",
-        "git commit -m 'Initial setup'; git push"
+        "Søke og filtrere oppføringer basert på dato",
+        "Eksportere tidslinjer til Excel",
+        "Generere interaktive visualiseringer som viser forbindelser mellom enheter og hendelser over tid",
+        "Administrere tilgangen til nettgrensesnittet",
+        "Kloning av depotet fra GitHub"
       ],
       "correctIndex": 2,
-      "explanation": "Man kloner depotet først med 'git clone...' og deretter navigerer man inn i prosjektmappen med 'cd osint-timeline-tool' [5, 6]."
+      "explanation": "Relasjonell visualisering brukes til å **generere interaktive visualiseringer som viser forbindelser mellom enheter og hendelser over tid** [5, 6]."
     },
     {
       "id": "q9",
-      "text": "I kasuseksemplet nevnes det at selskapet co-eid av Beth og Roger i utgangspunktet ble finansiert av en bestemt kilde. Hva var denne kilden?",
+      "text": "Hva hevdes å være den ene enkle faktoren som ligger bak all fancy forsknings-, PI-, og etterretningsteknologi, som alt koker ned til?",
       "choices": [
-        "Venturekapital fra Silicon Valley.",
-        "Amerikanske statlige teknologi-grant (tilskudd) [11].",
-        "Private lån fra en sveitsisk bank.",
-        "Rogers personlige oppsparte midler.",
-        "En crowdsourcing-kampanje."
+        "Tid ('Når')",
+        "Sted ('Hvor')",
+        "Datasynkronisering",
+        "Digital kryptering",
+        "Automatisert innsamling"
       ],
-      "correctIndex": 1,
-      "explanation": "Selskapet ble finansiert av amerikanske statlige teknologi-grant [11]."
+      "correctIndex": 0,
+      "explanation": "Bak all fancy teknologi er det én enkel ting: **tid**, og det koker ned til 'Når' [9, 10]."
     },
     {
       "id": "q10",
-      "text": "Hvilket spesifikt format kreves for 'Dato'-feltet når du legger til en ny oppføring i nettgrensesnittet til OSINT Timeline Tool?",
+      "text": "Hvilken enkel strategi anbefales for å bli god i OSINT, uavhengig av avanserte verktøy?",
       "choices": [
-        "MM/DD/YYYY (Måned/Dag/År).",
-        "YYYY/MM/DD (År/Måned/Dag).",
-        "DD-MM-YYYY (Dag-Måned-År).",
-        "YYYY-MM-DD (År-Måned-Dag) [12, 13].",
-        "Unix tidsstempel."
+        "Å beherske Google Dorking",
+        "Å bruke verktøy som Maltego eller Hunchly",
+        "Å mestre et enkelt regneark",
+        "Å klone depotet fra GitHub",
+        "Å lage en tidslinje for hver eneste ting"
       ],
-      "correctIndex": 3,
-      "explanation": "Datoen for hendelsen skal angis i formatet YYYY-MM-DD [12, 13]."
+      "correctIndex": 4,
+      "explanation": "For å bli god i OSINT, anbefales det å '**Lag en tidslinje**' for hver eneste ting, fordi tidslinjer fungerer [11, 12]."
     }
   ]
 }
