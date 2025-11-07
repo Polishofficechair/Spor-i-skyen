@@ -1,1 +1,136 @@
-
+{
+  "title": "Quiz: Omvendt Telefonsøk (OSINT)",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er det anbefalte første steget i en OSINT-etterforskning av et ukjent telefonnummer?",
+      "choices": [
+        "Å utføre et manuelt søk i en søkemotor som Google, ved å sette nummeret i anførselstegn.",
+        "Direkte søk i Maltego for grafisk analyse.",
+        "Bruke «glemt passord»-funksjonen på en mistenkt e-post.",
+        "Laste opp nummeret til Truecaller for global identifikasjon.",
+        "Søke i eiendomsregistre og offentlige databaser."
+      ],
+      "correctIndex": 0,
+      "explanation": "Det enkleste og mest anbefalte første steget er å prøve å skrive inn nummeret i anførselstegn i en søkemotor som Google for å søke etter eksakte treff [1-4]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilken OSINT-teknikk innebærer å bruke avanserte søkeoperatorer for å finne presise resultater, for eksempel ved å søke etter filtyper (filetype:) eller utelukke ord (-)?",
+      "choices": [
+        "SOCMINT (Social Media Intelligence).",
+        "Borking.",
+        "Google Dorking.",
+        "VOIP Forensics.",
+        "Geolokalisering."
+      ],
+      "correctIndex": 2,
+      "explanation": "Google Dorking (og 'Borking' for Bing) er teknikker som bruker avanserte søkeoperatorer for å oppnå imponerende presise resultater, som for eksempel å finne numre i PDF-dokumenter [1, 5, 6]."
+    },
+    {
+      "id": "q3",
+      "text": "Hva er den primære metoden Truecaller bruker for å bygge sin enorme database for anrops-ID?",
+      "choices": [
+        "Kjøpe data fra teleoperatører og VoIP-leverandører.",
+        "Analysere trafikkdata for å identifisere bruksmønstre.",
+        "Samle inn kontaktlister fra telefonene til brukerne som har installert appen.",
+        "Skrape offentlige forretningsregistre og gule sider.",
+        "Bruk av AI for å koble navn til numre basert på geolokalisering."
+      ],
+      "correctIndex": 2,
+      "explanation": "Truecaller bygger databasen ved å laste opp kontaktlistene fra telefonene til brukere som har installert appen, noe som utgjør en betydelig personvernrisiko for brukerens kontakter [3, 7-9]."
+    },
+    {
+      "id": "q4",
+      "text": "Ifølge kildene, hvilken visuell representasjon i OSINT Industries' verktøy visualiserer sammenhengen mellom dataelementer som navn, e-poster, brukernavn og land?",
+      "choices": [
+        "Oppsummering.",
+        "Tidslinjevisning.",
+        "Detaljerte Checker-resultater.",
+        "Grafvisning (Graph View).",
+        "Omvendt bildesøk."
+      ],
+      "correctIndex": 3,
+      "explanation": "Grafvisning (Graph View) gir en visualisering av hvordan ulike elementer som navn, telefonnumre, e-poster og brukernavn relaterer til hverandre i et interaktivt nettverk [10, 11]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken kommando brukes for å starte PhoneInfoga sitt lokale web-grensesnitt på en spesifikk port, for eksempel 8080?",
+      "choices": [
+        "phoneinfoga scan -w 8080",
+        "phoneinfoga web-ui 8080",
+        "phoneinfoga serve -p 8080",
+        "phoneinfoga start --port 8080",
+        "phoneinfoga run --local 8080"
+      ],
+      "correctIndex": 2,
+      "explanation": "Web-grensesnittet til PhoneInfoga startes med kommandoen 'phoneinfoga serve -p [portnummer]', slik at det kan nås via en nettleser (f.eks. http://localhost:8080) [12-15]."
+    },
+    {
+      "id": "q6",
+      "text": "Hva er den største operasjonelle risikoen ved å bruke 'glemt passord'-funksjonen på nettsteder (som Yahoo) for å bekrefte om et telefonnummer er tilknyttet en e-postadresse?",
+      "choices": [
+        "At man får tilgang til privat finansiell informasjon.",
+        "At metoden er for ineffektiv og tidkrevende.",
+        "At handlingen kan utløse et varsel (SMS/e-post) som gjør målet oppmerksom på etterforskningen.",
+        "At resultatet nesten utelukkende er feilaktige numre.",
+        "At man må logge inn med en Truecaller-konto."
+      ],
+      "correctIndex": 2,
+      "explanation": "Denne metoden er ekstremt risikabel fordi den nesten garantert sender et varsel til kontoeieren, noe som umiddelbart kan kompromittere hele etterforskningen [16-19]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilken kritisk formateringsdetalj krever PhoneInfoga (i kommandolinjen) at man inkluderer når man skanner et telefonnummer for å unngå at verktøyet feiltolker de første sifrene?",
+      "choices": [
+        "Nummeret må være i RFC3966-format.",
+        "Bruk av anførselstegn for å søke etter en eksakt match.",
+        "Spesifikasjon av operatør (carrier) med flagget -c.",
+        "Inkludering av landskoden (uten +-tegn) foran selve nummeret.",
+        "Nummeret må være skrevet ut med bindestrek."
+      ],
+      "correctIndex": 3,
+      "explanation": "Det er avgjørende å inkludere landskoden (uten +) foran nummeret (f.eks. 1 for USA) når man bruker PhoneInfoga i CLI, da verktøyet ellers vil feiltolke de første sifrene som landskode [12, 20-23]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvorfor er InfoBell et spesielt nyttig verktøy i OSINT-etterforskninger som involverer numre utenfor USA?",
+      "choices": [
+        "Det gir direkte tilgang til sensitive VoIP-databaser.",
+        "Det er en portal som lar brukeren velge et land for å søke i lokale, landspesifikke databaser.",
+        "Det har en integrert Truecaller-modul for internasjonale numre.",
+        "Det er det eneste verktøyet som automatisk bruker emojier i søkestrengen.",
+        "Det spesialiserer seg på å finne numre som er skrevet ut med bokstaver."
+      ],
+      "correctIndex": 1,
+      "explanation": "InfoBell er et godt verktøy for internasjonale søk fordi det lar brukeren velge et land for å søke i lokale, landspesifikke databaser [24-27]."
+    },
+    {
+      "id": "q9",
+      "text": "Hvilken uvanlig søketaktikk er utviklet for å omgå at automatiserte roboter (bots) skraper telefonnumre fra annonseforum, og som etterforskeren må utnytte kreativt?",
+      "choices": [
+        "Søke etter nummeret sammen med en telefon-emoji (📱).",
+        "Bruke Google Dorking-operatoren `filetype:xls`.",
+        "Søke etter nummeret skrevet ut med bokstaver (f.eks. 'fem null fem').",
+        "Ekskludere ordene 'spam' og 'scam' fra søket.",
+        "Kryssreferere nummeret mot Telegram-modulen i OSINT Industries."
+      ],
+      "correctIndex": 2,
+      "explanation": "For å unngå at automatiserte boter samler inn numre, skriver folk dem ofte ut med bokstaver (f.eks. 'fem null fem'). Etterforskeren må derfor prøve å søke etter ulike variasjoner av det utskrevne nummeret [3, 28-30]."
+    },
+    {
+      "id": "q10",
+      "text": "Hva er den primære metodiske grunnen til at OSINT-analytikere må kryssverifisere operatør (carrier) og annen informasjon fra spesialiserte tjenester med andre uavhengige kilder?",
+      "choices": [
+        "For å unngå å laste opp egne kontakter til Truecaller-databasen.",
+        "Fordi en enkelt kilde, som et generelt nettsøk, ofte gir feilaktig eller motstridende informasjon (f.eks. feil operatøridentifikasjon).",
+        "Fordi alle verktøy har en daglig søkebegrensning på fem søk.",
+        "For å sikre at informasjonen er hentet i sanntid, og ikke fra statiske databaser.",
+        "For å sikre at all data kommer fra Maltego-grafvisningen."
+      ],
+      "correctIndex": 1,
+      "explanation": "Kryssverifisering er avgjørende fordi en enkelt kilde ofte er unøyaktig eller utdatert. Et eksempel er når et generelt søk feilaktig identifiserte en operatør som 'Cricut', mens et spesialverktøy korrekt viste 'Verizon' [31-35]."
+    }
+  ]
+}
