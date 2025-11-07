@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Dekkprofiler og Operasjonell Sikkerhet (OpSec)",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er hovedformålet med å bruke en «sokkedukke» (sock puppet) i BRÅK etterforskning?",
+      "choices": [
+        "Å utføre undersøkelser uten å avsløre etterforskerens sanne identitet, tilknytning eller intensjoner [1-3].",
+        "Å erstatte personlig kontakt med målpersoner med utelukkende digitale metoder.",
+        "Å generere et høyt antall falske følgere for å øke profilens autoritet.",
+        "Å automatisere datainnsamling gjennom robotisert skraping av data.",
+        "Å publisere desinformasjon i lukkede nettverksgrupper."
+      ],
+      "correctIndex": 0,
+      "explanation": "Hovedmålet med en sokkedukke er total anonymitet, slik at etterforskningen kan gjennomføres uten å avsløre operatørens virkelige identitet eller intensjoner [1, 2]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilket verktøy anbefales i kildene for å generere et unikt og ikke-sporbart profilbilde for en sokkedukke?",
+      "choices": [
+        "Google Images (med filtrert søk etter fiktive bilder).",
+        "thispersondoesnotexist.com [4-6].",
+        "Photoshop eller tilsvarende bildebehandlingsprogram.",
+        "Fake Name Generator (som ikke lager bilder).",
+        "Et bilde av en person funnet på et fritt tilgjengelig bildebibliotek."
+      ],
+      "correctIndex": 1,
+      "explanation": "AI-verktøy som thispersondoesnotexist.com lager unike, fotorealistiske portretter som ikke finnes noe annet sted på internett, og eliminerer dermed risikoen for avsløring via omvendt bildesøk [4-6]."
+    },
+    {
+      "id": "q3",
+      "text": "Ifølge kildene, hvorfor er det en fatal feil å bruke et bilde av en tilfeldig person du fant på nettet som profilbilde?",
+      "choices": [
+        "Fordi bildeoppløsningen ofte er for dårlig.",
+        "Fordi det kan avsløres umiddelbart gjennom et omvendt bildesøk [7-9].",
+        "Fordi det bryter med opphavsretten (copyright) og fører til automatisk kontosperring.",
+        "Fordi det er vanskelig å tilpasse bildet til personaens oppgitte alder.",
+        "Fordi algoritmer kun godtar bilder generert av plattformen selv."
+      ],
+      "correctIndex": 1,
+      "explanation": "Bruk av stjålne bilder ('catfishing') vil medføre umiddelbar risiko for avsløring gjennom omvendte bildesøk, som raskt kobler bildet til den opprinnelige kilden [7-9]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken type identitet kjennetegnes av å være en åpenlyst falsk konto (f.eks. 'Shakira Security') som bygger respekt i et fagmiljø gjennom å dele relevant innhold?",
+      "choices": [
+        "Deep Cover-persona (Dyp dekning).",
+        "Kjent Persona / Anerkjent Falsk Konto [10-12].",
+        "Hybrid Persona (Halv-kjent).",
+        "Temporær Identitet ('Burner Account').",
+        "-Agent Profil."
+      ],
+      "correctIndex": 1,
+      "explanation": "Den 'Kjente Persona' (eller 'Known Sock') er en åpent anonym konto som bygger autoritet og følgere gjennom verdifullt innhold, i stedet for gjennom skjult infiltrasjon [10-12]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilket av følgende verktøy brukes til å generere grunnleggende personalia for en fiktiv persona, som navn, fødselsdato og mors pikenavn?",
+      "choices": [
+        "thispersondoesnotexist.com.",
+        "ProtonMail.",
+        "Google Voice.",
+        "fakenamegenerator.com [6, 13-15].",
+        "privacy.com."
+      ],
+      "correctIndex": 3,
+      "explanation": "fakenamegenerator.com er et nettbasert verktøy som anbefales for å generere et komplett sett med fiktiv basisinformasjon for kjerneidentiteten [6, 13-15]."
+    },
+    {
+      "id": "q6",
+      "text": "Ifølge kildene, hva er den absolutte hovedregelen for å forhindre krysskontaminering mellom din virkelige identitet og sokkedukken?",
+      "choices": [
+        "Alltid bruke et VPN.",
+        "Unngå å søke etter personer relatert til din sanne identitet fra sokkedukkekontoen [16].",
+        "Bruke samme passord, men ulikt brukernavn.",
+        "Alltid logge inn på sokkedukken fra din personlige mobiltelefon.",
+        "Deaktivere GPS-sporing permanent på alle enheter."
+      ],
+      "correctIndex": 1,
+      "explanation": "Absolutt direktiv er å ikke søke etter personer relatert til din sanne identitet, da slike søk skaper et digitalt spor som kan analyseres og brukes til å koble identitetene sammen [16]. (Merk: Enda mer kritisk er å unngå personlige enheter, men søkeforbudet er en spesifikk operativ regel for interaksjon)."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilken OpSec-protokoll er obligatorisk ved bruk av et midlertidig SIM-kort for kontoverifisering (f.eks. Mint Mobile)?",
+      "choices": [
+        "Legge det bort for fremtidig bruk i en safe.",
+        "Gi nummeret til organisasjonens sentrale sikkerhetsavdeling.",
+        "Endre kontogjenopprettingsmetoden til en kontrollert, anonym tjeneste (som Google Voice) og deretter fysisk ødelegge SIM-kortet [17-19].",
+        "Oppbevare det i nærheten av den dedikerte laptopen.",
+        "Kun bruke det til å ringe én person før det deaktiveres."
+      ],
+      "correctIndex": 2,
+      "explanation": "For å sikre at nummeret aldri kan spores tilbake til operatøren, skal kontogjenopprettingsmetoden endres umiddelbart etter vellykket verifisering, og SIM-kortet skal deretter destrueres fysisk [17-19]."
+    },
+    {
+      "id": "q8",
+      "text": "Hva er den dokumenterte katastrofale konsekvensen av å logge på en sokkedukkekonto fra en operatørs personlige mobiltelefon?",
+      "choices": [
+        "Telefonen slutter umiddelbart å fungere.",
+        "Facebook eller andre applikasjoner synkroniserer kontakter og foreslår den falske profilen til operatørens ekte venner/kolleger [7, 16, 19, 20].",
+        "Alle data på den dedikerte laptopen blir slettet.",
+        "Plattformen krever at operatøren laster opp bilde-ID umiddelbart.",
+        "IP-adressen blir permanent blokkert fra alle sosiale medier."
+      ],
+      "correctIndex": 1,
+      "explanation": "Krysskontaminering via personlige mobile enheter er en av de vanligste og alvorligste OpSec-feilene. Apper vil forsøke å synkronisere kontaktlisten og foreslå koblinger til det virkelige sosiale nettverket, noe som kompromitterer operasjonen fullstendig [7, 16, 19, 20]."
+    },
+    {
+      "id": "q9",
+      "text": "Ifølge kildene, hva er den spesifikke faren ved å bruke en tilfeldig VPN-tjeneste for å skjule IP-adressen når man oppretter en sokkedukke-konto på en stor plattform som Facebook?",
+      "choices": [
+        "VPN-er krypterer all trafikk for sterkt, slik at ingen data kommer frem.",
+        "Store plattformer kan oppdage og flagge trafikk fra kjente VPN-servere, utløse krav om umulig verifisering, og avsløre kontoen [7, 14, 17, 19].",
+        "VPN-er fungerer kun på dedikerte PC-er og ikke på 'burner phones'.",
+        "Geolokasjonen til VPN-en må alltid være i et annet land enn personaens bosted.",
+        "De er for dyre, og det er bedre å bruke gratisalternativer."
+      ],
+      "correctIndex": 1,
+      "explanation": "Selv om VPN maskerer IP-adressen, er store plattformer dyktige til å gjenkjenne og flagge trafikk fra kjente VPN-servere. Dette kan føre til at plattformen krever ytterligere verifisering (som f.eks. bilde-ID), noe som er umulig for en fiktiv identitet [7, 14, 17, 19]."
+    },
+    {
+      "id": "q10",
+      "text": "Hva er  OpSec-strategien 'Backstopping'?",
+      "choices": [
+        "Prosessen med å fysisk ødelegge et SIM-kort for å unngå sporing.",
+        "Å koble sokkedukkens profil til operatørens ekte Twitter-konto for å sjekke om den blir oppdaget.",
+        "Å unngå at telefon abbonementet kan bli sporet til politiet.",
+        "Bruk av virtuelle kredittkort for å spore alle utgifter til personaen.",
+        "Å bruke et mobilt nettverk i stedet for Wi-Fi for å skjule IP-adressen."
+      ],
+      "correctIndex": 2,
+      "explanation": "'Backstopping' refererer til prosessen der man simulerer en troverdig forhistorie for personaen, ved å publisere innhold og bygge et nettverk over tid. Dette gjør profilen 'levd i' og autentisk, og reduserer risikoen for å bli flagget som mistenkelig [14]."
+    }
+  ]
+}
