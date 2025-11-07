@@ -1,0 +1,148 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er Paul Wright og Neal Ysart (forfatterne av teksten om OSINT-gradering) assosiert med?",
+      "choices": [
+        "The Coalition of Cyber Investigators",
+        "The British Admiralty's Naval Intelligence Division (NID)",
+        "North Atlantic Treaty Organisation (NATO)",
+        "UK Law Enforcement Systems",```json
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er Paul Wright og Neal Ysart (forfatterne av teksten om OSINT-gradering) assosiert med?",
+      "choices": [
+        "The Coalition of Cyber Investigators",
+        "The British Admiralty's Naval Intelligence Division (NID)",
+        "North Atlantic Treaty Organisation (NATO)",
+        "UK Law Enforcement Systems",
+        "The Dutch Law Enforcement System"
+      ],
+      "correctIndex": 0,
+      "explanation": "Forfatterne Paul Wright og Neal Ysart er assosiert med The Coalition of Cyber Investigators [1]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilket historisk rammeverk for gradering brukte bokstaver og tall (A1 til D5) for å evaluere kildens pålitelighet og informasjonens troverdighet?",
+      "choices": [
+        "US Army System",
+        "Admiralty System (Admiralty Code)",
+        "3x5x2-modellen",
+        "NATO-standarden",
+        "5x5x5-modellen"
+      ],
+      "correctIndex": 1,
+      "explanation": "Det første registrerte rammeverket var 'Admiralty System' eller 'Admiralty Code', implementert i 1939 av British Admiralty's Naval Intelligence Division (NID), som brukte en kombinasjon av bokstaver og tall (A1 til D5) [2]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilken emosjonell tilstand gjør at brukere ofte avslører mer personlige detaljer, meninger og klager ('grievances')?",
+      "choices": [
+        "Frykt og angst",
+        "Spenning og stolthet",
+        "Sinne og raseri ('Anger and Outrage')",
+        "Eufori og glede",
+        "Usikkerhet og tvil"
+      ],
+      "correctIndex": 2,
+      "explanation": "Når brukere er sinte eller rasende, har de en tendens til å avsløre flere personlige detaljer, meninger og klager [3]."
+    },
+    {
+      "id": "q4",
+      "text": "I graderingssystemer som 3x5x2-modellen, hva evaluerer den numeriske verdien (1–3) i utgangspunktet?",
+      "choices": [
+        "Påliteligheten til etterretningsinnholdet",
+        "Påliteligheten til kilden som gir etterretningen",
+        "Regler for deling/spredning",
+        "Hvorvidt etterretningen er bekreftet (Confirmed)",
+        "Vanskelighetsgraden av etterforskningen"
+      ],
+      "correctIndex": 1,
+      "explanation": "Den numeriske verdien (1–3) i 3x5x2-modellen evaluerer påliteligheten til kilden som gir etterretningen (Source Evaluation) [4]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva er den systematiske metoden for spørsmål som involverer Hvem, Hva, Når, Hvor, Hvorfor og Hvordan, som anbefales i OSINT-etterforskninger, spesielt kombinert med forståelse av emosjonelle tilstander?",
+      "choices": [
+        "SWOT-analyse",
+        "Admiralty Code",
+        "5x5x5-modellen",
+        "5W1H-metoden",
+        "Sanitisering"
+      ],
+      "correctIndex": 3,
+      "explanation": "5W1H-metoden (Who, What, When, Where, Why, and How) er nyttig i OSINT-etterforskninger, spesielt når den kombineres med forståelse av emosjonelle tilstander og påvirkning fra jevnaldrende [5, 6]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvilken av disse etterretningsgradene (i 3x5x2-modellen) indikerer at etterretningen er 'nesten helt sikkert falsk eller desinformasjon'?",
+      "choices": [
+        "Klasse A (Confirmed)",
+        "Klasse B (Probably True)",
+        "Klasse C (Possibly True)",
+        "Klasse D (Doubtful)",
+        "Klasse E (Improbable)"
+      ],
+      "correctIndex": 4,
+      "explanation": "Den alfabetiske verdien E (Improbable) betyr at etterretningen er nesten helt sikkert falsk eller desinformasjon [7]."
+    },
+    {
+      "id": "q7",
+      "text": "Hva er et anerkjent 'shortfall' (mangel) i privat sektor, ifølge kildene, som begrenser deres evne til å samarbeide effektivt med politiet ('law enforcement')?",
+      "choices": [
+        "Overdreven bruk av 3x5x2-modellen",
+        "Mangel på bruk av søkemotoralgoritmer",
+        "Mangel på profesjonalitet, inkludert inkonsekvent bruk av graderingsmodeller",
+        "For mye fokus på undercover-operasjoner",
+        "Overholdelse av GDPR"
+      ],
+      "correctIndex": 2,
+      "explanation": "En bemerkelsesverdig mangel i den private sektoren er mangelen på profesjonalitet, inkludert den inkonsekvente bruken av graderingsmodeller. Mange unnlater å ta i bruk gradering, noe som begrenser deres evne til å samarbeide effektivt [8]."
+    },
+    {
+      "id": "q8",
+      "text": "Hva er 'sanitisering' ('sanitisation'), og hvilken rolle spiller det i effektiv etterretningshåndtering?",
+      "choices": [
+        "En prosess for å validere en kildes identitet.",
+        "En metode for å koble sammen motstridende data.",
+        "Fjerning av identifiserbare detaljer om kilder fra delt etterretning for å sikre operasjonell sikkerhet.",
+        "Den prosessen der algoritmer forsterker emosjonelt ladede innlegg.",
+        "Regelmessig gjennomgang av lagret etterretning for å sikre relevans."
+      ],
+      "correctIndex": 2,
+      "explanation": "Sanitisering er en kritisk praksis der identifiserbare detaljer om kilder fjernes fra delt etterretning. Dette sikrer operasjonell sikkerhet samtidig som etterretningens pålitelighet opprettholdes [9]."
+    },
+    {
+      "id": "q9",
+      "text": "Hva står de tre verdiene i 3x5x2-modellen for?",
+      "choices": [
+        "A. Informasjonsinnsamling, Kildens pålitelighet, Dataetikken",
+        "B. Kildens pålitelighet, Etterretningens gyldighet, Resursallokering",
+        "C. Etterretningens troverdighet, Kildeklassifisering, Ekkokammereffekten",
+        "D. Kildeevaluering (1-3), Etterretningshåndtering (A-E), Delings/Spredningsregler (1-2)",
+        "E. Etterretningshåndtering, Operasjonell sikkerhet, Etterforskningens effektivitet"
+      ],
+      "correctIndex": 3,
+      "explanation": "Graderingssystemet 3x5x2 representerer tre kritiske komponenter: Kildeevaluering (Source Evaluation, 1-3), Etterretningshåndtering (Intelligence Handling, A-E), og Delings/Spredningsregler (Sharing/Dissemination Rules, 1-2) [4, 10, 11]."
+    },
+    {
+      "id": "q10",
+      "text": "Når en OSINT-utøver bruker 5W1H-metoden og stiller 'Hvorfor'-spørsmålet ('Why are individuals sharing this information?'), hva er da de primære motivasjonene spørsmålet forsøker å avdekke ifølge kildene?",
+      "choices": [
+        "Kildens klassifikasjon (f.eks. 'opportunistic source').",
+        "Tidspunktet for emosjonell aktivitet ('When').",
+        "Innsikt i kildens emosjonelle investering, påvirkning fra jevnaldrende ('peer pressure') og algoritmisk forsterkning.",
+        "Den nøyaktige plasseringen av informasjonsdeling ('Where').",
+        "Om informasjonen kan sanitiseres for deling."
+      ],
+      "correctIndex": 2,
+      "explanation": "'Hvorfor' (Why) avdekker motivasjonene: 'Hvorfor er de emosjonelt investert, og hvordan påvirker press fra jevnaldrende eller algoritmisk forsterkning deres atferd?' [12]. Dette er sentralt for å forstå kilden til informasjonsavsløringen [13-15]."
+    }
+  ]
+}

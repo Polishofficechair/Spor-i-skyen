@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er den primære definisjonen på Crypto OSINT, ifølge kildene?",
+      "choices": [
+        "En gren av OSINT-teknikker og verktøy for å etterforske kryptovaluta.",
+        "Programvare for å omgå kodingen på private krypto-nøkler.",
+        "En ny type kryptovaluta som bruker Proof of Work (PoW).",
+        "En metode for å handle krypto raskere enn tradisjonell finans (TradFi).",
+        "Et verktøy kun brukt av nasjonale politimyndigheter for terrorbekjempelse."
+      ],
+      "correctIndex": 0,
+      "explanation": "Crypto OSINT er OSINT for kryptovaluta-etterforskninger og er en gren av OSINT-teknikker og verktøy som lar analytikere etterforske kryptovaluta [1]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilke tre hovedegenskaper beskriver en blokkjede som er gunstig for etterforskere som bruker OSINT?",
+      "choices": [
+        "Sentralisert, anonym og flyktig.",
+        "Privat, uforanderlig og rask.",
+        "Offentlig, transparent og uforanderlig (immutable).",
+        "Kryptert, desentralisert og kun tilgjengelig for politiet.",
+        "Base58-kodet, treg og regulert."
+      ],
+      "correctIndex": 2,
+      "explanation": "Blokkjeder er, i utgangspunktet, designet for å være transparente, uforanderlige og tilgjengelige for alle med de rette verktøyene og kunnskapene – og best av alt, de er offentlige [1]."
+    },
+    {
+      "id": "q3",
+      "text": "Hva brukes til å representere kryptoinnehavere på blokkjeden, noe som skaper pseudonymitet?",
+      "choices": [
+        "Personlige navn og fødselsdatoer.",
+        "Biometriske data.",
+        "Private nøkler (Private Keys).",
+        "Alfanumeriske adresser.",
+        "E-postadresser."
+      ],
+      "correctIndex": 3,
+      "explanation": "Kryptoinnehavere representeres av alfanumeriske adresser som tilsvarer lommeboken deres, noe som gjør dem teknisk anonyme, men sporbare – et konsept kjent som pseudonymitet [2]."
+    },
+    {
+      "id": "q4",
+      "text": "Hva signaliserer 'Rakett-emojien' (Rocket Emoji) i kryptomiljøet på sosiale medier?",
+      "choices": [
+        "At nettverket bruker Proof of Stake (PoS).",
+        "At kryptovalutaens verdi forventes å skyte i været ('going to the moon').",
+        "En melding om at midler er stjålet.",
+        "En ny type DeFi-valuta.",
+        "At brukeren er en 'hval' (whale)."
+      ],
+      "correctIndex": 1,
+      "explanation": "Rakett-emojien brukes til å indikere at en kryptovaluta eller et token 'går til månen', altså at verdien forventes å skyte i været [3]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva er betydningen av det vanlige kryptobegrepet 'HODL'?",
+      "choices": [
+        "En rask salgsstrategi ved markedsvolatilitet.",
+        "En metode for gruvedrift (mining) av nye blokker.",
+        "En type multi-signatur transaksjon.",
+        "Kort for 'Harvest Our Digital Ledger'.",
+        "En langsiktig holdingstrategi for kryptoaktiva."
+      ],
+      "correctIndex": 4,
+      "explanation": "Uttrykket 'HODL', som opprinnelig stammet fra en feilstaving av 'hold' (holde), brukes nå for å indikere en langsiktig holdingstrategi for kryptoaktiva til tross for markedssvingninger [4]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvilken Bitcoin-adresseformat, introdusert i 2017, er prefikset med 'bc1q' og ble designet for å være mer effektiv ved å redusere nettverkstrafikken?",
+      "choices": [
+        "Bech32-adresser.",
+        "P2PKH-adresser.",
+        "Taproot-adresser.",
+        "P2SH-adresser.",
+        "Base58-adresser."
+      ],
+      "correctIndex": 0,
+      "explanation": "Bech32-formatet, introdusert i 2017, er prefikset med 'bc1q' og er en mer effektiv måte å kode Bitcoin-adresser på, noe som bidrar til å redusere nettverkstrafikken [5]."
+    },
+    {
+      "id": "q7",
+      "text": "Når en transaksjon utføres, som å sende 1 BTC, hvordan håndterer Bitcoin-systemet avsenderens tidligere Unspent Transaction Outputs (UTXO)?",
+      "choices": [
+        "Det trekker bare det nøyaktige beløpet (1 BTC) fra lommeboken.",
+        "Det flytter all UTXO til en custodial wallet.",
+        "Det bruker kun én spesifikk UTXO for å dekke beløpet.",
+        "Alle avsenderens UTXO-er blir konsumert, og overskytende beløp returneres som veksel (change) til en ny adresse.",
+        "UTXO-ene blir ignorert, og det kreves en ny mining-prosess."
+      ],
+      "correctIndex": 3,
+      "explanation": "Transaksjoner konsumerer og reallokerer alle avsenderens tidligere uforbrukte transaksjonsutganger (UTXO). Eventuelt resterende beløp sendes tilbake til avsenderen som 'veksel' til en ny adresse [6, 7]."
+    },
+    {
+      "id": "q8",
+      "text": "Hva foreslås som den viktigste strategien for å omgå obfuskeringsteknikker som miksere og tumblere i kryptoetterforskninger?",
+      "choices": [
+        "Umiddelbart å kreve private nøkler via rettslig kjennelse.",
+        "Å stole utelukkende på data fra krypto-børser.",
+        "Å fokusere på transaksjonsmønstre og timing.",
+        "Å koble lommebokadresser direkte til IP-adresser.",
+        "Å analysere Base58-kodingen."
+      ],
+      "correctIndex": 2,
+      "explanation": "For å komme forbi hindringer skapt av obfuskeringsteknikker som miksere, foreslås det å fokusere på transaksjonsmønstre og timing. Selv om brukere skjuler midlene, kan de ikke skjule atferdsmønstrene sine [8]."
+    },
+    {
+      "id": "q9",
+      "text": "I henhold til teknikken for å identifisere vekseladresser og klynger, hvis tre input-adresser er nødvendige for å dekke én stor output til en målsmottaker, hvorfor er den andre output-adressen (som mottok et mindre beløp) sannsynligvis vekseladressen (change address)?",
+      "choices": [
+        "Vekseladresser har alltid færre sifre enn mottakeradresser.",
+        "Den andre output-adressen er alltid vekseladressen per protokoll.",
+        "Det mindre beløpet i den andre outputen indikerer at den er en mining-avgift.",
+        "Fordi vekseladresser aldri vises i blokkutforskere.",
+        "Fordi alle de tre inputene var nødvendige for å betale den store outputen, og dersom den andre outputen hadde vært hovedmottaker, ville man sannsynligvis bare trengt én input."
+      ],
+      "correctIndex": 4,
+      "explanation": "Man kan anta at den mindre outputen er vekseladressen fordi alle inputene var nødvendige for å betale den primære (større) outputen. Hvis den mindre outputen var målmottaker, ville man sannsynligvis bare trengt én input. Dette indikerer at alle de involverte input- og vekseladressene tilhører samme person/enhet (kluster) [9]."
+    },
+    {
+      "id": "q10",
+      "text": "Under EUs MiCA-regulering (Travel Rule), hvilke tre spesifikke detaljer må kryptobørser inkludere i hver transaksjon for både avsender og mottaker, uavhengig av beløpet?",
+      "choices": [
+        "Navn, distribuert regnskapsadresse (distributed ledger address) og kontonummer.",
+        "Hash-kode, privat nøkkel og Base58-format.",
+        "Sosialt medieprofilnavn, e-postadresse og IP-adresse.",
+        "Kryptovaluta-ticker, historisk pris og konsensusmekanisme.",
+        "Transaksjonstid, avgift og antall transaksjoner per blokk."
+      ],
+      "correctIndex": 0,
+      "explanation": "Travel Rule krever at informasjon som navn, distribuerte regnskapsadresser (distributed ledger addresses) og kontonumre for både avsender (originator) og mottaker (beneficiary) inkluderes i hver transaksjon, uavhengig av beløpet [10]."
+    }
+  ]
+}

@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e037",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hvilket verktøy/nettside brukes spesifikt for å hente ASN (Autonomous System Number) for et mål, ifølge kildene?",
+      "choices": [
+        "myip.ms",
+        "ipv4info.com",
+        "bgp.he.net",
+        "whoisology.com",
+        "reputation.team-cymru.com"
+      ],
+      "correctIndex": 2,
+      "explanation": "`bgp.he.net` er nevnt som verktøyet for å hente ASN (Autonomous System Number) for et mål [1]."
+    },
+    {
+      "id": "q2",
+      "text": "Hva er en av de grunnleggende egenskapene (\"Basic Attributes\") til en IP-adresse som er listet i diagrammet?",
+      "choices": [
+        "Hostname",
+        "Static / Dynamic IP",
+        "Running Services",
+        "Breached Data",
+        "Spam Associations"
+      ],
+      "correctIndex": 1,
+      "explanation": "Diagrammet lister **\"Static / Dynamic IP\"** som en av de grunnleggende egenskapene (\"Basic Attributes\") til en IP-adresse [2, 3]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilken type DNS-oppføring nevnes som en vanlig måte å lekke opprinnelsesserverens IP på, spesielt hvis nettstedet hoster sin egen e-postserver på samme IP?",
+      "choices": [
+        "A-oppføringer",
+        "TXT-oppføringer",
+        "MX-oppføringer",
+        "PTR-oppføringer",
+        "CNAME-oppføringer"
+      ],
+      "correctIndex": 2,
+      "explanation": "**MX-oppføringer** (MX records) er nevnt som en vanlig måte å finne opprinnelsesserverens IP på, spesielt hvis e-postserveren ligger på samme IP som webserveren [4]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilket prinsipp under GDPR (General Data Protection Regulation) krever at banker kun skal samle inn IP-adresser hvis det er et gyldig formål og rettslig grunnlag?",
+      "choices": [
+        "Legitimate Interest",
+        "Authentication",
+        "Data Integrity",
+        "Data Minimization",
+        "Purpose and Consent"
+      ],
+      "correctIndex": 3,
+      "explanation": "GDPR-prinsippet om **dataminimering** (\"Data Minimization\") krever at banker kun samler inn IP-adresser hvis det er et gyldig formål [5]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken nettjeneste tillater søk etter IP-informasjon basert på bilde (ved bruk av premium-konto)?",
+      "choices": [
+        "Censys.io",
+        "Zoomeye.org",
+        "BinaryEdge.io",
+        "Onyphe.io",
+        "Shodan.io"
+      ],
+      "correctIndex": 4,
+      "explanation": "Shodan.io lar brukere søke etter bilde ved bruk av en premium-konto (`https://images.shodan.io`) [6]."
+    },
+    {
+      "id": "q6",
+      "text": "Når man prøver å finne den virkelige opprinnelses-IP-en bak CloudFlare ved å bruke SSL-sertifikater på Censys, hvilke to søkeparametere kombineres for å finne gyldige sertifikater for et gitt domenenavn?",
+      "choices": [
+        "tags.raw:trusted og http.html: <domene>",
+        "22.ssh.v2.server_host_key.ecdsa_public_key.y og parsed.names: <domene>",
+        "parsed.names: <domene> og tags.raw: trusted",
+        "80.http.get.body: og tags.raw: trusted",
+        "http.favicon.hash og parsed.names: <domene>"
+      ],
+      "correctIndex": 2,
+      "explanation": "På Censys søker man etter sertifikater for domenet ved å bruke **`parsed.names: <domene>`** og kombinerer dette med **`tags.raw: trusted`** for kun å vise gyldige sertifikater [7, 8]."
+    },
+    {
+      "id": "q7",
+      "text": "Hva er hovedmålet med å finne en opprinnelses-IP når en nettside bruker en tjeneste som CloudFlare (som tilbyr WAF, Rate Limits, DDoS Protection)?",
+      "choices": [
+        "Å deaktivere Tor Hidden Service-operatørens identitet.",
+        "Å få tilgang til serverens SSH-nøkkel.",
+        "Å sjekke MX-oppføringene for e-postserveren.",
+        "Å angripe nettstedet direkte ved å omgå beskyttelsesmekanismer (som WAF og DDoS-beskyttelse).",
+        "Å finne gamle A-oppføringer ved bruk av SecurityTrails."
+      ],
+      "correctIndex": 3,
+      "explanation": "Ved å avsløre opprinnelses-IP-en tillates angrep på nettsiden direkte, og beskyttelsen levert av CloudFlare (som WAF, Rate Limits, DDoS Protection) kan omgås [9]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvorfor er IP-adresser viktige i IPIP-overføringer (IP to IP Transfers) mellom banker?",
+      "choices": [
+        "De brukes til å maskere brukernes dynamiske IP-adresser.",
+        "De kreves kun for lokasjonsverifisering av brukeren.",
+        "De brukes til å spore historiske DNS-oppføringer.",
+        "De brukes for direkte kommunikasjon mellom bankenes systemer for å fasilitere transaksjonen.",
+        "De er bare relevante for GDPR-samsvar."
+      ],
+      "correctIndex": 3,
+      "explanation": "I IPIP-overføringer involverer transaksjonen direkte kommunikasjon mellom bankenes systemer, hvor deres respektive IP-adresser brukes til å verifisere transaksjonen [10, 11]."
+    },
+    {
+      "id": "q9",
+      "text": "Når en angriper har funnet et unikt HTTP-header (f.eks. X-Generated-Via: XYZ Framework) i tillegg til standard server-header (som deles av 1500 servere), hva er konsekvensen av denne kombinasjonen ifølge kildens eksempel?",
+      "choices": [
+        "Det reduserer søkeresultatene på Censys til kun 400 servere.",
+        "Det betyr at angriperen må bruke Google BigQuery for å fortsette søket.",
+        "Det tillater bruk av Bing Dorks for å identifisere verten.",
+        "Det krever bruk av gobuster for å finne filer og kataloger.",
+        "Krysningen av de to unike egenskapene reduserer det endelige antallet potensielle målservere betydelig (f.eks. til tre servere)."
+      ],
+      "correctIndex": 4,
+      "explanation": "Kombinering av en relativt vanlig server-header med en unik applikasjons-header skaper et unikt sett av servere, noe som reduserer det endelige antallet potensielle mål drastisk (eksempelet nevner en reduksjon til tre servere) [12]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvilken spesifikk teknikk involverer bruk av MurmurHash3-hashverdier (generert av et Python3-hjelpeskript) for å knytte en nettside til et prosjekt eller en teknologi på tvers av verter, og søkes etter med `http.favicon.hash` på Shodan?",
+      "choices": [
+        "SSH Key Fingerprinting.",
+        "Reverse DNS Resolution.",
+        "Sammenligning av HTTP-headers.",
+        "Favicon Hash Matches.",
+        "Søk etter Google Analytics Tracking Code i kildekoden."
+      ],
+      "correctIndex": 3,
+      "explanation": "Teknikken kalles **Favicon Hash Matches**. Den bruker MurmurHash3 av favicon-filinnholdet (som kan genereres med et Python-skript) for å identifisere relaterte nettsteder/teknologier. Shodan bruker parameteren `http.favicon.hash` [13]."
+    }
+  ]
+}

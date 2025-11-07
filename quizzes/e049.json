@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Bruk av VPN og Proxy i Etterforskning (OpSec)",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er hovedfunksjonen til et VPN (Virtual Private Network) ifølge kildene?",
+      "choices": [
+        "Sikrer og krypterer all datatrafikk mellom din enhet og internett via en ekstern server.",
+        "Komprimerer datatrafikken for å øke hastigheten.",
+        "Dekrypterer sensitiv informasjon før den sendes over nettet.",
+        "Sikrer at Internettleverandøren (ISP) kan se alle besøkte domener.",
+        "Fungerer kun på applikasjonsnivå i nettleseren."
+      ],
+      "correctIndex": 0,
+      "explanation": "Et VPN er en teknologi som sikrer og krypterer all datatrafikk mellom din enhet og internett via en ekstern server [1, 2]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilket digitalt spor unngår en etterforsker å etterlate seg når VPN er aktivert, ifølge kildene?",
+      "choices": [
+        "Brukerens foretrukne språkinnstilling.",
+        "Det fysiske merket på PC-en.",
+        "Et sporbart digitalt fotavtrykk fra egen IP-adresse.",
+        "Informasjon om installerte fonter i operativsystemet.",
+        "Navnet på den valgte VPN-leverandøren."
+      ],
+      "correctIndex": 2,
+      "explanation": "VPN gjør det mulig å foreta søk og analyser uten å etterlate et sporbart digitalt fotavtrykk fra egen IP-adresse [1]."
+    },
+    {
+      "id": "q3",
+      "text": "Hva er et kritisk krav for en pålitelig VPN-leverandør, spesielt fremhevet i OpSec-sammenheng?",
+      "choices": [
+        "At de dominerer i betalte 'anmeldelser'.",
+        "At de har en klar policy om ingen loggføring ('No-Logs'-prinsipp).",
+        "At de er eid av et stort konsern som eier mange VPN-merker.",
+        "At de utelukkende lagrer alle tilkoblingslogger for å bistå politiet.",
+        "At de kun støtter Windows-plattformen."
+      ],
+      "correctIndex": 1,
+      "explanation": "Tjenesten skal ikke lagre logger over din aktivitet. Velg tjenester som har et dokumentert 'No-Logs'-prinsipp [3, 4]."
+    },
+    {
+      "id": "q4",
+      "text": "Når en etterforsker bruker VPN, hva ser Internettleverandøren (ISP) av aktiviteten?",
+      "choices": [
+        "Alle de spesifikke nettsidene som er besøkt.",
+        "Søkeordene som ble brukt i søkemotorer som Google.",
+        "Ingen ting; alt er skjult.",
+        "Kun at det er koblet til VPN-tjenesten, men ikke hva som gjøres på nettet.",
+        "Brukerens faktiske geografiske lokasjon basert på GPS-data."
+      ],
+      "correctIndex": 3,
+      "explanation": "Internettleverandøren (ISP) ser kun at du kobler deg til VPN-tjenesten, ikke hva du gjør på nettet, da all trafikk er kryptert [3, 5]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken betalingsmetode fremheves i kildene for å gi høyere anonymitet ved kjøp av VPN-tjenester?",
+      "choices": [
+        "Standard bankkort.",
+        "PayPal-betaling.",
+        "Betaling via Bitcoin gjennom lokal lommebok.",
+        "Overføring fra bedriftskonto.",
+        "Gavekort fra store kjeder."
+      ],
+      "correctIndex": 2,
+      "explanation": "Selv om det etterlates spor ved betaling, gir Bitcoin gjennom lokal lommebok høyere anonymitet [6, 7]."
+    },
+    {
+      "id": "q6",
+      "text": "Hva er den primære forskjellen mellom et VPN og en standard applikasjonsproxy, ifølge kildene, når det gjelder omfanget av trafikkbeskyttelse?",
+      "choices": [
+        "VPN er kun for mobil, mens proxy er for PC.",
+        "En proxy kan endre din lokasjon, mens VPN ikke kan det.",
+        "VPN fungerer på operativsystemnivå og krypterer all utgående trafikk, mens en proxy ofte kun fungerer på applikasjonsnivå.",
+        "En proxy tilbyr alltid sterkere kryptering enn VPN.",
+        "VPN maskerer kun IP-adressen, mens proxy maskerer lokasjonen."
+      ],
+      "correctIndex": 2,
+      "explanation": "VPN fungerer på operativsystemnivå og krypterer all utgående trafikk, mens en proxy ofte kun fungerer på applikasjonsnivå (f.eks. i nettleseren) og tilbyr vanligvis ingen kryptering [8]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilken spesifikk risiko for etterforskerens faktiske IP-adresse kan oppstå ved feilkonfigurering av en SOCKS-proxy, til tross for at tunnelen er etablert?",
+      "choices": [
+        "Trafikken kan bli utsatt for 'Browser Fingerprinting'.",
+        "VPS-tjeneren kan nekte tilkobling.",
+        "DNS-forespørsler (DNS Leak) kan omgå proxyen og avsløre den faktiske IP-adressen til DNS-tjeneren.",
+        "Dataene kan bli komprimert feil.",
+        "SSH-tunnelen avsluttes automatisk etter 10 minutter."
+      ],
+      "correctIndex": 2,
+      "explanation": "Hvis proxyen er feilkonfigurert, kan DNS-forespørsler (DNS Leak) omgå proxyen og avsløre din faktiske IP-adresse til DNS-tjeneren. Dette må testes og forhindres [9]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvilket land nevnes spesifikt som et foretrukket jurisdiksjonsland for VPN-leverandører for å redusere sjansen for uønsket datautlevering fra myndigheter, grunnet strenge personvernlovgivninger?",
+      "choices": [
+        "USA.",
+        "Kina.",
+        "Russland.",
+        "Sveits.",
+        "Sverige."
+      ],
+      "correctIndex": 3,
+      "explanation": "Man bør velge en leverandør i et land med strenge personvernlovgivninger, som Sveits. Dette reduserer sjansen for uønsket datautlevering fra myndigheter [6, 10]."
+    },
+    {
+      "id": "q9",
+      "text": "Hvilken OpSec-risiko ved bruk av proxy er knyttet til identifisering basert på egenskaper som skjermoppløsning, installerte fonter, og operativsystem, selv om IP-adressen er skjult?",
+      "choices": [
+        "DNS-lekkasjer.",
+        "VPS-tjenerens loggføring.",
+        "SSL/TLS-nedgraderinger.",
+        "Browser Fingerprinting.",
+        "IP-sporing."
+      ],
+      "correctIndex": 3,
+      "explanation": "Selv om IP-adressen er skjult, kan nettleseren din (VM-ens OS, fonter, skjermoppløsning, etc.) brukes til å identifisere deg unikt gjennom 'Browser Fingerprinting' [11]."
+    },
+    {
+      "id": "q10",
+      "text": "Når en etterforsker knytter en unik IP-adresse fra en Virtual Private Server (VPS) til en spesifikk dekkidentitet og sak for å unngå spor fra politiets nettverk, hvilket etterforskningsprinsipp bevares for IP-spor?",
+      "choices": [
+        "Prinsippet om Geografisk Maskering.",
+        "Prinsippet om Dynamisk Port-videresending.",
+        "Blankt Ark-prinsippet for IP-spor.",
+        "Prinsippet om Åpen Kildekode.",
+        "Prinsippet om Uavhengig Revisjon."
+      ],
+      "correctIndex": 2,
+      "explanation": "En korrekt konfigurert proxy lar deg knytte en unik IP-adresse til en spesifikk dekkidentitet, og dette bevarer 'Blankt Ark-prinsippet' for IP-spor [12]."
+    }
+  ]
+}

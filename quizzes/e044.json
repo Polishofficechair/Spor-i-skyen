@@ -1,0 +1,136 @@
+{
+"title": "Quiz: Episode e001",
+"episodeId": "e001",
+"questions": [
+{
+"id": "q1",
+"text": "Hvilket Python-bibliotek anbefales spesifikt i kildene for å lese og håndtere strukturerte data, som CSV-filer, under automatisering av OSINT-rapporter?",
+"choices": [
+"requests",
+"openai",
+"pandas",
+"beautifulsoup4",
+"matplotlib"
+],
+"correctIndex": 2,
+"explanation": "Biblioteket `pandas` brukes for å lese og håndtere data, for eksempel fra en CSV-fil, i Python-skriptet for rapportgenerering [1, 2]."
+},
+{
+"id": "q2",
+"text": "Hvilken type teknisk feil ved tidlige AI-genererte bilder var en pålitelig deteksjonsmetode i 2023, men er nå sjelden funnet i moderne AI-modeller (som Midjourney og DALL-E) i 2025? [3-5]",
+"choices": [
+"Mangler i skyggekonsistens",
+"Geometriske brudd i perspektiv",
+"Feil i gjengivelse av hender (ekstra fingre)",
+"Manglende miljøbakgrunnsstøy",
+"Inkonsistente filkomprimeringsmønstre"
+],
+"correctIndex": 2,
+"explanation": "I tidlig utvikling var dårlig tegnede hender (som ekstra fingre) vanlig og brukt for å oppdage AI-bilder, men dette er nå stort sett forbedret av AI-modellene innen 2025 [3, 4]."
+},
+{
+"id": "q3",
+"text": "Hva er det første steget i den trinnvise veiledningen for å automatisere en OSINT-rapport ved hjelp av ChatGPT?",
+"choices": [
+"Opprett en Structured Mal for Rapporten",
+"Definer Målet og Omfanget",
+"Installer nødvendige biblioteker",
+"Kjør Skriptet Regelmessig",
+"Generer grafer ved hjelp av Matplotlib"
+],
+"correctIndex": 1,
+"explanation": "Før man begynner, må man definere hva man ønsker å oppnå med OSINT-rapporten og hvilket omfang den skal dekke [6]."
+},
+{
+"id": "q4",
+"text": "Hvilken type bildeanalyse bør ifølge kildene umiddelbart utløse mistanke i et '30-Second Red Flag Check' (Kategori 1)?",
+"choices": [
+"Tilstedeværelsen av matematiske fingeravtrykk i piksler",
+"Bruk av et ukjent filformat",
+"Når en protestleder har feilfri sminke ('magazine-quality aesthetics')",
+"Skygger som peker i samme retning",
+"Mangel på metadata i bildefilen"
+],
+"correctIndex": 2,
+"explanation": "Mistanke skal utløses ved 'suspicious perfection' – for eksempel når en protestleder har feilfri sminke eller et kriseoffer har perfekt hår, da dette er 'magazine-quality aesthetics' i upassende kontekster [7, 8]."
+},
+{
+"id": "q5",
+"text": "Hva er det primære målet for journalister når de prøver å identifisere AI-generert innhold i dagens klima, i stedet for definitiv identifikasjon?",
+"choices": [
+"Å kontakte den originale kilden umiddelbart",
+"Å oppnå 'signal-til-støy-forhold' på null",
+"Å oppnå en sannsynlighetsvurdering (probability assessment) og informert redaksjonell vurdering",
+"Å vente på at AI-modeller skal produsere feilaktig tekst",
+"Kun å stole på gamle deteksjonsmetoder fra 2023"
+],
+"correctIndex": 2,
+"explanation": "Målet har skiftet fra definitiv identifikasjon til en sannsynlighetsvurdering ('probability assessment') og informert redaksjonell vurdering, da perfekt deteksjon kan være umulig [3, 4, 9]."
+},
+{
+"id": "q6",
+"text": "I Kategori 2: Geometriske Fysikkbrudd, hva er en 'Vanishing Point Analysis' (Forsvinningspunktanalyse) designet for å avdekke i AI-genererte bilder?",
+"choices": [
+"Unaturlig glatthet i hudteksturen",
+"Ujevne komprimeringsmønstre i bildefilen",
+"Fravær av naturlig pust og nøling i tale",
+"Brudd på de grunnleggende lovene om perspektiv der parallelle linjer ikke konvergerer korrekt",
+"Unormal atferd og samhandling i folkemengder"
+],
+"correctIndex": 3,
+"explanation": "Vanishing Point Analysis undersøker om parallelle linjer (f.eks. taklinjer eller togskinner) konvergerer mot et enkelt punkt på horisonten, et brudd som indikerer algoritmisk sammensetning i stedet for fotografisk opptak [10, 11]."
+},
+{
+"id": "q7",
+"text": "Hva er en av de typiske 'Red Flags' for et AI-generert stemmekloningsforsøk (deepfake audio) i Kategori 4?",
+"choices": [
+"Stemmen har en perfekt og konsistent lokal dialekt",
+"Talen har for mange naturlige pauser og pustelyder",
+"Det er ingen Robotic inflection, men heller jevn, menneskelig intonasjon",
+"Manglende miljøbakgrunnsstøy som burde vært til stede i konteksten",
+"Uttalen er for utydelig og mangler detaljer"
+],
+"correctIndex": 3,
+"explanation": "En rød flagg for AI-generert tale er mangelen på miljøbakgrunnsstøy som normalt skulle være til stede, i tillegg til unaturlig tempo og robotaktig intonasjon [12, 13]."
+},
+{
+"id": "q8",
+"text": "Hvordan kan man automatisere kjøringen av et Python-skript for OSINT-rapportgenerering regelmessig på et Linux-system, ifølge kildene?",
+"choices": [
+"Ved å bruke Matplotlib",
+"Ved å legge til `time.sleep()` i Python-koden",
+"Ved å bruke Pandas iterrows-funksjon",
+"Ved å sette opp cron-jobber",
+"Ved å bruke Google Vision processing"
+],
+"correctIndex": 3,
+"explanation": "For å automatisere prosessen slik at skriptet kjøres regelmessig, kan man bruke cron-jobber på Linux eller Task Scheduler på Windows [14-16]."
+},
+{
+"id": "q9",
+"text": "Under dyp etterforskning (Deep Investigation) i Kategori 3: Tekniske Fingeravtrykk, hvilken teknikk er beskrevet av eksperter som å se etter 'frekvensdomene-fingeravtrykk' ('frequency domain fingerprints') unike for AI-generert innhold?",
+"choices": [
+"Copy-Paste Detection",
+"Compression Artifact Analysis",
+"Frequency domain analysis (Frekvensdomene-analyse)",
+"Visuell teksturkontroll (Visual Texture Check)",
+"Metadata-analyse av filens 'Properties'"
+],
+"correctIndex": 2,
+"explanation": "Frekvensdomene-analyse er en teknisk deteksjon av matematiske mønstre som er unike for AI ('frequency domain fingerprints'), og er et verktøy for dyp etterforskning i Kategori 3 [17-20]."
+},
+{
+"id": "q10",
+"text": "Hva er kjernen i 'Production-cost paradox' (Produksjons-kostnad paradokset) som er en del av Kategori 7: Intuitiv Mønstergjenkjenning?",
+"choices": [
+"At AI er dårlig på å replikere naturlige rynker i klær",
+"At tradisjonell faktasjekking er for dyr og tidkrevende",
+"At selv de mest avanserte falskneriene er basert på arkiverte fotografier",
+"At kilden er amatør, men innholdet har et profesjonelt, Hollywood-lignende produksjonsnivå",
+"At skygger ofte reflekteres i feil retning på vannoverflater"
+],
+"correctIndex": 3,
+"explanation": "Paradokset refererer til situasjonen der en amatørkilde (f.eks. som brukte $8 og 28 minutter) produserer innhold med et profesjonelt, filmatisk nivå, noe som bryter med den naturlige forventningen til produksjonskostnad og kilde [21-26]."
+}
+]
+}

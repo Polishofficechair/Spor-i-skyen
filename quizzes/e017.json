@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e017",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hvilket kommandolinjeverktøy presenteres som det primære for å hente ut EXIF-data fra bilder?",
+      "choices": [
+        "exiftool",
+        "Geoguessr",
+        "Yandex",
+        "apt-get",
+        "GPS-tracker"
+      ],
+      "correctIndex": 0,
+      "explanation": "exiftool er det Perl-baserte kommandolinjeverktøyet som presenteres som det sentrale for å lese og analysere EXIF-metadata direkte fra terminalen [1-4]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilken funksjon i Google Earth er spesifikt nevnt for å gi panoramautsikt fra bakkenivå for geolokalisering?",
+      "choices": [
+        "Historisk funksjon",
+        "Skygge/sol kalkulator",
+        "Svevefunksjon",
+        "Google Street View",
+        "UTM koordinater"
+      ],
+      "correctIndex": 3,
+      "explanation": "Google Earth inkluderer funksjonen Google Street View, som gir et viktig perspektiv fra bakkenivå for å identifisere detaljer og verifisere lokasjoner [5-7]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilken av de tre sentrale verktøyene for omvendt bildesøk er mest effektiv for å finne visuelt *lignende* bilder, ikke bare eksakte kopier?",
+      "choices": [
+        "Google Images",
+        "Yandex",
+        "TinEye",
+        "ExifTool",
+        "Bing Visual Search"
+      ],
+      "correctIndex": 1,
+      "explanation": "Yandex er kjent for sin unike styrke i å finne visuelt lignende bilder, inkludert andre bilder av samme person, selv om de ikke er identiske kopier [8-11]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken type informasjon kan EXIF-data i et bilde typisk avsløre om opptaksstedet?",
+      "choices": [
+        "Eierens telefonnummer",
+        "Bildets filstørrelse i bytes",
+        "Personens ansiktsgjenkjenningstype",
+        "IP-adressen til serveren som hoster bildet",
+        "GPS-breddegrad og -lengdegrad"
+      ],
+      "correctIndex": 4,
+      "explanation": "EXIF-data kan inneholde presise geografiske data, spesifikt GPS Latitude og GPS Longitude, som avslører den nøyaktige fysiske posisjonen bildet ble tatt [12-16]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva indikerer det når veimerkingen i midten av en vei er gul, ifølge OSINT-analyser av veikjennetegn?",
+      "choices": [
+        "Sannsynlig lokasjon i Nord- eller Sør-Amerika",
+        "Sannsynlig lokasjon i Nord-Europa (Skandinavia)",
+        "Veien er under konstruksjon",
+        "Det er en blindvei",
+        "Det indikerer venstrekjøring"
+      ],
+      "correctIndex": 0,
+      "explanation": "En gul midtlinje er typisk for veier i Nord- og Sør-Amerika, mens hvite midtlinjer er standarden i store deler av Europa. Dette er en sterk geografisk markør [17-20]."
+    },
+    {
+      "id": "q6",
+      "text": "Hva er den korrekte kommandoen for å installere `exiftool` (pakkenavnet) på et Debian-basert system, inkludert nødvendige privilegier?",
+      "choices": [
+        "apt install exiftool",
+        "sudo apt install exiftool-data",
+        "sudo apt install libimage-exiftool-perl",
+        "sudo apt-get install perl-exiftool",
+        "exiftool --install"
+      ],
+      "correctIndex": 2,
+      "explanation": "Den fullstendige og korrekte kommandoen for å installere verktøyet på Debian-baserte systemer er `sudo apt install libimage-exiftool-perl` [1, 13, 21-23]."
+    },
+    {
+      "id": "q7",
+      "text": "Hva er det unike funnet TinEye gjorde i det demonstrerte casestudiet av omvendt bildesøk, som de andre verktøyene ikke fant?",
+      "choices": [
+        "Personens boligadresse",
+        "En profil på en obskur dating-app",
+        "En lenke til en nyhetsartikkel fra inneværende år",
+        "Eksakte kopier av bildet på et kriminelt forum",
+        "En fagartikkel fra 2018 som avslørte personens ekspertise"
+      ],
+      "correctIndex": 4,
+      "explanation": "TinEye fant en artikkel fra 2018 skrevet av personen i bildet om 'pen testing techniques' på et nettsted de andre motorene hadde oversett, noe som ga innsikt i personens faglige bakgrunn [8-10, 24, 25]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvilken kombinasjon av indikatorer bør en etterforsker primært se etter på GitHub for å vurdere et OSINT-verktøys kvalitet og pålitelighet?",
+      "choices": [
+        "Antall 'forks' og total linjekode",
+        "Antall 'stars' og dato for siste oppdatering",
+        "Lisensinformasjon og readme-filens lengde",
+        "Antall bidragsytere og kodekvalitet",
+        "Antall nedlastinger og prosjektets navn"
+      ],
+      "correctIndex": 1,
+      "explanation": "De to viktigste indikatorene på et GitHub-verktøys kvalitet er antall 'stars' (anerkjennelse fra fellesskapet) og datoen for siste oppdatering (aktivt vedlikehold) [3, 26-32]."
+    },
+    {
+      "id": "q9",
+      "text": "Hvilket tankesett skiller en tilfeldig observatør fra en etterforsker når de analyserer et bilde for geografisk lokalisering?",
+      "choices": [
+        "Etterforskeren ser hvert element (f.eks. bilskilt, arkitektur) som søkbare datapunkter, ikke som en helhetlig bakgrunn",
+        "Etterforskeren fokuserer kun på den mest åpenbare ledetråden (f.eks. et kjent landemerke)",
+        "Observatøren kan identifisere lokasjonen raskere enn etterforskeren",
+        "Etterforskeren ignorerer alt unntatt EXIF-data og metadata",
+        "Observatøren klarer å identifisere hvilken halvkule bildet er tatt på, ved å se på skygger"
+      ],
+      "correctIndex": 0,
+      "explanation": "En etterforsker dekonstruerer bildet i individuelle, søkbare datapunkter (som bilmerke, bilskilt, arkitektur, snø) for å systematisk snevre inn søket og unngå tunnelsyn, mens en observatør ser det som en helhetlig scene [33-37]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvis kommandoen `sudo apt install libimage-exiftool-perl` feiler med feilmeldingen 'repository not found', hva er det første steget som logisk sett må gjøres for å rette opp problemet?",
+      "choices": [
+        "Avinstallere Perl-biblioteket og prøve på nytt",
+        "Endre systemets administratorpassord ved hjelp av `passwd`",
+        "Installere fra en lokal fil ved hjelp av `dpkg -i`",
+        "Oppdatere systemets pakkelister med `sudo apt-get update`",
+        "Kontakte Google for å få den nyeste installasjonslenken"
+      ],
+      "correctIndex": 3,
+      "explanation": "Den vanligste feilkilden er utdaterte pakkelister. Første steg er å oppdatere disse med kommandoen `sudo apt-get update` (eller `sudo apt update`) for å synkronisere den lokale hurtigbufferen med programvarekildene [1, 21, 22, 30, 38, 39]."
+    }
+  ]
+}

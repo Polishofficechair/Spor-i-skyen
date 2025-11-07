@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e043",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hvilken Python-pakke er ifølge kildene spesifikt nødvendig for å lese og håndtere strukturerte data, for eksempel fra en CSV-fil, i prosessen med å automatisere OSINT-rapporter?",
+      "choices": [
+        "BeautifulSoup",
+        "requests",
+        "Matplotlib",
+        "**pandas**",
+        "openai"
+      ],
+      "correctIndex": 3,
+      "explanation": "`Pandas` brukes til å lese og håndtere data som er organisert i et format som er lett å behandle, slik som CSV- eller JSON-filer [1, 2]."
+    },
+    {
+      "id": "q2",
+      "text": "Hva er det første og grunnleggende trinnet i den trinnvise veiledningen for å automatisere en BRÅK-rapport ved hjelp av ChatGPT? [3]",
+      "choices": [
+        "Opprett en strukturert mal for rapporten",
+        "Installer nødvendige biblioteker via pip",
+        "**Definer Målet og Omfanget**",
+        "Bruk BeautifulSoup for å skrape websider",
+        "Kjør skriptet regelmessig ved hjelp av cron-jobber"
+      ],
+      "correctIndex": 2,
+      "explanation": "Før man begynner, må man definere hva man ønsker å oppnå med BRÅK-rapporten og hvilket omfang den skal dekke [3]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilken av disse etterretningsdisiplinene nevnes i kilden som en integrert del av BRÅK i et felles rammeverk for etterretningsfusjon?",
+      "choices": [
+        "PSYOP (Psychological Operations)",
+        "LOGINT (Logistics Intelligence)",
+        "**FININT (Financial Intelligence)**",
+        "MASINT (Measurement and Signature Intelligence)",
+        "MEDINT (Medical Intelligence)"
+      ],
+      "correctIndex": 2,
+      "explanation": "BRÅK integreres med andre disipliner, inkludert HUMINT, FININT, COMINT, GEOINT og IMINT [4]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken av de 12 BRÅK-trinnene innebærer bruk av avanserte teknikker som 'dorking' for å redusere søkeresultatene?",
+      "choices": [
+        "Initial Research (Innledende Forskning)",
+        "Document and Analyse Findings (Dokumenter og Analyser Funn)",
+        "**Tailor Your Queries (Skreddersy Søkene)**",
+        "Real-Time Collection (Innsamling i Sanntid)",
+        "Verify and Validate Information (Verifiser og Valider Informasjon)"
+      ],
+      "correctIndex": 2,
+      "explanation": "For å redusere søkeresultatene skal man skreddersy søkene etter utvalgte nøkkelord eller termer, og avanserte teknikker som dorking er nyttige i dette trinnet [5]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva står 'A' for i JAPAN-prinsippene, som er avgjørende for juridisk praksis i OSINT?",
+      "choices": [
+        "Accuracy (Nøyaktighet)",
+        "Analysis (Analyse)",
+        "**Authorised (Autorisert)**",
+        "Assessment (Vurdering)",
+        "Accountability (Ansvarlighet)"
+      ],
+      "correctIndex": 2,
+      "explanation": "'A' står for Authorized (Autorisert), og betyr at alle etterretningsaktiviteter må overholde juridiske rammeverk [6]."
+    },
+    {
+      "id": "q6",
+      "text": "Hva er det spesifikke formålet med å inkludere 'Commander’s Intent' (Kommandørens Intensjon) i OSINT-etterforskninger, trukket fra militær doktrine?",
+      "choices": [
+        "Å identifisere alle Intelligence Requirements (IRs) og Request for Information (RFIs)",
+        "Å definere strukturen for rapporten (Introduksjon, Brukerprofil, etc.)",
+        "Å sikre at etterforskningen overholder JAPAN-prinsippene",
+        "**Å gi en tydelig uttalelse om operasjonens mål og ønsket utfall, som sikrer strategisk fokus**",
+        "Å sette opp en tidsplan for å kjøre skriptet regelmessig"
+      ],
+      "correctIndex": 3,
+      "explanation": "Commander's Intent gir en klar uttalelse om operasjonens mål og ønsket utfall, og er avgjørende for å sikre at alle etterretningsinnsatser er i tråd med bredere oppdragsmål [7]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilke to spørsmål ble lagt til den tradisjonelle 5 W’s og 1 H-rammen for å danne den mer omfattende 6 W’s og 2 H’s-rammen for BRÅK-etterforskninger?",
+      "choices": [
+        "When (Når) og Where (Hvor)",
+        "Who (Hvem) og What (Hva)",
+        "Why (Hvorfor) og How (Hvordan)",
+        "How (Hvordan) og How Much (Hvor Mye)",
+        "**Which (Hvilke) og How Much (Hvor Mye)**"
+      ],
+      "correctIndex": 4,
+      "explanation": "Rammeverket ble utvidet ved å legge til 'Which' (for kilder og verktøy) og 'How Much' (for omfang og skala) [8, 9]."
+    },
+    {
+      "id": "q8",
+      "text": "I etterretningssyklusen, hvorfor er Planning and Direction (Planlegging og Retning) ifølge kildene fundamentalt viktig, spesielt i OSINT-aktiviteter?",
+      "choices": [
+        "Det er den eneste fasen der visualiseringer som Matplotlib brukes",
+        "Det er fasen hvor all data fra sosiale medier samles inn i sanntid",
+        "Det er fasen som dokumenterer funn med URL og tidsstempel",
+        "**Det er den fasen som gir retning og definerer omfanget av operasjonen for å unngå 'mission drift'**",
+        "Det er fasen hvor RFI-prosessen fullføres"
+      ],
+      "correctIndex": 3,
+      "explanation": "Planlegging og Retning er fundamentalt fordi det setter mål og hensikter [10]. Strategisk planlegging i BRÅK gir retning og avgrenser omfanget for å sikre at operasjonen forblir fokusert på kjerneobjektivene ('no mission drift') [11]."
+    },
+    {
+      "id": "q9",
+      "text": "I de 12 BRÅK-trinnene, hva er formålet med å 'Verify and Validate Information' (Verifisere og Validere Informasjon)?",
+      "choices": [
+        "Å følge digitale fotspor for å identifisere nettsteder med ulovlige aktiviteter",
+        "Å søke i datalekkasjedatabaser for å finne kompromitterte data",
+        "Å kartlegge Commander's Intent for å sikre strategisk fokus",
+        "Å tilpasse søkene ved hjelp av dorking",
+        "**Å bekrefte sannheten og påliteligheten av innsamlet informasjon fra flere kilder, som grunnlag for en pålitelig sak**"
+      ],
+      "correctIndex": 4,
+      "explanation": "Trinnet 'Verify and Validate Information' innebærer å bekrefte den innsamlede informasjonen fra flere kilder for å sikre sannhet og pålitelighet, da dette gir grunnlag for en pålitelig sak [12]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvilket av JAPAN-prinsippene sikrer at etterforskere unngår unødvendige inntrengninger ved å kun samle inn data som direkte støtter etterforskningens mål?",
+      "choices": [
+        "Authorized (Autorisert)",
+        "Proportionate (Proporsjonalt)",
+        "Auditable (Revisjonsdyktig)",
+        "Necessary (Nødvendig)",
+        "**Justifiable (Berettiget)**"
+      ],
+      "correctIndex": 4,
+      "explanation": "Justifiable (Berettiget) defineres som at etterforskningshandlinger må ha et klart og legitimt formål. I OSINT betyr dette at analytikere bare skal samle inn data hvis det direkte støtter etterforskningens mål, og unngå unødvendige inntrengninger [13]."
+    }
+  ]
+}
