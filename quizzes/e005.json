@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Episode e001",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er den grunnleggende definisjonen på en Virtuell Maskin (VM) i konteksten av et OSINT-laboratorium?",
+      "choices": [
+        "En programvare som lar deg kjøre et annet operativsystem (gjest) oppå ditt eksisterende operativsystem (vert).",
+        "En type kryptert nettverkskobling som sikrer all trafikk.",
+        "Et eksternt, skytilbudt skrivebordsmiljø.",
+        "En fysisk server dedikert til etterforskning.",
+        "Et verktøy for automatisk innsamling av åpne kilder."
+      ],
+      "correctIndex": 0,
+      "explanation": "En Virtuell Maskin (VM) er en programvare som emulerer et datamaskinsystem, slik at man kan kjøre et gjesteoperativsystem isolert oppå et vertsoperativsystem [1-3]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilken virtualiseringsprogramvare anbefales for brukere som opererer på operativsystemene Windows og Linux?",
+      "choices": [
+        "VirtualBox",
+        "Hyper-V",
+        "VMware Workstation Player",
+        "Parallels Desktop",
+        "QEMU"
+      ],
+      "correctIndex": 2,
+      "explanation": "VMware Workstation Player anbefales for Windows- og Linux-brukere fordi den beskrives som mer stabil, med færre problemer, og fungerer bedre 'rett ut av boksen' [1, 4, 5]."
+    },
+    {
+      "id": "q3",
+      "text": "Hva står akronymet 'sudo' for i Linux-kommandoer?",
+      "choices": [
+        "System Utility Data Output",
+        "Super User Do",
+        "Security Update Deployment Option",
+        "Software User Development Override",
+        "Standard User Data Only"
+      ],
+      "correctIndex": 1,
+      "explanation": "sudo er en kommando i Linux som står for 'Superuser do' og lar en standardbruker utføre en spesifikk kommando med administrative rettigheter [6, 7]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvor mye RAM anbefaler kildematerialet at man minimum allokerer til den virtuelle maskinen hvis vertsmaskinen har totalt 16 GB RAM?",
+      "choices": [
+        "1 GB",
+        "2 GB",
+        "4 GB",
+        "8 GB",
+        "12 GB"
+      ],
+      "correctIndex": 2,
+      "explanation": "Hvis vertsmaskinen har 16 GB RAM, er den anbefalte tildelingen 4 GB RAM til den virtuelle maskinen, selv om 8 GB kan vurderes hvis man har få andre programmer kjørende [8-11]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken Linux-kommando kan brukes for å bytte til root-brukeren for den spesifikke terminaløkten, uten å måtte logge helt ut og inn?",
+      "choices": [
+        "run admin",
+        "exec root",
+        "sudo su -",
+        "change user root",
+        "passwd root"
+      ],
+      "correctIndex": 2,
+      "explanation": "Kommandoen 'sudo su -' er en metode for å bytte til root-brukeren i den spesifikke terminaløkten [8, 12]."
+    },
+    {
+      "id": "q6",
+      "text": "Hva er formålet med å skape et dedikert og isolert miljø ved hjelp av en virtuell maskin for OSINT-arbeid?",
+      "choices": [
+        "Å sikre at operativsystemet er raskere enn vertsmaskinen.",
+        "Å tillate krysskontaminering av data mellom personlige filer og etterforskning.",
+        "Å skape et dedikert laboratorium med spesialiserte verktøy og beskytte vertsmaskinens oppsett og personlige data.",
+        "Å redusere filstørrelsen på OSINT-verktøyene.",
+        "Å muliggjøre bruk av kun én nettleser for alle oppgaver."
+      ],
+      "correctIndex": 2,
+      "explanation": "Formålet er å skape et dedikert og isolert miljø (en 'sandkasse') for etterretningsarbeid, uten å endre vertsmaskinens oppsett, og for å beskytte integriteten til etterforskningen (isolasjon) [1, 3, 10]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvorfor velger instruktøren å logge inn og operere permanent som root-bruker i kurskonteksten, til tross for at det ikke er ansett som beste sikkerhetspraksis?",
+      "choices": [
+        "Fordi Kali Linux krever at man kun logger inn som root.",
+        "Fordi permanent root-tilgang er nødvendig for at den virtuelle maskinen skal ha nettverkstilgang.",
+        "For å forenkle prosessen og gjøre demonstrasjonene smidigere ved å slippe å skrive 'sudo' foran hver administrative kommando.",
+        "Fordi det er umulig å sette et passord for standardbrukeren.",
+        "Det er en sikkerhetsfunksjon som automatisk sletter loggfiler."
+      ],
+      "correctIndex": 2,
+      "explanation": "Instruktøren anerkjenner at permanent root-tilgang ikke er beste sikkerhetspraksis, men velger det for å forenkle prosessen og gjøre demonstrasjonene smidigere for kursdeltakerne [8, 13-15]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvilken virtualiseringsprogramvare anbefales primært for brukere av macOS (OSX)?",
+      "choices": [
+        "VMware Workstation Player",
+        "Microsoft Hyper-V",
+        "VirtualBox",
+        "VMware Fusion",
+        "QEMU"
+      ],
+      "correctIndex": 2,
+      "explanation": "VirtualBox nevnes som alternativ programvare, primært for brukere som bruker OSX/macOS, ettersom VMware Player ikke er tilgjengelig for den plattformen [2, 4, 5, 16]."
+    },
+    {
+      "id": "q9",
+      "text": "Når en standardbruker (som 'osent' eller 'osint') i Linux får feilmeldingen 'command not found' ved kjøring av en kommando som 'ifconfig', hva er den underliggende årsaken i dette miljøet?",
+      "choices": [
+        "Kommandoen er helt slettet fra systemet og eksisterer ikke.",
+        "Brukerens passord er utgått og må endres.",
+        "Brukeren mangler administrative rettigheter (privilegier) for å se eller kjøre kommandoen.",
+        "Nettverksadapteren i VM-en er feilkonfigurert til 'Bridged' i stedet for 'NAT'.",
+        "Filstien til kommandoen er ikke inkludert i terminalens PATH-variabel."
+      ],
+      "correctIndex": 2,
+      "explanation": "Feilmeldingen oppstår fordi standardbrukeren mangler rettighetene som kreves for å se eller kjøre kommandoen, selv om kommandoen er til stede på systemet. Problemet løses ved å bruke 'sudo' for å heve rettighetene [7, 14, 17, 18]."
+    },
+    {
+      "id": "q10",
+      "text": "Hvilken spesifikk Linux-kommando er det første og nødvendigste steget for å aktivere permanent innlogging som 'root'-brukeren, i stedet for å bruke 'sudo' for hver kommando?",
+      "choices": [
+        "root enable",
+        "sudo su -",
+        "change root password",
+        "sudo passwd root",
+        "login root newpass"
+      ],
+      "correctIndex": 3,
+      "explanation": "For å sette et passord for root-brukeren, som er det nødvendige steget før man kan logge inn permanent som administrator, brukes kommandoen 'sudo passwd root' [12, 15, 19]."
+    }
+  ]
+}
