@@ -1,0 +1,136 @@
+{
+  "title": "Quiz: Beslag av Profiler på Sosiale Medier",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva er det første steget man vanligvis må utføre når man ønsker å tilbakestille passordet på en sosial medieplattform?",
+      "choices": [
+        "Gå til påloggingssiden og klikk på 'Glemt passord' eller 'Tilbakestill passord' [1].",
+        "Kontakte kundeservice/support for manuell endring av passord [2].",
+        "Skrive inn brukernavnet direkte i passordfeltet [1].",
+        "Fjerne tofaktorautentisering fra tilhørende e-postkonto [3].",
+        "Svare på sikkerhetsspørsmål relatert til de siste passordene brukt [1, 4]."
+      ],
+      "correctIndex": 0,
+      "explanation": "Det første vanlige steget for tilbakestilling av passord er å gå til påloggingssiden og finne lenken 'Glemt passord' eller 'Tilbakestill passord' [1]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilken type informasjon kan man bli bedt om å oppgi for å bekrefte identiteten ved passordtilbakestilling på sosiale medier generelt?",
+      "choices": [
+        "Kontonummer og bankID-informasjon [Kilde ikke oppgitt].",
+        "Kopier av offentlig godkjent legitimasjon [Kilde ikke oppgitt].",
+        "Adresse til nærmeste slektning [Kilde ikke oppgitt].",
+        "E-postadresse, telefonnummer, brukernavn, fødselsdato eller svar på sikkerhetsspørsmål [1].",
+        "Navnet på den første vennen man la til på plattformen [Kilde ikke oppgitt]."
+      ],
+      "correctIndex": 3,
+      "explanation": "For å bekrefte identiteten kan plattformen be om e-postadresse, telefonnummer, brukernavn, fødselsdato eller svar på sikkerhetsspørsmål knyttet til kontoen [1]."
+    },
+    {
+      "id": "q3",
+      "text": "Hvilket tiltak er spesifikt nevnt som en del av fremgangsmåten ved sikring/inndragning av en konto, i tillegg til å endre passord?",
+      "choices": [
+        "Slette hele kontohistorikken [Kilde ikke oppgitt].",
+        "Publisere en melding om overtagelsen [Kilde ikke oppgitt].",
+        "Deaktivere kontoen permanent [Kilde ikke oppgitt].",
+        "Kontakte eierens venner [Kilde ikke oppgitt].",
+        "Endre gjenopprettingsmuligheten (E-post/nummer) til noe man kontrollerer [5]."
+      ],
+      "correctIndex": 4,
+      "explanation": "Ved sikring/inndragning består fremgangsmåten blant annet i å endre gjenopprettingsmuligheter (E-post/nummer) til noe som er under kontroll [5]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken unik visuell metode kan Snapchat tilby for å tilbakestille passordet, utover standardmetodene e-post og tekstmelding?",
+      "choices": [
+        "Gjenkjenning av de tre eldste lagrede bildene [4].",
+        "Bekreftelse via 'Siste snapper sendt'-historikken [4].",
+        "Svar på spørsmål om lagrede kontakter [4].",
+        "Tegne et hemmelig mønster på skjermen [Kilde ikke oppgitt].",
+        "Via Bitmoji-karakteren, hvor man bes om å velge riktig antrekk [6]."
+      ],
+      "correctIndex": 4,
+      "explanation": "Snapchat kan la deg tilbakestille passordet via Bitmoji-karakteren ved å be deg velge riktig antrekk på karakteren [6]."
+    },
+    {
+      "id": "q5",
+      "text": "Hva er en umiddelbar konsekvens av å bruke 'endre passord' eller 'glemt passord'-funksjonen på de fleste sosiale medier og apper?",
+      "choices": [
+        "De fleste apper sender et varsel til kontoens eier umiddelbart [4].",
+        "Kontoen blir automatisk midlertidig låst [Kilde ikke oppgitt].",
+        "Tofaktorautentisering deaktiveres automatisk [Kilde ikke oppgitt].",
+        "All lagret data slettes permanent [Kilde ikke oppgitt].",
+        "Brukeren må vente 24 timer før nytt passord kan settes [Kilde ikke oppgitt]."
+      ],
+      "correctIndex": 0,
+      "explanation": "De fleste apper sender nå ett varsel til eier av kontoen umiddelbart, om 'endre passord'-funksjonen eller 'glemt passord'-funksjonen blir brukt [4]."
+    },
+    {
+      "id": "q6",
+      "text": "Hvis man skal endre passord på flere kontoer, inkludert e-postkontoer, hva er den anbefalte rekkefølgen og årsaken til denne prioriteringen?",
+      "choices": [
+        "Start med de kontoene som har tofaktorautentisering aktivert for å forberede seg på utfordringene [3].",
+        "Start med Snapchat, da dette er den mest utfordrende å få kontroll over [4, 5].",
+        "Start med e-postkontoene, da det er mest sannsynlig at varsler eller tilbakestillingslenker blir sendt dit [4].",
+        "Start med Facebook/Messenger, da disse deler passord [7].",
+        "Start med de kontoene som tillater passordtilbakestilling via tekstmelding først [1]."
+      ],
+      "correctIndex": 2,
+      "explanation": "Hvis du skal endre flere kontoer, skal man starte med e-postkontoene, da det er mest sannsynlig at et varsel eller 'glemt passord reset link' blir sendt dit [4]."
+    },
+    {
+      "id": "q7",
+      "text": "Hvilken spesiell gjenopprettingsmetode tilbyr Facebook (og Messenger) under passordtilbakestilling, i tillegg til e-post og tekstmelding?",
+      "choices": [
+        "Verifisering gjennom å gjenkjenne de siste 5 brukte passordene [4].",
+        "Identifisere deg selv gjennom en venn på Facebook [8, 9].",
+        "Bekreftelse via innlogging på en annen Facebook-eid plattform [10].",
+        "Svare på et sikkerhetsspørsmål knyttet til den første profilen man likte [Kilde ikke oppgitt].",
+        "Skrive inn den geografiske posisjonen for den siste innloggingen [Kilde ikke oppgitt]."
+      ],
+      "correctIndex": 1,
+      "explanation": "Facebook gir deg muligheten til å identifisere deg selv gjennom en venn, som deretter kan hjelpe deg med å tilbakestille passordet [8, 9]."
+    },
+    {
+      "id": "q8",
+      "text": "Når man klikker på «Har du glemt passordet?» på Gmail, hva er det første spesifikke de ber deg oppgi, før de tilbyr andre tilbakestillingsalternativer?",
+      "choices": [
+        "Svaret på et sikkerhetsspørsmål du angav da kontoen ble opprettet [11].",
+        "Mobilnummeret for verifisering via tekstmelding [12].",
+        "Din alternative e-postadresse for verifiseringskode [11].",
+        "Det siste passordet du husker å ha brukt for kontoen [12].",
+        "Brukernavnet knyttet til kontoen [1]."
+      ],
+      "correctIndex": 3,
+      "explanation": "På Gmails påloggingsside blir du først bedt om å oppgi det siste passordet du husker å ha brukt for kontoen, før du får muligheten til å velge 'Prøv en annen måte' [12]."
+    },
+    {
+      "id": "q9",
+      "text": "Hva er den nødvendige handlingen man må foreta for å endre passord på en Telegram-konto dersom tofaktorautentisering (2FA) er aktivert, og man ikke har passordet og sikkerhetsnøkkelen?",
+      "choices": [
+        "Vente 7 dager til 2FA automatisk deaktiveres [Kilde ikke oppgitt].",
+        "Logge inn ved å bruke telefonnummeret på en mobil enhet [13].",
+        "Sende en bekreftelseskode til en annen e-postadresse [14].",
+        "Gjenopprette kontoen ved hjelp av en Facebook-kobling [15].",
+        "Kontakte Telegram-support for å endre passordet [14]."
+      ],
+      "correctIndex": 4,
+      "explanation": "Hvis 2FA er aktivert på Telegram-kontoen og du mangler passordet og sikkerhetsnøkkelen, må du kontakte Telegram-support for å endre passord [14]."
+    },
+    {
+      "id": "q10",
+      "text": "Etter at man har lastet ned et arkiv fra en konto i forbindelse med sikring (f.eks. Snapchat), hvilket teknisk tiltak anbefales for å beskytte integriteten til arkivet i tilfelle man mister kontrollen over kontoen igjen?",
+      "choices": [
+        "Kryptere filen med AES-256 standard [Kilde ikke oppgitt].",
+        "Slette originalfilen umiddelbart fra plattformen [Kilde ikke oppgitt].",
+        "Hashing av nedlastet arkiv (Når det er mulig) [5, 16].",
+        "Lagre filen på en offentlig skytjeneste [Kilde ikke oppgitt].",
+        "Dele filen med en kollega via en usikret e-post [Kilde ikke oppgitt]."
+      ],
+      "correctIndex": 2,
+      "explanation": "Kilden anbefaler å hashe nedlastet arkiv (når det er mulig) i tilfelle man mister kontroll over kontoen og eier gjør endringer før man får kontroll på den igjen [5, 16]."
+    }
+  ]
+}
