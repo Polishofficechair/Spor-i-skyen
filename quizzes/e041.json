@@ -1,0 +1,145 @@
+{
+  "title": "Quiz: Etterforskning på det Mørke Nettet (DARKInt)",
+  "episodeId": "e001",
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Hva representerer 'det åpne nettet' (clear web) i isfjell-metaforen som brukes for å forklare internettets lag?",
+      "choices": [
+        "Den synlige toppen av isfjellet som er lett tilgjengelig for alle [1-3]",
+        "Den dypeste, krypterte delen som krever Tor-tilgang",
+        "Det store, uindekserte volumet under vannflaten",
+        "Nettverksinfrastrukturen som støtter anonym ruting",
+        "Black markets og hacking-forumene"
+      ],
+      "correctIndex": 0,
+      "explanation": "Ifølge isfjell-metaforen er det åpne nettet (clear web) den synlige toppen av isfjellet, som er det vi er mest kjent med fra hverdagens surfing [1-4]."
+    },
+    {
+      "id": "q2",
+      "text": "Hvilken spesialisert programvare er primært nødvendig for å få tilgang til nettsteder på det mørke nettet (.onion-sider)?",
+      "choices": [
+        "Tor Browser (eller tilsvarende 'Onion software') [5-7]",
+        "Standard nettlesere som Google Chrome eller Firefox",
+        "OSINT-verktøy som Maltego",
+        "Kryptovaluta-sporingsverktøy som OnChain Industries",
+        "En kommersiell VPN-tjeneste"
+      ],
+      "correctIndex": 0,
+      "explanation": "Det mørke nettet er kun tilgjengelig via dedikert 'Onion' programvare, som Tor Browser, da det eksisterer på et kryptert nettverk [5-7]."
+    },
+    {
+      "id": "q3",
+      "text": "Hva er den grunnleggende operative forskjellen mellom Open Source Intelligence (OSINT) og Dark Web Intelligence (DARKInt)?",
+      "choices": [
+        "Forskjellen ligger i tilgang: OSINT bruker offentlig tilgjengelig data, mens DARKInt bruker skjult og kryptert data [8-11]",
+        "OSINT brukes utelukkende av politi og rettshåndhevelse, mens DARKInt brukes av privat sektor",
+        "DARKInt fokuserer på infrastruktur, mens OSINT fokuserer på innhold",
+        "OSINT samler data fra sosiale medier, mens DARKInt kun samler data fra e-postdatabaser",
+        "DARKInt er alltid ulovlig, mens OSINT er lovlig"
+      ],
+      "correctIndex": 0,
+      "explanation": "Kildene fastslår at skillet mellom OSINT og DARKInt handler om tilgang. OSINT fokuserer på offentlig tilgjengelig informasjon, mens DARKInt målretter skjult og kryptert data som krever spesialverktøy [8-11]."
+    },
+    {
+      "id": "q4",
+      "text": "Hvilken nettside skal en etterforsker alltid besøke som det første steget etter å ha satt opp en Tor-tilkobling (f.eks. med Chrome og Tor Browser) for å bekrefte anonymiteten?",
+      "choices": [
+        "https://onion.live",
+        "https://www.torproject.org",
+        "https://check.torproject.org [12-16]",
+        "https://google.com",
+        "https://darkfailenbsdla5mal2mxn2uz66od5vtzd5qozslagrfzachha3f3id.onion/"
+      ],
+      "correctIndex": 2,
+      "explanation": "Uansett valgt tilkoblingsmetode er det obligatorisk å besøke https://check.torproject.org for å verifisere at nettleseren er korrekt konfigurert og ruter trafikken gjennom Tor-nettverket før man begynner etterforskningen [12-17]."
+    },
+    {
+      "id": "q5",
+      "text": "Hvilken DARKInt-teknikk involverer systematisk skanning av markedsplasser og forum for å samle inn relevant informasjon, ofte ved bruk av automatiserte verktøy?",
+      "choices": [
+        "Deanonymisering",
+        "Innholdsanalyse",
+        "Dataskraping (Data Scraping) [18-21]",
+        "Kryptovaluta-sporing",
+        "Kollateral analyse"
+      ],
+      "correctIndex": 2,
+      "explanation": "Dataskraping (Data Scraping) er teknikken som involverer systematisk skanning av dark web-markedsplasser og andre skjulte tjenester for å samle inn data, ofte ved bruk av automatiserte verktøy [18-21]."
+    },
+    {
+      "id": "q6",
+      , 67, 83]",
+        "Kryptovaluta-sporing",
+        "Kollateral analyse"
+      ],
+      "correctIndex": 2,
+      "explanation": "Dataskraping (Data Scraping) er teknikken som involverer systematisk skanning av dark web-markedsplasser og andre skjulte tjenester for å samle inn data, ofte ved bruk av automatiserte verktøy [18-21]."
+    },
+    {
+      "id": "q6",
+      "text": "Hva er den viktigste OPSEC-risikoen ved å bruke den 'raske metoden' (Tor Browser som lokal proxy) for å rute Google Chrome gjennom Tor?",
+      "choices": [
+        "Søkemotorene vil nekte å indeksere dataene",
+        "Tor-nettverket kan ikke håndtere VPN-tilkoblinger samtidig",
+        "Risikoen for at din reelle IP-adresse lekker, da kun Chrome er rutet og feilkonfigurasjon eller kompromittert operativsystem kan tillate trafikk utenom Tor [22-24]",
+        "Metoden krever spesialtilgang til I2P-nettverket",
+        "Forensic OSINT-utvidelsen slutter å fungere når den brukes med en proxy"
+      ],
+      "correctIndex": 2,
+      "explanation": "Den raske metoden er mindre sikker fordi kun Chrome er rutet gjennom Tor, og hvis vertssystemet er kompromittert eller feilkonfigurert, kan trafikk lekke utenom Tor, og dermed eksponere den reelle IP-adressen [22-24]."
+    },
+    {
+      "id": "q7",
+      "text": "Hva er konseptet 'Informasjonslekkasje' (Information Slippage) i konteksten av dark web-etterforskning?",
+      "choices": [
+        "Målrettet planting av falske data av kriminelle aktører for å villedet etterforskere",
+        "Prosessen der data blir lagret i lokale cacher, selv i et sikkert miljø",
+        "Gjenbruk av identifiserbare markører, som brukernavn, PGP-nøkler eller kryptovaluta-adresser, på tvers av det mørke nettet og det åpne nettet, som muliggjør attribusjon [25-27]",
+        "At informasjon om ulovlig aktivitet utilsiktet 'slipper ut' til nyhetsmediene",
+        "Tidspunktene da .onion-adresser endres eller går offline"
+      ],
+      "correctIndex": 2,
+      "explanation": "Informasjonslekkasje (Information Slippage) er når identifiserbare markører (f.eks. brukernavn, krypto-adresser) gjenbrukes av en aktør på tvers av det mørke og åpne nettet, noe som gjør attribusjon mulig, ofte på grunn av dårlig OPSEC [25-27]."
+    },
+    {
+      "id": "q8",
+      "text": "Hvilken av disse DARKInt-teknikkene er designet spesifikt for å spore pengestrømmer knyttet til ulovlige aktiviteter ved å følge transaksjonene i en offentlig registerkjede?",
+      "choices": [
+        "Deanonymisering",
+        "Dataskraping",
+        "Innholds- og sentimentanalyse",
+        "Kryptovaluta-sporing (Cryptocurrency Tracking) [28-31]",
+        "SSL-sertifikatanalyse"
+      ],
+      "correctIndex": 3,
+      "explanation": "Kryptovaluta-sporing involverer sporing av transaksjoner på blokkjeden for å følge pengestrømmene knyttet til ulovlig virksomhet og identifisere finansielle spor [28-31]."
+    },
+    {
+      "id": "q9",
+      "text": "I den sikreste metoden (VM + Whonix Gateway) for dark web-etterforskning, hvilken kritisk nettverkskonfigurasjon sikrer at Etterforsknings-VM-en (Investigation VM) ikke utilsiktet avslører etterforskerens reelle IP-adresse?",
+      "choices": [
+        "Etterforsknings-VM-en er satt til å bruke en kommersiell VPN på NAT-adapteren.",
+        "Etterforsknings-VM-en har to nettverkskort, hvorav ett er koblet direkte til internett.",
+        "Etterforsknings-VM-en er kun koblet til et internt Whonix-nettverk og har ingen direkte rute til internett, og er tvunget til å sende all trafikk gjennom Whonix Gateway [32-35]",
+        "Whonix Gateway er konfigurert til å bruke en statisk IP-adresse på 10.152.152.11.",
+        "Alle applikasjoner i VM-en må startes med spesielle proxy-flagg."
+      ],
+      "correctIndex": 2,
+      "explanation": "Kjernen i sikkerheten ligger i at Etterforsknings-VM-en er isolert: Den er kun koblet til det interne Whonix-nettverket og har ingen annen teknisk rute ut til internett enn via Whonix Gateway, som tvinger all trafikk gjennom Tor. Dette eliminerer risikoen for IP-lekkasje selv om VM-en skulle bli kompromittert [32-35]."
+    },
+    {
+      "id": "q10",
+      "text": "Flere dedikerte søkemotorer brukes på det mørke nettet. Hva er den største begrensningen for søkemotoren Tor66 sammenlignet med de mer dyptgående motorene som Ahmia og Haystack?",
+      "choices": [
+        "Tor66 er kun tilgjengelig via I2P-nettverket (eepsites).",
+        "Tor66 krever betalt abonnement for å vise resultater.",
+        "Tor66 indekserer kun innholdet på hjemmesiden (index-siden) til .onion-nettstedene, noe som begrenser dybden av indekseringen [36, 37]",
+        "Tor66 hevder å filtrere bort alt ulovlig innhold, noe som gjør den ubrukelig for etterforskning.",
+        "Tor66 er en av de eldste og indekserer bare døde lenker."
+      ],
+      "correctIndex": 2,
+      "explanation": "Tor66 har en betydelig begrensning der søkeresultatene kun er basert på innholdet på hver nettsides hjemmeside (index page), noe som begrenser dybden i den indekserte informasjonen [36, 37]."
+    }
+  ]
+}
