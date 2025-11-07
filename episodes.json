@@ -32,14 +32,14 @@
     "title": "ÅK LAB",
     "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode05.mp3",
-    "releaseDate": "2025-10-25T08:00:00Z"
+    "releaseDate": "2026-10-25T08:00:00Z"
   },
   {
     "id": "e006",
     "title": "ÅK OS",
     "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode06.mp3",
-    "releaseDate": "2025-10-24T08:00:00Z"
+    "releaseDate": "2026-10-24T08:00:00Z"
   },
   {
     "id": "e007",
@@ -109,7 +109,7 @@
     "title": "Arkiv og wayback funksjon",
     "description": "Episoden beskriver bruken av Internet Archive og spesielt Wayback Machine som et essensielt verktøy innenfor åpne kilder og digital etterforskning. De forklarer at Internet Archive er en ideell organisasjon dedikert til å bevare digital informasjon, og at Wayback Machine tillater brukere å se historiske versjoner av nettsider som er slettet eller endret. Kildene fremhever flere praktiske anvendelser, inkludert gjenfinning av slettet bevismateriale i politisaker, sporing av manipulasjon av offentlige uttalelser, og faktasjekking av historiske påstander. Videre gir tekstene veiledning i avanserte søketeknikker og påpeker viktige begrensninger ved verktøyet, slik som manglende arkivering av dynamisk innhold og tidsforsinkelser i oppdateringer. Oppsummert posisjonerer kildene Wayback Machine som et uunnværlig verktøy for etterforskere og analytikere som trenger tilgang til nettets fortid..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode16.mp3",
-    "releaseDate": "2025-10-24T12:00:00Z"
+    "releaseDate": "2025-10-12T12:00:00Z"
   },
   {
     "id": "e017",
@@ -162,7 +162,7 @@
   },
   {
     "id": "e024",
-    "title": "Instagram:* Dokumentasjon og rapportering",
+    "title": "Instagram: Dokumentasjon og rapportering",
     "description": "Omhandler teknikker spesifikt rettet mot Instagram. Tekstene forklarer hvordan man finner og analyserer informasjon fra Instagram-profiler, inkludert metoder for å håndtere både offentlige og private kontoer ved å pivotere til assosierte profiler. Detaljerte guider dekker strategier for å laste ned digitale artefakter som bilder og videoer i full oppløsning, i tillegg til bruk av eksterne verktøy for å finne en kontoens permanente bruker-ID og identifisere e-poster. Flere kilder diskuterer også hvordan man kan avsløre falske kontoer gjennom omvendt bildesøk og hvordan man bruker søkemotorer som Google for å finne bufret eller slettet innhold utenfor plattformen. I tillegg belyser kildene metoder for å søke etter profiler ved hjelp av telefonnummer og hvordan man analyserer nettverk, tagger og geografisk informasjon for etterforskning.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode24.mp3",
     "releaseDate": "2025-10-21T08:00:00Z"
@@ -340,7 +340,7 @@
     "title": "VPN og Proxy",
     "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode49.mp3",
-    "releaseDate": "2025-11-16T08:00:00Z"
+    "releaseDate": "2025-10-06T08:00:00Z"
   },
   {
     "id": "e050",
