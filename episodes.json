@@ -330,8 +330,8 @@
   },
   {
     "id": "e048",
-    "title": "Historien om OSINT",
-    "description": ".",
+    "title": "VAAS-Signal",
+    "description": "En viktig kritisk innsikt er at til tross for ende-til-ende-kryptering, er meldingsinnhold likevel rettsmedisinsk gjenopprettbart dersom etterforskere får tilgang til enhetens fullstendige filsystem og nøkkelring, noe som fremhever funksjonen Forsvinnende Meldinger som det mest robuste motmiddelet.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode48.mp3",
     "releaseDate": "2025-11-15T08:00:00Z"
   },
