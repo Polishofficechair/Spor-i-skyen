@@ -1,8 +1,6 @@
 {
-  [cite_start]"modul_navn": "Internet Protocol i Digital Etterforskning [cite: 2]",
-  "versjon": "2026.1",
-  [cite_start]"kilde_tittel": "IP-ADRESSER [cite: 1]",
-  [cite_start]"metodikk": "Fra OSINT til rettslig utlevering – komplett metodikk [cite: 3]",
+  "title": "Internet Protocol i Digital Etterforskning",
+  "body": 
   "innhold": {
     "ordliste": {
       [cite_start]"tittel": "ORDLISTE [cite: 4, 5]",
