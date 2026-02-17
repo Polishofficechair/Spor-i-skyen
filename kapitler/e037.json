@@ -1,4 +1,92 @@
 {
   "title": "Internet Protocol i Digital Etterforskning",
-  [cite_start]"body": "# Internet Protocol i Digital Etterforskning [cite: 2][cite_start]\n\nDenne modulen dekker komplett metodikk fra OSINT-kartlegging til rettslig utlevering. [cite: 3][cite_start]\n\n---\n\n## 📖 ORDLISTE [cite: 5][cite_start]\n\n* **IP-adresse**: Et unikt nummer som identifiserer en enhet på internett. [cite: 6, 7] [cite_start]Analogi: Husnummeret på internett. [cite: 8][cite_start]\n* **IPv4**: Den vanligste formen bestående av fire tall adskilt med punktum (f.eks. 82.134.12.45). [cite: 9, 10][cite_start]\n* **IPv6**: Nyere format med seksten tegn som brukes stadig mer, selv om IPv4 dominerer i Norge. [cite: 11, 12][cite_start]\n* **ISP (Internet Service Provider)**: Nettilbyder som Telenor, Telia, Altibox eller Ice. [cite: 13, 14][cite_start]\n* **ASN (Autonomous System Number)**: Unikt nummer tildelt en ISP eller organisasjon (f.eks. Telenor har ASN 2119). [cite: 15, 16][cite_start]\n* **Statisk vs. Dynamisk IP**: Statisk IP endres aldri, mens dynamisk IP byttes regelmessig for hjemmebrukere. [cite: 17, 18][cite_start]\n* **Tor & VPN**: Verktøy som anonymiserer eller skjuler brukerens IP-adresse bak andre servere. [cite: 30, 34][cite_start]\n\n---\n\n## DEL A: FORSTÅ IP-ADRESSER [cite: 43][cite_start]\n\nEn IP-adresse er adressen som identifiserer hvilken 'husdør' på internett en enhet befinner seg bak. [cite: 47] [cite_start]Alle nettverkstilkoblede enheter avgir sin IP-adresse ved enhver datautveksling uten unntak. [cite: 49][cite_start]\n\n### Hva en IP-adresse kan avsløre uten rettslig beslutning [cite: 99][cite_start]:\n* Hvilken ISP som eier blokken. [cite: 100][cite_start]\n* Omtrentlig geografisk plassering (by/region). [cite: 101][cite_start]\n* Om brukeren skjuler seg bak VPN eller Tor. [cite: 103, 104][cite_start]\n* Angrepshistorikk og rykte via tjenester som VirusTotal. [cite: 108][cite_start]\n\n### Viktig: NAT og delt IP [cite: 94][cite_start]\n\n\nHjemmerutere bruker NAT (Network Address Translation), som betyr at alle enheter i en husstand deler én offentlig IP-adresse. [cite: 95] [cite_start]ISP-en kan identifisere abonnenten, men kan ikke uten videre si hvilken spesifikk person som brukte forbindelsen. [cite: 96] [cite_start]Dette er et kritisk bevisrettslig moment som alltid skal dokumenteres. [cite: 97][cite_start]\n\n---\n\n## DEL B: OSINT-METODER FOR KARTLEGGING [cite: 115][cite_start]\n\n### Identifisering via plattformer [cite: 123][cite_start]:\n* **Snapchat**: Logger IP ved login, konto-opprettelse og events. [cite: 125][cite_start]\n* **Instagram**: Logger login-IP og tidspunkt. [cite: 128][cite_start]\n* **Discord**: Logger IP ved login. [cite: 134][cite_start]\n* **E-post**: E-postheadere kan inneholde senderens IP-adresse dersom de sendes via klienter som Outlook. [cite: 138, 158][cite_start]\n\n\n\n### Verktøysett for analyse [cite: 177][cite_start]:\n* **ipinfo.io**: Brukes for grunnleggende info som ISP, land og VPN-sjekk. [cite: 181][cite_start]\n* **GreyNoise**: Klassifiserer om en IP-adresse driver med ondsinnet scanning. [cite: 193][cite_start]\n* **Shodan**: Søkemotor for å se åpne porter og tjenester på en IP. [cite: 196][cite_start]\n* **dan.me.uk**: Verktøy for å verifisere om en IP er en Tor Exit Node. [cite: 230, 255][cite_start]\n\n---\n\n## DEL C: IP-LOGGING OG JURIDISK STOPP-BOKS [cite: 434][cite_start]\n\nEn etterforsker kan sette opp en digital 'fotfelle' (IP-logging) for å registrere IP-adressen til en mistenkt. [cite: 350] [cite_start]Dette kan gjøres via Canary Tokens, tracking piksler eller sporbare QR-koder. [cite: 376, 396, 403][cite_start]\n\n### 🛑 JURIDISK GRENSEOPPGANG [cite: 436][cite_start]:\n* **Lovlig passiv metode**: IP-logging på etterforskningens egne ressurser som politiet selv kontrollerer. [cite: 439, 440, 441][cite_start]\n* **Juridisk gråsone**: Å sende en sporbar lenke direkte til en mistenkt kan ansees som provokasjon og krever juristvurdering. [cite: 445, 446, 447][cite_start]\n* **Mindreårige**: All aktiv IP-innhenting mot mindreårige krever påtalemyndighetens forhåndsgodkjenning. [cite: 461, 462, 463][cite_start]\n* **Er du i tvil?** Kontakt jurist før handling. [cite: 466][cite_start]\n\n---\n\n## DEL D: RETTSLIG UTLEVERING [cite: 468][cite_start]\n\nFor IP-adresser krever norsk lov en rettslig kjennelse for å få utlevert abonnentinformasjon fra en ISP. [cite: 472][cite_start]\n\n### Den rettslige kjeden[cite: 474]:\n1. [cite_start]Identifiser IP-adresse og dokumenter tidspunkt i UTC. [cite: 475, 478]\n2. Påtalemyndigheten vurderer begjæring etter Strpl. [cite_start]§ 210. [cite: 481, 482]\n3. [cite_start]Begjæring sendes til ISP (f.eks. rettshjelp@telenor.com). [cite: 487, 488]\n4. [cite_start]ISP utleverer navn og adresse på abonnenten. [cite: 492, 493][cite_start]\n\n**Viktig om lagring**: Norske ISP-er logger IP-tildelinger i 6 måneder, mens plattformer som Meta og Google ofte sletter logger etter 90 dager. [cite: 549, 551, 552] [cite_start]Send derfor alltid en preserveringsanmodning (Preservation Request) umiddelbart. [cite: 627, 630][cite_start]\n\n---\n\n## DEL E: TEKNISKE LEKKASJER [cite: 650][cite_start]\n\nBrukere kan utilsiktet eksponere sin reelle IP selv ved bruk av VPN gjennom:\n* **WebRTC-lekkasje**: En nettleserfunksjon som kan avsløre ekte IP ved siden av VPN-IPen. [cite: 653, 660, 667][cite_start]\n* **DNS-lekkasje**: Forespørsler sendes utenfor VPN-tunnelen slik at ISP kan se hvilke domener som besøkes. [cite: 669, 672][cite_start]\n* **Torrent-lekkasje**: BitTorrent-protokollen deler IP-adresser direkte med alle tilkoblede noder. [cite: 680, 682][cite_start]\n\n---\n\n## DEL G: SJEKKLISTE OG VANLIGE FEIL [cite: 757, 788][cite_start]\n\n* **Feil 1**: Tro at IP-adressen er personen (husk delt IP/NAT). [cite: 762, 763][cite_start]\n* **Feil 2**: Glemme nøyaktig klokkeslett og tidssone (UTC vs. lokal tid). [cite: 774, 775][cite_start]\n* **Sjekk**: Er det sendt preserveringsanmodning? [cite: 792][cite_start]\n* **Sjekk**: Er VPN/Tor verifisert via ipinfo.io eller GreyNoise? [cite: 794][cite_start]\n\n**Oppsummering**: IP-adressen er et startpunkt, ikke et bevis i seg selv. [cite: 816, 820] [cite_start]Dokumenter alltid alternative forklaringer som delt IP, VPN-bruk eller botnet. [cite: 821]"
+  "metadata": {
+    "kilde": "IP-ADRESSER",
+    "metodikk": "Fra OSINT til rettslig utlevering – komplett metodikk",
+    "versjon": "2026.1"
+  },
+  "sections": [
+    {
+      "heading": "ORDLISTE",
+      "description": "Sentral begrepsforståelse før etterforskning starter.",
+      "items": [
+        { "term": "IP-adresse", "definition": "Internet Protocol-adresse. Et unikt nummer som identifiserer en enhet på internett. Analogi: Husnummeret på internett." },
+        { "term": "IPv4", "definition": "Den vanligste formen: fire tall adskilt med punktum. Eks: 82.134.12.45." },
+        { "term": "IPv6", "definition": "Nyere format med seksten tegn: 2001:0db8:85a3::8a2e:0370:7334." },
+        { "term": "ISP", "definition": "Internet Service Provider = Nettilbyder (Telenor, Telia, Altibox, Ice osv.)." },
+        { "term": "ASN", "definition": "Autonomous System Number – unikt nummer tildelt en ISP eller organisasjon." },
+        { "term": "Statisk IP", "definition": "IP-adresse som aldri endres (bedrifter, servere)." },
+        { "term": "Dynamisk IP", "definition": "IP-adresse som byttes regelmessig (hjemmebrukere)." },
+        { "term": "Tor", "definition": "The Onion Router – anonymt nettverk som ruter trafikk via minst 3 krypterte noder." },
+        { "term": "VPN", "definition": "Virtual Private Network – tjeneste som skjuler din IP-adresse bak VPN-leverandørens server." }
+      ]
+    },
+    {
+      "heading": "DEL A: FORSTÅ IP-ADRESSER",
+      "content": "En IP-adresse fungerer som internettets husnummer. Når en bruker benytter tjenester som Snapchat eller Discord, logges IP-adressen automatisk. Dette er regelen, ikke unntaket.",
+      "subsections": [
+        {
+          "title": "Hva kan avsløres uten kjennelse?",
+          "points": [
+            "Hvilken nettilbyder (ISP) som ble brukt.",
+            "Omtrentlig geografisk plassering (by, region).",
+            "Bruk av VPN, Tor eller proxy.",
+            "Kjent kriminell aktivitet knyttet til adressen."
+          ]
+        },
+        {
+          "title": "Viktig om NAT og delt IP",
+          "text": "Hjemmerutere bruker NAT. Alle enheter i et hjem deler én offentlig IP-adresse. Dette betyr at en IP identifiserer en husstand/abonnent, ikke nødvendigvis en spesifikk person."
+        }
+      ]
+    },
+    {
+      "heading": "DEL B: OSINT-METODER FOR IP-KARTLEGGING",
+      "content": "Metoder for å finne og analysere IP-adresser via åpne kilder.",
+      "tools": [
+        { "name": "ipinfo.io", "use": "Sjekk av ISP, land, ASN og VPN." },
+        { "name": "abuseipdb.com", "use": "Sjekk for misbruk og rapporterte angrep." },
+        { "name": "VirusTotal", "use": "Analyse av rykte og malware-tilknytning." },
+        { "name": "Shodan", "use": "Søkemotor for enheter koblet til internett." }
+      ]
+    },
+    {
+      "heading": "DEL C: IP-LOGGING – DIGITALE FOTFELLER",
+      "content": "Metoder for å aktivt hente inn en mistenktes IP-adresse.",
+      "methods": [
+        { "name": "Canary Tokens", "description": "Oppretter sporbare filer eller lenker." },
+        { "name": "Tracking Pixel", "description": "Usynlig bilde i e-post som logger mottakers IP." }
+      ],
+      "legal_warning": {
+        "title": "🛑 JURIDISK STOPP-BOKS",
+        "rules": [
+          "Passiv logging på egne ressurser er lovlig.",
+          "Aktiv utsending av lenker til mistenkte kan ansees som provokasjon.",
+          "All aktiv innhenting mot mindreårige krever forhåndsgodkjenning fra påtalemyndigheten."
+        ]
+      }
+    },
+    {
+      "heading": "DEL D: RETTSLIG UTLEVERING",
+      "process_steps": [
+        "Identifiser IP-adresse og nøyaktig tidspunkt i UTC.",
+        "Sjekk hvilken ISP som eier adressen.",
+        "Send begjæring om utlevering av abonnentinformasjon (Strpl. § 210).",
+        "Husk preserveringsanmodning for å sikre at loggene ikke slettes."
+      ],
+      "retention_times": {
+        "norske_isp": "6 måneder",
+        "meta_google": "Ofte 90 dager"
+      }
+    },
+    {
+      "heading": "DEL G: VANLIGE FEIL OG SJEKKLISTE",
+      "checkpoints": [
+        "Er tidssonen korrekt (UTC vs Lokal tid)?",
+        "Er IP-adressen sjekket mot Tor/VPN-lister?",
+        "Er det dokumentert at flere personer kan ha delt IP-en (NAT)?",
+        "Er preservering sendt umiddelbart?"
+      ]
+    }
+  ]
 }
