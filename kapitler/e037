@@ -1,0 +1,183 @@
+{
+  [cite_start]"modul_navn": "Internet Protocol i Digital Etterforskning [cite: 2]",
+  "versjon": "2026.1",
+  [cite_start]"kilde_tittel": "IP-ADRESSER [cite: 1]",
+  [cite_start]"metodikk": "Fra OSINT til rettslig utlevering – komplett metodikk [cite: 3]",
+  "innhold": {
+    "ordliste": {
+      [cite_start]"tittel": "ORDLISTE [cite: 4, 5]",
+      "definisjoner": [
+        { "term": "IP-adresse", "beskrivelse": "Internet Protocol-adresse. [cite_start]Et unikt nummer som identifiserer en enhet på internett. [cite: 6, 7][cite_start]", "analogi": "Husnummeret på internett [cite: 8]" },
+        [cite_start]{ "term": "IPv4", "beskrivelse": "Den vanligste formen: fire tall adskilt med punktum. [cite: 9][cite_start]", "eksempel": "82.134.12.45 (Telenor, Lørenskog) [cite: 10]" },
+        [cite_start]{ "term": "IPv6", "beskrivelse": "Nyere format med seksten tegn: 2001:0db8:85a3::8a2e:0370:7334. [cite: 11][cite_start]", "status": "Brukes stadig mer, men IPv4 dominerer i Norge. [cite: 12]" },
+        [cite_start]{ "term": "ISP", "beskrivelse": "Internet Service Provider = Nettilbyder (Telenor, Telia, Altibox, Ice osv.) [cite: 13, 14]" },
+        [cite_start]{ "term": "ASN", "beskrivelse": "Autonomous System Number – unikt nummer tildelt en ISP eller organisasjon. [cite: 15][cite_start]", "eksempel": "Telenor har ASN 2119. [cite: 16]" },
+        [cite_start]{ "term": "Statisk IP", "beskrivelse": "IP-adresse som aldri endres (bedrifter, servere). [cite: 17]" },
+        [cite_start]{ "term": "Dynamisk IP", "beskrivelse": "IP-adresse som byttes regelmessig (hjemmebrukere). [cite: 18]" },
+        [cite_start]{ "term": "Geolokasjon", "beskrivelse": "Geografisk plassering utledet fra IP-adressen. [cite: 19][cite_start]", "nøyaktighet": "land/by, sjelden eksakt adresse. [cite: 20]" },
+        [cite_start]{ "term": "WHOIS", "beskrivelse": "Offentlig database som viser hvem som eier en IP-blokk. [cite: 21]" },
+        [cite_start]{ "term": "Netblock", "beskrivelse": "En gruppe IP-adresser tildelt én organisasjon. [cite: 22]" },
+        [cite_start]{ "term": "Reverse DNS", "beskrivelse": "Å finne domenenavn tilhørende en IP-adresse. [cite: 23]" },
+        [cite_start]{ "term": "Canary Token", "beskrivelse": "En 'felle'-lenke/fil som avslører IP-adressen til den som åpner den. [cite: 24][cite_start]", "bruker": "Brukes av sikkerhetsmiljøer og politiet. [cite: 25]" },
+        [cite_start]{ "term": "IP Logger", "beskrivelse": "Tjeneste som registrerer IP-adressen til alle som klikker en spesiell lenke. [cite: 26, 27]" },
+        [cite_start]{ "term": "Tracking Pixel", "beskrivelse": "Et usynlig 1x1 piksel stort bilde i e-post/nettside som avslører IP-adressen til mottaker som åpner det. [cite: 28, 29]" },
+        [cite_start]{ "term": "Tor", "beskrivelse": "The Onion Router – anonymt nettverk som ruter trafikk via minst 3 krypterte noder internasjonalt. [cite: 30, 31]" },
+        [cite_start]{ "term": "Exit Node", "beskrivelse": "Den siste Tor-noden – den som kommuniserer med målserveren og er synlig for omverdenen. [cite: 32, 33]" },
+        [cite_start]{ "term": "VPN", "beskrivelse": "Virtual Private Network – tjeneste som skjuler din IP-adresse bak VPN-leverandørens server. [cite: 34, 35]" },
+        [cite_start]{ "term": "Shodan", "beskrivelse": "Søkemotor for internett-tilkoblede enheter og servere. [cite: 36]" },
+        [cite_start]{ "term": "Censys", "beskrivelse": "Søkemotor som skanner og indekserer alle IP-adresser. [cite: 37]" },
+        [cite_start]{ "term": "GreyNoise", "beskrivelse": "Tjeneste som klassifiserer IP-adresser som godartede eller ondsinnede basert på atferd. [cite: 38, 39]" },
+        [cite_start]{ "term": "VirusTotal", "beskrivelse": "Tjeneste for analyse av URL, filer og IP-adresser. [cite: 40]" },
+        [cite_start]{ "term": "IOC", "beskrivelse": "Indicator of Compromise – indikator på kompromittering. [cite: 41]" },
+        [cite_start]{ "term": "APT", "beskrivelse": "Advanced Persistent Threat – statlig/avansert hackergruppe. [cite: 42]" }
+      ]
+    },
+    "del_a_grunnleggende": {
+      [cite_start]"tittel": "DEL A: FORSTÅ IP-ADRESSER – GRUNNLEGGENDE FOR ETTERFORSKERE [cite: 43]",
+      "viktighet": {
+        [cite_start]"overskrift": "Hva er en IP-adresse og hvorfor er den viktig? [cite: 44]",
+        [cite_start]"analogi": "Internettets husnummer. [cite: 45]",
+        [cite_start]"beskrivelse": "Tenk på internett som et verdensomspennende postsystem. [cite: 46] [cite_start]For at et brev skal nå frem, trenger det en adresse. [cite: 46] [cite_start]En IP-adresse identifiserer hvilken 'husdør' på internett en enhet befinner seg bak. [cite: 47]",
+        [cite_start]"logging": "Når en bruker benytter tjenester som Snapchat, Discord eller nettsider, logges IP-adressen automatisk. [cite: 48] [cite_start]Dette er regelen, ikke unntaket. [cite: 49] [cite_start]Alle nettverkstilkoblede enheter avgir sin IP-adresse ved datautveksling. [cite: 49]",
+        "avsløringer_uten_kjennelse": [
+          [cite_start]"Hvilken nettilbyder (ISP) som ble brukt (Telenor, Telia osv.). [cite: 51]",
+          [cite_start]"Omtrentlig geografisk plassering (by, region). [cite: 52]",
+          [cite_start]"Bruk av VPN, Tor eller proxy. [cite: 53]",
+          [cite_start]"Kjent kriminell aktivitet knyttet til adressen. [cite: 54]",
+          [cite_start]"Opprinnelsesland for trafikken. [cite: 55]"
+        ],
+        [cite_start]"juridisk_verdi": "Med rettslig beslutning forteller ISP-en hvem som abonnerte på IP-en. [cite: 56] [cite_start]Dette er overgangen fra nummerkode til navn, adresse og fødselsnummer. [cite: 57]"
+      },
+      "anatomi": {
+        [cite_start]"tittel": "IP-adressens anatomi – typer og format [cite: 58]",
+        "ipv4": {
+          [cite_start]"eksempel": "82.134.12.45 [cite: 60]",
+          [cite_start]"struktur": "82.134 er nettblokk tildelt Telenor. [cite: 62] [cite_start]12.45 er spesifikk abonnent. [cite: 63]",
+          [cite_start]"tolking": "Første to tall indikerer organisasjon (ASN). [cite: 65] [cite_start]Siste to tall indikerer spesifikk tilkobling. [cite: 66]"
+        },
+        "ipv6": {
+          [cite_start]"eksempel": "2001:0db8:85a3:0000:0000:8a2e:0370:7334 [cite: 68]",
+          "kilder": [
+            [cite_start]"Moderne iOS/Android-enheter. [cite: 71]",
+            [cite_start]"Nye norske bredbåndsabonnementer. [cite: 72]",
+            [cite_start]"IPv6-aktiverte mobilnett. [cite: 73]"
+          ]
+        },
+        "typetabell": [
+          [cite_start]{ "type": "Statisk IP [cite: 78][cite_start]", "brukere": "Bedrifter, servere, nettsider [cite: 78, 79, 81][cite_start]", "verdi": "Enkel identifisering via WHOIS [cite: 80, 82]" },
+          [cite_start]{ "type": "Dynamisk IP [cite: 84][cite_start]", "brukere": "Privatpersoner, mobilenheter [cite: 84, 85][cite_start]", "verdi": "Krever ISP-utlevering med eksakt tidspunkt [cite: 86, 87]" },
+          [cite_start]{ "type": "Privat IP [cite: 89][cite_start]", "brukere": "Interne nettverk (hjemmeruter) [cite: 90]", "verdi": "IKKE synlig på internett. [cite_start]Kun offentlig NAT-IP er etterforsknbar [cite: 91, 92]" }
+        ],
+        [cite_start]"nat_info": "Hjemmerutere bruker NAT (Network Address Translation). [cite: 95] [cite_start]Alle enheter i et hjem deler én offentlig IP-adresse. [cite: 95] [cite_start]ISP kan koble denne til et abonnement, men ikke nødvendigvis si hvilken person i husstanden som brukte den. [cite: 96] [cite_start]Dette bevisrettslige momentet skal dokumenteres i rapporten. [cite: 97]"
+      }
+    },
+    "del_b_osint": {
+      [cite_start]"tittel": "DEL B: OSINT-METODER FOR IP-KARTLEGGING [cite: 115]",
+      "metode_1_plattformer": {
+        [cite_start]"info": "Mange plattformer logger IP og utleverer ved rettslig beslutning. [cite: 123]",
+        "liste": [
+          [cite_start]{ "plattform": "Snapchat", "detalj": "Logger IP ved login, konto-opprettelse og events. [cite: 125]" },
+          [cite_start]{ "plattform": "Instagram", "detalj": "Logger login-IP og tidspunkt. [cite: 128]" },
+          [cite_start]{ "plattform": "TikTok", "detalj": "Logger IP ved alle sessions. [cite: 130]" },
+          [cite_start]{ "plattform": "Telegram", "detalj": "Logger IP-adresse, men utleverer sjelden. [cite: 132]" },
+          [cite_start]{ "plattform": "Discord", "detalj": "Logger IP ved login. [cite: 134]" },
+          [cite_start]{ "plattform": "E-post", "detalj": "Headere kan inneholde sender-IP. [cite: 138]" }
+        ]
+      },
+      "metode_2_epost": {
+        [cite_start]"tittel": "IP-er i e-postheadere [cite: 144]",
+        "steg_gmail": [
+          [cite_start]"Åpne e-posten i Gmail. [cite: 147]",
+          [cite_start]"Klikk de tre prikkene øverst til høyre. [cite: 148]",
+          [cite_start]"Velg 'Vis original'. [cite: 149]",
+          [cite_start]"Søk etter 'Received: from'. [cite: 151]",
+          [cite_start]"Første linje inneholder avsenders IP. [cite: 152]"
+        ],
+        [cite_start]"begrensning": "Webmail-tjenester som Gmail fjerner ofte avsenderens IP nå. [cite: 157] [cite_start]Fungerer best for Outlook/Exchange. [cite: 158]"
+      },
+      "verktøysett": {
+        [cite_start]"tittel": "KOMPLETT IP-ANALYSE VERKTØYSETT [cite: 177]",
+        "verktoy": [
+          [cite_start]{ "navn": "ipinfo.io", "formal": "ISP, land, by, ASN, VPN-sjekk. [cite: 181]" },
+          [cite_start]{ "navn": "abuseipdb", "formal": "Sjekk for misbruk/angrep. [cite: 187]" },
+          [cite_start]{ "navn": "VirusTotal", "formal": "Ryktessjekk: malware, phishing. [cite: 190]" },
+          [cite_start]{ "navn": "GreyNoise", "formal": "Klassifisering: scanning, VPN. [cite: 193]" },
+          [cite_start]{ "navn": "Shodan", "formal": "Åpne porter, tjenester, OS. [cite: 196]" }
+        ]
+      },
+      "anonymisering": {
+        "tor_identifisering": [
+          [cite_start]"Torprosjektets offisielle exitliste. [cite: 248]",
+          [cite_start]"Bulk-sjekk via dan.me.uk. [cite: 254]",
+          [cite_start]"GreyNoise tag 'tor'. [cite: 258]",
+          [cite_start]"Shodan-søk på port 9001 (relay). [cite: 263, 264]"
+        ],
+        "vpn_identifisering": [
+          [cite_start]"ipinfo.io 'privacy.vpn: true'. [cite: 272, 274]",
+          [cite_start]"ipqualityscore.com for skåre. [cite: 277, 279]",
+          [cite_start]"MaxMind GeoIP2 for datacenter-sjekk. [cite: 282, 284]",
+          [cite_start]"Manuell sjekk: IP eies av datacenter som Hetzner/DigitalOcean. [cite: 289]"
+        ]
+      },
+      "apt_indikatorer": {
+        [cite_start]"tittel": "INDIKATORER PÅ STATSSTØTTET CYBERAKTIVITET (APT) [cite: 301]",
+        [cite_start]"geografi": "IP-er registrert i Kina (ASN 4134), Russland (ASN 8359), Nord-Korea (ASN 131279), Iran (ASN 44244). [cite: 304, 305, 306, 307, 308]",
+        [cite_start]"teknisk": "SSL-fingeravtrykk (JA3), porter som 4444 (Metasploit) eller 50050 (Cobalt Strike). [cite: 312, 315, 316]"
+      }
+    },
+    "del_c_ip_logging": {
+      [cite_start]"tittel": "DEL C: IP-LOGGING – SLIK AVDEKKES MISTENKTE [cite: 346]",
+      [cite_start]"prinsipp": "En digital 'fotfelle' som registrerer IP-en til alle som åpner en ressurs. [cite: 350] [cite_start]Krever påtalemyndighetens forhåndsklarering. [cite: 351]",
+      "metoder": [
+        [cite_start]{ "navn": "Canary Tokens", "beskrivelse": "Oppretter sporbare URL-er eller dokumenter. [cite: 376, 377][cite_start]", "data": "Logger IP, tidspunkt, nettleser og OS. [cite: 391, 392, 393]" },
+        [cite_start]{ "navn": "Tracking Pixel", "beskrivelse": "1x1 transparent bilde i e-post. [cite: 396] [cite_start]Logger IP når bilder aktiveres. [cite: 401, 402]" },
+        [cite_start]{ "navn": "QR-kode", "beskrivelse": "Peker på en sporbar lenke; registreres ved skanning. [cite: 403, 404]" }
+      ],
+      "juridisk_stopp_boks": {
+        [cite_start]"lovlig_passiv": "IP-logging på etterforskningens egne ressurser (nettsider man kontrollerer). [cite: 439, 440, 441]",
+        [cite_start]"gråsone": "Sende lenke til mistenkte eller tracking pixel (kan ansees som provokasjon). [cite: 445, 446, 449]",
+        [cite_start]"krever_kjennelse": "Systematisk overvåkning eller utplassering av teknisk utstyr. [cite: 451, 452, 454]",
+        [cite_start]"forbudt": "Skjult tvangsmiddel uten hjemmel eller provokasjon. [cite: 456, 457, 458]",
+        [cite_start]"mindreårige": "All aktiv innhenting mot mindreårige krever påtalemyndighetens forhåndsgodkjenning. [cite: 461, 462, 463]"
+      }
+    },
+    "del_d_utlevering": {
+      [cite_start]"tittel": "DEL D: RETTSLIG UTLEVERING – FRA IP TIL IDENTITET [cite: 468]",
+      "prosessen": [
+        [cite_start]"Identifiser IP-adresse og ISP. [cite: 475, 476]",
+        [cite_start]"Dokumenter tidspunkt (dato, klokkeslett, tidssone i UTC). [cite: 478, 479, 480]",
+        "Påtalemyndigheten vurderer begjæringen etter Strpl. [cite_start]§ 210. [cite: 481, 482]",
+        [cite_start]"Retten avsir kjennelse ved behov. [cite: 484]",
+        [cite_start]"Begjæring sendes til ISP (Telenor, Telia osv.). [cite: 487]",
+        [cite_start]"ISP utleverer navn, adresse og telefonnummer til abonnent. [cite: 492, 493]"
+      ],
+      "hjemler": {
+        [cite_start]"strpl_210": "Utleveringspålegg for gjenstander med betydning som bevis. [cite: 504, 505, 506]",
+        [cite_start]"ekomloven": "Unntak fra taushetsplikt ved etterforskning med minst 6 mnd strafferamme. [cite: 519, 521, 524]",
+        [cite_start]"strpl_216b": "For kommunikasjonsdata (metadata). [cite: 529, 530]",
+        [cite_start]"strpl_216a": "For innholdsavlytting (krever 10 års strafferamme). [cite: 539, 544]"
+      },
+      "lagringstider": {
+        [cite_start]"norske_isp": "6 måneder (ekomloven). [cite: 549]",
+        [cite_start]"meta": "90 dager standard. [cite: 551]",
+        [cite_start]"snapchat": "Begrenset tid (se guide). [cite: 550]"
+      },
+      [cite_start]"preservering": "Send umiddelbart en 'Preservation Request' for å sikre at logger ikke slettes før kjennelse foreligger. [cite: 626, 627, 630]"
+    },
+    "del_e_lekkasjer": {
+      [cite_start]"tittel": "DEL E: IP-LEKKASJER OG EKSPLOITS [cite: 650]",
+      [cite_start]"webrtc": "Nettleserfunksjon som kan avsløre reell IP selv bak VPN. [cite: 653, 654, 660]",
+      "dns_lekkasje": "DNS-forespørsler sendes utenfor VPN-tunnelen; [cite_start]ISP kan se besøkte domener. [cite: 669, 671, 672]",
+      [cite_start]"torrent": "P2P-protokoller deler IP direkte med alle noder. [cite: 680, 682] [cite_start]Verktøy som 'I Know What You Download' viser historikk uten kjennelse. [cite: 686, 688]"
+    },
+    "del_g_sjekkliste": {
+      [cite_start]"tittel": "DEL G: VANLIGE FEIL OG SJEKKLISTER [cite: 757]",
+      "feil": [
+        [cite_start]"Tro at IP-adressen er lik personen (IP er kun abonnenten). [cite: 762, 763]",
+        [cite_start]"Glemme å notere UTC-tidssone. [cite: 774, 775]",
+        [cite_start]"Vente for lenge med å sende preserveringsanmodning. [cite: 779, 780, 781]"
+      ],
+      [cite_start]"oppsummering": "IP-adressen er et utgangspunkt, ikke et bevis alene. [cite: 815, 820] [cite_start]Dokumenter alltid alternative forklaringer som delt IP eller botnet. [cite: 821]"
+    }
+  }
+}
