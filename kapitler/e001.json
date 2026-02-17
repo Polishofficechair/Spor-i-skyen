@@ -1,1 +1,146 @@
-
+{
+  "tittel": "IP-ADRESSER: INTERNET PROTOCOL I DIGITAL ETTERFORSKNING",
+  "undertittel": "Fra OSINT til rettslig utlevering – komplett metodikk",
+  "ordliste": [
+    { "term": "IP-adresse", "definisjon": "Internet Protocol-adresse. Et unikt nummer som identifiserer en enhet på internett. Analogi: Husnummeret på internett." },
+    { "term": "IPv4", "definisjon": "Den vanligste formen: fire tall adskilt med punktum (f.eks. 82.134.12.45)." },
+    { "term": "IPv6", "definisjon": "Nyere format med seksten tegn. Brukes stadig mer, men IPv4 dominerer i Norge." },
+    { "term": "ISP", "definisjon": "Internet Service Provider / Nettilbyder (Telenor, Telia, Altibox, Ice osv.)." },
+    { "term": "ASN", "definisjon": "Autonomous System Number – unikt nummer tildelt en ISP eller organisasjon." },
+    { "term": "Statisk IP", "definisjon": "IP-adresse som aldri endres (bedrifter, servere)." },
+    { "term": "Dynamisk IP", "definisjon": "IP-adresse som byttes regelmessig (hjemmebrukere)." },
+    { "term": "Geolokasjon", "definisjon": "Geografisk plassering utledet fra IP-adressen (nøyaktighet: land/by)." },
+    { "term": "WHOIS", "definisjon": "Offentlig database som viser hvem som eier en IP-blokk." },
+    { "term": "Netblock", "definisjon": "En gruppe IP-adresser tildelt én organisasjon." },
+    { "term": "Reverse DNS", "definisjon": "Å finne domenenavn tilhørende en IP-adresse." },
+    { "term": "Canary Token", "definisjon": "En 'felle'-lenke/fil som avslører IP-adressen til den som åpner den." },
+    { "term": "IP Logger", "definisjon": "Tjeneste som registrerer IP-adressen til alle som klikker en spesiell lenke." },
+    { "term": "Tracking Pixel", "definisjon": "Et usynlig 1x1 piksel bilde som avslører mottakers IP ved åpning av e-post/nettside." },
+    { "term": "Tor", "definisjon": "The Onion Router – anonymt nettverk som ruter trafikk via minst 3 krypterte noder." },
+    { "term": "Exit Node", "definisjon": "Den siste Tor-noden som kommuniserer med målserveren." },
+    { "term": "VPN", "definisjon": "Virtual Private Network – tjeneste som skjuler din IP bak leverandørens server." },
+    { "term": "Shodan", "definisjon": "Søkemotor for internett-tilkoblede enheter og servere." },
+    { "term": "Censys", "definisjon": "Søkemotor som skanner og indekserer alle IP-adresser." },
+    { "term": "GreyNoise", "definisjon": "Tjeneste som klassifiserer IP-adresser som godartede eller ondsinnede." },
+    { "term": "VirusTotal", "definisjon": "Tjeneste for analyse av URL, filer og IP-adresser." },
+    { "term": "IOC", "definisjon": "Indicator of Compromise – indikator på kompromittering." },
+    { "term": "APT", "definisjon": "Advanced Persistent Threat – statlig/avansert hackergruppe." }
+  ],
+  "del_a_grunnleggende": {
+    "hva_er_ip": "Adressen som identifiserer hvilken 'husdør' på internett en enhet befinner seg bak. Alle enheter avgir IP ved datautveksling.",
+    "hva_ip_forteller": [
+      "Nettilbyder (ISP)",
+      "Omtrentlig geografisk plassering",
+      "Bruk av anonymisering (VPN, Tor, Proxy)",
+      "Kjent kriminell aktivitet",
+      "Opprinnelsesland"
+    ],
+    "anatomi": {
+      "ipv4_eksempel": "82.134.12.45 (82.134 = Nettblokk/ASN, 12.45 = Spesifikk abonnent)",
+      "ipv6_bruk": ["Moderne iOS/Android", "Nye bredbånd", "Mobilnett"]
+    },
+    "ip_typer_tabell": [
+      { "type": "Statisk IP", "brukes_av": "Bedrifter, servere", "etterforskning": "Enkel identifisering via WHOIS" },
+      { "type": "Dynamisk IP", "brukes_av": "Privatpersoner, mobil", "etterforskning": "Krever ISP-utlevering med eksakt tidspunkt" },
+      { "type": "Privat IP", "brukes_av": "Interne nettverk", "etterforskning": "IKKE synlig på internett, kun NAT-IP er etterforsknbar" }
+    ],
+    "viktig_notat": "NAT (Network Address Translation) betyr at flere enheter deler én offentlig IP. ISP kan identifisere abonnent, men ikke nødvendigvis spesifikk bruker i husstanden."
+  },
+  "del_b_osint_metoder": {
+    "identifisering": {
+      "plattformer_med_logg": [
+        "Snapchat (Login, konto-opprettelse)",
+        "Instagram (Login-IP)",
+        "TikTok (Sessions)",
+        "Telegram (Sjelden utlevering)",
+        "Discord (MLAT/kjennelse)",
+        "Reddit (Rettskjennelse)",
+        "E-post (Headere)",
+        "Forum/blogg (Innleggs-IP)",
+        "WHOIS-logger"
+      ],
+      "gmail_steg_for_steg": [
+        "Åpne e-post",
+        "Klikk tre prikker",
+        "Velg 'Vis original'",
+        "Søk etter 'Received: from'"
+      ]
+    },
+    "analyse_verktoysett": [
+      { "navn": "ipinfo.io", "formal": "ISP, land, by, VPN-sjekk" },
+      { "navn": "abuseipdb", "formal": "Sjekk for misbruk/angrep" },
+      { "navn": "VirusTotal", "formal": "Malware, phishing, C2-aktivitet" },
+      { "navn": "GreyNoise", "formal": "Klassifisering av scanning og VPN" },
+      { "navn": "Shodan", "formal": "Åpne porter og tjenester" },
+      { "navn": "SecurityTrails", "formal": "DNS-historikk og reverse DNS" }
+    ],
+    "anonymisering_identifisering": {
+      "tor_metoder": ["Torproject exitliste", "dan.me.uk torcheck", "GreyNoise tag 'tor'", "Shodan port 9001/9030/9050"],
+      "vpn_metoder": ["ipinfo.io privacy.vpn: true", "ipqualityscore.com", "MaxMind GeoIP2 (Datacenter-sjekk)"]
+    },
+    "apt_indikatorer": {
+      "geografi": ["Kina (ASN 4134...)", "Russland (ASN 8359...)", "Nord-Korea", "Iran"],
+      "teknisk": ["SSL-fingeravtrykk (JA3)", "C2-bannere (Cobalt Strike)", "Port 4444/50050"]
+    }
+  },
+  "del_c_ip_logging": {
+    "prinsipp": "Opprette en digital 'fotfelle' (lenke/fil) som registrerer IP-adresse, tidspunkt, brukeragent og geolokasjon.",
+    "metoder": [
+      { "metode": "URL-basert", "verktoy": "Canary Tokens / Grabify" },
+      { "metode": "Tracking Pixel", "beskrivelse": "1x1 bilde i e-post" },
+      { "metode": "QR-kode", "beskrivelse": "Sporbar lenke kodet som QR" },
+      { "metode": "Dokumenter", "beskrivelse": "Word/PDF som 'ringer hjem' ved åpning" }
+    ],
+    "juridisk_stopp_boks": {
+      "lovlig_passiv": "Logging på egne ressurser (politiets nettsider).",
+      "gråsone": "Sende lenker til mistenkte (kan være provokasjon/aktiv interaksjon).",
+      "krever_kjennelse": "Systematisk overvåkning, innhenting fra tilbyder (§ 202a/216b).",
+      "forbudt": "Skjult tvangsmiddel uten hjemmel, skadelig bruk.",
+      "mindrearige": "Krever alltid påtale-godkjenning (eks: Kurt Mikkelsen, 13 år)."
+    }
+  },
+  "del_d_rettslig_utlevering": {
+    "prosessen": [
+      "Identifiser IP og ISP",
+      "Dokumenter eksakt tidspunkt i UTC",
+      "Påtalevurdering (§ 210 / Ekomloven)",
+      "Rettslig kjennelse (ved behov)",
+      "Begjæring til ISP",
+      "Utlevering av abonnentdata",
+      "Krysskontroll mot Folkeregisteret"
+    ],
+    "hjemler": {
+      "strpl_210": "Utleveringspålegg for bevis (abonnentdata/loggfiler).",
+      "ekomloven_2-7_2-8": "Unntak fra taushetsplikt ved etterforskning (strafferamme > 6 mnd).",
+      "strpl_216b": "Kommunikasjonsdata (metadata).",
+      "strpl_216a": "Kommunikasjonsavlytting (innhold, ramme > 10 år)."
+    },
+    "lagringstider": {
+      "norske_isp": "6 måneder",
+      "meta_google": "90 dager (krever preservering)",
+      "snapchat": "Begrenset tid"
+    },
+    "preserveringsanmodning": "Må sendes umiddelbart for å hindre automatisk sletting av logger."
+  },
+  "del_e_lekkasjer": {
+    "metoder": [
+      { "navn": "WebRTC-lekkasje", "beskrivelse": "Avslører ekte IP via nettleserfunksjon selv bak VPN." },
+      { "navn": "DNS-lekkasje", "beskrivelse": "Forespørsler går utenfor VPN-tunnel til ISP." },
+      { "navn": "Torrent/P2P", "beskrivelse": "IP eksponeres direkte til alle noder i fildelingsnettverk." }
+    ]
+  },
+  "del_f_case_studier": {
+    "case_1_lina_grim": "Enkel case. Trusler på Snapchat. IP peker til russisk VPN. Konklusjon: Etterforskning kompliseres av anonymisering.",
+    "case_2_kurt_mikkelsen": "Kompleks case (13 år). IP identifisert via Snapchat-utlevering. Analyse bekrefter Telenor-IP uten VPN. Koblet til mor via Folkeregisteret. Konklusjon: Bevis indikerer bruk fra hjemmeadresse."
+  },
+  "del_g_oppsummering_og_feil": {
+    "vanlige_feil": [
+      "Tro at IP-adressen ER personen (glemmer delt IP/husstand).",
+      "Gi opp ved VPN (leverandører kan ha logger).",
+      "Glemme tidssone-konvertering (UTC vs Lokal tid).",
+      "Vente for lenge med preservering.",
+      "IP-felle uten juristavklaring."
+    ],
+    "hovedregel": "IP-adressen er et utgangspunkt, ikke et bevis i seg selv."
+  }
+}
