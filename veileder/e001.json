@@ -3,12 +3,3488 @@
   "undertittel": "Fra OSINT til rettslig utlevering – komplett metodikk",
   "ordliste": [
     {
-      "term": "IP-adresse",
-      "definisjon": "En numerisk adresse som identifiserer en enhet på et nettverk."
+      "term": "b0000 (heading)",
+      "definisjon": "IP-ADRESSER"
     },
     {
-      "term": "OSINT",
-      "definisjon": "Open-source intelligence; innsamling av informasjon fra åpne kilder."
+      "term": "b0001 (heading)",
+      "definisjon": "INTERNET PROTOCOL I DIGITAL ETTERFORSKNING"
+    },
+    {
+      "term": "b0002 (paragraph)",
+      "definisjon": "Fra OSINT til rettslig utlevering – komplett metodikk"
+    },
+    {
+      "term": "b0003 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0004 (heading)",
+      "definisjon": "ORDLISTE – LES DETTE FØRST"
+    },
+    {
+      "term": "b0005 (heading)",
+      "definisjon": "📖 ORDLISTE"
+    },
+    {
+      "term": "b0006 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0007 (paragraph)",
+      "definisjon": "IP-adresse     = Internet Protocol-adresse. Et unikt nummer som identifiserer"
+    },
+    {
+      "term": "b0008 (paragraph)",
+      "definisjon": "                 en enhet på internett."
+    },
+    {
+      "term": "b0009 (paragraph)",
+      "definisjon": "                 Analogi: Husnummeret på internett"
+    },
+    {
+      "term": "b0010 (paragraph)",
+      "definisjon": "IPv4           = Den vanligste formen: fire tall adskilt med punktum"
+    },
+    {
+      "term": "b0011 (paragraph)",
+      "definisjon": "                 Eks: 82.134.12.45 (Telenor, Lørenskog)"
+    },
+    {
+      "term": "b0012 (paragraph)",
+      "definisjon": "IPv6           = Nyere format med seksten tegn: 2001:0db8:85a3::8a2e:0370:7334"
+    },
+    {
+      "term": "b0013 (paragraph)",
+      "definisjon": "                 Brukes stadig mer, men IPv4 dominerer i Norge"
+    },
+    {
+      "term": "b0014 (paragraph)",
+      "definisjon": "ISP            = Internet Service Provider = Nettilbyder"
+    },
+    {
+      "term": "b0015 (paragraph)",
+      "definisjon": "                 (Telenor, Telia, Altibox, Ice osv.)"
+    },
+    {
+      "term": "b0016 (paragraph)",
+      "definisjon": "ASN            = Autonomous System Number – unikt nummer tildelt en ISP"
+    },
+    {
+      "term": "b0017 (paragraph)",
+      "definisjon": "                 eller organisasjon. Telenor har ASN 2119."
+    },
+    {
+      "term": "b0018 (paragraph)",
+      "definisjon": "Statisk IP     = IP-adresse som aldri endres (bedrifter, servere)"
+    },
+    {
+      "term": "b0019 (paragraph)",
+      "definisjon": "Dynamisk IP    = IP-adresse som byttes regelmessig (hjemmebrukere)"
+    },
+    {
+      "term": "b0020 (paragraph)",
+      "definisjon": "Geolokasjon    = Geografisk plassering utledet fra IP-adressen"
+    },
+    {
+      "term": "b0021 (paragraph)",
+      "definisjon": "                 (nøyaktighet: land/by, sjelden eksakt adresse)"
+    },
+    {
+      "term": "b0022 (paragraph)",
+      "definisjon": "WHOIS          = Offentlig database som viser hvem som eier en IP-blokk"
+    },
+    {
+      "term": "b0023 (paragraph)",
+      "definisjon": "Netblock       = En gruppe IP-adresser tildelt én organisasjon"
+    },
+    {
+      "term": "b0024 (paragraph)",
+      "definisjon": "Reverse DNS    = Å finne domenenavn tilhørende en IP-adresse"
+    },
+    {
+      "term": "b0025 (paragraph)",
+      "definisjon": "Canary Token   = En \"felle\"-lenke/fil som avslører IP-adressen til den"
+    },
+    {
+      "term": "b0026 (paragraph)",
+      "definisjon": "                 som åpner den. Brukes av sikkerhetsmiljøer og politiet."
+    },
+    {
+      "term": "b0027 (paragraph)",
+      "definisjon": "IP Logger      = Tjeneste som registrerer IP-adressen til alle som klikker"
+    },
+    {
+      "term": "b0028 (paragraph)",
+      "definisjon": "                 en spesiell lenke"
+    },
+    {
+      "term": "b0029 (paragraph)",
+      "definisjon": "Tracking Pixel = Et usynlig 1x1 piksel stort bilde i e-post/nettside som"
+    },
+    {
+      "term": "b0030 (paragraph)",
+      "definisjon": "                 avslører IP-adressen til mottaker som åpner det"
+    },
+    {
+      "term": "b0031 (paragraph)",
+      "definisjon": "Tor            = The Onion Router – anonymt nettverk som ruter trafikk"
+    },
+    {
+      "term": "b0032 (paragraph)",
+      "definisjon": "                 via minst 3 krypterte noder internasjonalt"
+    },
+    {
+      "term": "b0033 (paragraph)",
+      "definisjon": "Exit Node      = Den siste Tor-noden – den som kommuniserer med"
+    },
+    {
+      "term": "b0034 (paragraph)",
+      "definisjon": "                 målserveren og er synlig for omverdenen"
+    },
+    {
+      "term": "b0035 (paragraph)",
+      "definisjon": "VPN            = Virtual Private Network – tjeneste som skjuler din"
+    },
+    {
+      "term": "b0036 (paragraph)",
+      "definisjon": "                 IP-adresse bak VPN-leverandørens server"
+    },
+    {
+      "term": "b0037 (paragraph)",
+      "definisjon": "Shodan         = Søkemotor for internett-tilkoblede enheter og servere"
+    },
+    {
+      "term": "b0038 (paragraph)",
+      "definisjon": "Censys         = Søkemotor som skanner og indekserer alle IP-adresser"
+    },
+    {
+      "term": "b0039 (paragraph)",
+      "definisjon": "GreyNoise      = Tjeneste som klassifiserer IP-adresser som godartede"
+    },
+    {
+      "term": "b0040 (paragraph)",
+      "definisjon": "                 eller ondsinnede basert på atferd"
+    },
+    {
+      "term": "b0041 (paragraph)",
+      "definisjon": "VirusTotal     = Tjeneste for analyse av URL, filer og IP-adresser"
+    },
+    {
+      "term": "b0042 (paragraph)",
+      "definisjon": "IOC            = Indicator of Compromise – indikator på kompromittering"
+    },
+    {
+      "term": "b0043 (paragraph)",
+      "definisjon": "APT            = Advanced Persistent Threat – statlig/avansert hackergruppe"
+    },
+    {
+      "term": "b0044 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0045 (heading)",
+      "definisjon": "DEL A: FORSTÅ IP-ADRESSER – GRUNNLEGGENDE FOR ETTERFORSKERE"
+    },
+    {
+      "term": "b0046 (heading)",
+      "definisjon": "A.1 Hva er en IP-adresse og hvorfor er den viktig i etterforskning?"
+    },
+    {
+      "term": "b0047 (paragraph)",
+      "definisjon": "Analogi: Internettets husnummer"
+    },
+    {
+      "term": "b0048 (paragraph)",
+      "definisjon": "Tenk på internett som et verdensomspennende postsystem. For at et brev skal nå frem, trenger det en adresse. En IP-adresse er akkurat dette – adressen som identifiserer hvilken \"husdør\" på internett en enhet befinner seg bak."
+    },
+    {
+      "term": "b0049 (paragraph)",
+      "definisjon": "Når Kurt Mikkelsen sender en melding på Snapchat, besøker en nettside, laster opp et bilde eller logger inn på Discord, logger alle disse tjenestene hans IP-adresse automatisk. Dette er ikke unntaket – det er regelen. Alle nettverkstilkoblede enheter avgir sin IP-adresse ved ethvert datautveksling på internett, uten unntak."
+    },
+    {
+      "term": "b0050 (heading)",
+      "definisjon": "IP-adressen i seg selv forteller etterforskeren:"
+    },
+    {
+      "term": "b0051 (paragraph)",
+      "definisjon": "Hvilken nettilbyder (ISP) ble brukt (Telenor, Telia, Ice, Altibox…)"
+    },
+    {
+      "term": "b0052 (paragraph)",
+      "definisjon": "Omtrentlig geografisk plassering (by, region)"
+    },
+    {
+      "term": "b0053 (paragraph)",
+      "definisjon": "Om brukeren skjuler seg bak VPN, Tor eller proxy"
+    },
+    {
+      "term": "b0054 (paragraph)",
+      "definisjon": "Om IP-adressen er kjent for kriminell aktivitet"
+    },
+    {
+      "term": "b0055 (paragraph)",
+      "definisjon": "Hvilket land trafikken kom fra (kritisk for statlige trusselaktører)"
+    },
+    {
+      "term": "b0056 (paragraph)",
+      "definisjon": "Med rettslig beslutning forteller ISP-en hvem som abonnerte på den IP-adressen på et gitt tidspunkt. Det er overgangen fra en nummerkode til et navn, adresse og fødselsnummer."
+    },
+    {
+      "term": "b0057 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0058 (heading)",
+      "definisjon": "A.2 IP-adressens anatomi – typer og format"
+    },
+    {
+      "term": "b0059 (heading)",
+      "definisjon": "IPv4 – Den vanlige versjonen:"
+    },
+    {
+      "term": "b0060 (paragraph)",
+      "definisjon": "Eksempel: 82.134.12.45"
+    },
+    {
+      "term": "b0061 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0062 (heading)",
+      "definisjon": "Struktur:"
+    },
+    {
+      "term": "b0063 (paragraph)",
+      "definisjon": "  82.134     = Nettblokk tildelt Telenor Norge"
+    },
+    {
+      "term": "b0064 (paragraph)",
+      "definisjon": "  12.45      = Spesifikk abonnent innenfor Telenors nett"
+    },
+    {
+      "term": "b0065 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0066 (heading)",
+      "definisjon": "Slik leses det:"
+    },
+    {
+      "term": "b0067 (paragraph)",
+      "definisjon": "  Første to tall = Organisasjonen som eier blokken (ASN)"
+    },
+    {
+      "term": "b0068 (paragraph)",
+      "definisjon": "  Siste to tall  = Den spesifikke tilkoblingen"
+    },
+    {
+      "term": "b0069 (heading)",
+      "definisjon": "IPv6 – Den nyere versjonen:"
+    },
+    {
+      "term": "b0070 (paragraph)",
+      "definisjon": "Eksempel: 2001:0db8:85a3:0000:0000:8a2e:0370:7334"
+    },
+    {
+      "term": "b0071 (paragraph)",
+      "definisjon": "Forkortet:  2001:db8:85a3::8a2e:370:7334"
+    },
+    {
+      "term": "b0072 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0073 (heading)",
+      "definisjon": "I praksis ser etterforskere IPv6 i logger fra:"
+    },
+    {
+      "term": "b0074 (bullets)",
+      "definisjon": "- Moderne iOS/Android-enheter"
+    },
+    {
+      "term": "b0075 (bullets)",
+      "definisjon": "- Nye norske bredbåndsabonnementer (Altibox, Lyse)"
+    },
+    {
+      "term": "b0076 (bullets)",
+      "definisjon": "- IPv6-aktiverte mobilnett"
+    },
+    {
+      "term": "b0077 (heading)",
+      "definisjon": "Statisk vs. Dynamisk IP – kritisk distinksjon:"
+    },
+    {
+      "term": "b0078 (ascii_box)",
+      "definisjon": "╔═════════════════════╦══════════════════════╦═══════════════════════╗"
+    },
+    {
+      "term": "b0079 (heading)",
+      "definisjon": "║ TYPE                ║ BRUKES AV            ║ ETTERFORSKNINGSMESSIG ║"
+    },
+    {
+      "term": "b0080 (paragraph)",
+      "definisjon": "╠═════════════════════╬══════════════════════╬═══════════════════════╣"
+    },
+    {
+      "term": "b0081 (paragraph)",
+      "definisjon": "║ Statisk IP          ║ Bedrifter, servere,  ║ Direkte kobling til   ║"
+    },
+    {
+      "term": "b0082 (paragraph)",
+      "definisjon": "║                     ║ hjemmekontorer,      ║ organisasjon. Enkel   ║"
+    },
+    {
+      "term": "b0083 (paragraph)",
+      "definisjon": "║                     ║ nettsider            ║ identifisering via    ║"
+    },
+    {
+      "term": "b0084 (heading)",
+      "definisjon": "║                     ║                     ║ WHOIS                 ║"
+    },
+    {
+      "term": "b0085 (paragraph)",
+      "definisjon": "╠═════════════════════╬══════════════════════╬═══════════════════════╣"
+    },
+    {
+      "term": "b0086 (paragraph)",
+      "definisjon": "║ Dynamisk IP         ║ Privatpersoner,      ║ Krever ISP-utlevering ║"
+    },
+    {
+      "term": "b0087 (paragraph)",
+      "definisjon": "║                     ║ mobilenheter,        ║ med eksakt tidspunkt  ║"
+    },
+    {
+      "term": "b0088 (paragraph)",
+      "definisjon": "║                     ║ hjemmenettverk       ║ for å koble IP til    ║"
+    },
+    {
+      "term": "b0089 (paragraph)",
+      "definisjon": "║                     ║                     ║ abonnent              ║"
+    },
+    {
+      "term": "b0090 (paragraph)",
+      "definisjon": "╠═════════════════════╬══════════════════════╬═══════════════════════╣"
+    },
+    {
+      "term": "b0091 (paragraph)",
+      "definisjon": "║ Privat IP           ║ Interne nettverk     ║ IKKE synlig på inter- ║"
+    },
+    {
+      "term": "b0092 (paragraph)",
+      "definisjon": "║ (192.168.x.x,       ║ (hjemmeruteren)      ║ nett. Kun den         ║"
+    },
+    {
+      "term": "b0093 (paragraph)",
+      "definisjon": "║ 10.x.x.x)           ║                     ║ offentlige NAT-IP     ║"
+    },
+    {
+      "term": "b0094 (paragraph)",
+      "definisjon": "║                     ║                     ║ er etterforsknbar     ║"
+    },
+    {
+      "term": "b0095 (ascii_box)",
+      "definisjon": "╚═════════════════════╩══════════════════════╩═══════════════════════╝"
+    },
+    {
+      "term": "b0096 (heading)",
+      "definisjon": "Viktig – NAT og delt IP:"
+    },
+    {
+      "term": "b0097 (paragraph)",
+      "definisjon": "Hjemmerutere bruker NAT (Network Address Translation). Alle enheter i hjemmenettverket til Kurt – iPhone, PC, nettbrett – deler én offentlig IP-adresse. ISP-en kan koble denne til Hanne Mikkelsens abonnement, men kan ikke uten videre si om det var Kurt eller moren som brukte nettforbindelsen på et gitt tidspunkt. Dette er et bevisrettslig moment som alltid skal dokumenteres i rapporten."
+    },
+    {
+      "term": "b0098 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0099 (heading)",
+      "definisjon": "A.3 Hva en IP-adresse AVSLØRER og IKKE avslører"
+    },
+    {
+      "term": "b0100 (heading)",
+      "definisjon": "✅ IP-ADRESSEN KAN AVSLØRE (uten rettslig beslutning):"
+    },
+    {
+      "term": "b0101 (bullets)",
+      "definisjon": "  • Hvilken ISP / nettleverandør som eier blokken"
+    },
+    {
+      "term": "b0102 (bullets)",
+      "definisjon": "  • Omtrentlig geografisk plassering (by/region, sjelden gate)"
+    },
+    {
+      "term": "b0103 (bullets)",
+      "definisjon": "  • Nettoperatørens land (ASN-registrering)"
+    },
+    {
+      "term": "b0104 (bullets)",
+      "definisjon": "  • Om adressen tilhører Tor exit node"
+    },
+    {
+      "term": "b0105 (bullets)",
+      "definisjon": "  • Om adressen tilhører kjent VPN-leverandør"
+    },
+    {
+      "term": "b0106 (bullets)",
+      "definisjon": "  • Om adressen har vært involvert i kriminell aktivitet"
+    },
+    {
+      "term": "b0107 (bullets)",
+      "definisjon": "  • Hvilke porter/tjenester som kjører på adressen (via Shodan)"
+    },
+    {
+      "term": "b0108 (bullets)",
+      "definisjon": "  • Hvilke domener som er vert på adressen"
+    },
+    {
+      "term": "b0109 (bullets)",
+      "definisjon": "  • Angrepshistorikk og rykte (via GreyNoise/VirusTotal)"
+    },
+    {
+      "term": "b0110 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0111 (heading)",
+      "definisjon": "❌ IP-ADRESSEN KAN IKKE AVSLØRE (uten rettslig beslutning + ISP):"
+    },
+    {
+      "term": "b0112 (bullets)",
+      "definisjon": "  • Hvem den spesifikke brukeren er (navn, fødselsnr.)"
+    },
+    {
+      "term": "b0113 (bullets)",
+      "definisjon": "  • Eksakt fysisk adresse (gate, husnummer)"
+    },
+    {
+      "term": "b0114 (bullets)",
+      "definisjon": "  • Innhold i kommunikasjon"
+    },
+    {
+      "term": "b0115 (bullets)",
+      "definisjon": "  • Hvilken spesifikk enhet som ble brukt (ved delt IP)"
+    },
+    {
+      "term": "b0116 (bullets)",
+      "definisjon": "  • Hvem av flere husstands-/abonnement-brukere som kommuniserte"
+    },
+    {
+      "term": "b0117 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0118 (heading)",
+      "definisjon": "DEL B: OSINT-METODER FOR IP-KARTLEGGING"
+    },
+    {
+      "term": "b0119 (heading)",
+      "definisjon": "B.1 Trinn 1 – Identifisere en IP-adresse via OSINT"
+    },
+    {
+      "term": "b0120 (paragraph)",
+      "definisjon": "Analogi: Å finne et husnummer uten å spørre eieren"
+    },
+    {
+      "term": "b0121 (paragraph)",
+      "definisjon": "Et IP-nummer er ikke skjult – det er nødvendigvis synlig i mange logger og tjenester. Utfordringen er å finne ut hvilken IP en spesifikk person bruker, uten å kontakte vedkommende."
+    },
+    {
+      "term": "b0122 (paragraph)",
+      "definisjon": "Metode 1: IP-er registrert direkte i offentlige tjenester"
+    },
+    {
+      "term": "b0123 (heading)",
+      "definisjon": "Noen plattformer eksponerer IP-adresser direkte eller indirekte:"
+    },
+    {
+      "term": "b0124 (ascii_box)",
+      "definisjon": "╔══════════════════════════════════════════════════════════════════╗"
+    },
+    {
+      "term": "b0125 (heading)",
+      "definisjon": "║ PLATTFORMER SOM LOGGER IP OG UTLEVERER MED RETTSLIG BESLUTNING  ║"
+    },
+    {
+      "term": "b0126 (paragraph)",
+      "definisjon": "╠══════════════╦══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0127 (paragraph)",
+      "definisjon": "║ Snapchat     ║ Logger IP ved login, konto-opprettelse og events  ║"
+    },
+    {
+      "term": "b0128 (paragraph)",
+      "definisjon": "║              ║ Oppbevares begrenset tid (se Law Enforcement guide)║"
+    },
+    {
+      "term": "b0129 (paragraph)",
+      "definisjon": "╠══════════════╬══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0130 (paragraph)",
+      "definisjon": "║ Instagram    ║ Logger login-IP og tidspunkt (Meta Legal Process)  ║"
+    },
+    {
+      "term": "b0131 (paragraph)",
+      "definisjon": "╠══════════════╬══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0132 (paragraph)",
+      "definisjon": "║ TikTok       ║ Logger IP ved alle sessions, utleverer ved kjennelse║"
+    },
+    {
+      "term": "b0133 (paragraph)",
+      "definisjon": "╠══════════════╬══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0134 (paragraph)",
+      "definisjon": "║ Telegram     ║ Logger IP-adresse, utleverer ved kjennelse (sjelden)║"
+    },
+    {
+      "term": "b0135 (paragraph)",
+      "definisjon": "╠══════════════╬══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0136 (paragraph)",
+      "definisjon": "║ Discord      ║ Logger IP ved login, utleverer ved MLAT/kjennelse  ║"
+    },
+    {
+      "term": "b0137 (paragraph)",
+      "definisjon": "╠══════════════╬══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0138 (paragraph)",
+      "definisjon": "║ Reddit       ║ Logger IP, utleverer ved rettskjennelse            ║"
+    },
+    {
+      "term": "b0139 (paragraph)",
+      "definisjon": "╠══════════════╬══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0140 (paragraph)",
+      "definisjon": "║ E-post       ║ E-postheadere kan inneholde sender-IP              ║"
+    },
+    {
+      "term": "b0141 (paragraph)",
+      "definisjon": "╠══════════════╬══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0142 (paragraph)",
+      "definisjon": "║ Forum/blogg  ║ WordPress, phpBB etc. logger IP for alle innlegg   ║"
+    },
+    {
+      "term": "b0143 (paragraph)",
+      "definisjon": "╠══════════════╬══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0144 (paragraph)",
+      "definisjon": "║ WHOIS-logger ║ Domeneregistrering inneholder IP/e-post til eier   ║"
+    },
+    {
+      "term": "b0145 (ascii_box)",
+      "definisjon": "╚══════════════╩══════════════════════════════════════════════════╝"
+    },
+    {
+      "term": "b0146 (paragraph)",
+      "definisjon": "Metode 2: IP-er i e-postheadere (teknisk lesing)"
+    },
+    {
+      "term": "b0147 (heading)",
+      "definisjon": "Når Lina Grim sender en e-post via sin e-postklient, kan headeren avsløre avsenders IP:"
+    },
+    {
+      "term": "b0148 (paragraph)",
+      "definisjon": "Mikrosteg: Lese e-postheader i Gmail"
+    },
+    {
+      "term": "b0149 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0150 (check_item)",
+      "definisjon": "□ Steg 1: Åpne e-posten i Gmail"
+    },
+    {
+      "term": "b0151 (check_item)",
+      "definisjon": "□ Steg 2: Klikk de tre prikkene øverst til høyre (⋮)"
+    },
+    {
+      "term": "b0152 (check_item)",
+      "definisjon": "□ Steg 3: Velg \"Vis original\""
+    },
+    {
+      "term": "b0153 (check_item)",
+      "definisjon": "□ Steg 4: Et nytt vindu åpner seg med rå e-postkode"
+    },
+    {
+      "term": "b0154 (check_item)",
+      "definisjon": "□ Steg 5: Søk etter \"Received: from\" (Ctrl + F)"
+    },
+    {
+      "term": "b0155 (check_item)",
+      "definisjon": "□ Steg 6: Den første linjen med \"Received:\" inneholder avsenders IP"
+    },
+    {
+      "term": "b0156 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0157 (heading)",
+      "definisjon": "Eksempel på det du ser:"
+    },
+    {
+      "term": "b0158 (paragraph)",
+      "definisjon": "  Received: from 82.134.12.45 (87.54.12.45 [87.54.12.45])"
+    },
+    {
+      "term": "b0159 (paragraph)",
+      "definisjon": "             by mx.google.com with ESMTPS"
+    },
+    {
+      "term": "b0160 (paragraph)",
+      "definisjon": "  → IP 82.134.12.45 er avsenderens IP-adresse"
+    },
+    {
+      "term": "b0161 (paragraph)",
+      "definisjon": "OBS: Webmail-tjenester (Gmail, Outlook.com) fjerner nå ofte avsenderens IP. Denne metoden fungerer best for e-post sendt via Outlook-klienter og Exchange-servere."
+    },
+    {
+      "term": "b0162 (paragraph)",
+      "definisjon": "Metode 3: Shodan – søkemotor for internett-tilkoblede enheter"
+    },
+    {
+      "term": "b0163 (paragraph)",
+      "definisjon": "Mikrosteg: Bruke Shodan (shodan.io)"
+    },
+    {
+      "term": "b0164 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0165 (check_item)",
+      "definisjon": "□ Steg 1: Gå til https://www.shodan.io (gratis konto anbefalt)"
+    },
+    {
+      "term": "b0166 (check_item)",
+      "definisjon": "□ Steg 2: Skriv inn en kjent IP: 82.134.12.45"
+    },
+    {
+      "term": "b0167 (check_item)",
+      "definisjon": "□ Steg 3: Du vil nå se:"
+    },
+    {
+      "term": "b0168 (ascii_box)",
+      "definisjon": "   ┌─────────────────────────────────────────┐"
+    },
+    {
+      "term": "b0169 (ascii_box)",
+      "definisjon": "   │ IP: 82.134.12.45                        │"
+    },
+    {
+      "term": "b0170 (ascii_box)",
+      "definisjon": "   │ Organisasjon: Telenor Norway            │"
+    },
+    {
+      "term": "b0171 (ascii_box)",
+      "definisjon": "   │ Land: Norge / Akershus                  │"
+    },
+    {
+      "term": "b0172 (ascii_box)",
+      "definisjon": "   │ ASN: AS2119                             │"
+    },
+    {
+      "term": "b0173 (ascii_box)",
+      "definisjon": "   │ Åpne porter: 80 (HTTP), 443 (HTTPS)     │"
+    },
+    {
+      "term": "b0174 (ascii_box)",
+      "definisjon": "   │ Operativsystem: Linux                   │"
+    },
+    {
+      "term": "b0175 (ascii_box)",
+      "definisjon": "   │ Hostnames: customer.telenor.no          │"
+    },
+    {
+      "term": "b0176 (ascii_box)",
+      "definisjon": "   │ Sist sett: 2026-02-15                   │"
+    },
+    {
+      "term": "b0177 (ascii_box)",
+      "definisjon": "   └─────────────────────────────────────────┘"
+    },
+    {
+      "term": "b0178 (check_item)",
+      "definisjon": "□ Steg 4: Ta screenshot (legg til URL i loggen)"
+    },
+    {
+      "term": "b0179 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0180 (heading)",
+      "definisjon": "B.2 Trinn 2 – Analysere en IP-adresse"
+    },
+    {
+      "term": "b0181 (ascii_box)",
+      "definisjon": "╔══════════════════════════════════════════════════════════════════╗"
+    },
+    {
+      "term": "b0182 (paragraph)",
+      "definisjon": "║  KOMPLETT IP-ANALYSE VERKTØYSETT (alle nettleserbaserte)         ║"
+    },
+    {
+      "term": "b0183 (paragraph)",
+      "definisjon": "╠══════════════╦═══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0184 (heading)",
+      "definisjon": "║  VERKTØY     ║  FORMÅL OG URL                                    ║"
+    },
+    {
+      "term": "b0185 (paragraph)",
+      "definisjon": "╠══════════════╬═══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0186 (paragraph)",
+      "definisjon": "║ ipinfo.io    ║ Grunnleggende info: ISP, land, by, ASN, VPN-sjekk  ║"
+    },
+    {
+      "term": "b0187 (text_with_urls)",
+      "definisjon": "║              ║ https://ipinfo.io/82.134.12.45                    ║"
+    },
+    {
+      "term": "b0188 (paragraph)",
+      "definisjon": "╠══════════════╬═══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0189 (paragraph)",
+      "definisjon": "║ ipapi.com    ║ Detaljert geolokasjon, org, tidssone               ║"
+    },
+    {
+      "term": "b0190 (text_with_urls)",
+      "definisjon": "║              ║ https://ipapi.com/82.134.12.45                    ║"
+    },
+    {
+      "term": "b0191 (paragraph)",
+      "definisjon": "╠══════════════╬═══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0192 (paragraph)",
+      "definisjon": "║ abuseipdb    ║ Har IP vært involvert i misbruk/angrep?            ║"
+    },
+    {
+      "term": "b0193 (text_with_urls)",
+      "definisjon": "║              ║ https://www.abuseipdb.com/check/82.134.12.45      ║"
+    },
+    {
+      "term": "b0194 (paragraph)",
+      "definisjon": "╠══════════════╬═══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0195 (paragraph)",
+      "definisjon": "║ VirusTotal   ║ Ryktessjekk: malware, phishing, C2-aktivitet       ║"
+    },
+    {
+      "term": "b0196 (text_with_urls)",
+      "definisjon": "║              ║ https://www.virustotal.com/gui/ip-address/         ║"
+    },
+    {
+      "term": "b0197 (paragraph)",
+      "definisjon": "╠══════════════╬═══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0198 (paragraph)",
+      "definisjon": "║ GreyNoise    ║ Klassifisering: uskyldig/ondsinnet scanning, VPN   ║"
+    },
+    {
+      "term": "b0199 (text_with_urls)",
+      "definisjon": "║              ║ https://viz.greynoise.io/ip/82.134.12.45           ║"
+    },
+    {
+      "term": "b0200 (paragraph)",
+      "definisjon": "╠══════════════╬═══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0201 (paragraph)",
+      "definisjon": "║ Shodan       ║ Åpne porter, tjenester, OS, historikk              ║"
+    },
+    {
+      "term": "b0202 (text_with_urls)",
+      "definisjon": "║              ║ https://shodan.io                                  ║"
+    },
+    {
+      "term": "b0203 (paragraph)",
+      "definisjon": "╠══════════════╬═══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0204 (paragraph)",
+      "definisjon": "║ Censys       ║ Detaljert banner/sertifikat, historisk data        ║"
+    },
+    {
+      "term": "b0205 (text_with_urls)",
+      "definisjon": "║              ║ https://censys.io                                  ║"
+    },
+    {
+      "term": "b0206 (paragraph)",
+      "definisjon": "╠══════════════╬═══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0207 (paragraph)",
+      "definisjon": "║ WHOIS        ║ Eierskap av IP-blokk / domene                      ║"
+    },
+    {
+      "term": "b0208 (text_with_urls)",
+      "definisjon": "║              ║ https://who.is eller https://whois.domaintools.com ║"
+    },
+    {
+      "term": "b0209 (paragraph)",
+      "definisjon": "╠══════════════╬═══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0210 (paragraph)",
+      "definisjon": "║ MXToolBox    ║ Spam-svarteliste, e-postservere tilknyttet IP       ║"
+    },
+    {
+      "term": "b0211 (text_with_urls)",
+      "definisjon": "║              ║ https://mxtoolbox.com/blacklists.aspx              ║"
+    },
+    {
+      "term": "b0212 (paragraph)",
+      "definisjon": "╠══════════════╬═══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0213 (paragraph)",
+      "definisjon": "║ SecurityTrails║ DNS-historikk, domener vert på IP, reverse DNS    ║"
+    },
+    {
+      "term": "b0214 (text_with_urls)",
+      "definisjon": "║              ║ https://securitytrails.com                         ║"
+    },
+    {
+      "term": "b0215 (paragraph)",
+      "definisjon": "╠══════════════╬═══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0216 (paragraph)",
+      "definisjon": "║ Spamhaus     ║ Ser om IP er på spam/botnet-svarteliste            ║"
+    },
+    {
+      "term": "b0217 (text_with_urls)",
+      "definisjon": "║              ║ https://check.spamhaus.org                         ║"
+    },
+    {
+      "term": "b0218 (paragraph)",
+      "definisjon": "╠══════════════╬═══════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0219 (paragraph)",
+      "definisjon": "║ IPVoid       ║ Masse-sjekk mot 40+ svartelister                   ║"
+    },
+    {
+      "term": "b0220 (text_with_urls)",
+      "definisjon": "║              ║ https://www.ipvoid.com                             ║"
+    },
+    {
+      "term": "b0221 (ascii_box)",
+      "definisjon": "╚══════════════╩═══════════════════════════════════════════════════╝"
+    },
+    {
+      "term": "b0222 (paragraph)",
+      "definisjon": "Mikrosteg: Komplett IP-analyse på under 20 minutter"
+    },
+    {
+      "term": "b0223 (paragraph)",
+      "definisjon": "Case: Ukjent IP 185.220.101.45 dukker opp i Kurts aktivitetslogg"
+    },
+    {
+      "term": "b0224 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0225 (check_item)",
+      "definisjon": "□ Steg 1: ipinfo.io/185.220.101.45"
+    },
+    {
+      "term": "b0226 (paragraph)",
+      "definisjon": "  → Org: Frantech Solutions / BuyVM"
+    },
+    {
+      "term": "b0227 (paragraph)",
+      "definisjon": "  → Land: Luxembourg"
+    },
+    {
+      "term": "b0228 (paragraph)",
+      "definisjon": "  → Notis: \"vpn\" flagg satt"
+    },
+    {
+      "term": "b0229 (spacer)",
+      "definisjon": "  "
+    },
+    {
+      "term": "b0230 (check_item)",
+      "definisjon": "□ Steg 2: VirusTotal"
+    },
+    {
+      "term": "b0231 (paragraph)",
+      "definisjon": "  → 8 av 87 sikkerhetsselskaper har flagget adressen"
+    },
+    {
+      "term": "b0232 (paragraph)",
+      "definisjon": "  → Kategori: Anonymiserende tjeneste / VPN"
+    },
+    {
+      "term": "b0233 (spacer)",
+      "definisjon": "  "
+    },
+    {
+      "term": "b0234 (check_item)",
+      "definisjon": "□ Steg 3: GreyNoise"
+    },
+    {
+      "term": "b0235 (paragraph)",
+      "definisjon": "  → Status: \"Noise\" (kjent scanner/VPN)"
+    },
+    {
+      "term": "b0236 (paragraph)",
+      "definisjon": "  → Tag: \"Tor Exit Node\""
+    },
+    {
+      "term": "b0237 (paragraph)",
+      "definisjon": "  → Benign: Nei"
+    },
+    {
+      "term": "b0238 (spacer)",
+      "definisjon": "  "
+    },
+    {
+      "term": "b0239 (check_item)",
+      "definisjon": "□ Steg 4: Torproject.org/check (eller dan.me.uk/torlist)"
+    },
+    {
+      "term": "b0240 (paragraph)",
+      "definisjon": "  → Bekreftet Tor exit node"
+    },
+    {
+      "term": "b0241 (spacer)",
+      "definisjon": "  "
+    },
+    {
+      "term": "b0242 (check_item)",
+      "definisjon": "□ Steg 5: Shodan"
+    },
+    {
+      "term": "b0243 (paragraph)",
+      "definisjon": "  → Port 9001 åpen (Tor relay port)"
+    },
+    {
+      "term": "b0244 (paragraph)",
+      "definisjon": "  → Sertifikat bekrefter Tor-node"
+    },
+    {
+      "term": "b0245 (spacer)",
+      "definisjon": "  "
+    },
+    {
+      "term": "b0246 (check_item)",
+      "definisjon": "□ Konklusjon:"
+    },
+    {
+      "term": "b0247 (paragraph)",
+      "definisjon": "  IP 185.220.101.45 er en kjent Tor exit node."
+    },
+    {
+      "term": "b0248 (paragraph)",
+      "definisjon": "  Brukeren anonymiserte sin internetttrafikk via Tor."
+    },
+    {
+      "term": "b0249 (paragraph)",
+      "definisjon": "  Den underliggende bruker-IP kan IKKE fastslås uten"
+    },
+    {
+      "term": "b0250 (paragraph)",
+      "definisjon": "  samarbeid fra Tor-prosjektet (praktisk umulig å oppnå)."
+    },
+    {
+      "term": "b0251 (spacer)",
+      "definisjon": "  "
+    },
+    {
+      "term": "b0252 (paragraph)",
+      "definisjon": "  TPS: T: A (verifisert via Tor-prosjektets egne lister)"
+    },
+    {
+      "term": "b0253 (paragraph)",
+      "definisjon": "       P: 1 (bekreftet av tre uavhengige kilder)"
+    },
+    {
+      "term": "b0254 (paragraph)",
+      "definisjon": "       S: HØY (kan indikere bevisst anonymisering)"
+    },
+    {
+      "term": "b0255 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0256 (heading)",
+      "definisjon": "B.3 VPN vs. Tor – Slik identifiserer du begge"
+    },
+    {
+      "term": "b0257 (ascii_box)",
+      "definisjon": "╔══════════════════════════════════════════════════════════════════╗"
+    },
+    {
+      "term": "b0258 (heading)",
+      "definisjon": "║  SLIK IDENTIFISERER DU TOR-NODER                                  ║"
+    },
+    {
+      "term": "b0259 (paragraph)",
+      "definisjon": "╠══════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0260 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0261 (paragraph)",
+      "definisjon": "║  METODE 1 – Torprosjektets offisielle exitliste (anbefalt)       ║"
+    },
+    {
+      "term": "b0262 (text_with_urls)",
+      "definisjon": "║  URL: https://check.torproject.org/torbulkexitlist               ║"
+    },
+    {
+      "term": "b0263 (paragraph)",
+      "definisjon": "║  → Nedlastbar liste over alle aktive exit nodes                  ║"
+    },
+    {
+      "term": "b0264 (paragraph)",
+      "definisjon": "║  → Oppdateres hver time                                          ║"
+    },
+    {
+      "term": "b0265 (paragraph)",
+      "definisjon": "║  → Sjekk om din IP er i listen (ctrl+F)                          ║"
+    },
+    {
+      "term": "b0266 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0267 (paragraph)",
+      "definisjon": "║  METODE 2 – Bulk-sjekk (dan.me.uk)                               ║"
+    },
+    {
+      "term": "b0268 (text_with_urls)",
+      "definisjon": "║  URL: https://www.dan.me.uk/torcheck?ip=185.220.101.45           ║"
+    },
+    {
+      "term": "b0269 (paragraph)",
+      "definisjon": "║  → Direkte oppslag: \"YES this IP is a TOR Exit Node\"             ║"
+    },
+    {
+      "term": "b0270 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0271 (paragraph)",
+      "definisjon": "║  METODE 3 – GreyNoise                                            ║"
+    },
+    {
+      "term": "b0272 (text_with_urls)",
+      "definisjon": "║  URL: https://viz.greynoise.io/ip/[IP]                           ║"
+    },
+    {
+      "term": "b0273 (paragraph)",
+      "definisjon": "║  → Tag \"tor\" betyr bekreftet Tor-relatert aktivitet              ║"
+    },
+    {
+      "term": "b0274 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0275 (paragraph)",
+      "definisjon": "║  METODE 4 – Teknisk indikator via Shodan                         ║"
+    },
+    {
+      "term": "b0276 (paragraph)",
+      "definisjon": "║  Shodan-søk: port:9001 OR port:9030 OR port:9050                 ║"
+    },
+    {
+      "term": "b0277 (paragraph)",
+      "definisjon": "║  → Port 9001 = Tor relay                                         ║"
+    },
+    {
+      "term": "b0278 (paragraph)",
+      "definisjon": "║  → Port 9030 = Tor directory                                     ║"
+    },
+    {
+      "term": "b0279 (paragraph)",
+      "definisjon": "║  → Port 9050 = Tor SOCKS proxy                                   ║"
+    },
+    {
+      "term": "b0280 (ascii_box)",
+      "definisjon": "╚══════════════════════════════════════════════════════════════════╝"
+    },
+    {
+      "term": "b0281 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0282 (ascii_box)",
+      "definisjon": "╔══════════════════════════════════════════════════════════════════╗"
+    },
+    {
+      "term": "b0283 (heading)",
+      "definisjon": "║  SLIK IDENTIFISERER DU VPN-NODER                                  ║"
+    },
+    {
+      "term": "b0284 (paragraph)",
+      "definisjon": "╠══════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0285 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0286 (paragraph)",
+      "definisjon": "║  METODE 1 – ipinfo.io VPN Detection                              ║"
+    },
+    {
+      "term": "b0287 (text_with_urls)",
+      "definisjon": "║  URL: https://ipinfo.io/[IP]                                     ║"
+    },
+    {
+      "term": "b0288 (paragraph)",
+      "definisjon": "║  → Felt \"privacy.vpn: true\" indikerer VPN                        ║"
+    },
+    {
+      "term": "b0289 (paragraph)",
+      "definisjon": "║  → Viser ofte VPN-leverandørens navn (NordVPN, ExpressVPN etc.)  ║"
+    },
+    {
+      "term": "b0290 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0291 (paragraph)",
+      "definisjon": "║  METODE 2 – ipqualityscore.com                                   ║"
+    },
+    {
+      "term": "b0292 (text_with_urls)",
+      "definisjon": "║  URL: https://www.ipqualityscore.com/free-ip-lookup-proxy-vpn-test║"
+    },
+    {
+      "term": "b0293 (paragraph)",
+      "definisjon": "║  → Skåre 0-100 for VPN/proxy-sannsynlighet                       ║"
+    },
+    {
+      "term": "b0294 (paragraph)",
+      "definisjon": "║  → Viser typen: datacenter VPN, residential VPN, proxy           ║"
+    },
+    {
+      "term": "b0295 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0296 (paragraph)",
+      "definisjon": "║  METODE 3 – maxmind.com GeoIP2                                   ║"
+    },
+    {
+      "term": "b0297 (text_with_urls)",
+      "definisjon": "║  URL: https://www.maxmind.com/en/geoip-demo                      ║"
+    },
+    {
+      "term": "b0298 (paragraph)",
+      "definisjon": "║  → \"ISP/Organization\" avslører om det er datacenter-IP           ║"
+    },
+    {
+      "term": "b0299 (paragraph)",
+      "definisjon": "║  → Datacenter-IP = høy sannsynlighet for VPN                     ║"
+    },
+    {
+      "term": "b0300 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0301 (paragraph)",
+      "definisjon": "║  METODE 4 – Manuell indikator                                    ║"
+    },
+    {
+      "term": "b0302 (paragraph)",
+      "definisjon": "║  Tegn på VPN-bruk (uten spesialverktøy):                         ║"
+    },
+    {
+      "term": "b0303 (paragraph)",
+      "definisjon": "║  • IP eies av datacenter (Hetzner, DigitalOcean, OVH etc.)       ║"
+    },
+    {
+      "term": "b0304 (paragraph)",
+      "definisjon": "║  • IP er registrert i et annet land enn brukerens kjente land     ║"
+    },
+    {
+      "term": "b0305 (paragraph)",
+      "definisjon": "║  • IP er ny (registrert siste år) og har lite historikk          ║"
+    },
+    {
+      "term": "b0306 (paragraph)",
+      "definisjon": "║  • Mange domener vert på samme IP (indikerer hosting-IP)         ║"
+    },
+    {
+      "term": "b0307 (ascii_box)",
+      "definisjon": "╚══════════════════════════════════════════════════════════════════╝"
+    },
+    {
+      "term": "b0308 (heading)",
+      "definisjon": "Hva VPN og Tor betyr for etterforskningen:"
+    },
+    {
+      "term": "b0309 (paragraph)",
+      "definisjon": "VPN-bruk er lovlig og er ikke i seg selv et tegn på kriminell aktivitet. Det er imidlertid etterforskningsmessig relevant at bruker bevisst anonymiserer sin internettforbindelse. I saker der mistenkte bruker VPN eller Tor, skifter IP-sporingen til å rette seg mot VPN-leverandøren, der rettslig utlevering er mulig i land som samarbeider med norsk påtale."
+    },
+    {
+      "term": "b0310 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0311 (heading)",
+      "definisjon": "B.4 Statlige trusselaktører og utenlandske servere – Indikatorer"
+    },
+    {
+      "term": "b0312 (paragraph)",
+      "definisjon": "I saker der IP-adresser peker mot servere i bestemte land, kan dette indikere statlig cyberaktivitet eller at norsk infrastruktur brukes som gjennomgangsrute for angrep fra andre land."
+    },
+    {
+      "term": "b0313 (ascii_box)",
+      "definisjon": "╔══════════════════════════════════════════════════════════════════╗"
+    },
+    {
+      "term": "b0314 (heading)",
+      "definisjon": "║  INDIKATORER PÅ STATSSTØTTET CYBERAKTIVITET (APT)                ║"
+    },
+    {
+      "term": "b0315 (paragraph)",
+      "definisjon": "╠══════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0316 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0317 (heading)",
+      "definisjon": "║  GEOGRAFISKE INDIKATORER:                                        ║"
+    },
+    {
+      "term": "b0318 (paragraph)",
+      "definisjon": "║  • IP registrert i Kina (ASN 4134, 4538, 9808)                   ║"
+    },
+    {
+      "term": "b0319 (paragraph)",
+      "definisjon": "║  • IP registrert i Russland (ASN 8359, 2856, 3216)               ║"
+    },
+    {
+      "term": "b0320 (paragraph)",
+      "definisjon": "║  • IP registrert i Nord-Korea (ASN 131279)                       ║"
+    },
+    {
+      "term": "b0321 (paragraph)",
+      "definisjon": "║  • IP registrert i Iran (ASN 44244, 12880)                       ║"
+    },
+    {
+      "term": "b0322 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0323 (paragraph)",
+      "definisjon": "║  TEKNISKE INDIKATORER (via Shodan/Censys):                       ║"
+    },
+    {
+      "term": "b0324 (paragraph)",
+      "definisjon": "║  • Spesifikke sertifikater koblet til kjente APT-grupper         ║"
+    },
+    {
+      "term": "b0325 (paragraph)",
+      "definisjon": "║  • Samme SSL-fingeravtrykk (JA3) som kjente angrepsservere       ║"
+    },
+    {
+      "term": "b0326 (paragraph)",
+      "definisjon": "║  • Bannere som matcher kjent C2-infrastruktur (Cobalt Strike,    ║"
+    },
+    {
+      "term": "b0327 (paragraph)",
+      "definisjon": "║    Metasploit, Sliver, Brute Ratel)                              ║"
+    },
+    {
+      "term": "b0328 (paragraph)",
+      "definisjon": "║  • Port 4444 åpen (Metasploit standard)                          ║"
+    },
+    {
+      "term": "b0329 (paragraph)",
+      "definisjon": "║  • Port 50050 åpen (Cobalt Strike team server)                   ║"
+    },
+    {
+      "term": "b0330 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0331 (paragraph)",
+      "definisjon": "║  ATFERDSBASERTE INDIKATORER (via GreyNoise):                     ║"
+    },
+    {
+      "term": "b0332 (paragraph)",
+      "definisjon": "║  • IP scanner systematisk etter spesifikke CVE-er                ║"
+    },
+    {
+      "term": "b0333 (paragraph)",
+      "definisjon": "║  • IP involvert i spyd-phishing-kampanjer mot norske mål          ║"
+    },
+    {
+      "term": "b0334 (paragraph)",
+      "definisjon": "║  • IP dukker opp i Threat Intelligence-feeds (OTX, MISP)         ║"
+    },
+    {
+      "term": "b0335 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0336 (paragraph)",
+      "definisjon": "║  EKSEMPEL – KINESISK APT (Volt Typhoon, 2024-2026):              ║"
+    },
+    {
+      "term": "b0337 (paragraph)",
+      "definisjon": "║  Shodan-søk: ssl:\"Volt Typhoon\" OR port:8443 ssl.cert.subject.cn ║"
+    },
+    {
+      "term": "b0338 (paragraph)",
+      "definisjon": "║  GreyNoise: tags:\"china chopper\" OR tags:\"apt41\"                 ║"
+    },
+    {
+      "term": "b0339 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0340 (heading)",
+      "definisjon": "║  VERKTØY FOR APT-ATTRIBUSJON:                                    ║"
+    },
+    {
+      "term": "b0341 (text_with_urls)",
+      "definisjon": "║  • https://otx.alienvault.com (Open Threat Exchange)            ║"
+    },
+    {
+      "term": "b0342 (text_with_urls)",
+      "definisjon": "║  • https://misp-project.org (MISP Threat Intelligence)          ║"
+    },
+    {
+      "term": "b0343 (text_with_urls)",
+      "definisjon": "║  • https://attack.mitre.org (MITRE ATT&CK-rammeverk)            ║"
+    },
+    {
+      "term": "b0344 (text_with_urls)",
+      "definisjon": "║  • https://threatfox.abuse.ch (bekreftet C2-infrastruktur)      ║"
+    },
+    {
+      "term": "b0345 (ascii_box)",
+      "definisjon": "╚══════════════════════════════════════════════════════════════════╝"
+    },
+    {
+      "term": "b0346 (paragraph)",
+      "definisjon": "Eksempel: Identifisere utenlandsk hackerinfrastruktur"
+    },
+    {
+      "term": "b0347 (paragraph)",
+      "definisjon": "En norsk bedrift rapporterer at de har blitt angrepet. Loggen viser at angrepsserveren hadde IP 45.147.229.85."
+    },
+    {
+      "term": "b0348 (check_item)",
+      "definisjon": "□ Analyse steg for steg:"
+    },
+    {
+      "term": "b0349 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0350 (numbered)",
+      "definisjon": "1. ipinfo.io: AS214943, Russland, Moskva, ISP: Aeza International LTD"
+    },
+    {
+      "term": "b0351 (numbered)",
+      "definisjon": "2. VirusTotal: 34 av 87 flagget som \"Malicious\" / \"C2\""
+    },
+    {
+      "term": "b0352 (numbered)",
+      "definisjon": "3. GreyNoise: Klassifisert som \"Malicious\", tag \"cobalt-strike\""
+    },
+    {
+      "term": "b0353 (numbered)",
+      "definisjon": "4. Shodan: Port 50050 åpen (Cobalt Strike team server)"
+    },
+    {
+      "term": "b0354 (numbered)",
+      "definisjon": "5. OTX: 12 kjente IOC-rapporter kobler IP til GRU-relatert aktivitet"
+    },
+    {
+      "term": "b0355 (numbered)",
+      "definisjon": "6. Threatfox: Bekreftet C2 for Cobalt Strike beacon"
+    },
+    {
+      "term": "b0356 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0357 (heading)",
+      "definisjon": "Konklusjon:"
+    },
+    {
+      "term": "b0358 (paragraph)",
+      "definisjon": "IP 45.147.229.85 er med høy sannsynlighet et Command & Control-"
+    },
+    {
+      "term": "b0359 (paragraph)",
+      "definisjon": "punkt brukt av en russisk-tilknyttet trusselaktør."
+    },
+    {
+      "term": "b0360 (paragraph)",
+      "definisjon": "Eskalering: NSM (Nasjonal Sikkerhetsmyndighet) + Kripos N3C"
+    },
+    {
+      "term": "b0361 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0362 (heading)",
+      "definisjon": "DEL C: IP-LOGGING – SLIK AVDEKKES MISTENKTE (MED RETTSLIG HJEMMEL)"
+    },
+    {
+      "term": "b0363 (heading)",
+      "definisjon": "C.1 Prinsippet: Å lokke frem en IP-adresse"
+    },
+    {
+      "term": "b0364 (paragraph)",
+      "definisjon": "Analogi: Fotfelle med GPS"
+    },
+    {
+      "term": "b0365 (paragraph)",
+      "definisjon": "En jeger kan sette opp en fotfelle som tar bilde av alle dyr som passerer, uten å røre ved noen av dem. En etterforsker kan på tilsvarende måte sette opp en digital \"fotfelle\" – en ressurs som automatisk registrerer IP-adressen til enhver som åpner den."
+    },
+    {
+      "term": "b0366 (paragraph)",
+      "definisjon": "Teknikken kalles IP logging og er en metode som i norsk politiarbeid faller i et juridisk grenseland som krever grundig vurdering og i de fleste tilfeller påtalemyndighetens forhåndsklaring."
+    },
+    {
+      "term": "b0367 (heading)",
+      "definisjon": "Teknisk sett fungerer det slik:"
+    },
+    {
+      "term": "b0368 (ascii_box)",
+      "definisjon": "┌─────────────────────────────────────────────────────────────────┐"
+    },
+    {
+      "term": "b0369 (ascii_box)",
+      "definisjon": "│ TEKNISK PRINSIPP FOR IP-LOGGING                                 │"
+    },
+    {
+      "term": "b0370 (paragraph)",
+      "definisjon": "├─────────────────────────────────────────────────────────────────┤"
+    },
+    {
+      "term": "b0371 (ascii_box)",
+      "definisjon": "│                                                                 │"
+    },
+    {
+      "term": "b0372 (ascii_box)",
+      "definisjon": "│  1. Etterforskeren oppretter en ressurs (lenke/bilde/QR)        │"
+    },
+    {
+      "term": "b0373 (ascii_box)",
+      "definisjon": "│     på en server som loggfører alle besøkende                   │"
+    },
+    {
+      "term": "b0374 (ascii_box)",
+      "definisjon": "│                                                                 │"
+    },
+    {
+      "term": "b0375 (ascii_box)",
+      "definisjon": "│  2. Ressursen sendes til mistenkte (chat, e-post, SMS)          │"
+    },
+    {
+      "term": "b0376 (ascii_box)",
+      "definisjon": "│     eller legges ut på steder mistenkte sannsynligvis besøker   │"
+    },
+    {
+      "term": "b0377 (ascii_box)",
+      "definisjon": "│                                                                 │"
+    },
+    {
+      "term": "b0378 (ascii_box)",
+      "definisjon": "│  3. Når mistenkte åpner ressursen, gjøres automatisk:           │"
+    },
+    {
+      "term": "b0379 (ascii_box)",
+      "definisjon": "│     • IP-adresse logges                                         │"
+    },
+    {
+      "term": "b0380 (ascii_box)",
+      "definisjon": "│     • Tidspunkt logges (dato, klokkeslett, millisekund)         │"
+    },
+    {
+      "term": "b0381 (ascii_box)",
+      "definisjon": "│     • Brukeragent logges (nettleser, OS, enhetstype)            │"
+    },
+    {
+      "term": "b0382 (ascii_box)",
+      "definisjon": "│     • Eventuell geolokasjon logges                              │"
+    },
+    {
+      "term": "b0383 (ascii_box)",
+      "definisjon": "│                                                                 │"
+    },
+    {
+      "term": "b0384 (ascii_box)",
+      "definisjon": "│  4. Etterforskeren ser informasjonen umiddelbart i             │"
+    },
+    {
+      "term": "b0385 (ascii_box)",
+      "definisjon": "│     loggpanelet                                                 │"
+    },
+    {
+      "term": "b0386 (ascii_box)",
+      "definisjon": "│                                                                 │"
+    },
+    {
+      "term": "b0387 (ascii_box)",
+      "definisjon": "│  5. IP-adressen begjæres utlevert fra ISP                       │"
+    },
+    {
+      "term": "b0388 (ascii_box)",
+      "definisjon": "│     → Navn og adresse på abonnenten avdekkes                    │"
+    },
+    {
+      "term": "b0389 (ascii_box)",
+      "definisjon": "└─────────────────────────────────────────────────────────────────┘"
+    },
+    {
+      "term": "b0390 (heading)",
+      "definisjon": "C.2 Tekniske metoder for IP-logging"
+    },
+    {
+      "term": "b0391 (paragraph)",
+      "definisjon": "Metode A: URL-basert IP-logging (Canary Tokens / Grabify-prinsippet)"
+    },
+    {
+      "term": "b0392 (paragraph)",
+      "definisjon": "Tjenester som Canarytokens (canarytokens.org) lager sporbare lenker som logger IP."
+    },
+    {
+      "term": "b0393 (paragraph)",
+      "definisjon": "Mikrosteg: Opprette en Canary Token-lenke"
+    },
+    {
+      "term": "b0394 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0395 (check_item)",
+      "definisjon": "□ Steg 1: Gå til https://canarytokens.org/generate"
+    },
+    {
+      "term": "b0396 (check_item)",
+      "definisjon": "□ Steg 2: Velg type: \"Web bug / URL token\""
+    },
+    {
+      "term": "b0397 (check_item)",
+      "definisjon": "□ Steg 3: Skriv inn din e-postadresse for varsler"
+    },
+    {
+      "term": "b0398 (check_item)",
+      "definisjon": "□ Steg 4: Legg til en kommentar: \"Etterforskning sak [saksnr]\""
+    },
+    {
+      "term": "b0399 (check_item)",
+      "definisjon": "□ Steg 5: Klikk \"Generate Token\""
+    },
+    {
+      "term": "b0400 (check_item)",
+      "definisjon": "□ Steg 6: Du får to URL-er:"
+    },
+    {
+      "term": "b0401 (bullets)",
+      "definisjon": "  • Token URL:   https://canarytokens.com/abc123"
+    },
+    {
+      "term": "b0402 (paragraph)",
+      "definisjon": "    (denne sendes til mistenkte)"
+    },
+    {
+      "term": "b0403 (bullets)",
+      "definisjon": "  • Manage URL:  https://canarytokens.com/manage?token=abc123"
+    },
+    {
+      "term": "b0404 (paragraph)",
+      "definisjon": "    (denne beholder etterforskeren)"
+    },
+    {
+      "term": "b0405 (check_item)",
+      "definisjon": "□ Steg 7: Når mistenkte klikker Token URL, mottar etterforskeren"
+    },
+    {
+      "term": "b0406 (heading)",
+      "definisjon": "  e-postvarsel med:"
+    },
+    {
+      "term": "b0407 (bullets)",
+      "definisjon": "  • IP-adresse"
+    },
+    {
+      "term": "b0408 (bullets)",
+      "definisjon": "  • Tidspunkt"
+    },
+    {
+      "term": "b0409 (bullets)",
+      "definisjon": "  • Nettleser og OS"
+    },
+    {
+      "term": "b0410 (bullets)",
+      "definisjon": "  • Referrer (hvilken side de klikket fra)"
+    },
+    {
+      "term": "b0411 (paragraph)",
+      "definisjon": "Alternativ: Tracking Pixel i e-post"
+    },
+    {
+      "term": "b0412 (paragraph)",
+      "definisjon": "Et tracking pixel er et 1×1 transparent bilde innebygd i en e-post eller nettside. Når e-postklienten laster inn bildet, gjøres en HTTP-forespørsel til avsenderens server, som avslører mottakerens IP-adresse, tidspunktet e-posten ble åpnet, og ofte omtrentlig plassering."
+    },
+    {
+      "term": "b0413 (code)",
+      "definisjon": "# Eksempel: Tracking pixel embedded i e-post (HTML-format)"
+    },
+    {
+      "term": "b0414 (text_with_urls)",
+      "definisjon": "<img src=\"https://canarytokens.com/tracking.png?token=abc123\" "
+    },
+    {
+      "term": "b0415 (paragraph)",
+      "definisjon": "     width=\"1\" height=\"1\" style=\"display:none\">"
+    },
+    {
+      "term": "b0416 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0417 (code)",
+      "definisjon": "# Når mottaker åpner e-posten (og bilder er aktivert),"
+    },
+    {
+      "term": "b0418 (code)",
+      "definisjon": "# vil serveren logge mottakerens IP"
+    },
+    {
+      "term": "b0419 (paragraph)",
+      "definisjon": "Metode B: QR-kode med IP-logging"
+    },
+    {
+      "term": "b0420 (paragraph)",
+      "definisjon": "En QR-kode kan kodes til å peke på en sporbar lenke. Når mistenkte skanner QR-koden med telefonen sin, registreres IP-adressen."
+    },
+    {
+      "term": "b0421 (paragraph)",
+      "definisjon": "Mikrosteg: Opprette sporbar QR-kode"
+    },
+    {
+      "term": "b0422 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0423 (check_item)",
+      "definisjon": "□ Steg 1: Opprett en sporbar lenke via Canarytokens (se over)"
+    },
+    {
+      "term": "b0424 (check_item)",
+      "definisjon": "□ Steg 2: Gå til https://www.qr-code-generator.com"
+    },
+    {
+      "term": "b0425 (check_item)",
+      "definisjon": "□ Steg 3: Lim inn din Canary Token-URL"
+    },
+    {
+      "term": "b0426 (check_item)",
+      "definisjon": "□ Steg 4: Generer QR-kode"
+    },
+    {
+      "term": "b0427 (check_item)",
+      "definisjon": "□ Steg 5: QR-koden kan nå:"
+    },
+    {
+      "term": "b0428 (bullets)",
+      "definisjon": "  • Sendes som bilde i en melding"
+    },
+    {
+      "term": "b0429 (bullets)",
+      "definisjon": "  • Skrives ut og legges på et sted mistenkte har tilgang til"
+    },
+    {
+      "term": "b0430 (bullets)",
+      "definisjon": "  • Inkluderes i et dokument"
+    },
+    {
+      "term": "b0431 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0432 (heading)",
+      "definisjon": "Hva logges:"
+    },
+    {
+      "term": "b0433 (bullets)",
+      "definisjon": "  • IP-adresse til telefon/enhet som skannet koden"
+    },
+    {
+      "term": "b0434 (bullets)",
+      "definisjon": "  • Enhetstype (iPhone/Android, modell)"
+    },
+    {
+      "term": "b0435 (bullets)",
+      "definisjon": "  • Geografisk lokasjon (dersom tilgjengelig)"
+    },
+    {
+      "term": "b0436 (bullets)",
+      "definisjon": "  • Nøyaktig tidspunkt"
+    },
+    {
+      "term": "b0437 (paragraph)",
+      "definisjon": "Metode C: Canary Token i dokument (Word, PDF)"
+    },
+    {
+      "term": "b0438 (paragraph)",
+      "definisjon": "Canarytokens kan innbygges i dokumenter som automatisk \"ringer hjem\" når de åpnes."
+    },
+    {
+      "term": "b0439 (check_item)",
+      "definisjon": "□ Steg 1: Gå til https://canarytokens.org/generate"
+    },
+    {
+      "term": "b0440 (check_item)",
+      "definisjon": "□ Steg 2: Velg type: \"Microsoft Word Document\" eller \"PDF Document\""
+    },
+    {
+      "term": "b0441 (check_item)",
+      "definisjon": "□ Steg 3: Generer token-dokumentet"
+    },
+    {
+      "term": "b0442 (check_item)",
+      "definisjon": "□ Steg 4: Send dokumentet til mistenkte (som vedlegg, via chat)"
+    },
+    {
+      "term": "b0443 (check_item)",
+      "definisjon": "□ Steg 5: Når mistenkte åpner dokumentet, loggfører tokenet:"
+    },
+    {
+      "term": "b0444 (bullets)",
+      "definisjon": "  • IP-adresse"
+    },
+    {
+      "term": "b0445 (bullets)",
+      "definisjon": "  • Nøyaktig tidspunkt"
+    },
+    {
+      "term": "b0446 (bullets)",
+      "definisjon": "  • Microsoft Office-versjon / operativsystem"
+    },
+    {
+      "term": "b0447 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0448 (heading)",
+      "definisjon": "Eksempel på scenario:"
+    },
+    {
+      "term": "b0449 (paragraph)",
+      "definisjon": "  Politiet sender en \"faktura.docx\" til mistenkte."
+    },
+    {
+      "term": "b0450 (paragraph)",
+      "definisjon": "  Dokumentet åpnes av mistenkte kl. 22:47."
+    },
+    {
+      "term": "b0451 (paragraph)",
+      "definisjon": "  Logger viser IP 82.134.12.45 (Telenor, Lørenskog)."
+    },
+    {
+      "term": "b0452 (paragraph)",
+      "definisjon": "  Begjæring sendes til Telenor → Kurt Mikkelsen identifisert."
+    },
+    {
+      "term": "b0453 (heading)",
+      "definisjon": "C.3 KRITISK JURIDISK STOPP-BOKS – IP-LOGGING"
+    },
+    {
+      "term": "b0454 (ascii_box)",
+      "definisjon": "╔═══════════════════════════════════════════════════════════════════╗"
+    },
+    {
+      "term": "b0455 (heading)",
+      "definisjon": "║  🛑 JURIDISK GRENSEOPPGANG – IP-LOGGING                           ║"
+    },
+    {
+      "term": "b0456 (paragraph)",
+      "definisjon": "╠═══════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0457 (paragraph)",
+      "definisjon": "║                                                                   ║"
+    },
+    {
+      "term": "b0458 (paragraph)",
+      "definisjon": "║ ✅ LOVLIG PASSIV METODE (observasjon av nettstedet):               ║"
+    },
+    {
+      "term": "b0459 (paragraph)",
+      "definisjon": "║   • IP-logging PÅ ETTERFORSKNINGENS EGNE RESSURSER               ║"
+    },
+    {
+      "term": "b0460 (paragraph)",
+      "definisjon": "║     (nettsider, filer politiet selv kontrollerer)                  ║"
+    },
+    {
+      "term": "b0461 (paragraph)",
+      "definisjon": "║   • Logge IP til alle som frivillig besøker offentlige ressurser  ║"
+    },
+    {
+      "term": "b0462 (paragraph)",
+      "definisjon": "║   • Analysere loggfiler allerede innhentet via rettslig kjennelse ║"
+    },
+    {
+      "term": "b0463 (paragraph)",
+      "definisjon": "║                                                                   ║"
+    },
+    {
+      "term": "b0464 (heading)",
+      "definisjon": "║ ⚠️ JURIDISK GRÅSONE – KREVER JURISTVURDERING:                     ║"
+    },
+    {
+      "term": "b0465 (paragraph)",
+      "definisjon": "║   • Sende lenke til mistenkte som logger IP                       ║"
+    },
+    {
+      "term": "b0466 (paragraph)",
+      "definisjon": "║     (kan ansees som aktiv interaksjon / provokasjon)              ║"
+    },
+    {
+      "term": "b0467 (paragraph)",
+      "definisjon": "║   • Legge ut sporbar QR-kode på sted mistenkte er kjent å besøke ║"
+    },
+    {
+      "term": "b0468 (paragraph)",
+      "definisjon": "║   • Tracking pixel i e-post til mistenkte                        ║"
+    },
+    {
+      "term": "b0469 (paragraph)",
+      "definisjon": "║                                                                   ║"
+    },
+    {
+      "term": "b0470 (paragraph)",
+      "definisjon": "║ ❌ KREVER RETTSLIG KJENNELSE (strpl. § 202a/§ 216b):               ║"
+    },
+    {
+      "term": "b0471 (paragraph)",
+      "definisjon": "║   • Systematisk overvåkning av mistenktes internettaktivitet      ║"
+    },
+    {
+      "term": "b0472 (paragraph)",
+      "definisjon": "║   • Innhenting av kommunikasjonsdata fra tjenesteleverandør       ║"
+    },
+    {
+      "term": "b0473 (paragraph)",
+      "definisjon": "║   • Utplassering av teknisk utstyr for datainnhenting             ║"
+    },
+    {
+      "term": "b0474 (paragraph)",
+      "definisjon": "║                                                                   ║"
+    },
+    {
+      "term": "b0475 (heading)",
+      "definisjon": "║ ⛔ ALLTID FORBUDT:                                                 ║"
+    },
+    {
+      "term": "b0476 (paragraph)",
+      "definisjon": "║   • Bruke IP-logging som skjult tvangsmiddel uten hjemmel         ║"
+    },
+    {
+      "term": "b0477 (paragraph)",
+      "definisjon": "║   • Sende tracking-lenke forkledd som noe annet (provokasjon)     ║"
+    },
+    {
+      "term": "b0478 (paragraph)",
+      "definisjon": "║   • Bruke IP-informasjon til å angripe/skade mistenkte            ║"
+    },
+    {
+      "term": "b0479 (paragraph)",
+      "definisjon": "║                                                                   ║"
+    },
+    {
+      "term": "b0480 (paragraph)",
+      "definisjon": "║ SPESIELT VED MINDREÅRIGE (Kurt Mikkelsen, 13 år):                 ║"
+    },
+    {
+      "term": "b0481 (paragraph)",
+      "definisjon": "║   • ALL aktiv IP-innhenting mot mindreårig krever minst           ║"
+    },
+    {
+      "term": "b0482 (paragraph)",
+      "definisjon": "║     påtalemyndighetens forhåndsgodkjenning                       ║"
+    },
+    {
+      "term": "b0483 (paragraph)",
+      "definisjon": "║   • Kontakt jurist FØR du sender noen form for sporbar lenke      ║"
+    },
+    {
+      "term": "b0484 (paragraph)",
+      "definisjon": "║                                                                   ║"
+    },
+    {
+      "term": "b0485 (heading)",
+      "definisjon": "║ 📞 ER DU I TVIL? KONTAKT JURIST FØR HANDLING.                     ║"
+    },
+    {
+      "term": "b0486 (ascii_box)",
+      "definisjon": "╚═══════════════════════════════════════════════════════════════════╝"
+    },
+    {
+      "term": "b0487 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0488 (heading)",
+      "definisjon": "DEL D: RETTSLIG UTLEVERING – FRA IP TIL IDENTITET"
+    },
+    {
+      "term": "b0489 (heading)",
+      "definisjon": "D.1 Den rettslige kjeden: IP → ISP → Abonnent → Person"
+    },
+    {
+      "term": "b0490 (paragraph)",
+      "definisjon": "Analogi: Registrering av et kjøretøy"
+    },
+    {
+      "term": "b0491 (paragraph)",
+      "definisjon": "En IP-adresse er som et registreringsskilt. Du kan se det passere, du kan notere det ned, men du vet ikke hvem eieren er uten å slå det opp i Statens vegvesen (Motorvognregisteret). For IP-adresser er \"Motorvognregisteret\" ISP-en – og norsk lov krever en rettslig kjennelse for å få utlevert abonnentinformasjon."
+    },
+    {
+      "term": "b0492 (heading)",
+      "definisjon": "Kjeden i praksis:"
+    },
+    {
+      "term": "b0493 (ascii_box)",
+      "definisjon": "╔═════════════════════════════════════════════════════════════════╗"
+    },
+    {
+      "term": "b0494 (paragraph)",
+      "definisjon": "║  STEG 1: Identifiser IP-adresse (OSINT eller logganalyse)       ║"
+    },
+    {
+      "term": "b0495 (paragraph)",
+      "definisjon": "║  → Eks: 82.134.12.45 (Telenor Norge)                            ║"
+    },
+    {
+      "term": "b0496 (paragraph)",
+      "definisjon": "╠═════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0497 (paragraph)",
+      "definisjon": "║  STEG 2: Dokumenter tidspunkt (dato + klokkeslett + tidssone)   ║"
+    },
+    {
+      "term": "b0498 (paragraph)",
+      "definisjon": "║  → Eks: 13.02.2026 kl. 23:47:22 UTC+1 (CET)                    ║"
+    },
+    {
+      "term": "b0499 (paragraph)",
+      "definisjon": "╠═════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0500 (paragraph)",
+      "definisjon": "║  STEG 3: Påtalemyndigheten vurderer og godkjenner begjæringen   ║"
+    },
+    {
+      "term": "b0501 (paragraph)",
+      "definisjon": "║  → Strpl. § 210 (utleveringspålegg til tjenesteleverandør)      ║"
+    },
+    {
+      "term": "b0502 (paragraph)",
+      "definisjon": "╠═════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0503 (paragraph)",
+      "definisjon": "║  STEG 4: Retten avsi kjennelse (ved behov – se tabell under)    ║"
+    },
+    {
+      "term": "b0504 (paragraph)",
+      "definisjon": "║  → Tingretten i den krets der begjæringen fremsettes            ║"
+    },
+    {
+      "term": "b0505 (paragraph)",
+      "definisjon": "╠═════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0506 (paragraph)",
+      "definisjon": "║  STEG 5: Begjæring sendes til ISP / tjenesteleverandør          ║"
+    },
+    {
+      "term": "b0507 (paragraph)",
+      "definisjon": "║  → Telenor: rettshjelp@telenor.com                              ║"
+    },
+    {
+      "term": "b0508 (paragraph)",
+      "definisjon": "║  → Telia: legal.norway@telia.com                                ║"
+    },
+    {
+      "term": "b0509 (paragraph)",
+      "definisjon": "║  → Altibox: datajuridisk avdeling                               ║"
+    },
+    {
+      "term": "b0510 (paragraph)",
+      "definisjon": "╠═════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0511 (paragraph)",
+      "definisjon": "║  STEG 6: ISP utleverer abonnentinformasjon                      ║"
+    },
+    {
+      "term": "b0512 (paragraph)",
+      "definisjon": "║  → Navn, adresse, telefonnummer til abonnenten                  ║"
+    },
+    {
+      "term": "b0513 (paragraph)",
+      "definisjon": "║  → Perioden IP-adressen var tildelt abonnenten                  ║"
+    },
+    {
+      "term": "b0514 (paragraph)",
+      "definisjon": "╠═════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0515 (paragraph)",
+      "definisjon": "║  STEG 7: Krysskontroll mot Folkeregisteret                      ║"
+    },
+    {
+      "term": "b0516 (paragraph)",
+      "definisjon": "║  → Bekreft at navn/adresse matcher registrerte data             ║"
+    },
+    {
+      "term": "b0517 (ascii_box)",
+      "definisjon": "╚═════════════════════════════════════════════════════════════════╝"
+    },
+    {
+      "term": "b0518 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0519 (heading)",
+      "definisjon": "D.2 Juridisk hjemmelsgrunnlag – Norsk rett"
+    },
+    {
+      "term": "b0520 (ascii_box)",
+      "definisjon": "╔══════════════════════════════════════════════════════════════════╗"
+    },
+    {
+      "term": "b0521 (heading)",
+      "definisjon": "║  JURIDISK HJEMMELSOVERSIKT – IP-UTLEVERING                       ║"
+    },
+    {
+      "term": "b0522 (paragraph)",
+      "definisjon": "╠══════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0523 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0524 (heading)",
+      "definisjon": "║  STRAFFEPROSESSLOVEN § 210 (UTLEVERINGSPÅLEGG):                  ║"
+    },
+    {
+      "term": "b0525 (paragraph)",
+      "definisjon": "║  \"Retten kan pålegge enhver å utlevere gjenstander               ║"
+    },
+    {
+      "term": "b0526 (paragraph)",
+      "definisjon": "║   som antas å ha betydning som bevis...\"                         ║"
+    },
+    {
+      "term": "b0527 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0528 (paragraph)",
+      "definisjon": "║  Brukes for:                                                     ║"
+    },
+    {
+      "term": "b0529 (paragraph)",
+      "definisjon": "║  → ISP-abonnentdata (hvem hadde IP X på tidspunkt Y)             ║"
+    },
+    {
+      "term": "b0530 (paragraph)",
+      "definisjon": "║  → Nettsiders/plattformers brukerdata                            ║"
+    },
+    {
+      "term": "b0531 (paragraph)",
+      "definisjon": "║  → Loggfiler fra tjenesteleverandører                            ║"
+    },
+    {
+      "term": "b0532 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0533 (paragraph)",
+      "definisjon": "║  Beslutningsnivå:                                                ║"
+    },
+    {
+      "term": "b0534 (paragraph)",
+      "definisjon": "║  → Påtale (statsadvokat eller politiadvokat m/delegasjon)        ║"
+    },
+    {
+      "term": "b0535 (paragraph)",
+      "definisjon": "║     kan begjære etter ekomlovens §§ 2-7 og 2-8                   ║"
+    },
+    {
+      "term": "b0536 (paragraph)",
+      "definisjon": "║  → Retten avsier kjennelse etter begjæring                       ║"
+    },
+    {
+      "term": "b0537 (paragraph)",
+      "definisjon": "╠══════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0538 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0539 (heading)",
+      "definisjon": "║  EKOMLOVEN §§ 2-7 OG 2-8 (TAUSHETSPLIKTSUNNTAK):                 ║"
+    },
+    {
+      "term": "b0540 (paragraph)",
+      "definisjon": "║  Nettilbydere er underlagt taushetsplikt om abonnentdata.         ║"
+    },
+    {
+      "term": "b0541 (paragraph)",
+      "definisjon": "║  Unntak: Utlevering til politiet med rettslig grunnlag.           ║"
+    },
+    {
+      "term": "b0542 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0543 (paragraph)",
+      "definisjon": "║  Krever:                                                         ║"
+    },
+    {
+      "term": "b0544 (paragraph)",
+      "definisjon": "║  → Etterforskning for lovbrudd med minst 6 måneder stengsel      ║"
+    },
+    {
+      "term": "b0545 (paragraph)",
+      "definisjon": "║  → Skriftlig begjæring fra kompetent påtalemyndighet             ║"
+    },
+    {
+      "term": "b0546 (paragraph)",
+      "definisjon": "║  → Beviskrav: grunn til å anta at informasjon er relevant         ║"
+    },
+    {
+      "term": "b0547 (paragraph)",
+      "definisjon": "╠══════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0548 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0549 (paragraph)",
+      "definisjon": "║  STRAFFEPROSESSLOVEN § 216b (KOMMUNIKASJONSDATA):                 ║"
+    },
+    {
+      "term": "b0550 (paragraph)",
+      "definisjon": "║  For utlevering av kommunikasjonsdata (metadata om hvem som       ║"
+    },
+    {
+      "term": "b0551 (paragraph)",
+      "definisjon": "║  kommuniserte med hvem, tidspunkt, varighet – ikke innhold)       ║"
+    },
+    {
+      "term": "b0552 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0553 (paragraph)",
+      "definisjon": "║  Krever:                                                         ║"
+    },
+    {
+      "term": "b0554 (paragraph)",
+      "definisjon": "║  → Rettskjennelse                                                ║"
+    },
+    {
+      "term": "b0555 (paragraph)",
+      "definisjon": "║  → Mistanke om lovbrudd med stengsel som strafferamme            ║"
+    },
+    {
+      "term": "b0556 (paragraph)",
+      "definisjon": "║  → Spesifisert tidsperiode og telefonnummer / enhet              ║"
+    },
+    {
+      "term": "b0557 (paragraph)",
+      "definisjon": "╠══════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0558 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0559 (paragraph)",
+      "definisjon": "║  STRAFFEPROSESSLOVEN § 216a (KOMMUNIKASJONSAVLYTTING):            ║"
+    },
+    {
+      "term": "b0560 (paragraph)",
+      "definisjon": "║  Innholdsavlytting av internetttrafikk                            ║"
+    },
+    {
+      "term": "b0561 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0562 (paragraph)",
+      "definisjon": "║  Krever:                                                         ║"
+    },
+    {
+      "term": "b0563 (paragraph)",
+      "definisjon": "║  → Rettskjennelse (ikke bare påtalebeslutning)                   ║"
+    },
+    {
+      "term": "b0564 (paragraph)",
+      "definisjon": "║  → Mistanke om alvorlig lovbrudd (minst 10 års stengsel)         ║"
+    },
+    {
+      "term": "b0565 (paragraph)",
+      "definisjon": "║  → Utvidet bruk: Terrorisme, organisert kriminalitet             ║"
+    },
+    {
+      "term": "b0566 (paragraph)",
+      "definisjon": "╠══════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0567 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0568 (heading)",
+      "definisjon": "║  DATA RETENTION (LAGRINGSTID HOS ISP / PLATTFORM):               ║"
+    },
+    {
+      "term": "b0569 (paragraph)",
+      "definisjon": "║  ISP (norske): Logger IP-tildelinger i 6 måneder (ekomloven)     ║"
+    },
+    {
+      "term": "b0570 (paragraph)",
+      "definisjon": "║  Snapchat: Login-IP begrenset tid (se Law Enforcement guide)      ║"
+    },
+    {
+      "term": "b0571 (paragraph)",
+      "definisjon": "║  Instagram/Meta: 90 dager standard (kan forlenges ved anmodning) ║"
+    },
+    {
+      "term": "b0572 (paragraph)",
+      "definisjon": "║  Google: 90 dager (med preserveringsanmodning)                   ║"
+    },
+    {
+      "term": "b0573 (paragraph)",
+      "definisjon": "║  Telegram: Ikke i praksis tilgjengelig uten ekstraordinære tiltak║"
+    },
+    {
+      "term": "b0574 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0575 (paragraph)",
+      "definisjon": "║  VIKTIG: Begjær BEVISSIKRING (preservasjon) FØR loggene slettes! ║"
+    },
+    {
+      "term": "b0576 (ascii_box)",
+      "definisjon": "╚══════════════════════════════════════════════════════════════════╝"
+    },
+    {
+      "term": "b0577 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0578 (heading)",
+      "definisjon": "D.3 Begjæringsmalen – Slik ber du ISP om utlevering"
+    },
+    {
+      "term": "b0579 (ascii_box)",
+      "definisjon": "╔═══════════════════════════════════════════════════════════════════╗"
+    },
+    {
+      "term": "b0580 (heading)",
+      "definisjon": "║  EKSEMPEL: BEGJÆRING OM UTLEVERING TIL ISP                        ║"
+    },
+    {
+      "term": "b0581 (paragraph)",
+      "definisjon": "╠═══════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0582 (paragraph)",
+      "definisjon": "║                                                                   ║"
+    },
+    {
+      "term": "b0583 (paragraph)",
+      "definisjon": "║  Fra:    [Politidistrikt / Enhet]                                 ║"
+    },
+    {
+      "term": "b0584 (paragraph)",
+      "definisjon": "║  Til:    Telenor ASA, Rettsavdelingen                             ║"
+    },
+    {
+      "term": "b0585 (paragraph)",
+      "definisjon": "║  Dato:   15.02.2026                                               ║"
+    },
+    {
+      "term": "b0586 (paragraph)",
+      "definisjon": "║  Saksnr: [Sak-ID]                                                 ║"
+    },
+    {
+      "term": "b0587 (paragraph)",
+      "definisjon": "║                                                                   ║"
+    },
+    {
+      "term": "b0588 (heading)",
+      "definisjon": "║  BEGJÆRING OM UTLEVERING AV ABONNENTOPPLYSNINGER                  ║"
+    },
+    {
+      "term": "b0589 (paragraph)",
+      "definisjon": "║                                                                   ║"
+    },
+    {
+      "term": "b0590 (paragraph)",
+      "definisjon": "║  Det bes om utlevering av abonnentopplysninger tilknyttet         ║"
+    },
+    {
+      "term": "b0591 (paragraph)",
+      "definisjon": "║  følgende IP-adresse(r) og tidsangivelser:                        ║"
+    },
+    {
+      "term": "b0592 (paragraph)",
+      "definisjon": "║                                                                   ║"
+    },
+    {
+      "term": "b0593 (paragraph)",
+      "definisjon": "║  IP-adresse:  82.134.12.45                                        ║"
+    },
+    {
+      "term": "b0594 (paragraph)",
+      "definisjon": "║  Tidspunkt:   13.02.2026 kl. 23:47:22 (UTC+1)                    ║"
+    },
+    {
+      "term": "b0595 (paragraph)",
+      "definisjon": "║  Protokoll:   TCP                                                 ║"
+    },
+    {
+      "term": "b0596 (paragraph)",
+      "definisjon": "║               (Inkluder IPv6 dersom aktuelt)                      ║"
+    },
+    {
+      "term": "b0597 (paragraph)",
+      "definisjon": "║                                                                   ║"
+    },
+    {
+      "term": "b0598 (paragraph)",
+      "definisjon": "║  Ønskede opplysninger:                                            ║"
+    },
+    {
+      "term": "b0599 (paragraph)",
+      "definisjon": "║  □ Navn på abonnent                                               ║"
+    },
+    {
+      "term": "b0600 (paragraph)",
+      "definisjon": "║  □ Adresse til abonnent                                           ║"
+    },
+    {
+      "term": "b0601 (paragraph)",
+      "definisjon": "║  □ Periode IP-adresse var tildelt abonnenten                      ║"
+    },
+    {
+      "term": "b0602 (paragraph)",
+      "definisjon": "║  □ Telefonnummer / e-post tilknyttet abonnementet                 ║"
+    },
+    {
+      "term": "b0603 (paragraph)",
+      "definisjon": "║                                                                   ║"
+    },
+    {
+      "term": "b0604 (paragraph)",
+      "definisjon": "║  Hjemmel: Strpl. § 210, jf. Ekomloven § 2-7 og § 2-8             ║"
+    },
+    {
+      "term": "b0605 (paragraph)",
+      "definisjon": "║                                                                   ║"
+    },
+    {
+      "term": "b0606 (paragraph)",
+      "definisjon": "║  Påtalemyndighetens beslutning / rettens kjennelse:               ║"
+    },
+    {
+      "term": "b0607 (paragraph)",
+      "definisjon": "║  [Vedlegg: Kjennelse fra [Tingrett] datert [dato]]                ║"
+    },
+    {
+      "term": "b0608 (paragraph)",
+      "definisjon": "║                                                                   ║"
+    },
+    {
+      "term": "b0609 (paragraph)",
+      "definisjon": "║  Svar bes innen 48 timer. Ved hastehenvendelse: [telefon]         ║"
+    },
+    {
+      "term": "b0610 (paragraph)",
+      "definisjon": "║                                                                   ║"
+    },
+    {
+      "term": "b0611 (paragraph)",
+      "definisjon": "║  [Underskrift, tjenestested, tjenesteperson]                      ║"
+    },
+    {
+      "term": "b0612 (ascii_box)",
+      "definisjon": "╚═══════════════════════════════════════════════════════════════════╝"
+    },
+    {
+      "term": "b0613 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0614 (heading)",
+      "definisjon": "D.4 Utlevering fra utenlandske plattformer – MLAT og direktekontakt"
+    },
+    {
+      "term": "b0615 (paragraph)",
+      "definisjon": "Norske etterforskere opererer stadig oftere i situasjoner der IP-data er lagret hos utenlandske tjenesteleverandører (Meta/Facebook, Google, Apple, Snapchat, Discord, Telegram)."
+    },
+    {
+      "term": "b0616 (ascii_box)",
+      "definisjon": "╔══════════════════════════════════════════════════════════════════╗"
+    },
+    {
+      "term": "b0617 (heading)",
+      "definisjon": "║  UTENLANDSK UTLEVERING – PROSESSVEIER                             ║"
+    },
+    {
+      "term": "b0618 (paragraph)",
+      "definisjon": "╠════════════════╦═════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0619 (heading)",
+      "definisjon": "║  TJENESTE      ║  PROSESS                                        ║"
+    },
+    {
+      "term": "b0620 (paragraph)",
+      "definisjon": "╠════════════════╬═════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0621 (text_with_urls)",
+      "definisjon": "║ Meta (Insta/FB)║ Meta LEP: https://www.facebook.com/records      ║"
+    },
+    {
+      "term": "b0622 (paragraph)",
+      "definisjon": "║                ║ Krever: Subpoena (USA) eller kjennelse (EU)     ║"
+    },
+    {
+      "term": "b0623 (paragraph)",
+      "definisjon": "║                ║ Responstid: 14-90 dager                         ║"
+    },
+    {
+      "term": "b0624 (paragraph)",
+      "definisjon": "╠════════════════╬═════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0625 (paragraph)",
+      "definisjon": "║ Snapchat       ║ Snap Law Enforcement Guide                      ║"
+    },
+    {
+      "term": "b0626 (paragraph)",
+      "definisjon": "║                ║ E-post: lawenforcement@snap.com                 ║"
+    },
+    {
+      "term": "b0627 (paragraph)",
+      "definisjon": "║                ║ Krever: Rettslig kjennelse eller norsk subpoena ║"
+    },
+    {
+      "term": "b0628 (paragraph)",
+      "definisjon": "╠════════════════╬═════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0629 (text_with_urls)",
+      "definisjon": "║ Google/YouTube ║ Google LEP: https://support.google.com/legalhelp║"
+    },
+    {
+      "term": "b0630 (paragraph)",
+      "definisjon": "║                ║ Leverer login-IP med rettskjennelse             ║"
+    },
+    {
+      "term": "b0631 (paragraph)",
+      "definisjon": "╠════════════════╬═════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0632 (text_with_urls)",
+      "definisjon": "║ Apple          ║ Apple LEP: https://www.apple.com/legal/privacy/ ║"
+    },
+    {
+      "term": "b0633 (paragraph)",
+      "definisjon": "║                ║ Svarer på rettskjennelser                        ║"
+    },
+    {
+      "term": "b0634 (paragraph)",
+      "definisjon": "╠════════════════╬═════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0635 (text_with_urls)",
+      "definisjon": "║ Discord        ║ Discord LEP: https://discord.com/safety         ║"
+    },
+    {
+      "term": "b0636 (paragraph)",
+      "definisjon": "║                ║ Krever MLAT eller US subpoena for fullstendig   ║"
+    },
+    {
+      "term": "b0637 (paragraph)",
+      "definisjon": "║                ║ IP-utlevering                                    ║"
+    },
+    {
+      "term": "b0638 (paragraph)",
+      "definisjon": "╠════════════════╬═════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0639 (paragraph)",
+      "definisjon": "║ Telegram       ║ Krever kjennelse + MLAT-prosess                 ║"
+    },
+    {
+      "term": "b0640 (paragraph)",
+      "definisjon": "║                ║ Nytteverdi: Svært begrenset i praksis            ║"
+    },
+    {
+      "term": "b0641 (paragraph)",
+      "definisjon": "╠════════════════╬═════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0642 (paragraph)",
+      "definisjon": "║ MLAT-prosessen ║ Mutual Legal Assistance Treaty                  ║"
+    },
+    {
+      "term": "b0643 (paragraph)",
+      "definisjon": "║                ║ Via: Justisdepartementet (SIAN-systemet)         ║"
+    },
+    {
+      "term": "b0644 (paragraph)",
+      "definisjon": "║                ║ Responstid: 3-18 måneder                        ║"
+    },
+    {
+      "term": "b0645 (paragraph)",
+      "definisjon": "║                ║ Brukes for: USA-baserte selskaper i alvorlige   ║"
+    },
+    {
+      "term": "b0646 (paragraph)",
+      "definisjon": "║                ║ saker (vold, terror, CSAM)                      ║"
+    },
+    {
+      "term": "b0647 (ascii_box)",
+      "definisjon": "╚════════════════╩═════════════════════════════════════════════════╝"
+    },
+    {
+      "term": "b0648 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0649 (heading)",
+      "definisjon": "D.5 Preserveringsanmodning – Kritisk første steg"
+    },
+    {
+      "term": "b0650 (paragraph)",
+      "definisjon": "Før begjæring om utlevering kan sendes, er det avgjørende å sikre at loggene ikke slettes. Plattformer sletter logger automatisk etter sin oppbevaringsperiode (90 dager er vanlig)."
+    },
+    {
+      "term": "b0651 (ascii_box)",
+      "definisjon": "╔══════════════════════════════════════════════════════════════════╗"
+    },
+    {
+      "term": "b0652 (heading)",
+      "definisjon": "║  PRESERVERINGSANMODNING (PRESERVATION REQUEST)                   ║"
+    },
+    {
+      "term": "b0653 (paragraph)",
+      "definisjon": "╠══════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0654 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0655 (heading)",
+      "definisjon": "║  SEND UMIDDELBART NÅR:                                           ║"
+    },
+    {
+      "term": "b0656 (paragraph)",
+      "definisjon": "║  • En IP-adresse er identifisert i en pågående etterforskning    ║"
+    },
+    {
+      "term": "b0657 (paragraph)",
+      "definisjon": "║  • En sosiale medier-konto er identifisert som mistenkt          ║"
+    },
+    {
+      "term": "b0658 (paragraph)",
+      "definisjon": "║  • Du vet at rettslig begjæring vil ta tid (mer enn 30 dager)    ║"
+    },
+    {
+      "term": "b0659 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0660 (heading)",
+      "definisjon": "║  INNHOLD I PRESERVERINGSANMODNING:                               ║"
+    },
+    {
+      "term": "b0661 (paragraph)",
+      "definisjon": "║  → Konto / IP-adresse som skal bevares                           ║"
+    },
+    {
+      "term": "b0662 (paragraph)",
+      "definisjon": "║  → Tidsperiode for bevaring (typisk: 90 dager + 90 dagers ext.)  ║"
+    },
+    {
+      "term": "b0663 (paragraph)",
+      "definisjon": "║  → Saksnummer og kontaktinformasjon                              ║"
+    },
+    {
+      "term": "b0664 (paragraph)",
+      "definisjon": "║  → Forventet rettslig begjæring innen angitt dato                ║"
+    },
+    {
+      "term": "b0665 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0666 (heading)",
+      "definisjon": "║  PLATTFORMER SOM AKSEPTERER PRESERVERING:                        ║"
+    },
+    {
+      "term": "b0667 (text_with_urls)",
+      "definisjon": "║  Meta: https://www.facebook.com/records (immediate preserve)     ║"
+    },
+    {
+      "term": "b0668 (text_with_urls)",
+      "definisjon": "║  Google: https://support.google.com/legalhelp (72t svar)        ║"
+    },
+    {
+      "term": "b0669 (paragraph)",
+      "definisjon": "║  Snap: lawenforcement@snap.com                                   ║"
+    },
+    {
+      "term": "b0670 (text_with_urls)",
+      "definisjon": "║  Apple: https://www.apple.com/legal/privacy/law-enforcement/    ║"
+    },
+    {
+      "term": "b0671 (ascii_box)",
+      "definisjon": "╚══════════════════════════════════════════════════════════════════╝"
+    },
+    {
+      "term": "b0672 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0673 (heading)",
+      "definisjon": "DEL E: IP-LEKKASJER OG EKSPLOITS"
+    },
+    {
+      "term": "b0674 (heading)",
+      "definisjon": "E.1 Kjente IP-eksponeringsmetoder"
+    },
+    {
+      "term": "b0675 (paragraph)",
+      "definisjon": "Et sentralt prinsipp i OSINT-arbeid er at brukere – selv de med VPN – utilsiktet kan eksponere sin reelle IP-adresse gjennom en rekke tekniske mekanismer."
+    },
+    {
+      "term": "b0676 (heading)",
+      "definisjon": "WebRTC-lekkasje:"
+    },
+    {
+      "term": "b0677 (paragraph)",
+      "definisjon": "WebRTC er en nettleserfunksjon for videosamtaler (Zoom, Google Meet etc.). Den kan avsløre brukerens reelle IP selv bak en VPN."
+    },
+    {
+      "term": "b0678 (heading)",
+      "definisjon": "HVORDAN DET FUNGERER:"
+    },
+    {
+      "term": "b0679 (paragraph)",
+      "definisjon": "  Nettleser → WebRTC-forespørsel til server"
+    },
+    {
+      "term": "b0680 (paragraph)",
+      "definisjon": "            → Serveren ser nettleserens lokale IP (f.eks. 192.168.1.5)"
+    },
+    {
+      "term": "b0681 (paragraph)",
+      "definisjon": "            → OG den offentlige IP-en til ruteren (f.eks. 82.134.12.45)"
+    },
+    {
+      "term": "b0682 (paragraph)",
+      "definisjon": "            → VPN-IPen ser ut til å være 10.0.0.1 (VPN-tunnel)"
+    },
+    {
+      "term": "b0683 (paragraph)",
+      "definisjon": "            → Men WebRTC avslører fortsatt 82.134.12.45!"
+    },
+    {
+      "term": "b0684 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0685 (heading)",
+      "definisjon": "TESTVERKTØY (etterforsker kan bruke for å verifisere):"
+    },
+    {
+      "term": "b0686 (text_with_urls)",
+      "definisjon": "  → https://browserleaks.com/webrtc"
+    },
+    {
+      "term": "b0687 (text_with_urls)",
+      "definisjon": "  → https://ip.voidsec.com"
+    },
+    {
+      "term": "b0688 (text_with_urls)",
+      "definisjon": "  → https://www.doileak.com"
+    },
+    {
+      "term": "b0689 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0690 (heading)",
+      "definisjon": "KONSEKVENS FOR ETTERFORSKNING:"
+    },
+    {
+      "term": "b0691 (paragraph)",
+      "definisjon": "  Hvis mistenkte bruker VPN men ikke har blokkert WebRTC, kan"
+    },
+    {
+      "term": "b0692 (paragraph)",
+      "definisjon": "  nettstedene de besøker (inkl. politikontrollerte feller) logge"
+    },
+    {
+      "term": "b0693 (paragraph)",
+      "definisjon": "  den ekte IP-adressen ved siden av VPN-IPen."
+    },
+    {
+      "term": "b0694 (heading)",
+      "definisjon": "DNS-lekkasje:"
+    },
+    {
+      "term": "b0695 (heading)",
+      "definisjon": "PRINSIPP:"
+    },
+    {
+      "term": "b0696 (paragraph)",
+      "definisjon": "  VPN-brukere sender noen ganger DNS-forespørsler utenfor VPN-tunnelen."
+    },
+    {
+      "term": "b0697 (paragraph)",
+      "definisjon": "  ISP-ens DNS-server mottar forespørselen → ISP kan se domener brukeren"
+    },
+    {
+      "term": "b0698 (paragraph)",
+      "definisjon": "  besøker → ISP-loggen kan utleveres med rettskjennelse."
+    },
+    {
+      "term": "b0699 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0700 (heading)",
+      "definisjon": "TESTVERKTØY:"
+    },
+    {
+      "term": "b0701 (text_with_urls)",
+      "definisjon": "  → https://dnsleaktest.com"
+    },
+    {
+      "term": "b0702 (text_with_urls)",
+      "definisjon": "  → https://dnsleak.com"
+    },
+    {
+      "term": "b0703 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0704 (heading)",
+      "definisjon": "ETTERFORSKNINGSMESSIG VERDI:"
+    },
+    {
+      "term": "b0705 (paragraph)",
+      "definisjon": "  DNS-logger hos ISP kan vise HVILKE nettsteder en person har besøkt,"
+    },
+    {
+      "term": "b0706 (paragraph)",
+      "definisjon": "  selv om innholdet er kryptert (HTTPS)."
+    },
+    {
+      "term": "b0707 (heading)",
+      "definisjon": "Torrent/P2P-lekkasje:"
+    },
+    {
+      "term": "b0708 (heading)",
+      "definisjon": "PRINSIPP:"
+    },
+    {
+      "term": "b0709 (paragraph)",
+      "definisjon": "  BitTorrent og andre P2P-protokoller deler IP-adresser direkte med"
+    },
+    {
+      "term": "b0710 (paragraph)",
+      "definisjon": "  alle tilkoblede noder. SELV VED VPN-BRUK eksponeres IP-en i"
+    },
+    {
+      "term": "b0711 (paragraph)",
+      "definisjon": "  tracker-logger og DHT-noder."
+    },
+    {
+      "term": "b0712 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0713 (heading)",
+      "definisjon": "VERKTØY:"
+    },
+    {
+      "term": "b0714 (paragraph)",
+      "definisjon": "  → \"I Know What You Download\" (iknowwhatyoudownload.com)"
+    },
+    {
+      "term": "b0715 (paragraph)",
+      "definisjon": "    Viser filer lastet ned fra IP-adresse (offentlig tilgjengelig)"
+    },
+    {
+      "term": "b0716 (paragraph)",
+      "definisjon": "  → Krever kun IP-adresse – ingen rettslig beslutning nødvendig"
+    },
+    {
+      "term": "b0717 (spacer)",
+      "definisjon": "  "
+    },
+    {
+      "term": "b0718 (heading)",
+      "definisjon": "ETTERFORSKNINGSMESSIG VERDI:"
+    },
+    {
+      "term": "b0719 (paragraph)",
+      "definisjon": "  Kan bevise at en bestemt IP-adresse har lastet ned spesifikt innhold"
+    },
+    {
+      "term": "b0720 (paragraph)",
+      "definisjon": "  (CSAM, opphavsrettsbeskyttet material, malware)."
+    },
+    {
+      "term": "b0721 (paragraph)",
+      "definisjon": "  TPS: T: B (automatisert logging), P: 2, S: HØY/KRITISK (avhengig av innhold)"
+    },
+    {
+      "term": "b0722 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0723 (heading)",
+      "definisjon": "DEL F: CASE – KOMPLETT IP-ETTERFORSKNING"
+    },
+    {
+      "term": "b0724 (heading)",
+      "definisjon": "F.1 Lina Grim – Enkel case"
+    },
+    {
+      "term": "b0725 (paragraph)",
+      "definisjon": "STARTPUNKT: Lina Grim har mottatt trusler fra ukjent Snapchat-konto"
+    },
+    {
+      "term": "b0726 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0727 (heading)",
+      "definisjon": "STEG 1 – OSINT (ingen rettslig beslutning nødvendig):"
+    },
+    {
+      "term": "b0728 (bullets)",
+      "definisjon": "  • Analyser offentlig tilgjengelig informasjon"
+    },
+    {
+      "term": "b0729 (bullets)",
+      "definisjon": "  • Snapchat-konto: @ukjenttrussler (ingen tilleggsinformasjon synlig)"
+    },
+    {
+      "term": "b0730 (spacer)",
+      "definisjon": "  "
+    },
+    {
+      "term": "b0731 (heading)",
+      "definisjon": "STEG 2 – LOGGANALYSE (via politiets interne systemer):"
+    },
+    {
+      "term": "b0732 (bullets)",
+      "definisjon": "  • Linas skjermdump viser melding sendt kl. 21:34"
+    },
+    {
+      "term": "b0733 (bullets)",
+      "definisjon": "  • Dato/tid dokumentert i rapport"
+    },
+    {
+      "term": "b0734 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0735 (heading)",
+      "definisjon": "STEG 3 – BEGJÆRING TIL SNAPCHAT:"
+    },
+    {
+      "term": "b0736 (bullets)",
+      "definisjon": "  • Preserveringsanmodning sendt umiddelbart"
+    },
+    {
+      "term": "b0737 (bullets)",
+      "definisjon": "  • Rettslig kjennelse innhentes"
+    },
+    {
+      "term": "b0738 (heading)",
+      "definisjon": "  • Login-IP for konto @ukjenttrussler utleveres:"
+    },
+    {
+      "term": "b0739 (paragraph)",
+      "definisjon": "    → IP: 95.108.162.44, tidspunkt 21:29:15 CET 12.02.2026"
+    },
+    {
+      "term": "b0740 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0741 (heading)",
+      "definisjon": "STEG 4 – ANALYSE AV IP 95.108.162.44:"
+    },
+    {
+      "term": "b0742 (bullets)",
+      "definisjon": "  • ipinfo.io: MegaFon, Russland → VPN!"
+    },
+    {
+      "term": "b0743 (bullets)",
+      "definisjon": "  • GreyNoise: Kjent VPN/proxy-node"
+    },
+    {
+      "term": "b0744 (bullets)",
+      "definisjon": "  • ipqualityscore: 97% VPN-sannsynlighet"
+    },
+    {
+      "term": "b0745 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0746 (heading)",
+      "definisjon": "STEG 5 – VIDERE ETTERFORSKNING:"
+    },
+    {
+      "term": "b0747 (bullets)",
+      "definisjon": "  • Identifiser VPN-leverandøren (noen har norske kontoer)"
+    },
+    {
+      "term": "b0748 (bullets)",
+      "definisjon": "  • MLAT via Russland (lite sannsynlig å lykkes)"
+    },
+    {
+      "term": "b0749 (bullets)",
+      "definisjon": "  • Søk etter andre indikatorer (OPSEC-feil i meldingene)"
+    },
+    {
+      "term": "b0750 (spacer)",
+      "definisjon": "  "
+    },
+    {
+      "term": "b0751 (paragraph)",
+      "definisjon": "KONKLUSJON: Bruker VPN-tjeneste registrert i Russland."
+    },
+    {
+      "term": "b0752 (paragraph)",
+      "definisjon": "Etterforskning kompliseres. TPS: C-3-MODERAT"
+    },
+    {
+      "term": "b0753 (heading)",
+      "definisjon": "F.2 Kurt Mikkelsen – Kompleks case"
+    },
+    {
+      "term": "b0754 (paragraph)",
+      "definisjon": "STARTPUNKT: Kurt (k13_nord) mistenkes for VaaS-aktivitet."
+    },
+    {
+      "term": "b0755 (paragraph)",
+      "definisjon": "Snap Map viser regelmessige møter onsdager kl. 21:00."
+    },
+    {
+      "term": "b0756 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0757 (heading)",
+      "definisjon": "STEG 1 – OSINT:"
+    },
+    {
+      "term": "b0758 (bullets)",
+      "definisjon": "  • Snap Map: Kurts Bitmoji vises ved Rema 1000 Lørenskog"
+    },
+    {
+      "term": "b0759 (bullets)",
+      "definisjon": "  • Ingen IP tilgjengelig via åpne kilder (Snapchat-app, ikke web)"
+    },
+    {
+      "term": "b0760 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0761 (heading)",
+      "definisjon": "STEG 2 – IP-FELLE (krever JURISTVURDERING FØR gjennomføring):"
+    },
+    {
+      "term": "b0762 (paragraph)",
+      "definisjon": "  Scenario: Etterforskeren lager en Canary Token-lenke"
+    },
+    {
+      "term": "b0763 (paragraph)",
+      "definisjon": "  forkledd som en \"gang-relatert nyhet\" fra en autentisk-utseende"
+    },
+    {
+      "term": "b0764 (paragraph)",
+      "definisjon": "  nettside. Lenken legges i gruppen \"BK Nettverk\" på Telegram."
+    },
+    {
+      "term": "b0765 (spacer)",
+      "definisjon": "  "
+    },
+    {
+      "term": "b0766 (heading)",
+      "definisjon": "  JURIDISK VURDERING NØDVENDIG:"
+    },
+    {
+      "term": "b0767 (paragraph)",
+      "definisjon": "  → Er dette aktiv interaksjon/provokasjon? (strpl. § 196a)"
+    },
+    {
+      "term": "b0768 (paragraph)",
+      "definisjon": "  → Kan det ansees som forledende? (krever rettslig hjemmel)"
+    },
+    {
+      "term": "b0769 (paragraph)",
+      "definisjon": "  → Er Kurt mistenkt eller vitne/offer? (påvirker terskelen)"
+    },
+    {
+      "term": "b0770 (spacer)",
+      "definisjon": "  "
+    },
+    {
+      "term": "b0771 (heading)",
+      "definisjon": "  [AVKLARING MED JURIST / PÅTALE FØR GJENNOMFØRING]"
+    },
+    {
+      "term": "b0772 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0773 (heading)",
+      "definisjon": "STEG 3 – BEGJÆRING TIL SNAPCHAT (etter rettslig kjennelse):"
+    },
+    {
+      "term": "b0774 (bullets)",
+      "definisjon": "  • Snap Law Enforcement Process"
+    },
+    {
+      "term": "b0775 (bullets)",
+      "definisjon": "  • Login-IP for konto k13_nord utleveres"
+    },
+    {
+      "term": "b0776 (bullets)",
+      "definisjon": "  • IP: 82.134.12.45, dato 13.02.26 kl. 22:01:33 CET"
+    },
+    {
+      "term": "b0777 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0778 (heading)",
+      "definisjon": "STEG 4 – ANALYSE:"
+    },
+    {
+      "term": "b0779 (bullets)",
+      "definisjon": "  • ipinfo.io: Telenor Norge, Lørenskog"
+    },
+    {
+      "term": "b0780 (bullets)",
+      "definisjon": "  • GreyNoise: Ingen aktivitet (vanlig privatbruker)"
+    },
+    {
+      "term": "b0781 (bullets)",
+      "definisjon": "  • Ingen VPN/Tor-indikatorer"
+    },
+    {
+      "term": "b0782 (paragraph)",
+      "definisjon": "  → Reel hjem-IP bekreftet"
+    },
+    {
+      "term": "b0783 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0784 (heading)",
+      "definisjon": "STEG 5 – BEGJÆRING TIL TELENOR:"
+    },
+    {
+      "term": "b0785 (bullets)",
+      "definisjon": "  • Strpl. § 210, jf. Ekomloven § 2-7 og 2-8"
+    },
+    {
+      "term": "b0786 (bullets)",
+      "definisjon": "  • Kjennelse fra tingretten vedlagt"
+    },
+    {
+      "term": "b0787 (heading)",
+      "definisjon": "  • Telenor utleverer:"
+    },
+    {
+      "term": "b0788 (paragraph)",
+      "definisjon": "    → Abonnent: Hanne Mikkelsen"
+    },
+    {
+      "term": "b0789 (paragraph)",
+      "definisjon": "    → Adresse: Skoleveien 12, 1473 Lørenskog"
+    },
+    {
+      "term": "b0790 (paragraph)",
+      "definisjon": "    → IP var aktiv på adressen 13.02.26 kl. 20:00–00:15"
+    },
+    {
+      "term": "b0791 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0792 (heading)",
+      "definisjon": "STEG 6 – FOLKEREGISTERSJEKK:"
+    },
+    {
+      "term": "b0793 (bullets)",
+      "definisjon": "  • Hanne Mikkelsen (41) → Sønn: Kurt Mikkelsen (13)"
+    },
+    {
+      "term": "b0794 (bullets)",
+      "definisjon": "  • Bekreftet: Kurts hjemmeadresse."
+    },
+    {
+      "term": "b0795 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0796 (heading)",
+      "definisjon": "KONKLUSJON: "
+    },
+    {
+      "term": "b0797 (paragraph)",
+      "definisjon": "IP 82.134.12.45 var tildelt Hanne Mikkelsens bredbåndsabonnement"
+    },
+    {
+      "term": "b0798 (paragraph)",
+      "definisjon": "ved Skoleveien 12 på det aktuelle tidspunktet. Kurt Mikkelsen er"
+    },
+    {
+      "term": "b0799 (paragraph)",
+      "definisjon": "registrert bosatt på samme adresse. Bevis indikerer at k13_nord-"
+    },
+    {
+      "term": "b0800 (paragraph)",
+      "definisjon": "kontoen ble benyttet fra denne adressen."
+    },
+    {
+      "term": "b0801 (paragraph)",
+      "definisjon": "TPS: T: A (ISP-verifisert), P: 1, S: HØY (mindreårig)"
+    },
+    {
+      "term": "b0802 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0803 (heading)",
+      "definisjon": "DEL G: VANLIGE FEIL OG SJEKKLISTER"
+    },
+    {
+      "term": "b0804 (ascii_box)",
+      "definisjon": "╔══════════════════════════════════════════════════════════════════╗"
+    },
+    {
+      "term": "b0805 (heading)",
+      "definisjon": "║  ⚠️ VANLIGE FEIL – IP-ETTERFORSKNING                              ║"
+    },
+    {
+      "term": "b0806 (paragraph)",
+      "definisjon": "╠══════════════════════════════════════════════════════════════════╣"
+    },
+    {
+      "term": "b0807 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0808 (paragraph)",
+      "definisjon": "║  FEIL 1: \"IP-adressen ER personen\"                               ║"
+    },
+    {
+      "term": "b0809 (paragraph)",
+      "definisjon": "║  Fakta: IP er abonnentens tilkobling, ikke nødvendigvis personen ║"
+    },
+    {
+      "term": "b0810 (paragraph)",
+      "definisjon": "║  som brukte den. Dokumenter alltid mulige andre brukere.         ║"
+    },
+    {
+      "term": "b0811 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0812 (paragraph)",
+      "definisjon": "║  FEIL 2: \"VPN betyr at vi ikke kan identifisere vedkommende\"     ║"
+    },
+    {
+      "term": "b0813 (paragraph)",
+      "definisjon": "║  Fakta: VPN-leverandøren logger ofte IP-er. Begjær utlevering    ║"
+    },
+    {
+      "term": "b0814 (paragraph)",
+      "definisjon": "║  fra VPN-leverandøren via MLAT. Sjekk WebRTC/DNS-lekkasjer.      ║"
+    },
+    {
+      "term": "b0815 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0816 (paragraph)",
+      "definisjon": "║  FEIL 3: \"Tor = 100% anonym\"                                     ║"
+    },
+    {
+      "term": "b0817 (paragraph)",
+      "definisjon": "║  Fakta: Tor-brukere gjør OPSEC-feil. Analysere Tor-exit-           ║"
+    },
+    {
+      "term": "b0818 (paragraph)",
+      "definisjon": "║  tidspunkter opp mot kjente aktivitetsmønstre.                   ║"
+    },
+    {
+      "term": "b0819 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0820 (paragraph)",
+      "definisjon": "║  FEIL 4: \"Glemte å notere eksakt klokkeslett og tidssone\"        ║"
+    },
+    {
+      "term": "b0821 (paragraph)",
+      "definisjon": "║  Fakta: ISP-er opererer ofte i UTC. CET/CEST-feil på 1-2 timer   ║"
+    },
+    {
+      "term": "b0822 (paragraph)",
+      "definisjon": "║  kan ødelegge en utleveringsbegjæring. Alltid noter UTC          ║"
+    },
+    {
+      "term": "b0823 (paragraph)",
+      "definisjon": "║  OG lokal tid i rapporten.                                       ║"
+    },
+    {
+      "term": "b0824 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0825 (paragraph)",
+      "definisjon": "║  FEIL 5: \"Sendte begjæring men ventet for lenge\"                  ║"
+    },
+    {
+      "term": "b0826 (paragraph)",
+      "definisjon": "║  Fakta: Logger slettes etter 90 dager (Meta, Google) eller       ║"
+    },
+    {
+      "term": "b0827 (paragraph)",
+      "definisjon": "║  kortere (Snapchat). Send ALLTID preserveringsanmodning          ║"
+    },
+    {
+      "term": "b0828 (paragraph)",
+      "definisjon": "║  umiddelbart.                                                     ║"
+    },
+    {
+      "term": "b0829 (paragraph)",
+      "definisjon": "║                                                                  ║"
+    },
+    {
+      "term": "b0830 (paragraph)",
+      "definisjon": "║  FEIL 6: \"Satte opp IP-felle uten juristvurdering\"               ║"
+    },
+    {
+      "term": "b0831 (paragraph)",
+      "definisjon": "║  Fakta: Aktiv IP-logging mot mistenkte er juridisk sensitiv.     ║"
+    },
+    {
+      "term": "b0832 (paragraph)",
+      "definisjon": "║  Kontakt alltid påtale FØR du sender noen sporbar ressurs.       ║"
+    },
+    {
+      "term": "b0833 (ascii_box)",
+      "definisjon": "╚══════════════════════════════════════════════════════════════════╝"
+    },
+    {
+      "term": "b0834 (check_item)",
+      "definisjon": "✓ SJEKKLISTE – IP-ETTERFORSKNING"
+    },
+    {
+      "term": "b0835 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0836 (heading)",
+      "definisjon": "FØR DU BEGYNNER:"
+    },
+    {
+      "term": "b0837 (check_item)",
+      "definisjon": "□ Er IP-adressen dokumentert med eksakt tidspunkt (UTC + lokal)?"
+    },
+    {
+      "term": "b0838 (check_item)",
+      "definisjon": "□ Er det klargjort om IP er statisk eller dynamisk?"
+    },
+    {
+      "term": "b0839 (check_item)",
+      "definisjon": "□ Er det sendt preserveringsanmodning?"
+    },
+    {
+      "term": "b0840 (check_item)",
+      "definisjon": "□ Er påtale involvert (ved aktive metoder)?"
+    },
+    {
+      "term": "b0841 (check_item)",
+      "definisjon": "□ Er VPN/Tor sjekket via ipinfo.io og GreyNoise?"
+    },
+    {
+      "term": "b0842 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0843 (heading)",
+      "definisjon": "OSINT-ANALYSE:"
+    },
+    {
+      "term": "b0844 (check_item)",
+      "definisjon": "□ Er IP sjekket mot ISP/WHOIS (ipinfo.io, who.is)?"
+    },
+    {
+      "term": "b0845 (check_item)",
+      "definisjon": "□ Er IP sjekket i VirusTotal (kjent kriminalitet)?"
+    },
+    {
+      "term": "b0846 (check_item)",
+      "definisjon": "□ Er IP sjekket i GreyNoise (klassifisering)?"
+    },
+    {
+      "term": "b0847 (check_item)",
+      "definisjon": "□ Er IP sjekket i Shodan (åpne porter, tjenester)?"
+    },
+    {
+      "term": "b0848 (check_item)",
+      "definisjon": "□ Er Tor exit node verifisert (dan.me.uk/torcheck)?"
+    },
+    {
+      "term": "b0849 (check_item)",
+      "definisjon": "□ Er VPN bekreftet (ipqualityscore.com)?"
+    },
+    {
+      "term": "b0850 (check_item)",
+      "definisjon": "□ Er APT/statlig tilknytning sjekket (OTX, Threatfox)?"
+    },
+    {
+      "term": "b0851 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0852 (heading)",
+      "definisjon": "RETTSLIG UTLEVERING:"
+    },
+    {
+      "term": "b0853 (check_item)",
+      "definisjon": "□ Er påtalemyndighetens beslutning/rettens kjennelse innhentet?"
+    },
+    {
+      "term": "b0854 (check_item)",
+      "definisjon": "□ Er begjæringen sendt med riktig rettslig grunnlag?"
+    },
+    {
+      "term": "b0855 (check_item)",
+      "definisjon": "□ Er tidssonen korrekt angitt (UTC)?"
+    },
+    {
+      "term": "b0856 (check_item)",
+      "definisjon": "□ Er svar mottatt og dokumentert?"
+    },
+    {
+      "term": "b0857 (check_item)",
+      "definisjon": "□ Er ISP-svar kryssverifisert mot Folkeregisteret?"
+    },
+    {
+      "term": "b0858 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0859 (heading)",
+      "definisjon": "DOKUMENTASJON:"
+    },
+    {
+      "term": "b0860 (check_item)",
+      "definisjon": "□ Er alle funn TPS-vurdert?"
+    },
+    {
+      "term": "b0861 (check_item)",
+      "definisjon": "□ Er SHA-256 hash generert for beviset?"
+    },
+    {
+      "term": "b0862 (check_item)",
+      "definisjon": "□ Er rapporten skrevet i tredjeperson/førsteperson passiv?"
+    },
+    {
+      "term": "b0863 (check_item)",
+      "definisjon": "□ Er bevisrekken dokumentert fra IP til person?"
+    },
+    {
+      "term": "b0864 (check_item)",
+      "definisjon": "□ Er bevisrettslige forbehold tatt (delt IP, VPN, Tor)?"
+    },
+    {
+      "term": "b0865 (spacer)",
+      "definisjon": ""
+    },
+    {
+      "term": "b0866 (heading)",
+      "definisjon": "OPPSUMMERING"
+    },
+    {
+      "term": "b0867 (paragraph)",
+      "definisjon": "IP-adressen er et av de mest verdifulle etterforskningsverktøyene i digital etterforskning – men den er aldri alene tilstrekkelig. Den er startpunktet for en kjede av bevishandlinger som leder fra en tallrekke til et navn og en adresse."
+    },
+    {
+      "term": "b0868 (paragraph)",
+      "definisjon": "OSINT-analyse av en IP kan gjennomføres på under 30 minutter og avdekke ISP, geolokasjon, rykte og anonymiseringsmetode uten noen rettslig beslutning. Den rettslige utleveringsprosessen tar lenger tid, men gir det avgjørende beviset: hvem som faktisk abonnerte på den IP-adressen i det aktuelle øyeblikket."
+    },
+    {
+      "term": "b0869 (paragraph)",
+      "definisjon": "Det viktigste å huske: IP-adressen er et utgangspunkt, ikke et bevis. Dokumenter alltid muligheten for at adressen tilhørte en annen bruker i husstanden, at den ble brukt via VPN eller Tor, eller at den var en del av et botnet uten eierens kunnskap. Disse alternativhypotesene tilhører analysedelen av rapporten – og styrker troverdigheten til den faktiske konklusjonen."
+    },
+    {
+      "term": "b0870 (spacer)",
+      "definisjon": ""
     }
   ]
 }
