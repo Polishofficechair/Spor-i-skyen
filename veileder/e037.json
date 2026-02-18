@@ -1,0 +1,262 @@
+{
+  "tittel": "IP-ADRESSER",
+  "undertittel": "INTERNET PROTOCOL I DIGITAL ETTERFORSKNING",
+  "ordliste": [
+    {
+      "term": "Tema 1: INNLEDNING",
+      "definisjon": "Fra OSINT til rettslig utlevering – komplett metodikk"
+    },
+    {
+      "term": "Tema 2: ORDLISTE – LES DETTE FØRST",
+      "definisjon": ""
+    },
+    {
+      "term": "Tema 3: 📖 ORDLISTE",
+      "definisjon": "IP-adresse = Internet Protocol-adresse.\nEt unikt nummer som identifiserer en enhet på internett.\nAnalogi: Husnummeret på internett IPv4 = Den vanligste formen: fire tall adskilt med punktum Eks: 82.134.12.45 (Telenor, Lørenskog) IPv6 = Nyere format med seksten tegn: 2001:0db8:85a3::8a2e:0370:7334 Brukes stadig mer, men IPv4 dominerer i Norge ISP = Internet Service Provider = Nettilbyder (Telenor, Telia, Altibox, Ice osv.) ASN = Autonomous System Number – unikt nummer tildelt en ISP eller organisasjon.\nTelenor har ASN 2119.\nStatisk IP = IP-adresse som aldri endres (bedrifter, servere) Dynamisk IP = IP-adresse som byttes regelmessig (hjemmebrukere) Geolokasjon = Geografisk plassering utledet fra IP-adressen (nøyaktighet: land/by, sjelden eksakt adresse) WHOIS = Offentlig database som viser hvem som eier en IP-blokk Netblock = En gruppe IP-adresser tildelt én organisasjon Reverse DNS = Å finne domenenavn tilhørende en IP-adresse Canary Token = En \"felle\"-lenke/fil som avslører IP-adressen til den som åpner den.\nBrukes av sikkerhetsmiljøer og politiet.\n\nIP Logger = Tjeneste som registrerer IP-adressen til alle som klikker en spesiell lenke Tracking Pixel = Et usynlig 1x1 piksel stort bilde i e-post/nettside som avslører IP-adressen til mottaker som åpner det Tor = The Onion Router – anonymt nettverk som ruter trafikk via minst 3 krypterte noder internasjonalt Exit Node = Den siste Tor-noden – den som kommuniserer med målserveren og er synlig for omverdenen VPN = Virtual Private Network – tjeneste som skjuler din IP-adresse bak VPN-leverandørens server Shodan = Søkemotor for internett-tilkoblede enheter og servere Censys = Søkemotor som skanner og indekserer alle IP-adresser GreyNoise = Tjeneste som klassifiserer IP-adresser som godartede eller ondsinnede basert på atferd VirusTotal = Tjeneste for analyse av URL, filer og IP-adresser IOC = Indicator of Compromise – indikator på kompromittering APT = Advanced Persistent Threat – statlig/avansert hackergruppe"
+    },
+    {
+      "term": "Tema 4: DEL A: FORSTÅ IP-ADRESSER – GRUNNLEGGENDE FOR ETTERFORSKERE",
+      "definisjon": "A.1 Hva er en IP-adresse og hvorfor er den viktig i etterforskning?\nAnalogi: Internettets husnummer Tenk på internett som et verdensomspennende postsystem.\nFor at et brev skal nå frem, trenger det en adresse.\nEn IP-adresse er akkurat dette – adressen som identifiserer hvilken \"husdør\" på internett en enhet befinner seg bak.\nNår Kurt Mikkelsen sender en melding på Snapchat, besøker en nettside, laster opp et bilde eller logger inn på Discord, logger alle disse tjenestene hans IP-adresse automatisk.\nDette er ikke unntaket – det er regelen.\n\nAlle nettverkstilkoblede enheter avgir sin IP-adresse ved ethvert datautveksling på internett, uten unntak.\nIP-adressen i seg selv forteller etterforskeren: Hvilken nettilbyder (ISP) ble brukt (Telenor, Telia, Ice, Altibox…) Omtrentlig geografisk plassering (by, region) Om brukeren skjuler seg bak VPN, Tor eller proxy Om IP-adressen er kjent for kriminell aktivitet Hvilket land trafikken kom fra (kritisk for statlige trusselaktører) Med rettslig beslutning forteller ISP-en hvem som abonnerte på den IP-adressen på et gitt tidspunkt.\nDet er overgangen fra en nummerkode til et navn, adresse og fødselsnummer.\n\nA.2 IP-adressens anatomi – typer og format IPv4 – Den vanlige versjonen: Eksempel: 82.134.12.45\n\nStruktur: 82.134 = Nettblokk tildelt Telenor Norge 12.45 = Spesifikk abonnent innenfor Telenors nett\n\nSlik leses det: Første to tall = Organisasjonen som eier blokken (ASN) Siste to tall = Den spesifikke tilkoblingen IPv6 – Den nyere versjonen: Eksempel: 2001:0db8:85a3:0000:0000:8a2e:0370:7334 Forkortet: 2001:db8:85a3::8a2e:370:7334\n\nI praksis ser etterforskere IPv6 i logger fra: - Moderne iOS/Android-enheter - Nye norske bredbåndsabonnementer (Altibox, Lyse) - IPv6-aktiverte mobilnett Statisk vs.\nDynamisk IP – kritisk distinksjon:"
+    },
+    {
+      "term": "Tema 5: • TYPE | BRUKES AV | ETTERFORSKNINGSMESSIG",
+      "definisjon": "• Statisk IP | Bedrifter, servere, | Direkte kobling til\n• hjemmekontorer,: organisasjon. Enkel\n• nettsider: identifisering via"
+    },
+    {
+      "term": "Tema 6: WHOIS",
+      "definisjon": "• Dynamisk IP | Privatpersoner, | Krever ISP-utlevering • mobilenheter,: med eksakt tidspunkt • hjemmenettverk: for å koble IP til abonnent\n\n• Privat IP | Interne nettverk | IKKE synlig på inter- • (192.168.x. x, | (hjemmeruteren) | nett.\nKun den • 10.x. x. x): offentlige NAT-IP er etterforsknbar\n\nViktig – NAT og delt IP: Hjemmerutere bruker NAT (Network Address Translation).\nAlle enheter i hjemmenettverket til Kurt – iPhone, PC, nettbrett – deler én offentlig IP-adresse.\nISP-en kan koble denne til Hanne Mikkelsens abonnement, men kan ikke uten videre si om det var Kurt eller moren som brukte nettforbindelsen på et gitt tidspunkt.\nDette er et bevisrettslig moment som alltid skal dokumenteres i rapporten.\n\nA.3 Hva en IP-adresse AVSLØRER og IKKE avslører ✅ IP-ADRESSEN KAN AVSLØRE (uten rettslig beslutning): • Hvilken ISP / nettleverandør som eier blokken • Omtrentlig geografisk plassering (by/region, sjelden gate) • Nettoperatørens land (ASN-registrering) • Om adressen tilhører Tor exit node • Om adressen tilhører kjent VPN-leverandør • Om adressen har vært involvert i kriminell aktivitet • Hvilke porter/tjenester som kjører på adressen (via Shodan) • Hvilke domener som er vert på adressen • Angrepshistorikk og rykte (via GreyNoise/VirusTotal)\n\n❌ IP-ADRESSEN KAN IKKE AVSLØRE (uten rettslig beslutning + ISP): • Hvem den spesifikke brukeren er (navn, fødselsnr.) • Eksakt fysisk adresse (gate, husnummer) • Innhold i kommunikasjon • Hvilken spesifikk enhet som ble brukt (ved delt IP) • Hvem av flere husstands-/abonnement-brukere som kommuniserte"
+    },
+    {
+      "term": "Tema 7: DEL B: OSINT-METODER FOR IP-KARTLEGGING",
+      "definisjon": "B.1 Trinn 1 – Identifisere en IP-adresse via OSINT Analogi: Å finne et husnummer uten å spørre eieren Et IP-nummer er ikke skjult – det er nødvendigvis synlig i mange logger og tjenester.\nUtfordringen er å finne ut hvilken IP en spesifikk person bruker, uten å kontakte vedkommende.\nMetode 1: IP-er registrert direkte i offentlige tjenester Noen plattformer eksponerer IP-adresser direkte eller indirekte:"
+    },
+    {
+      "term": "Tema 8: PLATTFORMER SOM LOGGER IP OG UTLEVERER MED RETTSLIG BESLUTNING",
+      "definisjon": "• Snapchat: Logger IP ved login, konto-opprettelse og events Oppbevares begrenset tid (se Law Enforcement guide)\n\n• Instagram: Logger login-IP og tidspunkt (Meta Legal Process)\n\n• TikTok: Logger IP ved alle sessions, utleverer ved kjennelse\n\n• Telegram: Logger IP-adresse, utleverer ved kjennelse (sjelden)\n\n• Discord: Logger IP ved login, utleverer ved MLAT/kjennelse\n\n• Reddit: Logger IP, utleverer ved rettskjennelse\n\n• E-post: E-postheadere kan inneholde sender-IP\n\n• Forum/blogg: WordPress, phpBB etc. logger IP for alle innlegg\n\n• WHOIS-logger: Domeneregistrering inneholder IP/e-post til eier ╝ Metode 2: IP-er i e-postheadere (teknisk lesing) Når Lina Grim sender en e-post via sin e-postklient, kan headeren avsløre avsenders IP: Mikrosteg: Lese e-postheader i Gmail\n\n□ Steg 1: Åpne e-posten i Gmail\n□ Steg 2: Klikk de tre prikkene øverst til høyre (⋮)\n□ Steg 3: Velg \"Vis original\"\n□ Steg 4: Et nytt vindu åpner seg med rå e-postkode\n□ Steg 5: Søk etter \"Received: from\" (Ctrl + F)\n□ Steg 6: Den første linjen med \"Received:\" inneholder avsenders IP\n\nEksempel på det du ser: Received: from 82.134.12.45 (87.54.12.45 [87.54.12.45]) by mx. google. com with ESMTPS → IP 82.134.12.45 er avsenderens IP-adresse OBS: Webmail-tjenester (Gmail, Outlook. com) fjerner nå ofte avsenderens IP.\nDenne metoden fungerer best for e-post sendt via Outlook-klienter og Exchange-servere.\nMetode 3: Shodan – søkemotor for internett-tilkoblede enheter Mikrosteg: Bruke Shodan (shodan. io)\n\n□ Steg 1: Gå til https://www. shodan. io (gratis konto anbefalt)\n□ Steg 2: Skriv inn en kjent IP: 82.134.12.45\n□ Steg 3: Du vil nå se:"
+    },
+    {
+      "term": "Tema 9: IP: 82.134.12.45",
+      "definisjon": "Organisasjon: Telenor Norway Land: Norge / Akershus"
+    },
+    {
+      "term": "Tema 10: ASN: AS2119",
+      "definisjon": "Åpne porter: 80 (HTTP), 443 (HTTPS) Operativsystem: Linux Hostnames: customer. telenor. no Sist sett: 2026-02-15\n\n□ Steg 4: Ta screenshot (legg til URL i loggen)\n\nB.2 Trinn 2 – Analysere en IP-adresse\n\nKOMPLETT IP-ANALYSE VERKTØYSETT (alle nettleserbaserte)"
+    },
+    {
+      "term": "Tema 11: • VERKTØY: FORMÅL OG URL",
+      "definisjon": "• ipinfo. io: Grunnleggende info: ISP, land, by, ASN, VPN-sjekk https://ipinfo. io/82.134.12.45\n\n• ipapi. com: Detaljert geolokasjon, org, tidssone https://ipapi. com/82.134.12.45\n\n• abuseipdb: Har IP vært involvert i misbruk/angrep? https://www. abuseipdb. com/check/82.134.12.45\n\n• VirusTotal: Ryktessjekk: malware, phishing, C2-aktivitet https://www. virustotal. com/gui/ip-address/\n\n• GreyNoise: Klassifisering: uskyldig/ondsinnet scanning, VPN https://viz. greynoise. io/ip/82.134.12.45\n\n• Shodan: Åpne porter, tjenester, OS, historikk https://shodan. io\n\n• Censys: Detaljert banner/sertifikat, historisk data https://censys. io\n\n• WHOIS: Eierskap av IP-blokk / domene https://who. is eller https://whois. domaintools. com\n\n• MXToolBox: Spam-svarteliste, e-postservere tilknyttet IP https://mxtoolbox. com/blacklists. aspx\n\n• SecurityTrails: DNS-historikk, domener vert på IP, reverse DNS https://securitytrails. com\n\n• Spamhaus: Ser om IP er på spam/botnet-svarteliste https://check. spamhaus. org\n\n• IPVoid: Masse-sjekk mot 40+ svartelister https://www. ipvoid. com ╝ Mikrosteg: Komplett IP-analyse på under 20 minutter Case: Ukjent IP 185.220.101.45 dukker opp i Kurts aktivitetslogg\n\n□ Steg 1: ipinfo. io/185.220.101.45\n→ Org: Frantech Solutions / BuyVM\n→ Land: Luxembourg\n→ Notis: \"vpn\" flagg satt\n\n□ Steg 2: VirusTotal\n→ 8 av 87 sikkerhetsselskaper har flagget adressen\n→ Kategori: Anonymiserende tjeneste / VPN\n\n□ Steg 3: GreyNoise\n→ Status: \"Noise\" (kjent scanner/VPN)\n→ Tag: \"Tor Exit Node\"\n→ Benign: Nei\n\n□ Steg 4: Torproject. org/check (eller dan. me. uk/torlist)\n→ Bekreftet Tor exit node\n\n□ Steg 5: Shodan\n→ Port 9001 åpen (Tor relay port)\n→ Sertifikat bekrefter Tor-node\n\n□ Konklusjon: IP 185.220.101.45 er en kjent Tor exit node.\nBrukeren anonymiserte sin internetttrafikk via Tor.\nDen underliggende bruker-IP kan IKKE fastslås uten samarbeid fra Tor-prosjektet (praktisk umulig å oppnå).\n\nTPS: T: A (verifisert via Tor-prosjektets egne lister) P: 1 (bekreftet av tre uavhengige kilder) S: HØY (kan indikere bevisst anonymisering)\n\nB.3 VPN vs.\nTor – Slik identifiserer du begge"
+    },
+    {
+      "term": "Tema 12: SLIK IDENTIFISERER DU TOR-NODER",
+      "definisjon": "METODE 1 – Torprosjektets offisielle exitliste (anbefalt) URL: https://check. torproject. org/torbulkexitlist → Nedlastbar liste over alle aktive exit nodes → Oppdateres hver time → Sjekk om din IP er i listen (ctrl+F)\n\nMETODE 2 – Bulk-sjekk (dan. me. uk) URL: https://www. dan. me. uk/torcheck?ip=185.220.101.45 → Direkte oppslag: \"YES this IP is a TOR Exit Node\"\n\nMETODE 3 – GreyNoise URL: https://viz. greynoise. io/ip/[IP] → Tag \"tor\" betyr bekreftet Tor-relatert aktivitet\n\nMETODE 4 – Teknisk indikator via Shodan Shodan-søk: port:9001 OR port:9030 OR port:9050 → Port 9001 = Tor relay → Port 9030 = Tor directory → Port 9050 = Tor SOCKS proxy ╝"
+    },
+    {
+      "term": "Tema 13: SLIK IDENTIFISERER DU VPN-NODER",
+      "definisjon": "METODE 1 – ipinfo. io VPN Detection URL: https://ipinfo. io/[IP] → Felt \"privacy. vpn: true\" indikerer VPN → Viser ofte VPN-leverandørens navn (NordVPN, ExpressVPN etc.)\n\nMETODE 2 – ipqualityscore. com URL: https://www. ipqualityscore. com/free-ip-lookup-proxy-vpn-test → Skåre 0-100 for VPN/proxy-sannsynlighet → Viser typen: datacenter VPN, residential VPN, proxy\n\nMETODE 3 – maxmind. com GeoIP2 URL: https://www. maxmind. com/en/geoip-demo → \"ISP/Organization\" avslører om det er datacenter-IP → Datacenter-IP = høy sannsynlighet for VPN\n\nMETODE 4 – Manuell indikator Tegn på VPN-bruk (uten spesialverktøy): • IP eies av datacenter (Hetzner, DigitalOcean, OVH etc.) • IP er registrert i et annet land enn brukerens kjente land • IP er ny (registrert siste år) og har lite historikk • Mange domener vert på samme IP (indikerer hosting-IP) ╝ Hva VPN og Tor betyr for etterforskningen: VPN-bruk er lovlig og er ikke i seg selv et tegn på kriminell aktivitet.\nDet er imidlertid etterforskningsmessig relevant at bruker bevisst anonymiserer sin internettforbindelse.\nI saker der mistenkte bruker VPN eller Tor, skifter IP-sporingen til å rette seg mot VPN-leverandøren, der rettslig utlevering er mulig i land som samarbeider med norsk påtale.\n\nB.4 Statlige trusselaktører og utenlandske servere – Indikatorer I saker der IP-adresser peker mot servere i bestemte land, kan dette indikere statlig cyberaktivitet eller at norsk infrastruktur brukes som gjennomgangsrute for angrep fra andre land."
+    },
+    {
+      "term": "Tema 14: INDIKATORER PÅ STATSSTØTTET CYBERAKTIVITET (APT)",
+      "definisjon": ""
+    },
+    {
+      "term": "Tema 15: GEOGRAFISKE INDIKATORER:",
+      "definisjon": "• IP registrert i Kina (ASN 4134, 4538, 9808)\n• IP registrert i Russland (ASN 8359, 2856, 3216)\n• IP registrert i Nord-Korea (ASN 131279)\n• IP registrert i Iran (ASN 44244, 12880)\n\nTEKNISKE INDIKATORER (via Shodan/Censys): • Spesifikke sertifikater koblet til kjente APT-grupper • Samme SSL-fingeravtrykk (JA3) som kjente angrepsservere • Bannere som matcher kjent C2-infrastruktur (Cobalt Strike, Metasploit, Sliver, Brute Ratel) • Port 4444 åpen (Metasploit standard) • Port 50050 åpen (Cobalt Strike team server)\n\nATFERDSBASERTE INDIKATORER (via GreyNoise): • IP scanner systematisk etter spesifikke CVE-er • IP involvert i spyd-phishing-kampanjer mot norske mål • IP dukker opp i Threat Intelligence-feeds (OTX, MISP)\n\nEKSEMPEL – KINESISK APT (Volt Typhoon, 2024-2026): Shodan-søk: ssl:\"Volt Typhoon\" OR port:8443 ssl. cert. subject. cn GreyNoise: tags:\"china chopper\" OR tags:\"apt41\""
+    },
+    {
+      "term": "Tema 16: VERKTØY FOR APT-ATTRIBUSJON:",
+      "definisjon": "• https://otx. alienvault. com (Open Threat Exchange) • https://misp-project. org (MISP Threat Intelligence) • https://attack. mitre. org (MITRE ATT&CK-rammeverk) • https://threatfox. abuse. ch (bekreftet C2-infrastruktur) ╝ Eksempel: Identifisere utenlandsk hackerinfrastruktur En norsk bedrift rapporterer at de har blitt angrepet.\nLoggen viser at angrepsserveren hadde IP 45.147.229.85. □ Analyse steg for steg:\n\n1. ipinfo. io: AS214943, Russland, Moskva, ISP: Aeza International LTD 2.\nVirusTotal: 34 av 87 flagget som \"Malicious\" / \"C2\" 3.\nGreyNoise: Klassifisert som \"Malicious\", tag \"cobalt-strike\" 4.\nShodan: Port 50050 åpen (Cobalt Strike team server) 5.\nOTX: 12 kjente IOC-rapporter kobler IP til GRU-relatert aktivitet 6.\nThreatfox: Bekreftet C2 for Cobalt Strike beacon\n\nKonklusjon: IP 45.147.229.85 er med høy sannsynlighet et Command & Control- punkt brukt av en russisk-tilknyttet trusselaktør.\nEskalering: NSM (Nasjonal Sikkerhetsmyndighet) + Kripos N3C"
+    },
+    {
+      "term": "Tema 17: DEL C: IP-LOGGING – SLIK AVDEKKES MISTENKTE (MED RETTSLIG HJEMMEL)",
+      "definisjon": "C.1 Prinsippet: Å lokke frem en IP-adresse Analogi: Fotfelle med GPS En jeger kan sette opp en fotfelle som tar bilde av alle dyr som passerer, uten å røre ved noen av dem.\nEn etterforsker kan på tilsvarende måte sette opp en digital \"fotfelle\" – en ressurs som automatisk registrerer IP-adressen til enhver som åpner den.\nTeknikken kalles IP logging og er en metode som i norsk politiarbeid faller i et juridisk grenseland som krever grundig vurdering og i de fleste tilfeller påtalemyndighetens forhåndsklaring.\nTeknisk sett fungerer det slik:"
+    },
+    {
+      "term": "Tema 18: TEKNISK PRINSIPP FOR IP-LOGGING",
+      "definisjon": "1.\nEtterforskeren oppretter en ressurs (lenke/bilde/QR) på en server som loggfører alle besøkende\n\n2.\nRessursen sendes til mistenkte (chat, e-post, SMS) eller legges ut på steder mistenkte sannsynligvis besøker\n\n3.\nNår mistenkte åpner ressursen, gjøres automatisk: • IP-adresse logges • Tidspunkt logges (dato, klokkeslett, millisekund) • Brukeragent logges (nettleser, OS, enhetstype) • Eventuell geolokasjon logges\n\n4.\nEtterforskeren ser informasjonen umiddelbart i loggpanelet\n\n5.\nIP-adressen begjæres utlevert fra ISP → Navn og adresse på abonnenten avdekkes\n\nC.2 Tekniske metoder for IP-logging Metode A: URL-basert IP-logging (Canary Tokens / Grabify-prinsippet) Tjenester som Canarytokens (canarytokens. org) lager sporbare lenker som logger IP.\nMikrosteg: Opprette en Canary Token-lenke\n\n□ Steg 1: Gå til https://canarytokens. org/generate □ Steg 2: Velg type: \"Web bug / URL token\" □ Steg 3: Skriv inn din e-postadresse for varsler □ Steg 4: Legg til en kommentar: \"Etterforskning sak [saksnr]\" □ Steg 5: Klikk \"Generate Token\" □ Steg 6: Du får to URL-er: • Token URL: https://canarytokens. com/abc123 (denne sendes til mistenkte) • Manage URL: https://canarytokens. com/manage?token=abc123 (denne beholder etterforskeren) □ Steg 7: Når mistenkte klikker Token URL, mottar etterforskeren e-postvarsel med: • IP-adresse • Tidspunkt • Nettleser og OS • Referrer (hvilken side de klikket fra) Alternativ: Tracking Pixel i e-post Et tracking pixel er et 1×1 transparent bilde innebygd i en e-post eller nettside.\nNår e-postklienten laster inn bildet, gjøres en HTTP-forespørsel til avsenderens server, som avslører mottakerens IP-adresse, tidspunktet e-posten ble åpnet, og ofte omtrentlig plassering. # Eksempel: Tracking pixel embedded i e-post (HTML-format) <img src=\"https://canarytokens. com/tracking. png?token=abc123\" width=\"1\" height=\"1\" style=\"display:none\">\n\n# Når mottaker åpner e-posten (og bilder er aktivert), # vil serveren logge mottakerens IP Metode B: QR-kode med IP-logging En QR-kode kan kodes til å peke på en sporbar lenke.\nNår mistenkte skanner QR-koden med telefonen sin, registreres IP-adressen.\nMikrosteg: Opprette sporbar QR-kode\n\n□ Steg 1: Opprett en sporbar lenke via Canarytokens (se over)\n□ Steg 2: Gå til https://www. qr-code-generator. com\n□ Steg 3: Lim inn din Canary Token-URL\n□ Steg 4: Generer QR-kode\n□ Steg 5: QR-koden kan nå:\n• Sendes som bilde i en melding\n• Skrives ut og legges på et sted mistenkte har tilgang til\n• Inkluderes i et dokument\n\nHva logges: • IP-adresse til telefon/enhet som skannet koden • Enhetstype (iPhone/Android, modell) • Geografisk lokasjon (dersom tilgjengelig) • Nøyaktig tidspunkt Metode C: Canary Token i dokument (Word, PDF) Canarytokens kan innbygges i dokumenter som automatisk \"ringer hjem\" når de åpnes. □ Steg 1: Gå til https://canarytokens. org/generate □ Steg 2: Velg type: \"Microsoft Word Document\" eller \"PDF Document\" □ Steg 3: Generer token-dokumentet □ Steg 4: Send dokumentet til mistenkte (som vedlegg, via chat) □ Steg 5: Når mistenkte åpner dokumentet, loggfører tokenet: • IP-adresse • Nøyaktig tidspunkt • Microsoft Office-versjon / operativsystem\n\nEksempel på scenario: Politiet sender en \"faktura. docx\" til mistenkte.\nDokumentet åpnes av mistenkte kl.\n22:47.\nLogger viser IP 82.134.12.45 (Telenor, Lørenskog).\nBegjæring sendes til Telenor → Kurt Mikkelsen identifisert."
+    },
+    {
+      "term": "Tema 19: C.3 KRITISK JURIDISK STOPP-BOKS – IP-LOGGING",
+      "definisjon": ""
+    },
+    {
+      "term": "Tema 20: 🛑 JURIDISK GRENSEOPPGANG – IP-LOGGING",
+      "definisjon": "✅ LOVLIG PASSIV METODE (observasjon av nettstedet): • IP-logging PÅ ETTERFORSKNINGENS EGNE RESSURSER (nettsider, filer politiet selv kontrollerer) • Logge IP til alle som frivillig besøker offentlige ressurser • Analysere loggfiler allerede innhentet via rettslig kjennelse"
+    },
+    {
+      "term": "Tema 21: ⚠️ JURIDISK GRÅSONE – KREVER JURISTVURDERING:",
+      "definisjon": "• Sende lenke til mistenkte som logger IP (kan ansees som aktiv interaksjon / provokasjon) • Legge ut sporbar QR-kode på sted mistenkte er kjent å besøke • Tracking pixel i e-post til mistenkte\n\n❌ KREVER RETTSLIG KJENNELSE (strpl. § 202a/§ 216b): • Systematisk overvåkning av mistenktes internettaktivitet • Innhenting av kommunikasjonsdata fra tjenesteleverandør • Utplassering av teknisk utstyr for datainnhenting"
+    },
+    {
+      "term": "Tema 22: ⛔ ALLTID FORBUDT:",
+      "definisjon": "• Bruke IP-logging som skjult tvangsmiddel uten hjemmel\n• Sende tracking-lenke forkledd som noe annet (provokasjon)\n• Bruke IP-informasjon til å angripe/skade mistenkte\n\nSPESIELT VED MINDREÅRIGE (Kurt Mikkelsen, 13 år): • ALL aktiv IP-innhenting mot mindreårig krever minst påtalemyndighetens forhåndsgodkjenning • Kontakt jurist FØR du sender noen form for sporbar lenke"
+    },
+    {
+      "term": "Tema 23: 📞 ER DU I TVIL? KONTAKT JURIST FØR HANDLING.",
+      "definisjon": "╝"
+    },
+    {
+      "term": "Tema 24: DEL D: RETTSLIG UTLEVERING – FRA IP TIL IDENTITET",
+      "definisjon": "D.1 Den rettslige kjeden: IP → ISP → Abonnent → Person Analogi: Registrering av et kjøretøy En IP-adresse er som et registreringsskilt.\nDu kan se det passere, du kan notere det ned, men du vet ikke hvem eieren er uten å slå det opp i Statens vegvesen (Motorvognregisteret).\nFor IP-adresser er \"Motorvognregisteret\" ISP-en – og norsk lov krever en rettslig kjennelse for å få utlevert abonnentinformasjon.\nKjeden i praksis:\n\nSTEG 1: Identifiser IP-adresse (OSINT eller logganalyse) → Eks: 82.134.12.45 (Telenor Norge)\n\nSTEG 2: Dokumenter tidspunkt (dato + klokkeslett + tidssone) → Eks: 13.02.2026 kl.\n23:47:22 UTC+1 (CET)\n\nSTEG 3: Påtalemyndigheten vurderer og godkjenner begjæringen → Strpl. § 210 (utleveringspålegg til tjenesteleverandør)\n\nSTEG 4: Retten avsi kjennelse (ved behov – se tabell under) → Tingretten i den krets der begjæringen fremsettes\n\nSTEG 5: Begjæring sendes til ISP / tjenesteleverandør → Telenor: rettshjelp@telenor. com → Telia: legal. norway@telia. com → Altibox: datajuridisk avdeling\n\nSTEG 6: ISP utleverer abonnentinformasjon → Navn, adresse, telefonnummer til abonnenten → Perioden IP-adressen var tildelt abonnenten\n\nSTEG 7: Krysskontroll mot Folkeregisteret → Bekreft at navn/adresse matcher registrerte data ╝\n\nD.2 Juridisk hjemmelsgrunnlag – Norsk rett"
+    },
+    {
+      "term": "Tema 25: JURIDISK HJEMMELSOVERSIKT – IP-UTLEVERING",
+      "definisjon": ""
+    },
+    {
+      "term": "Tema 26: STRAFFEPROSESSLOVEN § 210 (UTLEVERINGSPÅLEGG):",
+      "definisjon": "\"Retten kan pålegge enhver å utlevere gjenstander som antas å ha betydning som bevis...\"\n\nBrukes for: → ISP-abonnentdata (hvem hadde IP X på tidspunkt Y) → Nettsiders/plattformers brukerdata → Loggfiler fra tjenesteleverandører\n\nBeslutningsnivå: → Påtale (statsadvokat eller politiadvokat m/delegasjon) kan begjære etter ekomlovens §§ 2-7 og 2-8 → Retten avsier kjennelse etter begjæring"
+    },
+    {
+      "term": "Tema 27: EKOMLOVEN §§ 2-7 OG 2-8 (TAUSHETSPLIKTSUNNTAK):",
+      "definisjon": "Nettilbydere er underlagt taushetsplikt om abonnentdata.\nUnntak: Utlevering til politiet med rettslig grunnlag.\n\nKrever: → Etterforskning for lovbrudd med minst 6 måneder stengsel → Skriftlig begjæring fra kompetent påtalemyndighet → Beviskrav: grunn til å anta at informasjon er relevant\n\nSTRAFFEPROSESSLOVEN § 216b (KOMMUNIKASJONSDATA): For utlevering av kommunikasjonsdata (metadata om hvem som kommuniserte med hvem, tidspunkt, varighet – ikke innhold)\n\nKrever: → Rettskjennelse → Mistanke om lovbrudd med stengsel som strafferamme → Spesifisert tidsperiode og telefonnummer / enhet\n\nSTRAFFEPROSESSLOVEN § 216a (KOMMUNIKASJONSAVLYTTING): Innholdsavlytting av internetttrafikk\n\nKrever: → Rettskjennelse (ikke bare påtalebeslutning) → Mistanke om alvorlig lovbrudd (minst 10 års stengsel) → Utvidet bruk: Terrorisme, organisert kriminalitet"
+    },
+    {
+      "term": "Tema 28: DATA RETENTION (LAGRINGSTID HOS ISP / PLATTFORM):",
+      "definisjon": "ISP (norske): Logger IP-tildelinger i 6 måneder (ekomloven) Snapchat: Login-IP begrenset tid (se Law Enforcement guide) Instagram/Meta: 90 dager standard (kan forlenges ved anmodning) Google: 90 dager (med preserveringsanmodning) Telegram: Ikke i praksis tilgjengelig uten ekstraordinære tiltak\n\nVIKTIG: Begjær BEVISSIKRING (preservasjon) FØR loggene slettes! ╝\n\nD.3 Begjæringsmalen – Slik ber du ISP om utlevering"
+    },
+    {
+      "term": "Tema 29: EKSEMPEL: BEGJÆRING OM UTLEVERING TIL ISP",
+      "definisjon": "Fra: [Politidistrikt / Enhet] Til: Telenor ASA, Rettsavdelingen Dato: 15.02.2026 Saksnr: [Sak-ID]"
+    },
+    {
+      "term": "Tema 30: BEGJÆRING OM UTLEVERING AV ABONNENTOPPLYSNINGER",
+      "definisjon": "Det bes om utlevering av abonnentopplysninger tilknyttet følgende IP-adresse(r) og tidsangivelser:\n\nIP-adresse: 82.134.12.45 Tidspunkt: 13.02.2026 kl.\n23:47:22 (UTC+1) Protokoll: TCP (Inkluder IPv6 dersom aktuelt)\n\nØnskede opplysninger: □ Navn på abonnent □ Adresse til abonnent □ Periode IP-adresse var tildelt abonnenten □ Telefonnummer / e-post tilknyttet abonnementet\n\nHjemmel: Strpl. § 210, jf.\nEkomloven § 2-7 og § 2-8\n\nPåtalemyndighetens beslutning / rettens kjennelse: [Vedlegg: Kjennelse fra [Tingrett] datert [dato]]\n\nSvar bes innen 48 timer.\nVed hastehenvendelse: [telefon]\n\n[Underskrift, tjenestested, tjenesteperson] ╝\n\nD.4 Utlevering fra utenlandske plattformer – MLAT og direktekontakt Norske etterforskere opererer stadig oftere i situasjoner der IP-data er lagret hos utenlandske tjenesteleverandører (Meta/Facebook, Google, Apple, Snapchat, Discord, Telegram)."
+    },
+    {
+      "term": "Tema 31: UTENLANDSK UTLEVERING – PROSESSVEIER",
+      "definisjon": ""
+    },
+    {
+      "term": "Tema 32: • TJENESTE: PROSESS",
+      "definisjon": "• Meta (Insta/FB): Meta LEP: https://www. facebook. com/records Krever: Subpoena (USA) eller kjennelse (EU) Responstid: 14-90 dager\n\n• Snapchat: Snap Law Enforcement Guide E-post: lawenforcement@snap. com Krever: Rettslig kjennelse eller norsk subpoena\n\n• Google/YouTube: Google LEP: https://support. google. com/legalhelp Leverer login-IP med rettskjennelse\n\n• Apple: Apple LEP: https://www. apple. com/legal/privacy/ Svarer på rettskjennelser\n\n• Discord: Discord LEP: https://discord. com/safety Krever MLAT eller US subpoena for fullstendig IP-utlevering\n\n• Telegram: Krever kjennelse + MLAT-prosess Nytteverdi: Svært begrenset i praksis\n\n• MLAT-prosessen: Mutual Legal Assistance Treaty Via: Justisdepartementet (SIAN-systemet) Responstid: 3-18 måneder Brukes for: USA-baserte selskaper i alvorlige saker (vold, terror, CSAM) ╝\n\nD.5 Preserveringsanmodning – Kritisk første steg Før begjæring om utlevering kan sendes, er det avgjørende å sikre at loggene ikke slettes.\nPlattformer sletter logger automatisk etter sin oppbevaringsperiode (90 dager er vanlig)."
+    },
+    {
+      "term": "Tema 33: PRESERVERINGSANMODNING (PRESERVATION REQUEST)",
+      "definisjon": ""
+    },
+    {
+      "term": "Tema 34: SEND UMIDDELBART NÅR:",
+      "definisjon": "• En IP-adresse er identifisert i en pågående etterforskning\n• En sosiale medier-konto er identifisert som mistenkt\n• Du vet at rettslig begjæring vil ta tid (mer enn 30 dager)"
+    },
+    {
+      "term": "Tema 35: INNHOLD I PRESERVERINGSANMODNING:",
+      "definisjon": "→ Konto / IP-adresse som skal bevares\n→ Tidsperiode for bevaring (typisk: 90 dager + 90 dagers ext.)\n→ Saksnummer og kontaktinformasjon\n→ Forventet rettslig begjæring innen angitt dato"
+    },
+    {
+      "term": "Tema 36: PLATTFORMER SOM AKSEPTERER PRESERVERING:",
+      "definisjon": "Meta: https://www. facebook. com/records (immediate preserve) Google: https://support. google. com/legalhelp (72t svar) Snap: lawenforcement@snap. com Apple: https://www. apple. com/legal/privacy/law-enforcement/ ╝"
+    },
+    {
+      "term": "Tema 37: DEL E: IP-LEKKASJER OG EKSPLOITS",
+      "definisjon": "E.1 Kjente IP-eksponeringsmetoder Et sentralt prinsipp i OSINT-arbeid er at brukere – selv de med VPN – utilsiktet kan eksponere sin reelle IP-adresse gjennom en rekke tekniske mekanismer.\nWebRTC-lekkasje: WebRTC er en nettleserfunksjon for videosamtaler (Zoom, Google Meet etc.).\nDen kan avsløre brukerens reelle IP selv bak en VPN."
+    },
+    {
+      "term": "Tema 38: HVORDAN DET FUNGERER:",
+      "definisjon": "Nettleser → WebRTC-forespørsel til server → Serveren ser nettleserens lokale IP (f. eks.\n192.168.1.5) → OG den offentlige IP-en til ruteren (f. eks.\n82.134.12.45) → VPN-IPen ser ut til å være 10.0.0.1 (VPN-tunnel) → Men WebRTC avslører fortsatt 82.134.12.45!\n\nTESTVERKTØY (etterforsker kan bruke for å verifisere): → https://browserleaks. com/webrtc → https://ip. voidsec. com → https://www. doileak. com"
+    },
+    {
+      "term": "Tema 39: KONSEKVENS FOR ETTERFORSKNING:",
+      "definisjon": "Hvis mistenkte bruker VPN men ikke har blokkert WebRTC, kan nettstedene de besøker (inkl. politikontrollerte feller) logge den ekte IP-adressen ved siden av VPN-IPen.\nDNS-lekkasje:"
+    },
+    {
+      "term": "Tema 40: PRINSIPP:",
+      "definisjon": "VPN-brukere sender noen ganger DNS-forespørsler utenfor VPN-tunnelen.\nISP-ens DNS-server mottar forespørselen → ISP kan se domener brukeren besøker → ISP-loggen kan utleveres med rettskjennelse."
+    },
+    {
+      "term": "Tema 41: TESTVERKTØY:",
+      "definisjon": "→ https://dnsleaktest. com\n→ https://dnsleak. com"
+    },
+    {
+      "term": "Tema 42: ETTERFORSKNINGSMESSIG VERDI:",
+      "definisjon": "DNS-logger hos ISP kan vise HVILKE nettsteder en person har besøkt, selv om innholdet er kryptert (HTTPS).\nTorrent/P2P-lekkasje:"
+    },
+    {
+      "term": "Tema 43: PRINSIPP:",
+      "definisjon": "BitTorrent og andre P2P-protokoller deler IP-adresser direkte med alle tilkoblede noder.\nSELV VED VPN-BRUK eksponeres IP-en i tracker-logger og DHT-noder."
+    },
+    {
+      "term": "Tema 44: VERKTØY:",
+      "definisjon": "→ \"I Know What You Download\" (iknowwhatyoudownload. com) Viser filer lastet ned fra IP-adresse (offentlig tilgjengelig) → Krever kun IP-adresse – ingen rettslig beslutning nødvendig"
+    },
+    {
+      "term": "Tema 45: ETTERFORSKNINGSMESSIG VERDI:",
+      "definisjon": "Kan bevise at en bestemt IP-adresse har lastet ned spesifikt innhold (CSAM, opphavsrettsbeskyttet material, malware).\nTPS: T: B (automatisert logging), P: 2, S: HØY/KRITISK (avhengig av innhold)"
+    },
+    {
+      "term": "Tema 46: DEL F: CASE – KOMPLETT IP-ETTERFORSKNING",
+      "definisjon": "F.1 Lina Grim – Enkel case STARTPUNKT: Lina Grim har mottatt trusler fra ukjent Snapchat-konto\n\nSTEG 1 – OSINT (ingen rettslig beslutning nødvendig): • Analyser offentlig tilgjengelig informasjon • Snapchat-konto: @ukjenttrussler (ingen tilleggsinformasjon synlig)\n\nSTEG 2 – LOGGANALYSE (via politiets interne systemer): • Linas skjermdump viser melding sendt kl.\n21:34 • Dato/tid dokumentert i rapport"
+    },
+    {
+      "term": "Tema 47: STEG 3 – BEGJÆRING TIL SNAPCHAT:",
+      "definisjon": "• Preserveringsanmodning sendt umiddelbart\n• Rettslig kjennelse innhentes\n• Login-IP for konto @ukjenttrussler utleveres:\n→ IP: 95.108.162.44, tidspunkt 21:29:15 CET 12.02.2026"
+    },
+    {
+      "term": "Tema 48: STEG 4 – ANALYSE AV IP 95.108.162.44:",
+      "definisjon": "• ipinfo. io: MegaFon, Russland → VPN!\n• GreyNoise: Kjent VPN/proxy-node\n• ipqualityscore: 97% VPN-sannsynlighet"
+    },
+    {
+      "term": "Tema 49: STEG 5 – VIDERE ETTERFORSKNING:",
+      "definisjon": "• Identifiser VPN-leverandøren (noen har norske kontoer)\n• MLAT via Russland (lite sannsynlig å lykkes)\n• Søk etter andre indikatorer (OPSEC-feil i meldingene)\n\nKONKLUSJON: Bruker VPN-tjeneste registrert i Russland.\nEtterforskning kompliseres.\nTPS: C-3-MODERAT F.2 Kurt Mikkelsen – Kompleks case STARTPUNKT: Kurt (k13_nord) mistenkes for VaaS-aktivitet.\nSnap Map viser regelmessige møter onsdager kl.\n21:00."
+    },
+    {
+      "term": "Tema 50: STEG 1 – OSINT:",
+      "definisjon": "• Snap Map: Kurts Bitmoji vises ved Rema 1000 Lørenskog\n• Ingen IP tilgjengelig via åpne kilder (Snapchat-app, ikke web)\n\nSTEG 2 – IP-FELLE (krever JURISTVURDERING FØR gjennomføring): Scenario: Etterforskeren lager en Canary Token-lenke forkledd som en \"gang-relatert nyhet\" fra en autentisk-utseende nettside.\nLenken legges i gruppen \"BK Nettverk\" på Telegram."
+    },
+    {
+      "term": "Tema 51: JURIDISK VURDERING NØDVENDIG:",
+      "definisjon": "→ Er dette aktiv interaksjon/provokasjon? (strpl. § 196a)\n→ Kan det ansees som forledende? (krever rettslig hjemmel)\n→ Er Kurt mistenkt eller vitne/offer? (påvirker terskelen)"
+    },
+    {
+      "term": "Tema 52: [AVKLARING MED JURIST / PÅTALE FØR GJENNOMFØRING]",
+      "definisjon": "STEG 3 – BEGJÆRING TIL SNAPCHAT (etter rettslig kjennelse): • Snap Law Enforcement Process • Login-IP for konto k13_nord utleveres • IP: 82.134.12.45, dato 13.02.26 kl.\n22:01:33 CET"
+    },
+    {
+      "term": "Tema 53: STEG 4 – ANALYSE:",
+      "definisjon": "• ipinfo. io: Telenor Norge, Lørenskog\n• GreyNoise: Ingen aktivitet (vanlig privatbruker)\n• Ingen VPN/Tor-indikatorer\n→ Reel hjem-IP bekreftet"
+    },
+    {
+      "term": "Tema 54: STEG 5 – BEGJÆRING TIL TELENOR:",
+      "definisjon": "• Strpl. § 210, jf. Ekomloven § 2-7 og 2-8\n• Kjennelse fra tingretten vedlagt\n• Telenor utleverer:\n→ Abonnent: Hanne Mikkelsen\n→ Adresse: Skoleveien 12, 1473 Lørenskog\n→ IP var aktiv på adressen 13.02.26 kl. 20:00–00:15"
+    },
+    {
+      "term": "Tema 55: STEG 6 – FOLKEREGISTERSJEKK:",
+      "definisjon": "• Hanne Mikkelsen (41) → Sønn: Kurt Mikkelsen (13)\n• Bekreftet: Kurts hjemmeadresse."
+    },
+    {
+      "term": "Tema 56: KONKLUSJON:",
+      "definisjon": "IP 82.134.12.45 var tildelt Hanne Mikkelsens bredbåndsabonnement ved Skoleveien 12 på det aktuelle tidspunktet.\nKurt Mikkelsen er registrert bosatt på samme adresse.\nBevis indikerer at k13_nord- kontoen ble benyttet fra denne adressen.\nTPS: T: A (ISP-verifisert), P: 1, S: HØY (mindreårig)"
+    },
+    {
+      "term": "Tema 57: DEL G: VANLIGE FEIL OG SJEKKLISTER",
+      "definisjon": ""
+    },
+    {
+      "term": "Tema 58: ⚠️ VANLIGE FEIL – IP-ETTERFORSKNING",
+      "definisjon": "FEIL 1: \"IP-adressen ER personen\" Fakta: IP er abonnentens tilkobling, ikke nødvendigvis personen som brukte den.\nDokumenter alltid mulige andre brukere.\n\nFEIL 2: \"VPN betyr at vi ikke kan identifisere vedkommende\" Fakta: VPN-leverandøren logger ofte IP-er.\nBegjær utlevering fra VPN-leverandøren via MLAT.\nSjekk WebRTC/DNS-lekkasjer.\n\nFEIL 3: \"Tor = 100% anonym\" Fakta: Tor-brukere gjør OPSEC-feil.\nAnalysere Tor-exit- tidspunkter opp mot kjente aktivitetsmønstre.\n\nFEIL 4: \"Glemte å notere eksakt klokkeslett og tidssone\" Fakta: ISP-er opererer ofte i UTC.\nCET/CEST-feil på 1-2 timer kan ødelegge en utleveringsbegjæring.\nAlltid noter UTC OG lokal tid i rapporten.\n\nFEIL 5: \"Sendte begjæring men ventet for lenge\" Fakta: Logger slettes etter 90 dager (Meta, Google) eller kortere (Snapchat).\nSend ALLTID preserveringsanmodning umiddelbart.\n\nFEIL 6: \"Satte opp IP-felle uten juristvurdering\" Fakta: Aktiv IP-logging mot mistenkte er juridisk sensitiv.\nKontakt alltid påtale FØR du sender noen sporbar ressurs. ╝"
+    },
+    {
+      "term": "Tema 59: ✓ SJEKKLISTE – IP-ETTERFORSKNING",
+      "definisjon": ""
+    },
+    {
+      "term": "Tema 60: FØR DU BEGYNNER:",
+      "definisjon": "□ Er IP-adressen dokumentert med eksakt tidspunkt (UTC + lokal)?\n□ Er det klargjort om IP er statisk eller dynamisk?\n□ Er det sendt preserveringsanmodning?\n□ Er påtale involvert (ved aktive metoder)?\n□ Er VPN/Tor sjekket via ipinfo. io og GreyNoise?"
+    },
+    {
+      "term": "Tema 61: OSINT-ANALYSE:",
+      "definisjon": "□ Er IP sjekket mot ISP/WHOIS (ipinfo. io, who. is)?\n□ Er IP sjekket i VirusTotal (kjent kriminalitet)?\n□ Er IP sjekket i GreyNoise (klassifisering)?\n□ Er IP sjekket i Shodan (åpne porter, tjenester)?\n□ Er Tor exit node verifisert (dan. me. uk/torcheck)?\n□ Er VPN bekreftet (ipqualityscore. com)?\n□ Er APT/statlig tilknytning sjekket (OTX, Threatfox)?"
+    },
+    {
+      "term": "Tema 62: RETTSLIG UTLEVERING:",
+      "definisjon": "□ Er påtalemyndighetens beslutning/rettens kjennelse innhentet?\n□ Er begjæringen sendt med riktig rettslig grunnlag?\n□ Er tidssonen korrekt angitt (UTC)?\n□ Er svar mottatt og dokumentert?\n□ Er ISP-svar kryssverifisert mot Folkeregisteret?"
+    },
+    {
+      "term": "Tema 63: DOKUMENTASJON:",
+      "definisjon": "□ Er alle funn TPS-vurdert?\n□ Er SHA-256 hash generert for beviset?\n□ Er rapporten skrevet i tredjeperson/førsteperson passiv?\n□ Er bevisrekken dokumentert fra IP til person?\n□ Er bevisrettslige forbehold tatt (delt IP, VPN, Tor)?"
+    },
+    {
+      "term": "Tema 64: OPPSUMMERING",
+      "definisjon": "IP-adressen er et av de mest verdifulle etterforskningsverktøyene i digital etterforskning – men den er aldri alene tilstrekkelig.\nDen er startpunktet for en kjede av bevishandlinger som leder fra en tallrekke til et navn og en adresse.\nOSINT-analyse av en IP kan gjennomføres på under 30 minutter og avdekke ISP, geolokasjon, rykte og anonymiseringsmetode uten noen rettslig beslutning.\nDen rettslige utleveringsprosessen tar lenger tid, men gir det avgjørende beviset: hvem som faktisk abonnerte på den IP-adressen i det aktuelle øyeblikket.\nDet viktigste å huske: IP-adressen er et utgangspunkt, ikke et bevis.\nDokumenter alltid muligheten for at adressen tilhørte en annen bruker i husstanden, at den ble brukt via VPN eller Tor, eller at den var en del av et botnet uten eierens kunnskap.\n\nDisse alternativhypotesene tilhører analysedelen av rapporten – og styrker troverdigheten til den faktiske konklusjonen."
+    }
+  ]
+}
