@@ -1,4 +1,14 @@
 {
   "tittel": "IP-ADRESSER: INTERNET PROTOCOL I DIGITAL ETTERFORSKNING",
   "undertittel": "Fra OSINT til rettslig utlevering – komplett metodikk",
+  "ordliste": [
+    {
+      "term": "IP-adresse",
+      "definisjon": "En numerisk adresse som identifiserer en enhet på et nettverk."
+    },
+    {
+      "term": "OSINT",
+      "definisjon": "Open-source intelligence; innsamling av informasjon fra åpne kilder."
+    }
+  ]
 }
