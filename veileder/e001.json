@@ -1,74 +1,330 @@
 {
-  "schemaVersion": "1.2",
-  "id": "e001",
+  "metadata": {
+    "versjon": "8.2_ULTIMATE",
+    "parser_mode": "component_based",
+    "target": "SwiftUI_SporISkyen_v2"
+  },
   "tittel": "KRYPTOVALUTA",
   "undertittel": "BLOKKJEDE, ANONYMITET OG ETTERFORSKNINGSMETODIKK",
-  "source": {
-    "type": "github-raw",
-    "url": "https://raw.githubusercontent.com/Polishofficechair/Spor-i-skyen/refs/heads/root/veileder/e001.json"
-  },
-  "sections": [
+  "ordliste": [
+    {
+      "term": "Kryptovaluta",
+      "definisjon": "Digital valuta basert på kryptografi og blokkjedeteknologi. Ingen sentralbank, ingen fysiske sedler. Eks: Bitcoin (BTC), Ethereum (ETH), Monero (XMR) [cite: 776-778]"
+    },
+    {
+      "term": "Blokkjede",
+      "definisjon": "En offentlig, uforanderlig digital regnskapsbok. Analogi: En notisbok der ALLE transaksjoner skrives ned, alle kan lese den, og ingen kan slette noe. [cite: 779-781]"
+    },
+    {
+      "term": "Lommebok",
+      "definisjon": "En programvare som lagrer kryptografiske nøkler. Analogi: En bankboks med kombinasjonslås. (Ikke selve pengene – nøklene til pengene) [cite: 782-784]"
+    },
+    {
+      "term": "Lommebokadresse",
+      "definisjon": "En alfanumerisk kode som brukes til å sende/motta krypto. Eks: 1A1zP1eP5QGefi2DMPTfTL5SLmv7Divf. Analogi: Et kontonummer – synlig, men ikke koblet til navn [cite: 785-787]"
+    },
+    {
+      "term": "Pseudonymitet",
+      "definisjon": "Transaksjoner er synlige, men avsender/mottaker er ikke direkte koblet til ekte identitet. IKKE det samme som anonymitet. [cite: 788-790]"
+    },
+    {
+      "term": "Private Key",
+      "definisjon": "Den hemmelige koden som beviser eierskap til lommebok. Analogi: PIN-koden til bankkortet. Avgjørende hemmelighet. [cite: 791-792]"
+    },
+    {
+      "term": "UTXO",
+      "definisjon": "Unspent Transaction Output – \"vekselpenger\" på Bitcoin. Analogi: Kontanter. Bruker du en 500-lapp, får du tilbake. [cite: 793-794]"
+    },
+    {
+      "term": "On-ramp",
+      "definisjon": "Tjeneste der man kjøper krypto for tradisjonell valuta (fiat). Eks: Kjøpe Bitcoin med norske kroner på Firi.no [cite: 795-796]"
+    },
+    {
+      "term": "Off-ramp",
+      "definisjon": "Tjeneste der man selger krypto tilbake til fiat. Eks: Ta ut Bitcoin til bankkonto via Coinbase [cite: 797-798]"
+    },
+    {
+      "term": "KYC",
+      "definisjon": "Know Your Customer – krav om identitetsverifikasjon (pass, fødselsnummer) ved registrering hos børser [cite: 799-800]"
+    },
+    {
+      "term": "AML",
+      "definisjon": "Anti-Money Laundering – hvitvaskingsregler [cite: 801]"
+    },
+    {
+      "term": "Mixer / Tumbler",
+      "definisjon": "Tjeneste som blander kryptotransaksjoner fra mange brukere for å skjule pengesporet. Analogi: Vaskeri som blander klær fra 100 kunder og gir ut tilfeldig [cite: 802-804]"
+    },
+    {
+      "term": "CoinJoin",
+      "definisjon": "Teknisk metode der flere brukere kombinerer transaksjoner i én felles transaksjon for å skjule hvem som sendte til hvem [cite: 805-807]"
+    },
+    {
+      "term": "Chain Hopping",
+      "definisjon": "Veksle fra én kryptovaluta til en annen for å miste sporingslogikken. Eks: BTC til XMR til BTC [cite: 808-809]"
+    },
+    {
+      "term": "Monero (XMR)",
+      "definisjon": "Personvernsmynt med innebygd anonymisering. Analogi: Kontanter med innebygd blekk som sletter alle fingeravtrykk automatisk [cite: 810-812]"
+    },
+    {
+      "term": "DEX",
+      "definisjon": "Decentralized Exchange – desentralisert børs. Ingen KYC, ingen registrering, anonym handel [cite: 813-814]"
+    },
+    {
+      "term": "Chainalysis",
+      "definisjon": "Ledende kommersielt verktøy for blokkjedeanalyse, brukt av FBI, Europol og norsk politi [cite: 815-816]"
+    },
+    {
+      "term": "Clustering",
+      "definisjon": "Gruppering av lommebokadresser som tilhører samme person/enhet, basert på mønsteranalyse [cite: 817-818]"
+    },
+    {
+      "term": "Co-spending",
+      "definisjon": "Å bruke midler fra FLERE inngående adresser (inputs) i én transaksjon – sterk indikator på felles eierskap [cite: 819-821]"
+    },
+    {
+      "term": "Vekseladresse",
+      "definisjon": "\"Restpengene\" i en Bitcoin-transaksjon. Sendes tilbake til avsenders nye adresse. [cite: 822-823]"
+    },
+    {
+      "term": "NFT",
+      "definisjon": "Non-Fungible Token – digitalt eiersskapsbevis, brukt som profilbilde av krypto-entusiaster [cite: 824-825]"
+    },
+    {
+      "term": "HODL",
+      "definisjon": "Hold On for Dear Life – slang for å beholde krypto [cite: 826-827]"
+    },
+    {
+      "term": "Laser Eyes",
+      "definisjon": "Redigerte øyne med laseruttrykk på profilbilde, symboliserer at man \"tror på Bitcoin\" [cite: 828-829]"
+    },
+    {
+      "term": "PayID",
+      "definisjon": "Binance-funksjon: en forenklet identifikator knyttet til en Binance-konto (som et brukernavn for overføringer) [cite: 830-831]"
+    }
+  ],
+  "seksjoner": [
     {
       "id": "s001",
-      "index": 1,
-      "title": "Tema 1: BLOKKJEDE, ANONYMITET OG ETTERFORSKNINGSMETODIKK",
-      "blocks": [
+      "overskrift": "DEL A: KRYPTOVALUTA – GRUNNLEGGENDE FOR ETTERFORSKERE",
+      "komponenter": [
         {
-          "id": "b001_001",
           "type": "paragraph",
-          "text": "Fra pseudonym lommebok til ekte identitet – komplett metodikk"
+          "data": "A.1 Hva er kryptovaluta og blokkjeden? Analogi: Den åpne regnskapsbok i et glasshus. Tenk deg et regnskap der alle transaksjoner skrives ned i en notisbok som alle kan lese, ingen kan slette, og som eksisterer i tusenvis av identiske kopier over hele verden. Dette er blokkjeden. Det finnes ingen \"sentralbank\" som kontrollerer den – alle noder (datamaskiner) i nettverket holder regnskapet. [cite: 833-836]"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "Pseudonymitet – ikke anonymitet: Dette er det viktigste begrepet i kapittelet. Kryptobrukere er representert av alfanumeriske adresser som tilsvarer deres lommebøker, noe som gjør dem teknisk anonyme. Imidlertid er denne kombinasjonen av åpenhet og anonymitet kjent som pseudonymitet: brukere er anonymisert, men deres anonymiserte fotavtrykk kan spores. [cite: 840-842]"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "PSEUDONYMITET – DEN KRITISKE DISTINKSJON: ANONYMITET betyr at sporene finnes ikke (Kontanter, XMR-transaksjoner). PSEUDONYMITET betyr at sporene finnes, men er ikke koblet til navn (Bitcoin, Ethereum). En Bitcoin-lommebokadresse er som et fingeravtrykk: unikt og sporbart dersom man kobler det til en database. Etterforskerens oppgave er å koble adressen til personen. [cite: 845-859]"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "KRIMINELLE FORDELER | BESKRIVELSE",
+            "INGEN BANKGODKJENNING | Opprette lommebok uten ID, navn eller bankforbindelse [cite: 866-867]",
+            "GRENSELØSE OVERFØRINGER | Sender store beløp globalt på minutter uten kontroll [cite: 870-872]",
+            "IRREVERSIBILITET | Når krypto er sendt, kan det ikke reverseres [cite: 875-876]",
+            "RELATIVT PSEUDONYMITET | Adresser er ikke direkte koblet til navn [cite: 879-880]",
+            "TEKNOLOGISK BARRIERE | Etterforskere mangler kompetanse, kriminelle har forsprang [cite: 883-885]"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Kriminalitetstyper som bruker krypto inkluderer ransomware/utpressing, narkotikahandel via dark web, hvitvaskingsoperasjoner og VaaS-betaling (Violence as a Service). Ulovlige kryptoadresser mottok opptil 51 milliarder dollar i krypto i 2024 alene, ifølge Chainalysis. [cite: 887-893]"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "Kriminelle bruker aktive anonymiseringsteknikker som Mixers, CoinJoin, Chain Hopping og Privacy Coins for å vanskeliggjøre sporing. [cite: 894-897]"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "SLIK FUNGERER EN MIXER: Kriminell sender 1 BTC til mixer-tjeneste. Mixeren blander krypto fra hundrevis av brukere i en stor pool. Kriminell mottar 0.99 BTC tilbake fra en ANNEN adresse enn den opprinnelige. Pengesporet er dermed brutt. [cite: 900-913]"
+        },
+        {
+          "type": "paragraph",
+          "data": "Typisk Chain Hopping-mønster: Vipps (sporbar) til Bitcoin (delvis sporbar) til Monero XMR (tilnærmet usporbar) til Ethereum på DEX (delvis sporbar) og tilbake til Bitcoin til en ny \"ren\" adresse før uttak via utenlandsk børs uten norsk KYC. [cite: 928-939]"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "MONERO XMR – SLIK SKJULES TRANSAKSJONENE: Ring-signaturer skjuler avsender. Stealth Addresses skjuler mottaker. RingCT (Confidential Transactions) skjuler beløp. Resultatet er at en XMR-transaksjon skjuler hvem som sendte, hvem som mottok, og hvor mye som ble sendt. [cite: 944-960]"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "EGENSKAP | CEX (Binance) | DEX (Uniswap)",
+            "KYC | Ja (pass påkrevd) | Nei [cite: 968]",
+            "Identitetsdata | Lagret | Ingen [cite: 969]",
+            "Rettslig utlever. | Mulig | Umulig (ingen eier) [cite: 970]",
+            "IP-logging | Ja | Smart contract logger [cite: 971]",
+            "Etterforsknbar | Ja | Svært begrenset [cite: 972]"
+          ]
         }
-      ],
-      "attachments": [],
-      "reportTemplate": {
-        "title": "Rapporttekst – Tema 1",
-        "copyText": "Observasjon:\n- Tema 1: BLOKKJEDE, ANONYMITET OG ETTERFORSKNINGSMETODIKK\n\nFunn/innhold (kort):\n- Fra pseudonym lommebok til ekte identitet – komplett metodikk\n\nMetode:\n- Veiledning brukt som oppslagsverk (Spor i skyen → Veileder)\n\nVurdering:\n- Relevant som bakgrunn for vurdering av pseudonymitet/anonymitet i krypto-spor.\n"
-      }
+      ]
     },
     {
       "id": "s002",
-      "index": 2,
-      "title": "Tema 2: ORDLISTE",
-      "blocks": [
+      "overskvift": "DEL B: OSINT-KARTLEGGING – FRA LOMMEBOK TIL IDENTITET",
+      "komponenter": [
         {
-          "id": "b002_001",
           "type": "paragraph",
-          "text": "Kryptovaluta = Digital valuta basert på kryptografi og blokkjedeteknologi.\nIngen sentralbank, ingen fysiske sedler.\n\n• Eks: Bitcoin (BTC), Ethereum (ETH), Monero (XMR)\n\nBlokkjede = En offentlig, uforanderlig digital regnskapsbok.\n\n• Analogi: En notisbok der ALLE transaksjoner skrives ned,\n\nalle kan lese den, og ingen kan slette noe.\nLommebok = En programvare som lagrer kryptografiske nøkler.\n\n• Analogi: En bankboks med kombinasjonslås.\n\n(Ikke selve pengene – nøklene til pengene)\nLommebokadresse = En alfanumerisk kode som brukes til å sende/motta krypto.\n\n• Eks: 1A1zP1eP5QGefi2DMPTfTL5SLmv7Divf\n\nAnalogi:\nEt kontonummer – synlig, men ikke koblet til navn\nPseudonymitet = Transaksjoner er synlige, men avsender/mottaker er\nikke direkte koblet til ekte identitet.\nIKKE det samme som anonymitet.\nPrivate Key = Den hemmelige koden som beviser eierskap til lommebok.\n\n• Analogi: PIN-koden til bankkortet.\nAvgjørende hemmelighet.\n\nUTXO =\nUnspent Transaction Output – \"vekselpenger\" på Bitcoin.\n\n• Analogi: Kontanter. Bruker du en 500-lapp, får du tilbake.\n\nOn-ramp = Tjeneste der man kjøper krypto for tradisjonell valuta (fiat)\n\n• Eks: Kjøpe Bitcoin med norske kroner på Firi.\n\nOff-ramp = Tjeneste der man selger krypto tilbake til fiat\n\n• Eks: Ta ut Bitcoin til bankkonto via Coinbase\n\nKYC =\nKnow Your Customer – krav om identitetsverifikasjon\n(pass, fødselsnummer) ved registrering hos børser\nAML =\nAnti-Money Laundering – hvitvaskingsregler\nMixer / Tumbler = Tjeneste som blander kryptotransaksjoner fra mange\nbrukere for å skjule pengesporet.\nAnalogi: Vaskeri\nsom blander klær fra 100 kunder og gir ut tilfeldig\nCoinJoin = Teknisk metode der flere brukere kombinerer\ntransaksjoner i én felles transaksjon for å skjule\nhvem som sendte til hvem\nChain Hopping = Veksle fra én kryptovaluta til en annen for å\nmiste sporingslogikken.\nEks: BTC → XMR → BTC\nMonero (XMR) = Personvernsmynt med innebygd anonymisering.\n\n• Analogi: Kontanter med innebygd blekk som sletter\n\nalle fingeravtrykk automatisk\nDEX =\nDecentralized Exchange – desentralisert børs\nIngen KYC, ingen registrering, anonym handel\nChainalysis = Ledende kommersielt verktøy for blokkjedeanalyse,\nbrukt av FBI, Europol og norsk politi\nClustering = Gruppering av lommebokadresser som tilhører\nsamme person/enhet, basert på mønsteranalyse\nCo-spending = Å bruke midler fra FLERE inngående adresser\n(inputs) i én transaksjon – sterk indikator på\nfelles eierskap\nVekseladresse = \"Restpengene\" i en Bitcoin-transaksjon.\nSendes tilbake til avsenders nye adresse.\nNFT =\nNon-Fungible Token – digitalt eiersskapsbevis,\nbrukt som profilbilde av krypto-entusiaster\nHODL =\nHold On for Dear Life – slang for å beholde krypto\n(opprinnelig skrivefeil for \"hold\", nå etablert begrep)\nLaser Eyes = Redigerte øyne med laseruttrykk på profilbilde,\nsymboliserer at man \"tror på Bitcoin\"\nPayID =\nBinance-funksjon: en forenklet identifikator knyttet\ntil en Binance-konto (som et brukernavn for overføringer)"
+          "data": "B.1 Steg 1: Clustering – Kartlegging av adresser. Selv om én person bruker 50 forskjellige adresser, etterlater de seg mønstre som avslører sameierskap. Dette er grunnlaget for all moderne kryptosporing. [cite: 975-978]"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "Co-spending (Samforbruk) er den sterkeste heuristikken. Hvis to eller flere adresser brukes som inputs i én transaksjon, tilhører de sannsynligvis samme eier, da det krever private nøkler til alle involverte adresser. [cite: 982-996]"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "ANALOGI: SEDDEL OG VEKSLEPENGER. I Bitcoin sendes \"vekselpenger\" automatisk tilbake til en ny adresse (Vekseladresse) som kontrolleres av avsender. Adresse A (opprinnelig) og Adresse D (veksel) tilhører derfor samme eier. [cite: 1003-1015]"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "VERKTØY | BESKRIVELSE OG URL",
+            "Chainalysis Reactor | Industristandard. Visualiserer pengestrøm og clustrer adresser. (URL: https://www.chainalysis.com) [cite: 1052-1056]",
+            "TRM Labs | Konkurrent. Sterk på Ethereum og DeFi. (URL: https://www.trmlabs.com) [cite: 1058-1062]",
+            "Breadcrumbs.app | GRATIS. Godt startpunkt for visualisering av BTC/ETH. (URL: https://www.breadcrumbs.app) [cite: 1064-1069]",
+            "MetaSleuth | GRATIS. Sterk på DeFi-pengestrømmer. (URL: https://metasleuth.io) [cite: 1071-1075]",
+            "Blockchain.com | GRATIS offentlig utforsker for Bitcoin. (URL: https://www.blockchain.com/explorer) [cite: 1082-1084]",
+            "Blockchair | GRATIS multi-valuta utforsker (BTC, ETH, XMR). (URL: https://blockchair.com) [cite: 1091-1094]"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Identifisering av On-ramps og Off-ramps: Pseudonymiteten bryter ned i det øyeblikket krypto konverteres til eller fra tradisjonell valuta (fiat) hos sentraliserte børser (CEX) som Binance, Coinbase eller Firi.no. [cite: 301-303, 1113-1119]"
+        },
+        {
+          "type": "action_button",
+          "label": "Binance Law Enforcement",
+          "url": "https://www.binance.com/en/support/law-enforcement"
+        },
+        {
+          "type": "action_button",
+          "label": "Coinbase LEP",
+          "url": "https://www.coinbase.com/legal/government-requests"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "KRYPTO-SIGNALER PÅ SOSIALE MEDIER: Se etter \"Laser Eyes\", NFT-profilbilder (Bored Ape), ticker-symboler som $BTC, uttrykk som \"HODL\", eller lommebokadresser direkte i bio. Twitter/X, Reddit og Telegram er de mest aktive plattformene. [cite: 1169-1201]"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "BINANCE PAYID-OSINT: Bruk Binance Pay-søkefunksjonen for å koble e-post eller telefonnummer til et verifisert navn og profilbilde. Dette bekrefter eierskap og gir grunnlag for begjæring. [cite: 1238-1254]"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "JURIDISK MERKNAD: Binance PayID-teknikken er passiv observasjon. Dokumenter handlingen nøye og kontakt påtale ved tvil. [cite: 1255-1260]"
+        },
+        {
+          "type": "paragraph",
+          "data": "Tidsanalyse av Kurts logg viser transaksjoner mellom 21:45 og 22:30 CET, noe som korrelerer med Snap Map-observasjoner. Dette gir en TPS-vurdering på T: C, P: 3, S: HØY. [cite: 1276-1290]"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "EKSPLOITS OG LEKKASJER: Sjekk databaser fra hacket dark web-fora (AlphaBay via IntelX) eller børslekkasjer (Ledger, Bitfinex). Brukere poster ofte adresser åpent for donasjoner eller som \"bevis\" på midler på forum som Bitcointalk. [cite: 1311-1343]"
         }
-      ],
-      "attachments": [],
-      "reportTemplate": {
-        "title": "Rapporttekst – Ordliste",
-        "copyText": "Observasjon:\n- Oppslagsverk (ordliste) brukt for begrepsavklaring i krypto-spor.\n\nFunn:\n- Definisjoner av sentrale begreper (KYC, AML, UTXO, on/off-ramp, DEX, mixers, CoinJoin m.m.).\n\nVurdering:\n- Brukt for å sikre korrekt begrepsbruk og skille pseudonymitet/anonymitet.\n"
-      }
+      ]
     },
-
     {
       "id": "s003",
-      "index": 3,
-      "title": "Tema 3: A.1 Hva er kryptovaluta og blokkjeden?",
-      "blocks": [
+      "overskrift": "DEL C: CHAINALYSIS-ALGORITMEN – TEKNISK DYBDE",
+      "komponenter": [
         {
-          "id": "b003_001",
           "type": "paragraph",
-          "text": "• Analogi: Den åpne regnskapsbok i et glasshus\n\nTenk deg et regnskap der alle transaksjoner skrives ned i en notisbok som alle kan lese, ingen kan slette, og som eksisterer i tusenvis av identiske kopier over hele verden.\nDette er blokkjeden. Det finnes ingen \"sentralbank\" som kontrollerer den – alle noder (datamaskiner) i nettverket holder regnskapet.\nDen avgjørende kontrasten til tradisjonell bank: Når du sender penger via Vipps, er transaksjonen privat mellom deg, banken og mottaker. Når Kurt sender Bitcoin, er transaksjonen synlig for ALLE som vet adressene.\nDet som ikke er synlig uten ytterligere analyse, er hvem som eier adressene."
-        }
-      ],
-      "attachments": [
+          "data": "Chainalysis Reactor fungerer ved å kombinere \"Ground Truth\" (sikker attribusjon fra politi eller børser) med heuristisk utvidelse (Co-spend, Change Address, Deposit Heuristic), maskinlæring og kontinuerlig validering mot børsregistre. [cite: 1371-1398]"
+        },
         {
-          "id": "a003_001",
-          "type": "link",
-          "title": "Oppgaver, PDF og leksjoner",
-          "url": "https://example.com/episode-e001-ressurser",
-          "note": "Bytt til riktig URL per episode."
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "BEVISRETTSLIG FORSIKTIGHETSREGEL: Blokkjedeanalyse er et etterforskningsinstrument (leads), ikke et primærbevis. Det endelige beviset er KYC-data fra børsen. [cite: 1400-1403]"
         }
-      ],
-      "reportTemplate": {
-        "title": "Rapporttekst – Blokkjede forklaring",
-        "copyText": "Observasjon:\n- Veiledning gjennomgått: hva blokkjede er og hva som er synlig/offentlig.\n\nFunn:\n- Transaksjoner er offentlig synlige, identitet er ikke direkte koblet uten videre analyse.\n\nVurdering:\n- Viktig for å forklare hvorfor blokkjedeanalyse gir spor, men ikke alene beviser identitet.\n"
-      }
+      ]
+    },
+    {
+      "id": "s004",
+      "overskrift": "DEL D: RETTSLIG UTLEVERING – KRYPTO TIL IDENTITET",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "LEGAL",
+          "data": "JURIDISK HJEMMEL I NORGE: Straffeprosessloven § 210 brukes for utlevering av KYC-data, transaksjonshistorikk og IP-logger fra norske tilbydere. Hvitvaskingsloven §§ 4-9 pålegger børser å rapportere mistenkelige transaksjoner over 15 000 kr til FIU-Norge. [cite: 1423-1434]"
+        },
+        {
+          "type": "paragraph",
+          "data": "EUs MiCA-regulering innfører \"Travel Rule\" der navn må knyttes til alle transaksjoner. For utenlandske børser brukes MLAT-prosesser via Justisdepartementet eller direkte Law Enforcement Portals. [cite: 1436-1447, 1487-1488]"
+        }
+      ]
+    },
+    {
+      "id": "s005",
+      "overskrift": "DEL E: MONERO OG PERSONVERNSMYNTER",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "MONERO – ETTERFORSKNINGENS STØRSTE UTFORDRING: Man kan ikke lese avsender, mottaker eller beløp fra blokkjeden. Monero-saker bør eskaleres til Kripos NCEC / Europol EC3. Fokuser på inn/ut-punkter (on-ramp/off-ramp) fremfor selve blokkjede-sporingen. [cite: 1493-1515]"
+        },
+        {
+          "type": "paragraph",
+          "data": "I VaaS-betalinger byttes ofte BTC til XMR via DEX uten KYC for å bryte sporet. Etter konvertering til XMR er det praktisk umulig å spore videre. [cite: 1518-1532]"
+        }
+      ]
+    },
+    {
+      "id": "s006",
+      "overskrift": "DEL F: CASE – KOMPLETT KRYPTOETTERFORSKNING",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "LINA GRIM (Svindelsak): Startet med adresse 1BkX4s. OSINT avdekket 847 ofre og spor til Binance. Rettslig utlevering bekreftet konto tilhørende \"Kyiv Digital Assets Ltd\". [cite: 1534-1560]"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "KURT MIKKELSEN (VaaS-case): Koblet adressen 1NrdL8X4f fra Anders Bergs (@NordLink81) Telegram til Binance-innskudd. Korrelerte beløp med Vipps-innbetalinger for å dokumentere komplett pengestrøm. [cite: 1561-1591]"
+        }
+      ]
+    },
+    {
+      "id": "s007",
+      "overskrift": "DEL G: VANLIGE FEIL OG SJEKKLISTE",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VANLIGE FEIL: Å tro at Bitcoin er anonymt (det er pseudonymt), å anta at adresse er lik person uten clustering, eller å glemme å sende preserveringsanmodning raskt nok (børser sletter logger etter 90-180 dager). [cite: 1594-1619]"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Er lommebokadresse søkt i blockchain-utforsker? [cite: 1623]",
+            "Er adresse visualisert i breadcrumbs.app eller MetaSleuth? [cite: 1624]",
+            "Er det identifisert en off-ramp? [cite: 1625]",
+            "Er preserveringsanmodning sendt til børs? [cite: 1634]",
+            "Er alle transaksjonshash dokumentert? [cite: 1641]"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "OPPSUMMERING: Nøkkelprinsippet er å finne punktet der kryptoen berørte et identifiserbart system (KYC-børs, bankkonto, Vipps). Kombinasjonen av blokkjedeanalyse, rettslig utlevering og OSINT-korrelasjon utgjør bevisgrunnlaget. [cite: 1650-1656]"
+        }
+      ]
     }
-
-    /* ...FORTSETT: samme mønster for alle Tema 4 → Tema 111 fra eksisterende fil... */
   ]
 }
