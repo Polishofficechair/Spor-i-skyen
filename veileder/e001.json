@@ -1,31 +1,74 @@
 {
   "schemaVersion": "1.2",
-  "episodeId": "e001",
-  "title": "KRYPTOVALUTA",
-  "subtitle": "BLOKKJEDE, ANONYMITET OG ETTERFORSKNINGSMETODIKK",
-  "toc": [
-    { "id": "s1", "title": "Tema 1: BLOKKJEDE, ANONYMITET OG ETTERFORSKNINGSMETODIKK" },
-    { "id": "s2", "title": "Tema 2: ORDLISTE" }
-  ],
+  "id": "e001",
+  "tittel": "KRYPTOVALUTA",
+  "undertittel": "BLOKKJEDE, ANONYMITET OG ETTERFORSKNINGSMETODIKK",
+  "source": {
+    "type": "github-raw",
+    "url": "https://raw.githubusercontent.com/Polishofficechair/Spor-i-skyen/refs/heads/root/veileder/e001.json"
+  },
   "sections": [
     {
-      "id": "s1",
+      "id": "s001",
+      "index": 1,
       "title": "Tema 1: BLOKKJEDE, ANONYMITET OG ETTERFORSKNINGSMETODIKK",
-      "reportSnippet": {
-        "title": "Rapporttekst – Metode/funn",
-        "text": "ÅK-innhenting/observasjon: (…). Funn: (…). Sporbarhet: (URL/tidspunkt/verktøy)."
-      },
-      "attachments": [
+      "blocks": [
         {
-          "id": "a1",
-          "label": "Oppgaver (PDF)",
-          "type": "pdf",
-          "url": "https://example.com/krypto-oppgaver.pdf"
+          "id": "b001_001",
+          "type": "paragraph",
+          "text": "Fra pseudonym lommebok til ekte identitet – komplett metodikk"
         }
       ],
+      "attachments": [],
+      "reportTemplate": {
+        "title": "Rapporttekst – Tema 1",
+        "copyText": "Observasjon:\n- Tema 1: BLOKKJEDE, ANONYMITET OG ETTERFORSKNINGSMETODIKK\n\nFunn/innhold (kort):\n- Fra pseudonym lommebok til ekte identitet – komplett metodikk\n\nMetode:\n- Veiledning brukt som oppslagsverk (Spor i skyen → Veileder)\n\nVurdering:\n- Relevant som bakgrunn for vurdering av pseudonymitet/anonymitet i krypto-spor.\n"
+      }
+    },
+    {
+      "id": "s002",
+      "index": 2,
+      "title": "Tema 2: ORDLISTE",
       "blocks": [
-        { "id": "b1", "type": "paragraph", "text": "Fra pseudonym lommebok til ekte identitet – komplett metodikk" }
-      ]
+        {
+          "id": "b002_001",
+          "type": "paragraph",
+          "text": "Kryptovaluta = Digital valuta basert på kryptografi og blokkjedeteknologi.\nIngen sentralbank, ingen fysiske sedler.\n\n• Eks: Bitcoin (BTC), Ethereum (ETH), Monero (XMR)\n\nBlokkjede = En offentlig, uforanderlig digital regnskapsbok.\n\n• Analogi: En notisbok der ALLE transaksjoner skrives ned,\n\nalle kan lese den, og ingen kan slette noe.\nLommebok = En programvare som lagrer kryptografiske nøkler.\n\n• Analogi: En bankboks med kombinasjonslås.\n\n(Ikke selve pengene – nøklene til pengene)\nLommebokadresse = En alfanumerisk kode som brukes til å sende/motta krypto.\n\n• Eks: 1A1zP1eP5QGefi2DMPTfTL5SLmv7Divf\n\nAnalogi:\nEt kontonummer – synlig, men ikke koblet til navn\nPseudonymitet = Transaksjoner er synlige, men avsender/mottaker er\nikke direkte koblet til ekte identitet.\nIKKE det samme som anonymitet.\nPrivate Key = Den hemmelige koden som beviser eierskap til lommebok.\n\n• Analogi: PIN-koden til bankkortet.\nAvgjørende hemmelighet.\n\nUTXO =\nUnspent Transaction Output – \"vekselpenger\" på Bitcoin.\n\n• Analogi: Kontanter. Bruker du en 500-lapp, får du tilbake.\n\nOn-ramp = Tjeneste der man kjøper krypto for tradisjonell valuta (fiat)\n\n• Eks: Kjøpe Bitcoin med norske kroner på Firi.\n\nOff-ramp = Tjeneste der man selger krypto tilbake til fiat\n\n• Eks: Ta ut Bitcoin til bankkonto via Coinbase\n\nKYC =\nKnow Your Customer – krav om identitetsverifikasjon\n(pass, fødselsnummer) ved registrering hos børser\nAML =\nAnti-Money Laundering – hvitvaskingsregler\nMixer / Tumbler = Tjeneste som blander kryptotransaksjoner fra mange\nbrukere for å skjule pengesporet.\nAnalogi: Vaskeri\nsom blander klær fra 100 kunder og gir ut tilfeldig\nCoinJoin = Teknisk metode der flere brukere kombinerer\ntransaksjoner i én felles transaksjon for å skjule\nhvem som sendte til hvem\nChain Hopping = Veksle fra én kryptovaluta til en annen for å\nmiste sporingslogikken.\nEks: BTC → XMR → BTC\nMonero (XMR) = Personvernsmynt med innebygd anonymisering.\n\n• Analogi: Kontanter med innebygd blekk som sletter\n\nalle fingeravtrykk automatisk\nDEX =\nDecentralized Exchange – desentralisert børs\nIngen KYC, ingen registrering, anonym handel\nChainalysis = Ledende kommersielt verktøy for blokkjedeanalyse,\nbrukt av FBI, Europol og norsk politi\nClustering = Gruppering av lommebokadresser som tilhører\nsamme person/enhet, basert på mønsteranalyse\nCo-spending = Å bruke midler fra FLERE inngående adresser\n(inputs) i én transaksjon – sterk indikator på\nfelles eierskap\nVekseladresse = \"Restpengene\" i en Bitcoin-transaksjon.\nSendes tilbake til avsenders nye adresse.\nNFT =\nNon-Fungible Token – digitalt eiersskapsbevis,\nbrukt som profilbilde av krypto-entusiaster\nHODL =\nHold On for Dear Life – slang for å beholde krypto\n(opprinnelig skrivefeil for \"hold\", nå etablert begrep)\nLaser Eyes = Redigerte øyne med laseruttrykk på profilbilde,\nsymboliserer at man \"tror på Bitcoin\"\nPayID =\nBinance-funksjon: en forenklet identifikator knyttet\ntil en Binance-konto (som et brukernavn for overføringer)"
+        }
+      ],
+      "attachments": [],
+      "reportTemplate": {
+        "title": "Rapporttekst – Ordliste",
+        "copyText": "Observasjon:\n- Oppslagsverk (ordliste) brukt for begrepsavklaring i krypto-spor.\n\nFunn:\n- Definisjoner av sentrale begreper (KYC, AML, UTXO, on/off-ramp, DEX, mixers, CoinJoin m.m.).\n\nVurdering:\n- Brukt for å sikre korrekt begrepsbruk og skille pseudonymitet/anonymitet.\n"
+      }
+    },
+
+    {
+      "id": "s003",
+      "index": 3,
+      "title": "Tema 3: A.1 Hva er kryptovaluta og blokkjeden?",
+      "blocks": [
+        {
+          "id": "b003_001",
+          "type": "paragraph",
+          "text": "• Analogi: Den åpne regnskapsbok i et glasshus\n\nTenk deg et regnskap der alle transaksjoner skrives ned i en notisbok som alle kan lese, ingen kan slette, og som eksisterer i tusenvis av identiske kopier over hele verden.\nDette er blokkjeden. Det finnes ingen \"sentralbank\" som kontrollerer den – alle noder (datamaskiner) i nettverket holder regnskapet.\nDen avgjørende kontrasten til tradisjonell bank: Når du sender penger via Vipps, er transaksjonen privat mellom deg, banken og mottaker. Når Kurt sender Bitcoin, er transaksjonen synlig for ALLE som vet adressene.\nDet som ikke er synlig uten ytterligere analyse, er hvem som eier adressene."
+        }
+      ],
+      "attachments": [
+        {
+          "id": "a003_001",
+          "type": "link",
+          "title": "Oppgaver, PDF og leksjoner",
+          "url": "https://example.com/episode-e001-ressurser",
+          "note": "Bytt til riktig URL per episode."
+        }
+      ],
+      "reportTemplate": {
+        "title": "Rapporttekst – Blokkjede forklaring",
+        "copyText": "Observasjon:\n- Veiledning gjennomgått: hva blokkjede er og hva som er synlig/offentlig.\n\nFunn:\n- Transaksjoner er offentlig synlige, identitet er ikke direkte koblet uten videre analyse.\n\nVurdering:\n- Viktig for å forklare hvorfor blokkjedeanalyse gir spor, men ikke alene beviser identitet.\n"
+      }
     }
+
+    /* ...FORTSETT: samme mønster for alle Tema 4 → Tema 111 fra eksisterende fil... */
   ]
 }
