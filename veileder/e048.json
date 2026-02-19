@@ -1,54 +1,994 @@
 {
-"tittel": "KAPITTEL 1: INNLEDNING TIL SIGNAL-ETTERFORSKNING",
-"undertittel": "En tålmodig, pedagogisk operativ instruktør og spesialetterforskers guide til kryptert kommunikasjon for digitale nybegynnere.",
-"ordliste": [
-{
-"term": "1.1 Hva er Signal, og hvorfor møter vi det i etterforskning?",
-"definisjon": "Signal er en gratis meldingsapplikasjon som har blitt standarden for kryptert kommunikasjon blant personer som ønsker å beskytte sitt privatliv. I motsetning til vanlige meldingsapper som SMS eller ubekryptede e-poster, er Signal designet fra grunnen av for å gjøre det teknisk umulig – selv for tjenesteleverandøren – å lese innholdet i kommunikasjonen.\n\nDette gjør Signal til et naturlig verktøy for legitime personvernbevisste brukere som journalister, aktivister og menneskerettighetsarbeidere, men også for kriminelle nettverk som ønsker å skjule sin kommunikasjon fra politiet. Signal driftes av Signal Technology Foundation, en ideell organisasjon grunnlagt av Moxie Marlinspike og Brian Acton.\n\nOrganisasjonsformen er bevisst valgt for å fjerne kommersielle insentiver til å samle inn brukerdata for annonsering eller videresalg. Signal-protokollen er åpen kildekode, noe som betyr at både klientkoden og serverkoden er offentlig tilgjengelig for uavhengig sikkerhetsrevisjon.\n\n💡 HVORFOR ER DETTE VIKTIG?\n• Analogi: Tenk på vanlig SMS som et postkort – alle som håndterer det underveis kan lese hva som står på det. Signal er som et brev i en stållåst boks som kun mottakeren har nøkkelen til. Selv postselskapet (Signal Foundation) kan ikke åpne boksen.\n\nPraksis: I moderne etterforskning møter vi stadig oftere Signal i saker som:\n• Organisert kriminalitet: Narkotikanettverk koordinerer leveranser\n• VaaS (Violence as a Service): Rekruttering av unge utførere til voldshendelser\n• Hvitvasking: Betalinger koordineres gjennom krypterte kanaler\n• Terrorisme og ekstremisme: Planlegging av aksjoner\n\nEksempel (Kurt Mikkelsen-caset): I etterforskningen av Kurts mulige involvering i VaaS-nettverk ble det observert at hans primærkommunikasjon gikk gjennom Telegram. Men @NordLink81 (Anders Berg, 23 år) har Signal installert på sin beslaglagte telefon, hvor det i "Note to Self"-funksjonen lå en liste over telefonnumre til ungdommer i Lørenskog-området, inkludert Kurts nummer. Dette indikerer at Signal brukes til mer sensitiv kommunikasjon enn det som foregår på de åpne plattformene."
-},
-{
-"term": "1.2 Signifikante forskjeller fra andre meldingsapper",
-"definisjon": "Signal skiller seg fra konkurrenter som WhatsApp, Telegram, Messenger og iMessage på flere kritiske punkter som direkte påvirker etterforskningens muligheter.\n\nSammenligning av meldingsapper (etterforskningsperspektiv):\n• Ende-til-ende-kryptering | Signal: Alltid | WhatsApp: Standard chat | Telegram: Kun "Secret Chat" | iMessage: Standard chat\n• Metadata-beskyttelse | Signal: Ja (Sealed Sender) | WhatsApp: Nei | Telegram: Nei | iMessage: Delvis\n• Datalagring på server | Signal: Minimal (kun tidsstempler) | WhatsApp: Backup-metadata | Telegram: Skymeldinger tilgjengelige | iMessage: iCloud-backup mulig\n• Telefonnummer-synlighet | Signal: Kan skjules (brukernavn) | WhatsApp: Synlig for kontakter | Telegram: Kan skjules (brukernavn) | iMessage: Synlig\n• Gruppemetadata | Signal: Kryptert (serveren ser ikke medlemmer) | WhatsApp: Server ser medlemmer | Telegram: Server ser medlemmer | iMessage: Server ser medlemmer\n• Rettslig datauthenting | Signal: 2 tidsstempler | WhatsApp: Metadata + backup (hvis aktivert) | Telegram: Skymeldinger + metadata | iMessage: iCloud-backup (hvis aktivert)\n• Åpen kildekode | Signal: Ja (fullt revisjonbar) | WhatsApp: Nei | Telegram: Delvis (klient) | iMessage: Nei\n\nKritisk forskjell for etterforskning: WhatsApp kan, ved rettslig pålegg, utlevere informasjon om når en bruker opprettet kontoen, sist var online, og hvem de har kommunisert med (metadata). Signal utleverer kun kontoens opprettelsesdato og dato for siste tilkobling til serveren. Ingen meldingsinnhold, ingen kontaktlister, ingen gruppemedlemskap."
-},
-{
-"term": "📖 ORDLISTE (GRUNNBEGREPER FOR SIGNAL)",
-"definisjon": "• Ende-til-ende-kryptering (E2EE): Meldinger krypteres på avsenderens enhet og dekrypteres først på mottakerens enhet. Serveren (Signal) ser kun kryptert "rot" underveis.\n• Metadata: Data om kommunikasjonen (hvem snakker med hvem, når, hvor lenge), ikke innholdet i samtalen.\n• Sealed Sender: Teknologi som skjuler avsenderens identitet fra serveren. Serveren vet hvem meldingen skal til, men ikke hvem den kommer fra.\n• Safety Number: Et unikt fingeravtrykk (64 sifre) som identifiserer krypteringen mellom to spesifikke brukere. Brukes til å verifisere at ingen avlytter.\n• Registration Lock (Signal PIN): En brukerskapt kode som beskytter kontoen mot uautorisert overføring til en ny enhet.\n• UUID (Universally Unique Identifier): En permanent, unik identifikator for hver Signal-konto, uavhengig av telefonnummer eller brukernavn.\n• Disappearing Messages (Forsvinnende meldinger): Meldinger som automatisk slettes etter en forhåndsbestemt tid (30 sekunder til 4 uker).\n• Note to Self: En funksjon hvor brukeren kan sende meldinger til seg selv som en kryptert notatblokk."
-},
-{
-"term": "1.3 Hvorfor Signal er "the hardest app to investigate"",
-"definisjon": "Signal representerer den største utfordringen blant de vanlige meldingsappene grunnet fire fundamentale prinsipper:\n\n1. Minimalistisk datalagring på server:\nSignal lagrer bevisst ekstremt lite informasjon. Ved rettslig pålegg kan Signal kun utlevere dato for kontoopprettelse og dato for siste tilkobling til serveren. De kan ikke utlevere meldingsinnhold, kontaktlister, gruppemedlemskap eller logger over kommunikasjon.\n\n2. Ingen "backdoor" eller "master key":\nSignal har ingen mekanisme som gir tjenesteleverandøren mulighet til å dekryptere innhold. Krypteringsnøklene genereres, lagres og brukes utelukkende på brukernes egne enheter. Signal bruker asynkron kryptering (X3DH og Double Ratchet), hvor serveren kun fungerer som en "dum postboks".\n\n3. Forward Secrecy og Post-Compromise Security:\nForward Secrecy (FS) betyr at hvis en nøkkel stjeles i dag, kan den ikke brukes til å dekryptere fortidige meldinger. Post-Compromise Security (PCS) betyr at systemet "helbreder seg selv" ved å generere nye nøkler hvis en enhet blir hacket.\n\nAnalogi for FS: Tenk på det som et låsesystem hvor du bruker en ny, unik nøkkel for hver dør du går gjennom. Hvis noen stjeler nøkkelen til dør 100, kan de ikke åpne dør 1-99.\n\n4. Kvante-motstand (Post-Quantum Cryptography):\nSignal har implementert post-kvantekryptering for å beskytte mot fremtidige kvantedatamaskiner. Dette hindrer "Harvest Now, Decrypt Later"-strategier, der data lagres i dag for å knekkes om 10-20 år."
-},
-{
-"term": "🛑 JURIDISK GRENSEOPPGANG – SIGNAL-SPESIFIKK",
-"definisjon": "✅ LOVLIG (Passiv observasjon):\n• Verifisere om et telefonnummer er registrert i Signal via kontaktliste-sjekk.\n• Observere profilnavn, profilbilde og "About"-tekst på åpne profiler.\n• Finne offentlig delte gruppe-invitasjonslenker via Google Dorking.\n• Analysere metadata fra beslaglagt telefon.\n• Lese meldingsinnhold fra en beslaglagt, opplåst telefon.\n\n❌ KREVER BESLUTNING/KJENNELSE:\n• Overta en Signal-konto ved å gjennomføre SIM-swap.\n• Installere malware for å avlytte Signal-meldinger i sanntid (digitalt hemmelig ransaking).\n• Be Signal Foundation om historiske meldinger (teknisk umulig å få).\n• Tvinge frem Signal PIN-kode fra en mistenkt (nektelsesrett).\n\n⛔ ULOVLIG (Provokasjon/Metodebrudd):\n• Sende melding til en mistenkt for å lokke fram informasjon (agentprovokasjon).\n• Opprette falsk Signal-konto og infiltrere gruppe for å provosere handlinger.\n• Bryte Signals kryptering uten rettslig hjemmel.\n\n⚠️ SPESIELT VED MINDREÅRIGE:\n• Kurt (13 år) kan ha Signal, men direkte kontakt krever ekstra juridisk vurdering.\n• Beslag av Kurts telefon må håndteres med verge til stede.\n• Signal-kommunikasjon kan indikere utnyttelse av mindreårig (barnevernmelding)."
-},
-{
-"term": "KAPITTEL 2: TEKNOLOGIEN BAK SIGNAL (FORENKLET)",
-"definisjon": "2.1 Hvordan fungerer ende-til-ende-kryptering egentlig?\nAnalogi: Låseboksen med to nøkler. Din kollega lager en lås (offentlig nøkkel) og sender deg en kopi. Du skriver brevet, legger det i en boks, og låser den med kollegaens lås. Nå kan ingen åpne boksen – ikke engang du selv. Signal-serveren er "postbudet" som kun leverer låste bokser uten å kunne åpne dem.\n\n2.2 Signal-protokollen: X3DH og Double Ratchet:\n• X3DH (Extended Triple Diffie-Hellman): En metode for å etablere en sikker, delt hemmelighet mellom to personer første gang de snakker. Analogi: To personer som hvisker fram en kode på et offentlig torg uten at noen hører det.\n• Double Ratchet: En algoritme som kontinuerlig bytter ut krypteringsnøklene for hver melding som sendes. Analogi: En kombinasjonslås som endres automatisk hver gang døren åpnes. Dette gir Forward Secrecy og Post-Compromise Security.\n\n2.3 Sealed Sender – Skjuler hvem som snakker med hvem:\nSignal bruker Sealed Sender for å skjule avsenderens identitet fra serveren. Analogi: En anonym postkasse der den ytre konvolutten kun har mottakerens adresse. Serveren vet hvem meldingen skal til, men ikke hvem den kommer fra.\n\n2.4 Post-kvantekryptering:\nSignal kombinerer klassisk kryptering med post-kvante-algoritmer. Analogi: Å ha to forskjellige låser på samme dør. Selv om fremtidens tyver knekker den ene låsen (klassisk), vil den andre (post-kvante) fortsatt beskytte døren."
-},
-{
-"term": "KAPITTEL 3: OSINT PÅ SIGNAL – HVA KAN VI FINNE?",
-"definisjon": "Signal er designet for minimalt OSINT-fotavtrykk. Det finnes ingen offentlig brukerkatalog, ingen offentlige grupper, og ingen "sist sett"-tidsstempel.\n\nMetode 1: Verifisere om et telefonnummer er registrert:\n• Bruk en dedikert undersøkelsestelefon med prepaid SIM.\n• Legg til nummeret som ny kontakt i Signal.\n• Hvis et profilnavn dukker opp, er nummeret registrert. Dokumenter profilnavn, bilde og "About"-tekst.\n• KRITISK: Ikke send melding, da dette varsler objektet.\n\nMetode 2: Analysere offentlig profilinformasjon:\n• Profilnavn: Kan indikere bruk av fornavn eller aliaser.\n• Profilbilde: Svært verdifull kilde. Reverse Image Search (Google, TinEye, Yandex) kan koble bildet til andre plattformer som Instagram eller Facebook.\n• About-tekst: Statusmeldinger kan analyseres for emojier, slang og referanser som bekrefter identitet.\n\nMetode 3: Søke etter offentlig delte gruppe-invitasjonslenker:\n• Bruk Google Dorking (f.eks. site:signal.group "Lørenskog") for å finne lenker delt på Reddit, Facebook eller Discord.\n• Å bli med i en gruppe er en aktiv handling som krever juridisk vurdering.\n\nMetode 4: Brukernavn-søk:\n• Signal-brukernavn er ikke søkbare i kataloger. Du må kjenne det eksakte brukernavnet inkludert de to siste sifrene.\n\nMetode 5: Observere leveringsbekreftelser:\n• Én hake = Sendt. To haker = Levert (online nå). To blå haker = Lest. Krever aktiv sending av melding."
-},
-{
-"term": "KAPITTEL 4: BESLAGLAGT TELEFON – TILGANG TIL SIGNAL-DATA",
-"definisjon": "4.1 Kritisk første handling: Bevare "After First Unlock" (AFU)-tilstand.\n• BFU (Before First Unlock): Telefonen er kryptert og nøkler er ikke i minnet.\n• AFU (After First Unlock): Telefonen er opplåst én gang siden start, nøkler ligger i RAM.\n\nHandling ved beslag:\n• IKKE skru av telefonen.\n• Isoler fra nettverk umiddelbart ved bruk av flymodus eller Faraday-pose.\n• Hold telefonen våken og koble til strøm.\n\n4.2 Overføring av Signal-konto:\nPolitiets SIM-swap-prosess innebærer å flytte SIM-kortet til en polititelefon for å motta fremtidige meldinger. Hvis "Registration Lock" (PIN) er aktivert og koden er ukjent, blir kontoen låst i 7 dager, og ved tvungen registrering slettes alt innhold.\n\n4.3 Historiske meldinger:\nHistoriske data ligger i Signal.sqlite-basen på telefonen. Forensiske verktøy som Cellebrite UFED, Magnet AXIOM og GrayKey brukes for uthenting og dekryptering av meldinger, kontakter og vedlegg.\n\n4.4 Forensiske spor utenfor Signal-appen:\n• Notification Logs (Android): Kan inneholde meldingsfragmenter.\n• Tastaturlogger (Keyboard Dictionary): Kan lagre frekvente ord og slang.\n• iOS Call History Leak: Signal-anrop kan ligge i iPhones vanlige anropslogg.\n• Screenshot-cache: iOS tar bilder av apper når man sveiper dem vekk.\n• "Note to Self": Brukere lagrer ofte sensitiv info, PIN-koder og bevis her."
-},
-{
-"term": "KAPITTEL 5: JURIDISK OG ETISK RAMMEVERK",
-"definisjon": "5.1 Grensedragning:\n• Åpen overvåking (§ 196): Krever ingen kjennelse for passiv OSINT som verifisering av nummer eller profil-observasjon.\n• Kommunikasjonskontroll (§ 197): For metadata om tilkobling.\n• Dataavlesning (§ 216m): Krever kjennelse og straffenivå over 3 år for installasjon av malware eller live-overvåkning.\n\n5.2 Spesielle hensyn ved mindreårige:\nKurt (13 år) er under kriminell lavalder. Barnekonvensjonen krever at fokus er på beskyttelse. TPS-sensitivitet er automatisk HØY. Bruk aldri fullt navn i rapporter og sjekk alltid barnevern-meldinger fremfor straffeforfølgelse.\n\n5.3 Henvendelse til Signal Foundation:\nMan kan formelt be Signal om data via legal@signal.org. De utleverer kun kontoopprettelsesdato og siste tilkoblingstidspunkt."
-},
-{
-"term": "KAPITTEL 6: CASESTUDIER – LINA GRIM OG KURT MIKKELSEN",
-"definisjon": "6.1 Lina Grim (24 år) - Det enkle tilfellet:\nLina er et vitne med lav OPSEC. Hun bruker fullt navn og samme profilbilde på Signal som på Instagram og LinkedIn. Verifiseringen er enkel og bekrefter identitet raskt.\n\n6.2 Kurt Mikkelsen (13 år) - Det komplekse tilfellet:\nKurt bruker aliaset "K13" og et profilbilde som er gjenbrukt på 5 andre plattformer. Forensisk analyse av hans telefon avdekket meldinger fra "NordLink" og "BK" om "oppdrag" og "lett penger". Hans "Note to Self" inneholdt møteavtaler og bilde av en pengebunke. Korrelasjon mellom Signal-meldinger, Snap Map-lokasjon og Vipps-transaksjoner bekrefter rekruttering til kriminelt nettverk."
-},
-{
-"term": "KAPITTEL 7: VANLIGE FEIL OG KONTROLLSPØRSMÅL",
-"definisjon": "Vanlige feil inkluderer å skru av beslaglagte telefoner, sende meldinger til mistenkte for å "teste" appen, eller anta at forsvinnende meldinger fjerner alle spor.\n\nKontrollspørsmål før start:\n• Har jeg lest juridisk grunnlag?\n• Er målobjektet mindreårig?\n• Har jeg dedikert undersøkelsestelefon?\n• Er jeg på VPN?\n\nUnder etterforskning:\n• Dokumenterer jeg tidspunkt?\n• Tar jeg screenshots og SHA-256 hasher?\n• Isolerer jeg telefonen i Faraday-pose?"
-},
-{
-"term": "KAPITTEL 8: OPPSUMMERING OG VEIEN VIDERE",
-"definisjon": "Signal representerer det vanskeligste skjæringspunktet mellom etterforskning og personvern. Oppgaven er ikke å knekke krypteringen, men å finne de omkringliggende sporene: telefonnummer-koblingen, beslaglagte telefoner i AFU-tilstand, kryss-plattform-fotavtrykk og menneskelige feil som "Note to Self".\n\nEskaler til spesialister hvis telefonen er i BFU-tilstand, du trenger live-overvåkning, eller saken involverer tungt organisert kriminalitet.\n\nHusk alltid å vurdere proporsjonalitet og barnets beste. Signal-etterforskning handler om å forstå mennesket bak skjermen."
-}
-]
+  "tittel": "KAPITTEL 1: INNLEDNING TIL SIGNAL-ETTERFORSKNING",
+  "undertittel": "1.1 Hva er Signal, og hvorfor møter vi det i etterforskning?",
+  "ordliste": [
+    {
+      "term": "Innledning",
+      "definisjon": "Signal er en gratis meldingsapplikasjon som har blitt standarden for kryptert kommunikasjon blant personer som ønsker å beskytte sitt privatliv. I motsetning til vanlige meldingsapper som SMS eller ubekryptede e-poster, er Signal designet fra grunnen av for å gjøre det teknisk umulig – selv for tjenesteleverandøren – å lese innholdet i kommunikasjonen. Dette gjør Signal til et naturlig verktøy for legitime personvernbevisste brukere som journalister, aktivister og menneskerettighetsarbeidere, men også for kriminelle nettverk som ønsker å skjule sin kommunikasjon fra politiet.\n\nSignal driftes av Signal Technology Foundation, en ideell organisasjon (501c3) grunnlagt av Moxie Marlinspike og Brian Acton. Organisasjonsformen er bevisst valgt for å fjerne kommersielle insentiver til å samle inn brukerdata for annonsering eller videresalg – en praksiss som har blitt svært vanlig hos kommersielle aktører som Meta (Facebook, WhatsApp) og Google. Signal-protokollen, som er hjertesonen i applikasjonens sikkerhet, er åpen kildekode (Open Source), noe som betyr at både klientkoden og serverkoden er offentlig tilgjengelig for uavhengig sikkerhetsrevisjon."
+    },
+    {
+      "term": "💡 HVORFOR ER DETTE VIKTIG?",
+      "definisjon": "Analogi: Tenk på vanlig SMS som et postkort – alle som håndterer det underveis (postbudet, sorteringsmaskinen) kan lese hva som står på det. Signal er som et brev i en stållåst boks som kun mottakeren har nøkkelen til. Selv postselskapet (Signal Foundation) kan ikke åpne boksen."
+    },
+    {
+      "term": "Praksis: I moderne etterforskning møter vi stadig oftere Signal i saker som:",
+      "definisjon": "Organisert kriminalitet: Narkotikanettverk koordinerer leveranser\n\nVaaS (Violence as a Service): Rekruttering av unge utførere til voldshendelser\n\nHvitvasking: Betalinger koordineres gjennom krypterte kanaler\n\nTerrorisme og ekstremisme: Planlegging av aksjoner\n\nEksempel (Kurt Mikkelsen-caset): I etterforskningen av Kurts mulige involvering i VaaS-nettverk ble det observert at hans primærkommunikasjon gikk gjennom Telegram. Men @NordLink81 (Anders Berg, 23 år) har Signal installert på sin beslaglagte telefon, hvor det i \"Note to Self\"-funksjonen lå en liste over telefonnumre til ungdommer i Lørenskog-området, inkludert Kurts nummer. Dette indikerer at Signal brukes til mer sensitiv kommunikasjon enn det som foregår på de åpne plattformene."
+    },
+    {
+      "term": "1.2 Signifikante forskjeller fra andre meldingsapper",
+      "definisjon": "Signal skiller seg fra konkurrenter som WhatsApp, Telegram, Messenger og iMessage på flere kritiske punkter som direkte påvirker etterforskningens muligheter:\n\nTabell 1.1: Sammenligning av meldingsapper (etterforskningsperspektiv)\n\n• Aspekt | Signal | WhatsApp | Telegram | iMessage\n\n• Ende-til-ende-kryptering | Alltid | Standard chat | Kun \"Secret Chat\" | Standard chat\n\n• Metadata-beskyttelse | Ja (Sealed Sender) | Nei | Nei | Delvis\n\n• Datalagring på server | Minimal (kun tidsstempler) | Backup-metadata | Skymeldinger tilgjengelige | iCloud-backup mulig\n\n• Telefonnummer-synlighet | Kan skjules (brukernavn) | Synlig for kontakter | Kan skjules (brukernavn) | Synlig\n\n• Gruppemetadata | Kryptert (serveren ser ikke medlemmer) | Server ser medlemmer | Server ser medlemmer | Server ser medlemmer\n\n• Rettslig datauthenting | 2 tidsstempler | Metadata + backup (hvis aktivert) | Skymeldinger + metadata | iCloud-backup (hvis aktivert)\n\n• Åpen kildekode | Ja (fullt revisjonbar) | Nei | Delvis (klient) | Nei\n\nKritisk forskjell for etterforskning: WhatsApp kan, ved rettslig pålegg, utlevere informasjon om når en bruker opprettet kontoen, sist var online, og hvem de har kommunisert med (metadata). Signal utleverer kun kontoens opprettelsesdato og dato for siste tilkobling til serveren. Ingen meldingsinnhold, ingen kontaktlister, ingen gruppemedlemskap."
+    },
+    {
+      "term": "📖 ORDLISTE (GRUNNBEGREPER FOR SIGNAL)",
+      "definisjon": "Ende-til-ende-kryptering (E2EE): Meldinger krypteres på avsenderens enhet og dekrypteres først på mottakerens enhet. Serveren (Signal) ser kun kryptert \"rot\" underveis.\n\nMetadata: Data om kommunikasjonen (hvem snakker med hvem, når, hvor lenge), ikke innholdet i samtalen.\n\nSealed Sender: Teknologi som skjuler avsenderens identitet fra serveren. Serveren vet hvem meldingen skal til, men ikke hvem den kommer fra.\n\nSafety Number: Et unikt fingeravtrykk (64 sifre) som identifiserer krypteringen mellom to spesifikke brukere. Brukes til å verifisere at ingen avlytter (\"Mann-i-midten\"-angrep).\n\nRegistration Lock (Signal PIN): En brukerskapt kode som beskytter kontoen mot uautorisert overføring til en ny enhet.\n\nUUID (Universally Unique Identifier): En permanent, unik identifikator for hver Signal-konto, uavhengig av telefonnummer eller brukernavn.\n\nDisappearing Messages (Forsvinnende meldinger): Meldinger som automatisk slettes etter en forhåndsbestemt tid (30 sekunder til 4 uker).\n\nNote to Self: En funksjon hvor brukeren kan sende meldinger til seg selv som en kryptert notatblokk."
+    },
+    {
+      "term": "1.3 Hvorfor Signal er \"the hardest app to investigate\"",
+      "definisjon": "Fra et etterforskningsperspektiv representerer Signal den største utfordringen blant de vanlige meldingsappene. Dette skyldes fire fundamentale design-prinsipper:\n\n1. Minimalistisk datalagring på server\n\nSignal lagrer bevisst ekstremt lite informasjon på sine servere. Ved rettslig pålegg (stevning, kjennelse) kan Signal kun utlevere:\n\nDato for kontoopprettelse (f.eks. \"15. januar 2024\")\n\nDato for siste tilkobling til serveren (f.eks. \"17. februar 2026 kl. 14:32 UTC\")"
+    },
+    {
+      "term": "Signal kan ikke utlevere (fordi de ikke har tilgang til det):",
+      "definisjon": "Meldingsinnhold (kryptert, nøklene er kun på enhetene)\n\nKontaktlister (lagret lokalt på brukerens telefon)\n\nGruppemedlemskap eller gruppenavn (kryptert for serveren)\n\nLogger over hvem som har kommunisert med hvem\n\nDette står i skarp kontrast til f.eks. Meta (Facebook/WhatsApp), som lagrer omfattende metadata som kan brukes til å bygge sosiale grafer og tidslinjekart over kommunikasjon.\n\n2. Ingen \"backdoor\" eller \"master key\"\n\nNoen krypterte tjenester har en \"nøddør\" (backdoor) eller en hovednøkkel (master key) som gir tjenesteleverandøren mulighet til å dekryptere innhold ved behov – ofte motivert av rettslige krav eller nasjonal sikkerhet. Signal har ingen slik mekanisme. Krypteringsnøklene genereres, lagres og brukes utelukkende på brukernes egne enheter. Signal Foundation har ikke fysisk eller teknisk mulighet til å lese meldinger, selv om de ville ønsket det.\n\nDette er mulig fordi Signal bruker asynkron kryptering (X3DH og Double Ratchet), hvor hver melding krypteres med en unik nøkkel som aldri forlater enhetene. Serveren fungerer kun som en \"dum postboks\" som tar imot krypterte pakker og leverer dem til riktig mottaker.\n\n3. Forward Secrecy og Post-Compromise Security"
+    },
+    {
+      "term": "Signal-protokollen har to avanserte sikkerhetsfunksjoner:",
+      "definisjon": "Forward Secrecy (FS): Hvis en krypteringsnøkkel blir stjålet i dag, kan den ikke brukes til å dekryptere meldinger fra fortiden. Hver melding krypteres med en ny nøkkel som ikke kan beregnes bakover i tid.\n\nPost-Compromise Security (PCS): Hvis en enhet blir kompromittert (hacket), vil systemet \"helbrede seg selv\" ved automatisk å generere nye nøkler. Dette betyr at en angriper mister tilgang til fremtidige meldinger kort tid etter innbruddet, selv om de fortsatt har kontroll over enheten.\n\nAnalogi for Forward Secrecy: Tenk på det som et låsesystem hvor du bruker en ny, unik nøkkel for hver dør du går gjennom. Hvis noen stjeler nøkkelen til dør nummer 100, kan de ikke åpne dør 1-99 med den samme nøkkelen.\n\n4. Kvante-motstand (Post-Quantum Cryptography)\n\nSignal har nylig implementert post-kvantekryptering (PQXDH og SPQR) for å beskytte mot fremtidige kvantedatamaskiner. Dette er relevant fordi etterretningstjenester i dag kan lagre kryptert kommunikasjon (inkludert fra Signal-serveren) for å dekryptere den om 10-20 år når kvantecomputere blir kraftige nok (\"Harvest Now, Decrypt Later\"-strategi).\n\nSignals nye protokoll blander inn kvante-resistente algoritmer sammen med den eksisterende elliptiske kurve-krypteringen, slik at selv en fremtidig kvantedatamaskin ikke vil kunne knekke eldre Signal-meldinger.\n\nPraktisk konsekvens: Dette betyr at passiv nettverksavlytting av Signal-trafikk (selv med tilgang til all nettverkstrafikk fra en internettleverandør) ikke vil gi tilgang til meldingsinnholdet, verken nå eller i fremtiden."
+    },
+    {
+      "term": "🛑 JURIDISK GRENSEOPPGANG – SIGNAL-SPESIFIKK",
+      "definisjon": "✅ LOVLIG (Passiv observasjon): • Verifisere om et telefonnummer er registrert i Signal (via kontaktliste-sjekk) • Observere profilnavn, profilbilde og \"About\"-tekst på åpne profiler • Finne offentlig delte gruppe-invitasjonslenker via Google Dorking • Analysere metadata fra beslaglagt telefon (hvem brukeren har kontaktet) • Lese meldingsinnhold fra en beslaglagt, opplåst telefon\n\n❌ KREVER BESLUTNING/KJENNELSE: • Overta en Signal-konto ved å gjennomføre SIM-swap (krever rettslig grunnlag) • Installere malware for å avlytte Signal-meldinger i sanntid (strpl. § 216b - digitalt hemmelig ransaking) • Be Signal Foundation om historiske meldinger (juridisk mulig å be, men teknisk umulig å få) • Tvinge frem Signal PIN-kode fra en mistenkt (nektelsesrett, strpl. § 90)\n\n⛔ ULOVLIG (Provokasjon/Metodebrudd): • Sende melding til en mistenkt for å lokke fram informasjon (agentprovokasjon, strpl. § 202a) • Opprette falsk Signal-konto og infiltrere gruppe for å provosere handlinger • Bryte Signals kryptering uten rettslig hjemmel\n\n⚠️ SPESIELT VED MINDREÅRIGE: • Kurt (13 år) kan ha Signal, men direkte kontakt krever ekstra juridisk vurdering • Beslag av Kurts telefon må håndteres med verge til stede • Signal-kommunikasjon kan indikere utnyttelse av mindreårig (barnevernmelding)\n\n📞 ER DU I TVIL? Signal-etterforskning krever ofte bistand fra IKT-krimenhet eller Kripos. Teknisk kompleksitet (kryptering, forensics) og juridisk følsomhet (personvern, barnevern) gjør dette til et spesialistområde."
+    },
+    {
+      "term": "2.1 Hvordan fungerer ende-til-ende-kryptering egentlig?",
+      "definisjon": "For å forstå hvorfor Signal er så vanskelig å etterforske, må man forstå grunnprinsippet i ende-til-ende-kryptering. Dette kan virke teknisk, men vi skal forklare det med en analogi:\n\nAnalogi: Låseboksen med to nøkler"
+    },
+    {
+      "term": "Forestill deg at du skal sende et hemmelig brev til en kollega:",
+      "definisjon": "Din kollega lager en lås (offentlig nøkkel) og sender deg en kopi. Alle kan lage låser som passer denne nøkkelen, men kun kollegaen din har den originale nøkkelen (privat nøkkel) som kan låse den opp.\n\nDu skriver brevet, legger det i en boks, og låser den med kollegaens lås. Fra dette øyeblikket kan ingen åpne boksen – ikke engang du selv – fordi du ikke har nøkkelen til å låse den opp.\n\nPostbudet (Signal-serveren) tar imot den låste boksen. Postbudet kan se at det er en boks, hvor den skal leveres, og kanskje hvor stor den er – men de kan ikke åpne den for å se hva som er inni.\n\nKollegaen din mottar boksen og bruker sin private nøkkel til å låse den opp. Nå kan de lese brevet.\n\nDette er i bunn og grunn hvordan Signal fungerer. Den \"offentlige nøkkelen\" deles med alle du vil snakke med, og din \"private nøkkel\" er lagret kun på din telefon. Signal-serveren er \"postbudet\" som kun leverer låste bokser uten å kunne åpne dem."
+    },
+    {
+      "term": "2.2.1 X3DH (Extended Triple Diffie-Hellman) – \"Det første håndhilsen\"",
+      "definisjon": "Hva er dette? En metode for å etablere en sikker, delt hemmelighet mellom to personer første gang de begynner å snakke.\n\nAnalogi: Tenk på det som to personer som møtes på et offentlig torg og hvisker fram en hemmelig kode uten at noen andre hører det, selv om hele verden ser på."
+    },
+    {
+      "term": "Praktisk: Når du sender din første melding til noen på Signal, utføres en \"håndtrykks\"-prosess i bakgrunnen:",
+      "definisjon": "Din telefon henter mottakerens \"offentlige nøkler\" fra Signal-serveren\n\nDin telefon og mottakerens telefon blander sammen sine nøkler på en matematisk måte for å lage en felles hemmelighet\n\nDenne hemmeligheten brukes til å kryptere de første meldingene\n\nServeren ser aldri denne hemmeligheten\n\nViktig detalj: Signal bruker noe som kalles \"Pre-Keys\" (forhåndsnøkler) som ligger lagret på serveren. Dette gjør at du kan sende krypterte meldinger til noen som er offline. Når de kobler til igjen, henter telefonen deres den krypterte meldingen og bruker sin private nøkkel til å dekryptere den."
+    },
+    {
+      "term": "2.2.2 Double Ratchet – \"Hver melding får sin egen nøkkel\"",
+      "definisjon": "Hva er dette? En algoritme som kontinuerlig bytter ut krypteringsnøklene for hver melding som sendes.\n\nAnalogi: Tenk på det som en kombinasjonslås på et bankboksrom hvor kombinasjonen endres automatisk hver gang noen åpner døren. Hvis noen bryter seg inn og stjeler kombinasjonen klokken 14:00, vil den være ubrukelig klokken 14:01."
+    },
+    {
+      "term": "Praktisk: Når du chatter med noen på Signal:",
+      "definisjon": "Melding 1 krypteres med Nøkkel A\n\nMelding 2 krypteres med Nøkkel B (som er laget fra Nøkkel A, men ikke kan reverseres tilbake)\n\nMelding 3 krypteres med Nøkkel C (laget fra Nøkkel B, men ikke kan reverseres tilbake)\n\nOg så videre..."
+    },
+    {
+      "term": "Forward Secrecy (FS):",
+      "definisjon": "Hvis politiet beslaglegger telefonen din i dag og får tilgang til dagens nøkler, kan de ikke dekryptere meldinger fra i går\n\nAnalogi: Det er som at alle tidligere låser har \"smeltet\" og kan ikke gjenskapes"
+    },
+    {
+      "term": "Post-Compromise Security (PCS):",
+      "definisjon": "Hvis en hacker bryter seg inn i telefonen din og stjeler nøklene, vil systemet generere nye nøkler automatisk i løpet av få meldinger\n\nHackeren mister tilgang til fremtidige meldinger selv om de fortsatt har tilgang til enheten din\n\nAnalogi: Låsen \"reparerer seg selv\" ved å skifte kombinasjon automatisk\n\nEtterforskningskonsekvens: Dette betyr at passiv nettverksavlytting (å \"snappe\" krypterte pakker fra en internettleverandør) ikke vil gi tilgang til meldinger, selv ikke hvis man klarer å stjele én nøkkel. Man må ha live access til telefonen akkurat når meldingene leses/sendes."
+    },
+    {
+      "term": "2.3 Sealed Sender – \"Skjuler hvem som snakker med hvem\"",
+      "definisjon": "De fleste krypterte apper beskytter innholdet i meldingen, men ikke metadata om hvem som snakker med hvem. Signal går lenger ved å bruke Sealed Sender for å skjule avsenderens identitet fra serveren.\n\nAnalogi: Den anonyme postkassen"
+    },
+    {
+      "term": "Tenk på vanlig post:",
+      "definisjon": "Du skriver navn og adresse på utsiden av konvolutten (alle som håndterer brevet underveis kan se hvem som sender til hvem)\n\nInnholdet er forseglet, men postbudet vet alt om hvem som kommuniserer"
+    },
+    {
+      "term": "Med Sealed Sender:",
+      "definisjon": "Du pakker konvolutten inn i en ny, ytre konvolutt som kun har mottakerens adresse (ingen avsender)\n\nPostbudet (Signal-serveren) ser kun hvem som skal motta, men vet ikke hvem som sendte\n\nMottakeren åpner den ytre konvolutten og finner den indre konvolutten med din signatur\n\nHvordan fungerer det teknisk?\n\nDu (avsender) krypterer meldingen med mottakerens nøkkel (normal E2EE)\n\nDu pakker inn meldingen i et nytt lag kryptering som skjuler din identitet\n\nSignal-serveren ser kun \"en kryptert pakke til Bruker X\" – serveren vet ikke at den kom fra deg\n\nMottakeren dekrypterer først det ytre laget og ser at det var fra deg, deretter dekrypterer de selve meldingen\n\nViktig begrensning: For å hindre spam og misbruk, krever Sealed Sender at avsenderen kan bevise at de kjenner mottakerens telefonnummer eller profil. Dette betyr at en helt ukjent person ikke kan sende anonyme meldinger til deg.\n\nEtterforskningskonsekvens"
+    },
+    {
+      "term": "Ved rettslig pålegg kan Signal utlevere:",
+      "definisjon": "\"Bruker A koblet til serveren klokken 14:32\"\n\n\"En melding ble levert til Bruker B klokken 14:33\""
+    },
+    {
+      "term": "Men de kan ikke utlevere:",
+      "definisjon": "\"Bruker A sendte melding til Bruker B\" (fordi Sealed Sender skjuler denne koblingen)\n\nDette reduserer dramatisk verdien av metadata fra Signal sammenlignet med WhatsApp eller Telegram, hvor serveren logger hvem som kommuniserer med hvem."
+    },
+    {
+      "term": "2.4 Post-kvantekryptering (PQXDH og SPQR) – \"Fremtidssikring\"",
+      "definisjon": "I 2024 implementerte Signal post-kvantekryptering for å beskytte mot fremtidige kvantedatamaskiner. Dette er teknisk avansert, men kan forklares slik:\n\nProblemet: \"Harvest Now, Decrypt Later\""
+    },
+    {
+      "term": "Etterretningstjenester og enkelte stater driver med massiv lagring av kryptert nettverkstrafikk i dag. Strategien er:",
+      "definisjon": "Lagre all kryptert Signal-trafikk (pakker som går mellom brukere og Signal-serveren)\n\nVente på at kvantedatamaskiner blir kraftige nok (anslått 10-20 år)\n\nBruke kvantedatamaskinen til å \"knekke\" krypteringen og lese gamle meldinger\n\nLøsningen: Blande inn kvante-resistente algoritmer"
+    },
+    {
+      "term": "Signal har implementert en \"Triple Ratchet\"-protokoll som kombinerer:",
+      "definisjon": "Klassisk kryptering (elliptiske kurver – trygg i dag, men sårbar for kvantecomputere)\n\nPost-kvante-algoritmer (matematiske problemer som selv kvantecomputere sliter med)\n\nAnalogi: Det er som å ha to forskjellige låser på samme dør. Selv om fremtidens tyver klarer å knekke den ene låsen (klassisk kryptering), vil den andre låsen (post-kvante) fortsatt beskytte døren.\n\nPraktisk konsekvens: Passiv lagring av Signal-trafikk i dag vil være ubrukelig selv om kvantedatamaskiner blir tilgjengelige i fremtiden. Dette betyr at etterretning som satser på \"å vente og dekryptere senere\" vil mislykkes."
+    },
+    {
+      "term": "3.1 Grunnprinsippet: Signal er designet for å gi minimalt OSINT-fotavtrykk",
+      "definisjon": "Før vi går inn på teknikker, er det kritisk å forstå at Signal bevisst er bygget for å minimere sporene den legger igjen på internett. I motsetning til Facebook, Instagram, eller til og med Telegram (som har offentlige kanaler og gruppekataloger), har Signal:\n\nIngen offentlig brukerkatalog (kan ikke søke etter brukere uten å kjenne telefonnummer eller brukernavn)\n\nIngen offentlige grupper (alle grupper er private, ingen \"join via link\"-funksjoner som er søkbare)\n\nIngen \"sist sett\"-tidsstempel (kan ikke se når noen sist var aktiv)\n\nIngen status-updates eller Stories synlige for ukjente (kun for kontakter du har lagt til)"
+    },
+    {
+      "term": "Dermed er OSINT på Signal primært:",
+      "definisjon": "Verifisering av om et telefonnummer er registrert\n\nInnhenting av offentlig profil-informasjon (navn, bilde, About-tekst)\n\nSøk etter lekket gruppe-invitasjonslenker\n\nForensisk analyse av beslaglagte enheter (ikke strengt tatt OSINT, men ofte nødvendig)"
+    },
+    {
+      "term": "3.2.1 Hvorfor er dette viktig?",
+      "definisjon": "Hvis du etterforsk\n\ner en person og har deres telefonnummer (f.eks. Kurt Mikkelsens +47 918 34 512), vil du vite om de bruker Signal. Dette kan indikere:\n\nHøyere sikkerhetsbevisthet (de prioriterer kryptert kommunikasjon)\n\nMulig kommunikasjon med andre Signal-brukere i et kriminelt nettverk\n\nAt tradisjonell teleoperatør-metadata (SMS-logger) ikke vil gi fullstendig bilde av kommunikasjon"
+    },
+    {
+      "term": "Forberedelse:",
+      "definisjon": "Dedikert undersøkelsestelefon (ikke din personlige telefon)\n\nPrepaid SIM-kort eller virtuelt nummer (for å skjule din identitet)\n\nSignal-appen installert på undersøkelsestelefonen"
+    },
+    {
+      "term": "Prosedyre:",
+      "definisjon": "Åpne Signal-appen på undersøkelsestelefonen\n\nGå til \"New Message\" (Ny melding) – ikonet ser ut som en blyant i en sirkel, nederst til høyre\n\nTrykk på \"+ (pluss-tegnet)\" for å legge til en ny kontakt\n\nSkriv inn telefonnummeret du vil sjekke, inkludert landskode (f.eks. +47 918 34 512)"
+    },
+    {
+      "term": "Du vil nå se ett av to alternativer:",
+      "definisjon": "Alternativ A: \"Invite to Signal\" (Inviter til Signal)\n\nDette betyr at nummeret ikke er registrert i Signal\n\nDokumenter dette: Ta screenshot, noter dato/tid\n\nTPS-vurdering: T: A (verifiserbart negativt funn), P: 1 (sikkert), S: Lav\n\nAlternativ B: Et profilnavn dukker opp (f.eks. \"Kurt\" eller \"K13\")\n\nDette betyr at nummeret er registrert i Signal"
+    },
+    {
+      "term": "Du vil nå se:",
+      "definisjon": "Profilnavn (det brukeren har satt, ikke nødvendigvis reelt navn)\n\nProfilbilde (hvis de har lastet opp et)\n\nAbout-tekst (en kort statusmelding, hvis satt)\n\nKRITISK: IKKE SEND MELDING – dette vil varsle målobjektet\n\nTa screenshot av profilen\n\nDokumenter: Telefonnummer, profilnavn, beskrivelse av profilbilde\n\nNoter dato/tid for sjekken\n\nEventuelt: Sjekk \"Safety Number\"\n\nTrykk på profilnavnet for å åpne profilen\n\nScroll ned til \"View Safety Number\" (Vis sikkerhetsnummer)\n\nDette 60-sifrede nummeret er unikt for din kommunikasjon med denne brukeren\n\nDokumenter dette nummeret – det kan brukes senere til å verifisere om brukeren har byttet enhet"
+    },
+    {
+      "term": "Du vil nå se:",
+      "definisjon": "Profilbildet i stor størrelse (kan lastes ned ved å ta screenshot eller bruke forensisk verktøy)\n\nProfilnavnet (\"Kurt\")\n\nAbout-tekst (\"💪 13\")\n\n\"Registered [dato]\" (hvis denne informasjonen er tilgjengelig – Signal viser ikke alltid dette)"
+    },
+    {
+      "term": "Viktig begrensning:",
+      "definisjon": "Hvis brukeren har satt \"Who can find me by my number\" til \"Nobody\", vil du ikke kunne finne dem på denne måten\n\nKurt (13 år) har sannsynligvis ikke konfigurert dette (de fleste ungdommer bruker standardinnstillinger)"
+    },
+    {
+      "term": "3.2.3 Juridisk vurdering",
+      "definisjon": "Er dette lov? Ja. Dette er passiv observasjon av offentlig tilgjengelig informasjon. Du initierer ikke kontakt, du verifiserer kun om et nummer er registrert."
+    },
+    {
+      "term": "Er det etisk forsvarlig ved mindreårige? Ja, så lenge:",
+      "definisjon": "Du ikke sender melding (som ville vært aktiv kontakt)\n\nDu dokumenterer begrunnelsen for sjekken i aktivitetsloggen\n\nDu vurderer sensitiviteten (mindreårig = HØY sensitivitet)"
+    },
+    {
+      "term": "TPS-vurdering:",
+      "definisjon": "T (Troverdighet): A – Signal-systemet er autoritativ kilde for hvem som er registrert\n\nP (Pålitelighet): 1 – Sikkert bevis (brukeren kontrollerer dette nummeret)\n\nS (Sensitivitet): HØY (mindreårig, persondata)"
+    },
+    {
+      "term": "3.3 Metode 2: Analysere offentlig profilinformasjon",
+      "definisjon": "Når du har verifisert at et nummer er registrert i Signal og kan se profilen, kan du utvinne verdifull etterretning fra tre datakilder:"
+    },
+    {
+      "term": "3.3.1 Profilnavn",
+      "definisjon": "Hva kan det fortelle oss?"
+    },
+    {
+      "term": "Eksempel (Kurt):",
+      "definisjon": "Profilnavn: \"Kurt\""
+    },
+    {
+      "term": "Dette er ikke nødvendigvis hans fulle navn, men kan indikere:",
+      "definisjon": "Bruk av fornavn (mindre OPSEC-bevisst enn et alias)\n\nKonsistens med andre plattformer (Instagram: @kurt_mkn)"
+    },
+    {
+      "term": "Eksempel (Lina):",
+      "definisjon": "Profilnavn: \"Lina Grim\"\n\nHun bruker fullt navn (ingen sikkerhetsbevisthet)\n\nLett å koble til Facebook, LinkedIn, 1881.no"
+    },
+    {
+      "term": "Analyse:",
+      "definisjon": "Sammenlign profilnavn med brukernavn på andre plattformer\n\nEr det samme kallenavn? (indikerer lav OPSEC)\n\nEr det et helt nytt alias? (indikerer høyere OPSEC eller skjult identitet)"
+    },
+    {
+      "term": "Dokumentasjon:",
+      "definisjon": "Screenshot av profilnavn\n\nNotér eksakt stavemåte (store/små bokstaver, emojier)\n\nKryssreferanse med andre plattformer i rapport"
+    },
+    {
+      "term": "3.3.2 Profilbilde",
+      "definisjon": "Hva kan det fortelle oss?"
+    },
+    {
+      "term": "Profilbildet er ofte den mest verdifulle OSINT-kilden på Signal fordi:",
+      "definisjon": "Det er visuelt (kan gjenkjennes av vitner eller ofre)\n\nDet kan reverse-søkes for å finne samme bilde på andre plattformer\n\nDet kan analyseres for metadata (sjelden, da Signal stripper EXIF)\n\nMikrosteg: Reverse Image Search på Signal-profilbilde\n\nTa screenshot av profilbildet fra Signal-appen\n\nPå iPhone: Samtidig trykk på Power + Volume Up\n\nPå Android: Samtidig trykk på Power + Volume Down\n\nCrop (beskjær) bildet til kun ansiktet/profilbildet (fjern Signal-grensesnitt)"
+    },
+    {
+      "term": "Last opp til reverse image search-verktøy:",
+      "definisjon": "Google Images: images.google.com → kameraikon → \"Upload an image\"\n\nTinEye: tineye.com → \"Upload\"-knapp\n\nYandex: yandex.com/images → kameraikon (ofte best for ansiktsgjenkjenning)"
+    },
+    {
+      "term": "Analyser resultatene:",
+      "definisjon": "Finner du samme bilde på Instagram, Facebook, TikTok?\n\nHvis ja: Bevis på identitet og kryssplattform-bruk\n\nHvis nei: Kan være et unikt bilde tatt spesielt for Signal (høyere OPSEC)"
+    },
+    {
+      "term": "Eksempel (Kurt):",
+      "definisjon": "Profilbilde: Gutt i svart hettegenser, mørkt hår, alvorlig ansiktsuttrykk"
+    },
+    {
+      "term": "Reverse image search gir 4 treff:",
+      "definisjon": "Snapchat: @k13_nord\n\nInstagram: @kurt_mkn\n\nTikTok: @kurt13live\n\nTelegram: @k13nord\n\nKonklusjon: Kurt bruker identisk profilbilde på tvers av 5 plattformer (lav OPSEC). Dette bekrefter at alle disse kontoene tilhører samme person.\n\nTPS: T: B (gjenbruk av bilde indikerer reell person, ikke bot), P: 2 (sannsynlig sammenheng), S: HØY (mindreårig)"
+    },
+    {
+      "term": "3.3.3 About-tekst (Status)",
+      "definisjon": "Hva er dette? En kort tekst (opptil 140 tegn) brukeren kan sette som en \"statusmelding\" på profilen sin. Tilsvarende \"bio\" på Instagram."
+    },
+    {
+      "term": "Eksempel (Kurt):",
+      "definisjon": "About: \"💪 13\""
+    },
+    {
+      "term": "Analyse:",
+      "definisjon": "💪 = Muskel-emoji (indikerer fokus på gym/styrke/maskulinitet – konsistent med Instagram-innhold)\n\n\"13\" = Alder (naivt å dele dette, men vanlig for ungdommer)\n\nKryssreferanse: Instagram-bio er \"💪 Lørenskog | 13 | Hard work pays off 🔥\"\n\nKonklusjon: Konsistent bruk av emojier og aldersreferanse bekrefter kobling"
+    },
+    {
+      "term": "Eksempel (Lina):",
+      "definisjon": "About: \"UiO student 📚☕\""
+    },
+    {
+      "term": "Analyse:",
+      "definisjon": "\"UiO\" = Universitetet i Oslo (verifisert via LinkedIn)\n\nEmojier indikerer interesser (bøker, kaffe – konsistent med Instagram @linapina96)"
+    },
+    {
+      "term": "Dokumentasjon:",
+      "definisjon": "Kopier teksten ordrett (inkludert emojier)\n\nAnalyser språkbruk (slang, dialekt, emojier)\n\nSammenlign med tekster på andre plattformer (stemmer stilen overens?)"
+    },
+    {
+      "term": "3.4 Metode 3: Søke etter offentlig delte gruppe-invitasjonslenker",
+      "definisjon": "Signal-grupper er normalt private og invite-only, men noen brukere deler invitasjonslenker offentlig på sosiale medier, fora eller nettsteder. Dette er en OSINT-gullgruve fordi tilgang til en gruppe gir:\n\nListe over medlemmer (telefonnumre og profiler)\n\nInnhold i gruppechatten\n\nAktivitetsnivå og kommunikasjonsmønstre"
+    },
+    {
+      "term": "Forberedelse:",
+      "definisjon": "Nettleser (Chrome/Firefox)\n\nVPN (for å skjule din IP-adresse, valgfritt men anbefalt)"
+    },
+    {
+      "term": "Prosedyre:",
+      "definisjon": "Åpne Google (google.com eller google.no)"
+    },
+    {
+      "term": "Bruk følgende søkefraser (Google Dorks):",
+      "definisjon": "site:signal.group\n\nFinner alle lenker som ender med \"signal.group\" (offisielle gruppe-invitasjonslenker)\n\ninurl:signal.group \"Lørenskog\"\n\nFinner gruppe-lenker som inneholder ordet \"Lørenskog\" (geografisk tilknytning)\n\n\"signal.group\" \"VaaS\" OR \"Violence\"\n\nFinner lenker som kan være relatert til VaaS-nettverk (varsom med falske positive)\n\nsite:reddit.com OR site:facebook.com \"signal.group\"\n\nFinner Signal-gruppelenker delt på Reddit eller Facebook"
+    },
+    {
+      "term": "Analyser resultatene:",
+      "definisjon": "Klikk på lenkene for å se om de fortsatt er aktive (mange utløper)"
+    },
+    {
+      "term": "Notér:",
+      "definisjon": "Gruppenavn (f.eks. \"Lørenskog Gutta\")\n\nAntall medlemmer (hvis synlig før du blir med)\n\nHvor lenken ble delt (Reddit, Facebook, Discord?)\n\nDato for deling (hvis tilgjengelig)"
+    },
+    {
+      "term": "KRITISK BESLUTNINGSPUNKT:",
+      "definisjon": "Å bli med i gruppen = Aktiv handling\n\nDette kan varsle gruppeadministrator\n\nJuridisk grunnlag: Krever vurdering (er gruppen relevant for etterforskning?)\n\nAnbefaling: Diskuter med jurist/leder før du blir med"
+    },
+    {
+      "term": "Hvis du velger å bli med:",
+      "definisjon": "Bruk dedikert undersøkelsestelefon (ikke personlig)\n\nDokumenter: Tidspunkt for joining, gruppemedlemmer (screenshot)\n\nVær passiv (ikke send meldinger – bare observer)\n\nForlat gruppen når observasjon er fullført"
+    },
+    {
+      "term": "Eksempel (Kurt-relatert):",
+      "definisjon": "Søk: \"signal.group\" \"Lørenskog\"\n\nResultat: \"Lørenskog 🏴\" – invitasjonslenke delt på et Discord-forum for lokale ungdommer\n\nGruppenavn: \"Lørenskog 🏴\"\n\nMedlemmer: 67 synlige (før joining)\n\nVurdering: Kan Kurt være medlem? Relevant for VaaS-etterforskning?"
+    },
+    {
+      "term": "TPS-vurdering:",
+      "definisjon": "T: D (ukjent troverdighet før tilgang til gruppen)\n\nP: 4 (usikkert om Kurt er medlem før verifisering)\n\nS: HØY (gruppechat med potensielt mindreårige)"
+    },
+    {
+      "term": "Reddit:",
+      "definisjon": "Subreddits som r/Norway, r/Oslo, r/signalapp\n\nSøk: site:reddit.com \"signal.group\""
+    },
+    {
+      "term": "Telegram (ironic):",
+      "definisjon": "Noen kriminelle nettverk deler Signal-lenker i Telegram-kanaler\n\nSøk: @telegram + \"signal.group\""
+    },
+    {
+      "term": "Twitter/X:",
+      "definisjon": "Søk: \"signal.group\" lang:no (norske tweets)"
+    },
+    {
+      "term": "Discord:",
+      "definisjon": "Discord-servere hvor lenker deles (vanskelig å søke eksternt)"
+    },
+    {
+      "term": "Pastebin / GitHub Gists:",
+      "definisjon": "Noen \"leaks\" av gruppe-invitasjoner publiseres her\n\nSøk: site:pastebin.com \"signal.group\""
+    },
+    {
+      "term": "3.5 Metode 4: Brukernavn-søk (begrenset effektivitet)",
+      "definisjon": "Signal introduserte brukernavn i 2024 som en måte å kontakte noen uten å dele telefonnummer. Men brukernavn har strenge begrensninger fra et OSINT-perspektiv:"
+    },
+    {
+      "term": "Begrensninger:",
+      "definisjon": "Brukernavn er ikke søkbare i en offentlig katalog\n\nDu må vite det eksakte brukernavnet inkludert de to siste sifrene (f.eks. \"kurt.13\" funker ikke hvis det er \"kurt.55\")\n\nBrukernavn kan endres når som helst av brukeren\n\nGamle brukernavn frigjøres for andre etter kort tid\n\nNår er brukernavn-søk nyttig?"
+    },
+    {
+      "term": "Når du finner et brukernavn på en annen plattform:",
+      "definisjon": "Eksempel: Kurt skriver \"legg meg til på Signal: kurt.55\" i en Discord-chat\n\nDu kan da prøve å legge ham til via brukernavnet"
+    },
+    {
+      "term": "Når QR-koder deles:",
+      "definisjon": "Signal genererer QR-koder for brukernavn\n\nHvis du finner et bilde av en QR-kode (f.eks. på Instagram Story), kan du skanne den for å finne brukernavnet\n\nMikrosteg: Søke etter Signal-brukernavn\n\nÅpne Signal-appen\n\nGå til \"New Message\"\n\nTrykk på \"Find by username\" (Finn via brukernavn)\n\nSkriv inn brukernavnet (f.eks. \"kurt.55\")"
+    },
+    {
+      "term": "Hvis riktig:",
+      "definisjon": "Profilen dukker opp (samme info som ved telefonnummer-søk)"
+    },
+    {
+      "term": "Hvis feil:",
+      "definisjon": "\"No results\" (ingen resultater)"
+    },
+    {
+      "term": "TPS-vurdering:",
+      "definisjon": "T: C (hvis funnet via sekundær kilde som Discord, kan være falskt)\n\nP: 2 (mulig riktig person, men brukernavn kan være gjenbrukt)\n\nS: HØY (mindreårig, persondata)"
+    },
+    {
+      "term": "3.6.1 Leveringsbekreftelser (to haker)",
+      "definisjon": "Hva betyr de?\n\nÉn hake (hvit): Melding sendt fra din enhet, men ikke levert til mottaker ennå\n\nMottakers telefon er offline eller uten internett\n\nTo haker (hvite): Melding levert til mottakerens enhet\n\nTelefonen er online og har mottatt meldingen\n\nKRITISK: Dette betyr at mottakeren har internett-tilgang akkurat nå\n\nTo haker (fylte/blå): Melding lest av mottaker\n\nMottakeren har åpnet samtalen og sett meldingen\n\nNB: Dette kan deaktiveres i innstillinger (\"Read receipts\")"
+    },
+    {
+      "term": "Hvis du sender en test-melding til Kurt kl. 14:30 og ser to hvite haker umiddelbart, vet du at:",
+      "definisjon": "Kurts telefon er påslått\n\nHan har internett-tilgang\n\nHan kan potensielt være hjemme eller på et sted med WiFi/mobildata"
+    },
+    {
+      "term": "Begrensning:",
+      "definisjon": "Dette krever at du sender en melding = Aktiv handling = Juridisk grenseområde\n\nAnbefaling: Ikke bruk denne metoden uten juridisk avklaring"
+    },
+    {
+      "term": "Hvis mottakeren har aktivert \"Typing indicators\" (standard på), vil du se:",
+      "definisjon": "\"Typing...\" når de skriver et svar"
+    },
+    {
+      "term": "Hvis du ser \"Typing...\" men ingen melding kommer, kan det indikere:",
+      "definisjon": "Personen ombestemte seg (usikkerhet)\n\nPersonen sletter utkast (bevisst OPSEC)\n\nTeknisk feil"
+    },
+    {
+      "term": "Begrensning:",
+      "definisjon": "Dette krever aktiv chat = Ulovlig ved provokasjon"
+    },
+    {
+      "term": "❌ Kan ikke finnes uten fysisk tilgang til telefon:",
+      "definisjon": "Historiske meldinger\n\nKontaktliste (hvem brukeren kommuniserer med)\n\nGruppemedlemskap (med mindre du finner offentlig delt lenke)\n\nAnropshistorikk (kun lokal lagring)\n\nFilvedlegg (bilder, videoer)"
+    },
+    {
+      "term": "❌ Kan ikke finnes via Signal Foundation:",
+      "definisjon": "IP-adresse (med mindre \"Always Relay Calls\" er av, og da kun under samtaler)\n\nLokasjonsdata (Signal samler ikke GPS)\n\nTrafikklogger (hvem har snakket med hvem)"
+    },
+    {
+      "term": "❌ Kan ikke finnes via Google/Søkemotorer:",
+      "definisjon": "Private gruppechatter (med mindre lenke er lekket)\n\nBrukernavn (med mindre delt på andre plattformer)\n\nTelefonnumre (med mindre delt offentlig andre steder)\n\nKonklusjon: OSINT på Signal er ekstremt begrenset sammenlignet med Facebook, Instagram eller Telegram. De fleste verdifulle data krever:\n\nBeslaglagt telefon (fysisk tilgang)\n\nRettslig pålegg til teleoperatør (for å få metadata om SIM-kortet)\n\nInfiltrasjon i gruppe (juridisk og etisk komplisert)"
+    },
+    {
+      "term": "4.1 Kritisk første handling: Bevare \"After First Unlock\" (AFU)-tilstand",
+      "definisjon": "Når en telefon med Signal beslaglegges, er det mest kritiske å holde enheten i en tilstand som kalles \"After First Unlock\" (AFU). Dette er forskjellen på om du får tilgang til Signal-dataene eller ikke."
+    },
+    {
+      "term": "BFU (Before First Unlock):",
+      "definisjon": "Telefonen er skrudd på, men har ikke blitt opplåst siden siste omstart\n\nKrypteringsnøklene er ikke lastet inn i telefonens minne (RAM)\n\nData på telefonen (inkludert Signal-databasen) er kryptert og utilgjengelig\n\nSelv med riktig PIN-kode, tar det lengre tid å få tilgang (må knekke full-disk-kryptering)"
+    },
+    {
+      "term": "AFU (After First Unlock):",
+      "definisjon": "Telefonen har blitt opplåst minst én gang siden siste omstart\n\nKrypteringsnøklene er lastet inn i telefonens minne (RAM)\n\nData er fortsatt kryptert på disk, men nøklene er tilgjengelige i minnet\n\nMed riktig PIN-kode (eller biometri hvis aktivert), får du umiddelbar tilgang til Signal"
+    },
+    {
+      "term": "Analogi: Tenk på telefonen som et bankboksrom:",
+      "definisjon": "BFU = Boksen er låst, og nøkkelen ligger i en safe du ikke har koden til\n\nAFU = Boksen er låst, men nøkkelen ligger i lomma di – du trenger bare PIN-koden for å hente den"
+    },
+    {
+      "term": "4.1.2 Mikrosteg: Bevare AFU-tilstand ved beslag",
+      "definisjon": "Scenario: Du beslaglegger Kurts iPhone 12 fra lommen hans under en ransaking."
+    },
+    {
+      "term": "KRITISK HANDLING (Umiddelbart):",
+      "definisjon": "**IKKE SKR"
+    },
+    {
+      "term": "U AV TELEFONEN**",
+      "definisjon": "Hvis telefonen slås av eller går tom for strøm → BFU-tilstand\n\nKrypteringsnøklene kastes fra minnet\n\nTilgang til Signal blir ekstremt vanskelig"
+    },
+    {
+      "term": "ISOLER FRA NETTVERK (Innen 30 sekunder):",
+      "definisjon": "Metode A: Flymodus (rask, men ikke 100% sikker)\n\nSveip ned fra toppen av skjermen (Control Center på iPhone)\n\nAktiver Flymodus (flymaskin-ikon)\n\nBegrensning: Noen apper kan ignorere Flymodus for WiFi\n\nMetode B: Faraday-pose (anbefalt)\n\nLegg telefonen i en RF-blokkerende pose (EDEC, Paraben, etc.)\n\nDette blokkerer alle signaler (WiFi, Bluetooth, mobilnett)\n\nFordel: Hindrer fjernsletting via \"Wipe on next connect\"-funksjoner\n\nMetode C: Fjern SIM-kort (fallback)\n\nBruk SIM-ejektor-verktøy (eller bretteklype)\n\nTa ut SIM-kortet (deaktiverer mobildata)\n\nBegrensning: WiFi kan fortsatt være aktivt\n\nHOLD TELEFONEN VÅKEN (Unngå skjermlås)\n\nSett skjermen til \"Never\" auto-lock (krever at du allerede har låst den opp)\n\nAlternativ: Koble til en strømkilde (powerbank) umiddelbart\n\nBegrunnelse: Hvis skjermen låser seg og du ikke har PIN-koden, mister du tilgang"
+    },
+    {
+      "term": "DOKUMENTER TILSTANDEN:",
+      "definisjon": "Klokkeslett for beslag\n\nBatterinivå (f.eks. 73%)\n\nSkjermtilstand (opplåst/låst)\n\nSynlige apper på skjermen (f.eks. \"Signal åpen i bakgrunnen\")\n\nHva skjer hvis du IKKE gjør dette?\n\nScenario: Feil håndtering\n\nKl. 14:30: Telefon beslaglagt (AFU, 68% batteri)\n\nKl. 14:35: Telefon lagt i en plastpose (ikke Faraday) → WiFi fortsatt aktivt\n\nKl. 14:40: Kurts mor (Hanne) får varsel om beslag → sender fjernsletting fra sin telefon\n\nKl. 14:41: Kurts telefon mottar kommando via WiFi → Signal-databasen slettes\n\nKl. 14:50: Dere prøver å låse opp telefonen → TOM SIGNAL-APP, INGEN DATA\n\nScenario: Korrekt håndtering\n\nKl. 14:30: Telefon beslaglagt (AFU, 68% batteri)\n\nKl. 14:30:15: Telefon i Faraday-pose → All kommunikasjon blokkert\n\nKl. 14:35: Telefon tilkoblet powerbank (holder batteri oppe)\n\nKl. 15:00: Telefon til IKT-krimenhet → Forensisk imaging starter\n\nKl. 15:30: Full tilgang til Signal-databasen sikret"
+    },
+    {
+      "term": "4.2 Overføring av Signal-konto til politikontrollert telefon",
+      "definisjon": "Hvis målet er å overta Kurts Signal-konto for å motta fremtidige meldinger (ikke historiske), må du gjennomføre en kontomigrering. Dette er teknisk mulig, men juridisk og praktisk komplisert."
+    },
+    {
+      "term": "Normalbruk:",
+      "definisjon": "Bruker laster ned Signal på sin telefon\n\nBruker angir telefonnummer (+47 918 34 512)\n\nSignal sender SMS-kode til nummeret (f.eks. \"123-456\")\n\nBruker taster inn koden → Konto aktivert\n\nBruker setter eventuelt Signal PIN (valgfritt, men anbefalt)"
+    },
+    {
+      "term": "Ved enhetsbytte (f.eks. ny telefon):",
+      "definisjon": "Bruker installerer Signal på ny telefon\n\nBruker angir samme telefonnummer\n\nSignal sender ny SMS-kode\n\nKRITISK: Hvis \"Registration Lock\" (Signal PIN) er aktivert, vil brukeren bli bedt om å taste inn PIN-koden\n\nHvis PIN-kode er riktig → Konto overføres til ny telefon\n\nGammel telefon logger ut automatisk"
+    },
+    {
+      "term": "4.2.2 Politiets \"SIM-swap\"-prosess",
+      "definisjon": "Scenario: Dere har beslaglagt Kurts telefon, men ønsker å overta kontoen hans for å motta fremtidige meldinger fra @NordLink81 eller @BKindustrien."
+    },
+    {
+      "term": "Forberedelse:",
+      "definisjon": "Kurts SIM-kort (tatt fra den beslaglagte telefonen)\n\nPolitikontrollert telefon (iPhone/Android med Signal installert)\n\nRettslig grunnlag (kjennelse for å overta kommunikasjonen)"
+    },
+    {
+      "term": "Prosedyre:",
+      "definisjon": "Ta ut SIM-kortet fra Kurts telefon\n\nBruk SIM-ejektor\n\nDokumenter: IMEI-nummer på SIM-kortet, operatør (Telenor)\n\nSett SIM-kortet i polititelefonen\n\nVent på at telefonen registrerer seg i nettet (2-3 minutter)\n\nSjekk at telefonnummeret er aktivt (ring det fra en annen telefon)\n\nÅpne Signal på polititelefonen\n\nVelg \"Register\" (Registrer)\n\nAngi Kurts telefonnummer: +47 918 34 512\n\nVent på SMS-verifisering\n\nSignal sender en 6-sifret kode til SIM-kortet\n\nKoden mottas på polititelefonen\n\nNB: Dette starter nedtellingen til gammel telefon logges ut\n\nKRITISK BESLUTNINGSPUNKT: Registration Lock\n\nScenario A: Ingen Registration Lock\n\nDu taster inn SMS-koden\n\nKonto overføres umiddelbart til polititelefonen\n\nKurts gamle telefon logger ut\n\nRESULTAT: Du har nå tilgang til fremtidige meldinger\n\nScenario B: Registration Lock aktivert\n\nEtter SMS-koden blir du bedt om Signal PIN"
+    },
+    {
+      "term": "Hvis du ikke har PIN-koden:",
+      "definisjon": "Konto er låst i 7 dager\n\nEtter 7 dager kan du tvinge en ny registrering\n\nKONSEKVENS: All profilinformasjon, kontakter og gruppemedlemskap slettes\n\nETTERRETNINGSVERDI: Drastisk redusert (du får bare en \"tom\" konto)"
+    },
+    {
+      "term": "Hvis PIN-kode er ukjent – Strategier:",
+      "definisjon": "Strategi 1: Søk etter PIN-kode på den beslaglagte telefonen\n\nSjekk \"Note to Self\" i Signal (folk lagrer PIN-koder der)\n\nSjekk Notes-appen på telefonen\n\nSjekk bilder (folk tar bilde av PIN-koder)\n\nSjekk e-post (kan ha sendt seg selv PIN-koden)\n\nStrategi 2: Brute-force (teoretisk mulig, praktisk vanskelig)\n\nSignal PIN er 4-6 sifre (10,000 - 1,000,000 kombinasjoner)\n\nSignal har \"rate limiting\" (kun X forsøk per time)\n\nKrever spesialisert verktøy og tid\n\nStrategi 3: Vente ut 7-dagers perioden\n\nGodta tap av profilinformasjon og grupper\n\nFokuser på fremtidige meldinger fra nøkkelpersoner"
+    },
+    {
+      "term": "Straffeprosessloven § 216m (Fjernkontroll av datamaskin):",
+      "definisjon": "Hjemler dataavlesning i sanntid fra mistenkts enhet\n\nKan brukes som grunnlag for å overta kommunikasjonen via Signal\n\nKrav: Kjennelse fra tingretten, kun for alvorlig kriminalitet (straffenivå minimum 3 år)"
+    },
+    {
+      "term": "Straffeprosessloven § 216a (Skjult fjernsynsovervåking):",
+      "definisjon": "Hjemler overvåkning av privat kommunikasjon\n\nKan tolkes til å dekke overtagelse av Signal-konto\n\nKrav: Kjennelse, samme straffenivå som § 216m"
+    },
+    {
+      "term": "Personopplysningsloven:",
+      "definisjon": "Politiet må dokumentere nødvendighet og proporsjonalitet\n\nSærskilt ved mindreårige (Kurts alder = 13 år)"
+    },
+    {
+      "term": "Etisk dilemma:",
+      "definisjon": "Overtagelse av konto kan eksponere andre (f.eks. Kurts legitime venner) for overvåkning\n\nEr det proporsjonalt å overta kontoen til en 13-åring?\n\nBør fokuset heller være på de voksne rekruttererne (@NordLink81, @BKindustrien)?"
+    },
+    {
+      "term": "Anbefaling:",
+      "definisjon": "Vurder alltid om historiske data fra den beslaglagte telefonen er tilstrekkelig\n\nKontoovertagelse bør være siste utvei når live-overvåkning er kritisk"
+    },
+    {
+      "term": "4.3 Historiske meldinger – Uthenting fra beslaglagt telefon",
+      "definisjon": "Den mest verdifulle informasjonen ligger i historiske meldinger på Kurts telefon. Dette krever forensisk tilgang til Signal-databasen."
+    },
+    {
+      "term": "På iOS (iPhone):",
+      "definisjon": "Plassering: /private/var/mobile/Containers/Data/Application/[App-ID]/Library/Application Support/Signal/\n\nHoveddatabase: Signal.sqlite\n\nVedlegg: /Attachments/-mappe\n\nKryptering: iOS FileVault (låst til enhetens Secure Enclave)"
+    },
+    {
+      "term": "På Android:",
+      "definisjon": "Plassering: /data/data/org.thoughtcrime.securesms/databases/\n\nHoveddatabase: signal.db\n\nVedlegg: /media/-mappe\n\nKryptering: Android KeyStore (låst til enheten)\n\nHva inneholder databasen?\n\nAlle meldinger (tekst, tidsstempler)\n\nKontaktliste (telefonnumre og profiler)\n\nGruppemedlemskap\n\nVedlegg (bilder, videoer, dokumenter – referanser til filer)\n\nSafety Numbers (kryptografiske fingeravtrykk)\n\n\"Tombstone records\" (spor etter slettede meldinger – viser at en melding ble sendt, men ikke innholdet)\n\nHva inneholder IKKE databasen?\n\nMeldinger slettet med \"Disappearing Messages\" (fysisk fjernet fra disk)\n\nInnhold som aldri ble synkronisert (hvis telefonen var offline)"
+    },
+    {
+      "term": "Kommersielle verktøy:",
+      "definisjon": "1. Cellebrite UFED/Physical Analyzer\n\nStøtter full file system extraction (FFS) fra iOS og Android\n\nKan dekryptere Signal.sqlite hvis telefonen er opplåst (AFU)\n\nKrav: Fysisk tilgang, telefon i AFU-tilstand, ofte SIM-kort må være i telefonen\n\nKostnad: ~1-2 millioner NOK per lisens (avhengig av pakke)\n\n2. Magnet AXIOM\n\nKan parse Signal-databasen etter full extraction\n\nVisualiserer meldingsforløp, tidslinjekart, kontaktgrafer\n\nKrav: Raw database-fil (.sqlite)\n\n3. Grayshift GrayKey\n\nSpesialisert på iOS-opplåsing\n\nKan hente ut Signal-data fra låste iPhoner (under visse OS-versjoner)\n\nBegrensning: Apple lukker sårbarheter raskt – nyeste iOS-versjoner ofte immune"
+    },
+    {
+      "term": "Open Source-verktøy:",
+      "definisjon": "1. Signal Desktop Database Viewer (Python)\n\nKrever eksportert Signal.sqlite-fil\n\nKan lese meldinger i klartekst hvis filen allerede er dekryptert\n\nGitHub: signal-backup-decode\n\n2. Android Backup Extractor\n\nKan dekryptere Signal Android-backups (hvis backup-kode er kjent)\n\nKrever: signal-backup-YYYY-MM-DD.backup-fil + 30-sifret backup-kode"
+    },
+    {
+      "term": "4.3.3 Mikrosteg: Forensisk uthenting med Cellebrite UFED (Forenklet)",
+      "definisjon": "NB: Denne prosessen krever spesialisert opplæring. Dette er en forenklet oversikt for forståelse, ikke en faktisk operasjonell guide."
+    },
+    {
+      "term": "Forberedelse:",
+      "definisjon": "Kurts iPhone 12 (beslaglagt, i AFU-tilstand, opplåst med PIN/biometri)\n\nCellebrite UFED Touch 2 (eller nyere)\n\nPC med Cellebrite Physical Analyzer installert\n\nFaraday-pose (for isolasjon under prosessen)"
+    },
+    {
+      "term": "Prosedyre:",
+      "definisjon": "Tilkoble telefon til UFED-enheten\n\nBruk Lightning-kabel (iPhone) eller USB-C (Android)\n\nUFED registrerer enheten (f.eks. \"iPhone 12, iOS 17.2\")\n\nVelg ekstraksjonsmodus"
+    },
+    {
+      "term": "File System Extraction (anbefalt for Signal):",
+      "definisjon": "Henter alle filer fra telefonen inkludert Signal.sqlite\n\nKrever at telefonen er opplåst (AFU)"
+    },
+    {
+      "term": "Advanced Logical:",
+      "definisjon": "Hvis FFS ikke fungerer (nyere iOS)\n\nGodkjenn tilkobling på telefonen\n\niPhone viser pop-up: \"Trust This Computer?\"\n\nKRITISK: Hvis telefonen er låst, får du ikke denne pop-upen → Må låse opp først\n\nStart ekstraksjon\n\nUFED kopierer alle data (kan ta 1-4 timer avhengig av størrelse)\n\nIkke avbryt prosessen (kan korrumpere data)\n\nEksporter til Physical Analyzer\n\nUFED lager en .ufed-fil som inneholder all ekstrahert data\n\nLast denne inn i Physical Analyzer på PC\n\nSøk etter Signal-data\n\nPhysical Analyzer parser automatisk Signal.sqlite\n\nVelg \"Messages\" → \"Signal\""
+    },
+    {
+      "term": "Du vil nå se:",
+      "definisjon": "Alle meldinger i kronologisk rekkefølge\n\nKontakter (telefonnumre + profilnavn)\n\nGrupper (navn + medlemmer)\n\nVedlegg (klikk for å se bilder/videoer)"
+    },
+    {
+      "term": "Dokumentasjon:",
+      "definisjon": "Generer rapport (PDF eller HTML)"
+    },
+    {
+      "term": "Inkluder:",
+      "definisjon": "Hash-verdier (SHA-256) av ekstrahert database\n\nMetadata (tidspunkt for ekstraksjon, UFED-versjon, enhetsstatus)\n\nRelevante meldingsforløp (kun de relevante for saken – ikke alt)"
+    },
+    {
+      "term": "iOS (iPhone):",
+      "definisjon": "GrayKey: Kan potensielt opplåse eldre iOS-versjoner (iOS 14-16)\n\nKostnad: ~500,000 NOK per opplåsing (varierer)\n\nSuksessrate: 30-70% avhengig av iOS-versjon\n\nTid: Kan ta dager til uker"
+    },
+    {
+      "term": "Cellebrite Premium:",
+      "definisjon": "Lignende som GrayKey, egen proprietær metode\n\nOfte bak Apple's oppdateringer (nyeste iOS er immune)"
+    },
+    {
+      "term": "Brute-force PIN:",
+      "definisjon": "Teoretisk mulig med spesialisert hardware\n\nPraktisk umulig hvis brukeren har 6+ sifret PIN og \"Erase Data after 10 attempts\" aktivert"
+    },
+    {
+      "term": "Android:",
+      "definisjon": "Enklere enn iOS: Flere sårbarheter i eldre versjoner\n\nVerktøy: Cellebrite, UFED, XRY (MSAB)\n\nBegrensning: Nyeste Android (13+) med sterk kryptering er vanskeligere"
+    },
+    {
+      "term": "Anbefaling:",
+      "definisjon": "Hvis BFU: Kontakt IKT-krimenhet/Kripos umiddelbart\n\nIkke gjør egne forsøk (risiko for å utløse \"Erase Data\")"
+    },
+    {
+      "term": "4.4.1 Notification Logs (Android)",
+      "definisjon": "Hva er dette? Android lagrer en logg over alle varsler (notifications) som har blitt vist på skjermen. Selv om meldingen slettes i Signal, kan et fragment av teksten fortsatt ligge i varslingsloggen."
+    },
+    {
+      "term": "Plassering:",
+      "definisjon": "/data/system/notification_log.xml (krever root-tilgang)"
+    },
+    {
+      "term": "Eksempel:",
+      "definisjon": "<notification time=\"2026-02-15 23:47:32\">\n\n<app>org.thoughtcrime.securesms</app>\n\n<text>k13_nord: vi ordner det i kveld</text>\n\n</notification>"
+    },
+    {
+      "term": "TPS-vurdering:",
+      "definisjon": "T: B (Android-system er pålitelig kilde)\n\nP: 2 (sannsynlig at teksten er korrekt, men kan være beskåret)\n\nS: HØY (innhold fra mindreårigs kommunikasjon)\n\nMikrosteg: Søke i notification logs med UFED\n\nUtfør full file system extraction\n\nI Physical Analyzer: søk etter \"notification\" + \"signal\"\n\nFiltrer på datoer rundt hendelsen (f.eks. 13.-15. februar)\n\nDokumenter funn med screenshot og hash"
+    },
+    {
+      "term": "4.4.2 Tastaturlogger (Keyboard Dictionary)",
+      "definisjon": "Hva er dette? Tredjepartstagstaturer (f.eks. SwiftKey, Gboard) kan lagre ord brukeren har skrevet for å forbedre autokorreksjon. Selv om Signal ber tastaturet om å ikke lagre (\"Incognito Keyboard\"-modus), respekterer ikke alle tastaturer dette."
+    },
+    {
+      "term": "Plassering:",
+      "definisjon": "iOS: /Library/Keyboard/\n\nAndroid: /data/data/[keyboard-app]/"
+    },
+    {
+      "term": "Eksempel (funnet i Kurts telefons Gboard-logg):",
+      "definisjon": "frekvente_ord: [\"nordlink\", \"ordne\", \"jobb\", \"fixe\", \"lett\", \"rema1000\"]"
+    },
+    {
+      "term": "Analyse:",
+      "definisjon": "\"nordlink\" = Referanse til @NordLink81\n\n\"ordne\", \"jobb\", \"fixe\" = VaaS-relatert slang\n\n\"rema1000\" = Møtested observert på Snap Map"
+    },
+    {
+      "term": "TPS-vurdering:",
+      "definisjon": "T: C (tastaturlogg kan ha falske positive fra andre apper)\n\nP: 3 (mulig relatert til Signal-chat, men ikke sikkert)\n\nS: MODERAT (indirekte bevis, ikke direkte meldingsinnhold)"
+    },
+    {
+      "term": "4.4.3 iOS Call History Leak",
+      "definisjon": "Hva er dette? Hvis \"Show Calls in Recents\" er aktivert i Signal (standard på), vil metadata om Signal-anrop lagres i iPhones innebygde anropslogg. Denne lagres også i iCloud."
+    },
+    {
+      "term": "Data som lekkes:",
+      "definisjon": "Telefonnummer til anropet\n\nVarighet (f.eks. \"3 min 42 sek\")\n\nTidspunkt\n\nType (Voice/Video)\n\nKRITISK: Innholdet av samtalen er fortsatt kryptert, men metadata er eksponert.\n\nMikrosteg: Finne Signal-anrop i Call History\n\nÅpne \"Phone\"-appen på iPhone\n\nGå til \"Recents\"\n\nSignal-anrop vises med Signal-logoen"
+    },
+    {
+      "term": "Dokumenter:",
+      "definisjon": "Telefonnummer\n\nTidspunkt\n\nVarighet\n\nHvis iCloud-backup: Be Apple om historikk via rettslig pålegg"
+    },
+    {
+      "term": "13.02.2026 21:15 - Signal Voice Call - +47 XXX XX XXX (NordLink81)",
+      "definisjon": "Varighet: 7 min 23 sek"
+    },
+    {
+      "term": "TPS-vurdering:",
+      "definisjon": "T: A (iOS Call History er autoritativ kilde)\n\nP: 1 (sikkert bevis på kommunikasjon)\n\nS: HØY (mindreårig + kriminell kontakt)"
+    },
+    {
+      "term": "4.4.4 Screenshot-cache i App Switcher",
+      "definisjon": "Hva er dette? Når du \"lukker\" en app på iPhone ved å sveipe opp (App Switcher), tar iOS et screenshot av det siste skjermbildet. Dette lagres midlertidig."
+    },
+    {
+      "term": "Plassering:",
+      "definisjon": "/Library/Caches/Snapshots/"
+    },
+    {
+      "term": "Risiko:",
+      "definisjon": "Hvis Kurt hadde Signal åpen når han sveipte vekk appen, kan et screenshot av den siste chatsamtalen ligge i cache\n\nDette gjelder kun hvis \"Screen Security\" (skjermbeskytt\n\nelse) er av\n\nMikrosteg: Søke etter Signal-screenshots\n\nUtfør full file system extraction\n\nSøk i /Library/Caches/Snapshots/org.thoughtcrime.securesms/\n\nÅpne bildefiler (vanligvis PNG-format)\n\nHvis lesbare meldinger synlig: Dokumenter med hash og tidsstempel"
+    },
+    {
+      "term": "TPS-vurdering:",
+      "definisjon": "T: A (iOS-systemfil, sikker kilde)\n\nP: 1 (hvis lesbart, er det autentisk)\n\nS: HØY (kan inneholde sensitiv kommunikasjon)"
+    },
+    {
+      "term": "4.4.5 \"Note to Self\"-funksjonen – OSINT-gullgruve",
+      "definisjon": "Hva er dette? En funksjon i Signal hvor brukeren kan sende meldinger til seg selv. Fungerer som en kryptert notatblokk."
+    },
+    {
+      "term": "Hvorfor er det viktig? Kriminelle bruker \"Note to Self\" til å lagre:",
+      "definisjon": "Passord og PIN-koder\n\nAdresser og telefonnumre\n\nBilder av kontanter/varer\n\nHandlelister (narkotika, våpen)\n\nInstrukser fra overordnede"
+    },
+    {
+      "term": "Eksempel (Kurts \"Note to Self\"):",
+      "definisjon": "Melding 1 (11.02.2026): \"Huskeliste: ring nordlink kl 21, møt ved rema\"\n\nMelding 2 (12.02.2026): [Bilde av pengebunke – 10x 500-lapper]\n\nMelding 3 (13.02.2026): \"PIN: 1337\""
+    },
+    {
+      "term": "Analyse:",
+      "definisjon": "Melding 1: Bekrefter møte med @NordLink81 ved Rema 1000 (korrelerer med Snap Map-observasjon)\n\nMelding 2: Bevis på tilgang til kontanter (10x500 = 5000 kr)\n\nMelding 3: Signal PIN (kan brukes til å overta konto)"
+    },
+    {
+      "term": "TPS-vurdering:",
+      "definisjon": "T: A (brukerens egen dokumentasjon, høy troverdighet)\n\nP: 1 (autentisk, selvdokumentert)\n\nS: KRITISK (inneholder PIN-kode + bevis på økonomisk aktivitet)\n\nMikrosteg: Prioritere \"Note to Self\" i forensisk analyse\n\nÅpne Signal på beslaglagt telefon (eller i Physical Analyzer)\n\nScroll til toppen av chatlisten\n\n\"Note to Self\" vises alltid øverst\n\nGå gjennom alle meldinger (ikke anta at det er tomt)"
+    },
+    {
+      "term": "Dokumenter:",
+      "definisjon": "Tekst ordrett\n\nBilder (ta screenshot + eksporter original)\n\nTidsstempler"
+    },
+    {
+      "term": "4.5 Desktop-klienter (Windows/Mac) – \"Den enkle veien inn\"",
+      "definisjon": "Signal Desktop (for PC/Mac) synkroniseres med mobilappen, men har ofte svakere sikkerhet. Dette kan være en enklere vei til historiske meldinger enn å knekke en låst telefon."
+    },
+    {
+      "term": "Kobling:",
+      "definisjon": "Bruker installerer Signal på PC/Mac\n\nBruker skanner QR-kode med mobiltelefonen\n\nDesktop-klienten synkroniseres med mobilappen\n\nAlle fremtidige meldinger replikeres til desktop"
+    },
+    {
+      "term": "Windows:",
+      "definisjon": "C:\\Users\\[Username]\\AppData\\Roaming\\Signal\\sql\\db.sqlite"
+    },
+    {
+      "term": "Mac:",
+      "definisjon": "~/Library/Application Support/Signal/sql/db.sqlite\n\nKryptering: Desktop-klienten krypterer databasen, men nøkkelen lagres ofte i samme mappe (config.json). Hvis PC-en er pålogget, kan databasen dekrypteres uten ekstra passord."
+    },
+    {
+      "term": "4.5.2 Mikrosteg: Beslag av Signal Desktop-data",
+      "definisjon": "Scenario: Dere ransaker Kurts hjem og finner Hanne Mikkelsens (mor) laptop. Hun lar deg gjennomgå den frivillig."
+    },
+    {
+      "term": "Prosedyre:",
+      "definisjon": "Sjekk om Signal er installert\n\nWindows: Søk i Start-menyen etter \"Signal\"\n\nMac: Sjekk Applications-mappen"
+    },
+    {
+      "term": "Hvis Signal er installert:",
+      "definisjon": "KRITISK: IKKE start appen (kan utløse synkronisering og sletting)\n\nGå direkte til databasens plassering"
+    },
+    {
+      "term": "Windows-sti:",
+      "definisjon": "C:\\Users\\[Hannes brukernavn]\\AppData\\Roaming\\Signal\\\n\nKopier hele Signal-mappen til en ekstern disk eller USB"
+    },
+    {
+      "term": "Dokumenter:",
+      "definisjon": "Tidsstempel for siste endring (viser når Signal sist ble brukt)\n\nStørrelse på db.sqlite (indikerer mengde data)"
+    },
+    {
+      "term": "Dekryptering (krever spesialist-verktøy):",
+      "definisjon": "Signal Desktop bruker SQLCipher for kryptering\n\nNøkkelen ligger i config.json (samme mappe)\n\nVerktøy: signal-desktop-decrypt (Python-script, GitHub)"
+    },
+    {
+      "term": "Alternativ: Åpne Signal på PC-en (hvis Hanne samtykker):",
+      "definisjon": "Start Signal Desktop\n\nDu vil nå se alle meldinger Hanne har hatt på sin Signal\n\nVIKTIG: Dette er ikke Kurts meldinger, med mindre hun har tilgang til hans konto\n\nMulig funn: Hvis Hanne og Kurt har snakket via Signal, vil du se deres samtale"
+    },
+    {
+      "term": "14.02.2026 09:00 - Hanne: \"Kom hjem til middag\"",
+      "definisjon": "[Ingen svar]"
+    },
+    {
+      "term": "Analyse:",
+      "definisjon": "Kurt kommuniserer med mor via Signal (indikerer at han bruker appen aktivt)\n\n\"hos martin\" = Mulig alibi eller løgn (krysssjekk med Snap Map)"
+    },
+    {
+      "term": "TPS-vurdering:",
+      "definisjon": "T: A (Hannes egen PC, frivillig samtykke)\n\nP: 1 (autentisk kommunikasjon)\n\nS: MODERAT (familiesamtale, men relevant for bevegelsesmønster)"
+    },
+    {
+      "term": "1. Ukrypterte vedlegg (2019-2020):",
+      "definisjon": "Vedlegg (bilder, videoer) ble lagret ukryptert i Attachments-mappen\n\nSelv om meldingsteksten var kryptert, kunne bilder åpnes direkte\n\nStatus: Fikset i Signal Desktop 1.40+, men eldre versjoner kan fortsatt ha denne feilen"
+    },
+    {
+      "term": "2. Windows Notification Center leak (2021):",
+      "definisjon": "Windows 10/11 lagret meldingsforhåndsvisninger i klartekst i Notification Center\n\nSelv etter sletting i Signal, kunne teksten ligge i systemloggen\n\nStatus: Delvis fikset, men WN-logg kan fortsatt inneholde fragmenter"
+    },
+    {
+      "term": "Mikrostep: Søke etter lekket Signal-data på Windows:",
+      "definisjon": "Åpne Windows Event Viewer\n\nNavigér til \"Applications and Services Logs\" → \"Microsoft\" → \"Windows\" → \"ActionCenter\"\n\nSøk etter org.whispersystems.signal (gamle app-ID)\n\nFiltrer på dato rundt hendelsen\n\nDokumenter eventuelle funn"
+    },
+    {
+      "term": "5.1 Grensedragning: Hva er lov ved Signal-etterforskning?",
+      "definisjon": "Signal-etterforskning krever presis juridisk bevissthet fordi terskelen for overvåkning av kryptert kommunikasjon er høyere enn for tradisjonell telefonavlytting."
+    },
+    {
+      "term": "Straffeprosessloven § 196 (Åpen overvåking):",
+      "definisjon": "Hjemler observasjon av åpne profiler, inklusive Signal-profiler som er tilgjengelige uten passord\n\nKrav: Ingen kjennelse nødvendig for passiv observasjon"
+    },
+    {
+      "term": "Straffeprosessloven § 197 (Kommunikasjonskontroll – telefon/datatrafikk):",
+      "definisjon": "Hjemler tradisjonell telefonavlytting og datatrafikk-logging\n\nBegrensning: Signal's ende-til-ende-kryptering gjør avlytting av innhold umulig selv med teleoperatørens bistand\n\nHva KAN fås: Metadata om tilkobling til Signal-servere (tidspunkt, datamengde), men ikke innhold"
+    },
+    {
+      "term": "Straffeprosessloven § 216m (Fjernkontroll av datamaskin/dataavlesning):",
+      "definisjon": "Hjemler installasjon av malware for å avlytte Signal-meldinger i sanntid"
+    },
+    {
+      "term": "Krav:",
+      "definisjon": "Kjennelse fra tingretten\n\nStraffenivå minimum 3 år\n\nSubsidiaritet (andre metoder må være uttømt eller uegnet)\n\nPraktisk: Krever teknisk spisskompetanse (Kripos, PST)"
+    },
+    {
+      "term": "All behandling av persondata (inkludert Signal-metadata) må være:",
+      "definisjon": "Lovlig\n\nFormålsbegrenset\n\nNødvendig og proporsjonal\n\nSærskilt ved mindreårige: Ekstra vern (Art. 8 GDPR)"
+    },
+    {
+      "term": "✅ LOVLIG UTEN KJENNELSE (Passiv OSINT):",
+      "definisjon": "Verifisere om et telefonnummer er registrert i Signal\n\nMetode: Kontaktliste-sjekk på undersøkelsestelefon\n\nHjemmel: § 196 (åpen observasjon)\n\nObservere offentlig profilinformasjon\n\nProfilnavn, profilbilde, About-tekst\n\nHjemmel: § 196\n\nSøke etter offentlig delte gruppe-invitasjonslenker\n\nGoogle Dorking, Reddit-søk\n\nHjemmel: Generell etterforskningsplikt"
+    },
+    {
+      "term": "Forensisk analyse av beslaglagt telefon (med samtykke eller beslag):",
+      "definisjon": "Les historiske meldinger fra opplåst telefon\n\nHjemmel: § 195 (beslag), § 192 (ransaking)\n\nReverse image search på profilbilder\n\nFor å finne kryssplattform-bruk\n\nHjemmel: Åpen kildeinformasjon"
+    },
+    {
+      "term": "❌ KREVER KJENNELSE/BESLUTNING:",
+      "definisjon": "Overta Signal-konto ved SIM-swap\n\nMottar fremtidige meldinger i live\n\nHjemmel: § 216a (kommunikasjonskontroll) eller § 216m (dataavlesning)\n\nKrav: Kjennelse, alvorlig kriminalitet\n\nBli medlem av lukket Signal-gruppe\n\nAktiv infiltrasjon\n\nHjemmel: § 222c (skjult tvangsmiddel)\n\nKrav: Beslutning fra påtalemyndighet\n\nInstallere spyware/malware på telefon\n\nFor live-overvåkning av Signal\n\nHjemmel: § 216m\n\nKrav: Kjennelse, straffenivå 3+ år\n\nBe Signal Foundation om data\n\nSelv om de kun kan gi 2 tidsstempler, krever det formelt pålegg\n\nHjemmel: § 197 (kommunikasjonskontroll)"
+    },
+    {
+      "term": "⛔ ULOVLIG UTEN VIDERE:",
+      "definisjon": "Sende melding til mistenkt for å lokke informasjon\n\nAgentprovokasjon (§ 202a)\n\nEks: \"Hei Kurt, hvor mye vil du ha for å ordne en jobb?\"\n\nOpprette falsk Signal-profil og infiltrere gruppe\n\nUten kjennelse = provokasjon\n\nMed kjennelse = mulig under § 222c\n\nBryte Signals kryptering utenfor rettslig hjemmel\n\nHackingforbudet (straffeloven § 205)\n\nTvinge frem Signal PIN-kode fra mistenkt\n\nNektelsesrett (§ 90)\n\nPIN-kode = \"passord\" = beskyttet"
+    },
+    {
+      "term": "Barns rett til privatliv:",
+      "definisjon": "Selv om Kurt er under etterforskning, har han rett til beskyttelse av privatlivet\n\nOvervåkning må være strengt nødvendig og proporsjonalt\n\nFokus skal være på beskyttelse (Kurt som offer) fremfor straff"
+    },
+    {
+      "term": "5.2.2 Straffeloven § 46 (Kriminell lavalder)",
+      "definisjon": "Kurt er 13 år = UNDER kriminell lavalder (15 år)\n\nHan kan IKKE tiltales strafferettslig"
+    },
+    {
+      "term": "Saken må håndteres via:",
+      "definisjon": "Barnevern (bekymringsmelding)\n\nKonfliktråd (ved mindre alvorlig handling)\n\nPoliti (kun etterforskning av andre – Kurt som vitne eller offer)"
+    },
+    {
+      "term": "Konsekvens:",
+      "definisjon": "Signal-etterforskning av Kurt bør primært fokusere på hvem som rekrutterer ham (@NordLink81, @BKindustrien)\n\nKurts egne handlinger dokumenteres, men for barnevernformål, ikke straffeforfølgelse"
+    },
+    {
+      "term": "Eksempel (Kurts Signal-profil):",
+      "definisjon": "T (Troverdighet): C – Verifisert via telefonnummer (+47 918 34 512), men alias brukt (\"Kurt\")\n\nP (Pålitelighet): 2 – Profilinformasjon stemmer overens med andre plattformer (Instagram, Snapchat)\n\nS (Sensitivitet): HØY – Mindreårig (13 år), under kriminell lavalder, potensielt utsatt for rekruttering"
+    },
+    {
+      "term": "Rapportskriving:",
+      "definisjon": "ALDRI bruk fullt navn i åpne rapporter (anonymiser: \"Objekt 1\" eller \"13-åring fra Lørenskog\")\n\nALDRI del bilder av Kurts ansikt uten sladding\n\nALLTID dokumenter at det er barnevern-melding som er konsekvensen, ikke straff"
+    },
+    {
+      "term": "Forberedelse:",
+      "definisjon": "Kjennelse/begjæring fra tingretten (§ 197)\n\nLegal Request Form fra Signal (https://signal.org/legal/)"
+    },
+    {
+      "term": "Prosedyre:",
+      "definisjon": "Last ned \"Law Enforcement Request Form\" fra Signals nettside"
+    },
+    {
+      "term": "Fyll ut:",
+      "definisjon": "Telefonnummer til objektet (Kurt: +47 918 34 512)\n\nType forespørsel: \"Account Information\"\n\nTidsperiode (f.eks. \"01.01.2024 – 15.02.2026\")\n\nJuridisk grunnlag (reference til kjennelse)"
+    },
+    {
+      "term": "Send til Signal Foundation:",
+      "definisjon": "E-post: legal@signal.org"
+    },
+    {
+      "term": "Inkluder:",
+      "definisjon": "Underskrevet kjennelse (PDF)\n\nRequest Form\n\nKontaktinfo til etterforsker"
+    },
+    {
+      "term": "Forventet respons (innen 2-4 uker):",
+      "definisjon": "Account Phone Number: +47918345120Account Created: 2024-01-15 14:32:11 UTCLast Seen: 2026-02-15 22:47:33 UTC"
+    },
+    {
+      "term": "Hva får du IKKE:",
+      "definisjon": "Kontaktliste\n\nMeldingsinnhold\n\nGruppemedlemskap\n\nIP-adresser (med mindre \"Always Relay Calls\" er av, og da kun under aktiv samtale)"
+    },
+    {
+      "term": "TPS-vurdering av Signal-utleveringen:",
+      "definisjon": "T: A (Signal Foundation er autoritativ kilde)\n\nP: 1 (tidsstemplene er korrekte)\n\nS: LAV (kun tidsstempler, ingen meldingsinnhold)"
+    },
+    {
+      "term": "Bruk av data:",
+      "definisjon": "Bekrefter at Kurt har Signal-konto (kan ikke benektes)\n\nViser aktivitetsmønster (sist sett 22:47 = aktiv sent på kvelden)\n\nKan korrelere med andre bevis (f.eks. Snap Map viser Kurt på samme sted samtidig)"
+    },
+    {
+      "term": "6.1.1 Scenario",
+      "definisjon": "Bakgrunn: Lina Grim (24 år, UiO-student) er vitne i en sak om trakassering via sosiale medier. Etterforskeren trenger å verifisere om hun bruker Signal for mulig kommunikasjon med gjerningspersonen."
+    },
+    {
+      "term": "Inngangsinformasjon:",
+      "definisjon": "Telefonnummer: +47 123 45 678 (fra 1881.no)\n\nInstagram: @linapina96 (åpen profil)"
+    },
+    {
+      "term": "6.1.2 Etterforskning (Mikrosteg)",
+      "definisjon": "Steg 1: Verifisere Signal-registrering\n\nÅpne Signal på undersøkelsestelefon\n\nLegg til Linas nummer (+47 123 45 678)"
+    },
+    {
+      "term": "Resultat:",
+      "definisjon": "Profilnavn: \"Lina Grim\" (fullt navn)\n\nProfilbilde: Samme som Instagram (selfie, lysebrunt hår, smilende)\n\nAbout: \"UiO student 📚☕\""
+    },
+    {
+      "term": "TPS:",
+      "definisjon": "T: A (verifisert via Signal-systemet)\n\nP: 1 (sikker kobling)\n\nS: LAV (voksen, vitne, ikke mistenkt)\n\nSteg 2: Reverse Image Search\n\nScreenshot av Linas profilbilde\n\nGoogle Images-søk"
+    },
+    {
+      "term": "Resultat:",
+      "definisjon": "Instagram @linapina96: Samme bilde (publisert 12.08.2025)\n\nFacebook \"Lina Grim\": Samme bilde\n\nLinkedIn \"Lina Grim (UiO)\": Annet bilde, men verifiserer identitet\n\nKonklusjon: Lina bruker samme profilbilde på tvers av plattformer (lav OPSEC), men dette er forventet for et vitne som ikke skjuler identitet.\n\nSteg 3: Kontakt via Signal (med samtykke)\n\nEtterforsker sender melding: \"Hei Lina, dette er [Navn] fra politiet. Kan du bekrefte om du bruker Signal?\"\n\nLina svarer: \"Ja, men jeg bruker det sjelden. Har mest WhatsApp.\""
+    },
+    {
+      "term": "TPS:",
+      "definisjon": "T: A (direkte bekreftelse)\n\nP: 1 (autentisk)\n\nS: LAV (frivillig informasjon)\n\nTotal tidsbruk: 15 minutter"
+    },
+    {
+      "term": "Hva fungerte godt:",
+      "definisjon": "Åpen profil (ingen hindringer)\n\nKonsistent bruk av ekte navn og bilde\n\nFrivillig samarbeid"
+    },
+    {
+      "term": "Begrensninger:",
+      "definisjon": "Lite etterretningsverdi (Lina bruker Signal minimalt)\n\nIngen kryptert kommunikasjon med gjerningsperson (de brukte Instagram DM)\n\nRelevans for metodikk: Lina representerer \"best case scenario\" – en person som bruker Signal åpent, uten sikkerhetsbevissthet, og som samarbeider med politiet. Dette er sjeldent i VaaS-saker."
+    },
+    {
+      "term": "6.2.1 Scenario",
+      "definisjon": "Bakgrunn: Kurt Mikkelsen (13 år) er identifisert som mulig offer for VaaS-rekruttering. Voksne kontakter (@NordLink81, 23 år) er mistenkt for å bruke Kurt til lovbrudd. Etterforsker trenger å kartlegge Kurts kommunikasjon via Signal."
+    },
+    {
+      "term": "Inngangsinformasjon:",
+      "definisjon": "Telefonnummer: +47 918 34 512 (fra 1881.no og Vipps-transaksjonsanalyse)\n\nAlias: K13, k13_nord (fra Snapchat, Instagram)\n\nMistanke: Kommunikasjon med kriminelt nettverk via kryptert kanal"
+    },
+    {
+      "term": "6.2.2 Etterforskning (Mikrosteg)",
+      "definisjon": "Steg 1: Verifisere Signal-registrering\n\nÅpne Signal på undersøkelsestelefon\n\nLegg til Kurts nummer (+47 918 34 512)"
+    },
+    {
+      "term": "Resultat:",
+      "definisjon": "Profilnavn: \"Kurt\"\n\nProfilbilde: Identisk med Snapchat (@k13_nord) – gutt i svart hettegenser\n\nAbout: \"💪 13\"\n\nSafety Number: [60 sifre dokumentert]"
+    },
+    {
+      "term": "TPS:",
+      "definisjon": "T: C (alias brukt, men verifiserbar kobling via telefonnummer)\n\nP: 2 (sannsynlig at dette er Kurt basert på profilbildematch)\n\nS: HØY (mindreårig, 13 år)"
+    },
+    {
+      "term": "Dokumentasjon:",
+      "definisjon": "Screenshot av profil (tid: 15.02.2026 10:47)\n\nSHA-256 hash av screenshot: d4f7a2b3...\n\nNotert i aktivitetslogg: \"Kurt M. bekreftet registrert i Signal. Profilbilde identisk med andre plattformer.\"\n\nSteg 2: Reverse Image Search\n\nScreenshot av Kurts profilbilde\n\nYandex Images (bedre for ansiktsgjenkjenning)"
+    },
+    {
+      "term": "Resultat:",
+      "definisjon": "Snapchat @k13_nord: Samme bilde\n\nInstagram @kurt_mkn: Samme bilde\n\nTikTok @kurt13live: Samme bilde\n\nTelegram @k13nord: Samme bilde\n\nKonklusjon: Kurt bruker identisk profilbilde på 5 plattformer (lav OPSEC). Dette bekrefter at alle disse kontoene tilhører samme person."
+    },
+    {
+      "term": "TPS:",
+      "definisjon": "T: B (gjenbruk av bilde styrker troverdighet – ikke bot eller falskt)\n\nP: 2 (svært sannsynlig samme person)\n\nS: HØY (mindreårig)\n\nSteg 3: Søke etter Signal-gruppelenker (Kurts nettverk)\n\nGoogle Dork: \"signal.group\" \"Lørenskog\""
+    },
+    {
+      "term": "Resultat:",
+      "definisjon": "Ingen direkte treff på offentlige Signal-grupper\n\nSøk: site:reddit.com \"signal.group\" \"K13\" OR \"Lørenskog Gutta\""
+    },
+    {
+      "term": "Resultat:",
+      "definisjon": "Reddit-post (slettet, men cached): Link til \"Lørenskog 🏴\" Signal-gruppe\n\nPublisert: 22.01.2026 på r/NorwayLocal (nå stengt)"
+    },
+    {
+      "term": "KRITISK BESLUTNING:",
+      "definisjon": "Å bli med i gruppen = Aktiv handling\n\nJuridisk vurdering: Kontakt påtalemyndighet\n\nBeslutning: IKKE bli med (mangler kjennelse, prioriterer beslag av telefoner i stedet)"
+    },
+    {
+      "term": "TPS:",
+      "definisjon": "T: D (ukjent om Kurt er medlem før verifisering)\n\nP: 4 (usikkert)\n\nS: KRITISK (potensielt kriminell gruppe med mindreårige)\n\nSteg 4: Beslag av Kurts telefon (ransaking av hjemmet)"
+    },
+    {
+      "term": "Situasjon:",
+      "definisjon": "Kurts hjem ransakes 16.02.2026 kl. 08:15\n\nKurt (13 år) til stede med mor (Hanne Mikkelsen, 41 år, verge)\n\nTelefon (iPhone 12) beslaglagt fra Kurts lomme\n\nTilstand: Påslått, låseskjerm, 74% batteri"
+    },
+    {
+      "term": "Isolering:",
+      "definisjon": "Telefon umiddelbart i Faraday-pose\n\nDokumentert kl. 08:17"
+    },
+    {
+      "term": "Opplåsing (med Hannes samtykke som verge):",
+      "definisjon": "Hanne gir PIN-kode: 1337\n\nTelefon opplåses kl. 08:25\n\nTilstand: AFU (After First Unlock)"
+    },
+    {
+      "term": "Bevaringsstrategi:",
+      "definisjon": "Telefon koblet til powerbank (holder 74% batteri)\n\nFortsatt i Faraday-pose\n\nTransportert til IKT-krimenhet kl. 09:00"
+    },
+    {
+      "term": "Forensisk uthenting (Cellebrite UFED):",
+      "definisjon": "Full File System Extraction kl. 10:30-13:15 (2 timer 45 min)\n\nEkstrahert data: 12.4 GB\n\nSignal.sqlite: 87 MB (indikerer omfattende bruk)\n\nSteg 5: Analyse av Signal-data (Physical Analyzer)"
+    },
+    {
+      "term": "Funn – Kontakter:",
+      "definisjon": "\"NordLink\"\n\nTelefonnummer: +47 XXX XX XXX (identifisert som Anders Berg, 23 år)\n\n47 meldinger over 3 uker (24.01 – 15.02.2026)"
+    },
+    {
+      "term": "24.01 21:15 - NordLink: \"hva vil du tjene?\"24.01 21:17 - Kurt: \"hva da\"24.01 21:18 - NordLink: \"lett penger, 500 per oppdrag\"24.01 21:20 - Kurt: \"ok når\"",
+      "definisjon": "TPS: T: C (verifisert telefonnummer), P: 2 (autentiske meldinger), S: KRITISK (rekruttering av mindreårig)\n\n\"BK\" (ikke-lagret kontakt, kun nummer synlig)\n\nTelefonnummer: +47 YYY YY YYY (ukjent identitet)\n\n12 meldinger over 2 uker (01.02 – 13.02.2026)"
+    },
+    {
+      "term": "01.02 22:30 - BK: \"Kurt fikk du beskjed\"01.02 22:45 - Kurt: \"ja\"08.02 21:00 - BK: \"møt kl 21 rema\"08.02 21:02 - Kurt: \"ok\"",
+      "definisjon": "TPS: T: D (ukjent identitet), P: 3 (mulig BKindustrien fra Telegram), S: KRITISK (ukjent voksen med instruksjoner til mindreårig)\n\n\"Martin\" (skolevenn)\n\nTelefonnummer: +47 ZZZ ZZ ZZZ\n\n89 meldinger (daglig chat)\n\nInnhold: Legitime vennemeldinger (\"skal vi gå på kino\", \"hva sa læreren\")\n\nTPS: T: B (bekreftet skolevenn), P: 1 (autentisk), S: LAV (ingen kriminell tilknytning)"
+    },
+    {
+      "term": "Funn – Grupper:",
+      "definisjon": "\"Lørenskog 🏴\"\n\n67 medlemmer (23 synlige telefonnumre)\n\nKurt ble med: 25.01.2026\n\nAktivitet: Høy (200+ meldinger per uke)"
+    },
+    {
+      "term": "10.02 20:15 - Ukjent: \"hvem vil tjene 1k i helga\"10.02 20:17 - Ukjent: \"må ha bil\"10.02 20:20 - Kurt: [Ingen svar]",
+      "definisjon": "Analyse: Kurt er passiv observatør, svarer sjelden\n\nTPS: T: D (mange ukjente medlemmer), P: 3 (mulig VaaS-relatert), S: KRITISK (mindreårig eksponert for kriminelt miljø)"
+    },
+    {
+      "term": "11.02.2026 23:40:",
+      "definisjon": "\"Huskeliste: ring nordlink kl 21, møt ved rema\"\n\nAnalyse: Bekrefter møte med @NordLink81 ved Rema 1000 (korrelerer med Snap Map-observasjon onsdag 12.02 kl. 21:00)"
+    },
+    {
+      "term": "12.02.2026 23:55:",
+      "definisjon": "[Bilde av pengesedler: 10x 500 NOK-lapper, ujevn stabling]\n\nMetadata (EXIF strippet av Signal): Ingen GPS\n\nAnalyse: Visuelt sammenligner med Snapchat Story (13.02 kl. 23:45) – identisk bakgrunn (sengeteppe)"
+    },
+    {
+      "term": "13.02.2026 00:12:",
+      "definisjon": "\"PIN: 1337\"\n\nAnalyse: Signal PIN (samme som telefonens skjermlås-PIN). Naivt å lagre dette."
+    },
+    {
+      "term": "TPS (Note to Self):",
+      "definisjon": "T: A (Kurts egen dokumentasjon)\n\nP: 1 (autentisk, selvdokumentert)\n\nS: KRITISK (inneholder PIN + bevis på økonomisk aktivitet + møte med mistenkt)"
+    },
+    {
+      "term": "3 samtaler har \"Disappearing Messages\" aktivert:",
+      "definisjon": "\"NordLink\" (satt til 1 time)\n\n\"BK\" (satt til 30 minutter)\n\n\"Lørenskog 🏴\" (satt til 24 timer)\n\nAnalyse: Indikerer OPSEC-bevissthet hos motparter (ikke Kurt selv)\n\nKonsekvens: Noen meldinger kan være slettet før beslag (tombstone records viser sletting kl. 15.02 22:30-23:00)"
+    },
+    {
+      "term": "TPS:",
+      "definisjon": "T: A (Signal-systemfunksjon, pålitelig)\n\nP: 1 (sikkert at meldinger er slettet)\n\nS: HØY (indikerer bevisst skjuling av kommunikasjon)\n\nSteg 6: Korrelasjon med andre plattformer"
+    },
+    {
+      "term": "Kryssreferanse: Snap Map (onsdag 12.02.2026):",
+      "definisjon": "Kurts Snap Map-lokasjon kl. 21:00-21:45: \"Bak Rema 1000 Lørenskog\"\n\nSignal \"Note to Self\": \"møt ved rema\"\n\nKonklusjon: Kurts Snap Map-observasjon korrelerer med Signal-kommunikasjon → Møtet fant sted"
+    },
+    {
+      "term": "Kryssreferanse: Vipps (13.02.2026):",
+      "definisjon": "Vipps-transaksjon kl. 07:30: +350 kr fra \"NordLink\" med melding \"takk\"\n\nSignal-melding fra NordLink kl. 00:15 (13.02): \"møtes i morgen tidlig\"\n\nKonklusjon: Betaling via Vipps etter Signal-koordinert møte → Bevis på økonomisk transaksjon"
+    },
+    {
+      "term": "TPS (krysskoblet bevis):",
+      "definisjon": "T: A (tre uavhengige kilder: Signal, Snap Map, Vipps)\n\nP: 1 (høy grad av sannsynlighet for faktisk møte + betaling)\n\nS: KRITISK (mindreårig mottar penger fra voksen etter kryptert kommunikasjon)"
+    },
+    {
+      "term": "6.2.3 Analyse – Hva betyr dette?",
+      "definisjon": "Hovedhypotese: Kurt Mikkelsen (13 år) er under aktiv rekruttering til VaaS-nettverk. Han har mottatt småbeløp (200-500 kr) fra voksne kontakter etter kryptert kommunikasjon via Signal og fysiske møter."
+    },
+    {
+      "term": "Støttende bevis:",
+      "definisjon": "Signal-kommunikasjon: Meldinger fra NordLink (\"lett penger\", \"500 per oppdrag\")\n\nKryptert kanal: Bruk av Signal (ikke SMS eller Snapchat) indikerer høyere OPSEC-krav fra rekruttererne\n\nDisappearing Messages: Aktivert av motparter → bevisst skjuling av kommunikasjon\n\nØkonomisk transaksjon: Vipps-betaling etter Signal-koordinert møte\n\nGeografisk korrelasjon: Snap Map bekrefter fysisk tilstedeværelse ved møtested\n\nPassiv gruppemedlemskap: Kurt observerer kriminell kommunikasjon i \"Lørenskog 🏴\" uten aktiv deltakelse (ennå)\n\n**Alternat\n\nivhypoteser:**\n\nH1: Kurt jobber legitimt (f.eks. snøkasting for naboer)\n\nMotargument: Legitimt arbeid utføres ikke kl. 21:00-23:00 (sent kveld)\n\nMotargument: Legitimt arbeid krever ikke kryptert kommunikasjon via Signal\n\nKonklusjon: Meget usannsynlig\n\nH2: Kurt har lånt penger og betaler tilbake via Vipps\n\nMotargument: Vipps-transaksjoner går motsatt vei (Kurt mottar penger, ikke sender)\n\nKonklusjon: Ikke konsistent med bevis\n\nH3: Kurt er offer for grooming/seksuelt misbruk (ikke VaaS)\n\nMotargument: Språk i meldinger handler om \"oppdrag\" og \"penger\", ikke seksuelle temaer\n\nMotargument: Møter foregår på offentlige steder (Rema 1000), ikke private\n\nKonklusjon: Usannsynlig, men kan ikke utelukkes fullstendig (krever videre avhør)\n\nValgt hypotese: VaaS-rekruttering (støttes av 90% av bevisene)"
+    },
+    {
+      "term": "Kurt Mikkelsen – Signal-aktivitet:",
+      "definisjon": "• Beviskategori | T (Troverdighet) | P (Pålitelighet) | S (Sensitivitet) | Begrunnelse\n\n• Signal-profil | C | 2 | HØY | Alias, men verifiserbar via telefonnummer og profilbildematch\n\n• Meldinger (NordLink) | C | 2 | KRITISK | Autentiske meldinger fra beslaglagt telefon, indikerer rekruttering\n\n• Meldinger (BK) | D | 3 | KRITISK | Ukjent identitet, men konsistent instruksjonsgiving\n\n• Gruppemedlemskap | D | 3 | KRITISK | Passiv observasjon av kriminell chat, eksponering for rekruttering\n\n• \"Note to Self\" | A | 1 | KRITISK | Kurts egen dokumentasjon av møter og økonomi\n\n• Kryss-plattform | A | 1 | HØY | Korrelasjon mellom Signal, Snap Map og Vipps bekrefter fysiske møter"
+    },
+    {
+      "term": "Samlet vurdering:",
+      "definisjon": "Troverdighet: Varierer C-A (avhengig av kilde), men høy konsistens på tvers av beviskategorier\n\nPålitelighet: 1-3 (høyest for egenrapportert data i \"Note to Self\", lavest for ukjente kontakter)\n\nSensitivitet: Konsekvent KRITISK (mindreårig under 15 år, eksponert for kriminell rekruttering)\n\nKonklusjon: Bevisene indikerer med høy grad av sannsynlighet at Kurt Mikkelsen (13 år) er offer for VaaS-rekruttering via Signal. Hans kommunikasjon viser passiv deltakelse i kriminelt nettverk, økonomiske transaksjoner etter kryptert koordinering, og eksponering for voksne rekrutterere med kriminell historikk."
+    },
+    {
+      "term": "Neste steg:",
+      "definisjon": "Barnevernmelding: Umiddelbar melding til barnevern (Kurt som utsatt barn)\n\nFokus på rekrutterere: Prioriter etterforskning av Anders Berg (@NordLink81) og ukjent \"BK\"\n\nJuridisk vurdering: Vurder kjennelse for live-overvåkning av NordLink/BK (§ 216m)\n\nTotal tidsbruk (Kurt-case): ~40 timer (inkludert forensisk analyse og kryssreferanse)"
+    },
+    {
+      "term": "7.1 De 10 vanligste feilene i Signal-etterforskning",
+      "definisjon": "⚠️ FEIL 1: Anta at Signal ikke brukes fordi du ikke finner en offentlig profil Problem: Signal har ingen offentlig brukerkatalog. Fravær av søkeresultat betyr ikke fravær av konto. Løsning: Alltid verifiser via telefonnummer-sjekk (kontaktliste-metode)\n\n⚠️ FEIL 2: Skru av beslaglagt telefon \"for å sikre den\" Problem: BFU-tilstand gjør forensisk uthenting ekstremt vanskelig Løsning: ALDRI skru av telefonen – bruk Faraday-pose + powerbank\n\n⚠️ FEIL 3: Sende melding til mistenkt for å \"teste om de bruker Signal\" Problem: Aktiv kontakt = juridisk grenseland, kan varsle målobjekt Løsning: Bruk passiv kontaktliste-sjekk (ingen melding sendes)\n\n⚠️ FEIL 4: Anta at \"Disappearing Messages\" betyr at all kommunikasjon er tapt Problem: Tombstone records og notification logs kan fortsatt inneholde fragmenter Løsning: Utfør full forensisk uthenting, sjekk system-logger (Android)\n\n⚠️ FEIL 5: Stole på Signal Foundation for historiske data Problem: Signal har IKKE tilgang til meldingsinnhold eller kontaktlister Løsning: Fokuser på beslaglagt telefon, ikke rettslig pålegg til Signal\n\n⚠️ FEIL 6: Ignorere Signal Desktop (PC/Mac) som bevis-kilde Problem: Desktop-klienter har ofte svakere sikkerhet enn mobil Løsning: Ransak også PC-er, sjekk /AppData/Roaming/Signal/ (Windows)\n\n⚠️ FEIL 7: Ikke dokumentere Safety Number Problem: Safety Number endres ved enhetsbytte – indikator på ny telefon Løsning: Dokumenter Safety Number ved første sjekk, spor endringer\n\n⚠️ FEIL 8: Anta at brukernavn er permanente identifikatorer Problem: Brukernavn kan endres når som helst, gamle frigjøres Løsning: Alltid knytt til telefonnummer (stabilt) eller UUID (permanent)\n\n⚠️ FEIL 9: Be om Signal PIN fra mistenkt Problem: Nektelsesrett (§ 90) – PIN er \"passord\" og beskyttet Løsning: Søk etter PIN i beslaglagt telefon (Notes, bilder, \"Note to Self\")\n\n⚠️ FEIL 10: Rapportere mindreårige med fullt navn og bilde Problem: Brudd på personvern, barnekonvensjonen Løsning: Anonymiser i rapport (\"13-åring fra Lørenskog\"), sladd bilder"
+    },
+    {
+      "term": "7.2 Kontrollspørsmål (Selvsjekk)",
+      "definisjon": "✓ FØR DU STARTER: □ Har jeg lest juridisk grunnlag (§ 196, § 197, § 216m)? □ Er målobjektet mindreårig? (Ja = ekstra varsomhet, TPS-S automatisk HØY) □ Har jeg dedikert undersøkelsestelefon (ikke personlig)? □ Er jeg på VPN/anonym nettleser (hvis søk på internett)? □ Har jeg notisblokk/aktivitetslogg klar?\n\n✓ UNDER ETTERFORSKNING: □ Dokumenterer jeg tidspunkt for hver handling? □ Tar jeg screenshot av alt jeg observerer? □ Genererer jeg SHA-256 hash for alle bevisfiler? □ Holder jeg telefon i AFU-tilstand (hvis beslag)? □ Har jeg isolert telefon fra nettverk (Faraday/Flymodus)?\n\n✓ ETTER ETTERFORSKNING: □ Er alle funn dokumentert i rapport? □ Har jeg brukt TPS-modell på alle bevis? □ Har jeg formulert minimum 3 alternative hypoteser? □ Er sensitiv informasjon (mindreårige) anonymisert? □ Er backup av data sikret (3-2-1-regelen)? □ Har jeg overlevert saken til riktig instans (barnevern/påtalemyndighet)?"
+    },
+    {
+      "term": "8.1 Signal i det store bildet",
+      "definisjon": "Signal representerer det vanskeligste skjæringspunktet mellom lovlig etterforskning og teknologisk personvern. På den ene siden beskytter det grunnleggende rettigheter som ytringsfrihet, kildevern og privatlivets fred. På den andre siden brukes det aktivt av kriminelle nettverk – inkludert VaaS-rekrutterere – for å unngå politiets innsyn.\n\nSom etterforsker er din oppgave ikke å knekke Signals kryptering (det er verken juridisk eller teknisk realistisk), men å finne de omkringliggende sporene som selv den beste kryptering ikke kan skjule:\n\nTelefonnummer-koblingen: Registrering krever et reelt telefonnummer (SIM-kort)\n\nBeslaglagt telefon: Fysisk tilgang gir full historikk (hvis AFU)\n\nKryss-plattform-fotavtrykk: Signal brukes sjelden isolert – kombiner med Snap Map, Instagram, Vipps\n\nMenneskelige feil: \"Note to Self\"-funksjonen, skjermlås-PIN lagret i bilder, samme profilbilde overalt\n\nSystemlogger: Notification logs, tastaturordbok, iOS Call History"
+    },
+    {
+      "term": "Kontakt IKT-krimenhet/Kripos hvis:",
+      "definisjon": "Telefon er låst (BFU) og krever GrayKey/Cellebrite Premium\n\nDu trenger live-overvåkning (malware-installasjon, § 216m)\n\nSaken involverer organisert kriminalitet (VaaS-nettverk med 10+ personer)\n\nDu finner kryptert backup som krever spesialisert dekryptering\n\nMålobjektet bruker avansert OPSEC (VPN, Tor, brukernavn-rotasjon)"
+    },
+    {
+      "term": "Du kan håndtere selv hvis:",
+      "definisjon": "Telefon er opplåst (AFU) og du har tilgang til Cellebrite/UFED\n\nEtterforskning er begrenset til passiv OSINT (telefonnummer-verifisering, profilbilder)\n\nSaken gjelder enkeltpersoner (ikke organiserte nettverk)\n\nDu har juridisk grunnlag for beslag/ransaking"
+    },
+    {
+      "term": "Signal er bygget for å beskytte menneskerettigheter. Når du etterforsker Signal-bruk, bør du alltid stille deg selv:",
+      "definisjon": "Er dette proporsjonalt? Veier kriminaliteten tungt nok til å rettferdiggjøre inngrep i privatlivet?\n\nKan jeg oppnå samme mål med mindre inngripende metoder? (f.eks. tradisjonell etterforskning, vitneforklaringer)\n\nEr jeg i ferd med å eksponere uskyldige? (f.eks. Kurts legitime skolev\n\nenner i Signal-gruppa) 4. Beskytter jeg sårbare grupper? (mindreårige, offer for utnyttelse)\n\nSignal-etterforskning krever ikke bare teknisk dyktighet, men også juridisk presisjon og etisk dømmekraft. Dette er kanskje den mest krevende formen for digital etterforskning nettopp fordi den utfordrer grunnleggende verdier om personvern og statens overvåkningsmakt."
+    },
+    {
+      "term": "For nybegynnere:",
+      "definisjon": "Start alltid med passiv OSINT (telefonnummer-verifisering)\n\nLes juridisk grunnlag før du handler\n\nDokumenter alt (tidspunkt, metode, funn)\n\nSpør om hjelp tidlig (bedre enn å ødelegge bevis)"
+    },
+    {
+      "term": "For erfarne:",
+      "definisjon": "Hold deg oppdatert på Signal-oppdateringer (nye funksjoner kan endre forensiske muligheter)\n\nDel kunnskap med kolleger (Signal-etterforskning er et teamarbeid)\n\nVurder alltid proporsjonalitet (ikke bruk tyngste verktøy for letteste saker)"
+    },
+    {
+      "term": "For alle:",
+      "definisjon": "Respekter teknologien (Signal gjør jobben sin ved å beskytte personvern)\n\nRespekter loven (ingen snarveier, ingen provokasjon)\n\nRespekter mennesker (særlig barn som Kurt, som er offer, ikke gjerningspersoner)\n\nSignal-etterforskning er ikke om å beseire krypteringen. Det er om å forstå mennesket bak skjermen."
+    }
+  ]
 }
