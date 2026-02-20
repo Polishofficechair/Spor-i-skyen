@@ -1,1 +1,999 @@
-
+{
+  "tittel": "SNAPCHAT DIGITAL ETTERFORSKNING I ÅPNE KILDER PÅ INTERNETT",
+  "undertittel": "DEL A: UNDERVISNINGSKAPITTEL – SNAPCHAT-ETTERFORSKNING",
+  "ordliste": [],
+  "seksjoner": [
+    {
+      "id": "s01",
+      "overskrift": "KAPITTEL 0: FØR DU ÅPNER SNAPCHAT (Obligatorisk lesning)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "0.1 Det digitale åstedet\nSnapchat er ikke bare en app – det er et digitalt åsted hvor hvert klikk, hver lokasjon, hver melding etterlater spor.\nTenk på Snapchat som snø på bakken. Selv om man forsøker å dekke over fotavtrykkene (ved å slette innhold), vil sporsikringsteknologien kunne rekonstruere bevegelsesmønsteret.\nPlattformen markedsfører seg som «forsvinnende» meldinger, men ingenting forsvinner helt i det digitale."
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "KRITISK FORSTÅELSE: Snapchat-innhold som brukeren ser «forsvinner» er fortsatt lagret på Snapchats servere i varierende tidsperioder.\nMeldinger kan være slettet fra mottakers skjerm, men metadata, lokasjonsspor og kopier kan fortsatt eksistere."
+        },
+        {
+          "type": "paragraph",
+          "data": "0.2 Din digitale uniform – Hva er en IP-adresse?"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "ANALOGI: En IP-adresse er husnummeret ditt på internett. Når du besøker Snapchat, registrerer plattformen hvilket «hus» (din enhet) som besøker.\nDette husnummeret kan identifisere geografisk område og nettleverandør."
+        },
+        {
+          "type": "paragraph",
+          "data": "For Snapchat-etterforskning: Hver gang Kurts iPhone kobler seg til Snapchat, registreres:\nIP-adressen (f.eks. 82.134.x.x fra Telenor hjemmenett)\nEnhetens unike identifikator (IMEI, iOS Advertising ID)\nTidspunkt for pålogging\nGeografisk plassering (GPS-koordinater hvis lokasjon er aktivert)"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "PRAKTISK IMPLIKASJON: Selv om Kurt bruker aliaser \"k13_nord\", kan IP-adressen koble aktiviteten tilbake til hans hjemmeadresse Skoleveien 12, Lørenskog."
+        },
+        {
+          "type": "paragraph",
+          "data": "0.3 Sporsikring 101 – Hvordan unngå å bli oppdaget"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "KRITISK: Som etterforsker etterlater DU også digitale spor. Hvis Kurt har aktivert varsler, vil han se hvis noen har sett hans Story eller tatt screenshot."
+        },
+        {
+          "type": "paragraph",
+          "data": "OBLIGATORISKE SIKRINGSTILTAK:\nVPN eller Politinettets sikre tilgang: Ikke bruk privatnett\nAnonym nettleser (Chrome Incognito): Forhindrer cookie-sporing\nALDRI logg inn på din private Snapchat: Bruk dedikert tjenestekonto eller webversjonen\nDeaktiver automatiske oppdateringer: Forhindrer at app-endringer påvirker bevissikring\nDokumentér umiddelbart: Ta screenshot med synlig URL og tidsstempel"
+        },
+        {
+          "type": "callout",
+          "kind": "LEGAL",
+          "data": "JURIDISK BEVISSTHET: Å \"se\" en Snapchat Story er passiv observasjon (lovlig).\nÅ sende venneforespørsel eller meldinger er aktiv kontakt (krever juridisk vurdering, spesielt ved mindreårige)."
+        },
+        {
+          "type": "paragraph",
+          "data": "0.4 Mental HMS – Hvorfor du må skru av automatisk bildevisning\nSnapchat brukes i saker som involverer:\nMindreårige (Kurt er 13 år)\nVold (VaaS-rekruttering, trusler, overgrep)\nNarkotika (salg, distribusjon)\nSeksuelt materiale (deling av intim karakter)\n\nOBLIGATORISK PROSEDYRE: Før du åpner en ukjent Snapchat-profil eller Story:\nSkru av automatisk forhåndsvisning i nettleserinnstillinger\nHa nødnummeret til støttefunksjon tilgjengelig (EAP/bedriftshelsetjeneste)\nArbeid med kollega i rommet (for debriefing)\nIkke arbeid alene med materiale som involverer barn"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL – FIKTIVT: En etterforsker åpnet Kurts Snapchat Story uten forberedelse og ble eksponert for voldelig innhold (knivtrussel filmet).\nManglende mental forberedelse førte til langtidssykmelding. LÆRDOM: Vit alltid hva du potensielt kan møte."
+        },
+        {
+          "type": "paragraph",
+          "data": "0.5 Juridisk bevissthet – Passiv vs. aktiv etterforskning"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "JURIDISK GRENSEOPPGANG – SNAPCHAT-SPESIFIKK"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "LOVLIG (Passiv observasjon, strpl. § 196):"
+        },
+        {
+          "type": "list",
+          "data": [
+            "• Åpne Snap Map og se offentlig delte lokasjoner",
+            "• Se på Public Stories (ikke vennebegren set)",
+            "• Søke på brukernavn via Snapchat web/app søkefunksjon",
+            "• Screenshot av offentlig innhold",
+            "• Analysere metadata fra lagrede bevisfiler"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "KREVER BESLUTNING (Aktiv handling):"
+        },
+        {
+          "type": "list",
+          "data": [
+            "• Sende venneforespørsel til objektet",
+            "• Be om tilgang til privat Story",
+            "• Opprette falsk profil for å nå lukket innhold",
+            "• Spørre objektets venner om informasjon"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "ULOVLIG (Provokasjon, strpl. § 196a):"
+        },
+        {
+          "type": "list",
+          "data": [
+            "• Chatte med objektet for å lokke fram tilståelser",
+            "• Be objektet utføre handlinger («kan du møte meg?»)",
+            "• Late som du er kjøper/selger for å trigge kriminell handling",
+            "• Påvirke beslutninger gjennom falsk identitet"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "SNAPCHAT + MINDREÅRIGE (under 15 år):"
+        },
+        {
+          "type": "list",
+          "data": [
+            "• Kurt (13 år) = EKSTRA VARSOMHET",
+            "• All passiv observasjon DOKUMENTERES med TPS = HØY sensitivitet",
+            "• ALDRI direkte kontakt uten juridisk klarsignal",
+            "• Prioritet: Beskytte Kurt (potensielt offer) ikke straffeforfølgelse"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "TVILSTILFELLE:\nRing påtalejurist FØR du utfører handlingen.\nTlf: [Intern referanse til aktuelle kontaktperson]"
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "overskrift": "KAPITTEL 1: GRUNNFORSTÅELSE AV SNAPCHAT",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "1.1 Den fysiske analogien – Snapchat som et digitalt postkontor"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "ANALOGI:\nTenk på Snapchat som et postkontor der:\nMeldinger (Snaps) = Brevkort som brennes etter lesing\nChat = Telefonsale hvor samtalen slettes, men listerne lagres\nStories = Oppslagstavle som henger i 24 timer\nSnap Map = GPS-sender festet på alle i bygningen\nMemories = Bankboks hvor brukeren selv arkiverer utvalgte brev"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VIKTIG FORSKJELL FRA FYSISK VERDEN: Selv om «brevkortet brennes», lagrer postkontoret (Snapchat Inc.) en kopi i 30 dager før permanent sletting.\nPolitiet kan med rettslig begjæring få tilgang til disse kopiene."
+        },
+        {
+          "type": "paragraph",
+          "data": "1.2 Hvordan brukerne ser Snapchat vs. hvordan politiet ser det\nBRUKERENS PERSPEKTIV:\n\"Mine meldinger forsvinner = ingen bevis\"\n\"Kun jeg og venner ser Stories = privat\"\n\"Snap Map er kun synlig for venner = trygt\"\n\nPOLITIETS PERSPEKTIV:\nMeldinger lagres av Snapchat i 30 dager (åpnede) eller til de åpnes (uåpnede)\nPublic Stories er tilgjengelige for HVEM SOM HELST globalt\nSnap Map med \"Ghost Mode av\" er synlig for alle venner = kan infiltreres via nettverk\nMetadata (hvem, hvor, når) lagres permanent hos Snapchat"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL – FIKTIVT (KURT): Kurt tror hans meldinger til @NordLink81 er «trygge» fordi de forsvinner etter 10 sekunder.\nREALITETEN: Snapchat har lagret:\nAt Kurt og NordLink81 kommuniserte kl. 23:45 (tidsstempel)\nAt de var 2,3 km fra hverandre (GPS-data)\nAt Kurt åpnet meldingen 3 sekunder etter mottak (bekreftelse på lesing)\nIP-adresser for begge parter"
+        },
+        {
+          "type": "paragraph",
+          "data": "1.3 Utfordringene Snapchat skaper for etterforskning\n\nTEKNISKE UTFORDRINGER:\nForsvinnende innhold:\nMeldinger slettes automatisk etter visning\nStories forsvinner etter 24 timer\nKrever sanntids overvåking eller rettslig begjæring FØR innholdet slettes\n\nKryptering:\nEnd-to-end-kryptering på meldinger (fra 2023)\nSnapchat kan ikke lese innholdet (men har metadata)\nKrever tilgang til brukerens enhet (fysisk beslag)\n\nBegrenset web-tilgang:\nMange funksjoner kun tilgjengelig i app\nKrever smarttelefon (vanskelig på politiets låste PC-er)\nNettleserversjonen (snapchat.com/map) gir kun delvis innsikt\n\nIngen offentlig API:\nKan ikke automatisere datainnhenting legalt\nMå utføres manuelt (tidkrevende)\n\nGeografiske begrensninger:\nSnapchat kan blokkere norske IP-er fra enkelte funksjoner\nKrever VPN for å simulere utenlandsk tilgang\n\nJURIDISKE UTFORDRINGER:\nJurisdiksjon: Snapchat Inc. er amerikansk selskap (må følge amerikansk lov ved begjæringer)\nMLAT-prosess: Mutual Legal Assistance Treaty – tar 6-18 måneder\nVarslingsplikt: Snapchat kan varsle brukeren om politiets begjæring (gir mulighet til å slette bevis)"
+        },
+        {
+          "type": "paragraph",
+          "data": "1.4 Snapchats rolle i VaaS-landskapet (Violence as a Service)\n\nHVORFOR KRIMINELLE VELGER SNAPCHAT:\nOppfattet anonymitet: \"Meldingene forsvinner = ingen bevis\"\nMindreårig målgruppe: 78% av norske 13-15-åringer bruker Snapchat (SSB 2024 – REELT)\nLokasjonsdeling: Snap Map letter fysiske møter uten å skrive adresser\nStreaks-kultur: Daglig kommunikasjon virker «normalt» (skjuler kriminell kontakt)\nScreenshot-varsel: Varsler avsender ved screenshot (skaper falsk trygghet)\n\nVaaS-REKRUTTERINGSMØNSTER PÅ SNAPCHAT:\nFASE 1: IDENTIFIKASJON (Uke 1-2)\nEldre kriminelle (20-30 år) søker opp unge brukere via lokale hashtags (#Lørenskog, #Oslo)\nSender venneforespørsel med melding: \"Kjenner jeg deg fra før?\"\n\nFASE 2: GROOMING (Uke 3-6)\nBygger tillit gjennom daglige Snaps (bil, penger, «suksess»)\nBruker Streaks for å normalisere kontakten\nSender små beløp via Vipps for å etablere økonomisk relasjon\n\nFASE 3: REKRUTTERING (Uke 7+)\nDirekte henvendelse: \"Vil du tjene lett?\" via Snapchat-chat\nKoordinerer oppdrag via Snap Map («møt meg her kl. 21:00»)\nBetaler via Vipps med kryptiske meldinger («takk», «jobb»)"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL – FIKTIVT (KURT): Kurt mottok venneforespørsel fra @NordLink81 12. januar 2026. Første melding: \"Kjekk gym-story bro\".\nI løpet av 4 uker eskalerte kontakten til:\nDaglige Snaps (bil, penger)\n4 Vipps-transaksjoner (totalt 1500 kr)\nOnsdagsmønster: Kurts Snap Map viser \"bak Rema 1000\" kl. 21:00 (Ghost Mode slås på 21:15)"
+        },
+        {
+          "type": "paragraph",
+          "data": "1.5 Forskjellen på Lina (normalbruker) vs. Kurt (risikobruker)\nTABELL: SNAPCHAT-ATFERD"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Aspekt | Lina Grim (24 år) | Kurt Mikkelsen (13 år)",
+            "Brukernavn | linapina96 (ekte navn) | k13_nord (alias)",
+            "Snap Map | Alltid aktivert, deler frivillig | Aktivert, men Ghost Mode onsdager 21:00-22:00",
+            "Stories | Daglig (hverdagsliv, mat, venner) | Sporadisk (gym, penger, motivasjon)",
+            "Venner | 243 venner (mesteparten ekte bekjente) | 40 venner (14 synlige, flere ukjente voksne)",
+            "Snap Score | 87,234 (normalt for 24-åring) | 52,341 (unormalt høyt for 13-åring med få venner)",
+            "Aktivitetstid | 08:00-23:00 (normal døgnrytme) | 20:00-00:30 (utenfor foreldrekontroll)",
+            "Innhold | Positivt, sosialt | Materielt (penger, bil, gym)",
+            "TPS | B-2-LAV (voksen, åpen, verifiserbar) | C-3-HØY (mindreårig, alias, sensitiv kontekst)"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "LÆRINGSPOENG:\nLina er «best case scenario» – alt er tilgjengelig og verifiserbart\nKurt er «worst case scenario» – mindreårig, delvis skjult, juridisk sensitiv, kriminell kontekst"
+        },
+        {
+          "type": "paragraph",
+          "data": "1.6 Tekniske spor og metadata som etterlates\nSNAPCHAT LAGRER AUTOMATISK:\n\n1. BRUKERDATA (Permanent lagret):\nTelefonnummer (verifisert ved registrering)\nE-postadresse (hvis oppgitt)\nFødselsdato (aldersverifisering)\nBrukernavn og Display Name\nOpprettelsesdato for konto\nEnhetsinformasjon (iPhone-modell, Android-versjon)\n\n2. INNHOLDSDATA (Midlertidig lagret):\nUåpnede Snaps: Lagres til de åpnes (maks 30 dager)\nÅpnede Snaps: Slettes umiddelbart fra serverne (kun på enhet hvis ikke lagret)\nChat-meldinger: Slettes etter 24 timer eller ved lukking av chat (kan endres til \"lagre til den slettes manuelt\")\nStories: Lagres i 24 timer (kan lastes ned av Snapchat ved begjæring i denne perioden)\nMemories: Lagres permanent (brukerens private arkiv)\n\n3. METADATA (Permanent lagret):\nTidsstempler for alle handlinger (sending, åpning, screenshot)\nIP-adresser for pålogginger\nGPS-koordinater for Snaps/Stories (hvis aktivert)\nEnhets-ID (IMEI, Advertising ID)\nVenneliste og tidspunkt for vennskap\n\n4. SNAP MAP-DATA:\nGeografisk plassering hver gang Snap Map åpnes\nHistorikk for de siste 24 timene (synlig for venner)\n«Heatmap»-data (hvor brukeren oftest er) – internt hos Snapchat"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "PRAKTISK EKSEMPEL – FIKTIVT (KURT): Politiet begjærer Kurts Snapchat-data 15. februar 2026. Snapchat utleverer:\nVenneliste: 40 brukernavn (inkludert @NordLink81 lagt til 12. januar)\nPåloggingslogger: IP-adresse 82.134.x.x (Telenor, Lørenskog) og 23.x.x.x (Telenor mobil)\nSnap-metadata: 234 Snaps sendt, 567 mottatt (siste 30 dager)\nLokasjonsspor: 78 GPS-koordinater (Snap Map-åpninger) – viser onsdagsmønster ved 59.9286° N, 10.9547° E"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VIKTIG: Innholdet av meldingene (\"Vil du tjene lett?\") er IKKE tilgjengelig hvis de er slettet. Kun metadata bevises."
+        },
+        {
+          "type": "paragraph",
+          "data": "1.7 Hvordan kryptering påvirker politiets evne til å innhente informasjon\nSNAPCHATS KRYPTERING (2023-2026):\nSnapchat innførte end-to-end-kryptering (E2EE) for alle personlige meldinger i 2023. Dette betyr:\n\nHVA SOM ER KRYPTERT:\nTekstmeldinger i privat chat\nSnaps (bilde/video sendt direkte)\nSamtaler (lyd/video)\n\nHVA SOM IKKE ER KRYPTERT:\nStories (lagres ukryptert i 24 timer)\nSnap Map-data\nMetadata (hvem sender til hvem, når, hvor)\nGruppemeldinger (kun delvis kryptert)\n\nPRAKTISK IMPLIKASJON:\nSCENARIO 1: MELDING SLETTET FØR BEGJÆRING\nKurt sender melding til NordLink81: \"Møt meg kl. 21\"\nMelding åpnes og slettes automatisk\nPolitiet begjærer data 3 dager senere\nRESULTAT: Snapchat kan IKKE utlevere innholdet (E2EE + slettet)\nTILGJENGELIG: Metadata viser at Kurt og NordLink81 kommuniserte kl. 20:47 den datoen\n\nSCENARIO 2: UÅPNET MELDING\nKurt sender melding som IKKE åpnes av mottaker\nPolitiet begjærer data mens meldingen fortsatt er på Snapchats servere\nRESULTAT: Meldingen er kryptert, men Snapchat har krypteringsnøkkelen (da den ikke er åpnet)\nTILGJENGELIG: Innholdet KAN potensielt utleveres (juridisk gråsone)\n\nLØSNING FOR POLITIET:\nFysisk beslag av enhet:\nBeslaglegge Kurts iPhone FØR han sletter apper\nÅpne Snapchat (hvis ikke passordbeskyttet)\nSe Memories og lagrede chatter\n\nSanntids overvåking (§ 216h):\nKrever rettslig kjennelse\nInstallere overvåkningsprogramvare på Kurts telefon\nLeser meldinger FØR de krypteres/slettes\n\nMottak fra mottaker:\nHvis NordLink81 samarbeider, kan han gjenskape meldinger fra sin enhet"
+        },
+        {
+          "type": "callout",
+          "kind": "LEGAL",
+          "data": "JURIDISK PROBLEMSTILLING: E2EE gjør det vanskeligere å bevise innholdet av kommunikasjon. Politiet må stole på:\nMetadata (tid, sted, personer) + kontekst\nAndre bevis (Vipps-transaksjoner, fysiske observasjoner)\nInnholdet fra en av partenes enhet (hvis tilgjengelig)"
+        },
+        {
+          "type": "paragraph",
+          "data": "1.8 De tre viktigste inngangsverdiene for kartlegging\nFor å starte en Snapchat-etterforskning trenger du MINST én av disse identifikatorene:\n\n1. BRUKERNAVN (f.eks. k13_nord)\nSTYRKE: Direkte kobling til Snapchat-profil SVAKHET: Kan ikke bekrefte reell identitet uten kryssverifisering\nHvordan finne:\nGoogle-søk: \"k13_nord\" snapchat\nKryssjekk andre plattformer (Instagram, TikTok) for samme brukernavn\nSnap Map-søk (hvis brukeren har offentlig lokasjon)\n\n2. TELEFONNUMMER (f.eks. +47 918 34 512)\nSTYRKE: Verifisert av Snapchat (må registreres) SVAKHET: Kan være prepaid-telefon eller falsk identitet\nHvordan bruke:\nSnapchat lar deg søke på telefonnummer VIA appen (krever at du er innlogget)\nHvis nummeret er koblet til en Snapchat-konto, vil profilen vises\nJURIDISK: Dette er AKTIV søking (grenseland) – dokumentér grundig\n\n3. REELT NAVN (f.eks. Kurt Mikkelsen)\nSTYRKE: Kobler digital identitet til juridisk person SVAKHET: Mange kan ha samme navn (vanlige norske navn)\nHvordan finne:\nSnapchat søkefunksjon: Søk \"Kurt Mikkelsen\" (sjekk display name og brukernavn)\nKryssverifiser med:\nFolkeregisteret (fødselsdato, adresse)\n1881.no (telefonnummer, alder)\nAndre sosiale medier (Facebook, Instagram har ofte ekte navn)"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "PRAKTISK EKSEMPEL – FIKTIVT (KURT):\nSCENARIO: Politiet mottar tips om at \"K13 fra Lørenskog\" rekrutterer mindreårige.\n\nTRINN 1: Google-søk\nSøkeord: \"k13\" \"lørenskog\" snapchat\nResultat: Instagram-profil @kurt_mkn med bio \"13 | Lørenskog\"\n\nTRINN 2: Kryssverifisering\nInstagram → Snapchat-ikon i bio (\"k13_nord\")\n→ Søk på Snapchat: k13_nord\n→ Display Name: \"Kurt\"\n\nTRINN 3: Reell identitet\n1881.no: Søk \"Kurt Mikkelsen Lørenskog\"\nResultat: 3 treff\n→ Sjekk alder via fødselsdato\n→ Kurt Mikkelsen, 13 år, Skoleveien 12, 1473 Lørenskog\n→ Telefon: +47 918 34 512 (registrert på mor)\n\nTRINN 4: Bekreftelse\nSnap Map-søk: Koordinater 59.9286° N, 10.9547° E\n→ Matcher Skoleveien 12\n→ KONKLUSJON: K13 = Kurt Mikkelsen (13 år)\n\nTPS-VURDERING:\nT (Troverdighet): C – Alias k13_nord kobles til Kurt via kryssverifisering (Instagram, 1881.no)\nP (Pålitelighet): 2 – Sannsynlig kobling (samme alder, sted, geografisk match)\nS (Sensitivitet): HØY – Mindreårig (13 år), VaaS-kontekst"
+        },
+        {
+          "type": "paragraph",
+          "data": "1.9 Korrelasjon mellom digital aktivitet og fysiske hendelser\nSnapchat-aktivitet kan kobles til virkelige hendelser ved å analysere:\n\n1. SNAP MAP + VIPPS-TRANSAKSJONER:"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL – FIKTIVT (KURT):\n13. februar kl. 21:00: Kurts Snap Map viser \"bak Rema 1000 Lørenskog\"\n13. februar kl. 21:15: Kurt går i Ghost Mode (forsvinner fra kart)\n13. februar kl. 21:47: Kurts Snap Map aktiv igjen (hjemmeadresse)\n13. februar kl. 22:03: Vipps-transaksjon: +500 kr fra \"NordLink\" med melding \"\"\nTOLKNING: Fysisk møte (21:00-21:15) → Oppgave utført → Betaling (22:03)"
+        },
+        {
+          "type": "paragraph",
+          "data": "2. INNLEGGSINNHOLD + TIDSLINJE:"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL – FIKTIVT (KURT):\n15. februar kl. 17:23: Kurt poster gym-selfie på Instagram (metadata: Lørenskog Treningssenter)\n15. februar kl. 17:30: Kurts Snap Map viser samme lokasjon (59.9286° N)\n15. februar kl. 18:45: Kurt hjemme (Snap Map)\n15. februar kl. 23:45: Story på Snapchat med bilde av pengesedler\nTOLKNING: Normal aktivitet (gym) → Hjemme → Mottar/viser penger (kveld)"
+        },
+        {
+          "type": "paragraph",
+          "data": "3. SNAP SCORE + AKTIVITETSTID:\nKurt har Snap Score 52,341 (høyt for 13-åring med 40 venner).\nNormal Snap Score øker med ~1 poeng per sendt/mottatt Snap.\n\nBEREGNING:\n52,341 poeng / 8 måneder (konto opprettet juni 2025) = ~218 Snaps/dag\n218 Snaps / 40 venner = ~5,5 Snaps per venn daglig\n\nTOLKNING: Ekstrem høy aktivitet indikerer enten:\nMassespamming (Streaks)\nHøyfrekvent kommunikasjon med FÅ personer (indikerer operativ kontakt)\n\n1.10 Snapchats forretningsmodell og hva som lagres\nSnapchat tjener penger på:\nReklame (basert på brukerdata)\nSnapchat+ abonnement (premium-funksjoner)\nSpotlight (konkurransebasert innhold)\n\nHVORDAN DETTE PÅVIRKER DATALAGRING:\nREKLAME krever:\nDemografisk data (alder, kjønn, sted)\nInteresser (basert på Stories sett, interaksjoner)\nLokasjonsspor (for geografisk målrettet reklame)\n\nRESULTAT: Snapchat har DETALJERT kartlegging av:\nHvilke Stories Kurt ser (indikerer interesser)\nHvor han fysisk befinner seg (Snap Map-historikk)\nHvilke annonser han klikker på\n\nPRAKTISK BETYDNING FOR POLITIET:\nVed juridisk begjæring kan Snapchat utlevere:\n\"Snapchat Ads Data\": Viser hvilke målgrupper brukeren tilhører\nEKSEMPEL – FIKTIVT (KURT): \"Interessert i biler, trening, norsk rap\"\nLokasjonsprofil: Heatmap av hvor brukeren mest opphold holder seg\nFrekvensdata: Hvor ofte appen åpnes daglig (indikerer brukeratferd)"
+        },
+        {
+          "type": "callout",
+          "kind": "LEGAL",
+          "data": "JURIDISK PROBLEMSTILLING: Snapchat kan nekte å utlevere \"forretningssensitiv\" data (annonsealgoritmer). Politiet må spesifikt be om RAW-data, ikke analyserte profiler."
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "overskrift": "KAPITTEL 2: ORDLISTE OG BEGREPSFUNDAMENT",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "SNAPCHAT-ORDLISTE FOR ETTERFORSKER"
+        },
+        {
+          "type": "paragraph",
+          "data": "**Snap:**\nDAGLIGSPRÅK: Et bilde eller en video sendt via Snapchat\nTEKNISK: Multimediemelding med automatisk slettingsfunksjon (1-10 sekunder etter visning)\nETTERFORSKNINGSMESSIG: Kan inneholde bevis, men slettes raskt – krever sanntids sikring\n\n**Story:**\nDAGLIGSPRÅK: Et innlegg som vises i 24 timer\nTEKNISK: Samling av Snaps som vises for venner eller offentlig\nETTERFORSKNINGSMESSIG: Offentlige Stories er LOVLIG å observere\n\n**Snap Map:**\nDAGLIGSPRÅK: Et verdenskart som viser hvor vennene dine er\nTEKNISK: GPS-basert plassering oppdatert når brukeren åpner kameraet\nETTERFORSKNINGSMESSIG: Kan bevise fysisk tilstedeværelse på åsted\n\n**Ghost Mode:**\nDAGLIGSPRÅK: Skjuler deg fra venners Snap Map\nTEKNISK: Deaktiverer GPS-deling (men Snapchat har fortsatt loggen)\nETTERFORSKNINGSMESSIG: Indikerer bevisst skjuling (mistenkt atferd)\n\n**Snap Score:**\nDAGLIGSPRÅK: Et tall som viser hvor aktiv du er\nTEKNISK: Algoritmebasert poengsum (sendt/mottatt Snaps + andre faktorer)\nETTERFORSKNINGSMESSIG: Unormalt høy score indikerer høyfrekvent kommunikasjon\n\n**Streaks:**\nDAGLIGSPRÅK: Daglig utveksling av Snaps med en venn\nTEKNISK: Teller antall sammenhengende dager med gjensidig Snap\nETTERFORSKNINGSMESSIG: Indikerer sterk relasjon (kan være grooming)\n\n**Memories:**\nDAGLIGSPRÅK: Ditt private Snapchat-arkiv\nTEKNISK: Skylagret samling av lagrede Snaps\nETTERFORSKNINGSMESSIG: Kan inneholde slettede bevis (krever rettslig tilgang)\n\n**Bitmoji:**\nDAGLIGSPRÅK: Din avatar/tegneseriefigur\nTEKNISK: Personlig illustrasjon som vises på Snap Map\nETTERFORSKNINGSMESSIG: Kan identifisere brukeren via unikt utseende\n\n**Quick Add:**\nDAGLIGSPRÅK: Forslag til nye venner\nTEKNISK: Algoritme som foreslår profiler basert på felles venner/kontakter\nETTERFORSKNINGSMESSIG: Viser indirekte nettverk (felles bekjente)\n\n**Public Story / Our Story:**\nDAGLIGSPRÅK: Story som alle kan se\nTEKNISK: Innhold postet til offentlig feed (ikke vennebegrenset)\nETTERFORSKNINGSMESSIG: LOVLIG å se uten venneforespørsel\n\n**Screenshot-varsel:**\nDAGLIGSPRÅK: Varsler avsender hvis du tar skjermbilde\nTEKNISK: Melding sendes øyeblikkelig ved iOS/Android screenshot-funksjon\nETTERFORSKNINGSMESSIG: Bruk ekstern kamera for å unngå varsling\n\n**Chat:**\nDAGLIGSPRÅK: Tekstmelding på Snapchat\nTEKNISK: Melding som slettes 24 timer etter lesing (eller ved chat-lukking)\nETTERFORSKNINGSMESSIG: Kan lagres manuelt av bruker (sjekk \"Saved Messages\")\n\n**Geofilter:**\nDAGLIGSPRÅK: Lokasjonsstempel på bilder (f.eks. \"Oslo\")\nTEKNISK: Grafisk overlegg basert på GPS-posisjon\nETTERFORSKNINGSMESSIG: Beviser geografisk plassering\n\n**Lens:**\nDAGLIGSPRÅK: Ansiktsfilter (hundører, masker)\nTEKNISK: AR-basert effekt\nETTERFORSKNINGSMESSIG: Minimal verdi (estetikk, ingen bevisverdi)\n\n**Snap Code:**\nDAGLIGSPRÅK: QR-kode for å legge til venner\nTEKNISK: Unik kode per bruker (kan scannes for å følge)\nETTERFORSKNINGSMESSIG: Kan bevise fysisk møte (hvis brukt)"
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "overskrift": "KAPITTEL 3: UNIVERSELL BRUKERMODELL FOR SNAPCHAT",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Når du kartlegger en Snapchat-bruker (Kurt eller Lina), skal du systematisk fylle ut fire kategorier:\n3.1 IDENTITET – Hvem er personen?\nDATAPOENG Å KARTLEGGE:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Parameter | Hva du leter etter | Hvor du finner det | TPS-vurdering",
+            "Brukernavn | k13_nord | Snapchat søkefunksjon | T: C, P: 1, S: Moderat",
+            "Display Name | Kurt | Profilvisning | T: C, P: 2, S: Moderat",
+            "Snap Score | 52,341 | Under brukernavnet | T: A, P: 1, S: Lav",
+            "Bitmoji | Gutt i svart hettegenser | Snap Map | T: B, P: 2, S: Lav",
+            "Telefonnummer | +47 918 34 512 | Ikke direkte synlig (må begjæres) | T: A, P: 1, S: HØY",
+            "Reelt navn | Kurt Mikkelsen | Kryssverifisering (Instagram, 1881) | T: B, P: 2, S: HØY",
+            "Alder | 13 år | Kryssverifisering (1881, Folkeregisteret) | T: A, P: 1, S: KRITISK",
+            "Adresse | Skoleveien 12, Lørenskog | Snap Map + 1881 | T: B, P: 2, S: HØY"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "PRAKTISK GJENNOMGANG:\nTRINN 1: Åpne Snapchat (nettleser eller app)\n1. Gå til snapchat.com (eller åpne appen)\n2. Klikk søkeikonet (forstørrelsesglass øverst)\n3. Skriv inn: k13_nord\n4. Trykk på profilen som dukker opp\n\nHVA SER DU NÅ?\nProfilside med:\n- Brukernavn: k13_nord\n- Display Name: Kurt\n- Snap Score: 52,341\n- Bitmoji: Svart hettegenser-avatar\n- Venner: (Ikke synlig hvis du ikke er venn)\n- Stories: (Synlig hvis offentlige)\n\nDOKUMENTASJON:\nScreenshot-navn: 20260219_snapchat_k13nord_profil.png\nNotere i rapport:\n\"Profil med brukernavn k13_nord ble identifisert via Snapchats søkefunksjon.\nDisplay Name 'Kurt' og Snap Score 52,341 ble observert kl. 14:32.\nTPS: C-1-MODERAT (brukernavn er verifiserbart, men reell identitet ukjent på dette tidspunkt).\"\n\n3.2 NETTVERK – Hvem kjenner de?\nDATAPOENG Å KARTLEGGE:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Relasjon | Indikatorer | Metode | TPS-vurdering",
+            "Antall venner | 40 venner | Ikke direkte synlig (estimeres via interaksjoner) | T: C, P: 3, S: Lav",
+            "Synlige venner | 14 profiler | Via \"Quick Add\" eller Stories med tags | T: C, P: 2, S: Moderat",
+            "Nøkkelkontakter | @NordLink81, @BKindustrien | Stories, Chat-metadata (ved begjæring) | T: C, P: 2, S: HØY",
+            "Vennedato | 12. januar 2026 | Metadata fra Snapchat (ved begjæring) | T: A, P: 1, S: Moderat",
+            "Interaksjonsfrekvens | Daglig med NordLink81 | Snap Score-endring + Streaks-ikon | T: C, P: 3, S: HØY",
+            "Felles venner | 3 med NordLink81 | Quick Add-forslag | T: D, P: 4, S: Moderat"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "PRAKTISK METODE FOR NETTVERKSANALYSE:\nMETODE 1: Public Stories-analyse (LOVLIG)\nTRINN 1: Se på Kurts Public Stories\n1. Gå til k13_nord profil\n2. Hvis \"Public Story\" er tilgjengelig, klikk den\n3. Se gjennom alle Snaps i Storyen\n\nTRINN 2: Identifiser personer\n1. Noter ned alle brukernavn som tagges (eks: \"@NordLink81\")\n2. Screenshot av hver Snap med tagging\n3. Søk opp hvert brukernavn i Snapchat\n\nTRINN 3: Lag nettverksdiagram\nExcel/Papir:\n- Kurt (senter)\n- NordLink81 (direkte linje)\n- BKindustrien (direkte linje)\n- Skolevenn 1-6 (dotted linje = svakere kobling)\n\nMETODE 2: Snap Map-proximitet (LOVLIG, men SENSITIV)\nTRINN 1: Åpne Snap Map\n1. Gå til snapchat.com/map\n2. Søk på koordinater: 59.9286, 10.9547 (Lørenskog)\n3. Zoom inn på området\n\nTRINN 2: Identifiser Bitmoji nær Kurt\n1. Finn Kurts Bitmoji (svart hettegenser)\n2. Se hvilke andre Bitmoji er innenfor 100m radius\n3. Noter ned brukernavn\n\nTRINN 3: Krysskoblinganalyse\n1. Hvis samme Bitmoji vises nær Kurt GJENTATTE ganger = sterkt nettverk\n2. EKSEMPEL – FIKTIVT: NordLink81 vises 300m fra Kurt hver onsdag kl. 21:00"
+        },
+        {
+          "type": "callout",
+          "kind": "LEGAL",
+          "data": "JURIDISK STOPP-BOKS:\nVENNELISTE-BEGRENSNING:\nSnapchat viser IKKE full venneliste offentlig.\nFor å se Kurts komplette venneliste kreves:\n1. Rettslig begjæring til Snapchat Inc.\n2. ELLER: Fysisk beslag av Kurts telefon"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "ULOVLIG METODE:\nSende venneforespørsel til Kurt for å se hans venner\n→ Dette er AKTIV KONTAKT (krever beslutning ved mindreårige)"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL – NETTVERKSANALYSE (FIKTIVT, KURT):\nFUNN:\n@NordLink81: Streak-ikon (daglig Snap) + tagging i 3 Stories\n@BKindustrien: Ingen direkte tagging (kun via Discord/Telegram-kryssverifisering)\nSkolevenn1-6: Lav interaksjon (2-3 likes på Stories)\n\nTPS-VURDERING:\nNordLink81: T: C (identifisert via kryssverifisering), P: 2 (observerbar kontakt), S: HØY (voksen med kriminell historikk)\nBKindustrien: T: E (ukjent identitet), P: 4 (kun indirekte bevis), S: KRITISK (potensielt organisert kriminalitet)"
+        },
+        {
+          "type": "paragraph",
+          "data": "3.3 AKTIVITET – Hva gjør de?\nDATAPOENG Å KARTLEGGE:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Aktivitetstype | Hva du leter etter | Metode | TPS-vurdering",
+            "Snap-frekvens | Hvor ofte postes innhold | Snap Score-endring over tid | T: B, P: 2, S: Lav",
+            "Story-innhold | Tema (gym, penger, motivasjon) | Observasjon av Public Stories | T: B, P: 2, S: MODERAT",
+            "Aktivitetstid | 20:00-00:30 (utenfor foreldrekontroll) | Snap Map online-status | T: B, P: 2, S: HØY",
+            "Snap Map-mønster | Onsdager kl. 21:00 ved Rema 1000 | Geografisk logg (ved begjæring) | T: A, P: 2, S: HØY",
+            "Ghost Mode-bruk | Aktiveres onsdager 21:15 | Snap Map forsvinner-mønster | T: B, P: 3, S: HØY",
+            "Screenshot-tatt | Hvor mange ganger tar Kurt screenshot av andres Snaps | Metadata (ved begjæring) | T: A, P: 1, S: MODERAT",
+            "Chat-aktivitet | Hvem chatter han med | Metadata (ved begjæring) | T: A, P: 1, S: HØY"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "PRAKTISK GJENNOMGANG:\nMETODE 1: Snap Score-overvåking\nDAG 1 (15. februar kl. 10:00):\n1. Søk k13_nord\n2. Noter Snap Score: 52,341\n3. Ta screenshot\n\nDAG 2 (16. februar kl. 10:00):\n1. Søk k13_nord\n2. Noter Snap Score: 52,563\n3. Differanse: 222 poeng = ~111 Snaps sendt/mottatt siste 24 timer\n\nTOLKNING:\n111 Snaps / 40 venner = 2,78 Snaps per venn\n→ Svært høy aktivitet (normal er 0,5-1,0 Snaps/venn)\n→ INDIKERER: Intens kommunikasjon med FÅ personer\n\nMETODE 2: Story-innholdsanalyse\nTRINN 1: Gå til Kurts profil\n1. Klikk \"Public Story\" (hvis tilgjengelig)\n2. Se gjennom alle Snaps i kronologisk rekkefølge\n\nTRINN 2: Kategoriser innhold\nOpprett tabell:\n| Dato | Tid | Innholdstype | Beskrivelse | TPS |\n|------|-----|--------------|-------------|-----|\n| 15.02 | 23:45 | Penger | Bunker med 500-lapper | C-3-HØY |\n| 14.02 | 17:23 | Gym | Selfie i speil, Lørenskog Treningssenter | B-2-MODERAT |\n| 13.02 | 22:10 | Bil | Innsiden av BMW, delvis reg. nr. | C-3-HØY |\n\nTRINN 3: Søk etter mønstre\n- Penger-Stories: Alltid kveld (22:00-00:30)\n- Gym-Stories: Alltid ettermiddag (17:00-18:30)\n- Bil-Stories: Alltid sent kveld (21:00-23:00)\n\nMETODE 3: Snap Map-tidslinjerekonstruksjon\nFORUTSETNING: Kurt har Snap Map aktivert (ikke Ghost Mode)\nTRINN 1: Åpne snapchat.com/map\n1. Søk: k13_nord (hvis synlig offentlig) ELLER\n2. Søk koordinater: 59.9286, 10.9547\n\nTRINN 2: Overvåk i sanntid (eller etter mønster)\nNotere hver gang Kurt vises på kartet:\n| Dato | Tid | GPS-koordinater | Fysisk sted | Ghost Mode |\n|------|-----|-----------------|-------------|------------|\n| 13.02 | 21:00 | 59.9286, 10.9547 | Bak Rema 1000 | Nei |\n| 13.02 | 21:15 | - | - | JA (forsvinner) |\n| 13.02 | 21:47 | 59.9302, 10.9563 | Hjemmeadresse | Nei |\n\nTRINN 3: Korreler med andre bevis\n- Vipps-transaksjon kl. 22:03 (+500 kr fra NordLink)\n- TOLKNING: Møte (21:00), skjult aktivitet (21:15), betaling (22:03)"
+        },
+        {
+          "type": "callout",
+          "kind": "LEGAL",
+          "data": "JURIDISK STOPP-BOKS:\nLOVLIG:\n- Se på Public Stories (ingen venneforespørsel nødvendig)\n- Overvåke Snap Map hvis brukeren har offentlig deling\n- Noter Snap Score-endringer\nKREVER BESLUTNING:\n- Lagre/arkivere Stories for senere analyse (kan være personvernbrudd)\n- Automatisere overvåking (kan klassifiseres som dataavlesning)\n- Kontakte andre brukere for å få tilgang til lukket innhold"
+        },
+        {
+          "type": "paragraph",
+          "data": "3.4 KRYSSKOBLINGER – Hvordan henger alt sammen?\nDATAPOENG Å KARTLEGGE:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Kobling | Hva du leter etter | Metode | TPS-vurdering",
+            "Samme brukernavn | k13_nord på andre plattformer | Google, sherlock-tool | T: C, P: 2, S: Moderat",
+            "Samme profilbilde | Identisk Bitmoji/bilde | Reverse image search | T: B, P: 2, S: Lav",
+            "Språkmønster | Små bokstaver, slang | Kryssverifisering (Instagram, TikTok) | T: D, P: 3, S: Lav",
+            "Aktivitetstid | 20:00-00:30 på alle plattformer | Poster tidsstempler | T: C, P: 2, S: Moderat",
+            "Geokobling | Samme GPS-koordinater på Instagram/Snap | EXIF-data vs. Snap Map | T: B, P: 2, S: MODERAT",
+            "Økonomisk kobling | Vipps-transaksjoner etter Snap Map-møter | Metadata-analyse | T: B, P: 2, S: HØY",
+            "Nettverksoverlegg | Felles venner på Snap/Discord | Kryssverifisering | T: C, P: 3, S: MODERAT"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "PRAKTISK GJENNOMGANG:\nMETODE 1: Brukernavn-søk på tvers av plattformer\nTRINN 1: Google Dork-søk\nSøkeord: \"k13_nord\"\nResultat:\n- Instagram: @kurt_mkn (ikke direkte match, men bio nevner \"13\")\n- Reddit: u/k13_nrw (variasjon av brukernavn)\n- TikTok: @kurt13live (variasjon)\n\nTRINN 2: Sherlock-verktøy (automatisering)\nTerminal:\n$ sherlock k13_nord\nResultat:\n[+] Snapchat: https://snapchat.com/add/k13_nord\n[+] Instagram: (ingen direkte match)\n[+] Discord: K13#4782 (funnet via brukersøk)\n\nTRINN 3: Lag koblingstabell\n| Plattform | Brukernavn | Profilbilde match | Språkmønster match |\n|-----------|------------|-------------------|-------------------|\n| Snapchat | k13_nord | Svart hettegenser | Små bokstaver, slang |\n| Instagram | kurt_mkn | Identisk | Små bokstaver, slang |\n| Discord | K13#4782 | Identisk | Små bokstaver, slang |\n| Reddit | k13_nrw | Ingen | Små bokstaver, slang |\n\nMETODE 2: Tidsstempling kryss-plattform\nOBSERVASJON:\n15. februar kl. 17:23:\n- Instagram: Gym-selfie postet\n- Snapchat: Snap Map viser Lørenskog Treningssenter\n- EXIF-data (Instagram): GPS 59.9286° N, 10.9547° E\nKONKLUSJON:\nSamme person opererer begge kontoer (simultant innlegg + lokasjon)\nTPS: T: B (verifiserbar samtidighet), P: 2 (sannsynlig samme person), S: MODERAT\n\nMETODE 3: Økonomisk spor-kobling\nSCENARIO:\n13. februar 2026:\nSnapchat Snap Map:\n- 21:00: Kurt ved Rema 1000 (59.9286° N)\n- 21:15: Ghost Mode aktiveres\n- 21:47: Kurt hjemme\nVipps (via indirekte kilder):\n- 22:03: +500 kr fra \"NordLink\" med melding \"\"\nTOLKNING:\n1. Fysisk møte (Snap Map)\n2. Skjult aktivitet (Ghost Mode = bevisst handling)\n3. Økonomisk transaksjon (Vipps) innen 1 time\nHYPOTESE: Oppdrag utført → betaling mottatt\nTPS: T: C (indirekte bevis), P: 3 (mulig sammenheng), S: HØY (mindreårig + kriminell kontekst)"
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "overskrift": "KAPITTEL 4: BEVISSIKRING OG DOKUMENTASJON",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "4.1 Hva du ALLTID må sikre som bevis på Snapchat\nKRITISKE BEVISTYPER:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Bevistype | Hvorfor | Hvordan | Kan det endres? | TPS-vurdering",
+            "Brukernavn | Identifiserer profilen | Screenshot av profil | Ja (kan endres) | T: C, P: 1, S: Moderat",
+            "Snap Score | Indikerer aktivitetsnivå | Screenshot med tidsstempel | Ja (øker konstant) | T: A, P: 1, S: Lav",
+            "Story-innhold | Direkte bevis på aktivitet | Video/screenshot | Ja (slettes etter 24t) | T: B, P: 2, S: MODERAT-HØY",
+            "Snap Map-posisjon | Fysisk plassering | Screenshot med koordinater | Ja (endres dynamisk) | T: A, P: 2, S: HØY",
+            "Metadata | Tidsstempler, enhetsinfo | Juridisk begjæring | Nei (permanent hos Snapchat) | T: A, P: 1, S: MODERAT",
+            "URL | Direkte lenke til profil | Kopier adresselinje | Nei (permanent) | T: A, P: 1, S: Lav"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "PRAKTISK GJENNOMGANG:\nTRINN 1: Screenshot med fullstendig kontekst\nCHROME:\n1. Åpne Snapchat-profil (k13_nord)\n2. Trykk F12 (åpne Developer Tools)\n3. Klikk \"Toggle device toolbar\" (mobilikonet øverst)\n4. Velg \"iPhone 12 Pro\" (for å simulere mobil)\n5. Nå vises profilen som på mobil\n6. Trykk F12 igjen for å skjule Developer Tools\n7. Trykk Windows + Shift + S (Snipping Tool)\n8. Marker HELE skjermbildet inkludert:\n- URL-linje (snapchat.com/add/k13_nord)\n- Tidspunkt (Windows klokke nederst høyre)\n- Profilinnhold (Snap Score, Display Name)\n\nFIREFOX:\n1. Åpne Snapchat-profil\n2. Trykk F12\n3. Klikk \"Responsive Design Mode\" (Ctrl + Shift + M)\n4. Velg \"iPhone 12\"\n5. Ta screenshot: Høyreklikk → \"Take a Screenshot\" → \"Save full page\"\n6. Firefox lagrer automatisk med tidsstempel i filnavn\n\nFILNAVNKONVENSJON:\nFormat: ÅÅÅÅMMDD_TTMM_plattform_bruker_innhold.png\nEksempel: 20260219_1432_snapchat_k13nord_profil.png\nForklaring:\n- 20260219: 19. februar 2026\n- 1432: Kl. 14:32\n- snapchat: Plattform\n- k13nord: Brukernavn\n- profil: Hva som vises\n\nTRINN 2: SHA-256 Hash-generering (Integritetssikring)\nHVORFOR? Hash-verdien er en digital \"fingeravtrykk\" som beviser at filen ikke er endret siden sikring.\nHVORDAN (Windows):\n1. Åpne Command Prompt (cmd)\n2. Naviger til mappen hvor screenshot er lagret:\ncd C:\\Etterforskning\\Kurt_Mikkelsen\\Snapchat\n3. Generer hash:\ncertutil -hashfile 20260219_1432_snapchat_k13nord_profil.png SHA256\n4. Output (eksempel):\nSHA256-hash:\na7f3c9e2b5d8f1a3c7e9b2d5f8a1c3e7b9d2f5a8c1e3b7d9f2a5c8e1b3d7f9a2\n5. Kopier denne verdien og lim inn i Excel/aktivitetslogg\n\nHVORDAN (Mac/Linux):\nTerminal:\n$ shasum -a 256 20260219_1432_snapchat_k13nord_profil.png\nOutput:\na7f3c9e2b5d8f1a3c7e9b2d5f8a1c3e7b9d2f5a8c1e3b7d9f2a5c8e1b3d7f9a2\n\nTRINN 3: Metadata-logging\nEXCEL-MAL:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Dato | Tid | Plattform | Brukernavn | Bevistype | Filnavn | SHA-256 Hash | TPS | Notater",
+            "19.02.26 | 14:32 | Snapchat | k13_nord | Profil-screenshot | 20260219_1432_snapchat_k13nord_profil.png | a7f3c9e2... | C-1-MODERAT | Snap Score: 52,341",
+            "19.02.26 | 14:45 | Snapchat | k13_nord | Story-screenshot | 20260219_1445_snapchat_k13nord_story_penger.png | b2e5f8a1... | C-3-HØY | Bilde av pengesedler"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "TRINN 4: Rapportskriving\nSTANDARDFORMULERING:\nFAKTADEL (Observasjon):\n\"Det ble observert en Snapchat-profil med brukernavn 'k13_nord' via\nplattformens søkefunksjon 19. februar 2026 kl. 14:32. Profilen viste Display\nName 'Kurt' og Snap Score 52,341. Screenshot ble sikret med SHA-256 hash\na7f3c9e2b5d8f1a3c7e9b2d5f8a1c3e7b9d2f5a8c1e3b7d9f2a5c8e1b3d7f9a2 for\nintegritetssikring. Observasjonen utgjør passiv BRÅK etter strpl. § 196.\"\n\nANALYSEDEL (Tolkning):\n\"Snap Score 52,341 vurderes som unormalt høyt for en 13-åring med 40 venner\n(estimert 218 Snaps/dag), hvilket indikerer høyfrekvent kommunikasjon.\nTPS-vurdering: Troverdighet C (anonym alias), Pålitelighet 1 (direkte observert),\nSensitivitet MODERAT (digital identitet uten verifisert reell identitet på dette tidspunkt).\"\n\n4.2 Synlig vs. skjult informasjon – Hva ser ikke brukeren selv?\nSYNLIG FOR BRUKEREN (Kurt ser dette selv):\nEgne Stories\nEgne meldinger (Snaps og Chat)\nVenneliste\nSnap Map egen posisjon\nSnap Score\n\nSKJULT FOR BRUKEREN (Kurt ser IKKE dette):"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Skjult data | Hvor det lagres | Hvordan politiet får det | TPS-vurdering",
+            "Hvem som har sett hans Story | Snapchat-servere (24t) | Juridisk begjæring | T: A, P: 1, S: MODERAT",
+            "IP-adresse historikk | Snapchat-servere (permanent) | Juridisk begjæring | T: A, P: 1, S: HØY",
+            "Enhets-ID (IMEI, Advertising ID) | Snapchat-servere (permanent) | Juridisk begjæring | T: A, P: 1, S: HØY",
+            "GPS-koordinat-historikk | Snapchat-servere (30 dager) | Juridisk begjæring | T: A, P: 1, S: HØY",
+            "Slettede Snaps (uåpnede) | Snapchat-servere (30 dager) | Juridisk begjæring | T: A, P: 2, S: KRITISK",
+            "Chat-metadata | Snapchat-servere (permanent) | Juridisk begjæring | T: A, P: 1, S: HØY",
+            "Annonse-profil | Snapchat-servere (permanent) | Juridisk begjæring | T: B, P: 2, S: MODERAT"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "PRAKTISK EKSEMPEL – FIKTIVT (KURT):\nSCENARIO: Politiet observerer Kurts Public Story 15. februar kl. 23:45 (bilde av penger).\n\nSYNLIG I STORYEN:\nBilde av pengesedler (500-lapper)\nIngen GPS-tagging (manuelt fjernet av Kurt)\nIngen tidsstempel (Snapchat viser kun \"23h siden\")\n\nSKJULT INFORMASJON (krever begjæring):\nSnapchat kan utlevere:\nMETADATA FOR STORY-POST:\n- Opprettet: 15. februar 2026, 23:45:17 UTC (00:45:17 norsk tid 16. februar)\n- GPS-koordinater: 59.9302° N, 10.9563° E (Kurts hjemmeadresse)\n- Enhet: iPhone 12 (iOS 17.2)\n- IP-adresse: 82.134.47.23 (Telenor hjemmenett)\n- Kamera: Bakre kamera (ikke frontkamera)\n- Filter brukt: Ingen\n- Visninger: 23 personer (liste over brukernavn tilgjengelig)"
+        },
+        {
+          "type": "paragraph",
+          "data": "HVORDAN FÅ TILGANG TIL SKJULT INFORMASJON:\nMETODE 1: Snapchat Law Enforcement Guide (Juridisk begjæring)\nTRINN 1: Identifiser hva du trenger\n- Basis brukerinfo: Navn, telefon, e-post, opprettelsesdato\n- Snap-historikk: Metadata (hvem, når, hvor) – IKKE innhold (E2EE)\n- IP-logger: Påloggingshistorikk (siste 30 dager)\n- Lokasjonsspor: GPS-koordinater (siste 30 dager)\n\nTRINN 2: Utform begjæring\nMal:\n\"Undertegnede begjærer utlevering av følgende data for Snapchat-konto 'k13_nord':\n1. Registrert telefonnummer og e-postadresse\n2. IP-adresse-logger (01.02.26 – 19.02.26)\n3. GPS-koordinat-historikk (01.02.26 – 19.02.26)\n4. Venneliste (per 19.02.26)\n5. Metadata for alle Snaps sendt/mottatt (01.02.26 – 19.02.26)\nHjemmel: Straffeprosessloven § 210 (beslag av elektronisk informasjon)\nSakstype: Vold (strl. § 273) i forbindelse med VaaS-rekruttering\nMindreårig involvert: Ja (13 år) – ekstra varsomhet påkrevet\"\n\nTRINN 3: Send til Snapchat Law Enforcement\nE-post: lawenforcement@snap.com\nVedlegg: Offisiell begjæring (PDF), rettskjennelse (hvis påkrevd)\n\nTRINN 4: Forventet responstid\n- Akutt/livstruende: 24 timer\n- Standard: 2-4 uker\n- Kompleks: 6-8 uker\n\nMETODE 2: Fysisk beslag av enhet (Kurts iPhone)\nFORUTSETNING: Rettslig hjemmel (strpl. § 203)\nTRINN 1: Sikre enhet FØR batteriet dør\n1. Beslag iPhone umiddelbart\n2. Sett i flymodus (forhindrer fjernsletting)\n3. Lad opp (men IKKE slå på)\n\nTRINN 2: Åpne Snapchat (hvis mulig)\n1. Hvis Kurt ikke har passcode → åpne app\n2. Åpne \"Chat\" → se lagrede meldinger\n3. Åpne \"Memories\" → se arkiverte Snaps\n4. Screenshot alt (eksternt kamera for å unngå varsel)\n\nTRINN 3: Forensisk analyse (IKT-krimenhet)\n1. Bruk Cellebrite/UFED (forensisk verktøy)\n2. Trekk ut Snapchat-database (inkludert slettede data)\n3. Analysér SQLite-filer for metadata"
+        },
+        {
+          "type": "callout",
+          "kind": "LEGAL",
+          "data": "JURIDISK STOPP-BOKS:\nSKJULT DATA = HØYERE JURIDISK TERSKEL\nLOVLIG UTEN KJENNELSE:\n- Observere Public Stories\n- Se Snap Map (hvis offentlig)\n- Google-søk på brukernavn\nKREVER KJENNELSE (strpl. § 210):\n- Begjæring til Snapchat om metadata\n- IP-adresse-historikk\n- GPS-koordinater\nKREVER HØYERE TERSKEL (strpl. § 216m):\n- Fysisk beslag av Kurts telefon\n- Dataavlesning (innhold av meldinger)\n- Sanntids GPS-sporing"
+        },
+        {
+          "type": "paragraph",
+          "data": "4.3 Tidsstempler og tidssoner – Unngå feil\nPROBLEMSTILLING: Snapchat lagrer tidsstempler i UTC (Coordinated Universal Time).\nNorge er UTC+1 (vintertid) eller UTC+2 (sommertid)."
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL PÅ FEIL:\nSCENARIO:\nSnapchat-metadata viser:\n\"Snap sendt: 15 Feb 2026, 22:45:00 UTC\"\nFEIL TOLKNING:\nEtterforsker noterer: \"Kurt sendte Snap kl. 22:45 norsk tid\"\nKORREKT TOLKNING:\n22:45 UTC = 23:45 norsk tid (UTC+1, februar = vintertid)\nKurt sendte Snap kl. 23:45 norsk tid (16. februar, etter midnatt)"
+        },
+        {
+          "type": "paragraph",
+          "data": "HVORDAN KONVERTERE TID:\nMETODE 1: Manuell beregning\nUTC → Norsk tid (vintertid, nov-mars):\nUTC + 1 time = Norsk tid\nUTC → Norsk tid (sommertid, april-okt):\nUTC + 2 timer = Norsk tid\n\nEKSEMPEL:\nSnapchat-metadata: \"2026-02-15 22:45:00 UTC\"\nFebruar = vintertid → +1 time\nNorsk tid: 2026-02-15 23:45:00 (kl. 23:45)\n\nMETODE 2: Online-verktøy\nBruk: https://www.timeanddate.com/worldclock/converter.html\nInndata:\n- Fra: UTC\n- Til: Oslo, Norway\n- Dato/tid: 2026-02-15 22:45:00\nOutput:\nSaturday, February 15, 2026 at 11:45:00 pm CET\n\nMETODE 3: Excel-formel\nHvis UTC-tid er i celle A1:\n=A1 + TIME(1,0,0) (for vintertid)\n=A1 + TIME(2,0,0) (for sommertid)\n\nRAPPORTSKRIVING:\nFEIL:\n\"Kurt sendte Snap kl. 22:45.\"\nProblem: Uklart hvilken tidssone\nKORREKT:\n\"Kurt sendte Snap 15. februar 2026 kl. 22:45:00 UTC (tilsvarende 23:45:00\nnorsk tid, vintertid). Tidsstempel hentet fra Snapchat-metadata via juridisk\nbegjæring datert 19. februar 2026.\""
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VANLIGE TIDSSTEMPEL-FEIL\nFEIL 1: Glemmer å konvertere UTC → lokal tid\nLØSNING: Bruk alltid \"+1 time\" (vintertid) eller \"+2 timer\" (sommertid)\nFEIL 2: Forveksler brukerens enhetstid med servertid\nLØSNING: Snapchat-metadata er ALLTID UTC (serverbasert)\nFEIL 3: Ignorerer dato-overgang\nEKSEMPEL: 23:45 UTC 15. feb = 00:45 norsk tid 16. feb\nLØSNING: Sjekk dato etter konvertering\nFEIL 4: Sommertid/vintertid-feil\nLØSNING: Februar-oktober = sommertid (UTC+2), November-mars = vintertid (UTC+1)"
+        },
+        {
+          "type": "paragraph",
+          "data": "4.4 Forskjellen på klient og server"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "ANALOGI: Snapchat-appen på Kurts iPhone er som et postkontorvindu.\nKurt ser kun det som vises i vinduet (meldinger, Stories).\nAlt annet (arkiv, metadata) lagres bak vinduet – på Snapchats servere i California."
+        },
+        {
+          "type": "paragraph",
+          "data": "KLIENTSIDE (Kurts iPhone):\nSnapchat-appen (versjon 12.72, iOS)\nLokalt lagret: Midlertidige cache-filer, påloggingstoken\nSlettes ved: App-sletting, cache-rensing, enhetsbytte\n\nSERVERSIDE (Snapchat Inc., California):\nPermanente databaser\nLagret: Brukerinfo, metadata, IP-logger\nSlettes ved: Brukerens kontoforespørsel (GDPR) eller etter 30 dager (innhold)\n\nPRAKTISK BETYDNING FOR ETTERFORSKNING:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Hva du søker | Klientside | Serverside",
+            "Slettede Snaps | Nei (slettet umiddelbart) | Ja (opptil 30 dager hvis uåpnet)",
+            "Chat-historie | Ja (hvis ikke manuelt slettet) | Ja (metadata permanent, innhold 24t)",
+            "IP-adresse | Nei | Ja (permanent)",
+            "Memories | Ja (lagret lokalt + sky) | Ja (skylagret)",
+            "GPS-koordinater | Nei (kun siste Snap Map-posisjon) | Ja (30 dagers historikk)"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL – FIKTIVT (KURT):\nSCENARIO: Kurt sletter Snapchat-appen 16. februar kl. 08:00.\nHVA FORSVINNER (Klientside):\nSynlige chat-meldinger (men ikke hvis manuelt lagret)\nCache (midlertidige bilder fra Stories)\nPåloggingstoken (må logge inn på nytt)\nHVA BEVARES (Serverside):\nALLE metadata (hvem han chattet med, når, hvor)\nUåpnede Snaps (lagres i 30 dager)\nVenneliste\nIP-adresse-logg\nGPS-koordinater (siste 30 dager)\nSnap Score"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "LÆRINGSPOENG: \"Jeg slettet appen\" = IKKE \"Jeg slettet bevisene\" Serveren har fortsatt ALT metadata og uåpnet innhold."
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "overskrift": "KAPITTEL 5: JURIDISK RAMMEVERK FOR SNAPCHAT-ETTERFORSKNING",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "5.1 Passiv BRÅK vs. skjult overvåking (Strpl. § 196 vs. § 200a)"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "KRITISK FORSTÅELSE: Grensen mellom LOVLIG observasjon og ULOVLIG overvåking er ofte uklar på Snapchat.\nDenne seksjonen gir deg et praktisk rammeverk."
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "LOVLIG PASSIV BRÅK (Strpl. § 196 – åpen etterforskning):\nDU KAN:\n1. Søke på brukernavn via Snapchats søkefunksjon\n2. Se på Public Stories (ikke vennebegrenset)\n3. Observere Snap Map (hvis bruker har offentlig deling)\n4. Google-søk på \"k13_nord snapchat\"\n5. Ta screenshot av offentlig tilgjengelig innhold\n6. Notere Snap Score-endringer over tid\n7. Kryssverifisere brukernavn mot andre plattformer\n8. Analysere språkmønster i offentlige innlegg\nINGEN JURIDISK BESLUTNING NØDVENDIG"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "GRÅSONE (krever vurdering):\nTVIL:\n1. Sende venneforespørsel til objektet\n→ Teknisk sett \"åpen\" (de ser hvem du er)\n→ MEN: Aktiv kontakt (spesielt sensitiv ved mindreårige)\n→ ANBEFALING: Få jurist-klarsignal\n2. Opprette falsk profil for å se lukket innhold\n→ Teknisk sett \"åpen\" (de kan nekte)\n→ MEN: Villede identitet (kan være provokasjon)\n→ ANBEFALING: Krever skriftlig beslutning\n3. Be Kurts venner om tilgang til hans lukket innhold\n→ Teknisk sett \"åpen\" (frivillig samtykke)\n→ MEN: Kan oppfattes som press\n→ ANBEFALING: Juridisk vurdering per case\nREGEL: Når i tvil → kontakt jurist"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "ULOVLIG SKJULT OVERVÅKING (Strpl. § 200a – krever kjennelse):\nDU KAN IKKE (uten kjennelse):\n1. Hacke Kurts Snapchat-konto\n2. Installere keylogger på hans iPhone\n3. Avlytte Snapchat-samtaler (lyd/video)\n4. Bruke Snapchats API uautorisert for datainnhenting\n5. Tvinge Snapchat til å gi deg tilgang uten rettslig grunnlag\nSTRAFF: Inntil 2 års fengsel (straffpl. § 204a)"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL – JURIDISK GRENSEDRAGNING (FIKTIVT, KURT):\nSCENARIO 1: LOVLIG\nHandling: Etterforsker søker \"k13_nord\" på Snapchat web og finner Public Story\nResultat: Ser bilde av penger postet kl. 23:45\nVurdering: Offentlig tilgjengelig → LOVLIG observasjon\nDokumentasjon: Screenshot + SHA-256 hash\n\nSCENARIO 2: GRÅSONE\nHandling: Etterforsker sender venneforespørsel til Kurt fra tjenestekonto\nResultat: Kurt godtar → etterforsker får se privat Story\nVurdering:\n- Teknisk lovlig (Kurt godkjente frivillig)\n- MEN: Kurt er 13 år (mindreårig) + aktiv kontakt\n- PROBLEMSTILLING: Kan dette tolkes som provokasjon?\nAnbefaling: IKKE GJØR DETTE uten jurist-klarsignal\n\nSCENARIO 3: ULOVLIG\nHandling: Etterforsker hacker Kurts Snapchat-passord via phishing\nResultat: Får tilgang til alle private meldinger\nVurdering: ULOVLIG dataavlesning (strpl. § 200a)\nKonsekvens: Bevis blir ugyldig i retten + straffeansvar for etterforsker"
+        },
+        {
+          "type": "paragraph",
+          "data": "5.2 Mindreårige under 15 år – Ekstra juridisk vern (Kurt-spesifikk)"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "KRITISK: Kurt er 13 år = UNDER kriminell lavalder (straffpl. § 46). Dette endrer HELE etterforskningen.\nJURIDISKE KONSEKVENSER:\n1. KURT KAN IKKE TILTALES\nProblem: Selv om Kurt har utført kriminelle handlinger, kan han ikke straffes\nLøsning: Saken håndteres via barnevern og konfliktråd\nFokus: Beskytte Kurt (offer) framfor straffeforfølgelse\n\n2. EKSTRA VARSOMHET VED DATAINNHENTING\nRegel: All Snapchat-aktivitet fra Kurt vurderes med TPS = MINST HØY sensitivitet\nBegrunnelse: Barn har ekstra personvern (Barnekonvensjonen art. 16)\nPraktisk: Dokumentér ALLE beslutninger skriftlig"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "FORBUDT ETTERFORSKNINGSTEKNIKK:\nALDRI:\n1. Sende melding til Kurt (aktiv kontakt)\n2. Be ham utføre handlinger (\"kan du møte meg?\")\n3. Late som du er jevnaldrende for å bygge tillit (grooming-teknisk)\n4. Publisere bilder av Kurt uten sladding\n5. Dele hans fulle navn i åpne dokumenter\nSTRAFF: Brudd på barnekonvensjonen + personopplysningsloven"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "TILLATT METODIKK:\nLOVLIG:\n1. Observere Public Stories (passiv)\n2. Kartlegge nettverk (hvem påvirker ham?)\n3. Analysere økonomiske spor (Vipps-transaksjoner)\n4. Kryssjekke mot andre plattformer\n5. Rapportere bekymring til barnevern\nFOKUS: Identifisere VOKSNE rekruttere (NordLink81, BKindustrien)"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL – BARNEVERNMELDING (FIKTIVT, KURT):\nMal for barnevernmelding:\n\"Undertegnede har i forbindelse med etterforskning av VaaS-nettverk observert\ndigital aktivitet fra mindreårig Kurt Mikkelsen (13 år, f. 220911) som indikerer\nrisiko for utnyttelse.\n\nOBSERVASJONER (Snapchat):\n- Kontakt med voksne personer med kriminell historikk (Anders Berg, 23 år)\n- Mottak av uforklarlige pengebeløp (Vipps: 1500 kr siste 3 uker)\n- Aktivitetsmønster utenfor foreldrekontroll (20:00-00:30)\n- Innhold på sosiale medier (penger, biler) som indikerer økonomisk aktivitet\n\nVURDERING:\nKurt vurderes som OFFER for rekruttering til kriminell virksomhet. Det er\nINGEN indikasjoner på at han selv leder aktivitet.\n\nANBEFALING:\nBarnevernkontakt for vurdering av omsorgssituasjon og beskyttelse mot videre\nutnyttelse.\nHjemmel: Barnevernloven § 4-2 (plikt til å melde bekymring)\""
+        },
+        {
+          "type": "paragraph",
+          "data": "5.3 Hva politiet får utlevert ved offisiell begjæring\nSNAPCHAT LAW ENFORCEMENT GUIDE (Oppdatert 2024 – REELT):\nSnapchat publiserer årlig en guide til politiet om hva som kan utleveres. Denne er offentlig tilgjengelig på: https://snap.com/en-US/privacy/transparency/law-enforcement\n\nKATEGORIER AV DATA:\n1. BASIS BRUKERINFORMASJON (Alltid tilgjengelig):\nNavn (hvis registrert)\nBrukernavn\nTelefonnummer (verifisert)\nE-postadresse (hvis registrert)\nOpprettelsesdato for konto\nEnhetsidentifikatorer (IMEI, Advertising ID)\nIP-adresser ved registrering\n\n2. INNHOLDS-DATA (Midlertidig tilgjengelig):\nUåpnede Snaps: Lagres opptil 30 dager\nÅpnede Snaps: Slettes umiddelbart (IKKE tilgjengelig)\nStories: Lagres i 24 timer (må begjæres raskt)\nChat-meldinger: Slettes etter 24 timer (eller ved chat-lukking)\nMemories: Lagres permanent (tilgjengelig)\n\n3. METADATA (Permanent tilgjengelig):\nPåloggingshistorikk (IP-adresser, tidsstempler)\nVenneliste (nåværende og historisk)\nSnap-historikk (hvem, når, IKKE innhold)\nChat-metadata (hvem, når, IKKE innhold)\nGPS-koordinater (siste 30 dager)\nEnhetsinfo (iPhone-modell, OS-versjon)"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "PRAKTISK EKSEMPEL – BEGJÆRING (FIKTIVT, KURT):\nSCENARIO: Politiet begjærer Kurts Snapchat-data 19. februar 2026.\n\nBEGJÆRING:\nTil: Snapchat Law Enforcement Operations\nFra: Politiet, Øst politidistrikt\nSak: VaaS-rekruttering, mindreårig offer\nDato: 19. februar 2026\n\nBegjæring om utlevering av data for:\n- Snapchat-konto: k13_nord\n- Navn: Kurt Mikkelsen (hvis registrert)\n- Periode: 01. februar 2026 – 19. februar 2026\n\nØNSKEDE DATA:\n1. Basis brukerinformasjon (telefon, e-post, opprettelsesdato)\n2. Venneliste (per 19.02.26)\n3. IP-adresse-logger (01.02-19.02)\n4. GPS-koordinat-historikk (01.02-19.02)\n5. Snap-metadata (hvem sendt til, tidsstempler)\n6. Chat-metadata (hvem chattet med, tidsstempler)\n7. Innhold av uåpnede Snaps (hvis tilgjengelig)\n\nHJEMMEL:\nStraffeprosessloven § 210 (beslag av elektronisk informasjon)\nSakstype: Vold (strl. § 273) i forbindelse med VaaS\nMindreårig involvert: JA (13 år)\n\nVEDLEGG:\n- Rettskjennelse (vedlegg A)\n- Sakssammendrag (vedlegg B)\n\nSNAPCHATS RESPONS (Forventet):\nUTLEVERT DATA:\n\n1. BASIS BRUKERINFORMASJON:\n- Brukernavn: k13_nord\n- Telefon: +47 918 34 512 (verifisert 15. juni 2025)\n- E-post: kurtmikkelsen2011@gmail.com\n- Opprettet: 15. juni 2025, kl. 14:23 UTC\n- Enhet: iPhone 12 (iOS 17.2)\n\n2. VENNELISTE (40 brukere):\n- @NordLink81 (lagt til: 12. januar 2026)\n- @BKindustrien (lagt til: 28. januar 2026)\n- [38 andre brukernavn]\n\n3. IP-ADRESSE-LOGGER (01.02-19.02):\n- 82.134.47.23 (Telenor, Lørenskog) – 156 pålogginger\n- 23.12.34.56 (Telenor mobil) – 89 pålogginger\n\n4. GPS-KOORDINATER (78 registreringer):\n- Hyppigst: 59.9302° N, 10.9563° E (hjemmeadresse)\n- Onsdager kl. 21:00: 59.9286° N, 10.9547° E (Rema 1000)\n\n5. SNAP-METADATA (234 Snaps sendt, 567 mottatt):\n- Høyest frekvens: @NordLink81 (89 Snaps sendt/mottatt)\n- Aktivitetstid: 20:00-00:30 (norsk tid)\n\n6. CHAT-METADATA:\n- @NordLink81: 156 meldinger sendt, 203 mottatt\n- Gjennomsnittlig responstid: 2 minutter\n\n7. INNHOLD (uåpnede Snaps):\n- 0 uåpnede Snaps tilgjengelig (alle åpnet)\n\nBEGRENSNINGER:\n- Innholdet av meldinger er END-TO-END-KRYPTERT (ikke tilgjengelig)\n- Åpnede Snaps er slettet (ikke tilgjengelig)\n- Stories eldre enn 24 timer er slettet (ikke tilgjengelig)\n\nTPS-VURDERING AV UTLEVERT DATA:\n| Data | T (Troverdighet) | P (Pålitelighet) | S (Sensitivitet) |\n|------|------------------|------------------|------------------|\n| Telefonnummer | A (verifisert av Snapchat) | 1 (bekreftet) | HØY (kobler til reell identitet) |\n| IP-adresse | A (serverlogget) | 1 (bekreftet) | HØY (geografisk plassering) |\n| GPS-koordinater | A (GPS-sensor) | 2 (sannsynlig korrekt) | HØY (fysisk bevegelse) |\n| Venneliste | A (serverlogget) | 1 (bekreftet) | MODERAT (sosial graf) |\n| Snap-metadata | A (serverlogget) | 1 (bekreftet) | HØY (kommunikasjonsmønster) |"
+        },
+        {
+          "type": "paragraph",
+          "data": "5.4 Sikringsbegjæring – Hindre sletting av bevis\nPROBLEMSTILLING: Snapchat sletter innhold automatisk (Stories etter 24t, meldinger etter åpning). Hvis politiet venter på rettskjennelse, kan bevis forsvinne.\nLØSNING: SIKRINGSBEGJÆRING (Preservation Request)\nHVA ER DET? En forespørsel til Snapchat om å «fryse» data i 90 dager mens politiet søker om rettslig kjennelse.\n\nHVORDAN FUNGERER DET:\nTRINN 1: Send sikringsbegjæring (ASAP)\nTil: lawenforcement@snap.com\nEmne: Preservation Request – Urgent\nVi ber om at data for følgende konto sikres i 90 dager:\n- Brukernavn: k13_nord\n- Telefon: +47 918 34 512 (hvis kjent)\n- Periode: 01.02.26 – [dagens dato]\nBegrunnelse: Pågående etterforskning av vold mot mindreårig.\nRettslig begjæring vil følge innen 90 dager.\nSaksnummer: [Intern referanse]\nKontaktperson: [Navn, telefon, e-post]\n\nTRINN 2: Snapchat bekrefter sikring (24-48 timer)\nSnapchat respons:\n\"Data for konto k13_nord er sikret i 90 dager fra [dato].\nInnholdet slettes IKKE før utløp av sikringsperiode.\nFormell begjæring må sendes innen 90 dager.\"\n\nTRINN 3: Søk rettslig kjennelse (innen 90 dager)\nPolitiet søker tingretten om kjennelse for databeslag (strpl. § 210).\nNår kjennelsen foreligger, sendes formell begjæring til Snapchat.\n\nTRINN 4: Snapchat utleverer data\nEtter kjennelse: Snapchat sender ZIP-fil med alle sikrede data."
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL – TIDSAKSE (FIKTIVT, KURT):\nDAG 1 (19. februar kl. 08:00):\nPolitiet observerer Kurts Story (bilde av penger)\nDAG 1 (kl. 09:00):\nPolitiet sender sikringsbegjæring til Snapchat\nDAG 2 (20. februar kl. 10:00):\nSnapchat bekrefter sikring (data fryses i 90 dager)\nDAG 15 (5. mars):\nPolitiet får rettslig kjennelse fra tingretten\nDAG 16 (6. mars):\nPolitiet sender formell begjæring med kjennelse til Snapchat\nDAG 30 (20. mars):\nSnapchat utleverer data (ZIP-fil med alle sikrede filer)\n\nUTEN SIKRING:\nStoryen ville vært slettet 20. februar kl. 08:00 (24 timer etter posting)"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "KRITISK LÆRINGSPOENG:\nTID ER KRITISK\nStories forsvinner etter 24 timer.\nSend sikringsbegjæring SAMME DAG som du observerer bevis."
+        },
+        {
+          "type": "paragraph",
+          "data": "5.5 Infiltrering av lukkede grupper – Grensen for provokasjon\nPROBLEMSTILLING: Kurt er medlem av Discord-serveren \"Lørenskog Gutta\" og Telegram-gruppen \"BK Nettverk\".\nHvordan får politiet tilgang uten å bryte forbudet mot provokasjon?\n\nLOVLIG METODE:\n1. PASSIV OBSERVASJON AV OFFENTLIGE GRUPPER\nLOVLIG:\n- Snapchat \"Public Stories\" kan ses uten medlemskap\n- Telegram offentlige kanaler er tilgjengelig for alle\n- Discord-servere med åpen invite-lenke kan observeres\nMETODE:\n1. Søk på Google: \"Lørenskog Gutta\" Discord invite\n2. Hvis åpen lenke finnes → bli medlem (passivt)\n3. LES innhold, men IKKE skriv meldinger\n4. Ta screenshot av relevant innhold\n\n2. INFORMANT-METODE\nLOVLIG (med varsomhet):\n- Eksisterende medlem (ikke politiansatt) deler innhold frivillig\n- Informanten tar screenshot og gir til politiet\n- VIKTIG: Informanten må IKKE oppfordres til å provosere\nJURIDISK GRENSE:\nHvis politiet INSTRUERER informanten til å:\n- Stille spørsmål til Kurt\n- Trigge kriminelle handlinger\n- Påvirke gruppedynamikk\n→ Dette er PROVOKASJON (ulovlig)\n\n3. RETTSLIG INFILTRASJON (Strpl. § 222d)\nKREVER KJENNELSE:\n- Politiet oppretter \"covert account\" (skjult identitet)\n- Blir medlem av lukket gruppe\n- Kan observere OG delta (begrenset) i samtaler\nVILKÅR:\n- Alvorlig kriminalitet (strl. § 273 – vold)\n- Ingen andre etterforskningsmetoder tilgjengelige\n- Kjennelse fra tingretten\nBEGRENSNING:\nINGEN provokasjon (kan ikke trigge kriminelle handlinger)"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL – JURIDISK KORREKT FREMGANGSMÅTE (FIKTIVT, KURT):\nSCENARIO: Politiet vet at Kurt er medlem av Telegram-gruppen \"BK Nettverk\" (142 medlemmer).\n\nFEIL FREMGANGSMÅTE:\nEtterforsker oppretter falsk profil \"Lars (18)\"\nSender melding til Kurt: \"Hei, jeg er ny i området, hører du kan ordne ting?\"\nKurt svarer: \"Ja, trenger du noe?\"\nEtterforsker: \"Kan du skaffe meg 10g?\"\n→ RESULTAT: PROVOKASJON (strpl. § 222c) – bevis ugyldig\n\nKORREKT FREMGANGSMÅTE:\nTRINN 1: Søk offentlig tilgjengelig info\nGoogle: \"BK Nettverk Telegram\"\nResultat: Gruppen er PRIVAT (krever invite)\n\nTRINN 2: Identifiser eksisterende medlem som samarbeider\nNordLink81 (Anders Berg) arresteres for annen sak\nTilbyr samarbeid i bytte for straffereduksjon\n\nTRINN 3: Be NordLink81 dele screenshot (passivt)\nNordLink81 gir politiet sine egne chat-logger (frivillig)\nScreenshot viser Kurts meldinger i gruppen\n\nTRINN 4: Bruk screenshot som grunnlag for formell begjæring\nPolitiet søker Telegram om utlevering av gruppens metadata"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "KRITISK LÆRINGSPOENG:\nHUSKEREGEL:\nPassiv observasjon = LOVLIG\nAktiv påvirkning = ULOVLIG (provokasjon)\nEKSEMPEL:\nLOVLIG: \"Bli med i gruppe og LES\"\nULOVLIG: \"Bli med og SPØR 'kan du ordne vold?'\""
+        },
+        {
+          "type": "paragraph",
+          "data": "5.6 IKT-krimenhets spesialverktøy – Hva kan de som du ikke kan?\nBEGRENSNINGER FOR VANLIG ETTERFORSKER:\nIngen admin-rettigheter på PC (kan ikke installere programvare)\nBegrenset tilgang til forensiske verktøy\nIngen kjennelse for dataavlesning\n\nHVA IKT-KRIMENHET HAR:\n1. CELLEBRITE / UFED (Universal Forensic Extraction Device)\nFUNKSJON:\n- Trekker ut ALL data fra beslaglagt iPhone/Android\n- Inkludert: Slettede Snapchat-meldinger, cache, metadata\n- Kan bryte passcode (begrenset til eldre iOS-versjoner)\nPRAKTISK BRUK (KURT):\n1. Beslaglegger Kurts iPhone 12\n2. Cellebrite-ekstraksjon (3-6 timer)\n3. Resultat: Snapchat SQLite-database med:\n- Slettede chat-meldinger (opptil 30 dager tilbake)\n- Memories (private arkiv)\n- Lokale cache-filer (bilder fra Stories)\n\n2. MALTEGO / ANALYST'S NOTEBOOK (Nettverksanalyse)\nFUNKSJON:\n- Visualiserer komplekse nettverk\n- Kobler Kurt → NordLink81 → BKindustrien automatisk\n- Identifiserer \"hub\"-personer (sentrale noder)\nPRAKTISK BRUK:\nInput: Kurts venneliste (40 personer) fra Snapchat-begjæring\nOutput: Graf som viser:\n- Kurt (perifer node)\n- NordLink81 (broker – kobler Kurt til BKindustrien)\n- BKindustrien (hub – mange koblinger)\n\n3. XRAY (Social Media Intelligence)\nFUNKSJON:\n- Automatisert BRÅK på tvers av plattformer\n- Søker brukernavn \"k13_nord\" på 200+ tjenester samtidig\n- Genererer rapport på sekunder\nPRAKTISK BRUK:\nInput: k13_nord\nOutput:\n- Snapchat: k13_nord (aktiv)\n- Instagram: kurt_mkn (aktiv)\n- Discord: K13#4782 (aktiv)\n- Reddit: k13_nrw (inaktiv)\n- TikTok: kurt13live (aktiv)\n\n4. ENCASE / FTK (Forensisk Toolkit)\nFUNKSJON:\n- Dyp analyse av lagringsmedier\n- Gjenoppretter slettede filer (filsystem-nivå)\n- Validerer integritet (hash-verifisering)\nPRAKTISK BRUK (KURT):\n1. Beslaglegger Kurts iPhone\n2. FTK-analyse (12-48 timer)\n3. Resultat: Gjenopprettet 34 slettede Snapchat-bilder fra cache\n\nNÅR SKAL DU ESKALERE TIL IKT-KRIMENHET?\nESKALER NÅR:\n1. Fysisk enhet er beslaglagt (iPhone, laptop)\n2. Kryptert kommunikasjon må analyseres (Telegram E2EE)\n3. Komplekst nettverk (50+ personer) må kartlegges\n4. Dataavlesning kreves (strpl. § 200a)\n5. Teknisk ekspertise mangler (API-integrasjon, scripting)\n\nFREMGANGSMÅTE:\n1. Skriv detaljert anmodning:\n\"Undertegnede trenger bistand til analyse av beslaglagt iPhone 12 tilhørende\nKurt Mikkelsen (13 år) i forbindelse med VaaS-sak. Ønsker Cellebrite-ekstraksjon\nav Snapchat-data inkludert slettede meldinger og GPS-metadata.\"\n2. Send til IKT-krimenhet via intern kanal\n3. Forventet responstid: 1-4 uker (avhengig av arbeidsmengde)"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL – BISTANDSFORESPØRSEL (FIKTIVT, KURT):\nTIL: IKT-krimenhet, Øst politidistrikt\nFRA: Etterforsker [Navn], Romerike lensmannskontor\nDATO: 19. februar 2026\nSAK: VaaS-rekruttering, mindreårig offer (Kurt Mikkelsen, 13 år)\n\nANMODNING OM TEKNISK BISTAND:\n\nBAKGRUNN:\nKurt Mikkelsen (13) er identifisert som offer for VaaS-rekruttering via Snapchat.\nNøkkelkontakt: Anders Berg (23, alias @NordLink81).\n\nBESLAGLAGT MATERIALE:\n- iPhone 12 (64GB), IMEI: 35xxxxxxxxxx\n- Beslagstidspunkt: 19.02.26 kl. 08:00\n- Status: Flymodus, 67% batteri, passcode ukjent\n\nØNSKET BISTAND:\n1. Cellebrite-ekstraksjon (full fysisk dump)\n2. Snapchat-data-rekonstruksjon:\n- Slettede chat-meldinger (spesielt @NordLink81)\n- GPS-historikk (Snap Map)\n- Lokale cache-filer (Stories)\n3. Nettverksanalyse (Maltego):\n- Kurts venneliste → identifiser sentrale noder\n4. Tidslinje-rekonstruksjon:\n- Korrelere Snapchat-aktivitet med Vipps-transaksjoner\n\nHASTEGRAD: MODERAT (ikke livsfare, men mindreårig involvert)\nFORVENTET RESPONS: 2 uker\n\nVEDLEGG:\n- Beslagsdokumentasjon (vedlegg A)\n- Sakssammendrag (vedlegg B)\n- Snapchat-observasjoner (vedlegg C)"
+        },
+        {
+          "type": "paragraph",
+          "data": "5.7 Beviskjede (Chain of Custody) – Sikre at bevis holder i retten\nHVA ER BEVISKJEDE? Dokumentert sporbarhet fra bevis sikres til det fremlegges i retten. ALLE som håndterer beviset må logges.\n\nKRITISKE PUNKTER FOR SNAPCHAT-BEVIS:\n1. SIKRING (Første kontakt med bevis)\nTRINN 1: Observasjon\n19. februar 2026, kl. 14:32 – Etterforsker [Navn] observerer Snapchat Story\nfra k13_nord via chrome browser på tjeneste-PC.\nTRINN 2: Screenshot\nKl. 14:33 – Screenshot tatt med Windows Snipping Tool\nFilnavn: 20260219_1432_snapchat_k13nord_story_penger.png\nStørrelse: 2,3 MB\nTRINN 3: Hash-generering\nKl. 14:35 – SHA-256 hash generert:\na7f3c9e2b5d8f1a3c7e9b2d5f8a1c3e7b9d2f5a8c1e3b7d9f2a5c8e1b3d7f9a2\nTRINN 4: Lagring\nKl. 14:36 – Fil kopiert til sikker server (\\\\evidence\\Kurt_Mikkelsen\\Snapchat\\)\nBackup: Ekstern harddisk (HD-EV-2026-02)\n\n2. OVERFØRING (Når andre håndterer beviset)\nLOGG:\n19.02.26 kl. 15:00 – Fil overlevert til IKT-krimenhet (mottaker: [Navn])\n20.02.26 kl. 10:00 – IKT-krimenhet returnerer analyserapport\n20.02.26 kl. 14:00 – Fil arkivert i saksmappen (ansvarlig: [Navn])\nHVER overføring dokumenteres med:\n- Dato/tid\n- Avsender\n- Mottaker\n- Hash-verifisering (bekrefter at fil er uendret)\n\n3. FREMLEGGELSE (I retten)\nFORSVARER STILLER SPØRSMÅL:\n\"Hvordan vet vi at dette bildet faktisk er fra Kurt Mikkelsens Snapchat?\"\nETTERFORSKER SVARER:\n\"Bildet ble sikret 19. februar 2026 kl. 14:32 via passiv observasjon av offentlig\nSnapchat Story. SHA-256 hash ble generert umiddelbart (a7f3c9e2...). Filen har\nvært lagret på sikker server med begrenset tilgang. Hash-verifisering bekrefter\nat bildet er uendret siden sikring. Metadata viser brukernavn k13_nord, som via\nkryssverifisering er identifisert som Kurt Mikkelsen (fødseldato 220911, adresse\nSkoleveien 12 Lørenskog).\""
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VANLIGE FEIL SOM ØDELEGGER BEVISKJEDE:\nFEIL 1: Manglende hash-verifisering\nProblem: Kan ikke bevise at fil er uendret\nLøsning: ALLTID generer SHA-256 umiddelbart etter sikring\nFEIL 2: Usikker lagring\nProblem: Fil lagret på privat PC (kan manipuleres)\nLøsning: Bruk BARE tjeneste-server med tilgangskontroll\nFEIL 3: Manglende dokumentasjon\nProblem: Ingen logg over hvem som har håndtert filen\nLøsning: Excel-logg med ALLE overføringer\nFEIL 4: Automatisk endring (metadata)\nProblem: Windows endrer \"siste endret\"-dato ved kopiering\nLøsning: Bruk forensisk kopieringsverktøy (robocopy /DCOPY:T)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Dato | Tid | Handling | Utført av | Mottaker | Hash (før) | Hash (etter) | Notater",
+            "19.02.26 | 14:32 | Sikring (screenshot) | [Navn] | - | - | a7f3c9e2... | Snapchat Story, k13_nord",
+            "19.02.26 | 14:36 | Lagring (server) | [Navn] | - | a7f3c9e2... | a7f3c9e2... | Verifisert uendret",
+            "19.02.26 | 15:00 | Overføring IKT | [Navn] | [Mottaker] | a7f3c9e2... | a7f3c9e2... | USB-overføring",
+            "20.02.26 | 10:00 | Retur fra IKT | [Mottaker] | [Navn] | a7f3c9e2... | a7f3c9e2... | Inkludert analyserapport",
+            "20.02.26 | 14:00 | Arkivering | [Navn] | - | a7f3c9e2... | a7f3c9e2... | Saksnr: 2026-123456"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "overskrift": "KAPITTEL 6: BRUKERPROFILERING OG IDENTITETSVERIFISERING",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "6.1 Verifisere ekte profil vs. alias – Lina vs. Kurt\nUTFORDRING: Hvordan vet du at \"k13_nord\" faktisk er Kurt Mikkelsen, og ikke noen som later som de er ham?\n\nVERIFIKASJONSNIVÅER:\nNIVÅ 1: BRUKERNAVN-MATCH (Lav sikkerhet)\nMETODE:\nSøk \"k13_nord\" på Snapchat\nFinn profil med Display Name \"Kurt\"\nTPS-VURDERING:\nT: D (ingen verifisering av identitet)\nP: 4 (kan være hvem som helst)\nS: Lav (kun digitalt alias)\nKONKLUSJON: IKKE NOK for juridisk identifikasjon\n\nNIVÅ 2: PROFILBILDE-SAMMENLIGNING (Moderat sikkerhet)\nMETODE:\n1. Screenshot av k13_nord profilbilde (Snapchat)\n2. Screenshot av @kurt_mkn profilbilde (Instagram)\n3. Reverse Image Search (Google Images, TinEye)\n4. Sammenlign visuelt (samme person?)\nRESULTAT (KURT):\n- Identisk Bitmoji (svart hettegenser)\n- Ingen treff på Google Images (ikke stjålet bilde)\n- Konklusjon: Sannsynligvis samme person\nTPS-VURDERING:\nT: C (anonymt alias, men konsistent identitet)\nP: 3 (mulig samme person)\nS: Moderat\nKONKLUSJON: Indikerer sammenheng, men ikke juridisk bevis\n\nNIVÅ 3: KRYSSVERIFISERING MED FOLKEREGISTERET (Høy sikkerhet)\nMETODE:\n1. Identifiser mulig reelt navn via andre plattformer\n- Instagram @kurt_mkn har bio: \"13 | Lørenskog\"\n2. Søk 1881.no:\nInput: \"Kurt\" \"Lørenskog\" \"13 år\"\nResultat: Kurt Mikkelsen, f. 220911, Skoleveien 12, 1473 Lørenskog\n3. Bekreft geografisk match:\n- Snap Map viser k13_nord ved koordinater 59.9302° N, 10.9563° E\n- Google Maps: Skoleveien 12 = 59.9302° N, 10.9563° E\n- MATCH\n4. Bekreft alderskohberens:\n- Instagram bio: \"13\"\n- Folkeregisteret: 13 år (født 2011)\n- MATCH\n5. Bekreft språkmønster:\n- Snapchat: Små bokstaver, slang, lokale referanser (\"Lørenskog\")\n- Instagram: Identisk språkmønster\n- TikTok: Identisk språkmønster\n- MATCH\nTPS-VURDERING:\nT: B (identitet bekreftet via flere uavhengige kilder)\nP: 2 (sannsynligvis korrekt)\nS: HØY (mindreårig, nå koblet til juridisk person)\nKONKLUSJON: JURIDISK TILSTREKKELIG for identifikasjon\n\nNIVÅ 4: TELEFONNUMMER-VERIFISERING (Svært høy sikkerhet)\nMETODE:\n1. Snapchat-begjæring utleverer telefonnummer: +47 918 34 512\n2. Kryssjekk 1881.no: +47 918 34 512 = Kurt Mikkelsen, Skoleveien 12\n3. MATCH\nTPS-VURDERING:\nT: A (telefonnummer verifisert av Snapchat + offentlig register)\nP: 1 (bekreftet)\nS: HØY (personidentifiserbar informasjon)\nKONKLUSJON: DEFINITIV identifikasjon"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "PRAKTISK GJENNOMGANG – STEG FOR STEG:\nCASE: Lina Grim (ENKEL)\nTRINN 1: Søk Snapchat\nInput: linapina96\nResultat: Profil med Display Name \"Lina Grim\"\nTRINN 2: Kryssjekk Instagram\nInput: @linapina96\nResultat: Profil med ekte navn \"Lina Grim\", alder 24, Oslo\nTRINN 3: Kryssjekk 1881.no\nInput: \"Lina Grim\" \"Oslo\"\nResultat: Lina Grim, 24 år, [Adresse], Oslo\nKONKLUSJON:\nLina bruker ekte navn overalt (høy T), lett verifiserbar (P: 1), voksen (S: Lav)\nTotal tid: 5 minutter"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "CASE: Kurt Mikkelsen (KOMPLEKS)\nTRINN 1: Søk Snapchat\nInput: k13_nord\nResultat: Profil med Display Name \"Kurt\" (IKKE fullt navn)\nTRINN 2: Google-søk for kryssverifisering\nInput: \"k13_nord\"\nResultat: Instagram @kurt_mkn (bio: \"13 | Lørenskog\")\nTRINN 3: Utled mulig identitet\n- \"Kurt\" + \"13 år\" + \"Lørenskog\" = Kurt Mikkelsen (via 1881.no)\nTRINN 4: Bekreft geografisk\n- Snap Map: 59.9302° N, 10.9563° E\n- Kurt Mikkelsens adresse (1881): Skoleveien 12 = 59.9302° N\n- MATCH\nTRINN 5: Bekreft språkmønster\n- Snapchat: små bokstaver, \"bror\", \"ordner\", emojier\n- Instagram: Identisk\n- Discord: Identisk (K13#4782)\n- MATCH\nTRINN 6: Formell begjæring (hvis nødvendig)\n- Be Snapchat om telefonnummer for k13_nord\n- Resultat: +47 918 34 512 = Kurt Mikkelsen (1881.no)\n- DEFINITIV MATCH\nKONKLUSJON:\nKurt bruker alias (lav T initialt), men kryssverifisering bekrefter identitet (P: 2 → 1)\nMindreårig (S: HØY)\nTotal tid: 2 timer (uten begjæring), 2-4 uker (med begjæring)"
+        },
+        {
+          "type": "paragraph",
+          "data": "6.2 Språkanalyse – Avdekke alder og miljø\nHVORFOR SPRÅKANALYSE? Måten brukere skriver på Snapchat avslører:\nAlder (generasjonsmarkører)\nGeografisk plassering (dialektord)\nUtdanningsnivå (ortografi, grammatikk)\nSosial tilhørighet (slang, kodespråk)\n\nALDERSMARKØRER:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Alderskap | Typiske trekk | Eksempel (Snapchat-melding)",
+            "13-15 år | Små bokstaver, ingen punktum, emojier som erstatning, kortformer | bror skal vi møtes eller hva",
+            "16-18 år | Begynner å bruke stor forbokstav, fortsatt emojier, slang | Bror skal vi møtes eller?",
+            "19-25 år | Blanding formelt/uformelt, memes, ironisk bruk av emojier | Skal vi møtes eller skal vi late som vi har planer?",
+            "26-35 år | Mer formelt, færre emojier, fullstendige setninger | Skal vi møtes? Kl 19?",
+            "36+ år | Formelt, punktum, stor forbokstav, sjelden slang | Hei. Skal vi møtes klokken 19:00?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KURT MIKKELSEN (13 ÅR) – SPRÅKPROFIL:\nSYNTAKS (Setningsstruktur):\n- Små bokstaver (ALLTID, selv i starten av setning)\n- Ingen punktum (kun i svært formelle kontekster)\n- Korte setninger (3-7 ord)\n- Emojier integrert i tekst (ikke separat)\n\nLEKSIKON (Ordforråd):\n- \"bror\" = venn (ikke biologisk bror)\n- \"ordner\" = fikser/gjør\n- \"lett\" = enkelt (ofte om penger: \"tjene lett\")\n- \"kid\" = selvironisk for \"gutt\"\n- \"gjør'n\" = gjøre det (sammentrekking)\n\nEMOJIER:\n- styrke, trening, innsats\n- kult, bra, heftig\n- penger, inntjening\n- norsk, lokal\n\nEKSEMPLER (FIKTIVT):\n\"hva skjer bror\"\n\"skal ordne det i kveld\"\n\"lett å fikse\"\n\"stakkars kid\" (om seg selv)\n\nLINA GRIM (24 ÅR) – SPRÅKPROFIL:\nSYNTAKS:\n- Stor forbokstav (i starten av setning)\n- Punktum og utropstegn (hyppig)\n- Lengre setninger (10-15 ord)\n- Mer formell struktur\n\nLEKSIKON:\n- \"Kjempeglad!\" (ikke \"glaaad\")\n- \"Nydelig\" (ikke \"kult\")\n- \"Elsker\" (hyppig bruk)\n- \"Gøy\" (i stedet for \"kult\")\n\nEMOJIER:\n- elsker\n- magisk, spesielt\n- kaffe-kultur\n- vennskap\n\nEKSEMPLER (FIKTIVT):\n\"Så glad for dagen i dag!\"\n\"Elsker dette været\"\n\"Nydelig lunsj med venner!\"\n\nGEOGRAFISKE MARKØRER:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Dialektord | Region | Eksempel (Snapchat)",
+            "dæven | Østlandet | dæven så kult",
+            "kjempe- prefix | Oslo/Akershus | kjempebra",
+            "du (i stedet for deg) | Østlandet | skal ringe du",
+            "å få (i stedet for å ta) | Trøndelag | skal få meg en kebab",
+            "itj (ikke) | Nord-Norge | itj bra"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KURT (LØRENSKOG/AKERSHUS):\nEKSEMPEL:\n\"skal møtes bak rema du eller hva\"\n↑               ↑\n\"møtes\" (ikke \"treffes\")  \"du\" (ikke \"deg\")\n\nTypisk Østlandet-dialekt i skrift\nKRIMINELT KODESPRÅK PÅ SNAPCHAT:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Kodeord | Faktisk betydning | Kontekst | Sikkerhetsnivå",
+            "jobb | Kriminell oppgave | skal på jobb kl 21 | Høy T (verifisert via repetisjon)",
+            "ride | Transport (ofte til kriminell handling) | trenger ride i kveld | Moderat T",
+            "ordne | Utføre (kriminell handling) | skal ordne det nå | Moderat T",
+            "business | Kriminell virksomhet | business går bra | Høy T",
+            "pakke | Narkotika/våpen | har pakken klar | Høy T",
+            "møte | Fysisk treff (levering/betaling) | møtes 21 | Lav T (kan være legitimt)"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "PRAKTISK ANALYSE – KURT EKSEMPEL (FIKTIVT):\nSNAPCHAT-CHAT (observert via informant):\nKURT: \"bror trenger du noe\"\n[15 min pause]\nKURT: \"kan ordne i kveld\"\n[2 min pause]\nKURT: \"møtes bak rema 21\"\n[30 min pause]\nKURT: \"gjør'n lett\"\n\nANALYSE:\nALDERSMARKØR:\nSmå bokstaver → 13-16 år (bekrefter Kurts alder)\n\"bror\" (venn-tittel) → Typisk ungdomsslang\n\"gjør'n\" (sammentrekning) → Generasjon Z\nGEOGRAFISK:\n\"bak rema\" → Lokal referanse (Rema 1000 Lørenskog)\n\"møtes\" (ikke \"treffes\") → Østlandet-dialekt\nKRIMINELL INDIKATOR:\n\"ordne\" i ubestemt kontekst → Potensielt kriminelt\n\"møtes 21\" (sent kveld) → Utenfor normal ungdomsaktivitet\n\"lett\" (enkelt) → Bagatelliserende tone\n\nTPS-VURDERING:\nT: C (anonym chat, men konsistent språkmønster bekrefter Kurt)\nP: 3 (mulig kriminell kontekst, men ikke definitivt)\nS: HØY (mindreårig + potensielt kriminelt innhold)\nKONKLUSJON: Språkanalyse bekrefter alder (13-16 år) og geografisk plassering (Østlandet). Kodeord \"ordne\" + sent møtetidspunkt indikerer mulig kriminell aktivitet.\nKrever ytterligere kryssverifisering (Vipps, fysisk observasjon)."
+        },
+        {
+          "type": "paragraph",
+          "data": "6.3 Rekonstruere daglig rutine via Snapchat\nDATAPOENG FOR TIDSLINJEANALYSE:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Datakilde | Hva den viser | Nøyaktighet | TPS",
+            "Snap Map-logg | Fysisk plassering når kart åpnes | GPS (10-50m) | A-2-HØY",
+            "Story-posting-tid | Når innhold deles | Eksakt (servertidsstempel) | A-1-MODERAT",
+            "Snap Score-endring | Aktivitetsperioder | Estimert (basert på differanse) | B-3-LAV",
+            "Chat-metadata | Når meldinger sendes | Eksakt (servertidsstempel) | A-1-HØY",
+            "Ghost Mode-aktivering | Når brukeren skjuler seg | Binær (på/av, ikke hvorfor) | B-2-HØY"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KURT MIKKELSENS DAGLIGE RUTINE (REKONSTRUERT):\nMANDAG-FREDAG (Skoledag):\n07:00-08:00 | INAKTIV | Hjemme/transport\n- Snap Score endres ikke\n- Snap Map viser ikke aktivitet\n- Inferens: Sover/forbereder seg til skole\n08:00-14:00 | LAV AKTIVITET | Lørenskog ungdomsskole\n- Snap Map: 59.9294° N, 10.9511° E (skolens koordinater)\n- Snap Score øker med ~10 poeng (sporadiske Snaps)\n- Inferens: På skole (begrenset telefon-bruk)\n14:00-16:00 | MODERAT AKTIVITET | Hjemme\n- Snap Map: Hjemmeadresse (59.9302° N, 10.9563° E)\n- Snap Score øker med ~30 poeng\n- Inferens: Scroller TikTok, Snapchat Stories\n16:00-18:00 | MODERAT AKTIVITET | Lørenskog Treningssenter\n- Snap Map: 59.9286° N, 10.9547° E\n- Instagram: Gym-Story kl. 17:23 (typisk)\n- Inferens: Gym-økt (konsistent tirsdager og torsdager)\n18:00-20:00 | LAV AKTIVITET | Hjemme\n- Snap Map: Hjemmeadresse\n- Snap Score øker minimalt (~5 poeng)\n- Inferens: Middag, lekser\n20:00-00:30 | SVÆRT HØY AKTIVITET | Hjemme (rom)\n- Snap Score øker med ~150 poeng (hovedaktivitet)\n- Chat-metadata: Høy frekvens med @NordLink81\n- Stories postes (penger, motivasjon)\n- Inferens: Hovedkommunikasjonsperiode (utenfor foreldrekontroll)\n00:30-07:00 | INAKTIV | Søvn\n- Ingen Snap Score-endring\n- Snap Map offline\n\nONSDAGS-AVVIK (KRITISK MØNSTER):\n21:00 | Snap Map aktiv: 59.9286° N, 10.9547° E (bak Rema 1000)\n21:15 | Ghost Mode aktiveres (forsvinner fra Snap Map)\n21:45 | Snap Map aktiv igjen: 59.9302° N (hjemmeadresse)\n22:03 | Vipps-transaksjon: +500 kr fra \"NordLink\"\nTOLKNING:\n1. Kurt møter noen fysisk (21:00)\n2. Aktiverer Ghost Mode under møtet (21:15) = bevisst skjuling\n3. Returnerer hjem (21:45)\n4. Mottar betaling kort tid etter (22:03)\nHYPOTESE: Oppdrag utført (VaaS-levering?) → betaling\nTPS: T: B (repeterende mønster, 4 av 5 onsdager), P: 2 (sannsynlig sammenheng), S: HØY\n\nPRAKTISK GJENNOMGANG – LAG TIDSLINJE:\nTRINN 1: Samle data (2 ukers periode)\nEXCEL-MAL:\n| Dato | Tid | Aktivitet | Kilde | GPS-koordinater | Notater |\n|------|-----|-----------|-------|-----------------|---------|\n| 13.02 | 21:00 | Snap Map aktiv | Snapchat | 59.9286, 10.9547 | Bak Rema 1000 |\n| 13.02 | 21:15 | Ghost Mode | Snapchat | - | Forsvinner fra kart |\n| 13.02 | 21:47 | Snap Map aktiv | Snapchat | 59.9302, 10.9563 | Hjemmeadresse |\n| 13.02 | 22:03 | Vipps | Indirekte | - | +500 kr fra NordLink |\n| 13.02 | 23:45 | Story postet | Snapchat | - | Bilde av penger |\n\nTRINN 2: Visualiser (diagram)\nTIDSLINJE-GRAF (horisontalt):\n07:00 -------- [INAKTIV] -------- 08:00\n08:00 -------- [SKOLE] ---------- 14:00\n14:00 --- [HJEMME] --- 16:00\n16:00 -- [GYM] -- 18:00\n18:00 - [HJEMME] - 20:00\n20:00 ================= [HØYAKTIVITET] ================= 00:30\n↑\n21:00 [MØTE] → 21:15 [GHOST] → 21:45 [HJEMME] → 22:03 [BETALING]\n\nTRINN 3: Identifiser mønstre\nUKENTLIG MØNSTER:\nMandag: Normal rutine\nTirsdag: Gym kl. 17:00\nOnsdag: AVVIK (møte kl. 21:00)\nTorsdag: Gym kl. 17:00\nFredag: Normal rutine\nLørdag: Varierer (Oslo sentrum, kjøpesenter)\nSøndag: Hjemme (høy Snapchat-aktivitet)\n\nTRINN 4: Rapportskriving\nFAKTADEL:\n\"Analyse av Kurt Mikkelsens Snap Map-aktivitet over 14 dager (01.02-15.02.26)\nviser et konsistent mønster med avvik hver onsdag kl. 21:00. Kurt observeres ved\nkoordinater 59.9286° N, 10.9547° E (bak Rema 1000 Lørenskog) kl. 21:00, aktiverer\nGhost Mode kl. 21:15, og returnerer til hjemmeadresse kl. 21:45. Dette mønsteret\ngjentar seg 4 av 5 onsdager i perioden.\"\n\nANALYSEDEL:\n\"Ghost Mode-aktivering under fysisk opphold ved Rema 1000 indikerer bevisst skjuling\nav lokasjon. Korrelasjon med Vipps-transaksjoner (+500 kr, 22:03 samme kveld) fra\nidentifisert kontakt (@NordLink81) styrker hypotesen om fysiske møter relatert til\nkriminell aktivitet. Alternativhypotese: Kurt møter legitimt bekjente og skjuler\nlokasjon av personvernhensyn. Dette vurderes som mindre sannsynlig grunnet økonomiske\ntransaksjoner og sent tidspunkt (utenfor normal ungdomsaktivitet).\""
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "overskrift": "KAPITTEL 7: BRÅK-METODIKK OG EKSPLOITS",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "7.1 Sikkerhetsinnstillinger brukere ofte glemmer\nPROBLEMSTILLING: Snapchat har omfattende personverninnstillinger, men de fleste brukere (inkludert Kurt) aktiverer dem aldri. Dette skaper BRÅK-muligheter.\nKRITISKE INNSTILLINGER SOM OFTE STÅR PÅ \"ÅPEN\":\n\n1. SNAP MAP – DELING MED ALLE VENNER\nSTANDARDINNSTILLING (KURT):\n- \"Deling med venner\" = PÅ\n- Vises på kart hver gang han åpner kamera\n- 24-timers historikk synlig\nHVORDAN KURT BURDE ENDRE:\n1. Åpne Snap Map\n2. Trykk tannhjul (innstillinger)\n3. Velg \"Ghost Mode\" (permanent)\n4. ELLER: \"Bare disse vennene...\" (velg 2-3 betrodde)\nKONSEKVENS FOR ETTERFORSKNING:\nSå lenge Kurt ikke endrer dette = vi ser hans bevegelser i sanntid\n\n2. HVEM KAN KONTAKTE MEG\nSTANDARDINNSTILLING (KURT):\n- \"Alle\" kan sende ham Snaps\n- \"Alle\" kan se hans offentlige Stories\n- Ingen filtrering av ukjente\nHVORDAN KURT BURDE ENDRE:\nInnstillinger → Personvern → Kontakt meg\n→ Velg \"Kun venner\"\nKONSEKVENS FOR ETTERFORSKNING:\nSå lenge dette står på \"Alle\" = vi kan se Public Stories uten venneforespørsel\n\n3. SE MIN STORY\nSTANDARDINNSTILLING (KURT):\n- \"Venner\" (men ikke \"Kun disse vennene\")\n- Betyr: Alle 40 venner ser hans Stories\nSIKKER INNSTILLING:\n\"Kun disse vennene...\" → Velg 5-10 betrodde\nKONSEKVENS FOR ETTERFORSKNING:\nHvis vi har infiltrert via nettverk = vi ser Stories\n\n4. TILLAT ANDRE Å FINNE MEG VIA\nSTANDARDINNSTILLING (KURT):\n- Telefonnummer = PÅ\n- Bruker meg i Quick Add = PÅ\nSIKKER INNSTILLING:\nBegge = AV\nKONSEKVENS FOR ETTERFORSKNING:\nVi kan søke på Kurts telefonnummer (+47 918 34 512) og finne profilen direkte\n\n5. SPECTACLES-OPPTAK (METADATA)\nSTANDARDINNSTILLING:\n- GPS-data inkluderes i opptak fra Spectacles (Snapchat-briller)\nSIKKER INNSTILLING:\nFjern GPS-tagging\nKONSEKVENS FOR ETTERFORSKNING:\nHvis Kurt bruker Spectacles = EXIF-data viser nøyaktig lokasjon\n\nPRAKTISK SJEKKLISTE – \"GLEMT SIKKERHET\":\nSJEKK DISSE NÅR DU KARTLEGGER EN BRUKER:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "□ Er Snap Map aktivert? (Søk brukernavnet på snapchat.com/map)",
+            "□ Er Stories satt til \"Alle\" eller \"Venner\"? (Prøv å se uten venneforespørsel)",
+            "□ Kan du søke profilen via telefonnummer? (Test i app)",
+            "□ Vises brukeren i Quick Add? (Se forslag når du åpner \"Legg til venner\")",
+            "□ Har brukeren deaktivert screenshot-varsel? (Sjelden, men test)",
+            "□ Er Memories satt til \"Kun meg\" eller \"Venner\"? (Metadata ved begjæring)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "EKSEMPEL – KURT vs. LINA (FIKTIVT):"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Innstilling | Kurt (13 år) | Lina (24 år) | Etterforskningsmulighet",
+            "Snap Map | Venner (40 personer) | Venner (243 personer) | Kurt: Målrettet overvåking, Lina: Bred observasjon",
+            "Story-synlighet | Venner | Alle | Kurt: Krever nettverkstilgang, Lina: Direkte tilgjengelig",
+            "Telefonsom | PÅ | PÅ | Begge: Søkbar via nummer",
+            "Ghost Mode | AV (men aktiveres onsdager) | ALLTID AV | Kurt: 6/7 dager synlig, Lina: Alltid synlig"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "7.2 Historiske data – Cache og arkiv\nSNAPCHAT LAGRER MIDLERTIDIG DATA LOKALT:\nSelv om Snaps \"forsvinner\", lagres de i telefonens cache før permanent sletting. Dette skaper muligheter for forensisk analyse.\n\nHVOR SNAPCHAT-CACHE LAGRES:\niOS (iPhone):\n/var/mobile/Containers/Data/Application/[Snapchat-UUID]/Library/Caches/\nInneholder:\n- tmp/ (midlertidige Story-filer, 24t)\n- SCContent/ (nedlastede Snaps, opptil 7 dager)\n- Blobs/ (profilbilder, opptil 30 dager)\n\nAndroid:\n/data/data/com.snapchat.android/cache/\nInneholder:\n- received_image_snaps/ (mottatte bilde-Snaps)\n- received_video_snaps/ (mottatte video-Snaps)\n- stories/ (Stories fra venner)\n\nPRAKTISK UTNYTTELSE (KREVER FYSISK TILGANG):\nMETODE 1: Manuell cache-uttrekk (iOS, med jailbreak)\nFORUTSETNING:\n- Kurts iPhone er beslaglagt\n- Enheten er jailbreaket (sjelden, men mulig)\nTRINN 1: Koble til Mac via USB\nTRINN 2: Åpne iFunBox (gratis verktøy)\nTRINN 3: Naviger til Snapchat cache-mappe\nTRINN 4: Eksporter alle filer til sikker lokasjon\nTRINN 5: Åpne bildefiler med forensisk viewer\nRESULTAT:\n- Slettede Snaps (opptil 7 dager gamle)\n- Stories Kurt har sett (opptil 24t gamle)\n- Profilbilder fra kontakter\n\nMETODE 2: Forensisk verktøy (Cellebrite)\nFORUTSETNING:\n- Kurts iPhone er beslaglagt\n- Sendt til IKT-krimenhet\nCELLEBRITE-PROSESS:\n1. Fysisk dump av iPhone (full kopi av lagring)\n2. Parsing av Snapchat-database (SQLite)\n3. Rekonstruksjon av slettede filer via filsystem-analyse\nRESULTAT (TYPISK):\n- 34 slettede Snaps (bilder/videoer)\n- 156 chat-meldinger (tekst)\n- GPS-koordinater for hvert Snap (hvis tilgjengelig)\n- Tidsstempler for alle handlinger\n\nSNAPCHAT MEMORIES – BRUKERENS PRIVATE ARKIV:\nHVA ER MEMORIES? Snapchats skybaserte arkiv hvor brukere kan lagre utvalgte Snaps permanent.\nHVORDAN FÅ TILGANG:\nMETODE 1: Fysisk tilgang til Kurts telefon\n1. Åpne Snapchat-app\n2. Sveip opp fra kameraskjerm\n3. \"Memories\" åpnes\n4. Se alle lagrede Snaps (organisert etter dato)\n5. Screenshot alt (eksternt kamera for å unngå varsel)\n\nMETODE 2: Juridisk begjæring til Snapchat\nBegjæring: \"Utlevering av Memories for konto k13_nord\"\nSNAPCHATS RESPONS:\n- ZIP-fil med alle lagrede Snaps (full oppløsning)\n- Metadata (opprettelsesdato, GPS-koordinater, enhetsinfo)\nTPS: T: A (verifisert av Snapchat), P: 1 (bekreftet), S: HØY (privat arkiv)"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL – KURT (FIKTIVT):\nSCENARIO:\nPolitiet begjærer Kurts Memories 19. februar 2026.\nSNAPCHATS RESPONS:\n\"Bruker k13_nord har 47 Snaps lagret i Memories (periode: 15.06.25 - 18.02.26)\"\nINNHOLD:\n- 23 gym-selfies (bekreftelse av treningsrutine)\n- 12 bilder av penger (indikerer økonomisk aktivitet)\n- 8 bilder fra biler (BMW-interiør, ulike registreringsskilt)\n- 4 screenshots av Vipps-transaksjoner (KRITISK BEVIS)\nKRITISK FUNN:\nScreenshot av Vipps-transaksjon 13. februar: +500 kr fra \"NordLink\"\nMetadata: Opprettet 13.02.26 kl. 22:05 (2 minutter etter betaling)\nTOLKNING:\nKurt dokumenterer betalinger i Memories = bevisst arkivering av \"inntekt\""
+        },
+        {
+          "type": "paragraph",
+          "data": "7.3 Informasjon fra \"private\" profiler\nPROBLEMSTILLING: Kurt har satt sin Story til \"Kun venner\". Hvordan får vi tilgang uten venneforespørsel?\nLOVLIGE METODER:\nMETODE 1: Venneliste-lekkasje via Quick Add\nHVORDAN DET FUNGERER:\nSnapchats \"Quick Add\"-funksjon foreslår venner basert på:\n- Felles venner (A er venn med B, B er venn med C → A får forslag om C)\n- Telefon-kontakter (hvis Kurt har ditt nummer i telefonen)\n- Lokasjonsbasert (brukere i samme område)\nPRAKTISK UTNYTTELSE:\n1. Identifiser EN av Kurts venner (f.eks. via Instagram-kommentarer)\n2. Søk opp denne vennen på Snapchat\n3. Se på Quick Add-forslag fra denne profilen\n4. Kurt vil sannsynligvis dukke opp som forslag (felles venn)\n5. Gjenta prosessen med flere av Kurts venner\n6. Bygge komplett nettverkskart"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL (FIKTIVT, KURT):\n→ Instagram viser at Kurt kommenterer på @skolevenn1\n→ Søk @skolevenn1 på Snapchat\n→ Quick Add viser: k13_nord, @skolevenn2, @skolevenn3\n→ Nå har vi identifisert 3 av Kurts Snapchat-venner"
+        },
+        {
+          "type": "paragraph",
+          "data": "METODE 2: Snap Map-proximitet (hvis ikke Ghost Mode)\nHVORDAN DET FUNGERER:\nSelv om Kurts Story er privat, vises hans Bitmoji på Snap Map (hvis aktivert).\nPRAKTISK UTNYTTELSE:\n1. Åpne snapchat.com/map\n2. Søk på Lørenskog (59.9286, 10.9547)\n3. Zoom inn på Rema 1000\n4. Se hvilke Bitmoji som er nær Kurts kjente oppholdssted\n5. Klikk på hvert Bitmoji → se brukernavn\n6. Kryssjekk mot kjente kontakter (@NordLink81)\nRESULTAT:\nIdentifikasjon av fysiske møter via Snap Map (selv uten venneforespørsel)\n\nMETODE 3: Tagging-lekkasje fra andres Stories\nHVORDAN DET FUNGERER:\nHvis Kurts VENNER poster Public Stories og tagger Kurt, kan vi se disse.\nPRAKTISK UTNYTTELSE:\n1. Søk på \"#lørenskog\" eller \"#lørenskog ungdomsskole\"\n2. Se gjennom Public Stories fra Lørenskog-området\n3. Finn Stories hvor Kurt er tagget (@k13_nord)\n4. Selv om Kurts egen Story er privat, vises han i andres Stories\nEKSEMPEL (FIKTIVT):\n@skolevenn1 poster Public Story: Gruppebilde fra skolen med tagging \"@k13_nord\"\n→ Vi kan nå se Kurt på bildet (identifiserer utseende, klesvalg, vennegruppe)\n\nMETODE 4: Snapcode-scanning (fysisk møte)\nHVORDAN DET FUNGERER:\nHver Snapchat-bruker har en unik \"Snapcode\" (QR-kode) som kan scannes for å legge til venn.\nPRAKTISK UTNYTTELSE (TEORETISK):\n1. Fysisk observasjon av Kurt\n2. Hvis han viser Snapcode til noen (f.eks. skole)\n3. Fotografer Snapcode med zoom-linse\n4. Scan koden → legg til Kurt som venn"
+        },
+        {
+          "type": "callout",
+          "kind": "LEGAL",
+          "data": "JURIDISK PROBLEMSTILLING:\nDette er AKTIV KONTAKT (han vil se venneforespørsel fra ukjent)\n→ IKKE ANBEFALT ved mindreårige"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "ULOVLIGE METODER (TIL SAMMENLIGNING):\nMETODE 1: Falsk profil (grooming-teknikk)\nOpprette profil som later som den er jevnaldrende\nSende venneforespørsel til Kurt\n→ Dette er PROVOKASJON (kan straffe etterforskeren)\n\nMETODE 2: Hacke vennens konto\nFå tilgang til @skolevenn1 sin Snapchat\nSe Kurts private Stories via denne kontoen\n→ Dette er DATAINNBRUDD (straffbart)\n\nMETODE 3: Tvinge Snapchat til tilgang uten kjennelse\nBe Snapchat om tilgang til Kurts private innhold uten rettslig grunnlag\n→ Dette vil bli avvist (og rapportert til norske myndigheter)"
+        },
+        {
+          "type": "paragraph",
+          "data": "7.4 Avanserte søkeoperatorer (Google Dorks) for Snapchat\nHVA ER GOOGLE DORKS? Spesialiserte søkekommanderinger som filtrerer Google-resultater for å finne skjult informasjon.\nSNAPCHAT-SPESIFIKKE DORKS:\n\n1. FINNE PROFILER VIA SNAPCODE-BILDER\nSØKESTRENG:\nsite:pinterest.com \"snapchat\" \"snapcode\" \"k13\"\nFORKLARING:\n- site:pinterest.com = Søk kun på Pinterest\n- \"snapchat\" = Må inneholde ordet Snapchat\n- \"snapcode\" = Må inneholde ordet Snapcode\n- \"k13\" = Kurts brukernavn\nRESULTAT (TEORETISK):\nBrukere som har delt sin Snapcode på Pinterest (Kurt kan ha gjort dette for å få flere venner)\n\n2. FINNE MENTIONS AV BRUKERNAVN\nSØKESTRENG:\n\"k13_nord\" -site:snapchat.com\nFORKLARING:\n- \"k13_nord\" = Nøyaktig match (i anførselstegn)\n- -site:snapchat.com = IKKE fra Snapchat selv (ekskluder)\nRESULTAT:\n- Instagram-profiler som nevner k13_nord\n- Twitter/X-tweets\n- Reddit-kommentarer\n- Forum-innlegg"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL-RESULTAT (FIKTIVT):\nReddit-post fra u/k13_nrw: \"Legg meg til på Snap: k13_nord\"\n→ Bekrefter sammenheng mellom Reddit og Snapchat"
+        },
+        {
+          "type": "paragraph",
+          "data": "3. FINNE SCREENSHOTS AV SNAPCHAT-INNHOLD\nSØKESTRENG:\nsite:imgur.com OR site:imgbb.com \"snapchat\" \"k13\"\nFORKLARING:\n- site:imgur.com OR site:imgbb.com = Bildehosting-tjenester\n- \"snapchat\" = Referanse til Snapchat\n- \"k13\" = Kurts alias\nRESULTAT (TEORETISK):\nScreenshots av Kurts Snaps som andre har lastet opp (for å dele utenfor Snapchat)\n\n4. FINNE GJENNOM CACHED VERSIONER\nSØKESTRENG:\ncache:snapchat.com/add/k13_nord\nFORKLARING:\n- cache: = Googles lagrede versjon av siden\n- Kan vise gammel profilinfo som er endret\nRESULTAT:\nHistorisk profildata (Display Name, bio fra tidligere)\n\n5. SØKE ETTER TELEFONNUMMER\nSØKESTRENG:\n\"+47 918 34 512\" \"snapchat\"\nFORKLARING:\n- \"+47 918 34 512\" = Kurts telefonnummer\n- \"snapchat\" = Kobler til Snapchat\nRESULTAT (SJELDEN):\nNettsider hvor Kurt har delt sitt telefonnummer + Snapchat-bruker\n\nPRAKTISK GJENNOMGANG – GOOGLE DORK WORKFLOW:\nTRINN 1: Identifiser søkeparametere\nInput: Brukernavn (k13_nord), telefon (+47 918 34 512), lokasjon (Lørenskog)\n\nTRINN 2: Kjør multiple søk\n1. \"k13_nord\" -site:snapchat.com\n2. \"k13_nord\" site:instagram.com OR site:tiktok.com\n3. \"+47 918 34 512\" \"snapchat\"\n4. \"k13\" \"lørenskog\" \"snapchat\"\n\nTRINN 3: Dokumenter funn\nExcel-tabell:\n| Søkestreng | Resultat | URL | Relevans | TPS |\n|------------|----------|-----|----------|-----|\n| \"k13_nord\" | Instagram @kurt_mkn | https://instagram.com/kurt_mkn | Høy | C-2-MODERAT |\n| \"k13_nord\" | Reddit u/k13_nrw | https://reddit.com/u/k13_nrw | Moderat | D-3-LAV |\n\nTRINN 4: Kryssverifiser\nHver treff må bekreftes mot Kurts kjente profil (språkmønster, alder, lokasjon)"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VIKTIG BEGRENSNING:\nGOOGLE DORKS FINNER KUN OFFENTLIG INDEKSERT INNHOLD\nVil IKKE finne:\n- Private Snapchat Stories\n- Slettede Snaps\n- Chat-meldinger\n- Snap Map-posisjoner (ikke indekserbar)\nVil finne:\n- Mentions av brukernavn på andre nettsider\n- Screenshots delt utenfor Snapchat\n- Offentlige profiler som refererer til Snapchat"
+        },
+        {
+          "type": "paragraph",
+          "data": "7.5 \"Glemt passord\"-funksjon som BRÅK-verktøy\nHVA ER DETTE? Snapchats \"Glemt passord\"-funksjon avslører deler av registrert e-post eller telefonnummer UTEN å fullføre passordbytte.\n\nHVORDAN DET FUNGERER:\nTRINN 1: Gå til Snapchat innlogging\n1. Åpne snapchat.com eller appen\n2. Klikk \"Logg inn\"\n3. Klikk \"Glemt passord?\"\n\nTRINN 2: Skriv inn brukernavn\nInput: k13_nord\nKlikk \"Send\"\n\nTRINN 3: Se delvis info\nSNAPCHATS RESPONS:\n\"Vi har sendt en kode til k***@gmail.com\"\nELLER\n\"Vi har sendt en kode til +47 *** ** 512\"\n\nPRAKTISK NYTTE:"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL 1: Bekrefte e-post-mønster (FIKTIVT, KURT)\nInput: k13_nord\nOutput: \"k***@gmail.com\"\nTOLKNING:\n- Brukernavn starter med \"k\" (Kurt?)\n- Domene: Gmail (ikke bedrift-e-post)\n- IKKE fullstendig e-post, men bekrefter mønster\nKRYSSVERIFISERING:\n1. Prøv vanlige mønstre:\n- kurtmikkelsen@gmail.com\n- kurt.mikkelsen@gmail.com\n- kurtmikk@gmail.com\n- kurt2011@gmail.com\n2. Test hver mot Have I Been Pwned (datalekkasje-database)\n3. Hvis treff → verifiser mot Kurts kjente info\n\nEKSEMPEL 2: Bekrefte telefonnummer-sifre\nInput: k13_nord\nOutput: \"+47 *** ** 512\"\nTOLKNING:\n- Norsk nummer (+47)\n- Slutter på 512\n- IKKE komplett, men gir hint\nKRYSSVERIFISERING:\n1. Søk 1881.no: \"Kurt Mikkelsen\" \"Lørenskog\"\n2. Resultat: +47 918 34 512\n3. Sammenlign: *** ** 512 = 918 34 512\n4. MATCH → Bekrefter at k13_nord = Kurt Mikkelsen"
+        },
+        {
+          "type": "callout",
+          "kind": "LEGAL",
+          "data": "JURIDISK VURDERING:\nER DETTE LOVLIG?\nJA, MEN:\n- Du FULLFØRER IKKE passordbytte (stopper etter info vises)\n- Du LOGGER IKKE inn på kontoen (ingen datainnbrudd)\n- Du bruker Snapchats egen funksjon (ikke hacking)\nMEN:\n- Dette kan oppfattes som \"testing av sikkerhet\" (gråsone)\n- Dokumenter GRUNDIG hvorfor du gjør dette (ikke misbruk)\n- ALDRI bruk koden som sendes (det er faktisk passordbytte)"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "KRITISK LÆRINGSPOENG:\n\"GLEMT PASSORD\" ER IKKE HACKING\nLovlig: Se delvis info via Snapchats egen funksjon\nUlovlig: Bruke koden til å logge inn på kontoen"
+        },
+        {
+          "type": "paragraph",
+          "data": "7.6 BRÅK.industries for Snapchat-data\nHVA ER BRÅK.INDUSTRIES? Nettbasert BRÅK-plattform (https://BRÅK.industries) som samler data fra multiple kilder, inkludert Snapchat (via offentlige API-er og datalekkasjer).\nEKSEMPEL – REELT (oppdatert 2025): BRÅK.industries samler:\nTelefonnummer → Snapchat-bruker (via offentlig Snapchat API)\nE-post → Snapchat-bruker (via datalekkasjer)\nBrukernavn → Kryssplattform-identifikasjon (Snapchat, Instagram, TikTok)\n\nPRAKTISK BRUK (KURT):\nTRINN 1: Gå til https://BRÅK.industries\n1. Opprett gratis konto (krever tjeneste-e-post)\n2. Logg inn\n\nTRINN 2: Søk på telefonnummer\nInput: +47 918 34 512\nKlikk \"Search\"\nRESULTAT:\n- Snapchat: k13_nord (bekreftet)\n- Instagram: kurt_mkn (bekreftet)\n- WhatsApp: Registrert (ingen brukernavn synlig)\n- Telegram: @k13nord (bekreftet)\n- Discord: Ikke funnet\n\nTRINN 3: Søk på brukernavn\nInput: k13_nord\nKlikk \"Search\"\nRESULTAT:\n- Snapchat: Aktiv profil\n- Instagram: Ingen match\n- Twitter: Ingen match\n- Reddit: u/k13_nrw (variasjon funnet)\n- TikTok: @kurt13live (variasjon funnet)\n\nTRINN 4: Eksporter data\nKlikk \"Export\" → CSV-fil\nInneholder:\n- Platform\n- Brukernavn\n- Telefon (hvis tilgjengelig)\n- E-post (hvis tilgjengelig)\n- Sist sett (hvis tilgjengelig)\n\nHVA KAN DU FÅ FRA BRÅK.INDUSTRIES (SNAPCHAT-SPESIFIKT):"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Datapunkt | Tilgjengelighet | Kilde | TPS",
+            "Brukernavn | Ja | Snapchat offentlig API | A-1-LAV",
+            "Telefonnummer | Ja (hvis lekket) | Datalekkasjer (2019-2023) | B-2-HØY",
+            "E-post | Ja (hvis lekket) | Datalekkasjer | B-2-HØY",
+            "Display Name | Nei | Ikke tilgjengelig | -",
+            "Snap Score | Nei | Ikke tilgjengelig | -",
+            "Venneliste | Nei | Ikke tilgjengelig | -"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "RAPPORTSKRIVING:\nHVOR SKAL BRÅK.INDUSTRIES STÅS I RAPPORTEN?\nSEKSJON: \"METODE\" (Del 3)\nEKSEMPEL-TEKST:\n\"For å identifisere kryssplattform-koblinger ble BRÅK.industries (https://BRÅK.industries)\nbenyttet. Søk på telefonnummer +47 918 34 512 resulterte i følgende funn:\n- Snapchat: k13_nord\n- Instagram: kurt_mkn\n- Telegram: @k13nord\nTPS-vurdering: T: B (datalekkasje-kilde, moderat troverdighet), P: 2 (sannsynlig korrekt),\nS: HØY (personidentifiserbar informasjon).\nKILDE: BRÅK.industries søk utført 19. februar 2026 kl. 15:23. Screenshot vedlagt som\nbevis (vedlegg D).\""
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "KRITISK BEGRENSNING:\nBRÅK.INDUSTRIES BRUKER DATALEKKASJER\nJURIDISK PROBLEMSTILLING:\n- Datalekkasjer er ULOVLIG innhentet (av hackere)\n- Politiet kan BRUKE informasjonen (passivt)\n- Politiet kan IKKE be om eller betale for nye lekkasjer\nLØSNING:\n- Bruk BRÅK.industries som \"lead\" (indikator)\n- VERIFISER via legitime kilder (Snapchat-begjæring, Folkeregisteret)\n- DOKUMENTER at du ikke har initiert lekkasjen"
+        },
+        {
+          "type": "paragraph",
+          "data": "7.7 Unfurl for URL-analyse\nHVA ER UNFURL? Verktøy (https://dfir.blog/unfurl) som \"pakker ut\" URL-er for å avdekke skjult metadata.\nEKSEMPEL – REELT: Snapchat-URL-er inneholder ofte skjult informasjon som:\nBrukernavn\nUnike identifikatorer\nTidsstempler\nEnhetstype\n\nPRAKTISK BRUK:\nSCENARIO: Du finner en Snapchat-lenke i Kurts Instagram-bio\nURL: https://www.snapchat.com/add/k13_nord?share_id=RjMxQkEy&locale=no_NO\nTRINN 1: Gå til https://dfir.blog/unfurl\nTRINN 2: Lim inn URL\nInput: https://www.snapchat.com/add/k13_nord?share_id=RjMxQkEy&locale=no_NO\nKlikk \"Unfurl\"\nTRINN 3: Analyser output\nRESULTAT:\nBASE URL: https://www.snapchat.com/add/k13_nord\n→ Brukernavn: k13_nord\nPARAMETERS:\n1. share_id=RjMxQkEy\n→ Unik delelenke-ID (base64-kodet)\n→ Dekoder til: \"F31BA2\" (intern Snapchat-referanse)\n2. locale=no_NO\n→ Språk: Norsk (Norge)\n→ Bekrefter geografisk plassering\nMETADATA (IMPLISERT):\n- URL generert fra norsk Snapchat-klient\n- Share-funksjonen brukt (ikke direkte profil-URL)\n- ID \"F31BA2\" kan spores tilbake til når/hvor lenken ble delt\n\nPRAKTISK NYTTE:\n1. BEKREFTE AUTENTISITET\nSPØRSMÅL: Er denne lenken virkelig Kurts, eller er det noen som later som?\nSJEKK:\n- Er brukernavn konsistent? (k13_nord)\n- Er locale logisk? (no_NO = Norge)\n- Er share_id konsistent med tidligere deling? (kryss-sjekk hvis tilgjengelig)\n\n2. IDENTIFISERE DELINGSKANAL\nHvis share_id er kjent fra tidligere:\n- share_id=ABC123 = Delt via Instagram\n- share_id=DEF456 = Delt via Twitter\n- share_id=GHI789 = Delt via QR-kode (fysisk)\n→ Dette kan indikere HVOR Kurt rekrutterer kontakter\n\nRAPPORTSKRIVING:\nSEKSJON: \"FUNN – KRYSSKOBLINGER\" (Del 7)\nEKSEMPEL-TEKST:\n\"Snapchat-profil k13_nord ble identifisert via lenke i Kurts Instagram-bio.\nURL-analyse via Unfurl (https://dfir.blog/unfurl) avdekket følgende metadata:\n- Brukernavn: k13_nord (bekreftet)\n- Locale: no_NO (norsk språk, bekrefter geografisk plassering)\n- Share-ID: RjMxQkEy (unik delelenke, generert [dato ukjent])\nTPS-vurdering: T: B (verifiserbar URL), P: 2 (sannsynlig autentisk), S: LAV (offentlig delt).\nKILDE: Unfurl-analyse utført 19. februar 2026 kl. 16:45. Screenshot vedlagt (vedlegg E).\""
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "HVA KAN UNFURL IKKE GJØRE:\nBEGRENSNINGER:\nUnfurl kan IKKE:\n- Dekryptere krypterte URL-parametere\n- Hente innholdet fra Snapchat-serverne\n- Identifisere brukeren bak share_id (krever Snapchat-begjæring)\n- Vise tidsstempel for når lenken ble opprettet (ikke i URL)"
+        },
+        {
+          "type": "paragraph",
+          "data": "7.8 Fallgruver og falske positiver\nVANLIGE FEIL SOM ØDELEGGER ETTERFORSKNINGER:"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "FALLGRUVE 1: GJENBRUKTE BRUKERNAVN\nPROBLEM:\n\"k13_nord\" kan være brukt av FLERE personer på ulike plattformer.\nEKSEMPEL (FIKTIVT):\n- Snapchat: k13_nord = Kurt Mikkelsen (13 år, Lørenskog)\n- Twitter: k13_nord = Kevin Johnson (19 år, USA)\n- Reddit: k13_nord = Karl Nordmann (45 år, Sverige)\nLØSNING:\nALLTID kryssverifiser:\n- Språk (norsk vs. engelsk vs. svensk)\n- Geografisk plassering (GPS, IP-data)\n- Alder (språkmønster, innholdstema)\n- Visuell identitet (profilbilde, Bitmoji)\nHVIS USIKKER: Dokumenter usikkerheten i rapporten\n\"Brukernavn k13_nord finnes på multiple plattformer. Snapchat-profilen er bekreftet\nsom Kurt Mikkelsen via kryssverifisering (Instagram, 1881.no, GPS-data). Twitter-profilen\nk13_nord vurderes som IKKE-relatert (engelsk språk, amerikansk lokasjon).\""
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "FALLGRUVE 2: FEIL TOLKNING AV SNAP MAP\nPROBLEM:\nSnap Map viser SISTE KJENTE POSISJON, ikke nødvendigvis nåværende posisjon.\nEKSEMPEL (FIKTIVT):\n- Kurt åpner Snapchat kl. 21:00 ved Rema 1000 (GPS logges)\n- Kurt stenger appen og går hjem (GPS oppdateres IKKE)\n- Kl. 21:30: Snap Map viser fortsatt Rema 1000 (FEIL)\nLØSNING:\nSjekk tidsstempel: \"Sist sett X minutter siden\"\n- Hvis \"Sist sett 5 min siden\" → Nåværende posisjon (sannsynlig)\n- Hvis \"Sist sett 2 timer siden\" → Historisk posisjon (usikkert)\n\nDOKUMENTASJON I RAPPORT:\n\"Kurt observert på Snap Map ved koordinater 59.9286° N, 10.9547° E kl. 21:00.\nTidsstempel viser 'Sist sett 3 minutter siden', hvilket indikerer nåværende plassering\nmed høy sannsynlighet. TPS: T: B, P: 2, S: HØY.\""
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "FALLGRUVE 3: SCREENSHOT SOM \"BEVIS\" UTEN METADATA\nPROBLEM:\nAndre brukere kan sende deg screenshot av Kurts Snaps. Hvordan verifisere autentisitet?\nEKSEMPEL (FIKTIVT):\n- NordLink81 sender deg screenshot av Kurts melding: \"Kan ordne i kveld\"\n- MEN: Screenshot kan være photoshoppet eller tatt ut av kontekst\nLØSNING:\nKrav til \"eksternt\" screenshot-bevis:\n1. Metadata må inkluderes:\n- Hvem tok screenshot? (NordLink81)\n- Når? (15. februar kl. 22:03)\n- Hvordan? (iPhone Screenshot-funksjon)\n- Hvorfor? (Frivillig utlevering vs. tvang)\n2. Verifiser med originalkilde:\n- Be Snapchat om chat-metadata (bekrefter at melding ble sendt)\n- Sammenlign tidsstempel (screenshot-tid vs. sendt-tid)\n3. TPS-vurdering:\n- T: D (tredjepartskilde, kan være manipulert)\n- P: 4 (tvilsomt uten verifisering)\n- S: HØY (potensielt kritisk bevis)\n\nDOKUMENTASJON:\n\"Screenshot av Snapchat-melding fra k13_nord til @NordLink81 mottatt fra NordLink81\n15. februar 2026. Innhold: 'Kan ordne i kveld'. Screenshot er ikke verifisert mot\nSnapchats servere grunnet kryptering (E2EE). TPS: D-4-HØY. Vurderes som INDIKATOR,\nikke definitivt bevis.\""
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "FALSK POSITIV 1: \"JOBB\" I LEGITIM KONTEKST\nPROBLEM:\nKurt skriver \"skal på jobb\". Er dette kriminell aktivitet eller legitim jobb?\nFALSK POSITIV-SCENARIO:\nKurt har faktisk fått deltidsjobb som avisbud (legitimt)\nHVORDAN UNNGÅ:\n1. IKKE anta at \"jobb\" = kriminell aktivitet\n2. Kryss-sjekk:\n- Er det transaksjoner fra kjent arbeidsgiver? (Amedia, Schibsted)\n- Er \"jobb\"-tiden konsistent med normal arbeidstid? (06:00-08:00 = avisbud)\n- Er beløpene logiske for deltidsjobb? (500 kr/uke = realistisk)\n3. Dokumenter alternative hypoteser i rapport:\n\"Kurts referanse til 'jobb' kan indikere enten (A) legitim deltidsjobb eller (B)\nkriminell aktivitet. Vipps-transaksjoner fra 'NordLink' (ikke registrert arbeidsgiver)\nog sent tidspunkt (21:00-23:00) styrker hypotese B, men hypotese A kan ikke utelukkes.\""
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "FALSK POSITIV 2: PENGER SOM \"GAVE\" ELLER \"LÅN\"\nPROBLEM:\nKurt poster bilde av penger. Er dette kriminell inntekt eller gave fra familie?\nFALSK POSITIV-SCENARIO:\nKurts bestemor ga ham 5000 kr i bursdagsgave\nHVORDAN UNNGÅ:\n1. Kryss-sjekk tidspunkt:\n- Er det nær Kurts bursdag? (220911 = 22. september)\n- Er det nær jul/nyttår? (typisk gavetidspunkt)\n2. Kryss-sjekk avsender (Vipps):\n- \"Bestemor Mikkelsen\" = sannsynligvis legitimt\n- \"NordLink\" = mistenkelig\n3. Kryss-sjekk aktivitetsmønster:\n- Engangsbeløp = kan være gave\n- Repeterende småbeløp = indikerer arbeid/kriminalitet\n\nDOKUMENTASJON:\n\"Bilde av pengesedler (ca. 5000 kr) observert på Kurts Snapchat Story 15. februar 2026.\nIngen Vipps-transaksjon registrert samme dag. Mulige forklaringer: (A) Kontantgave fra\nfamilie, (B) kriminell inntekt uten digital transaksjon, (C) lånte penger for fotografering\n(fake flex). TPS: C-4-HØY (usikker opprinnelse, men indikerer økonomisk aktivitet).\""
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "overskrift": "KAPITTEL 8: AUTOMATISERING OG TERMINAL-TEKNIKKER",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "8.1 Sherlock – Automatisert brukernavn-søk\nHVA ER SHERLOCK? Python-basert verktøy som søker et brukernavn på 200+ plattformer samtidig (inkludert Snapchat).\nEKSEMPEL – REELT: Sherlock er open source: https://github.com/sherlock-project/sherlock\n\nINSTALLASJON (Windows):\nFORUTSETNING:\n- Python 3.8+ installert (https://python.org)\n- Terminal/Command Prompt tilgang\nTRINN 1: Åpne Command Prompt\nWindows-knapp → Skriv \"cmd\" → Høyreklikk → \"Kjør som administrator\"\nTRINN 2: Installer Sherlock via pip\npip install sherlock-project --break-system-packages\nTRINN 3: Verifiser installasjon\nsherlock --version\nOutput:\nSherlock v0.14.3\n\nBRUK (KURT-EKSEMPEL):\nTRINN 1: Åpne Terminal\ncd C:\\Etterforskning\\Kurt_Mikkelsen\\\nTRINN 2: Kjør Sherlock-søk\nsherlock k13_nord\nTRINN 3: Vent på resultater (30-60 sekunder)\nOUTPUT:\n[+] Snapchat: https://www.snapchat.com/add/k13_nord\n[+] Instagram: https://www.instagram.com/k13_nord (IKKE FUNNET – feil)\n[+] Discord: Bruker K13#4782 (funnet via brukersøk)\n[+] Reddit: https://www.reddit.com/user/k13_nrw (variasjon funnet)\n[+] TikTok: https://www.tiktok.com/@kurt13live (variasjon funnet)\n[+] GitHub: IKKE FUNNET\n[+] Twitter: IKKE FUNNET\n... (200+ plattformer)\nTRINN 4: Lagre resultater\nsherlock k13_nord --output k13_nord_sherlock_results.txt\nRESULTAT:\nTekstfil med alle funn (lagret i gjeldende mappe)\n\nRAPPORTSKRIVING:\nSEKSJON: \"METODE\" (Del 3)\nEKSEMPEL-TEKST:\n\"For kryssplattform-identifikasjon ble Sherlock (versjon 0.14.3) benyttet. Søk på\nbrukernavn 'k13_nord' resulterte i treff på følgende plattformer:\n- Snapchat (bekreftet aktiv profil)\n- Discord (K13#4782)\n- Reddit (u/k13_nrw, variasjon)\nTPS-vurdering: T: B (automatisert søk, moderat troverdighet), P: 2 (krever manuell\nverifisering), S: LAV (offentlig tilgjengelig data).\nKILDE: Sherlock-søk utført 19. februar 2026 kl. 17:10. Output vedlagt (vedlegg F).\""
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "BEGRENSNINGER:\nSHERLOCK ER IKKE 100% NØYAKTIG\nFALSKE POSITIVER:\n- Instagram-treff kan være feil (hvis brukernavnet ikke eksisterer lenger)\n- Sherlock sjekker kun om URL-en er tilgjengelig (ikke om det er riktig person)\nLØSNING:\nALLTID manuell verifisering av hvert treff:\n1. Åpne URL-en\n2. Sjekk profilbilde, språk, lokasjon\n3. Dokumenter som \"verifisert\" eller \"ikke-relatert\""
+        },
+        {
+          "type": "paragraph",
+          "data": "8.2 SHA-256 hash-generering via terminal\nHVORFOR? Hash-verdier beviser at bevisfiler ikke er endret siden sikring.\nWINDOWS (Command Prompt):\nTRINN 1: Åpne Command Prompt\nWindows-knapp → \"cmd\"\nTRINN 2: Naviger til bevismappe\ncd C:\\Etterforskning\\Kurt_Mikkelsen\\Snapchat\\\nTRINN 3: Generer hash for EN fil\ncertutil -hashfile 20260219_1432_snapchat_k13nord_profil.png SHA256\nOUTPUT:\nSHA256-hash for fil 20260219_1432_snapchat_k13nord_profil.png:\na7f3c9e2b5d8f1a3c7e9b2d5f8a1c3e7b9d2f5a8c1e3b7d9f2a5c8e1b3d7f9a2\nCertUtil: -hashfile-kommandoen ble fullført.\nTRINN 4: Kopier hash-verdien\nHøyreklikk → \"Marker\" → Dra over hash → Enter (kopierer)\nTRINN 5: Lim inn i Excel-bevislogg\n[Se Excel-mal i Kapittel 4.1]\n\nGENERERE HASH FOR ALLE FILER I MAPPE (BATCH):\nOPPRETT BATCH-SCRIPT:\nTRINN 1: Åpne Notepad\nTRINN 2: Lim inn følgende kode:\n@echo off\necho Genererer SHA-256 hash for alle filer...\nfor %%f in (*.png *.jpg *.mp4) do (\necho Fil: %%f\ncertutil -hashfile \"%%f\" SHA256 | find /v \"CertUtil\"\necho.\n)\npause\nTRINN 3: Lagre som \"generate_hashes.bat\"\nFil → Lagre som → Filtype: \"Alle filer\" → Navn: generate_hashes.bat\nTRINN 4: Kjør scriptet\nDobbeltklikk generate_hashes.bat\nOUTPUT (EKSEMPEL):\nFil: 20260219_1432_snapchat_k13nord_profil.png\na7f3c9e2b5d8f1a3c7e9b2d5f8a1c3e7b9d2f5a8c1e3b7d9f2a5c8e1b3d7f9a2\nFil: 20260219_1445_snapchat_k13nord_story_penger.png\nb2e5f8a1c3e7b9d2f5a8c1e3b7d9f2a5c8e1b3d7f9a2c5e8b1d4f7a9c2e5b8d1\nFil: 20260219_1502_snapchat_k13nord_snapmap.png\nc3f9e2b5d8a1c4e7b9d2f5a8c1e3b7d9f2a5c8e1b3d7f9a2c5e8b1d4f7a9c2e5\n\nMAC/LINUX (Terminal):\nTRINN 1: Åpne Terminal\nCMD + Space → Skriv \"Terminal\"\nTRINN 2: Naviger til bevismappe\ncd ~/Etterforskning/Kurt_Mikkelsen/Snapchat/\nTRINN 3: Generer hash for EN fil\nshasum -a 256 20260219_1432_snapchat_k13nord_profil.png\nOUTPUT:\na7f3c9e2b5d8f1a3c7e9b2d5f8a1c3e7b9d2f5a8c1e3b7d9f2a5c8e1b3d7f9a2  20260219_1432_snapchat_k13nord_profil.png\nTRINN 4: Generer hash for ALLE filer\nshasum -a 256 *.png *.jpg *.mp4 > hashes.txt\nRESULTAT:\nFil \"hashes.txt\" inneholder alle hash-verdier (én per linje)\n\n8.3 Automatisert profilendring-overvåking\nHVA ER PROBLEMET? Manuell sjekk av Kurts Snapchat-profil hver dag er tidkrevende. Hvordan automatisere?\nLØSNING: Python-script med varsling\nFORUTSETNING:\nPython 3.8+ installert\nSnapchat web-tilgang (ikke API, da Snapchat blokkerer uoffisielle API-er)\nMETODE: Skrape Snap Score og Display Name daglig\nTRINN 1: Opprett Python-script\nÅPNE NOTEPAD/TEXTEDIT OG LIM INN:\nimport requests\nfrom bs4 import BeautifulSoup\nimport time\nimport datetime\nimport smtplib\nfrom email.mime.text import MIMEText\n\ndef check_snapchat_profile(username):\n\"\"\"\nHenter Snap Score og Display Name fra Snapchat web\n(NB: Dette er teoretisk – Snapchat blokkerer scraping)\n\"\"\"\nurl = f\"https://www.snapchat.com/add/{username}\"\ntry:\n# Simuler nettleser-headers\nheaders = {\n'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/120.0.0.0'\n}\nresponse = requests.get(url, headers=headers, timeout=10)\nsoup = BeautifulSoup(response.text, 'html.parser')\n\n# TEORETISK: Parse HTML for Snap Score (faktisk HTML-struktur varierer)\nsnap_score_element = soup.find('span', class_='snap-score')\nsnap_score = snap_score_element.text if snap_score_element else \"Ikke tilgjengelig\"\n\ndisplay_name_element = soup.find('h1', class_='display-name')\ndisplay_name = display_name_element.text if display_name_element else \"Ikke tilgjengelig\"\n\nreturn {\n'snap_score': snap_score,\n'display_name': display_name,\n'timestamp': datetime.datetime.now().isoformat()\n}\nexcept Exception as e:\nprint(f\"Feil ved sjekk: {e}\")\nreturn None\n\ndef send_email_alert(subject, body):\n\"\"\"\nSender e-postvarsel ved endring\n\"\"\"\nsender = \"etterforsker@politiet.no\"\nrecipient = \"etterforsker@politiet.no\"\nmsg = MIMEText(body)\nmsg['Subject'] = subject\nmsg['From'] = sender\nmsg['To'] = recipient\n\n# VIKTIG: Konfigurer SMTP-server (intern politiserver)\nwith smtplib.SMTP('smtp.politiet.no', 587) as server:\nserver.starttls()\nserver.login(sender, \"PASSORD\")  # SIKKER LAGRING!\nserver.send_message(msg)\n\ndef monitor_profile(username, check_interval_hours=24):\n\"\"\"\nOvervåker profil og sender varsel ved endring\n\"\"\"\nprevious_data = None\nwhile True:\ncurrent_data = check_snapchat_profile(username)\nif current_data:\n# Første sjekk – lagre baseline\nif previous_data is None:\nprevious_data = current_data\nprint(f\"Baseline lagret: {current_data}\")\n# Sammenlign med forrige sjekk\nelse:\nif current_data['snap_score'] != previous_data['snap_score']:\nalert = f\"ENDRING: Snap Score endret fra {previous_data['snap_score']} til {current_data['snap_score']}\"\nprint(alert)\nsend_email_alert(f\"Snapchat-endring: {username}\", alert)\n\nif current_data['display_name'] != previous_data['display_name']:\nalert = f\"ENDRING: Display Name endret fra {previous_data['display_name']} til {current_data['display_name']}\"\nprint(alert)\nsend_email_alert(f\"Snapchat-endring: {username}\", alert)\n\nprevious_data = current_data\n\n# Vent til neste sjekk\nprint(f\"Neste sjekk om {check_interval_hours} timer...\")\ntime.sleep(check_interval_hours * 3600)\n\n# KJØR OVERVÅKING\nif __name__ == \"__main__\":\nmonitor_profile(\"k13_nord\", check_interval_hours=24)\n\nLAGRE SOM: snapchat_monitor.py\n\nTRINN 2: Kjør scriptet\nTERMINAL/COMMAND PROMPT:\ncd C:\\Etterforskning\\Scripts\\\npython snapchat_monitor.py\nOUTPUT:\nBaseline lagret: {'snap_score': '52341', 'display_name': 'Kurt', 'timestamp': '2026-02-19T17:30:00'}\nNeste sjekk om 24 timer...\n[24 timer senere]\nENDRING: Snap Score endret fra 52341 til 52563\nE-postvarsel sendt til etterforsker@politiet.no"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "KRITISK BEGRENSNING:\nSNAPCHAT BLOKKERER SCRAPING\nPROBLEMSTILLING:\nSnapchat oppdager automatiserte forespørsler og blokkerer IP-en.\nLØSNING:\n1. Bruk rotating proxies (dyrt, komplekst)\n2. ELLER: Manuell sjekk hver 3. dag (mer realistisk)\n3. ELLER: Be IKT-krimenhet om profesjonelt overvåkingsverktøy\n\nALTERNATIV METODE (MANUELL MED EXCEL-MAKRO):\nENKLERE LØSNING:\n1. Opprett Excel-ark med kolonner: Dato | Snap Score | Display Name\n2. Sjekk manuelt hver morgen (5 minutter)\n3. Legg inn data i Excel\n4. Excel beregner automatisk differanse\nEXCEL-FORMEL (for differanse):\nCelle D2: =B2-B1\n(Viser endring i Snap Score siden forrige dag)"
+        },
+        {
+          "type": "paragraph",
+          "data": "8.4 EXIF-metadata-uttrekk via terminal\nHVA ER EXIF? Exchangeable Image File Format – metadata som lagres i bildefiler (GPS, kamera-modell, tidsstempel).\nSNAPCHAT OG EXIF:\nStories postet via Snapchat: EXIF FJERNES automatisk\nBilder lagret i Memories: EXIF BEVARES\nBilder sendt via chat: EXIF FJERNES\n\nPRAKTISK BRUK:\nSCENARIO: Du har beslaglagt Kurts iPhone og eksportert Memories\nWINDOWS (ExifTool):\nTRINN 1: Last ned ExifTool\nhttps://exiftool.org/ → Download Windows Executable\nPakk ut til C:\\Etterforskning\\Tools\\\nTRINN 2: Åpne Command Prompt\ncd C:\\Etterforskning\\Kurt_Mikkelsen\\Memories\\\nTRINN 3: Trekk ut EXIF fra EN fil\nC:\\Etterforskning\\Tools\\exiftool.exe gym_selfie_20260215.jpg\nOUTPUT:\nExifTool Version Number         : 12.60\nFile Name                       : gym_selfie_20260215.jpg\nFile Size                       : 2.3 MB\nFile Modification Date/Time     : 2026:02:15 17:23:45+01:00\nCamera Model Name               : iPhone 12\nGPS Latitude                    : 59 deg 55' 43.56\" N\nGPS Longitude                   : 10 deg 57' 16.92\" E\nGPS Altitude                    : 123 m Above Sea Level\nDate/Time Original              : 2026:02:15 17:23:17\n...\nTRINN 4: Konverter GPS til desimalformat\nGoogle: \"59 deg 55' 43.56\" N = 59.9287° N\nGoogle: \"10 deg 57' 16.92\" E = 10.9547° E\nTRINN 5: Kryssjekk mot Google Maps\nKoordinater 59.9287° N, 10.9547° E = Lørenskog Treningssenter\n\nTREKK UT EXIF FRA ALLE FILER (BATCH):\nCOMMAND:\nC:\\Etterforskning\\Tools\\exiftool.exe -r -csv . > exif_results.csv\nFORKLARING:\n- -r = Recursivt (alle undermapper)\n- -csv = Output i CSV-format\n- . = Gjeldende mappe\n- > exif_results.csv = Lagre til fil\nRESULTAT:\nExcel-kompatibel CSV-fil med ALLE metadata fra alle bilder\n\nMAC/LINUX (Innebygd mdls):\nTERMINAL:\ncd ~/Etterforskning/Kurt_Mikkelsen/Memories/\nmdls gym_selfie_20260215.jpg\nOUTPUT:\nkMDItemLatitude                = 59.9287\nkMDItemLongitude               = 10.9547\nkMDItemAcquisitionModel        = \"iPhone 12\"\nkMDItemContentCreationDate     = 2026-02-15 16:23:17 +0000\n...\n\nRAPPORTSKRIVING:\nSEKSJON: \"FUNN – AKTIVITET\" (Del 5)\nEKSEMPEL-TEKST:\n\"EXIF-metadata fra bilde 'gym_selfie_20260215.jpg' (hentet fra Kurts Memories via\nSnapchat-begjæring) viser følgende:\n- GPS-koordinater: 59.9287° N, 10.9547° E (Lørenskog Treningssenter)\n- Tidsstempel: 15. februar 2026, kl. 17:23:17 (lokal tid)\n- Enhet: iPhone 12\nTPS-vurdering: T: A (EXIF-data fra originalkilde), P: 1 (bekreftet), S: MODERAT\n(geografisk bevis, ikke sensitiv kontekst).\nKILDE: EXIF-uttrekk via ExifTool v12.60, utført 19. februar 2026. Metadata vedlagt\n(vedlegg G).\"\n\n[Dokumentet fortsetter... På grunn av lengdebegrensning, hopper jeg nå til DEL B for å sikre at du får begge hoveddeler.\nResterende kapitler 9-21 i DEL A kan leveres som egen seksjon hvis ønsket.]"
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "overskrift": "DEL B: RAPPORTKLAR TEKST – SNAPCHAT-ETTERFORSKNING (KURT MIKKELSEN)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Dette avsnittet inneholder maler og ferdig tekst for den formelle politirapporten."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "overskrift": "1. MANDAT",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Undertegnede fikk i oppdrag 1. februar 2026 å kartlegge digital aktivitet tilknyttet Kurt Mikkelsen (født 22. september 2011, 13 år), alias \"K13\", i forbindelse med mistanke om rekruttering til Violence as a Service (VaaS)-nettverk.\nOppdraget ble gitt av påtalemyndigheten ved Øst politidistrikt, saksnummer 2026-123456.\nMandatet omfatter:\nIdentifikasjon av digital identitet (kobling alias \"K13\" til juridisk person)\nKartlegging av aktivitetsmønster på Snapchat og tilknyttede plattformer\nNettverksanalyse (identifikasjon av kontakter med potensielt kriminell tilknytning)\nVurdering av rekrutteringsindikatorer til VaaS-nettverk\nEtterforskningen gjennomføres i henhold til straffeprosessloven § 196 (åpen etterforskning) med særlig oppmerksomhet til personvernhensyn gitt objektets alder (mindreårig under kriminell lavalder)."
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "overskrift": "2. INNGANGSVERDIER",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Følgende informasjon var tilgjengelig ved etterforskningens oppstart:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Parameter | Verdi | Kilde | Verifisert",
+            "Navn | Kurt Mikkelsen | Folkeregisteret | Ja",
+            "Fødselsdato | 22. september 2011 (13 år) | Folkeregisteret | Ja",
+            "Alias | K13, k13_nord, Lille K | Tips fra publikum | Delvis",
+            "Telefonnummer | +47 918 34 512 | 1881.no | Ja",
+            "Adresse | Skoleveien 12, 1473 Lørenskog | Folkeregisteret | Ja",
+            "Skole | Lørenskog ungdomsskole (8. trinn) | Skoleadministrasjon | Ja",
+            "Kjent tilknytning | Anders Berg (23 år), alias @NordLink81 | Tidligere etterforskning | Ja",
+            "Plattform | Snapchat (primær), Instagram, TikTok | Tips fra publikum | Delvis"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Begrunnelse for etterforskning: Kurt Mikkelsen identifisert som potensielt offer for VaaS-rekruttering basert på (1) bekymringsmelding fra skole, (2) observert kontakt med Anders Berg (tidligere domfelt for vold), (3) uforklarlige økonomiske transaksjoner."
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "overskrift": "3. METODE",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Etterforskningen ble gjennomført i perioden 1. februar – 19. februar 2026 ved bruk av følgende metodikk:\n3.1 PIAR-rammeverk\nPLANLEGGING (01.02 – 03.02):\nDefinering av intelligence-spørsmål (hvem, hva, hvor, når, hvorfor)\nIdentifikasjon av tilgjengelige datakilder (Snapchat web, offentlige registre, BRÅK-verktøy)\nJuridisk vurdering (passiv BRÅK etter strpl. § 196, ingen aktiv kontakt med mindreårig)\nINNHENTING (04.02 – 15.02):\nSnapchat-observasjon via nettleser (snapchat.com, Snap Map)\nKryssverifisering mot Instagram, TikTok, Discord, Reddit\nGoogle-søk og BRÅK-verktøy (Sherlock, BRÅK.industries)\nJuridisk begjæring til Snapchat Inc. (sendt 10.02, mottatt 19.02)\nANALYSE (16.02 – 18.02):\nTidslinje-rekonstruksjon (aktivitetsmønster over 14 dager)\nNettverksanalyse (identifikasjon av nøkkelkontakter)\nTPS-vurdering per datakilde (Troverdighet, Pålitelighet, Sensitivitet)\nHypotesegenerering (tre alternative forklaringsmodeller)\nRAPPORTERING (19.02):\nSyntetisering av funn\nDokumentasjon av beviskjede\nKonklusjon og anbefalinger\n\n3.2 Verktøy benyttet\nSnapchat-plattformen:\nSnapchat web (snapchat.com) for profilsøk\nSnap Map (snapchat.com/map) for lokasjonssporing\nObservasjon av Public Stories (ingen innlogging)\nBRÅK-verktøy:\nSherlock v0.14.3 (brukernavn-søk på tvers av plattformer)\nBRÅK.industries (telefonnummer → Snapchat-konto-kobling)\nGoogle Dorks (avanserte søkeoperatorer)\nUnfurl (URL-analyse)\nForensiske verktøy:\nExifTool v12.60 (metadata-uttrekk fra bilder)\nSHA-256 hash-generering (integritetssikring av bevis)\nExcel (tidslinje-analyse, nettverkskartlegging)\nOffentlige registre:\n1881.no (telefonnummer, adresse)\nFolkeregisteret (fødselsdato, familierelasjon)\n\n3.3 Juridisk grunnlag\nAll datainnhenting gjennomført som passiv BRÅK i henhold til straffeprosessloven § 196 (åpen etterforskning). Ingen skjult overvåking etter § 200a.\nIngen aktiv kontakt med Kurt Mikkelsen (mindreårig under 15 år).\nJuridisk begjæring til Snapchat Inc. fremsendt 10. februar 2026 med hjemmel i straffeprosessloven § 210 (beslag av elektronisk informasjon).\nKjennelse fra Oslo tingrett vedlagt (saksreferanse 26-012345).\nSærskilt hensyn til mindreårig: Alle observasjoner vurdert med TPS-sensitivitet minimum HØY grunnet Kurt Mikkelsens alder (13 år).\nPrioritet gitt til beskyttelse av Kurt som potensielt offer (ikke straffeforfølgelse)."
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "overskrift": "4. FUNN – IDENTITET",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "4.1 Kobling alias \"K13\" til Kurt Mikkelsen\nHYPOTESE: Snapchat-brukernavn \"k13_nord\" tilhører Kurt Mikkelsen (13 år, Lørenskog).\nBEVISKJEDE:\nTRINN 1: Identifikasjon av Snapchat-profil (04.02.2026)\nSøk på Snapchat web (snapchat.com) med brukernavn \"k13_nord\" resulterte i aktiv profil med følgende observerbare attributter:\nBrukernavn: k13_nord\nDisplay Name: Kurt\nSnap Score: 52,341 (per 04.02.2026 kl. 14:00)\nBitmoji: Mannlig avatar i svart hettegenser, mørkt hår\nTPS-vurdering: T: C (anonym alias, ingen verifisert identitet), P: 1 (direkte observert), S: MODERAT (digital identitet uten kobling til juridisk person)\n\nTRINN 2: Kryssverifisering via Instagram (04.02.2026)\nGoogle-søk (\"k13_nord\") identifiserte Instagram-profil @kurt_mkn med følgende bio: \" Lørenskog | 13 | Hard work pays off \"\nProfilbilde på Instagram visuelt identisk med Snapchat Bitmoji (svart hettegenser). Instagram-bio inkluderer Snapchat-ikon med lenke til \"k13_nord\".\nTPS-vurdering: T: C (kryssplattform-konsistens styrker troverdighet), P: 2 (sannsynlig samme person), S: MODERAT\n\nTRINN 3: Identifikasjon av reelt navn via 1881.no (05.02.2026)\nSøk i offentlig register 1881.no med parametere \"Kurt\" + \"Lørenskog\" + \"13 år\" resulterte i:\nNavn: Kurt Mikkelsen\nFødselsdato: 22. september 2011 (13 år)\nAdresse: Skoleveien 12, 1473 Lørenskog\nTelefon: +47 918 34 512 (registrert på Hanne Mikkelsen, mor)\nTPS-vurdering: T: A (verifisert via offentlig register), P: 1 (bekreftet), S: HØY (personidentifiserbar informasjon)\n\nTRINN 4: Geografisk verifisering via Snap Map (06.02.2026)\nSnapchat Snap Map-observasjon viste bruker \"k13_nord\" ved GPS-koordinater 59.9302° N, 10.9563° E (tidsstempel: 06.02.2026 kl. 14:32, \"Sist sett 5 minutter siden\").\nKrysssjekk via Google Maps: Koordinater 59.9302° N, 10.9563° E tilsvarer Skoleveien 12, 1473 Lørenskog (Kurt Mikkelsens registrerte adresse).\nTPS-vurdering: T: B (GPS-data fra Snapchat), P: 2 (sannsynlig match), S: HØY (geografisk plassering)\n\nTRINN 5: Telefonnummer-verifisering via Snapchat-begjæring (19.02.2026)\nJuridisk begjæring til Snapchat Inc. (mottatt 19.02.2026) utleverte følgende brukerinformasjon for konto \"k13_nord\":\nRegistrert telefonnummer: +47 918 34 512\nVerifisert: 15. juni 2025\nE-postadresse: kurtmikkelsen2011@gmail.com\nOpprettelsesdato: 15. juni 2025, kl. 14:23 UTC\nTelefonnummer +47 918 34 512 matcher Kurt Mikkelsens telefonnummer i 1881.no (registrert på mor, Hanne Mikkelsen).\nTPS-vurdering: T: A (verifisert av Snapchat + offentlig register), P: 1 (definitiv match), S: HØY\n\n4.2 Samlet vurdering – Identitet\nBasert på femtrinnsmultipel kryssverifisering konkluderes det med høy grad av sikkerhet at Snapchat-brukernavn \"k13_nord\" tilhører Kurt Mikkelsen (født 22.09.2011, bosatt Skoleveien 12, Lørenskog).\nBeviskjede-integritet:\nAlle bevisfiler sikret med SHA-256 hash (se vedlegg H)\nTidsstempler dokumentert i UTC og konvertert til norsk tid\nIngen brudd i beviskjede (alle overføringer logget)\nKONKLUSJON IDENTITET: Bekreftet. TPS: B-1-HØY."
+        }
+      ]
+    },
+    {
+      "id": "s15",
+      "overskrift": "5. FUNN – AKTIVITET",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "5.1 Snapchat-aktivitetsprofil (01.02 – 19.02.2026)\nOBSERVASJONSPERIODE: 18 dager (01.02 – 19.02.2026)\nDATAKILDER:\nSnap Map-observasjoner (78 GPS-koordinater via Snapchat-begjæring)\nPublic Stories-innhold (12 observerte Stories i perioden)\nSnap Score-endring (overvåket daglig, manuell logg)\nChat-metadata (via Snapchat-begjæring, IKKE innhold grunnet E2EE)\n\n5.2 Snap Map-aktivitet\nTOTALT 78 GPS-KOORDINATER LOGGET (via Snapchat-begjæring):"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Lokasjon | Hyppighet | Tidspunkt (typisk) | Koordinater",
+            "Hjemmeadresse (Skoleveien 12) | 42 observasjoner (54%) | 18:00-08:00 | 59.9302° N, 10.9563° E",
+            "Lørenskog ungdomsskole | 18 observasjoner (23%) | 08:00-14:00 | 59.9294° N, 10.9511° E",
+            "Lørenskog Treningssenter | 8 observasjoner (10%) | 16:00-18:00 | 59.9286° N, 10.9547° E",
+            "Bak Rema 1000 Lørenskog | 4 observasjoner (5%) | 21:00 (onsdager) | 59.9286° N, 10.9547° E",
+            "Oslo sentrum | 3 observasjoner (4%) | Helger | Varierende",
+            "Andre lokasjoner | 3 observasjoner (4%) | Varierende | Varierende"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KRITISK MØNSTER: Onsdags-avvik\nAnalyse av GPS-data viser repeterende mønster hver onsdag (04.02, 11.02, 18.02):\n21:00 ±5 min: Kurt ved koordinater 59.9286° N, 10.9547° E (bak Rema 1000)\n21:15 ±3 min: Ghost Mode aktiveres (Kurt forsvinner fra Snap Map)\n21:45 ±10 min: Ghost Mode deaktiveres, Kurt ved hjemmeadresse (59.9302° N)\nVarighet av Ghost Mode: 30-45 minutter. Repetisjon: 3 av 3 onsdager i observasjonsperiode
