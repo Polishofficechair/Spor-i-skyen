@@ -1,1 +1,1570 @@
+{
+  "tittel": "Vi går nå i dybden på Ståle Volds Facebook-profil. I dette scenariet behandler vi profilen som åpen (eller delvis åpen), slik mange kriminelle har det for å opprettholde en legitim fasade for hvitvaskingsbedriften sin.",
+  "undertittel": "DIGITAL ETTERFORSKNING – KOMPLETT METODEVERK",
+  "ordliste": [],
+  "seksjoner": [
+    {
+      "id": "s01",
+      "overskrift": "",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Vi går nå i dybden på Ståle Volds Facebook-profil. I dette scenariet behandler vi profilen som åpen (eller delvis åpen), slik mange kriminelle har det for å opprettholde en legitim fasade for hvitvaskingsbedriften sin."
+        },
+        {
+          "type": "paragraph",
+          "data": "Målet er å lære hvordan du skiller \"støy\" (familiebilder) fra \"signaler\" (koblinger til kriminalitet), og hvordan du bruker Facebook som et springbrett til andre registre."
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "overskrift": "DIGITAL ETTERFORSKNING – KOMPLETT METODEVERK",
+      "komponenter": []
+    },
+    {
+      "id": "s03",
+      "overskrift": "MODUL 2: FACEBOOK – FASADEN OG ARKIVET",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "CASE-STATUS: Vi har identifisert navnet Ståle Vold. Vi søker ham opp på Facebook og finner en profil som ser ut til å tilhøre en helt vanlig forretningsmann. Din oppgave er å se gjennom fasaden."
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "overskrift": "DEL A: UNDERVISNINGSKAPITTEL",
+      "komponenter": []
+    },
+    {
+      "id": "s05",
+      "overskrift": "1. FACEBOOK: DET DIGITALE FOLKEREGISTERET",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Mens Telegram og Snapchat brukes til operasjonell kriminalitet (her og nå), brukes Facebook ofte til fasadebygging og historikk."
+        },
+        {
+          "type": "paragraph",
+          "data": "> 🟢 HVORFOR: Tidsmaskinen"
+        },
+        {
+          "type": "paragraph",
+          "data": "> Facebook er ofte den plattformen kriminelle har hatt lengst – kanskje siden 2008. Selv om Ståle er forsiktig i dag, kan han ha gjort feil for 10 år siden. Han kan ha tagget en person som i dag er hans hovedleverandør, eller lagt ut bilder av motorsykkelklubben han hevder han ikke er medlem av. Facebook er vårt historiske arkiv."
+        },
+        {
+          "type": "paragraph",
+          "data": ">"
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "overskrift": "BEGREPSORDLISTE",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * FBID (Facebook ID): En unik numerisk streng (f.eks. 100063874219554) som aldri endres."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Vanity URL: Det selvvalgte navnet i adresselinjen (f.eks. facebook.com/staale.vold.logistikk)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Graph Search: En metode for å søke i Facebooks database (selv om den er begrenset nå, finnes det manuelle \"workarounds\")."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Likes-analyse: Å kartlegge hvem som liker bildene, for å finne nettverket som er skjult i vennelisten."
+        },
+        {
+          "type": "paragraph",
+          "data": "1.1 Profiloversikt: Hva ser vi på Ståles profil?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Her er en strukturert oversikt over hva som møter deg på skjermen, og hva en trent etterforsker egentlig ser."
+        },
+        {
+          "type": "paragraph",
+          "data": "| Element | Det som vises (Fasaden) | Etterforskerens tolkning (Sporet) |"
+        },
+        {
+          "type": "paragraph",
+          "data": "|---|---|---|"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Profilbilde | Ståle som griller i hagen. Han har på seg en dyr klokke. | Visuell match: Er dette samme Rolex som på kriminell Instagram? GeoINT: Kan vi se nabohuset i bakgrunnen for å bekrefte adressen? |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Coverbilde | Logoen til \"Øst Service & Bemanning AS\". | Næringsspor: Dette firmaet må sjekkes i Brønnøysundregistrene og Proff.no. Er det et skalkeskjul? |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Intro/Bio | \"Daglig leder. Livets harde skole. 🚛💨\" | Kulturmarkør: Lastebil-emoji kan indikere transportvirksomhet (narkotikaruter). |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Venneliste | \"Ståle deler kun venner med venner\" (Skjult). | Hindersperre: Vi må finne nettverket via \"Likes\" og kommentarer i stedet. |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Innlegg 1 | \"Ny bil i firmaet! Klar for oppdrag.\" (Bilde av varebil). | Objekt: Registreringsnummeret på bilen må sjekkes. Hvem eier den egentlig? |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Innlegg 2 | Innsjekking: \"Hamburg Hafen - Business trip\". (2022). | Tidslinje: Han var i Hamburg i 2022. Dette matcher en stor innførselssak politiet hadde da. |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Likes | Bildet av bilen er likt av \"Lina Grim\" og \"Kjell B\". | Nettverk: Selv om vennelisten er skjult, avslører \"likes\" hvem han omgås. |"
+        },
+        {
+          "type": "paragraph",
+          "data": "1.2 Steg-for-steg: Teknisk sikring av profilen"
+        },
+        {
+          "type": "paragraph",
+          "data": "Før vi analyserer, må vi sikre dataene og finne den unike ID-en."
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "overskrift": "HANDLING:",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * Start Hunchly (eller skjermopptak): Aldri begynn uten opptak."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Gå til profilen: facebook.com/staale.vold.logistikk (Fiktiv URL)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Finn FBID (Den \"evige\" ID-en):"
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Hvorfor: Hvis Ståle bytter navn til \"Mikke Mus\" i morgen, finner vi ham igjen med FBID-en."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Hvordan: Høyreklikk på siden -> \"Vis sidekilde\" -> Ctrl+F -> Søk etter \"userID\", \"entity_id\" eller \"profile_id\"."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Resultat: Du finner tallet 100063874219554. Kopier dette!"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Sikre \"Om\"-seksjonen: Gå til fanen \"Om\" (About)."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Se etter: Kontaktinfo, familiemedlemmer (ofte oppført som \"Samboer\" eller \"Bror\"), og livshendelser."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Sikre bilder med høy oppløsning:"
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Klikk på profilbildet."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Høyreklikk på bildet -> \"Åpne bilde i ny fane\"."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Kopier URL-en til bildet. Hvis den inneholder _n.jpg, er det ofte originalkvalitet."
+        },
+        {
+          "type": "paragraph",
+          "data": "1.3 Analyse og Pivotering: Veien videre"
+        },
+        {
+          "type": "paragraph",
+          "data": "Nå som vi har informasjonen, hvordan bruker vi den til å ta ham?"
+        },
+        {
+          "type": "paragraph",
+          "data": "SPORET 1: FIRMAET (\"Øst Service & Bemanning\")"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Handling: Vi går ut av Facebook og inn i Proff.no eller Brreg.no."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Søk: \"Øst Service & Bemanning AS\"."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Funn: Styreleder er Ståle Vold. Men hvem er varamedlem?"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Pivoteringspunkt: Varamedlemmet er \"Lina Grim\"."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Konklusjon: Vi har nå knyttet den \"uskyldige\" Lina Grim (fra case-beskrivelsen) til Ståles hvitvaskingsselskap. Hun er ikke bare en venn, hun er en forretningspartner."
+        },
+        {
+          "type": "paragraph",
+          "data": "SPORET 2: BILDENE (Visuell sammenligning)"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Handling: Last ned profilbildet fra Facebook (Hage/Grilling)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Handling: Hent frem bildet fra den kriminelle Instagram-kontoen @bk_nordlink (Rolex-bildet)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Analyse:"
+        },
+        {
+          "type": "paragraph",
+          "data": "   * På Facebook-bildet ser vi en levegg med et spesielt kryssmønster i bakgrunnen."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * På Instagram-bildet ser vi samme levegg i refleksjonen på klokken, eller i bakgrunnen av et bilde av penger."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Konklusjon: Dette beviser at bildene er tatt på samme sted. @bk_nordlink er Ståle Vold."
+        },
+        {
+          "type": "paragraph",
+          "data": "SPORET 3: KOMMENTARFELTET (Det skjulte nettverket)"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Handling: Se på hvem som kommenterer \"Grattis med ny bil!\" på innlegget om varebilen."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Funn: En bruker ved navn \"Kenneth K\" skriver: \"Den der tar mange kasser! 😉\"."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Analyse: Bruk av \"blunke-fjes\" og ordet \"kasser\" kan være intern slang."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Neste steg: Etterforsk profilen til \"Kenneth K\". Er han en \"Runner\"?"
+        },
+        {
+          "type": "paragraph",
+          "data": "🟠 VANLIGE FEIL (Oransje boks)"
+        },
+        {
+          "type": "paragraph",
+          "data": " * FEIL: Å tro at \"Privat\" betyr utilgjengelig."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Fakta: Selv om Ståle har lukket veggen sin, kan han være tagget i andres åpne bilder."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Løsning: Søk i Facebook-feltet: Photos of Ståle Vold. Dette viser bilder andre har lagt ut av ham."
+        },
+        {
+          "type": "paragraph",
+          "data": " * FEIL: Å bruke privat profil."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Fakta: Hvis du trykker \"Liker\" ved et uhell med din private profil, er etterforskningen kompromittert."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Løsning: Bruk alltid en sokkedukke."
+        },
+        {
+          "type": "paragraph",
+          "data": " * FEIL: Å ignorere gamle innlegg."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Fakta: Kriminelle blir flinkere med årene. De største tabbene ligger ofte i innlegg fra 2015-2018. Scroll langt tilbake!"
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "overskrift": "KONTROLLSPØRSMÅL",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * Hvorfor er FBID mer verdifullt for politiet enn navnet på profilen?"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Hvordan kan du finne bilder av Ståle selv om han har sperret sin egen profil for innsyn?"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Hvilket eksternt register bør du sjekke hvis Ståle lister opp en arbeidsplass på profilen sin?"
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "overskrift": "DEL B: RAPPORTKLAR TEKST",
+      "komponenter": []
+    },
+    {
+      "id": "s10",
+      "overskrift": "RAPPORT: KARTLEGGING AV FACEBOOK-PROFIL \"STÅLE VOLD\"",
+      "komponenter": []
+    },
+    {
+      "id": "s11",
+      "overskrift": "1. FUNN – IDENTITET OG KONTO",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Observasjon:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Det er identifisert en Facebook-profil med navnet \"Ståle Vold\". Profilen benytter Vanity-URL: facebook.com/staale.vold.logistikk."
+        },
+        {
+          "type": "paragraph",
+          "data": "Den unike numeriske identifikatoren (FBID) er sikret: 100063874219554."
+        },
+        {
+          "type": "paragraph",
+          "data": "Verifisering:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Profilbildet viser en mannsperson som visuelt samsvarer med politiets passfoto av mistenkte. Profilen oppgir arbeidssted \"Øst Service & Bemanning AS\", som er et foretak registrert på mistenkte i Enhetsregisteret."
+        },
+        {
+          "type": "paragraph",
+          "data": "Vurdering:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Det vurderes som sikkert (A1) at profilen disponeres av mistenkte Ståle Vold."
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "overskrift": "2. FUNN – AKTIVITET OG NETTVERK",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Observasjon:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Profilen fremstår som en fasade for legitim forretningsvirksomhet."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Dato: 12.05.2025: Bilde av en Volkswagen Crafter varebil (Reg.nr: [XX 00000]) med teksten \"Ny bil, nye muligheter mot Europa\"."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Interaksjon: Innlegget er likt av 45 personer. Blant disse identifiseres \"Lina Grim\" og \"Kenneth K\"."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Kommentar: Bruker \"Kenneth K\" kommenterer: \"Plass til mye i den veggen der\"."
+        },
+        {
+          "type": "paragraph",
+          "data": "Analyse:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Kommentaren fra \"Kenneth K\" kan tolkes som en referanse til skjulte rom (\"veggen\") i kjøretøyet, en kjent modus for narkotikatransport."
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "overskrift": "3. PIVOTERING OG VIDERE SØK",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Funn på profilen gir grunnlag for følgende nye undersøkelser:"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Kjøretøy: Varebilen [XX 00000] sjekkes mot Autoreg for eierhistorikk og heftelser."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Nettverk: Profilene til \"Lina Grim\" og \"Kenneth K\" undersøkes for tilknytning til narkotikamiljøet."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Foretak: Øst Service & Bemanning AS sjekkes for regnskapstall og ansatte via Brønnøysundregistrene."
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "overskrift": "DEL C: OPERATIV SJEKKLISTE (FACEBOOK)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Før du lukker fanen:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "☐ Har du sikret FBID (det lange tallet)?",
+            "☐ Har du sjekket \"Bilder av...\" (Photos of...)?",
+            "☐ Har du gått gjennom \"Liker\"-listen på profilbildet?",
+            "☐ Har du sjekket \"Om\"-seksjonen for familiemedlemmer?",
+            "☐ Har du tatt skjermbilde av hele vennelisten (hvis synlig)?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Neste steg:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Gå videre til Modul 3, hvor vi kryssjekker bildene fra Facebook med innholdet på Instagram og Telegram."
+        },
+        {
+          "type": "paragraph",
+          "data": "Her er Modul 3 – Visuell Bevisførsel."
+        },
+        {
+          "type": "paragraph",
+          "data": "I forrige modul fant vi Ståles \"rene\" Facebook-profil og hans antatte kriminelle aliaser. Nå står vi overfor et klassisk problem: Hvordan beviser vi at personen som griller pølser på Facebook er den samme som selger narkotika på Instagram, når han bruker pseudonym?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Svaret er IMINT (Imagery Intelligence) – kunsten å finne bevis i piksler."
+        }
+      ]
+    },
+    {
+      "id": "s15",
+      "overskrift": "DIGITAL ETTERFORSKNING – KOMPLETT METODEVERK",
+      "komponenter": []
+    },
+    {
+      "id": "s16",
+      "overskrift": "MODUL 3: VISUELL BEVISFØRSEL OG KOBLING AV IDENTITETER",
+      "komponenter": []
+    },
+    {
+      "id": "s17",
+      "overskrift": "CASE-STATUS:",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * Facebook (Åpen): Ståle legger ut bilde av seg selv som griller i hagen. Han har på seg en klokke. I bakgrunnen ser vi en spesiell levegg."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Instagram (Lukket/Anonym): Profilen @bk_nordlink legger ut et bilde av en hånd som holder en bunke 500-lapper. Hånden har samme klokke. Bakgrunnen viser samme levegg."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Oppdrag: Dokumentere disse likhetene så grundig at de holder som bevis i retten."
+        }
+      ]
+    },
+    {
+      "id": "s18",
+      "overskrift": "DEL A: UNDERVISNINGSKAPITTEL",
+      "komponenter": []
+    },
+    {
+      "id": "s19",
+      "overskrift": "1. IMINT: NÅR BILDER SNAKKER HØYERE ENN ORD",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Sosiale medier fjerner automatisk tekniske spor som GPS-data (metadata) fra bilder. Derfor må vi analysere innholdet i bildet."
+        },
+        {
+          "type": "paragraph",
+          "data": "> 🟢 HVORFOR: Tingene du eier, avslører hvem du er"
+        },
+        {
+          "type": "paragraph",
+          "data": "> Kriminelle elsker statusobjekter. En dyr klokke, en spesiell bil eller en unik tatovering er ofte stoltheten deres. De glemmer at disse objektene er unike identifikatorer. Hvis Ståle bruker den samme Rolex-klokken når han leker med barna (Facebook) som når han selger dop (Instagram), har han gitt oss den koblingen vi trenger."
+        },
+        {
+          "type": "paragraph",
+          "data": ">"
+        }
+      ]
+    },
+    {
+      "id": "s20",
+      "overskrift": "BEGREPSORDLISTE",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * IMINT (Imagery Intelligence): Etterretning basert på analyse av bilder."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Ankermottak (Anchor Points): Faste punkter i et bilde som ikke flytter seg (hus, fjell, unike føflekker)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Artefakter: Unike skader eller kjennetegn på en gjenstand (en ripe i klokken, en flekk på linsen)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Crop: Å beskjære et bilde for å fjerne omgivelser. Vi må ofte se etter det som ikke er beskåret."
+        },
+        {
+          "type": "paragraph",
+          "data": "1.1 Steg-for-steg: Visuell sammenligning (Matching)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Vi skal nå utføre en komparativ bildeanalyse. Dette er en \"finn 5 feil\"-lek, bare at vi leter etter likheter."
+        }
+      ]
+    },
+    {
+      "id": "s21",
+      "overskrift": "HANDLING:",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * Hent Bilde A (Kilde): Last ned grill-bildet fra Facebook (Ståle Vold)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Hent Bilde B (Mål): Last ned penge-bildet fra Instagram (@bk_nordlink)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Plasser bildene side om side: Bruk PowerPoint, Word eller et bildebehandlingsprogram."
+        }
+      ]
+    },
+    {
+      "id": "s22",
+      "overskrift": "ANALYSEPROSESS:",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * Objekt 1: Klokken"
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Facebook: En sølvfarget klokke med grønn urskive (Rolex Submariner \"Hulk\")."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Instagram: Samme type klokke."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Detalj: Se på lenken. Er det riper? Er klokkeslettet konsistent med lyset i bildet?"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Objekt 2: Anatomiske trekk"
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Facebook: Ståle har en liten føflekk på venstre håndbak."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Instagram: Hånden som holder pengene har en tilsvarende flekk på samme sted."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Objekt 3: Omgivelser"
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Facebook: I bakgrunnen er det en levegg i tre med liggende bord."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Instagram: Pengebildet er tatt utendørs. I hjørnet ser vi samme type levegg."
+        }
+      ]
+    },
+    {
+      "id": "s23",
+      "overskrift": "KONKLUSJON:",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Det er statistisk usannsynlig at to forskjellige personer har samme sjeldne klokke, samme føflekk og står foran samme levegg."
+        },
+        {
+          "type": "paragraph",
+          "data": "1.2 Omvendt bildesøk (Verifisering av originalitet)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Før vi konkluderer med at Ståle har tatt bildet, må vi sjekke at han ikke har stjålet det fra Google for å tøffe seg."
+        }
+      ]
+    },
+    {
+      "id": "s24",
+      "overskrift": "HANDLING:",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * Gå til images.google.com (eller bruk Yandex.com for bedre resultater på ansikter/Europa)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Klikk på kamera-ikonet (\"Søk med bilde\")."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Last opp bildet av pengene fra Instagram."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Resultat:"
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Treff: Hvis bildet finnes på 100 andre sider, er det et \"stock photo\" (falskt spor)."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Ingen treff: Bildet er sannsynligvis unikt og tatt av brukeren selv. Dette er det vi vil ha."
+        },
+        {
+          "type": "paragraph",
+          "data": "🟠 VANLIGE FEIL (Oransje boks)"
+        },
+        {
+          "type": "paragraph",
+          "data": " * FEIL: Å tro at en Rolex beviser identitet."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Fakta: Det finnes tusenvis av falske Rolexer. Klokken er en indikator, ikke et bevis alene. Den må kombineres med føflekker eller omgivelser."
+        },
+        {
+          "type": "paragraph",
+          "data": " * FEIL: Å overse refleksjoner."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Fakta: Solbriller, vinduer og til og med øynene til en person kan speile fotografen. Zoom alltid inn på blanke overflater."
+        },
+        {
+          "type": "paragraph",
+          "data": " * FEIL: Å glemme lysforhold."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Fakta: Hvis bildet skal være tatt \"kl. 03:00 på natten\" (ifølge chatten), men det er dagslys i vinduet, er det noe som ikke stemmer (eller bildet er gammelt)."
+        }
+      ]
+    },
+    {
+      "id": "s25",
+      "overskrift": "KONTROLLSPØRSMÅL",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * Hvorfor bruker vi omvendt bildesøk på bevisbilder?"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Nevn tre typer \"Ankermottak\" du kan se etter i et bilde for å koble to profiler sammen."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Hva betyr det at sosiale medier \"stripper\" metadata?"
+        }
+      ]
+    },
+    {
+      "id": "s26",
+      "overskrift": "DEL B: RAPPORTKLAR TEKST",
+      "komponenter": []
+    },
+    {
+      "id": "s27",
+      "overskrift": "RAPPORT: VISUELL SAMMENLIGNING AV PROFILER (IMINT)",
+      "komponenter": []
+    },
+    {
+      "id": "s28",
+      "overskrift": "1. FORMÅL",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Formålet med analysen er å avklare om brukeren av Instagram-kontoen @bk_nordlink er identisk med mistenkte Ståle Vold, basert på visuelt materiale publisert på profilene."
+        }
+      ]
+    },
+    {
+      "id": "s29",
+      "overskrift": "2. METODE",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Det er foretatt en komparativ analyse av bildemateriale fra:"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Kilde A: Facebook-profil \"Ståle Vold\" (ID: 100063874219554)"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Kilde B: Instagram-profil @bk_nordlink (ID: 123456789)"
+        }
+      ]
+    },
+    {
+      "id": "s30",
+      "overskrift": "3. FUNN OG SAMMENLIGNING",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "| Objekt | Kilde A (Facebook) | Kilde B (Instagram) | Samsvar |"
+        },
+        {
+          "type": "paragraph",
+          "data": "|---|---|---|---|"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Armbåndsur | Rolex Submariner, stål/grønn skive. Bæres på venstre arm. | Rolex Submariner, stål/grønn skive. Bæres på venstre arm. | HØYT |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Anatomi | Pigmentflekk (føflekk) synlig over tommelrot, venstre hånd. | Identisk plassert pigmentflekk synlig på hånden som holder kontanter. | SVÆRT HØYT |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Omgivelser | Hvitmalt levegg med kryss-spiler i bakgrunn (Privat bolig). | Samme type levegg synlig i bakgrunnen av \"pengebilde\". | MODERAT |"
+        }
+      ]
+    },
+    {
+      "id": "s31",
+      "overskrift": "4. ANALYSE",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Det er identifisert tre uavhengige likhetspunkter (Gjenstand, Anatomi, Sted) mellom den åpne profilen til mistenkte og den anonyme profilen."
+        },
+        {
+          "type": "paragraph",
+          "data": "Bildene er kontrollert mot åpne søkemotorer (Google/Yandex/TinEye) uten å gi treff på tidligere indeksering. Dette indikerer at bildene er unike og produsert av brukeren (User Generated Content)."
+        }
+      ]
+    },
+    {
+      "id": "s32",
+      "overskrift": "5. KONKLUSJON",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Det vurderes med Konfidensgrad A1 (Bekreftet via multiple, uavhengige indikatorer) at Instagram-kontoen @bk_nordlink disponeres av Ståle Vold. Bildet av store kontantbeløp knyttes dermed direkte til mistenkte."
+        }
+      ]
+    },
+    {
+      "id": "s33",
+      "overskrift": "DEL C: OPERATIV UTFYLLINGSSKJEMA",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "15.3 Identitetsopplysninger (Visuelle kjennetegn)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Instruksjon: Beskriv hva du ser som kan brukes til gjenkjenning senere."
+        },
+        {
+          "type": "paragraph",
+          "data": "| Kjennetegn | Beskrivelse | Funnet på (URL) | Dato |"
+        },
+        {
+          "type": "paragraph",
+          "data": "|---|---|---|---|"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Tatovering/Merke | Føflekk v/tommel venstre hånd | facebook.com/bilde... | 16.02.26 |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Smykker/Klokker | Rolex Submariner (Grønn) | instagram.com/bilde... | 16.02.26 |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Kjøretøy | VW Crafter (Sølv) | facebook.com/bilde... | 16.02.26 |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Interiør | Hvite kjøkkenfliser, \"Metro\"-type | facebook.com/bilde... | 16.02.26 |"
+        }
+      ]
+    },
+    {
+      "id": "s34",
+      "overskrift": "NESTE STEG I ETTERFORSKNINGEN:",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Nå som vi har bevist identiteten (Modul 1-3), må vi bevise aktiviteten i sanntid."
+        },
+        {
+          "type": "paragraph",
+          "data": "Gå videre til Modul 4, hvor vi setter opp overvåking av når Ståle er aktiv på nett (\"Pattern of Life\"), og bruker dette til å forutsi når han skal gjøre sitt neste trekk."
+        },
+        {
+          "type": "paragraph",
+          "data": "Her er Modul 4 – Atferdsanalyse (\"Pattern of Life\")."
+        },
+        {
+          "type": "paragraph",
+          "data": "I Modul 1-3 har vi identifisert Ståle, funnet nettverket hans og koblet ham til en fysisk lokasjon. Men for å planlegge en vellykket pågripelse eller bevise at han styrer operasjonen akkurat nå, må vi forstå rutinene hans."
+        },
+        {
+          "type": "paragraph",
+          "data": "Nå skal vi kartlegge når han sover, når han er på jobb, og når han er kriminell."
+        }
+      ]
+    },
+    {
+      "id": "s35",
+      "overskrift": "DIGITAL ETTERFORSKNING – KOMPLETT METODEVERK",
+      "komponenter": []
+    },
+    {
+      "id": "s36",
+      "overskrift": "MODUL 4: \"PATTERN OF LIFE\" (POL) – Å LESE DØGNRYTME",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "CASE-STATUS: Vi mistenker at Ståle Vold koordinerer narkotikatransporter fra utlandet. Vi vet hvem han er, men vi vet ikke når transportene skjer. Vi må overvåke hans digitale puls for å finne det rette tidspunktet for å slå til."
+        }
+      ]
+    },
+    {
+      "id": "s37",
+      "overskrift": "DEL A: UNDERVISNINGSKAPITTEL",
+      "komponenter": []
+    },
+    {
+      "id": "s38",
+      "overskrift": "1. MØNSTERANALYSE: FORSKJELLEN PÅ DAG OG NATT",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Alle mennesker har et mønster. Vi står opp, går på jobb, spiser middag og sover. Kriminelle har ofte to mønstre: Et lovlig mønster om dagen, og et ulovlig om natten."
+        },
+        {
+          "type": "paragraph",
+          "data": "> 🟢 HVORFOR: Tidsstempler er alibiet eller beviset"
+        },
+        {
+          "type": "paragraph",
+          "data": "> Hvis Ståle hevder han \"sov hele natten\", men vi kan bevise at han var aktiv på Telegram kl. 03:15, 03:22 og 03:45, har vi knust alibiet hans. Hvis denne aktiviteten sammenfaller nøyaktig med tidspunktet en varebil passerte Svinesund, har vi et sterkt indisie på koordinering."
+        },
+        {
+          "type": "paragraph",
+          "data": ">"
+        }
+      ]
+    },
+    {
+      "id": "s39",
+      "overskrift": "BEGREPSORDLISTE",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * Pattern of Life (POL): Kartlegging av en persons vaner, rutiner og bevegelser over tid."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Tidsstempel (Timestamp): Det nøyaktige tidspunktet en digital handling skjedde."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Sist sett (Last Seen): Statusmelding i apper som viser når brukeren sist var aktiv."
+        },
+        {
+          "type": "paragraph",
+          "data": " * UTC vs. CET: UTC er \"verdensklokken\" (London vinterstid). CET er norsk tid. Alltid sjekk hvilken tidssone verktøyet ditt bruker!"
+        },
+        {
+          "type": "paragraph",
+          "data": "1.1 Steg-for-steg: Manuell overvåking av Telegram"
+        },
+        {
+          "type": "paragraph",
+          "data": "Telegram er Ståles kommandosentral. Vi må vite når han er \"på jobb\" som @NordLink81."
+        }
+      ]
+    },
+    {
+      "id": "s40",
+      "overskrift": "HANDLING:",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * Bruk sokkedukke-telefonen: Åpne Telegram der du har lagret Ståles nummer."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Observasjon: Se på statusen under navnet hans."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Alternativ A: \"Last seen recently\" (Aktiv siste 1-3 dager)."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Alternativ B: \"Online\" (Aktiv NÅ)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Loggføring (Excel/Hunchly): Du kan ikke sitte og stirre på skjermen i 24 timer. Du gjør stikkprøver."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Sjekk 1 (09:00): Ståle er \"Last seen at 08:15\". (Han er på sin vanlige jobb)."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Sjekk 2 (23:00): Ståle er \"Online\"."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Sjekk 3 (02:30): Ståle er \"Online\"."
+        }
+      ]
+    },
+    {
+      "id": "s41",
+      "overskrift": "ANALYSE AV STÅLE VOLD:",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Ståle er sjelden aktiv på Telegram i kontortid (08-16). Han er svært aktiv sent på kvelden i helgene. Dette bryter med mønsteret til en vanlig familiefar, men stemmer overens med en som koordinerer nattlige leveranser."
+        },
+        {
+          "type": "paragraph",
+          "data": "1.2 Duolingo: Den overraskende sladrehanken"
+        },
+        {
+          "type": "paragraph",
+          "data": "Kriminelle glemmer ofte spill og læringsapper. I filene du lastet opp, nevnes Duolingo som en kilde. La oss sjekke Ståle der."
+        },
+        {
+          "type": "paragraph",
+          "data": "HYPOTESE: Hvis Ståle organiserer transport fra Tyskland, kan det hende han prøver å lære seg språket eller bruker appen mens han venter."
+        }
+      ]
+    },
+    {
+      "id": "s42",
+      "overskrift": "HANDLING:",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * Gå til: duolingo.com/profile/StaleV81 (Vi gjetter brukernavnet basert på mønsteret \"Navn + 81\")."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Sjekk \"XP\" (Erfaringspoeng): Når tjener han poeng?"
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Funn: Han tar tyskkurs."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Grafen: Han har en \"streak\" (daglig aktivitet) som kun er aktiv i helgene."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Sjekk \"Friends\": Følger han noen som heter \"Kurt\" eller \"Lina\"?"
+        },
+        {
+          "type": "paragraph",
+          "data": "KONKLUSJON: Ståle bruker Duolingo aktivt i helgene for å lære tysk. Dette styrker hypotesen om Tyskland-koblingen, og gir oss enda et datapunkt på når han er aktiv på telefonen sin."
+        },
+        {
+          "type": "paragraph",
+          "data": "1.3 Spotify: Hva hører han på når han kjører?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Hvis Ståle bruker Spotify, kan vi se spillelistene hans."
+        }
+      ]
+    },
+    {
+      "id": "s43",
+      "overskrift": "HANDLING:",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * Google-søk: site:open.spotify.com \"Ståle Vold\" eller \"Betongen81\"."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Funn: En offentlig spilleliste kalt \"Nattkjøring 🚛\"."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Innhold: Høy BPM (Techno/Hardstyle)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Opprettet: Datoen sammenfaller med en kjent tur til Hamburg."
+        },
+        {
+          "type": "paragraph",
+          "data": "🟠 VANLIGE FEIL (Oransje boks)"
+        },
+        {
+          "type": "paragraph",
+          "data": " * FEIL: Glemme tidsforskjellen."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Scenario: Du ser en post kl. \"02:00\"."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Feil: Du tror det er natt."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Fakta: Plattformen viser Pacific Time (USA). I Norge var det kl. 11:00 på formiddagen. Alltid konverter til norsk tid."
+        },
+        {
+          "type": "paragraph",
+          "data": " * FEIL: Å tro at \"Active now\" på Facebook er presist."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Fakta: Facebooks grønne prikk kan henge igjen i opptil en time etter at brukeren logget av. Bruk det som en indikasjon, ikke et bevis."
+        },
+        {
+          "type": "paragraph",
+          "data": " * FEIL: Å ikke logge \"inaktivitet\"."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Fakta: At Ståle er helt stille i 8 timer (f.eks. mens han kjører over grensen eller sover etter en jobb) er like viktig som at han er aktiv."
+        }
+      ]
+    },
+    {
+      "id": "s44",
+      "overskrift": "KONTROLLSPØRSMÅL",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * Hva er forskjellen på \"aktivitet\" og \"mønster\" (Pattern of Life)?"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Hvordan kan en uskyldig app som Duolingo gi politiet informasjon om kriminell logistikk?"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Hvorfor er det kritisk å notere hvilken tidssone (Time Zone) en nettside bruker?"
+        }
+      ]
+    },
+    {
+      "id": "s45",
+      "overskrift": "DEL B: RAPPORTKLAR TEKST",
+      "komponenter": []
+    },
+    {
+      "id": "s46",
+      "overskrift": "RAPPORT: TIDSLINJE- OG ATFERDSANALYSE AV \"STÅLE VOLD\"",
+      "komponenter": []
+    },
+    {
+      "id": "s47",
+      "overskrift": "1. FORMÅL",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Formålet med analysen er å kartlegge mistenktes digitale aktivitetsmønster (Pattern of Life) for å identifisere tidsrom for kriminell koordinering."
+        }
+      ]
+    },
+    {
+      "id": "s48",
+      "overskrift": "2. METODE",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Det er gjennomført manuell monitorering av statusindikatorer på Telegram, samt analyse av aktivitetslogger på åpne profiler (Duolingo, Spotify) i perioden [DATO] til [DATO]. Alle tidsstempler er konvertert til norsk tid (CET/CEST)."
+        }
+      ]
+    },
+    {
+      "id": "s49",
+      "overskrift": "3. FUNN – AKTIVITETSMØNSTER (POL)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "A. Døgnrytme"
+        },
+        {
+          "type": "paragraph",
+          "data": "Objektet utviser et tydelig todelt aktivitetsmønster:"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Fase 1 (Hverdager 08:00–16:00): Lav/Ingen aktivitet på krypterte apper (Telegram/Signal). Normal aktivitet på Facebook (liker familiebilder)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Fase 2 (Helg/Natt 23:00–04:00): Høy aktivitet på Telegram-kontoen @NordLink81. Status endres hyppig mellom \"Online\" og \"Last seen recently\"."
+        },
+        {
+          "type": "paragraph",
+          "data": "B. Duolingo-aktivitet"
+        },
+        {
+          "type": "paragraph",
+          "data": "Profilen StaleV81 viser aktiv språklæring (Tysk). Aktiviteten korrelerer med helgeperiodene der objektet er aktiv på Telegram."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Observasjon: Objektet tjener erfaringspoeng (XP) i tidsrommet 02:00–04:00 natt til lørdager."
+        }
+      ]
+    },
+    {
+      "id": "s50",
+      "overskrift": "4. ANALYSE",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Det observerte mønsteret avviker fra en normal døgnrytme for en person i ordinært arbeid. Den nattlige aktiviteten på Telegram, kombinert med språklæring (Tysk) på samme tidspunkter, indikerer at objektet er våken og operativ i tidsrom som er kjent for grensekryssende varetransport."
+        }
+      ]
+    },
+    {
+      "id": "s51",
+      "overskrift": "5. KONKLUSJON",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Analysen styrker hypotesen om at Ståle Vold koordinerer logistikk fra Tyskland på nattestid i helgene."
+        }
+      ]
+    },
+    {
+      "id": "s52",
+      "overskrift": "6. TAKTISK ANBEFALING",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "En eventuell pågripelse eller ransaking bør planlegges i tidsrommet fredag kl. 23:00 – 01:00, da objektet er bekreftet aktiv ved sin digitale kommandoplass (telefonen) og sannsynligvis har ubeskyttet tilgang til inkriminerende chatter."
+        }
+      ]
+    },
+    {
+      "id": "s53",
+      "overskrift": "DEL C: OPERATIV UTFYLLINGSSKJEMA",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "15.7 Tidslinje (Aktivitetslogg)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Instruksjon: Fyll inn når han var aktiv for å finne mønsteret."
+        },
+        {
+          "type": "paragraph",
+          "data": "| Dato | Klokkeslett | Plattform | Status/Handling | Tolkning |"
+        },
+        {
+          "type": "paragraph",
+          "data": "|---|---|---|---|---|"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Fredag 14.02 | 14:00 | Facebook | Poster bilde av lunsj | Normal jobb/fasade |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Fredag 14.02 | 23:15 | Telegram | Status: Online | Operasjon start? |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Lørdag 15.02 | 02:30 | Duolingo | Fullførte tysk leksjon | Våken/Venter/Pause |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Lørdag 15.02 | 03:45 | Telegram | Status: Offline | Operasjon slutt? |"
+        }
+      ]
+    },
+    {
+      "id": "s54",
+      "overskrift": "NESTE STEG I ETTERFORSKNINGEN:",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Nå vet vi hvem han er, hvor lageret er, og når han jobber."
+        },
+        {
+          "type": "paragraph",
+          "data": "Gå videre til Modul 5 (Siste modul): Her skal vi sette sammen \"Sluttpakken\" til juristen for å få en ransakingsbeslutning. Vi skal validere alle funnene med en siste TPS-sjekk."
+        },
+        {
+          "type": "paragraph",
+          "data": "Her er den Operative Kvikk-guiden."
+        },
+        {
+          "type": "paragraph",
+          "data": "Denne er utformet som et konsentrert oppslagsverk (\"Cheat Sheet\") på 1-2 sider. Den er ment for å skrives ut og henges ved siden av skjermen på kontoret, slik at du har kommandoer og fremgangsmåter lett tilgjengelig når det koker."
+        }
+      ]
+    },
+    {
+      "id": "s55",
+      "overskrift": "🕵️ OPERATIV KVIKK-GUIDE: DIGITAL ETTERFORSKNING (ÅK)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Versjon 2026 – Tilpasset Øst Politidistrikt Standard"
+        }
+      ]
+    },
+    {
+      "id": "s56",
+      "overskrift": "🚨 FASE 0: OPSEC (SIKKERHET) – FØR DU RØRER TASTATURET",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * IKKE bruk politinett eller privat utstyr direkte mot kriminelle mål."
+        },
+        {
+          "type": "paragraph",
+          "data": " * BRUK dedikert etterforskningsmaskin (VM) + VPN/Proxy (Proton/Mulvad)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * SJEKK din egen IP på check.torproject.org eller iplocation.net før start."
+        },
+        {
+          "type": "paragraph",
+          "data": " * HUNCHLY: Aktiver opptak før du åpner første fane."
+        }
+      ]
+    },
+    {
+      "id": "s57",
+      "overskrift": "🔍 FASE 1: IDENTIFISERING (FRA SPOR TIL PERSON)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "| Har du... | Gjør dette (Metode) | Verktøy/URL |"
+        },
+        {
+          "type": "paragraph",
+          "data": "|---|---|---|"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Brukernavn | Sjekk om det finnes på 100+ sider. | whatsmyname.app / namechk.com |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Telefonnr. | Vipps-søk (Navn). Telegram-sjekk (Profil). | Tjenestetelefon / BRÅK.industries |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| E-post | Sjekk datalekkasjer og Google-konto. | epieos.com / haveibeenpwned.com |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Bilde | Omvendt bildesøk (Fjes/Steder). | pimeyes.com (Fjes) / yandex.com (Ting) |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| Bilskilt | Sjekk eier og heftelser. | vegvesen.no / regnr.info |"
+        }
+      ]
+    },
+    {
+      "id": "s58",
+      "overskrift": "📱 FASE 2: PLATTFORM-SPESIFIKKE TEKNIKKER",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "👻 SNAPCHAT (\"Glemt Passord\"-trikset)"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Mål: Finne delvis telefonnummer eller e-post."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Handling: Gå til accounts.snapchat.com ➔ Skriv brukernavn ➔ Klikk \"Forgot Password\"."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Resultat: \"Vi sender kode til ******74\". (IKKE trykk send!)"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Verdi: Bekrefter at brukeren eier nummeret som slutter på 74."
+        }
+      ]
+    },
+    {
+      "id": "s59",
+      "overskrift": "📸 INSTAGRAM (Finne UID – Den \"evige\" ID-en)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * Mål: Sikre ID som tåler navnebytte."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Handling: Åpne profil i nettleser ➔ Høyreklikk \"Vis sidekilde\" ➔ Ctrl+F."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Søk: \"profilePage_\" eller \"user_id\"."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Resultat: Tallet bak er UID (f.eks. 123456789)."
+        },
+        {
+          "type": "paragraph",
+          "data": "✈️ TELEGRAM (Nummer-avsløring)"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Mål: Koble telefonnummer til alias/profil."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Handling: Lagre mistenktes nr. på \"skitten\" telefon ➔ Åpne Telegram ➔ Synk kontakter."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Sjekk: Profilbilde, Bio (\"Nye varer ❄️\") og \"Last Seen\"."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Husk: Sett dine personverninnstillinger til \"Nobody\" først!"
+        },
+        {
+          "type": "paragraph",
+          "data": "🎵 TIKTOK (Nøyaktig tidsstempel)"
+        },
+        {
+          "type": "paragraph",
+          "data": " * Mål: Finne når en video ble lagt ut (mer presist enn \"2 dager siden\")."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Handling: Høyreklikk på video ➔ \"Inspiser\" ➔ Ctrl+F ➔ Søk \"createTime\"."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Verktøy: Kopier tallet ➔ Lim inn i unixtimestamp.com."
+        }
+      ]
+    },
+    {
+      "id": "s60",
+      "overskrift": "🔎 FASE 3: GOOGLE DORKS (SØKE-SNARVEIER)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Bruk disse i Google-feltet for å finne det andre ikke finner."
+        },
+        {
+          "type": "paragraph",
+          "data": "| Kommando | Hva den gjør | Eksempel (Ståle Vold-casen) |"
+        },
+        {
+          "type": "paragraph",
+          "data": "|---|---|---|"
+        },
+        {
+          "type": "paragraph",
+          "data": "| \"...\" | Søker etter eksakt frase. | \"Ståle Vold\" |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| site: | Søker kun på én nettside. | site:facebook.com \"Ståle Vold\" |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| filetype: | Finner spesifikke filer. | filetype:xlsx \"regnskap\" \"Vold\" |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| intext: | Finner tekst i brødtekst. | intext:\"selger\" site:instagram.com |"
+        },
+        {
+          "type": "paragraph",
+          "data": "| cache: | Ser på gammel versjon. | cache:twitter.com/betongen81 |"
+        }
+      ]
+    },
+    {
+      "id": "s61",
+      "overskrift": "🧩 FASE 4: INNHOLDSANALYSE (KODER & GEO)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "💊 EMOJI-DEKODER (Narkotika/Vold)"
+        },
+        {
+          "type": "paragraph",
+          "data": " * ❄️ / 🌨️ = Kokain (\"Snø\")"
+        },
+        {
+          "type": "paragraph",
+          "data": " * 🧱 = Kilo / Plate (\"Brick\")"
+        },
+        {
+          "type": "paragraph",
+          "data": " * 🔌 = Dealer / Leverandør (\"The Plug\")"
+        },
+        {
+          "type": "paragraph",
+          "data": " * 🔨 = Vold / Innkreving / Torpedo"
+        },
+        {
+          "type": "paragraph",
+          "data": " * 💊 / 🍬 = MDMA / Ecstasy / Piller"
+        },
+        {
+          "type": "paragraph",
+          "data": " * 💨 / 🥦 = Cannabis / Weed"
+        }
+      ]
+    },
+    {
+      "id": "s62",
+      "overskrift": "🌍 GEOLOKALISERING (IMINT)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * Fjern fokus: Se bort fra personen i bildet. Se på bakgrunnen."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Finn ankre: Skilt, unike bygg, fjellformasjoner, master, refleksjoner i vinduer."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Verifiser: Bruk Google Earth Pro (3D) eller Street View for å finne samme vinkel."
+        }
+      ]
+    },
+    {
+      "id": "s63",
+      "overskrift": "💰 FASE 5: KRYPTO-SPORING",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * Identifiser: Ser du en adresse? (Starter på 1, 3 eller bc1 for Bitcoin)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Søk: Bruk blockchair.com eller blockchain.com."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Analyser:"
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Mange små inn: Salg til brukere."
+        },
+        {
+          "type": "paragraph",
+          "data": "   * Få store ut: Hvitvasking/Cashing out."
+        },
+        {
+          "type": "paragraph",
+          "data": " * Se etter børser: Går pengene til en \"Hot Wallet\" merket Binance/Coinbase? (Da kan vi kreve ID)."
+        }
+      ]
+    },
+    {
+      "id": "s64",
+      "overskrift": "📝 FASE 6: RAPPORTERING (HUSKEREGEL)",
+      "komponenter": []
+    },
+    {
+      "id": "s65",
+      "overskrift": "SJEKKLISTE FØR LEVERING:",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": " * ☐ Tidssone: Er det UTC eller CET? (Skriv det i rapporten!)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * ☐ Hash: Har alle bevisbilder fått en SHA-256 hash?"
+        },
+        {
+          "type": "paragraph",
+          "data": " * ☐ Skille: Er det tydelig hva som er Observasjon (Fakta) og Vurdering (Mening)?"
+        },
+        {
+          "type": "paragraph",
+          "data": " * ☐ Konfidens: Har du gradert funnet? (A1 = Sikkert, C4 = Usikkert)."
+        },
+        {
+          "type": "paragraph",
+          "data": " * ☐ Integritet: Kan en annen etterforsker gjøre det samme søket og få samme svar?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Heng denne opp. Bruk den. Fang skurkene."
+        },
+        {
+          "type": "paragraph",
+          "data": "Dette markerer slutten på det strukturerte metodeverket. Jeg kan nå generere en \"Avsluttende Eksamensøvelse\" (Case: \"Lina Grim har forsvunnet\") for å teste kunnskapen din, eller vi kan avslutte sesjonen her."
+        }
+      ]
+    }
+  ]
+}
 
