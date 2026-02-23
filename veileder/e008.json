@@ -1,6 +1,6 @@
 {
   "tittel": "FACEBOOK",
-  "undertittel": "MODUL 2: FACEBOOK – FASADEN OG ARKIVET",
+  "undertittel": "FACEBOOK – FASADEN OG ARKIVET",
   "ordliste": [],
   "seksjoner": [
     {
@@ -164,7 +164,7 @@
         {
           "type": "callout",
           "kind": "WARNING",
-          "data": "VANLIGE FEIL (Oransje boks)"
+          "data": "VANLIGE FEIL"
         },
         {
           "type": "list",
