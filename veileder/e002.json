@@ -9,76 +9,76 @@
       "komponenter": [
         {
           "type": "paragraph",
-          [cite_start]"data": "1.1 Hva er Signal, og hvorfor møter vi det i etterforskning? [cite: 2] [cite_start]Signal er en gratis meldingsapplikasjon som har blitt standarden for kryptert kommunikasjon blant personer som ønsker å beskytte sitt privatliv. [cite: 3] [cite_start]I motsetning til vanlige meldingsapper som SMS eller ubekryptede e-poster, er Signal designet fra grunnen av for å gjøre det teknisk umulig – selv for tjenesteleverandøren – å lese innholdet i kommunikasjonen. [cite: 4] [cite_start]Dette gjør Signal til et naturlig verktøy for legitime personvernbevisste brukere som journalister, aktivister og menneskerettighetsarbeidere, men også for kriminelle nettverk som ønsker å skjule sin kommunikasjon fra politiet. [cite: 5] [cite_start]Signal driftes av Signal Technology Foundation, en ideell organisasjon (501c3) grunnlagt av Moxie Marlinspike og Brian Acton. [cite: 6] [cite_start]Organisasjonsformen er bevisst valgt for å fjerne kommersielle insentiver til å samle inn brukerdata for annonsering eller videresalg – en praksiss som har blitt svært vanlig hos kommersielle aktører som Meta (Facebook, WhatsApp) og Google. [cite: 7] [cite_start]Signal-protokollen, som er hjertesonen i applikasjonens sikkerhet, er åpen kildekode (Open Source), noe som betyr at både klientkoden og serverkoden er offentlig tilgjengelig for uavhengig sikkerhetsrevisjon. [cite: 8]"
+          "data": "1.1 Hva er Signal, og hvorfor møter vi det i etterforskning? [cite: 2] Signal er en gratis meldingsapplikasjon som har blitt standarden for kryptert kommunikasjon blant personer som ønsker å beskytte sitt privatliv. [cite: 3] I motsetning til vanlige meldingsapper som SMS eller ubekryptede e-poster, er Signal designet fra grunnen av for å gjøre det teknisk umulig – selv for tjenesteleverandøren – å lese innholdet i kommunikasjonen. [cite: 4] Dette gjør Signal til et naturlig verktøy for legitime personvernbevisste brukere som journalister, aktivister og menneskerettighetsarbeidere, men også for kriminelle nettverk som ønsker å skjule sin kommunikasjon fra politiet. [cite: 5] Signal driftes av Signal Technology Foundation, en ideell organisasjon (501c3) grunnlagt av Moxie Marlinspike og Brian Acton. [cite: 6] Organisasjonsformen er bevisst valgt for å fjerne kommersielle insentiver til å samle inn brukerdata for annonsering eller videresalg – en praksiss som har blitt svært vanlig hos kommersielle aktører som Meta (Facebook, WhatsApp) og Google. [cite: 7] Signal-protokollen, som er hjertesonen i applikasjonens sikkerhet, er åpen kildekode (Open Source), noe som betyr at både klientkoden og serverkoden er offentlig tilgjengelig for uavhengig sikkerhetsrevisjon. [cite: 8]"
         },
         {
           "type": "callout",
           "kind": "TIP",
-          [cite_start]"data": "HVORFOR ER DETTE VIKTIG? [cite: 9] [cite_start]Analogi: Tenk på vanlig SMS som et postkort – alle som håndterer det underveis (postbudet, sorteringsmaskinen) kan lese hva som står på det. [cite: 10] [cite_start]Signal er som et brev i en stållåst boks som kun mottakeren har nøkkelen til. [cite: 11] [cite_start]Selv postselskapet (Signal Foundation) kan ikke åpne boksen. [cite: 12] [cite_start]Praksis: I moderne etterforskning møter vi stadig oftere Signal i saker som: [cite: 13] [cite_start]Organisert kriminalitet: Narkotikanettverk koordinerer leveranser [cite: 14] [cite_start]VaaS (Violence as a Service): Rekruttering av unge utførere til voldshendelser [cite: 15] [cite_start]Hvitvasking: Betalinger koordineres gjennom krypterte kanaler [cite: 16] [cite_start]Terrorisme og ekstremisme: Planlegging av aksjoner [cite: 17]"
+          "data": "HVORFOR ER DETTE VIKTIG? [cite: 9] Analogi: Tenk på vanlig SMS som et postkort – alle som håndterer det underveis (postbudet, sorteringsmaskinen) kan lese hva som står på det. [cite: 10] Signal er som et brev i en stållåst boks som kun mottakeren har nøkkelen til. [cite: 11] Selv postselskapet (Signal Foundation) kan ikke åpne boksen. [cite: 12] Praksis: I moderne etterforskning møter vi stadig oftere Signal i saker som: [cite: 13] Organisert kriminalitet: Narkotikanettverk koordinerer leveranser [cite: 14] VaaS (Violence as a Service): Rekruttering av unge utførere til voldshendelser [cite: 15] Hvitvasking: Betalinger koordineres gjennom krypterte kanaler [cite: 16] Terrorisme og ekstremisme: Planlegging av aksjoner [cite: 17]"
         },
         {
           "type": "callout",
           "kind": "CASE",
-          [cite_start]"data": "Eksempel (Kurt Mikkelsen-caset): I etterforskningen av Kurts mulige involvering i VaaS-nettverk ble det observert at hans primærkommunikasjon gikk gjennom Telegram. [cite: 18] [cite_start]Men @NordLink81 (Anders Berg, 23 år) har Signal installert på sin beslaglagte telefon, hvor det i \"Note to Self\"-funksjonen lå en liste over telefonnumre til ungdommer i Lørenskog-området, inkludert Kurts nummer. [cite: 19] [cite_start]Dette indikerer at Signal brukes til mer sensitiv kommunikasjon enn det som foregår på de åpne plattformene. [cite: 20]"
+          "data": "Eksempel (Kurt Mikkelsen-caset): I etterforskningen av Kurts mulige involvering i VaaS-nettverk ble det observert at hans primærkommunikasjon gikk gjennom Telegram. [cite: 18] Men @NordLink81 (Anders Berg, 23 år) har Signal installert på sin beslaglagte telefon, hvor det i \"Note to Self\"-funksjonen lå en liste over telefonnumre til ungdommer i Lørenskog-området, inkludert Kurts nummer. [cite: 19] Dette indikerer at Signal brukes til mer sensitiv kommunikasjon enn det som foregår på de åpne plattformene. [cite: 20]"
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "1.2 Signifikante forskjeller fra andre meldingsapper [cite: 21] [cite_start]Signal skiller seg fra konkurrenter som WhatsApp, Telegram, Messenger og iMessage på flere kritiske punkter som direkte påvirker etterforskningens muligheter: [cite: 22] [cite_start]Tabell 1.1: Sammenligning av meldingsapper (etterforskningsperspektiv) [cite: 23]"
+          "data": "1.2 Signifikante forskjeller fra andre meldingsapper [cite: 21] Signal skiller seg fra konkurrenter som WhatsApp, Telegram, Messenger og iMessage på flere kritiske punkter som direkte påvirker etterforskningens muligheter: [cite: 22] Tabell 1.1: Sammenligning av meldingsapper (etterforskningsperspektiv) [cite: 23]"
         },
         {
           "type": "grid",
           "data": [
-            "Aspekt | Signal | WhatsApp | [cite_start]Telegram | iMessage [cite: 24]",
-            "Ende-til-ende-kryptering | Alltid | Standard chat | \"Kun \"\"Secret Chat\"\"\" | [cite_start]Standard chat [cite: 24]",
-            "Metadata-beskyttelse | Ja (Sealed Sender) | Nei | Nei | [cite_start]Delvis [cite: 24]",
-            "Datalagring på server | Minimal (kun tidsstempler) | Backup-metadata | [cite_start]Skymeldinger tilgjengelige | iCloud-backup mulig [cite: 24]",
-            "Telefonnummer-synlighet | Kan skjules (brukernavn) | Synlig for kontakter | Kan skjules (brukernavn) | [cite_start]Synlig [cite: 24]",
-            "Gruppemetadata | Kryptert (serveren ser ikke medlemmer) | Server ser medlemmer | Server ser medlemmer | [cite_start]Server ser medlemmer [cite: 24]",
-            "Rettslig datauthenting | 2 tidsstempler | Metadata + backup (hvis aktivert) | [cite_start]Skymeldinger + metadata | iCloud-backup (hvis aktivert) [cite: 24]",
-            "Åpen kildekode | Ja (fullt revisjonbar) | Nei | Delvis (klient) | [cite_start]Nei [cite: 24]"
+            "Aspekt | Signal | WhatsApp | Telegram | iMessage [cite: 24]",
+            "Ende-til-ende-kryptering | Alltid | Standard chat | \"Kun \"\"Secret Chat\"\"\" | Standard chat [cite: 24]",
+            "Metadata-beskyttelse | Ja (Sealed Sender) | Nei | Nei | Delvis [cite: 24]",
+            "Datalagring på server | Minimal (kun tidsstempler) | Backup-metadata | Skymeldinger tilgjengelige | iCloud-backup mulig [cite: 24]",
+            "Telefonnummer-synlighet | Kan skjules (brukernavn) | Synlig for kontakter | Kan skjules (brukernavn) | Synlig [cite: 24]",
+            "Gruppemetadata | Kryptert (serveren ser ikke medlemmer) | Server ser medlemmer | Server ser medlemmer | Server ser medlemmer [cite: 24]",
+            "Rettslig datauthenting | 2 tidsstempler | Metadata + backup (hvis aktivert) | Skymeldinger + metadata | iCloud-backup (hvis aktivert) [cite: 24]",
+            "Åpen kildekode | Ja (fullt revisjonbar) | Nei | Delvis (klient) | Nei [cite: 24]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Kritisk forskjell for etterforskning: WhatsApp kan, ved rettslig pålegg, utlevere informasjon om når en bruker opprettet kontoen, sist var online, og hvem de har kommunisert med (metadata). [cite: 25] Signal utleverer kun kontoens opprettelsesdato og dato for siste tilkobling til serveren. [cite_start]Ingen meldingsinnhold, ingen kontaktlister, ingen gruppemedlemskap. [cite: 26]"
+          "data": "Kritisk forskjell for etterforskning: WhatsApp kan, ved rettslig pålegg, utlevere informasjon om når en bruker opprettet kontoen, sist var online, og hvem de har kommunisert med (metadata). [cite: 25] Signal utleverer kun kontoens opprettelsesdato og dato for siste tilkobling til serveren. Ingen meldingsinnhold, ingen kontaktlister, ingen gruppemedlemskap. [cite: 26]"
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "📖 ORDLISTE (GRUNNBEGREPER FOR SIGNAL) [cite: 27] [cite_start]Ende-til-ende-kryptering (E2EE): Meldinger krypteres på avsenderens enhet og dekrypteres først på mottakerens enhet. [cite: 28] [cite_start]Serveren (Signal) ser kun kryptert \"rot\" underveis. [cite: 29] [cite_start]Metadata: Data om kommunikasjonen (hvem snakker med hvem, når, hvor lenge), ikke innholdet i samtalen. [cite: 30] [cite_start]Sealed Sender: Teknologi som skjuler avsenderens identitet fra serveren. [cite: 31] [cite_start]Serveren vet hvem meldingen skal til , men ikke hvem den kommer fra . [cite: 32] [cite_start]Safety Number: Et unikt fingeravtrykk (64 sifre) som identifiserer krypteringen mellom to spesifikke brukere. [cite: 33] [cite_start]Brukes til å verifisere at ingen avlytter (\"Mann-i-midten\"-angrep). [cite: 34] [cite_start]Registration Lock (Signal PIN): En brukerskapt kode som beskytter kontoen mot uautorisert overføring til en ny enhet. [cite: 35] [cite_start]UUID (Universally Unique Identifier): En permanent, unik identifikator for hver Signal-konto, uavhengig av telefonnummer eller brukernavn. [cite: 36] [cite_start]Disappearing Messages (Forsvinnende meldinger): Meldinger som automatisk slettes etter en forhåndsbestemt tid (30 sekunder til 4 uker). [cite: 37] [cite_start]Note to Self: En funksjon hvor brukeren kan sende meldinger til seg selv som en kryptert notatblokk. [cite: 38]"
+          "data": "📖 ORDLISTE (GRUNNBEGREPER FOR SIGNAL) [cite: 27] Ende-til-ende-kryptering (E2EE): Meldinger krypteres på avsenderens enhet og dekrypteres først på mottakerens enhet. [cite: 28] Serveren (Signal) ser kun kryptert \"rot\" underveis. [cite: 29] Metadata: Data om kommunikasjonen (hvem snakker med hvem, når, hvor lenge), ikke innholdet i samtalen. [cite: 30] Sealed Sender: Teknologi som skjuler avsenderens identitet fra serveren. [cite: 31] Serveren vet hvem meldingen skal til , men ikke hvem den kommer fra . [cite: 32] Safety Number: Et unikt fingeravtrykk (64 sifre) som identifiserer krypteringen mellom to spesifikke brukere. [cite: 33] Brukes til å verifisere at ingen avlytter (\"Mann-i-midten\"-angrep). [cite: 34] Registration Lock (Signal PIN): En brukerskapt kode som beskytter kontoen mot uautorisert overføring til en ny enhet. [cite: 35] UUID (Universally Unique Identifier): En permanent, unik identifikator for hver Signal-konto, uavhengig av telefonnummer eller brukernavn. [cite: 36] Disappearing Messages (Forsvinnende meldinger): Meldinger som automatisk slettes etter en forhåndsbestemt tid (30 sekunder til 4 uker). [cite: 37] Note to Self: En funksjon hvor brukeren kan sende meldinger til seg selv som en kryptert notatblokk. [cite: 38]"
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "1.3 Hvorfor Signal er \"the hardest app to investigate\" [cite: 39] Fra et etterforskningsperspektiv representerer Signal den største utfordringen blant de vanlige meldingsappene. [cite_start]Dette skyldes fire fundamentale design-prinsipper: [cite: 40] 1. [cite_start]Minimalistisk datalagring på server [cite: 41] Signal lagrer bevisst ekstremt lite informasjon på sine servere. [cite_start]Ved rettslig pålegg (stevning, kjennelse) kan Signal kun utlevere: [cite: 42] [cite_start]Dato for kontoopprettelse (f.eks. \"15. januar 2024\") [cite: 43] [cite_start]Dato for siste tilkobling til serveren (f.eks. \"17. februar 2026 kl. 14:32 UTC\") [cite: 44] [cite_start]Signal kan ikke utlevere (fordi de ikke har tilgang til det): [cite: 45] [cite_start]Meldingsinnhold (kryptert, nøklene er kun på enhetene) [cite: 46] [cite_start]Kontaktlister (lagret lokalt på brukerens telefon) [cite: 47] [cite_start]Gruppemedlemskap eller gruppenavn (kryptert for serveren) [cite: 48] [cite_start]Logger over hvem som har kommunisert med hvem [cite: 49] Dette står i skarp kontrast til f.eks. [cite_start]Meta (Facebook/WhatsApp), som lagrer omfattende metadata som kan brukes til å bygge sosiale grafer og tidslinjekart over kommunikasjon. [cite: 50] 2. [cite_start]Ingen \"backdoor\" eller \"master key\" [cite: 51] [cite_start]Noen krypterte tjenester har en \"nøddør\" (backdoor) eller en hovednøkkel (master key) som gir tjenesteleverandøren mulighet til å dekryptere innhold ved behov – ofte motivert av rettslige krav eller nasjonal sikkerhet. [cite: 52] Signal har ingen slik mekanisme. [cite_start]Krypteringsnøklene genereres, lagres og brukes utelukkende på brukernes egne enheter. [cite: 53] [cite_start]Signal Foundation har ikke fysisk eller teknisk mulighet til å lese meldinger, selv om de ville ønsket det. [cite: 54] [cite_start]Dette er mulig fordi Signal bruker asynkron kryptering (X3DH og Double Ratchet), hvor hver melding krypteres med en unik nøkkel som aldri forlater enhetene. [cite: 55] [cite_start]Serveren fungerer kun som en \"dum postboks\" som tar imot krypterte pakker og leverer dem til riktig mottaker. [cite: 56] 3. [cite_start]Forward Secrecy og Post-Compromise Security [cite: 57] [cite_start]Signal-protokollen har to avanserte sikkerhetsfunksjoner: [cite: 58] [cite_start]Forward Secrecy (FS): Hvis en krypteringsnøkkel blir stjålet i dag, kan den ikke brukes til å dekryptere meldinger fra fortiden. [cite: 59] [cite_start]Hver melding krypteres med en ny nøkkel som ikke kan beregnes bakover i tid. [cite: 60] [cite_start]Post-Compromise Security (PCS): Hvis en enhet blir kompromittert (hacket), vil systemet \"helbrede seg selv\" ved automatisk å generere nye nøkler. [cite: 61] [cite_start]Dette betyr at en angriper mister tilgang til fremtidige meldinger kort tid etter innbruddet, selv om de fortsatt har kontroll over enheten. [cite: 62] [cite_start]Analogi for Forward Secrecy: Tenk på det som et låsesystem hvor du bruker en ny, unik nøkkel for hver dør du går gjennom. [cite: 63] [cite_start]Hvis noen stjeler nøkkelen til dør nummer 100, kan de ikke åpne dør 1-99 med den samme nøkkelen. [cite: 64] 4. [cite_start]Kvante-motstand (Post-Quantum Cryptography) [cite: 65] [cite_start]Signal har nylig implementert post-kvantekryptering (PQXDH og SPQR) for å beskytte mot fremtidige kvantedatamaskiner. [cite: 66] [cite_start]Dette er relevant fordi etterretningstjenester i dag kan lagre kryptert kommunikasjon (inkludert fra Signal-serveren) for å dekryptere den om 10-20 år når kvantecomputere blir kraftige nok (\"Harvest Now, Decrypt Later\"-strategi). [cite: 67] [cite_start]Signals nye protokoll blander inn kvante-resistente algoritmer sammen med den eksisterende elliptiske kurve-krypteringen, slik at selv en fremtidig kvantedatamaskin ikke vil kunne knekke eldre Signal-meldinger. [cite: 68] [cite_start]Praktisk konsekvens: Dette betyr at passiv nettverksavlytting av Signal-trafikk (selv med tilgang til all nettverkstrafikk fra en internettleverandør) ikke vil gi tilgang til meldingsinnholdet, verken nå eller i fremtiden. [cite: 69]"
+          "data": "1.3 Hvorfor Signal er \"the hardest app to investigate\" [cite: 39] Fra et etterforskningsperspektiv representerer Signal den største utfordringen blant de vanlige meldingsappene. Dette skyldes fire fundamentale design-prinsipper: [cite: 40] 1. Minimalistisk datalagring på server [cite: 41] Signal lagrer bevisst ekstremt lite informasjon på sine servere. Ved rettslig pålegg (stevning, kjennelse) kan Signal kun utlevere: [cite: 42] Dato for kontoopprettelse (f.eks. \"15. januar 2024\") [cite: 43] Dato for siste tilkobling til serveren (f.eks. \"17. februar 2026 kl. 14:32 UTC\") [cite: 44] Signal kan ikke utlevere (fordi de ikke har tilgang til det): [cite: 45] Meldingsinnhold (kryptert, nøklene er kun på enhetene) [cite: 46] Kontaktlister (lagret lokalt på brukerens telefon) [cite: 47] Gruppemedlemskap eller gruppenavn (kryptert for serveren) [cite: 48] Logger over hvem som har kommunisert med hvem [cite: 49] Dette står i skarp kontrast til f.eks. Meta (Facebook/WhatsApp), som lagrer omfattende metadata som kan brukes til å bygge sosiale grafer og tidslinjekart over kommunikasjon. [cite: 50] 2. Ingen \"backdoor\" eller \"master key\" [cite: 51] Noen krypterte tjenester har en \"nøddør\" (backdoor) eller en hovednøkkel (master key) som gir tjenesteleverandøren mulighet til å dekryptere innhold ved behov – ofte motivert av rettslige krav eller nasjonal sikkerhet. [cite: 52] Signal har ingen slik mekanisme. Krypteringsnøklene genereres, lagres og brukes utelukkende på brukernes egne enheter. [cite: 53] Signal Foundation har ikke fysisk eller teknisk mulighet til å lese meldinger, selv om de ville ønsket det. [cite: 54] Dette er mulig fordi Signal bruker asynkron kryptering (X3DH og Double Ratchet), hvor hver melding krypteres med en unik nøkkel som aldri forlater enhetene. [cite: 55] Serveren fungerer kun som en \"dum postboks\" som tar imot krypterte pakker og leverer dem til riktig mottaker. [cite: 56] 3. Forward Secrecy og Post-Compromise Security [cite: 57] Signal-protokollen har to avanserte sikkerhetsfunksjoner: [cite: 58] Forward Secrecy (FS): Hvis en krypteringsnøkkel blir stjålet i dag, kan den ikke brukes til å dekryptere meldinger fra fortiden. [cite: 59] Hver melding krypteres med en ny nøkkel som ikke kan beregnes bakover i tid. [cite: 60] Post-Compromise Security (PCS): Hvis en enhet blir kompromittert (hacket), vil systemet \"helbrede seg selv\" ved automatisk å generere nye nøkler. [cite: 61] Dette betyr at en angriper mister tilgang til fremtidige meldinger kort tid etter innbruddet, selv om de fortsatt har kontroll over enheten. [cite: 62] Analogi for Forward Secrecy: Tenk på det som et låsesystem hvor du bruker en ny, unik nøkkel for hver dør du går gjennom. [cite: 63] Hvis noen stjeler nøkkelen til dør nummer 100, kan de ikke åpne dør 1-99 med den samme nøkkelen. [cite: 64] 4. Kvante-motstand (Post-Quantum Cryptography) [cite: 65] Signal har nylig implementert post-kvantekryptering (PQXDH og SPQR) for å beskytte mot fremtidige kvantedatamaskiner. [cite: 66] Dette er relevant fordi etterretningstjenester i dag kan lagre kryptert kommunikasjon (inkludert fra Signal-serveren) for å dekryptere den om 10-20 år når kvantecomputere blir kraftige nok (\"Harvest Now, Decrypt Later\"-strategi). [cite: 67] Signals nye protokoll blander inn kvante-resistente algoritmer sammen med den eksisterende elliptiske kurve-krypteringen, slik at selv en fremtidig kvantedatamaskin ikke vil kunne knekke eldre Signal-meldinger. [cite: 68] Praktisk konsekvens: Dette betyr at passiv nettverksavlytting av Signal-trafikk (selv med tilgang til all nettverkstrafikk fra en internettleverandør) ikke vil gi tilgang til meldingsinnholdet, verken nå eller i fremtiden. [cite: 69]"
         },
         {
           "type": "callout",
           "kind": "WARNING",
-          [cite_start]"data": "JURIDISK GRENSEOPPGANG – SIGNAL-SPESIFIKK [cite: 70]"
+          "data": "JURIDISK GRENSEOPPGANG – SIGNAL-SPESIFIKK [cite: 70]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"✅ LOVLIG (Passiv observasjon): • Verifisere om et telefonnummer er registrert i Signal (via kontaktliste-sjekk) • Observere profilnavn, profilbilde og \"About\"-tekst på åpne profiler • Finne offentlig delte gruppe-invitasjonslenker via Google Dorking • Analysere metadata fra beslaglagt telefon (hvem brukeren har kontaktet) • Lese meldingsinnhold fra en beslaglagt, opplåst telefon [cite: 71]"
+            "✅ LOVLIG (Passiv observasjon): • Verifisere om et telefonnummer er registrert i Signal (via kontaktliste-sjekk) • Observere profilnavn, profilbilde og \"About\"-tekst på åpne profiler • Finne offentlig delte gruppe-invitasjonslenker via Google Dorking • Analysere metadata fra beslaglagt telefon (hvem brukeren har kontaktet) • Lese meldingsinnhold fra en beslaglagt, opplåst telefon [cite: 71]"
           ]
         },
         {
           "type": "callout",
           "kind": "WARNING",
-          [cite_start]"data": "❌ KREVER BESLUTNING/KJENNELSE: • Overta en Signal-konto ved å gjennomføre SIM-swap (krever rettslig grunnlag) • Installere malware for å avlytte Signal-meldinger i sanntid (strpl. § 216b - digitalt hemmelig ransaking) • Be Signal Foundation om historiske meldinger (juridisk mulig å be, men teknisk umulig å få) • Tvinge frem Signal PIN-kode fra en mistenkt (nektelsesrett, strpl. § 90) [cite: 72]"
+          "data": "❌ KREVER BESLUTNING/KJENNELSE: • Overta en Signal-konto ved å gjennomføre SIM-swap (krever rettslig grunnlag) • Installere malware for å avlytte Signal-meldinger i sanntid (strpl. § 216b - digitalt hemmelig ransaking) • Be Signal Foundation om historiske meldinger (juridisk mulig å be, men teknisk umulig å få) • Tvinge frem Signal PIN-kode fra en mistenkt (nektelsesrett, strpl. § 90) [cite: 72]"
         },
         {
           "type": "callout",
           "kind": "WARNING",
-          [cite_start]"data": "⛔ ULOVLIG (Provokasjon/Metodebrudd): • Sende melding til en mistenkt for å lokke fram informasjon (agentprovokasjon, strpl. § 202a) • Opprette falsk Signal-konto og infiltrere gruppe for å provosere handlinger • Bryte Signals kryptering uten rettslig hjemmel [cite: 73]"
+          "data": "⛔ ULOVLIG (Provokasjon/Metodebrudd): • Sende melding til en mistenkt for å lokke fram informasjon (agentprovokasjon, strpl. § 202a) • Opprette falsk Signal-konto og infiltrere gruppe for å provosere handlinger • Bryte Signals kryptering uten rettslig hjemmel [cite: 73]"
         },
         {
           "type": "callout",
           "kind": "WARNING",
-          [cite_start]"data": "SPESIELT VED MINDREÅRIGE: • Kurt (13 år) kan ha Signal, men direkte kontakt krever ekstra juridisk vurdering • Beslag av Kurts telefon må håndteres med verge til stede • Signal-kommunikasjon kan indikere utnyttelse av mindreårig (barnevernmelding) [cite: 74]"
+          "data": "SPESIELT VED MINDREÅRIGE: • Kurt (13 år) kan ha Signal, men direkte kontakt krever ekstra juridisk vurdering • Beslag av Kurts telefon må håndteres med verge til stede • Signal-kommunikasjon kan indikere utnyttelse av mindreårig (barnevernmelding) [cite: 74]"
         },
         {
           "type": "paragraph",
-          "data": "📞 ER DU I TVIL? [cite_start]Signal-etterforskning krever ofte bistand fra IKT-krimenhet eller Kripos. [cite: 75] [cite_start]Teknisk kompleksitet (kryptering, forensics) og juridisk følsomhet (personvern, barnevern) gjør dette til et spesialistområde. [cite: 76]"
+          "data": "📞 ER DU I TVIL? Signal-etterforskning krever ofte bistand fra IKT-krimenhet eller Kripos. [cite: 75] Teknisk kompleksitet (kryptering, forensics) og juridisk følsomhet (personvern, barnevern) gjør dette til et spesialistområde. [cite: 76]"
         }
       ]
     },
@@ -88,74 +88,74 @@
       "komponenter": [
         {
           "type": "paragraph",
-          [cite_start]"data": "2.1 Hvordan fungerer ende-til-ende-kryptering egentlig? [cite: 78] [cite_start]For å forstå hvorfor Signal er så vanskelig å etterforske, må man forstå grunnprinsippet i ende-til-ende-kryptering. [cite: 79] [cite_start]Dette kan virke teknisk, men vi skal forklare det med en analogi: [cite: 80] [cite_start]Analogi: Låseboksen med to nøkler [cite: 81] [cite_start]Forestill deg at du skal sende et hemmelig brev til en kollega: [cite: 82] [cite_start]Din kollega lager en lås (offentlig nøkkel) og sender deg en kopi. [cite: 83] [cite_start]Alle kan lage låser som passer denne nøkkelen, men kun kollegaen din har den originale nøkkelen (privat nøkkel) som kan låse den opp. [cite: 84] [cite_start]Du skriver brevet , legger det i en boks, og låser den med kollegaens lås. [cite: 85] [cite_start]Fra dette øyeblikket kan ingen åpne boksen – ikke engang du selv – fordi du ikke har nøkkelen til å låse den opp. [cite: 86] Postbudet (Signal-serveren) tar imot den låste boksen. [cite_start]Postbudet kan se at det er en boks, hvor den skal leveres, og kanskje hvor stor den er – men de kan ikke åpne den for å se hva som er inni. [cite: 87] Kollegaen din mottar boksen og bruker sin private nøkkel til å låse den opp. [cite_start]Nå kan de lese brevet. [cite: 88] Dette er i bunn og grunn hvordan Signal fungerer. [cite_start]Den \"offentlige nøkkelen\" deles med alle du vil snakke med, og din \"private nøkkel\" er lagret kun på din telefon. [cite: 89] [cite_start]Signal-serveren er \"postbudet\" som kun leverer låste bokser uten å kunne åpne dem. [cite: 90]"
+          "data": "2.1 Hvordan fungerer ende-til-ende-kryptering egentlig? [cite: 78] For å forstå hvorfor Signal er så vanskelig å etterforske, må man forstå grunnprinsippet i ende-til-ende-kryptering. [cite: 79] Dette kan virke teknisk, men vi skal forklare det med en analogi: [cite: 80] Analogi: Låseboksen med to nøkler [cite: 81] Forestill deg at du skal sende et hemmelig brev til en kollega: [cite: 82] Din kollega lager en lås (offentlig nøkkel) og sender deg en kopi. [cite: 83] Alle kan lage låser som passer denne nøkkelen, men kun kollegaen din har den originale nøkkelen (privat nøkkel) som kan låse den opp. [cite: 84] Du skriver brevet , legger det i en boks, og låser den med kollegaens lås. [cite: 85] Fra dette øyeblikket kan ingen åpne boksen – ikke engang du selv – fordi du ikke har nøkkelen til å låse den opp. [cite: 86] Postbudet (Signal-serveren) tar imot den låste boksen. Postbudet kan se at det er en boks, hvor den skal leveres, og kanskje hvor stor den er – men de kan ikke åpne den for å se hva som er inni. [cite: 87] Kollegaen din mottar boksen og bruker sin private nøkkel til å låse den opp. Nå kan de lese brevet. [cite: 88] Dette er i bunn og grunn hvordan Signal fungerer. Den \"offentlige nøkkelen\" deles med alle du vil snakke med, og din \"private nøkkel\" er lagret kun på din telefon. [cite: 89] Signal-serveren er \"postbudet\" som kun leverer låste bokser uten å kunne åpne dem. [cite: 90]"
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "2.2 Signal-protokollen: X3DH og Double Ratchet (nybegynnervennlig) [cite: 91] [cite_start]Signal bruker to hovedteknologier som skaper krypteringen: [cite: 92] [cite_start]2.2.1 X3DH (Extended Triple Diffie-Hellman) – \"Det første håndhilsen\" [cite: 93] Hva er dette? [cite_start]En metode for å etablere en sikker, delt hemmelighet mellom to personer første gang de begynner å snakke. [cite: 94] [cite_start]Analogi: Tenk på det som to personer som møtes på et offentlig torg og hvisker fram en hemmelig kode uten at noen andre hører det, selv om hele verden ser på. [cite: 95] [cite_start]Praktisk: Når du sender din første melding til noen på Signal, utføres en \"håndtrykks\"-prosess i bakgrunnen: [cite: 96]"
+          "data": "2.2 Signal-protokollen: X3DH og Double Ratchet (nybegynnervennlig) [cite: 91] Signal bruker to hovedteknologier som skaper krypteringen: [cite: 92] 2.2.1 X3DH (Extended Triple Diffie-Hellman) – \"Det første håndhilsen\" [cite: 93] Hva er dette? En metode for å etablere en sikker, delt hemmelighet mellom to personer første gang de begynner å snakke. [cite: 94] Analogi: Tenk på det som to personer som møtes på et offentlig torg og hvisker fram en hemmelig kode uten at noen andre hører det, selv om hele verden ser på. [cite: 95] Praktisk: Når du sender din første melding til noen på Signal, utføres en \"håndtrykks\"-prosess i bakgrunnen: [cite: 96]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Din telefon henter mottakerens \"offentlige nøkler\" fra Signal-serveren [cite: 97]",
-            [cite_start]"Din telefon og mottakerens telefon blander sammen sine nøkler på en matematisk måte for å lage en felles hemmelighet [cite: 98]",
-            [cite_start]"Denne hemmeligheten brukes til å kryptere de første meldingene [cite: 99]",
-            [cite_start]"Serveren ser aldri denne hemmeligheten [cite: 100]"
+            "Din telefon henter mottakerens \"offentlige nøkler\" fra Signal-serveren [cite: 97]",
+            "Din telefon og mottakerens telefon blander sammen sine nøkler på en matematisk måte for å lage en felles hemmelighet [cite: 98]",
+            "Denne hemmeligheten brukes til å kryptere de første meldingene [cite: 99]",
+            "Serveren ser aldri denne hemmeligheten [cite: 100]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Viktig detalj: Signal bruker noe som kalles \"Pre-Keys\" (forhåndsnøkler) som ligger lagret på serveren. [cite: 101] [cite_start]Dette gjør at du kan sende krypterte meldinger til noen som er offline. [cite: 102] [cite_start]Når de kobler til igjen, henter telefonen deres den krypterte meldingen og bruker sin private nøkkel til å dekryptere den. [cite: 103]"
+          "data": "Viktig detalj: Signal bruker noe som kalles \"Pre-Keys\" (forhåndsnøkler) som ligger lagret på serveren. [cite: 101] Dette gjør at du kan sende krypterte meldinger til noen som er offline. [cite: 102] Når de kobler til igjen, henter telefonen deres den krypterte meldingen og bruker sin private nøkkel til å dekryptere den. [cite: 103]"
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "2.2.2 Double Ratchet – \"Hver melding får sin egen nøkkel\" [cite: 104] Hva er dette? [cite_start]En algoritme som kontinuerlig bytter ut krypteringsnøklene for hver melding som sendes. [cite: 105] [cite_start]Analogi: Tenk på det som en kombinasjonslås på et bankboksrom hvor kombinasjonen endres automatisk hver gang noen åpner døren. [cite: 106] [cite_start]Hvis noen bryter seg inn og stjeler kombinasjonen klokken 14:00, vil den være ubrukelig klokken 14:01. [cite: 107] [cite_start]Praktisk: Når du chatter med noen på Signal: [cite: 108]"
+          "data": "2.2.2 Double Ratchet – \"Hver melding får sin egen nøkkel\" [cite: 104] Hva er dette? En algoritme som kontinuerlig bytter ut krypteringsnøklene for hver melding som sendes. [cite: 105] Analogi: Tenk på det som en kombinasjonslås på et bankboksrom hvor kombinasjonen endres automatisk hver gang noen åpner døren. [cite: 106] Hvis noen bryter seg inn og stjeler kombinasjonen klokken 14:00, vil den være ubrukelig klokken 14:01. [cite: 107] Praktisk: Når du chatter med noen på Signal: [cite: 108]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Melding 1 krypteres med Nøkkel A [cite: 109]",
-            [cite_start]"Melding 2 krypteres med Nøkkel B (som er laget fra Nøkkel A, men ikke kan reverseres tilbake) [cite: 110]",
-            [cite_start]"Melding 3 krypteres med Nøkkel C (laget fra Nøkkel B, men ikke kan reverseres tilbake) [cite: 111]",
-            [cite_start]"Og så videre... [cite: 112]"
+            "Melding 1 krypteres med Nøkkel A [cite: 109]",
+            "Melding 2 krypteres med Nøkkel B (som er laget fra Nøkkel A, men ikke kan reverseres tilbake) [cite: 110]",
+            "Melding 3 krypteres med Nøkkel C (laget fra Nøkkel B, men ikke kan reverseres tilbake) [cite: 111]",
+            "Og så videre... [cite: 112]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Dette gir to kritiske sikkerhetsfunksjoner: [cite: 113] [cite_start]Forward Secrecy (FS): [cite: 114] [cite_start]Hvis politiet beslaglegger telefonen din i dag og får tilgang til dagens nøkler, kan de ikke dekryptere meldinger fra i går [cite: 115] [cite_start]Analogi: Det er som at alle tidligere låser har \"smeltet\" og kan ikke gjenskapes [cite: 116] [cite_start]Post-Compromise Security (PCS): [cite: 117] [cite_start]Hvis en hacker bryter seg inn i telefonen din og stjeler nøklene, vil systemet generere nye nøkler automatisk i løpet av få meldinger [cite: 118] [cite_start]Hackeren mister tilgang til fremtidige meldinger selv om de fortsatt har tilgang til enheten din [cite: 119] [cite_start]Analogi: Låsen \"reparerer seg selv\" ved å skifte kombinasjon automatisk [cite: 120] [cite_start]Etterforskningskonsekvens: Dette betyr at passiv nettverksavlytting (å \"snappe\" krypterte pakker fra en internettleverandør) ikke vil gi tilgang til meldinger, selv ikke hvis man klarer å stjele én nøkkel. [cite: 121] [cite_start]Man må ha live access til telefonen akkurat når meldingene leses/sendes. [cite: 122]"
+          "data": "Dette gir to kritiske sikkerhetsfunksjoner: [cite: 113] Forward Secrecy (FS): [cite: 114] Hvis politiet beslaglegger telefonen din i dag og får tilgang til dagens nøkler, kan de ikke dekryptere meldinger fra i går [cite: 115] Analogi: Det er som at alle tidligere låser har \"smeltet\" og kan ikke gjenskapes [cite: 116] Post-Compromise Security (PCS): [cite: 117] Hvis en hacker bryter seg inn i telefonen din og stjeler nøklene, vil systemet generere nye nøkler automatisk i løpet av få meldinger [cite: 118] Hackeren mister tilgang til fremtidige meldinger selv om de fortsatt har tilgang til enheten din [cite: 119] Analogi: Låsen \"reparerer seg selv\" ved å skifte kombinasjon automatisk [cite: 120] Etterforskningskonsekvens: Dette betyr at passiv nettverksavlytting (å \"snappe\" krypterte pakker fra en internettleverandør) ikke vil gi tilgang til meldinger, selv ikke hvis man klarer å stjele én nøkkel. [cite: 121] Man må ha live access til telefonen akkurat når meldingene leses/sendes. [cite: 122]"
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "2.3 Sealed Sender – \"Skjuler hvem som snakker med hvem\" [cite: 123] [cite_start]De fleste krypterte apper beskytter innholdet i meldingen, men ikke metadata om hvem som snakker med hvem. [cite: 124] [cite_start]Signal går lenger ved å bruke Sealed Sender for å skjule avsenderens identitet fra serveren. [cite: 125] [cite_start]Analogi: Den anonyme postkassen [cite: 126] [cite_start]Tenk på vanlig post: [cite: 127] [cite_start]Du skriver navn og adresse på utsiden av konvolutten (alle som håndterer brevet underveis kan se hvem som sender til hvem) [cite: 128] [cite_start]Innholdet er forseglet, men postbudet vet alt om hvem som kommuniserer [cite: 129] [cite_start]Med Sealed Sender: [cite: 130] [cite_start]Du pakker konvolutten inn i en ny, ytre konvolutt som kun har mottakerens adresse (ingen avsender) [cite: 131] [cite_start]Postbudet (Signal-serveren) ser kun hvem som skal motta, men vet ikke hvem som sendte [cite: 132] [cite_start]Mottakeren åpner den ytre konvolutten og finner den indre konvolutten med din signatur [cite: 133] [cite_start]Hvordan fungerer det teknisk? [cite: 134]"
+          "data": "2.3 Sealed Sender – \"Skjuler hvem som snakker med hvem\" [cite: 123] De fleste krypterte apper beskytter innholdet i meldingen, men ikke metadata om hvem som snakker med hvem. [cite: 124] Signal går lenger ved å bruke Sealed Sender for å skjule avsenderens identitet fra serveren. [cite: 125] Analogi: Den anonyme postkassen [cite: 126] Tenk på vanlig post: [cite: 127] Du skriver navn og adresse på utsiden av konvolutten (alle som håndterer brevet underveis kan se hvem som sender til hvem) [cite: 128] Innholdet er forseglet, men postbudet vet alt om hvem som kommuniserer [cite: 129] Med Sealed Sender: [cite: 130] Du pakker konvolutten inn i en ny, ytre konvolutt som kun har mottakerens adresse (ingen avsender) [cite: 131] Postbudet (Signal-serveren) ser kun hvem som skal motta, men vet ikke hvem som sendte [cite: 132] Mottakeren åpner den ytre konvolutten og finner den indre konvolutten med din signatur [cite: 133] Hvordan fungerer det teknisk? [cite: 134]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Du (avsender) krypterer meldingen med mottakerens nøkkel (normal E2EE) [cite: 135]",
-            [cite_start]"Du pakker inn meldingen i et nytt lag kryptering som skjuler din identitet [cite: 136]",
-            [cite_start]"Signal-serveren ser kun \"en kryptert pakke til Bruker X\" – serveren vet ikke at den kom fra deg [cite: 137]",
-            [cite_start]"Mottakeren dekrypterer først det ytre laget og ser at det var fra deg, deretter dekrypterer de selve meldingen [cite: 138]"
+            "Du (avsender) krypterer meldingen med mottakerens nøkkel (normal E2EE) [cite: 135]",
+            "Du pakker inn meldingen i et nytt lag kryptering som skjuler din identitet [cite: 136]",
+            "Signal-serveren ser kun \"en kryptert pakke til Bruker X\" – serveren vet ikke at den kom fra deg [cite: 137]",
+            "Mottakeren dekrypterer først det ytre laget og ser at det var fra deg, deretter dekrypterer de selve meldingen [cite: 138]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Viktig begrensning: For å hindre spam og misbruk, krever Sealed Sender at avsenderen kan bevise at de kjenner mottakerens telefonnummer eller profil. [cite: 139] [cite_start]Dette betyr at en helt ukjent person ikke kan sende anonyme meldinger til deg. [cite: 140] [cite_start]Etterforskningskonsekvens [cite: 141] [cite_start]Ved rettslig pålegg kan Signal utlevere: [cite: 142] [cite_start]\"Bruker A koblet til serveren klokken 14:32\" [cite: 143] [cite_start]\"En melding ble levert til Bruker B klokken 14:33\" [cite: 144] [cite_start]Men de kan ikke utlevere: [cite: 145] [cite_start]\"Bruker A sendte melding til Bruker B\" (fordi Sealed Sender skjuler denne koblingen) [cite: 146] [cite_start]Dette reduserer dramatisk verdien av metadata fra Signal sammenlignet med WhatsApp eller Telegram, hvor serveren logger hvem som kommuniserer med hvem. [cite: 147]"
+          "data": "Viktig begrensning: For å hindre spam og misbruk, krever Sealed Sender at avsenderen kan bevise at de kjenner mottakerens telefonnummer eller profil. [cite: 139] Dette betyr at en helt ukjent person ikke kan sende anonyme meldinger til deg. [cite: 140] Etterforskningskonsekvens [cite: 141] Ved rettslig pålegg kan Signal utlevere: [cite: 142] \"Bruker A koblet til serveren klokken 14:32\" [cite: 143] \"En melding ble levert til Bruker B klokken 14:33\" [cite: 144] Men de kan ikke utlevere: [cite: 145] \"Bruker A sendte melding til Bruker B\" (fordi Sealed Sender skjuler denne koblingen) [cite: 146] Dette reduserer dramatisk verdien av metadata fra Signal sammenlignet med WhatsApp eller Telegram, hvor serveren logger hvem som kommuniserer med hvem. [cite: 147]"
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "2.4 Post-kvantekryptering (PQXDH og SPQR) – \"Fremtidssikring\" [cite: 148] I 2024 implementerte Signal post-kvantekryptering for å beskytte mot fremtidige kvantedatamaskiner. [cite_start]Dette er teknisk avansert, men kan forklares slik: [cite: 149] [cite_start]Problemet: \"Harvest Now, Decrypt Later\" [cite: 150] Etterretningstjenester og enkelte stater driver med massiv lagring av kryptert nettverkstrafikk i dag. [cite_start]Strategien er: [cite: 151]"
+          "data": "2.4 Post-kvantekryptering (PQXDH og SPQR) – \"Fremtidssikring\" [cite: 148] I 2024 implementerte Signal post-kvantekryptering for å beskytte mot fremtidige kvantedatamaskiner. Dette er teknisk avansert, men kan forklares slik: [cite: 149] Problemet: \"Harvest Now, Decrypt Later\" [cite: 150] Etterretningstjenester og enkelte stater driver med massiv lagring av kryptert nettverkstrafikk i dag. Strategien er: [cite: 151]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Lagre all kryptert Signal-trafikk (pakker som går mellom brukere og Signal-serveren) [cite: 152]",
-            [cite_start]"Vente på at kvantedatamaskiner blir kraftige nok (anslått 10-20 år) [cite: 153]",
-            [cite_start]"Bruke kvantedatamaskinen til å \"knekke\" krypteringen og lese gamle meldinger [cite: 154]"
+            "Lagre all kryptert Signal-trafikk (pakker som går mellom brukere og Signal-serveren) [cite: 152]",
+            "Vente på at kvantedatamaskiner blir kraftige nok (anslått 10-20 år) [cite: 153]",
+            "Bruke kvantedatamaskinen til å \"knekke\" krypteringen og lese gamle meldinger [cite: 154]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Løsningen: Blande inn kvante-resistente algoritmer [cite: 155] [cite_start]Signal har implementert en \"Triple Ratchet\"-protokoll som kombinerer: [cite: 156] [cite_start]Klassisk kryptering (elliptiske kurver – trygg i dag, men sårbar for kvantecomputere) [cite: 157] [cite_start]Post-kvante-algoritmer (matematiske problemer som selv kvantecomputere sliter med) [cite: 158] [cite_start]Analogi: Det er som å ha to forskjellige låser på samme dør. [cite: 159] [cite_start]Selv om fremtidens tyver klarer å knekke den ene låsen (klassisk kryptering), vil den andre låsen (post-kvante) fortsatt beskytte døren. [cite: 160] [cite_start]Praktisk konsekvens: Passiv lagring av Signal-trafikk i dag vil være ubrukelig selv om kvantedatamaskiner blir tilgjengelige i fremtiden. [cite: 161] [cite_start]Dette betyr at etterretning som satser på \"å vente og dekryptere senere\" vil mislykkes. [cite: 162]"
+          "data": "Løsningen: Blande inn kvante-resistente algoritmer [cite: 155] Signal har implementert en \"Triple Ratchet\"-protokoll som kombinerer: [cite: 156] Klassisk kryptering (elliptiske kurver – trygg i dag, men sårbar for kvantecomputere) [cite: 157] Post-kvante-algoritmer (matematiske problemer som selv kvantecomputere sliter med) [cite: 158] Analogi: Det er som å ha to forskjellige låser på samme dør. [cite: 159] Selv om fremtidens tyver klarer å knekke den ene låsen (klassisk kryptering), vil den andre låsen (post-kvante) fortsatt beskytte døren. [cite: 160] Praktisk konsekvens: Passiv lagring av Signal-trafikk i dag vil være ubrukelig selv om kvantedatamaskiner blir tilgjengelige i fremtiden. [cite: 161] Dette betyr at etterretning som satser på \"å vente og dekryptere senere\" vil mislykkes. [cite: 162]"
         }
       ]
     },
@@ -165,125 +165,125 @@
       "komponenter": [
         {
           "type": "paragraph",
-          [cite_start]"data": "3.1 Grunnprinsippet: Signal er designet for å gi minimalt BRÅK-fotavtrykk [cite: 164] [cite_start]Før vi går inn på teknikker, er det kritisk å forstå at Signal bevisst er bygget for å minimere sporene den legger igjen på internett. [cite: 165] [cite_start]I motsetning til Facebook, Instagram, eller til og med Telegram (som har offentlige kanaler og gruppekataloger), har Signal: [cite: 166]"
+          "data": "3.1 Grunnprinsippet: Signal er designet for å gi minimalt BRÅK-fotavtrykk [cite: 164] Før vi går inn på teknikker, er det kritisk å forstå at Signal bevisst er bygget for å minimere sporene den legger igjen på internett. [cite: 165] I motsetning til Facebook, Instagram, eller til og med Telegram (som har offentlige kanaler og gruppekataloger), har Signal: [cite: 166]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Ingen offentlig brukerkatalog (kan ikke søke etter brukere uten å kjenne telefonnummer eller brukernavn) [cite: 167]",
-            [cite_start]"Ingen offentlige grupper (alle grupper er private, ingen \"join via link\"-funksjoner som er søkbare) [cite: 168]",
-            [cite_start]"Ingen \"sist sett\"-tidsstempel (kan ikke se når noen sist var aktiv) [cite: 169]",
-            [cite_start]"Ingen status-updates eller Stories synlige for ukjente (kun for kontakter du har lagt til) [cite: 170]"
+            "Ingen offentlig brukerkatalog (kan ikke søke etter brukere uten å kjenne telefonnummer eller brukernavn) [cite: 167]",
+            "Ingen offentlige grupper (alle grupper er private, ingen \"join via link\"-funksjoner som er søkbare) [cite: 168]",
+            "Ingen \"sist sett\"-tidsstempel (kan ikke se når noen sist var aktiv) [cite: 169]",
+            "Ingen status-updates eller Stories synlige for ukjente (kun for kontakter du har lagt til) [cite: 170]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Dermed er BRÅK på Signal primært: [cite: 171]"
+          "data": "Dermed er BRÅK på Signal primært: [cite: 171]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Verifisering av om et telefonnummer er registrert [cite: 172]",
-            [cite_start]"Innhenting av offentlig profil-informasjon (navn, bilde, About-tekst) [cite: 173]",
-            [cite_start]"Søk etter lekket gruppe-invitasjonslenker [cite: 174]",
-            [cite_start]"Forensisk analyse av beslaglagte enheter (ikke strengt tatt BRÅK, men ofte nødvendig) [cite: 175]"
+            "Verifisering av om et telefonnummer er registrert [cite: 172]",
+            "Innhenting av offentlig profil-informasjon (navn, bilde, About-tekst) [cite: 173]",
+            "Søk etter lekket gruppe-invitasjonslenker [cite: 174]",
+            "Forensisk analyse av beslaglagte enheter (ikke strengt tatt BRÅK, men ofte nødvendig) [cite: 175]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "3.2 Metode 1: Verifisere om et telefonnummer er registrert i Signal [cite: 176] [cite_start]3.2.1 Hvorfor er dette viktig? [cite: 177] [cite_start]Hvis du etterforsker en person og har deres telefonnummer (f.eks. Kurt Mikkelsens +47 918 34 512), vil du vite om de bruker Signal. [cite: 178, 179] [cite_start]Dette kan indikere: [cite: 180]"
+          "data": "3.2 Metode 1: Verifisere om et telefonnummer er registrert i Signal [cite: 176] 3.2.1 Hvorfor er dette viktig? [cite: 177] Hvis du etterforsker en person og har deres telefonnummer (f.eks. Kurt Mikkelsens +47 918 34 512), vil du vite om de bruker Signal. [cite: 178, 179] Dette kan indikere: [cite: 180]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Høyere sikkerhetsbevisthet (de prioriterer kryptert kommunikasjon) [cite: 181]",
-            [cite_start]"Mulig kommunikasjon med andre Signal-brukere i et kriminelt nettverk [cite: 182]",
-            [cite_start]"At tradisjonell teleoperatør-metadata (SMS-logger) ikke vil gi fullstendig bilde av kommunikasjon [cite: 183]"
+            "Høyere sikkerhetsbevisthet (de prioriterer kryptert kommunikasjon) [cite: 181]",
+            "Mulig kommunikasjon med andre Signal-brukere i et kriminelt nettverk [cite: 182]",
+            "At tradisjonell teleoperatør-metadata (SMS-logger) ikke vil gi fullstendig bilde av kommunikasjon [cite: 183]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "3.2.2 Mikrosteg: Verifisere Signal-registrering [cite: 184] [cite_start]Forberedelse: [cite: 185]"
+          "data": "3.2.2 Mikrosteg: Verifisere Signal-registrering [cite: 184] Forberedelse: [cite: 185]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Dedikert undersøkelsestelefon (ikke din personlige telefon) [cite: 186]",
-            [cite_start]"Prepaid SIM-kort eller virtuelt nummer (for å skjule din identitet) [cite: 187]",
-            [cite_start]"Signal-appen installert på undersøkelsestelefonen [cite: 188]"
+            "Dedikert undersøkelsestelefon (ikke din personlige telefon) [cite: 186]",
+            "Prepaid SIM-kort eller virtuelt nummer (for å skjule din identitet) [cite: 187]",
+            "Signal-appen installert på undersøkelsestelefonen [cite: 188]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Prosedyre: [cite: 189]"
+          "data": "Prosedyre: [cite: 189]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Åpne Signal-appen på undersøkelsestelefonen [cite: 190]",
-            [cite_start]"Gå til \"New Message\" (Ny melding) – ikonet ser ut som en blyant i en sirkel, nederst til høyre [cite: 191]",
-            [cite_start]"Trykk på \"+ (pluss-tegnet)\" for å legge til en ny kontakt [cite: 192]",
-            [cite_start]"Skriv inn telefonnummeret du vil sjekke, inkludert landskode (f.eks. +47 918 34 512) [cite: 193]"
+            "Åpne Signal-appen på undersøkelsestelefonen [cite: 190]",
+            "Gå til \"New Message\" (Ny melding) – ikonet ser ut som en blyant i en sirkel, nederst til høyre [cite: 191]",
+            "Trykk på \"+ (pluss-tegnet)\" for å legge til en ny kontakt [cite: 192]",
+            "Skriv inn telefonnummeret du vil sjekke, inkludert landskode (f.eks. +47 918 34 512) [cite: 193]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Du vil nå se ett av to alternativer: [cite: 194] [cite_start]Alternativ A: \"Invite to Signal\" (Inviter til Signal) [cite: 195] [cite_start]Dette betyr at nummeret ikke er registrert i Signal [cite: 196] [cite_start]Dokumenter dette: Ta screenshot, noter dato/tid [cite: 197] [cite_start]TPS-vurdering: T: A (verifiserbart negativt funn), P: 1 (sikkert), S: Lav [cite: 198] [cite_start]Alternativ B: Et profilnavn dukker opp (f.eks. \"Kurt\" eller \"K13\") [cite: 199] [cite_start]Dette betyr at nummeret er registrert i Signal [cite: 200] [cite_start]Du vil nå se: [cite: 201]"
+          "data": "Du vil nå se ett av to alternativer: [cite: 194] Alternativ A: \"Invite to Signal\" (Inviter til Signal) [cite: 195] Dette betyr at nummeret ikke er registrert i Signal [cite: 196] Dokumenter dette: Ta screenshot, noter dato/tid [cite: 197] TPS-vurdering: T: A (verifiserbart negativt funn), P: 1 (sikkert), S: Lav [cite: 198] Alternativ B: Et profilnavn dukker opp (f.eks. \"Kurt\" eller \"K13\") [cite: 199] Dette betyr at nummeret er registrert i Signal [cite: 200] Du vil nå se: [cite: 201]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Profilnavn (det brukeren har satt, ikke nødvendigvis reelt navn) [cite: 202]",
-            [cite_start]"Profilbilde (hvis de har lastet opp et) [cite: 203]",
-            [cite_start]"About-tekst (en kort statusmelding, hvis satt) [cite: 204]"
+            "Profilnavn (det brukeren har satt, ikke nødvendigvis reelt navn) [cite: 202]",
+            "Profilbilde (hvis de har lastet opp et) [cite: 203]",
+            "About-tekst (en kort statusmelding, hvis satt) [cite: 204]"
           ]
         },
         {
           "type": "callout",
           "kind": "WARNING",
-          [cite_start]"data": "KRITISK: IKKE SEND MELDING – dette vil varsle målobjektet [cite: 205]"
+          "data": "KRITISK: IKKE SEND MELDING – dette vil varsle målobjektet [cite: 205]"
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Ta screenshot av profilen [cite: 206] [cite_start]Dokumenter: Telefonnummer, profilnavn, beskrivelse av profilbilde [cite: 207] [cite_start]Noter dato/tid for sjekken [cite: 208] [cite_start]Eventuelt: Sjekk \"Safety Number\" [cite: 209]"
+          "data": "Ta screenshot av profilen [cite: 206] Dokumenter: Telefonnummer, profilnavn, beskrivelse av profilbilde [cite: 207] Noter dato/tid for sjekken [cite: 208] Eventuelt: Sjekk \"Safety Number\" [cite: 209]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Trykk på profilnavnet for å åpne profilen [cite: 210]",
-            [cite_start]"Scroll ned til \"View Safety Number\" (Vis sikkerhetsnummer) [cite: 211]",
-            [cite_start]"Dette 60-sifrede nummeret er unikt for din kommunikasjon med denne brukeren [cite: 212]",
-            [cite_start]"Dokumenter dette nummeret – det kan brukes senere til å verifisere om brukeren har byttet enhet [cite: 213]"
+            "Trykk på profilnavnet for å åpne profilen [cite: 210]",
+            "Scroll ned til \"View Safety Number\" (Vis sikkerhetsnummer) [cite: 211]",
+            "Dette 60-sifrede nummeret er unikt for din kommunikasjon med denne brukeren [cite: 212]",
+            "Dokumenter dette nummeret – det kan brukes senere til å verifisere om brukeren har byttet enhet [cite: 213]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Du vil nå se: [cite: 214]"
+          "data": "Du vil nå se: [cite: 214]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Profilbildet i stor størrelse (kan lastes ned ved å ta screenshot eller bruke forensisk verktøy) [cite: 215]",
-            [cite_start]"Profilnavnet (\"Kurt\") [cite: 216]",
-            [cite_start]"About-tekst (\" 💪 13\") [cite: 217]",
-            [cite_start]"\"Registered [dato]\" (hvis denne informasjonen er tilgjengelig – Signal viser ikke alltid dette) [cite: 218]"
+            "Profilbildet i stor størrelse (kan lastes ned ved å ta screenshot eller bruke forensisk verktøy) [cite: 215]",
+            "Profilnavnet (\"Kurt\") [cite: 216]",
+            "About-tekst (\" 💪 13\") [cite: 217]",
+            "\"Registered [dato]\" (hvis denne informasjonen er tilgjengelig – Signal viser ikke alltid dette) [cite: 218]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Viktig begrensning: [cite: 219] [cite_start]Hvis brukeren har satt \"Who can find me by my number\" til \"Nobody\", vil du ikke kunne finne dem på denne måten [cite: 220] [cite_start]Kurt (13 år) har sannsynligvis ikke konfigurert dette (de fleste ungdommer bruker standardinnstillinger) [cite: 221] [cite_start]3.2.3 Juridisk vurdering [cite: 222] Er dette lov? Ja. [cite_start]Dette er passiv observasjon av offentlig tilgjengelig informasjon. [cite: 223] [cite_start]Du initierer ikke kontakt, du verifiserer kun om et nummer er registrert. [cite: 224] Er det etisk forsvarlig ved mindreårige? [cite_start]Ja, så lenge: [cite: 225]"
+          "data": "Viktig begrensning: [cite: 219] Hvis brukeren har satt \"Who can find me by my number\" til \"Nobody\", vil du ikke kunne finne dem på denne måten [cite: 220] Kurt (13 år) har sannsynligvis ikke konfigurert dette (de fleste ungdommer bruker standardinnstillinger) [cite: 221] 3.2.3 Juridisk vurdering [cite: 222] Er dette lov? Ja. Dette er passiv observasjon av offentlig tilgjengelig informasjon. [cite: 223] Du initierer ikke kontakt, du verifiserer kun om et nummer er registrert. [cite: 224] Er det etisk forsvarlig ved mindreårige? Ja, så lenge: [cite: 225]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Du ikke sender melding (som ville vært aktiv kontakt) [cite: 226]",
-            [cite_start]"Du dokumenterer begrunnelsen for sjekken i aktivitetsloggen [cite: 227]",
-            [cite_start]"Du vurderer sensitiviteten (mindreårig = HØY sensitivitet) [cite: 228]"
+            "Du ikke sender melding (som ville vært aktiv kontakt) [cite: 226]",
+            "Du dokumenterer begrunnelsen for sjekken i aktivitetsloggen [cite: 227]",
+            "Du vurderer sensitiviteten (mindreårig = HØY sensitivitet) [cite: 228]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "TPS-vurdering: [cite: 229] [cite_start]T (Troverdighet): A – Signal-systemet er autoritativ kilde for hvem som er registrert [cite: 230] [cite_start]P (Pålitelighet): 1 – Sikkert bevis (brukeren kontrollerer dette nummeret) [cite: 231] [cite_start]S (Sensitivitet): HØY (mindreårig, persondata) [cite: 232]"
+          "data": "TPS-vurdering: [cite: 229] T (Troverdighet): A – Signal-systemet er autoritativ kilde for hvem som er registrert [cite: 230] P (Pålitelighet): 1 – Sikkert bevis (brukeren kontrollerer dette nummeret) [cite: 231] S (Sensitivitet): HØY (mindreårig, persondata) [cite: 232]"
         }
       ]
     },
@@ -293,98 +293,98 @@
       "komponenter": [
         {
           "type": "paragraph",
-          [cite_start]"data": "4.1 Kritisk første handling: Bevare \"After First Unlock\" (AFU)-tilstand [cite: 443] [cite_start]Når en telefon med Signal beslaglegges, er det mest kritiske å holde enheten i en tilstand som kalles \"After First Unlock\" (AFU). [cite: 444] [cite_start]Dette er forskjellen på om du får tilgang til Signal-dataene eller ikke. [cite: 445] [cite_start]4.1.1 Forklaring: BFU vs. AFU [cite: 446] [cite_start]BFU (Before First Unlock): [cite: 447]"
+          "data": "4.1 Kritisk første handling: Bevare \"After First Unlock\" (AFU)-tilstand [cite: 443] Når en telefon med Signal beslaglegges, er det mest kritiske å holde enheten i en tilstand som kalles \"After First Unlock\" (AFU). [cite: 444] Dette er forskjellen på om du får tilgang til Signal-dataene eller ikke. [cite: 445] 4.1.1 Forklaring: BFU vs. AFU [cite: 446] BFU (Before First Unlock): [cite: 447]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Telefonen er skrudd på, men har ikke blitt opplåst siden siste omstart [cite: 448]",
-            [cite_start]"Krypteringsnøklene er ikke lastet inn i telefonens minne (RAM) [cite: 449]",
-            [cite_start]"Data på telefonen (inkludert Signal-databasen) er kryptert og utilgjengelig [cite: 450]",
-            [cite_start]"Selv med riktig PIN-kode, tar det lengre tid å få tilgang (må knekke full-disk-kryptering) [cite: 451]"
+            "Telefonen er skrudd på, men har ikke blitt opplåst siden siste omstart [cite: 448]",
+            "Krypteringsnøklene er ikke lastet inn i telefonens minne (RAM) [cite: 449]",
+            "Data på telefonen (inkludert Signal-databasen) er kryptert og utilgjengelig [cite: 450]",
+            "Selv med riktig PIN-kode, tar det lengre tid å få tilgang (må knekke full-disk-kryptering) [cite: 451]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "AFU (After First Unlock): [cite: 452]"
+          "data": "AFU (After First Unlock): [cite: 452]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Telefonen har blitt opplåst minst én gang siden siste omstart [cite: 453]",
-            [cite_start]"Krypteringsnøklene er lastet inn i telefonens minne (RAM) [cite: 454]",
-            [cite_start]"Data er fortsatt kryptert på disk, men nøklene er tilgjengelige i minnet [cite: 455]",
-            [cite_start]"Med riktig PIN-kode (eller biometri hvis aktivert), får du umiddelbar tilgang til Signal [cite: 456]"
+            "Telefonen har blitt opplåst minst én gang siden siste omstart [cite: 453]",
+            "Krypteringsnøklene er lastet inn i telefonens minne (RAM) [cite: 454]",
+            "Data er fortsatt kryptert på disk, men nøklene er tilgjengelige i minnet [cite: 455]",
+            "Med riktig PIN-kode (eller biometri hvis aktivert), får du umiddelbar tilgang til Signal [cite: 456]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Analogi: Tenk på telefonen som et bankboksrom: [cite: 457] [cite_start]BFU = Boksen er låst, og nøkkelen ligger i en safe du ikke har koden til [cite: 458] [cite_start]AFU = Boksen er låst, men nøkkelen ligger i lomma di – du trenger bare PIN-koden for å hente den [cite: 459]"
+          "data": "Analogi: Tenk på telefonen som et bankboksrom: [cite: 457] BFU = Boksen er låst, og nøkkelen ligger i en safe du ikke har koden til [cite: 458] AFU = Boksen er låst, men nøkkelen ligger i lomma di – du trenger bare PIN-koden for å hente den [cite: 459]"
         },
         {
           "type": "callout",
           "kind": "CASE",
-          [cite_start]"data": "Scenario: Du beslaglegger Kurts iPhone 12 fra lommen hans under en ransaking. [cite: 461]"
+          "data": "Scenario: Du beslaglegger Kurts iPhone 12 fra lommen hans under en ransaking. [cite: 461]"
         },
         {
           "type": "callout",
           "kind": "WARNING",
-          [cite_start]"data": "KRITISK HANDLING (Umiddelbart): **IKKE SKRU AV TELEFONEN** [cite: 462, 463, 464]"
+          "data": "KRITISK HANDLING (Umiddelbart): **IKKE SKRU AV TELEFONEN** [cite: 462, 463, 464]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Hvis telefonen slås av eller går tom for strøm → BFU-tilstand [cite: 465]",
-            [cite_start]"Krypteringsnøklene kastes fra minnet [cite: 466]",
-            [cite_start]"Tilgang til Signal blir ekstremt vanskelig [cite: 467]"
+            "Hvis telefonen slås av eller går tom for strøm → BFU-tilstand [cite: 465]",
+            "Krypteringsnøklene kastes fra minnet [cite: 466]",
+            "Tilgang til Signal blir ekstremt vanskelig [cite: 467]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "ISOLER FRA NETTVERK (Innen 30 sekunder): [cite: 468] [cite_start]Metode A: Flymodus (rask, men ikke 100% sikker) [cite: 469]"
+          "data": "ISOLER FRA NETTVERK (Innen 30 sekunder): [cite: 468] Metode A: Flymodus (rask, men ikke 100% sikker) [cite: 469]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Sveip ned fra toppen av skjermen (Control Center på iPhone) [cite: 470]",
-            [cite_start]"Aktiver Flymodus (flymaskin-ikon) [cite: 471]",
-            [cite_start]"Begrensning: Noen apper kan ignorere Flymodus for WiFi [cite: 472]"
+            "Sveip ned fra toppen av skjermen (Control Center på iPhone) [cite: 470]",
+            "Aktiver Flymodus (flymaskin-ikon) [cite: 471]",
+            "Begrensning: Noen apper kan ignorere Flymodus for WiFi [cite: 472]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Metode B: Faraday-pose (anbefalt) [cite: 473]"
+          "data": "Metode B: Faraday-pose (anbefalt) [cite: 473]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Legg telefonen i en RF-blokkerende pose (EDEC, Paraben, etc.) [cite: 474]",
-            [cite_start]"Dette blokkerer alle signaler (WiFi, Bluetooth, mobilnett) [cite: 475]",
-            [cite_start]"Fordel: Hindrer fjernsletting via \"Wipe on next connect\"-funksjoner [cite: 476]"
+            "Legg telefonen i en RF-blokkerende pose (EDEC, Paraben, etc.) [cite: 474]",
+            "Dette blokkerer alle signaler (WiFi, Bluetooth, mobilnett) [cite: 475]",
+            "Fordel: Hindrer fjernsletting via \"Wipe on next connect\"-funksjoner [cite: 476]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Metode C: Fjern SIM-kort (fallback) [cite: 477]"
+          "data": "Metode C: Fjern SIM-kort (fallback) [cite: 477]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Bruk SIM-ejektor-verktøy (eller bretteklype) [cite: 478]",
-            [cite_start]"Ta ut SIM-kortet (deaktiverer mobildata) [cite: 479]",
-            [cite_start]"Begrensning: WiFi kan fortsatt være aktivt [cite: 480]"
+            "Bruk SIM-ejektor-verktøy (eller bretteklype) [cite: 478]",
+            "Ta ut SIM-kortet (deaktiverer mobildata) [cite: 479]",
+            "Begrensning: WiFi kan fortsatt være aktivt [cite: 480]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "HOLD TELEFONEN VÅKEN (Unngå skjermlås) [cite: 481]"
+          "data": "HOLD TELEFONEN VÅKEN (Unngå skjermlås) [cite: 481]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Sett skjermen til \"Never\" auto-lock (krever at du allerede har låst den opp) [cite: 482]",
-            [cite_start]"Alternativ: Koble til en strømkilde (powerbank) umiddelbart [cite: 483]",
-            [cite_start]"Begrunnelse: Hvis skjermen låser seg og du ikke har PIN-koden, mister du tilgang [cite: 484]"
+            "Sett skjermen til \"Never\" auto-lock (krever at du allerede har låst den opp) [cite: 482]",
+            "Alternativ: Koble til en strømkilde (powerbank) umiddelbart [cite: 483]",
+            "Begrunnelse: Hvis skjermen låser seg og du ikke har PIN-koden, mister du tilgang [cite: 484]"
           ]
         }
       ]
@@ -395,60 +395,60 @@
       "komponenter": [
         {
           "type": "paragraph",
-          [cite_start]"data": "5.1 Grensedragning: Hva er lov ved Signal-etterforskning? [cite: 872] [cite_start]Signal-etterforskning krever presis juridisk bevissthet fordi terskelen for overvåkning av kryptert kommunikasjon er høyere enn for tradisjonell telefonavlytting. [cite: 873] [cite_start]5.1.1 Relevant lovverk [cite: 874] [cite_start]Straffeprosessloven § 196 (Åpen overvåking): [cite: 875]"
+          "data": "5.1 Grensedragning: Hva er lov ved Signal-etterforskning? [cite: 872] Signal-etterforskning krever presis juridisk bevissthet fordi terskelen for overvåkning av kryptert kommunikasjon er høyere enn for tradisjonell telefonavlytting. [cite: 873] 5.1.1 Relevant lovverk [cite: 874] Straffeprosessloven § 196 (Åpen overvåking): [cite: 875]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Hjemler observasjon av åpne profiler, inklusive Signal-profiler som er tilgjengelige uten passord [cite: 876]",
-            [cite_start]"Krav: Ingen kjennelse nødvendig for passiv observasjon [cite: 877]"
+            "Hjemler observasjon av åpne profiler, inklusive Signal-profiler som er tilgjengelige uten passord [cite: 876]",
+            "Krav: Ingen kjennelse nødvendig for passiv observasjon [cite: 877]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Straffeprosessloven § 197 (Kommunikasjonskontroll – telefon/datatrafikk): [cite: 878]"
+          "data": "Straffeprosessloven § 197 (Kommunikasjonskontroll – telefon/datatrafikk): [cite: 878]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Hjemler tradisjonell telefonavlytting og datatrafikk-logging [cite: 879]",
-            [cite_start]"Begrensning: Signal's ende-til-ende-kryptering gjør avlytting av innhold umulig selv med teleoperatørens bistand [cite: 880]",
-            [cite_start]"Hva KAN fås: Metadata om tilkobling til Signal-servere (tidspunkt, datamengde), men ikke innhold [cite: 881]"
+            "Hjemler tradisjonell telefonavlytting og datatrafikk-logging [cite: 879]",
+            "Begrensning: Signal's ende-til-ende-kryptering gjør avlytting av innhold umulig selv med teleoperatørens bistand [cite: 880]",
+            "Hva KAN fås: Metadata om tilkobling til Signal-servere (tidspunkt, datamengde), men ikke innhold [cite: 881]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "Straffeprosessloven § 216m (Fjernkontroll av datamaskin/dataavlesning): [cite: 882]"
+          "data": "Straffeprosessloven § 216m (Fjernkontroll av datamaskin/dataavlesning): [cite: 882]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Hjemler installasjon av malware for å avlytte Signal-meldinger i sanntid [cite: 883]",
-            [cite_start]"Krav: Kjennelse fra tingretten, Straffenivå minimum 3 år, Subsidiaritet (andre metoder må være uttømt eller uegnet) [cite: 884, 885, 886, 887]"
+            "Hjemler installasjon av malware for å avlytte Signal-meldinger i sanntid [cite: 883]",
+            "Krav: Kjennelse fra tingretten, Straffenivå minimum 3 år, Subsidiaritet (andre metoder må være uttømt eller uegnet) [cite: 884, 885, 886, 887]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "5.2 Spesielle hensyn ved mindreårige (Kurt, 13 år) [cite: 942] [cite_start]Kurts alder (13 år) medfører ekstra juridiske og etiske krav: [cite: 943] [cite_start]5.2.1 Barnekonvensjonen (Art. 16) [cite: 944] [cite_start]Barns rett til privatliv: [cite: 945]"
+          "data": "5.2 Spesielle hensyn ved mindreårige (Kurt, 13 år) [cite: 942] Kurts alder (13 år) medfører ekstra juridiske og etiske krav: [cite: 943] 5.2.1 Barnekonvensjonen (Art. 16) [cite: 944] Barns rett til privatliv: [cite: 945]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Selv om Kurt er under etterforskning, har han rett til beskyttelse av privatlivet [cite: 946]",
-            [cite_start]"Overvåkning må være strengt nødvendig og proporsjonalt [cite: 947]",
-            [cite_start]"Fokus skal være på beskyttelse (Kurt som offer) fremfor straff [cite: 948]"
+            "Selv om Kurt er under etterforskning, har han rett til beskyttelse av privatlivet [cite: 946]",
+            "Overvåkning må være strengt nødvendig og proporsjonalt [cite: 947]",
+            "Fokus skal være på beskyttelse (Kurt som offer) fremfor straff [cite: 948]"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "5.2.2 Straffeloven § 46 (Kriminell lavalder) [cite: 949] [cite_start]Kurt er 13 år = UNDER kriminell lavalder (15 år) [cite: 950] [cite_start]Han kan IKKE tiltales strafferettslig [cite: 951] [cite_start]Saken må håndteres via: [cite: 952]"
+          "data": "5.2.2 Straffeloven § 46 (Kriminell lavalder) [cite: 949] Kurt er 13 år = UNDER kriminell lavalder (15 år) [cite: 950] Han kan IKKE tiltales strafferettslig [cite: 951] Saken må håndteres via: [cite: 952]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Barnevern (bekymringsmelding) [cite: 953]",
-            [cite_start]"Konfliktråd (ved mindre alvorlig handling) [cite: 954]",
-            [cite_start]"Politi (kun etterforskning av andre – Kurt som vitne eller offer) [cite: 955]"
+            "Barnevern (bekymringsmelding) [cite: 953]",
+            "Konfliktråd (ved mindre alvorlig handling) [cite: 954]",
+            "Politi (kun etterforskning av andre – Kurt som vitne eller offer) [cite: 955]"
           ]
         }
       ]
@@ -460,23 +460,23 @@
         {
           "type": "callout",
           "kind": "CASE",
-          [cite_start]"data": "Case 1: Lina Grim (24 år) – \"Det enkle tilfellet\" [cite: 1004] [cite_start]Scenario [cite: 1005] [cite_start]Bakgrunn: Lina Grim (24 år, UiO-student) er vitne i en sak om trakassering via sosiale medier. [cite: 1006] [cite_start]Etterforskeren trenger å verifisere om hun bruker Signal for mulig kommunikasjon med gjerningspersonen. [cite: 1007]"
+          "data": "Case 1: Lina Grim (24 år) – \"Det enkle tilfellet\" [cite: 1004] Scenario [cite: 1005] Bakgrunn: Lina Grim (24 år, UiO-student) er vitne i en sak om trakassering via sosiale medier. [cite: 1006] Etterforskeren trenger å verifisere om hun bruker Signal for mulig kommunikasjon med gjerningspersonen. [cite: 1007]"
         },
         {
           "type": "callout",
           "kind": "CASE",
-          [cite_start]"data": "Case 2: Kurt Mikkelsen (13 år) – \"Det komplekse tilfellet\" [cite: 1049] [cite_start]Scenario [cite: 1050] [cite_start]Bakgrunn: Kurt Mikkelsen (13 år) er identifisert som mulig offer for VaaS-rekruttering. [cite: 1051] [cite_start]Voksne kontakter (@NordLink81, 23 år) er mistenkt for å bruke Kurt til lovbrudd. [cite: 1052] [cite_start]Etterforsker trenger å kartlegge Kurts kommunikasjon via Signal. [cite: 1053]"
+          "data": "Case 2: Kurt Mikkelsen (13 år) – \"Det komplekse tilfellet\" [cite: 1049] Scenario [cite: 1050] Bakgrunn: Kurt Mikkelsen (13 år) er identifisert som mulig offer for VaaS-rekruttering. [cite: 1051] Voksne kontakter (@NordLink81, 23 år) er mistenkt for å bruke Kurt til lovbrudd. [cite: 1052] Etterforsker trenger å kartlegge Kurts kommunikasjon via Signal. [cite: 1053]"
         },
         {
           "type": "grid",
           "data": [
-            "Beviskategori | T (Troverdighet) | P (Pålitelighet) | S (Sensitivitet) | [cite_start]Begrunnelse [cite: 1219]",
-            "Signal-profil | C | 2 | HØY | [cite_start]\"Alias, men verifiserbar via telefonnummer og profilbildematch\" [cite: 1219]",
-            "Meldinger (NordLink) | C | 2 | KRITISK | [cite_start]\"Autentiske meldinger fra beslaglagt telefon, indikerer rekruttering\" [cite: 1219]",
-            "Meldinger (BK) | D | 3 | KRITISK | [cite_start]\"Ukjent identitet, men konsistent instruksjonsgiving\" [cite: 1219]",
-            "Gruppemedlemskap | D | 3 | KRITISK | [cite_start]\"Passiv observasjon av kriminell chat, eksponering for rekruttering\" [cite: 1219]",
-            "\"\"\"Note to Self\"\"\" | A | 1 | KRITISK | [cite_start]Kurts egen dokumentasjon av møter og økonomi [cite: 1219]",
-            "Kryss-plattform | A | 1 | HØY | [cite_start]\"Korrelasjon mellom Signal, Snap Map og Vipps bekrefter fysiske møter\" [cite: 1219]"
+            "Beviskategori | T (Troverdighet) | P (Pålitelighet) | S (Sensitivitet) | Begrunnelse [cite: 1219]",
+            "Signal-profil | C | 2 | HØY | \"Alias, men verifiserbar via telefonnummer og profilbildematch\" [cite: 1219]",
+            "Meldinger (NordLink) | C | 2 | KRITISK | \"Autentiske meldinger fra beslaglagt telefon, indikerer rekruttering\" [cite: 1219]",
+            "Meldinger (BK) | D | 3 | KRITISK | \"Ukjent identitet, men konsistent instruksjonsgiving\" [cite: 1219]",
+            "Gruppemedlemskap | D | 3 | KRITISK | \"Passiv observasjon av kriminell chat, eksponering for rekruttering\" [cite: 1219]",
+            "\"\"\"Note to Self\"\"\" | A | 1 | KRITISK | Kurts egen dokumentasjon av møter og økonomi [cite: 1219]",
+            "Kryss-plattform | A | 1 | HØY | \"Korrelasjon mellom Signal, Snap Map og Vipps bekrefter fysiske møter\" [cite: 1219]"
           ]
         }
       ]
@@ -487,36 +487,36 @@
       "komponenter": [
         {
           "type": "paragraph",
-          [cite_start]"data": "7.1 De 10 vanligste feilene i Signal-etterforskning [cite: 1232]"
+          "data": "7.1 De 10 vanligste feilene i Signal-etterforskning [cite: 1232]"
         },
         {
           "type": "callout",
           "kind": "WARNING",
-          [cite_start]"data": "FEIL 1: Anta at Signal ikke brukes fordi du ikke finner en offentlig profil Problem: Signal har ingen offentlig brukerkatalog. [cite: 1233] Fravær av søkeresultat betyr ikke fravær av konto. [cite_start]Løsning: Alltid verifiser via telefonnummer-sjekk (kontaktliste-metode) [cite: 1234]"
+          "data": "FEIL 1: Anta at Signal ikke brukes fordi du ikke finner en offentlig profil Problem: Signal har ingen offentlig brukerkatalog. [cite: 1233] Fravær av søkeresultat betyr ikke fravær av konto. Løsning: Alltid verifiser via telefonnummer-sjekk (kontaktliste-metode) [cite: 1234]"
         },
         {
           "type": "callout",
           "kind": "WARNING",
-          [cite_start]"data": "FEIL 2: Skru av beslaglagt telefon \"for å sikre den\" Problem: BFU-tilstand gjør forensisk uthenting ekstremt vanskelig Løsning: ALDRI skru av telefonen – bruk Faraday-pose + powerbank [cite: 1235]"
+          "data": "FEIL 2: Skru av beslaglagt telefon \"for å sikre den\" Problem: BFU-tilstand gjør forensisk uthenting ekstremt vanskelig Løsning: ALDRI skru av telefonen – bruk Faraday-pose + powerbank [cite: 1235]"
         },
         {
           "type": "callout",
           "kind": "WARNING",
-          [cite_start]"data": "FEIL 3: Sende melding til mistenkt for å \"teste om de bruker Signal\" Problem: Aktiv kontakt = juridisk grenseland, kan varsle målobjekt Løsning: Bruk passiv kontaktliste-sjekk (ingen melding sendes) [cite: 1236]"
+          "data": "FEIL 3: Sende melding til mistenkt for å \"teste om de bruker Signal\" Problem: Aktiv kontakt = juridisk grenseland, kan varsle målobjekt Løsning: Bruk passiv kontaktliste-sjekk (ingen melding sendes) [cite: 1236]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"FØR DU STARTER: □ Har jeg lest juridisk grunnlag (§ 196, § 197, § 216m)? [cite: 1245]",
-            "□ Er målobjektet mindreårig? (Ja = ekstra varsomhet, TPS-S automatisk HØY) [cite_start]□ Har jeg dedikert undersøkelsestelefon (ikke personlig)? [cite: 1246]",
-            "□ Er jeg på VPN/anonym nettleser (hvis søk på internett)? [cite_start]□ Har jeg notisblokk/aktivitetslogg klar? [cite: 1247]",
-            [cite_start]"UNDER ETTERFORSKNING: □ Dokumenterer jeg tidspunkt for hver handling? [cite: 1248]",
-            "□ Tar jeg screenshot av alt jeg observerer? [cite_start]□ Genererer jeg SHA-256 hash for alle bevisfiler? [cite: 1249]",
-            "□ Holder jeg telefon i AFU-tilstand (hvis beslag)? [cite_start]□ Har jeg isolert telefon fra nettverk (Faraday/Flymodus)? [cite: 1250]",
-            [cite_start]"ETTER ETTERFORSKNING: □ Er alle funn dokumentert i rapport? [cite: 1251]",
-            "□ Har jeg brukt TPS-modell på alle bevis? [cite_start]□ Har jeg formulert minimum 3 alternative hypoteser? [cite: 1252]",
-            "□ Er sensitiv informasjon (mindreårige) anonymisert? [cite_start]□ Er backup av data sikret (3-2-1-regelen)? [cite: 1253]",
-            [cite_start]"□ Har jeg overlevert saken til riktig instans (barnevern/påtalemyndighet)? [cite: 1254]"
+            "FØR DU STARTER: □ Har jeg lest juridisk grunnlag (§ 196, § 197, § 216m)? [cite: 1245]",
+            "□ Er målobjektet mindreårig? (Ja = ekstra varsomhet, TPS-S automatisk HØY) □ Har jeg dedikert undersøkelsestelefon (ikke personlig)? [cite: 1246]",
+            "□ Er jeg på VPN/anonym nettleser (hvis søk på internett)? □ Har jeg notisblokk/aktivitetslogg klar? [cite: 1247]",
+            "UNDER ETTERFORSKNING: □ Dokumenterer jeg tidspunkt for hver handling? [cite: 1248]",
+            "□ Tar jeg screenshot av alt jeg observerer? □ Genererer jeg SHA-256 hash for alle bevisfiler? [cite: 1249]",
+            "□ Holder jeg telefon i AFU-tilstand (hvis beslag)? □ Har jeg isolert telefon fra nettverk (Faraday/Flymodus)? [cite: 1250]",
+            "ETTER ETTERFORSKNING: □ Er alle funn dokumentert i rapport? [cite: 1251]",
+            "□ Har jeg brukt TPS-modell på alle bevis? □ Har jeg formulert minimum 3 alternative hypoteser? [cite: 1252]",
+            "□ Er sensitiv informasjon (mindreårige) anonymisert? □ Er backup av data sikret (3-2-1-regelen)? [cite: 1253]",
+            "□ Har jeg overlevert saken til riktig instans (barnevern/påtalemyndighet)? [cite: 1254]"
           ]
         }
       ]
@@ -527,21 +527,21 @@
       "komponenter": [
         {
           "type": "paragraph",
-          [cite_start]"data": "8.1 Signal i det store bildet [cite: 1256] [cite_start]Signal representerer det vanskeligste skjæringspunktet mellom lovlig etterforskning og teknologisk personvern. [cite: 1257] [cite_start]På den ene siden beskytter det grunnleggende rettigheter som ytringsfrihet, kildevern og privatlivets fred. [cite: 1258] [cite_start]På den andre siden brukes det aktivt av kriminelle nettverk – inkludert VaaS-rekrutterere – for å unngå politiets innsyn. [cite: 1259] [cite_start]Som etterforsker er din oppgave ikke å knekke Signals kryptering (det er verken juridisk eller teknisk realistisk), men å finne de omkringliggende sporene som selv den beste kryptering ikke kan skjule: [cite: 1260]"
+          "data": "8.1 Signal i det store bildet [cite: 1256] Signal representerer det vanskeligste skjæringspunktet mellom lovlig etterforskning og teknologisk personvern. [cite: 1257] På den ene siden beskytter det grunnleggende rettigheter som ytringsfrihet, kildevern og privatlivets fred. [cite: 1258] På den andre siden brukes det aktivt av kriminelle nettverk – inkludert VaaS-rekrutterere – for å unngå politiets innsyn. [cite: 1259] Som etterforsker er din oppgave ikke å knekke Signals kryptering (det er verken juridisk eller teknisk realistisk), men å finne de omkringliggende sporene som selv den beste kryptering ikke kan skjule: [cite: 1260]"
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Telefonnummer-koblingen: Registrering krever et reelt telefonnummer (SIM-kort) [cite: 1261]",
-            [cite_start]"Beslaglagt telefon: Fysisk tilgang gir full historikk (hvis AFU) [cite: 1262]",
-            [cite_start]"Kryss-plattform-fotavtrykk: Signal brukes sjelden isolert – kombiner med Snap Map, Instagram, Vipps [cite: 1263]",
-            [cite_start]"Menneskelige feil: \"Note to Self\"-funksjonen, skjermlås-PIN lagret i bilder, samme profilbilde overalt [cite: 1264]",
-            [cite_start]"Systemlogger: Notification logs, tastaturordbok, iOS Call History [cite: 1265]"
+            "Telefonnummer-koblingen: Registrering krever et reelt telefonnummer (SIM-kort) [cite: 1261]",
+            "Beslaglagt telefon: Fysisk tilgang gir full historikk (hvis AFU) [cite: 1262]",
+            "Kryss-plattform-fotavtrykk: Signal brukes sjelden isolert – kombiner med Snap Map, Instagram, Vipps [cite: 1263]",
+            "Menneskelige feil: \"Note to Self\"-funksjonen, skjermlås-PIN lagret i bilder, samme profilbilde overalt [cite: 1264]",
+            "Systemlogger: Notification logs, tastaturordbok, iOS Call History [cite: 1265]"
           ]
         },
         {
           "type": "paragraph",
-          "data": "Signal-etterforskning er ikke om å beseire krypteringen. [cite_start]Det er om å forstå mennesket bak skjermen. [cite: 1300]"
+          "data": "Signal-etterforskning er ikke om å beseire krypteringen. Det er om å forstå mennesket bak skjermen. [cite: 1300]"
         }
       ]
     }
