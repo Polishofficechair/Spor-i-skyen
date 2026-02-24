@@ -1,5 +1,5 @@
 {
-  "tittel": "AI I OSINT-ETTERFORSKNING",
+  "tittel": "AI I BRÅK",
   "undertittel": "GRUNNLEGGENDE OM KUNSTIG INTELLIGENS",
   "ordliste": [],
   "seksjoner": [
@@ -99,7 +99,7 @@
         },
         {
           "type": "paragraph",
-          "data": "Bruksområder i OSINT:"
+          "data": "Bruksområder i BRÅK:"
         },
         {
           "type": "list",
