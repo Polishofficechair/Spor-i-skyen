@@ -1,0 +1,1352 @@
+{
+  "tittel": "BRÅK PÅ DARKWEB",
+  "undertittel": "DARKInt-METODIKK",
+  "ordliste": [],
+  "seksjoner": [
+    {
+      "id": "s01",
+      "overskrift": "DIGITAL ETTERFORSKNING FOR IKKE-TEKNISK PERSONELL",
+      "komponenter": []
+    },
+    {
+      "id": "s02",
+      "overskrift": "KAPITTEL: DET MØRKE NETTET",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "DARKWEB-ETTERFORSKNING OG DARKInt-METODIKK"
+        },
+        {
+          "type": "paragraph",
+          "data": "For politifolk uten teknisk bakgrunn"
+        },
+        {
+          "type": "paragraph",
+          "data": "Versjon 2026 | Basert på PIAR-metodikk og TPS-modellen"
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "overskrift": "DEL A – UNDERVISNINGSKAPITTEL",
+      "komponenter": []
+    },
+    {
+      "id": "s04",
+      "overskrift": "KAPITTEL 0: FØR DU RØRER TASTATURET – OBLIGATORISK LESNING",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Dette kapittelet er det viktigste du leser i hele kurset. Darkweb-etterforskning er ikke som å søke på Google. Det er som å gå inn i en utbrent bygning i mørket – uten riktig utstyr kan det gå galt, for deg, for saken din, og for kollegaene dine. Ingen etterforskningssteg på det mørke nettet skal gjennomføres uten at innholdet i dette kapittelet er lest, forstått og fulgt."
+        },
+        {
+          "type": "paragraph",
+          "data": "0.1 Det digitale åstedet – internett etterlater alltid spor"
+        },
+        {
+          "type": "paragraph",
+          "data": "Analogi: Se for deg snø på bakken utenfor et åsted. Selv om gjerningsmannen har prøvd å vispe bort sporene med en kost, finnes det nesten alltid noe igjen – en halvfull fordypning, en bit av et mønster. Internett fungerer likt. Hver gang noen gjør noe på nett, etterlates det digitale fotspor – i nettverkslogger, hos internettleverandøren, i metadata, i cacher. Ingen handling er 100 % sporløs."
+        },
+        {
+          "type": "paragraph",
+          "data": "Praksis: Mange nybegynnere tror at Tor gjør alt anonymt. Det stemmer ikke. Du kan anonymisere IP-en din, men du kan aldri anonymisere deg selv fullstendig hvis du gjør feil handlinger. Identitet avsløres gjennom glipper: gjenbruk av aliaser, språk, tider du er aktiv, metadata i filer, kryptoadresser, og kontakt med personer du kjenner fra før."
+        },
+        {
+          "type": "paragraph",
+          "data": "Konsekvens: Darkweb-etterforskning skal alltid være planlagt, avgrenset, dokumentert, og forankret juridisk før du gjør ett eneste klikk."
+        },
+        {
+          "type": "paragraph",
+          "data": "0.2 Hvorfor darkweb-etterforskning er høy-risiko"
+        },
+        {
+          "type": "paragraph",
+          "data": "Darkweb er ikke bare et teknisk miljø – det er et miljø med høy sannsynlighet for grov kriminalitet: narkotika, våpen, menneskehandel, CaaS (Crime as a Service), VaaS (Violence as a Service), og CSAM (overgrepsmateriale mot barn)."
+        },
+        {
+          "type": "paragraph",
+          "data": "Risikoen er todelt:"
+        },
+        {
+          "type": "paragraph",
+          "data": "1) Operativ risiko: Du kan eksponere politiets IP, identitet, eller etterforskningsmetoder dersom du gjør feil."
+        },
+        {
+          "type": "paragraph",
+          "data": "2) Juridisk risiko: Du kan begå ulovlig provokasjon, ulovlig inntrenging, eller ulovlig besittelse av materiale dersom du beveger deg utenfor passiv observasjon."
+        },
+        {
+          "type": "paragraph",
+          "data": "0.3 Absolutt minimum: Hva ikke-teknisk personell kan gjøre"
+        },
+        {
+          "type": "paragraph",
+          "data": "Dette metodeverket er skrevet for ikke-teknisk personell. Det betyr at du ikke skal hacke, brute-force, installere NIT (Network Investigative Techniques), eller forsøke å de-anonymisere via tekniske angrep. Din oppgave er å jobbe med åpne kilder (OSINT), dokumentere funn, og eskalere til IKT-krimenhet når terskelen er nådd."
+        },
+        {
+          "type": "paragraph",
+          "data": "Minimumsoppgaver du KAN gjøre:"
+        },
+        {
+          "type": "paragraph",
+          "data": "• Clearweb-søk etter aliaser, brukernavn, PGP-nøkler, e-poster, kryptoadresser"
+        },
+        {
+          "type": "paragraph",
+          "data": "• Passiv observasjon av åpne .onion-sider (kun med hjemmel og VM-oppsett)"
+        },
+        {
+          "type": "paragraph",
+          "data": "• Analyse av PGP-nøkler (metadata, e-postfelt, keyserver-historikk)"
+        },
+        {
+          "type": "paragraph",
+          "data": "• Kryptosporing på offentlig blokkjede (via clearweb-verktøy)"
+        },
+        {
+          "type": "paragraph",
+          "data": "• TPS-vurdering av funn (Troverdighet, Pålitelighet, Sensitivitet)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Alt annet: Eskaler."
+        },
+        {
+          "type": "paragraph",
+          "data": "0.4 Operativ regel: Ingen aktiv kontakt"
+        },
+        {
+          "type": "paragraph",
+          "data": "Du skal aldri kontakte mistenkte eller delta i diskusjoner på darkweb-markeder eller fora. Selv tilsynelatende uskyldige handlinger kan tolkes som provokasjon eller aktiv deltakelse."
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "Viktig: Selv å opprette konto på et forum kan være en aktiv handling som krever beslutning. Dette skal aldri gjøres uten juridisk vurdering og beslutning."
+        },
+        {
+          "type": "paragraph",
+          "data": "0.5 Mental HMS: Belastende innhold"
+        },
+        {
+          "type": "paragraph",
+          "data": "Darkweb kan inneholde ekstremt belastende innhold. Du skal alltid ha mental HMS-plan: kollega varslet, debrief etter økt, og stopp ved ubehag. Ved CSAM gjelder umiddelbar stopp og varsling."
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VED CSAM: Ved første øyekast av overgrepsmateriale – LUKK NETTLESEREN UMIDDELBART og ring IKT-krimenhet."
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "overskrift": "KAPITTEL 1: HVA ER DARKWEB? (OG HVA ER DET IKKE?)",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR ER DETTE VIKTIG?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Analogi: Mange tror at darkweb er et “mystisk internett”. Det er mer riktig å se det som en sidegate uten gateskilt, der du bare finner frem hvis du har adressen. Clearweb er hovedgaten – alt som Google kan indeksere. Deepweb er alt som ligger bak innlogging (BankID, e-post, interne systemer). Darkweb er en liten del av deepweb som krever spesialprogramvare for å nå, typisk Tor Browser."
+        },
+        {
+          "type": "paragraph",
+          "data": "Praksis: Etterforskning i darkweb handler i 90 % av tilfellene om identifikatorer (aliaser, PGP-nøkler, krypto-adresser) og koblinger til clearweb. Det handler sjelden om teknisk hacking. Identifisering skjer via mønstre og glipper."
+        },
+        {
+          "type": "paragraph",
+          "data": "1.1 Definisjoner: Clearweb, Deepweb, Darkweb"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "BEGREP | FORKLARING",
+            "Clearweb | Det åpne nettet som søkemotorer kan indeksere (VG.no, Facebook-profiler som er offentlige, YouTube)",
+            "Deepweb | Alt som ikke er indeksert: innloggede tjenester (e-post, bank, interne systemer, skylagring)",
+            "Darkweb | Del av deepweb som krever spesialnettverk (Tor/I2P) og ofte har .onion-adresser"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "1.2 Hvorfor brukes darkweb?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Darkweb brukes av både legitime og illegitime aktører. Legitimitet: journalister, varslere, menneskerettighetsaktivister, personer i autoritære regimer. Illegitimt: narkotika, våpen, stjålne data, malware, identitetstyveri, CaaS/VaaS, og CSAM."
+        },
+        {
+          "type": "paragraph",
+          "data": "1.3 Vanlige misforståelser"
+        },
+        {
+          "type": "paragraph",
+          "data": "Misforståelse 1: “Alt på darkweb er ulovlig.” Feil. Men sannsynligheten for grov kriminalitet er høy."
+        },
+        {
+          "type": "paragraph",
+          "data": "Misforståelse 2: “Tor = anonym.” Feil. Tor skjuler IP-adresse, men ikke dine handlinger, feil, eller identitetsglipper."
+        },
+        {
+          "type": "paragraph",
+          "data": "Misforståelse 3: “Darkweb kan ikke etterforskes.” Feil. Det kan etterforskes, men metoden er annerledes og krever streng dokumentasjon."
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "overskrift": "KAPITTEL 2: TOR – HVORDAN DET FUNGERER (ENKELT FORKLART)",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR ER DETTE VIKTIG?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Analogi: Tor er som å sende et brev gjennom tre postkontorer i tre ulike land, der hvert postkontor bare vet hvor brevet kom fra og hvor det skal videre – ingen har hele ruten. Dette gjør det vanskelig å spore avsenderen."
+        },
+        {
+          "type": "paragraph",
+          "data": "Praksis: Tor beskytter mot enkel IP-sporing, men det beskytter ikke mot at du avslører deg selv via brukernavn, cookies, innlogging, språk, eller tidsmønstre. Tor beskytter heller ikke mot at du laster ned farlige filer eller klikker på ondsinnede lenker."
+        },
+        {
+          "type": "paragraph",
+          "data": "2.1 Tor-kretsen: Entry, Middle, Exit"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "LEDD | FUNKSJON",
+            "Entry node (Guard) | Første node. Vet hvem du er (IP), men ikke hva du besøker.",
+            "Middle node | Mellomstasjon. Vet ikke hvem du er, og vet ikke endelig destinasjon.",
+            "Exit node | Siste node. Sender trafikken ut til destinasjonen. Vet destinasjon, men ikke hvem du er."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "2.2 Hvorfor .onion er annerledes"
+        },
+        {
+          "type": "paragraph",
+          "data": ".onion-adresser fungerer bare innenfor Tor-nettverket. Når du besøker en .onion-side, finnes det normalt ingen “exit node” i tradisjonell forstand – trafikken holdes i Tor-nettverket. Dette kan gi bedre anonymitet for både bruker og server."
+        },
+        {
+          "type": "paragraph",
+          "data": "2.3 Vanlige risikoer ved Tor-bruk"
+        },
+        {
+          "type": "paragraph",
+          "data": "Risiko 1: Browser fingerprinting (Tor reduserer dette, men ikke 100 %)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Risiko 2: Nedlasting av filer (PDF, ZIP) som kan “ringe hjem”"
+        },
+        {
+          "type": "paragraph",
+          "data": "Risiko 3: Innlogging på egne kontoer (avslører identitet)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Risiko 4: Aktiv deltakelse (juridisk risiko)"
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "overskrift": "KAPITTEL 3: OPSEC – OPERASJONELL SIKKERHET FOR ETTERFORSKERE",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR ER DETTE VIKTIG?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Analogi: OPSEC er som å gå undercover. Du kan ha perfekt forkledning, men hvis du bruker ditt eget bankkort, ditt eget navn, eller møter på ditt vanlige sted, avslører du deg. På nett gjelder samme prinsipp."
+        },
+        {
+          "type": "paragraph",
+          "data": "Praksis: Darkweb-aktører er paranoid. De leter etter tegn på etterforskere. Små feil kan avsløre deg og kompromittere etterforskningen."
+        },
+        {
+          "type": "paragraph",
+          "data": "3.1 Absolutte OPSEC-regler"
+        },
+        {
+          "type": "paragraph",
+          "data": "1) Bruk ALDRI privat utstyr (egen PC, eget nett)"
+        },
+        {
+          "type": "paragraph",
+          "data": "2) Bruk alltid VM (Virtual Machine) med isolert arkitektur"
+        },
+        {
+          "type": "paragraph",
+          "data": "3) Bruk aldri personlig e-post, navn, eller telefonnummer"
+        },
+        {
+          "type": "paragraph",
+          "data": "4) Ingen nedlasting av filer uten teknisk bistand"
+        },
+        {
+          "type": "paragraph",
+          "data": "5) Aldri logg inn på egne tjenester"
+        },
+        {
+          "type": "paragraph",
+          "data": "3.2 Whonix (anbefalt arkitektur)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Whonix består av to virtuelle maskiner: Gateway og Workstation. Gateway håndterer Tor-tilkoblingen. Workstation er der du jobber. Dette gjør det vanskeligere å lekke IP eller identitet."
+        },
+        {
+          "type": "paragraph",
+          "data": "3.3 Fingerprinting og leaks"
+        },
+        {
+          "type": "paragraph",
+          "data": "Selv om Tor Browser er designet for å redusere fingerprinting, kan feil konfigurasjon, plugins, eller endret skjermoppløsning øke risiko. Derfor skal Security Level settes til 'Safest'."
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "overskrift": "KAPITTEL 4: DARKWEB-PLATTFORMER – MARKEDSPLASSER, FORA, CHAT",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR ER DETTE VIKTIG?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Analogi: Darkweb er som et marked med ulike boder. Noen selger varer, noen selger tjenester, noen er bare møteplasser der folk utveksler rykter. Du må forstå hvilken type arena du er på for å vurdere informasjon riktig."
+        },
+        {
+          "type": "paragraph",
+          "data": "Praksis: Markedsplasser har ofte escrow, reviews, og PGP-verifisering. Forum er ofte stedet der nye markedsplasser annonseres, og der rekruttering skjer. Chat-kanaler (Telegram/Discord) fungerer som bro mellom clearweb og darkweb."
+        },
+        {
+          "type": "paragraph",
+          "data": "4.1 Markedsplasser"
+        },
+        {
+          "type": "paragraph",
+          "data": "Markedsplasser tilbyr varer (narkotika, falske dokumenter, stjålne data) og tjenester (hacking, DDoS, VaaS)."
+        },
+        {
+          "type": "paragraph",
+          "data": "4.2 Fora"
+        },
+        {
+          "type": "paragraph",
+          "data": "Fora er ofte “navet” der aliaser bygges, reputasjon skapes, og hvor informasjon kan lekke. Mange store saker starter med et forum-innlegg som senere kobles til clearweb-identitet."
+        },
+        {
+          "type": "paragraph",
+          "data": "4.3 Exit scams og nedstengning"
+        },
+        {
+          "type": "paragraph",
+          "data": "NEDSTENGNING: Fora stenges ned av politi, exit scam (admin tar penger og forsvinner), eller DDOS-angrep fra konkurrenter. Gjennomsnittlig levetid for store kriminelle forum: 18-24 måneder."
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "overskrift": "KAPITTEL 5: PGP – IDENTITET OG VERIFISERING I DARKWEB",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR ER DETTE VIKTIG?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Analogi: PGP er som en digital signatur. Hvis du kjenner signaturen, kan du verifisere at det faktisk er samme person som skriver – selv om du ikke vet hvem personen er i virkeligheten."
+        },
+        {
+          "type": "paragraph",
+          "data": "Praksis: Mange darkweb-aktører bruker PGP for å signere meldinger og verifisere aliaset sitt. PGP-nøkler kan inneholde e-postadresser og metadata som gir pivot til clearweb."
+        },
+        {
+          "type": "paragraph",
+          "data": "5.1 Hva er en PGP-nøkkel?"
+        },
+        {
+          "type": "paragraph",
+          "data": "En PGP-nøkkel består av en offentlig nøkkel (kan deles) og en privat nøkkel (skal holdes hemmelig). Den offentlige nøkkelen brukes for å verifisere signaturer og kryptere meldinger til aliaset."
+        },
+        {
+          "type": "paragraph",
+          "data": "5.2 Hva kan du hente ut fra PGP uten å dekryptere?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Du kan hente ut: nøkkel-ID, fingerprint, opprettelsesdato, kommentarer, og ofte e-postadresse. Dette er ofte nok for å koble aliaser på tvers av plattformer."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "overskrift": "KAPITTEL 6: SØK I DARKWEB – CLEARWEB-VERKTØY OG TOR-SØK",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR ER DETTE VIKTIG?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Analogi: Å søke i darkweb er som å lete etter et hus i et område uten gatenavn. Du trenger enten en katalog (lenkesamling) eller en søkemotor som har kartlagt området."
+        },
+        {
+          "type": "paragraph",
+          "data": "Praksis: Ikke-teknisk personell skal starte med clearweb-verktøy (Ahmia, dark.fail via Tor bare for verifisering) før man vurderer aktiv Tor-navigasjon."
+        },
+        {
+          "type": "paragraph",
+          "data": "6.1 Clearweb-søkemotorer for .onion"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "VERKTØY | BESKRIVELSE",
+            "Ahmia (clearweb) | Søkemotor som indekserer .onion og kan brukes uten Tor",
+            "Haystak | Darkweb-søkemotor, ofte via Tor",
+            "Torch | Eldre darkweb-søkemotor, variabel kvalitet"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "6.2 Kataloger og verifiserte lenker"
+        },
+        {
+          "type": "paragraph",
+          "data": "Dark.fail er en kjent side for verifiserte .onion-adresser til større tjenester. Det er kritisk å bruke verifiserte lenker for å unngå phishing."
+        },
+        {
+          "type": "paragraph",
+          "data": "6.3 OnionLand og Fresh Onions"
+        },
+        {
+          "type": "paragraph",
+          "data": "OnionLand Search (.onion): Katalog over nye .onion-sider oppdaget via crawling."
+        },
+        {
+          "type": "paragraph",
+          "data": "6.4 Onion Watching – Overvåking av nye sider"
+        },
+        {
+          "type": "paragraph",
+          "data": "'Onion Watching' er praksisen med å identifisere nyopprettede .onion-adresser i en tidlig fase – ideelt sett før kriminelle etablerer seg fullt ut. Nye kriminelle markedsplasser begynner ofte å rekruttere selgere og kjøpere fra forum-diskusjoner på clearweb og darkweb LENGE før de er fullt operative."
+        },
+        {
+          "type": "paragraph",
+          "data": "Tjenester som 'Fresh Onions' oppdager nyopprettede .onion-sider automatisk. Etterforskere kan abonnere på slike feeds for å fange opp nye trusler tidlig. Risikoen er at disse tjenestene indekserer ALT – inkludert CSAM. Automatisert overvåking må kombineres med innholds-filtrering."
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "JURIDISK GRENSEOPPGANG: Darkweb-søk"
+        },
+        {
+          "type": "paragraph",
+          "data": "✅ LOVLIG: Bruke Ahmia fra clearweb for å søke etter aliaser/brukernavn"
+        },
+        {
+          "type": "paragraph",
+          "data": "✅ LOVLIG: Besøke markedsplasser uten å opprette konto (passiv observasjon)"
+        },
+        {
+          "type": "paragraph",
+          "data": "✅ LOVLIG: Laste ned offentlig tilgjengelige PGP-nøkler og analysere dem"
+        },
+        {
+          "type": "paragraph",
+          "data": "❌ KREVER BESLUTNING: Opprette konto på kriminelt forum"
+        },
+        {
+          "type": "paragraph",
+          "data": "❌ KREVER BESLUTNING: Delta i diskusjoner (selv om informasjonen er nyttig)"
+        },
+        {
+          "type": "paragraph",
+          "data": "⛔ ULOVLIG: Kjøpe narkotika/varer for å teste tjenester (selv med tjenstlig hensikt)"
+        },
+        {
+          "type": "paragraph",
+          "data": "⛔ ULOVLIG: Utgi seg for kjøper/selger uten hjemmel"
+        },
+        {
+          "type": "paragraph",
+          "data": "SPESIELT VED CSAM: Ved første øyekast av overgrepsmateriale – LUKK NETTLESEREN UMIDDELBART og ring IKT-krimenhet."
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "overskrift": "KAPITTEL 7: DE-ANONYMISERING OG INFORMATION SLIPPAGE",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR ER DETTE VIKTIG?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Analogi: Information slippage er som en kriminell som alltid bruker et pseudonym 'KingPIN', men som én gang kommenterer et bilde av hjembyen sin eller nevner hans favorittlag. Den ene glippen er nok til å starte identifiseringen."
+        },
+        {
+          "type": "paragraph",
+          "data": "Praksis: De fleste kriminelle på darkweb avsløres ikke via teknisk hacking – de avsløres via dårlig OPSEC. Gjenbruk av brukernavn, PGP-nøkler med e-postadresser, eller kryptoadresser koblet til KYC-verifiserte børser er de vanligste identifikasjonsmetodene."
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "Case: @BKindustrien bruker alias 'BKindustrien' på Telegram. Dersom dette brukernavnet dukker opp på et kriminelt forum fra 2019, kan vi koble Telegram-kontoen til historisk aktivitet og potensielt reell identitet."
+        },
+        {
+          "type": "paragraph",
+          "data": "7.1 Information Slippage – Glipper som avslører"
+        },
+        {
+          "type": "paragraph",
+          "data": "Information slippage refererer til utilsiktet lekkasje av identifiserende informasjon på tvers av plattformer og identiteter. Et klassisk eksempel: Ross Ulbricht, grunnleggeren av Silk Road (verdens første store narkotika-markedsplass), brukte brukernavn 'altoid' på et clearweb-bitcoinforum for å promotere Silk Road i 2011. 'altoid' var koblet til hans reelle e-postadresse. FBI fant koblingen i 2013 og arresterte ham."
+        },
+        {
+          "type": "paragraph",
+          "data": "Information slippage skjer via: gjenbruk av brukernavn (samme alias på darkweb og clearweb), e-postadresser i PGP-nøkler (kryptografiske signaturnøkler som ofte inneholder e-post), kryptoadresser som gjenbrukes (blokkjedesporet), tidsstempler (aktivitetsmønstre som korrelerer med kjente hendelser), og språkbruk (dialektale ord, grammatikkfeil, unike formuleringer)."
+        },
+        {
+          "type": "paragraph",
+          "data": "7.2 Pivotere fra darkweb til clearweb"
+        },
+        {
+          "type": "paragraph",
+          "data": "'Pivotering' er etterforskningsbegrepet for å flytte fra én identifikator til en annen, og fra én plattform til en annen. Prosessen: finn en identifikator på darkweb → bruk den til å søke på clearweb → finn tilknyttede identiteter → koble til reell person."
+        },
+        {
+          "type": "paragraph",
+          "data": "7.3 Vanlige pivot-identifikatorer"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "IDENTIFIKATOR | HVORFOR VIKTIG",
+            "Alias/brukernavn | Gjenbrukes ofte på tvers av plattformer",
+            "PGP-fingerprint | Stabil identifikator over tid",
+            "E-post i PGP | Direkte pivot til clearweb",
+            "Kryptoadresse | Kan kobles til KYC-børser",
+            "Telefonnummer | Kan kobles til Telegram/SIM",
+            "Tidsmønster | Kan korreleres med skole/arbeid/reiser"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "overskrift": "KAPITTEL 8: TIDSANALYSE – NÅR AKTØREN ER AKTIV",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR ER DETTE VIKTIG?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Analogi: Hvis du vet når en person er aktiv, kan du ofte utlede hvem de er. En person som alltid poster kl. 02:00 norsk tid kan være i en annen tidssone, jobbe natt, eller være ungdom som er våken sent."
+        },
+        {
+          "type": "paragraph",
+          "data": "Praksis: Darkweb-aktører avslører ofte tidsmønstre gjennom posting, transaksjoner, og signerte meldinger. Dette kan brukes som støtteindikator i identifisering."
+        },
+        {
+          "type": "paragraph",
+          "data": "8.1 Tidsstempler du kan bruke"
+        },
+        {
+          "type": "paragraph",
+          "data": "Tidsstempler finnes i: forum-innlegg, markedsplassaktivitet, PGP-signerte meldinger, blockchain-transaksjoner, Telegram-logg, Snap Map-data."
+        },
+        {
+          "type": "paragraph",
+          "data": "8.2 Tidsanalyse-protokoll"
+        },
+        {
+          "type": "paragraph",
+          "data": "⏰ TIDSANALYSE-PROTOKOLL:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Innhent tidsstempler fra: forum-innlegg, markedsplass-aktivitet, PGP-signerte meldinger"
+        },
+        {
+          "type": "paragraph",
+          "data": "Konverter ALL tid til UTC (Koordinert universaltid) – merk tidszone-offset"
+        },
+        {
+          "type": "paragraph",
+          "data": "Bygg aktivitetskart i Excel: Kolonne A = dato, Kolonne B = time, Kolonne C = aktivitet"
+        },
+        {
+          "type": "paragraph",
+          "data": "Analyser for mønstre: Clustrer aktivitet etter ukedag og time på dagen"
+        },
+        {
+          "type": "paragraph",
+          "data": "Korrelér med kjente hendelser: Nasjonal helg i et bestemt land? Fotballkamp? Hendelse i nyheter?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Korrelér med mistenkt: Har mistenkte kjente reiseplaner, arbeidstider, eller hendelser i den perioden?"
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "overskrift": "KAPITTEL 9: BEVISDOKUMENTASJON – INTEGRITET OG NOTORITET",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR ER DETTE VIKTIG?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Analogi: Å ta et screenshot uten dokumentasjon er som å fotografere et fingeravtrykk på åstedet uten å merke det, datere det, og sette det i en bevisposen. Bildet er der, men det er ikke bevis i juridisk forstand."
+        },
+        {
+          "type": "paragraph",
+          "data": "Praksis: Bevis fra darkweb er spesielt sårbare fordi innhold kan endres eller forsvinne i løpet av timer. Et screenshot tatt i dag kan være umulig å verifisere i morgen fordi siden er offline. Riktig dokumentasjon med hash-verdier og tidsstempler er avgjørende for at beviset holder i retten."
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "Case: Dersom etterforskeren dokumenterer @BKindustriens forum-innlegg med SHA-256 hash og Hunchly-dokumentasjon, kan beviset legges frem i retten selv om siden er offline to uker senere."
+        },
+        {
+          "type": "paragraph",
+          "data": "9.1 Hvorfor darkweb-bevis er spesielt utfordrende"
+        },
+        {
+          "type": "paragraph",
+          "data": "Bevis fra det åpne nettet er relativt stabilt – en Facebook-post er lagret på Facebooks servere og kan rekvireres via rettslig kjennelse. Bevis fra darkweb er grunnleggende annerledes: siden kan forsvinne uten varsel, operatøren kan endre innholdet i ettertid, og innholdet er ikke lagret noe sted som er lett tilgjengelig via rettslig kjennelse."
+        },
+        {
+          "type": "paragraph",
+          "data": "Dette betyr at dokumentasjonstidspunktet er kritisk: Etterforskeren MÅ dokumentere beviset i det øyeblikket det observeres. Ingen annen sjanse."
+        },
+        {
+          "type": "paragraph",
+          "data": "9.2 Hunchly og Forensic OSINT – Automatisert dokumentasjon"
+        },
+        {
+          "type": "paragraph",
+          "data": "Hunchly er et nettleser-tillegg (Chrome-basert) som automatisk lagrer en kopi av HVER nettside etterforskeren besøker under en aktiv etterforskning. Kopien lagres offline, lokalt, med tidsstempel og kildeinformasjon."
+        },
+        {
+          "type": "paragraph",
+          "data": "For darkweb-bruk er Hunchly spesielt verdifullt fordi det dokumenterer hele URL, komplett HTML-innhold (ikke bare skjermbilder), HTTP-headers (kan avsløre server-informasjon), og tidsstempler for besøket. Hunchly er imidlertid Chrome-basert, og standard Chrome bør aldri brukes på darkweb. Løsning: Bruk Hunchly via en dedikert Chrome-instans i VM med Tor-proxy-konfigurasjon, IKKE Tor Browser."
+        },
+        {
+          "type": "paragraph",
+          "data": "9.3 SHA-256 hashgenerering – Bevisintegritet"
+        },
+        {
+          "type": "paragraph",
+          "data": "SHA-256 er en kryptografisk hashfunksjon som genererer en unik 64-tegns kode for en hvilken som helst fil. Hvis filen endres med ett eneste tegn, endres hashen fullstendig. Dette gjør det matematisk umulig å endre et bevist etter at hashen er generert og dokumentert."
+        },
+        {
+          "type": "paragraph",
+          "data": "Analogi: En SHA-256 hash er som et DNA-avtrykk for en digital fil. Akkurat som ingen to mennesker har identisk DNA, har ingen to filer identisk SHA-256 (i praksis). Hvis noen hevder at filen er uendret, kan hashene sammenlignes."
+        },
+        {
+          "type": "paragraph",
+          "data": "🔧 SHA-256 HASH-GENERERING (Mikrosteg for Windows):"
+        },
+        {
+          "type": "paragraph",
+          "data": "1. Lagre filen (screenshot/HTML/tekst) i C:\\Etterforskning\\Sak123\\Bevis\\"
+        },
+        {
+          "type": "paragraph",
+          "data": "2. Klikk på Windows-søkfeltet (forstørrelsesglasset nede til venstre)"
+        },
+        {
+          "type": "paragraph",
+          "data": "3. Skriv 'cmd' og trykk Enter – du vil nå se et sort kommandovindu"
+        },
+        {
+          "type": "paragraph",
+          "data": "4. I det sorte vinduet, skriv nøyaktig: certutil -hashfile C:\\Etterforskning\\Sak123\\Bevis\\bevis1.png SHA256"
+        },
+        {
+          "type": "paragraph",
+          "data": "5. Trykk Enter"
+        },
+        {
+          "type": "paragraph",
+          "data": "6. Kopier hash-verdien inn i aktivitetslogg + rapport"
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "overskrift": "KAPITTEL 10: JURIDISK GRENSEOPPGANG – NORSK RETTSSYSTEM (KOMPLETT)",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "JURIDISK GRENSEOPPGANG – NORSK RETTSSYSTEM (KOMPLETT):"
+        },
+        {
+          "type": "paragraph",
+          "data": "✅ TILLATT (strpl. § 196): Passiv observasjon av åpne .onion-sider, lese åpne forum-innlegg, analysere offentlig tilgjengelige PGP-nøkler, bruke clearweb-søkemotorer for å finne darkweb-aliaser"
+        },
+        {
+          "type": "paragraph",
+          "data": "❌ KREVER BESLUTNING (politi §§ 196/200-serien): Opprette etterforskningskonto på forum/marked, delta aktivt i forum-diskusjoner som observatør, infiltrere åpne chat-kanaler"
+        },
+        {
+          "type": "paragraph",
+          "data": "⛔ KREVER KJENNELSE (strpl. § 197): Dataavlesning, installasjon av NIT, tilgang til krypterte kommunikasjoner"
+        },
+        {
+          "type": "paragraph",
+          "data": "⛔ ULOVLIG (strpl. § 196a): Provokasjon – utgi seg for kjøper/selger, fremprovosere handlinger som ikke ellers ville funnet sted"
+        },
+        {
+          "type": "paragraph",
+          "data": "VOKT-PRINSIPPET: Verifiser (all info), Observer (passivt der mulig), Kjenn grenser (juridiske), Tenk etisk (konsekvenser for tredjeparter)"
+        }
+      ]
+    },
+    {
+      "id": "s15",
+      "overskrift": "KAPITTEL 11: PRAKTISK DARKWEB-ETTERFORSKNING – STEG FOR STEG",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR ER DETTE VIKTIG?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Analogi: Dette kapittelet er kokeboken. De foregående kapitlene ga deg teori om råvarene – dette kapittelet viser deg hvordan du faktisk lager retten."
+        },
+        {
+          "type": "paragraph",
+          "data": "Praksis: Operativ darkweb-etterforskning for ikke-teknisk personell er begrenset til: (1) søk etter aliaser og brukernavn via clearweb-tilgjengelige verktøy, (2) analyse av PGP-nøkler, (3) identifisering av kryptoadresser, og (4) TPS-vurdering av informasjon fra darkweb. Dybdeanalyse eskaleres til IKT-krimenhet."
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "Case: Etterforsker Hansen mottar informasjon om at @BKindustrien skal ha en selgerprofil på darkweb. Kapittelet viser trinn for trinn hva Hansen kan gjøre UTEN å kontakte IKT-krimenhet, og når Hansen MÅ eskalere."
+        },
+        {
+          "type": "paragraph",
+          "data": "11.1 Nivå 1 – Clearweb-søk etter darkweb-identifikatorer (Ingen spesialverktøy)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Det første steget er alltid clearweb. Mange darkweb-brukere har dårlig OPSEC og bruker samme brukernavn på clearweb og darkweb. En rask Google-søk kan avsløre dette."
+        },
+        {
+          "type": "paragraph",
+          "data": "🔧 STEG FOR STEG: Søk etter BKindustrien på clearweb (Mikrosteg):"
+        },
+        {
+          "type": "paragraph",
+          "data": "1. Åpne Chrome eller Firefox (ikke Tor Browser – dette er clearweb-søk)"
+        },
+        {
+          "type": "paragraph",
+          "data": "2. Gå til google.com"
+        },
+        {
+          "type": "paragraph",
+          "data": "3. Skriv inn søket: \"BKindustrien\" (med anførselstegn for eksakt match)"
+        },
+        {
+          "type": "paragraph",
+          "data": "4. Trykk Enter – du vil nå se resultater fra hele internet (YouTube, forum, Twitter etc.)"
+        },
+        {
+          "type": "paragraph",
+          "data": "5. Gjennomgå resultater – se etter: profilsider, forum-innlegg, kommentarer, omtale"
+        },
+        {
+          "type": "paragraph",
+          "data": "6. Gjenta søket uten anførselstegn: BKindustrien"
+        },
+        {
+          "type": "paragraph",
+          "data": "7. Gjenta med varianter: BK industrien, BK_industrien, bkindustrien"
+        },
+        {
+          "type": "paragraph",
+          "data": "8. Prøv Ahmia (ahmia.fi) i vanlig nettleser – skriv 'BKindustrien' – Ahmia søker i darkweb uten at du trenger Tor!"
+        },
+        {
+          "type": "paragraph",
+          "data": "9. Dokumenter alle funn: Screenshot + SHA-256 hash + tidspunkt"
+        },
+        {
+          "type": "paragraph",
+          "data": "10. TPS-vurder hvert funn individuelt"
+        },
+        {
+          "type": "paragraph",
+          "data": "11.2 Nivå 2 – Kryptoanalyse (Clearweb-verktøy)"
+        },
+        {
+          "type": "paragraph",
+          "data": "🔧 STEG FOR STEG: Analyser kryptoadresse (Mikrosteg):"
+        },
+        {
+          "type": "paragraph",
+          "data": "1. Finn kryptoadresse (fra profil, forum, Telegram-gruppe) – Bitcoin-adresser starter med 1, 3 eller bc1"
+        },
+        {
+          "type": "paragraph",
+          "data": "2. Gå til blockchair.com i vanlig nettleser"
+        },
+        {
+          "type": "paragraph",
+          "data": "3. Lim inn adressen i søkefeltet øverst på siden"
+        },
+        {
+          "type": "paragraph",
+          "data": "4. Klikk på søkeikonet (forstørrelsesglasset) – du vil nå se: Total balanse, Antall transaksjoner, Alle inn/ut-transaksjoner med dato"
+        },
+        {
+          "type": "paragraph",
+          "data": "5. Se etter STORE transaksjoner eller transaksjoner til kjente exchange-adresser"
+        },
+        {
+          "type": "paragraph",
+          "data": "6. Klikk på en transaksjon – se på mottaker-adressen"
+        },
+        {
+          "type": "paragraph",
+          "data": "7. Søk mottaker-adressen på walletexplorer.com – dette kan identifisere om adressen tilhører en kjent exchange"
+        },
+        {
+          "type": "paragraph",
+          "data": "8. Dersom exchange identifisert: Dokumenter adresse, tidspunkt, beløp og exchange-navn for begjæring om utlevering"
+        },
+        {
+          "type": "paragraph",
+          "data": "9. Screenshot av hele transaksjonshistorikken + SHA-256"
+        },
+        {
+          "type": "paragraph",
+          "data": "11.3 Nivå 3 – Basert Tor-søk (Krever VM-oppsett og godkjenning)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Nivå 3 innebærer faktisk navigering på darkweb via Tor Browser. Dette krever forhåndsgodkjenning fra leder, juridisk vurdering av hjemmelsgrunnlag, og dedikert VM med Whonix-arkitektur. Ikke-teknisk personell bør IKKE utføre nivå 3 uten spesialopplæring."
+        },
+        {
+          "type": "paragraph",
+          "data": "🔧 STEG FOR STEG: Passiv observasjon via Tor (Kun med godkjenning):"
+        },
+        {
+          "type": "paragraph",
+          "data": "1. Start VM (VirtualBox) → Start Whonix Gateway → Start Whonix Workstation"
+        },
+        {
+          "type": "paragraph",
+          "data": "2. Sjekk IP: Åpne nettleser i Workstation → gå til check.torproject.org → bekrefter Tor-tilkobling"
+        },
+        {
+          "type": "paragraph",
+          "data": "3. Åpne Tor Browser i Workstation"
+        },
+        {
+          "type": "paragraph",
+          "data": "4. Sett Security Level til 'Safest'"
+        },
+        {
+          "type": "paragraph",
+          "data": "5. Naviger kun til verifiserte lenker (dark.fail / egne kilder)"
+        },
+        {
+          "type": "paragraph",
+          "data": "6. Gjør kun passiv observasjon (ingen konto, ingen innlegg, ingen kjøp)"
+        },
+        {
+          "type": "paragraph",
+          "data": "7. Dokumenter alt umiddelbart: URL + tidspunkt + screenshot + SHA-256"
+        }
+      ]
+    },
+    {
+      "id": "s16",
+      "overskrift": "KAPITTEL 12: RAPPORTSTRUKTUR OG OPERATIV KVALITET",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "12.1 Hvorfor rapportstruktur er kritisk"
+        },
+        {
+          "type": "paragraph",
+          "data": "I darkweb-saker må rapporten tåle at kilden forsvinner. Derfor må du beskrive: hva du gjorde, når du gjorde det, hvordan du dokumenterte det, og hvordan du sikret integritet. Rapporten må også vise at du holdt deg innenfor hjemmel."
+        },
+        {
+          "type": "paragraph",
+          "data": "12.2 Begrensninger og feilkilder"
+        },
+        {
+          "type": "paragraph",
+          "data": "Du må alltid beskrive begrensninger: flyktig innhold, anonymitet, mulig desinformasjon, og metodiske begrensninger (ingen aktiv kontakt, ingen tekniske inngrep)."
+        },
+        {
+          "type": "paragraph",
+          "data": "12.3 VaaS-rekruttering via forum og meldingsapper"
+        },
+        {
+          "type": "paragraph",
+          "data": "VaaS-rekruttering (Violence as a Service) følger et spesifikt mønster på darkweb og klar-web-grensen. Kurt Mikkelsens case illustrerer rekrutteringsprosessen fra clearweb (Telegram/Snapchat) til organisert VaaS-nettverk."
+        },
+        {
+          "type": "paragraph",
+          "data": "Rekrutteringsmønsteret starter typisk på clearweb (Telegram, Discord, Instagram) der rekrutterer (@NordLink81) identifiserer sårbare unge (status-søkende, impulsive, pengebehov). Etter etablert tillit flyttes kommunikasjonen til lukket Telegram-gruppe ('BK Nettverk'). Deretter kommer en innledende test-oppgave (lav risiko for rekruttert, betalingsprøve). Vellykket test fører til tilbud om mer systematisk arbeid."
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VaaS-REKRUTTERINGSINDIKATORER: Digital etterretning"
+        },
+        {
+          "type": "paragraph",
+          "data": "📱 Plattform-indikatorer: Invitasjon til privat Telegram-gruppe fra ukjent voksen. Discord-DM med tilbud om 'lett jobb'. Instagram-DM med penger-emojier."
+        },
+        {
+          "type": "paragraph",
+          "data": "💰 Transaksjons-indikatorer: Mottak av småbeløp (200-500 kr) med vage meldinger. Meldinger som 'jobb', 'takk', 'bonus' uten tydelig arbeidsgiver."
+        },
+        {
+          "type": "paragraph",
+          "data": "📍 Lokasjonsindikatorer: Regelmessige møter på samme fysiske sted. Ghost Mode på Snap Map under møter. Sent på natt-aktivitet (22:00-01:00)."
+        },
+        {
+          "type": "paragraph",
+          "data": "🗣️ Språkindikatorer: Bruk av 'ordne', 'fixe', 'ride', 'business' i ikke-spesifisert kontekst. Kryptisk kommunikasjon i offentlige kanaler."
+        }
+      ]
+    },
+    {
+      "id": "s17",
+      "overskrift": "KAPITTEL 13: TPS-VURDERING FOR DARKWEB-INFORMASJON",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Informasjon fra det mørke nettet er spesielt utfordrende å vurdere med TPS-modellen fordi troverdigheten nesten alltid er lav (anonyme alias), påliteligheten er variabel (ekte handel vs. fullstendig desinformasjon), og sensitiviteten nesten alltid er høy (kriminalitet, potensielt mindreårige, sensitiv etterretning)."
+        },
+        {
+          "type": "paragraph",
+          "data": "13.1 Troverdighet på darkweb (T-skalaen A-F)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "KILDE-TYPE | T-VURDERING | BEGRUNNELSE | EKSEMPEL",
+            "Offentlig forum-innlegg m/lang historikk | C | Anonym, men sporbar historikk | Selger med 500 positive reviews",
+            "Ny bruker, ingen historikk | D | Anonym, ingen sporbarhet | Første innlegg på forum",
+            "PGP-signert melding | C | Kryptografisk verifiserbar avsender | @BKindustrien sin PGP-signerte post",
+            "Screenshot fra ukjent | F | Kan ikke vurderes – ingen metadata | Anonymt tilsendt bilde",
+            "Bekreftet gjennom KYC-exchange | A/B | Identifisert via KYC-prosess | Coinbase-konto koblet til wallet"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "13.2 TPS i praksis – Fullstendig eksempel"
+        },
+        {
+          "type": "paragraph",
+          "data": "Scenario: Etterforskeren finner et forum-innlegg på en darkweb-markedsplass der brukernavn 'BKindustrien_NO' (opprettet 2023) tilbyr 'Skremsels-tjenester i Øst-Norge, 5000 kr per oppdrag'. Innlegget er PGP-signert."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TPS-DIMENSJON | VURDERING | BEGRUNNELSE",
+            "T (Troverdighet) | C | Anonymt alias, men PGP-verifisert konsistent identitet. Aktivt i 2 år.",
+            "P (Pålitelighet) | 3 | Mulig sant – tilbyr tjenester, men ingen bekreftede transaksjoner i dette innlegget.",
+            "S (Sensitivitet) | KRITISK | Organisert kriminalitet (VaaS), mulig tilknytning til mindreårig (Kurt Mikkelsen).",
+            "Samlet TPS | C-3-KRITISK | Informasjonen er potensielt ekte og svært sensitiv. Krever eskalering.",
+            "Anbefaling | Eskalér | Begjær rettslig kjennelse for Telegram-data + Kontakt IKT-krimenhet for blockchain-analyse."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "VOKT-PRINSIPPET – Darkweb-tilpasset versjon:"
+        },
+        {
+          "type": "paragraph",
+          "data": "V – VERIFISER: Kryssjekk ALLTID med minst én clearweb-kilde. Forum-post om 'BKindustrien' + Telegram-gruppe 'BK Nettverk' + Vipps-meldinger = sterkere verifisering enn forum-post alene."
+        },
+        {
+          "type": "paragraph",
+          "data": "O – OBSERVER: Observer passivt FØR aktiv handling. Tilstedeværelse er gratis; handling har juridiske konsekvenser."
+        },
+        {
+          "type": "paragraph",
+          "data": "K – KJENN GRENSENE: Vet du grensen mellom § 196 (tillatt) og § 196a (forbudt) for denne handlingen?"
+        },
+        {
+          "type": "paragraph",
+          "data": "T – TENK ETISK: Hvem kan rammes av din handling? Kan det være uskyldige brukere på plattformen? Er det mindreårige involvert?"
+        }
+      ]
+    },
+    {
+      "id": "s18",
+      "overskrift": "DEL B – RAPPORTKLAR TEKST",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "POLITIRAPPORT – DIGITAL ETTERFORSKNING (DARKWEB/DARKInt)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Klassifisering: STRENGT FORTROLIG | Sak-ID: [SAKSNUMMER] | Dato: 15.02.2026"
+        },
+        {
+          "type": "paragraph",
+          "data": "1. MANDAT"
+        },
+        {
+          "type": "paragraph",
+          "data": "Undertegnede fikk i oppdrag av [leder/påtalemyndighet] den 01. februar 2026 å gjennomføre en digital etterretningsanalyse av Telegram-grupppen 'BK Nettverk' og tilknyttede digitale identiteter, med særlig fokus på mulig rekruttering av mindreårige til Violence as a Service (VaaS)-aktivitet. Oppdraget inkluderte kartlegging av nettverkskoblinger mellom det åpne nettet og det mørke nettet (darkweb/DARKInt), analyse av relevante kryptovalutatransaksjoner tilknyttet kjente identifikatorer, og vurdering av om et særskilt møtepunkt ved Rema 1000, Lørenskog, har tilknytning til organisert kriminell aktivitet. Alle etterforskningssteg er gjennomført innenfor rammen av passiv observasjon (straffeprosessloven § 196) uten aktiv kontakt med mistenkte. Etterforskningen har ikke inkludert dataavlesning (§ 197) eller andre inngripende metoder."
+        },
+        {
+          "type": "paragraph",
+          "data": "2. INNGANGSVERDIER"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "PARAMETER | VERDI | KILDE",
+            "Primærsubjekt | Kurt Mikkelsen, alias K13, k13_nord | Politiets eksisterende saksdokumentasjon",
+            "Fødselsdato primær | 22.09.2011 (13 år) | Folkeregisteret",
+            "Adresse primær | Skoleveien 12, 1473 Lørenskog | Folkeregisteret",
+            "Kjent alias Telegram | @BKindustrien (admin, 'BK Nettverk') | Observasjon åpen Telegram-gruppe",
+            "Kjent alias clearweb | @NordLink81 (Anders Berg, 23 år) | Politiets eksisterende saksdokumentasjon",
+            "Telefon primær | +47 918 34 512 (Telenor, familieplan) | 1881.no",
+            "Tidsperiode | 01.02.2026 – 15.02.2026 | Etterforskningsperiode"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "3. METODE (PIAR)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Planlegg: Oppdraget ble avgrenset til passiv observasjon av åpne kilder (strpl. § 196), med fokus på identifikatorer som kan koble clearweb-aktivitet til darkweb-aktivitet. Risiko for provokasjon og CSAM ble vurdert, og etterforskning ble gjennomført i VM med Tor-kontroll."
+        },
+        {
+          "type": "paragraph",
+          "data": "Innhent: Identifikatorer ble innhentet gjennom (1) clearweb-søk etter aliaser, (2) PGP-nøkkel-analyse, (3) blockchain-analyse av offentlig kryptodata, og (4) observasjon av Telegram-gruppeinnhold som var åpent tilgjengelig."
+        },
+        {
+          "type": "paragraph",
+          "data": "Analyser: Funn ble strukturert etter TPS (Troverdighet, Pålitelighet, Sensitivitet) og pivotert mellom plattformer basert på gjenbruk av aliaser og kryptoadresser."
+        },
+        {
+          "type": "paragraph",
+          "data": "Rapporter: Alle funn er dokumentert med tidspunkt (UTC), full URL der relevant, screenshots, og SHA-256 hash. Hunchly-rapport er vedlagt."
+        },
+        {
+          "type": "paragraph",
+          "data": "4. FUNN – CLEARWEB"
+        },
+        {
+          "type": "paragraph",
+          "data": "4.1 Alias-søk"
+        },
+        {
+          "type": "paragraph",
+          "data": "Søk etter 'BKindustrien' ga treff som indikerer brukernavn-gjenbruk på tvers av plattformer, inkludert omtale i fora og kommentarfelt."
+        },
+        {
+          "type": "paragraph",
+          "data": "4.2 PGP"
+        },
+        {
+          "type": "paragraph",
+          "data": "PGP-nøkkel med fingerprint ble observert koblet til aliaset. E-postfelt i nøkkelen indikerer mulig ProtonMail-adresse: bk_industries@proton.me."
+        },
+        {
+          "type": "paragraph",
+          "data": "5. FUNN – DARKWEB / DARKInt (PASSIV OBSERVASJON)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Det ble identifisert indikasjoner på at aliaset 'BKindustrien_NO' eksisterer/har eksistert på darkweb-forum/markedsplass. Profilsiden kan ikke bekreftes å eksistere per rapportdato."
+        },
+        {
+          "type": "paragraph",
+          "data": "6. FUNN – KRYPTO"
+        },
+        {
+          "type": "paragraph",
+          "data": "Kryptoadresse bc1xxx...yyy ble observert knyttet til aliaset. Offentlig blockchain-data viser transaksjonshistorikk, med indikasjon på mulig tilknytning til exchange (KYC-potensial)."
+        },
+        {
+          "type": "paragraph",
+          "data": "7. FUNN – VaaS / REKRUTTERING"
+        },
+        {
+          "type": "paragraph",
+          "data": "Det er indikatorer på rekrutteringsmønster der @NordLink81 etablerer kontakt med mindreårig (Kurt Mikkelsen) og flytter kommunikasjon til lukket Telegram-gruppe ('BK Nettverk'), med påfølgende test-oppdrag og små betalinger."
+        },
+        {
+          "type": "paragraph",
+          "data": "8. TIDS- OG LOKASJONSANALYSE"
+        },
+        {
+          "type": "paragraph",
+          "data": "Onsdagsmønsteret (Kurt observert via Snap Map ved Rema 1000, Lørenskog, kl. 21:00-22:00 på 4 av 5 onsdager i februar 2026) er konsistent med koordinerte fysiske møter. Observasjonen alene er ikke tilstrekkelig til å fastslå hva som foregår på disse møtene, men mønsteret er en klar indikator som bør følges opp."
+        },
+        {
+          "type": "paragraph",
+          "data": "9. ALTERNATIVHYPOTESER"
+        },
+        {
+          "type": "paragraph",
+          "data": "H1 (Legitim aktivitet): Kurt Mikkelsen mottar penger for lovlig arbeid (avisbud, hagehjelp) som betales via Vipps med vage meldinger av tilfeldig grunn. Onsdagsmøtene er et uskyldigt treffpunkt med venner. Pengene er reell, lovlig lønn. Motargument: Meldingene 'jobb', 'bonus' fra profiler tilknyttet kriminelt miljø er atypiske for legitimt arbeid. Avisbud betales ikke via Vipps med 'bonus'-meldinger."
+        },
+        {
+          "type": "paragraph",
+          "data": "H2 (Status-søking uten reell kriminalitet): Kurt poster bilder av penger og biler for å virke tøff, men pengene er lånt eller digitalt manipulert. Vipps-innbetalingene er fra venner som gir ham penger av andre grunner. Kurt er ikke involvert i kriminalitet – han spiller en rolle. Motargument: Transaksjoner er observerbare og repeterende (ikke engangs). Kobling til Anders Berg (tidligere domfelt) er uavhengig bekreftet."
+        },
+        {
+          "type": "paragraph",
+          "data": "H3 (Mer sentral posisjon enn antatt): Kurt Mikkelsen er ikke et offer for rekruttering, men en aktiv deltaker som aktivt har søkt seg til det kriminelle nettverket. Hans underordnede kommunikasjonsstil er taktisk for å minimere risiko. Motargument: Alder (13 år), psykologisk profil (usikker, søker anerkjennelse) og meldingstonen (usikker, spørrende) er konsistent med sårbar person under innflytelse, ikke en aktiv kriminell."
+        },
+        {
+          "type": "paragraph",
+          "data": "10. TPS-VURDERING (KOMPLETT)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "FUNNKATEGORI | T | P | S | BEGRUNNELSE",
+            "Darkweb forum-profil 'BKindustrien_NO' | C | 3 | KRITISK | PGP-verifisert, men anonym. Mulig krim. aktivitet. Krysskoblet til Telegram.",
+            "Kryptoadresse bc1xxx...yyy | B | 2 | HØY | Offentlig blokkjede-data. Verifiserbar. Koblet til Binance (KYC-potensial).",
+            "PGP-e-post bk_industries@proton.me | C | 3 | KRITISK | Anonym, men konsistent på to plattformer. Datalekkasje bekreftet.",
+            "Vipps-transaksjoner (Kurt Mikkelsen) | B | 3 | KRITISK | Via mors konto (verifiserbart). Kryptiske meldinger. Mindreårig + ekon. data.",
+            "Snap Map onsdagsmønster | C | 2 | HØY | Mønsterbasert observasjon. Krever oppfølging for verifisering."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "11. ANBEFALTE NESTE STEG"
+        },
+        {
+          "type": "paragraph",
+          "data": "Etterforskningens primære begrensning er at @BKindustriens reelle identitet ikke er fastslått, og at kryptoadressens kobling til en KYC-verifisert exchange ennå ikke er rettslig innhentet. De mest kritiske neste steg er begjæring om Telegram-data (inkludert telefonnummer bak @BKindustrien) og rettslig bistand overfor Binance for å identifisere wallet-innehaver."
+        },
+        {
+          "type": "paragraph",
+          "data": "12. BEGRENSNINGER"
+        },
+        {
+          "type": "paragraph",
+          "data": "Etterforskningens metodiske begrensninger inkluderer: (1) Darkweb-innhold er flyktig – profilsiden for 'BKindustrien_NO' kan ikke lenger bekreftes å eksistere per rapportdato. (2) Koblinger mellom @BKindustrien (Telegram) og 'BKindustrien_NO' (darkweb) er basert på gjenbruk av kryptoadresse, som er sterk men ikke ugjendrivelig bevis – en tredjepart kan teoretisk ha gjenbrukt adressen. (3) Mindreårig-statusen til Kurt Mikkelsen begrenser etterforskningsmetodene og utelukker all aktiv kontakt. (4) Blockchain-analyse er begrenset til offentlig tilgjengelig data – fullstendig sporing krever Chainalysis Reactor og IKT-krimenhet-bistand."
+        },
+        {
+          "type": "paragraph",
+          "data": "13. KONKLUSJON"
+        },
+        {
+          "type": "paragraph",
+          "data": "Mandatet er delvis besvart: Det er konstatert indikatorer på at 'BK Nettverk' er tilknyttet kriminell aktivitet (VaaS-rekruttering), og at @BKindustrien sannsynligvis har tilstedeværelse på darkweb. Kurt Mikkelsen (13 år) er under innflytelse av kriminelt miljø og anbefales håndtert som mulig offer for utnyttelse, ikke som strafferettslig gjerningsperson. Det anbefales: (1) Barnevernmelding for Kurt Mikkelsen, (2) Begjæring om Telegram-data for @BKindustrien og @NordLink81, (3) Rettslig bistand overfor Binance for kryptoadresse bc1xxx...yyy, og (4) Eskalering til IKT-krimenhet for fullstendig blockchain-analyse."
+        },
+        {
+          "type": "paragraph",
+          "data": "Alle funn er dokumentert med SHA-256 hash og Hunchly-rapport vedlagt. Bevisintegritet er sikret gjennom hele etterforskningen."
+        },
+        {
+          "type": "paragraph",
+          "data": "Undertegnede: _______________________________"
+        },
+        {
+          "type": "paragraph",
+          "data": "Tjenestested: _______________________________"
+        },
+        {
+          "type": "paragraph",
+          "data": "Dato: 15.02.2026"
+        }
+      ]
+    },
+    {
+      "id": "s19",
+      "overskrift": "VEDLEGG – SJEKKLISTER OG RESSURSER",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Vedlegg A: Komplett sjekkliste – Darkweb-etterforskning"
+        },
+        {
+          "type": "paragraph",
+          "data": "✓ FØR DU STARTER (Alltid)"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er VM satt opp og Whonix Gateway/Workstation aktiv?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er IP verifisert via check.torproject.org?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er Security Level i Tor Browser satt til 'Safest'?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er juridisk hjemmel klarlagt (passiv obs. strpl. § 196)?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er leder informert om planlagt aktivitet?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er Hunchly aktivert og sak opprettet?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er etterforsknings-alias opprettet (ikke personlig e-post)?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er aktivitetslogg åpen og klar til dokumentasjon?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er mental HMS ivaretatt (kollega varslet)?"
+        },
+        {
+          "type": "paragraph",
+          "data": "✓ UNDER ETTERFORSKNING"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er jeg passiv observatør (ikke aktiv deltaker)?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Dokumenterer jeg UMIDDELBART (ikke etter sesjonen)?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er SHA-256 hash generert for alle nye filer?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Har jeg notert full URL (ikke forkortet) og tidspunkt UTC?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Har jeg vurdert TPS for hvert funn?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Har jeg holdt meg til oppdraget (ingen sideveier)?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Har jeg lukket siden og avsluttet ved første tegn på CSAM?"
+        },
+        {
+          "type": "paragraph",
+          "data": "✓ ETTER ETTERFORSKNING"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er alle filer lagret i korrekt mappestruktur?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er backup gjennomført (3-2-1-regelen)?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er Tor Browser lukket og VM avsluttet?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er Hunchly-rapport eksportert og lagret?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er aktivitetslogg komplett og lagret?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er barnevernmelding sendt ved bekymring for Kurt-lignende saker?"
+        },
+        {
+          "type": "paragraph",
+          "data": "□ Er debriefsamtale gjennomført ved belastende innhold?"
+        }
+      ]
+    },
+    {
+      "id": "s20",
+      "overskrift": "Vedlegg B: Nøkkelressurser og kontaktinformasjon",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "RESSURS | URL / KONTAKT | FORMÅL",
+            "Ahmia (darkweb-søk, clearweb) | ahmia.fi | Søke etter .onion-innhold uten Tor",
+            "Blockchair | blockchair.com | Blockchain-analyse, kryptosporing",
+            "Have I Been Pwned | haveibeenpwned.com | Sjekk om e-post er i datalekkasjer",
+            "Dark.fail (via Tor) | darkfailenbsdla5mal2mxn2uz66od5vtzd5qozslagrfzachha3f3id.onion | Verifiserte .onion-adresser",
+            "Tor Project | torproject.org | Last ned Tor Browser",
+            "BrowserLeaks | browserleaks.com | Sjekk browser fingerprint",
+            "ExifData | exifdata.com | Web-basert EXIF-analyse",
+            "Kripos OSINT-team | Tlf: 22 66 90 50 | Spesialiststøtte",
+            "IKT-krimenhet | Via politidistrikt | Teknisk bistand, avansert DARKInt"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s21",
+      "overskrift": "Vedlegg C: Ordliste – Darkweb-fagtermer",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "BEGREP | ENKELT FORKLART",
+            ".onion | Spesiell nettadresse som bare fungerer via Tor. Som et hemmelig telefonnummer.",
+            "CaaS | Crime as a Service – kriminalitet tilbudt som betalingstjeneste, som outsourcet jobb.",
+            "CSAM | Child Sexual Abuse Material – overgrepsmateriale mot barn. Umiddelbar rapporteringsplikt.",
+            "DARKInt | Dark Web Intelligence – etterretning fra det mørke nettet.",
+            "De-anonymisering | Avdekke hvem som skjuler seg bak et alias. Fra 'K13' til 'Kurt Mikkelsen'.",
+            "Escrow | Depositumstjeneste på darkweb – mellommann som holder penger til transaksjonen er bekreftet.",
+            "Exit Node | Siste stoppunkt i Tor-kretsen. Sender din forespørsel til destinasjonen.",
+            "Fingerprinting | Nettlesere lekker unik info som kan identifisere brukeren. Som fingeravtrykk.",
+            "Honeypot | Felle satt opp for å tiltrekke kriminelle (eller identifisere etterforskere).",
+            "I2P | Invisible Internet Project – alternativt anonymt nettverk til Tor.",
+            "Information Slippage | Utilsiktet lekkasje av identifiserende informasjon. Den ene glippen som avslører.",
+            "KYC | Know Your Customer – ID-verifisering hos kryptobørser. Nøkkelen til å koble krypto til person.",
+            "NIT | Network Investigative Technique – teknisk metode for identifisering/inntrenging (krever kjennelse)."
+          ]
+        }
+      ]
+    }
+  ]
+}
