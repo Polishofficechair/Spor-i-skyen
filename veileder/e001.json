@@ -13,7 +13,8 @@
         },
         {
           "type": "paragraph",
-          "data": "KAPITTEL 0: GRUNNLEGGENDE OM KUNSTIG INTELLIGENS,"
+          "data": 
+            "KAPITTEL 0: GRUNNLEGGENDE OM KUNSTIG INTELLIGENS,"
           "Her kommer det innledning når det blir prioritert"
         }
       ]
@@ -29,9 +30,11 @@
         {
           "type": "callout",
           "kind": "TIP",
-          "data": "HVORFOR ER DETTE VIKTIG?"
+          "data": [
+            "HVORFOR ER DETTE VIKTIG?"
           "Å kjenne den presise definisjonen av kunstig intelligens er avgjørende i politietterforskning for å forstå hva teknologien faktisk gjør – og ikke gjør – slik at man unngår feilvurderinger, overtro eller ukritisk bruk av automatiserte analyser." "Det gir også grunnlag for korrekt bevisvurdering i retten, hvor etterforskeren må kunne forklare metodikk, begrensninger og feilkilder på en faglig og etterprøvbar måte."
-        },
+         ]
+            },
         {
           "type": "paragraph",
           "data": "Analogi: Kunstig intelligens (AI) er som en svært rask lærling som har lest millioner av bøker, men aldri forstår hva den leser. Den kan gjenkjenne mønstre og svare på spørsmål basert på hva den har “sett” før, men den tenker ikke selv."
