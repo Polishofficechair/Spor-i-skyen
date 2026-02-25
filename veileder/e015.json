@@ -1,58 +1,445 @@
 {
-  "tittel": "SØKEMOTORER",
-  "undertittel": "GOOGLE, BING OG YANDEX I DIGITAL ETTERFORSKNING: Operatorer, dorks, søkestrenger og komplett bruker-kartlegging",
-  "ordliste": [
+  "tittel": "BRUK AV SØKEMOTORER",
+  "undertittel": "GOOGLE, BING OG YANDEX I DIGITAL ETTERFORSKNING\nOperatorer, dorks, søkestrenger og komplett bruker-kartlegging",
+  "ordliste": [],
+  "seksjoner": [
     {
-      "term": "ORDLISTE",
-      [cite_start]"definisjon": "📖 ORDLISTE [cite: 827]\n\n• Søkeoperator: Et spesielt nøkkelord som endrer hva søkemotoren leter etter. [cite_start]Eks: \"site:\" betyr \"søk kun på denne nettsiden\" [cite: 828, 829][cite_start].\n• Google Dork: En avansert Google-søkestreng som kombinerer operatorer for å finne skjult eller spesifikk informasjon [cite: 830, 831][cite_start].\n• Boolean: Logisk søkesystem (AND/OR/NOT) – oppkalt etter matematikeren George Boole [cite: 832, 833][cite_start].\n• PII: Personally Identifiable Information – personidentifiserende informasjon som navn, adresse, telefon og e-post [cite: 834, 835][cite_start].\n• Indeksering: Prosessen der søkemotorens \"robot\" (crawler) registrerer og lagrer innhold fra nettsider [cite: 836, 837][cite_start].\n• Cache: Søkemotorens lagrede kopi av en nettside – viser innhold selv om originalsiden er slettet [cite: 838, 839][cite_start].\n• GHDB: Google Hacking Database – offentlig database med beviste dork-søkestrenger (exploit-db.com/google-hacking-database)[cite: 840, 841].\n• Passiv rekogn.: Innhenting av informasjon UTEN å kontakte objekt eller system direkte. [cite_start]Søkemotorbruk er passiv rekognisering [cite: 842, 843][cite_start].\n• Dorking: Å bruke avanserte Google-operatorer aktivt for etterforskning [cite: 844][cite_start].\n• Intelx: Intelligence X – søkemotor for lekkede databaser [cite: 845][cite_start].\n• Carrot2: Clustering-søkemotor som visualiserer resultater fra flere søkemotorer samtidig[cite: 846, 847]."
+      "id": "s01",
+      "overskrift": "ORDLISTE – LES DETTE FØRST",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "Søkeoperator | Et spesielt nøkkelord som endrer hva søkemotoren leter etter. Eks: \"site:\" betyr \"søk kun på denne nettsiden\"",
+            "Google Dork | En avansert Google-søkestreng som kombinerer operatorer for å finne skjult eller spesifikk informasjon",
+            "Boolean | Logisk søkesystem (AND/OR/NOT) – oppkalt etter matematikeren George Boole",
+            "PII | Personally Identifiable Information – personidentifiserende informasjon (navn, adresse, telefon, e-post)",
+            "Indeksering | Prosessen der søkemotorens \"robot\" (crawler) registrerer og lagrer innhold fra nettsider",
+            "Cache | Søkemotorens lagrede kopi av en nettside – viser innhold selv om originalsiden er slettet",
+            "GHDB | Google Hacking Database – offentlig database med beviste dork-søkestrenger (exploit-db.com/google-hacking-database)",
+            "Passiv rekogn. | Innhenting av informasjon UTEN å kontakte objekt eller system direkte. Søkemotorbruk er passiv rekognisering.",
+            "Dorking | Å bruke avanserte Google-operatorer aktivt for etterforskning",
+            "Intelx | Intelligence X – søkemotor for lekkede databaser",
+            "Carrot2 | Clustering-søkemotor som visualiserer resultater fra flere søkemotorer samtidig"
+          ]
+        }
+      ]
     },
     {
-      "term": "DEL A: SØKEMOTORENES ROLLE I DIGITAL ETTERFORSKNING",
-      [cite_start]"definisjon": "A.1 Hvorfor søkemotorer er etterforskningens første stopp[cite: 849]. [cite_start]Analogi: Flybilder av et åsted[cite: 850]. Tenk deg at du skal etterforske et hus. [cite_start]Du kan enten gå rett til huset og banke på – eller du kan først skaffe deg flybilder for å forstå omgivelsene, hvem som bor i nabolaget, hvilke biler som er parkert utenfor, og om det er noe mistenkelig synlig [cite: 851][cite_start].\n\nSøkemotorer er disse flybilde-bildene for digital etterforskning[cite: 852]. Søkemotoren indekserer alt som er offentlig tilgjengelig. [cite_start]Nettsider, dokumenter, bilder, foruminnlegg, domeneregistreringer, lekkede databaser, nyhetsartikler og sosiale medieprofiler – alt dette er tilgjengelig for den som vet hvordan man spør[cite: 853].\n\nEt sentralt prinsipp i OSINT-metodikken: Alle søkemotorbaserte søk er passiv rekognisering. [cite_start]Du kontakter ikke objektet, du ber ikke om noe, du forstyrrer ingen[cite: 854, 855]. Du leser rett og slett Google sin lagrede kopi av internett. [cite_start]Det er lovlig, sporbart og dokumenterbart [cite: 856][cite_start].\n\nGoogle Dorking søker gjennom Googles bufrede kopi av nettet – sin lagrede indeks – fremfor å gjøre direkte forespørsler til målservere[cite: 857]. [cite_start]Dette grunnleggende kjennetegnet gjør det til en form for passiv rekognisering[cite: 858].\n\nDu ser på et fotografiet av et hus tatt i går, ikke stående foran den faktiske bygningen. Fotografiet viser et åpent vindu som huseieren glemte å lukke. Du kan se den sårbarheten tydelig, men huseieren aner ingenting om at du ser på. [cite_start]Sikkerhetskameraene deres fanget aldri ansiktet ditt fordi du aldri nærmet deg eiendommen [cite: 859, 860, 861, 862][cite_start].\n\nTre søkemotorer, tre styrker[cite: 863]:\n• Google | Bredde og dybde, avanserte dorks, størst indeks | [cite_start]Dokumentfunn, sosiale medier, nyhetsarkiv, cache [cite: 864]\n• Bing | Microsoft-integrasjon, IP-søk, instreamset-operatorer | [cite_start]Alternativt index, noen ganger bedre for norske sider [cite: 864]\n• Yandex | Bildegjenk., østeuropeisk innhold, ansiktsgjenkjenning | [cite_start]Profilbilder, russiske nettverk, alternativt bildesøk [cite: 864][cite_start]\n\nA.2 Søkemotorens anatomi – hva indekseres og hva skjules?[cite: 865]. [cite_start]Hva Google indekserer (synlig for etterforskeren):\n• Alle offentlige nettsider og blogginnlegg [cite: 867][cite_start]\n• Offentlige sosiale medier-profiler (Instagram, Twitter, LinkedIn, TikTok) [cite: 868][cite_start]\n• Offentlige dokumenter (.pdf, .docx, .xlsx, .pptx) [cite: 869][cite_start]\n• Nyhetsartikler og avisarkiv [cite: 870][cite_start]\n• Foruminnlegg (Reddit, Diskusjon.no, VGDebatt) [cite: 871][cite_start]\n• Slettet innhold (i cache-kopier) [cite: 872][cite_start]\n• Lenkede profilsider (CV-sider, blogg, GitHub) [cite: 873][cite_start]\n• Domeneinformasjon og WHOIS-data [cite: 874][cite_start]\n• Metainformasjon fra bilder (i noen tilfeller) [cite: 875][cite_start]\n\nHva Google IKKE indekserer (usynlig uten spesialverktøy):\n• Private sosiale medieprofiler [cite: 877][cite_start]\n• Direktemeldinger og private chatter [cite: 878][cite_start]\n• Krypterte Telegram-grupper [cite: 879][cite_start]\n• Passordbeskyttede dokumenter [cite: 880][cite_start]\n• Dark Web (.onion-adresser) [cite: 881][cite_start]\n• Databaser uten offentlig grensesnitt [cite: 882][cite_start]\n\nPraktisk konsekvens: En nybegynner tror søkemotorer bare finner det man åpenlyst har publisert[cite: 883]. [cite_start]En erfaren etterforsker vet at søkemotorer har indeksert dokumenter brukeren trodde var skjulte, profiler de trodde var private, og sitat fra grupper de trodde var lukkede[cite: 884]."
+      "id": "s02",
+      "overskrift": "DEL A: SØKEMOTORENES ROLLE I DIGITAL ETTERFORSKNING",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "A.1 Hvorfor søkemotorer er etterforskningens første stopp\nAnalogi: Flybilder av et åsted\nTenk deg at du skal etterforske et hus. Du kan enten gå rett til huset og banke på – eller du kan først skaffe deg flybilder for å forstå omgivelsene, hvem som bor i nabolaget, hvilke biler som er parkert utenfor, og om det er noe mistenkelig synlig.\nSøkemotorer er disse flybilde-bildene for digital etterforskning.\nSøkemotoren indekserer alt som er offentlig tilgjengelig. Nettsider, dokumenter, bilder, foruminnlegg, domeneregistreringer, lekkede databaser, nyhetsartikler og sosiale medieprofiler – alt dette er tilgjengelig for den som vet hvordan man spør.\nEt sentralt prinsipp i OSINT-metodikken:\nAlle søkemotorbaserte søk er passiv rekognisering. Du kontakter ikke objektet, du ber ikke om noe, du forstyrrer ingen.\nDu leser rett og slett Google sin lagrede kopi av internett. Det er lovlig, sporbart og dokumenterbart.\nGoogle Dorking søker gjennom Googles bufrede kopi av nettet – sin lagrede indeks – fremfor å gjøre direkte forespørsler til målservere.\nDette grunnleggende kjennetegnet gjør det til en form for passiv rekognisering.\nDu ser på et fotografiet av et hus tatt i går, ikke stående foran den faktiske bygningen.\nFotografiet viser et åpent vindu som huseieren glemte å lukke.\nDu kan se den sårbarheten tydelig, men huseieren aner ingenting om at du ser på.\nSikkerhetskameraene deres fanget aldri ansiktet ditt fordi du aldri nærmet deg eiendommen. RecOsint\nTre søkemotorer, tre styrker:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Søkemotor | Styrke i OSINT | Særskilt bruksområde",
+            "Google | Bredde og dybde, avanserte dorks, størst indeks | Dokumentfunn, sosiale medier, nyhetsarkiv, cache",
+            "Bing | Microsoft-integrasjon, IP-søk, instreamset-operatorer | Alternativt index, noen ganger bedre for norske sider",
+            "Yandex | Bildegjenk., østeuropeisk innhold, ansiktsgjenkjenning | Profilbilder, russiske nettverk, alternativt bildesøk"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "A.2 Søkemotorens anatomi – hva indekseres og hva skjules?\nHva Google indekserer (synlig for etterforskeren):\nAlle offentlige nettsider og blogginnlegg\nOffentlige sosiale medier-profiler (Instagram, Twitter, LinkedIn, TikTok)\nOffentlige dokumenter (.pdf, .docx, .xlsx, .pptx)\nNyhetsartikler og avisarkiv\nForuminnlegg (Reddit, Diskusjon.no, VGDebatt)\nSlettet innhold (i cache-kopier)\nLenkede profilsider (CV-sider, blogg, GitHub)\nDomeneinformasjon og WHOIS-data\nMetainformasjon fra bilder (i noen tilfeller)\nHva Google IKKE indekserer (usynlig uten spesialverktøy):\nPrivate sosiale medieprofiler\nDirektemeldinger og private chatter\nKrypterte Telegram-grupper\nPassordbeskyttede dokumenter\nDark Web (.onion-adresser)\nDatabaser uten offentlig grensesnitt\nPraktisk konsekvens: En nybegynner tror søkemotorer bare finner det man åpenlyst har publisert.\nEn erfaren etterforsker vet at søkemotorer har indeksert dokumenter brukeren trodde var skjulte, profiler de trodde var private, og sitat fra grupper de trodde var lukkede."
+        }
+      ]
     },
     {
-      "term": "DEL B: GOOGLE – KOMPLETT OPERATORGRAF OG DORK-BIBLIOTEK",
-      [cite_start]"definisjon": "B.1 Google Operatorer – Komplett overikt[cite: 886, 888].\n\n• \"...\" | Eksakt setning/fraseleting | [cite_start]\"Kurt Mikkelsen\" Lørenskog [cite: 892]\n• site: | [cite_start]Søk kun på ett nettsted | site:instagram.com kurt_mkn [cite: 894]\n• filetype: | Begrens til filtype | [cite_start]\"Kurt Mikkelsen\" filetype:pdf [cite: 896]\n• intitle: | [cite_start]Søk i sidetittel | intitle:\"k13\" lørenskog [cite: 898]\n• allintitle: | [cite_start]Alle ord MÅ være i tittel | allintitle:kurt mikkelsen [cite: 900]\n• inurl: | [cite_start]Søk i URL-adresse | inurl:k13nord [cite: 902]\n• allinurl: | [cite_start]Alle ord MÅ være i URL | allinurl:kurt mkn [cite: 904]\n• intext: | [cite_start]Søk i sidetekst | intext:\"k13_nord\" telegram [cite: 906]\n• allintext: | [cite_start]Alle ord MÅ være i tekst | allintext:kurt lørenskog 13 [cite: 908]\n• OR / | | Enten det ene ELLER andre | [cite_start]\"k13\" OR \"kurt_mkn\" [cite: 910]\n• AND | Begge må være til stede | [cite_start]\"k13\" AND \"lørenskog\" [cite: 912]\n• - (minus) | Utelukk ord | [cite_start]\"Kurt Mikkelsen\" -facebook [cite: 914]\n• * (stjerne) | Jokertegn (ukjent ord) | [cite_start]\"k13 * lørenskog\" [cite: 916]\n• cache: | [cite_start]Vis lagret kopi av side | cache:t.me/k13nord [cite: 918]\n• related: | [cite_start]Finn lignende nettsider | related:snapchat.com [cite: 920]\n• define: | [cite_start]Definisjon av ord | define:vaas [cite: 922]\n• before: | [cite_start]Søk etter innhold FØR dato | k13nord before:2026-01-01 [cite: 924]\n• after: | [cite_start]Søk etter innhold ETTER | k13nord after:2025-06-01 [cite: 926]\n• AROUND(n) | Ord innen n ord fra hvr. [cite_start]| kurt AROUND(5) lørenskog [cite: 928, 929]\n• map: | [cite_start]Kartresultater | map:lørenskog rema1000 [cite: 931]\n• info: | [cite_start]Informasjon om nettsted | info:t.me [cite: 933]\n• source: | [cite_start]Søk i Google Nyheter kilde | kurt lørenskog source:vg.no [cite: 935][cite_start]\n\nB.2 Google Dorks – Kategorisert dork-bibliotek [cite: 937][cite_start].\n\nKATEGORI 1: IDENTIFISERING – Fra alias til reell identitet [cite: 938][cite_start].\n# Grunnleggende navnesøk med kryssnettsted-dekning:\n\"Kurt Mikkelsen\" site:instagram.com OR site:snapchat.com OR site:tiktok.com OR site:twitter.com [cite: 941][cite_start]\n# Søk alias på tvers av alle plattformer:\n\"k13nord\" OR \"k13_nord\" OR \"kurt_mkn\" OR \"kurt13live\" [cite: 943][cite_start]\n# Alias + geografisk tilhørighet:\n\"k13\" \"lørenskog\" -site:google.com [cite: 945][cite_start]\n# Finn alias og ekte navn i samme dokument:\nintext:\"k13\" intext:\"kurt\" intext:\"lørenskog\" [cite: 947][cite_start]\n# Eksakt fraser med personnavn:\n\"Kurt Mikkelsen\" \"Lørenskog\" [cite: 949][cite_start]\n# Finn biografi-sider med navn:\nintitle:\"Kurt Mikkelsen\" OR intitle:\"k13\" [cite: 951][cite_start]\n# Finn profil med kombinert navn og alder:\n\"Kurt Mikkelsen\" \"13\" \"Lørenskog\" -wikipedia [cite: 953][cite_start]\n# Telefonnummersøk:\n\"+47 918 34 512\" OR \"91834512\" site:*.no [cite: 955][cite_start]\n\"91834512\" -site:1881.no -site:gulesider.no [cite: 956][cite_start]\n# E-postsøk:\n\"kurtmikkelsen2011@gmail.com\" OR \"@gmail.com\" \"kurt mikkelsen\" [cite: 958][cite_start]\nintext:\"kurtmikkelsen2011\" [cite: 959][cite_start]\n# Finn omtale i nyheter og offentlige dokumenter:\n\"Kurt Mikkelsen\" Lørenskog filetype:pdf [cite: 961][cite_start]\n\"Kurt Mikkelsen\" site:politi.no OR site:domstol.no [cite: 962][cite_start]\n\nMIKROSTEG: Slik bruker du den første dork-kategorien[cite: 963]:\n□ Steg 1: Åpne Chrome i Inkognito-modus (Ctrl + Shift + N). □ Steg 2: Gå til google.com. □ Steg 3: Kopier søkestrengen ordrett inn i søkefeltet: \"k13nord\" OR \"k13_nord\" OR \"kurt_mkn\" OR \"kurt13live\". □ Steg 4: Trykk Enter. □ Steg 5: Klikk gjennom de 10 første resultatene. □ Steg 6: Ta screenshot av hvert relevant resultat. □ Steg 7: Noter nettstedenes URL, dato, og innhold i aktivitetsloggen. [cite_start]□ Steg 8: Kopier URL fra adressefeltet øverst i nettleseren til loggen [cite: 964, 965][cite_start].\n\nKATEGORI 2: SOSIALE MEDIER – Plattform-for-plattform søk [cite: 966][cite_start].\n# Sosiale medieprofiler:\n\"Kurt Mikkelsen\" site:facebook.com [cite: 968][cite_start]\n\"kurt_mkn\" site:instagram.com [cite: 969][cite_start]\n\"k13nord\" site:snapchat.com [cite: 970][cite_start]\n\"kurt13live\" site:tiktok.com [cite: 971][cite_start]\n\"k13_nrw\" site:reddit.com [cite: 972][cite_start]\n\"K13#4782\" site:discord.com [cite: 973][cite_start]\n\"@k13nord\" site:t.me [cite: 974][cite_start]\n# LinkedIn-søk uten innlogging:\n\"Kurt Mikkelsen\" site:linkedin.com/in/ [cite: 980][cite_start]\n# Snapchat-profil via Google:\nsite:snapchat.com \"k13\" [cite: 985][cite_start]\ninurl:snapchat.com/add/ \"k13\" [cite: 986][cite_start]\n\nKATEGORI 3: DOKUMENTFUNN [cite: 990][cite_start].\n# Dokumenttyper:\n\"Kurt Mikkelsen\" filetype:pdf [cite: 992][cite_start]\n\"K13\" \"Lørenskog\" filetype:pdf OR filetype:docx [cite: 993][cite_start]\n\"Mikkelsen\" filetype:xlsx site:*.no [cite: 995][cite_start]\n\"Mikkelsen\" site:lorenskog.kommune.no filetype:pdf [cite: 1001][cite_start]\n# Lekkasjer:\n\"Kurt Mikkelsen\" site:pastebin.com [cite: 1005][cite_start]\n\"91834512\" site:pastebin.com OR site:justpaste.it [cite: 1006][cite_start]\n\nKATEGORI 4: BILDEGJENFINNING [cite: 1007][cite_start].\n\"Kurt Mikkelsen\" filetype:jpg OR filetype:png OR filetype:jpeg [cite: 1009][cite_start]\nsite:instagram.com \"k13\" images [cite: 1011][cite_start]\n\"kurt mikkelsen\" profilbilde OR \"profile picture\" [cite: 1013][cite_start]\n\nKATEGORI 5: TIDSBASERT SØK [cite: 1018][cite_start].\n\"k13nord\" after:2026-01-01 before:2026-02-28 [cite: 1020][cite_start]\n\"k13nord\" before:2024-12-31 [cite: 1022][cite_start]\n\nKATEGORI 6: CACHE – Finn slettet innhold [cite: 1029][cite_start].\ncache:t.me/k13nord [cite: 1031][cite_start]\ncache:instagram.com/kurt_mkn [cite: 1032]\nViktig merknad om cache: Google har i 2024-2026 gradvis fjernet den klassiske cache: -funksjonen. [cite_start]Bruk i stedet Wayback Machine (web.archive.org) og archive.ph [cite: 1039, 1040][cite_start].\n\nKATEGORI 7: NETTVERKSANALYSE [cite: 1041][cite_start].\n\"k13\" \"nordlink\" OR \"anders berg\" [cite: 1043][cite_start]\n\"k13nord\" \"lørenskog gutta\" [cite: 1045][cite_start]\n\"K13#4782\" site:discord.com OR site:disboard.org [cite: 1051][cite_start]\n\nKATEGORI 8: SPESIALDORKS FOR NORSKE ETTERFORSKRE [cite: 1054][cite_start].\nsite:brreg.no \"Kurt Mikkelsen\" [cite: 1056][cite_start]\nsite:1881.no \"Hanne Mikkelsen\" [cite: 1057][cite_start]\nsite:lovdata.no OR site:domstol.no \"Kurt Mikkelsen\" [cite: 1066][cite_start]\n\nKATEGORI 9: LEKKASJE- OG DATABREACH-SØK [cite: 1071][cite_start].\n\"kurtmikkelsen2011@gmail.com\" site:pastebin.com [cite: 1073][cite_start]\nsite:intelx.io \"k13nord\" [cite: 1076][cite_start]\n\"k13_nord\" site:haveibeenpwned.com OR site:dehashed.com [cite: 1083][cite_start]\n\nB.3 Google Avansert søk – Grensesnittet for nybegynnere [cite: 1084][cite_start].\nFor etterforskere som ikke er komfortabel med å skrive dorks manuelt[cite: 1085]. □ Steg 1: Åpne Chrome i Inkognito-modus. □ Steg 2: Gå til: google.com/advanced_search. [cite_start]□ Steg 3: Fyll inn felter for ord, setninger, filtype og region [cite: 1086, 1087, 1088-1105]. [cite_start]□ Steg 6: Legg merke til URL-en som dannes – den er en dork du kan gjenbruke [cite: 1106][cite_start].\n\nB.4 Case: Kurt Mikkelsen – Google-søk trinn for trinn [cite: 1107][cite_start].\nSØKERUNDE 1 – Identifisering av alias (5 minutter)[cite: 1109]. Søk: \"@k13_nord\" OR \"k13_nord\" OR \"k13nord\". Konklusjon: Alias brukt på minst 5 plattformer. [cite_start]Instagram-bio sier \"Lørenskog | 13\" [cite: 1110-1119][cite_start].\n\nSØKERUNDE 2 – Koble alias til ekte navn (10 minutter)[cite: 1120]. Søk: \"kurt\" \"lørenskog\" \"13\" -site:facebook.com. [cite_start]Konklusjon: Alias K13 = \"Kurt\", 13 år, Lørenskog [cite: 1121-1129][cite_start].\n\nSØKERUNDE 3 – Full identitetsbekreftelse (15 minutter)[cite: 1130]. Søk: \"Kurt Mikkelsen\" \"Lørenskog\". Konklusjon: Full identitet bekreftet: Kurt Mikkelsen, 13 år. [cite_start]Adresse: Skoleveien 12, 1473 Lørenskog [cite: 1131-1141][cite_start].\n\nSØKERUNDE 4 – Nettverkskartlegging (20 minutter)[cite: 1142]. Søk: \"k13\" \"nordlink81\" OR \"nordlink\". [cite_start]Resultater: Anders Berg omtalt i lokalavis, koblinger via omtale i grupper [cite: 1143-1151][cite_start].\n\nTPS-vurdering for Google-funn[cite: 1152]:\n• 1881.no-adresse | A | 1 | MODERAT | [cite_start]Offentlig register [cite: 1153]\n• Instagram-bio \"13\" | C | 2 | HØY | [cite_start]Selvrapportert [cite: 1153]\n• Reddit-innlegg | C | 2 | MODERAT | [cite_start]Konto-historikk [cite: 1153]\n• Nyhetsartikkel om nettverket | B | 2 | MODERAT | [cite_start]Journalistisk kilde [cite: 1153]\n• Pastebin e-postfunn | D | 3 | KRITISK | [cite_start]Ukjent kilde [cite: 1153]"
+      "id": "s03",
+      "overskrift": "DEL B: GOOGLE – KOMPLETT OPERATORGRAF OG DORK-BIBLIOTEK",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "B.1 Google Operatorer – Komplett referansetabell"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "OPERATOR | BESKRIVELSE | EKSEMPEL",
+            "\"...\" | Eksakt setning/fraseleting | \"Kurt Mikkelsen\" Lørenskog",
+            "site: | Søk kun på ett nettsted | site:instagram.com kurt_mkn",
+            "filetype: | Begrens til filtype | \"Kurt Mikkelsen\" filetype:pdf",
+            "intitle: | Søk i sidetittel | intitle:\"k13\" lørenskog",
+            "allintitle: | Alle ord MÅ være i tittel | allintitle:kurt mikkelsen",
+            "inurl: | Søk i URL-adresse | inurl:k13nord",
+            "allinurl: | Alle ord MÅ være i URL | allinurl:kurt mkn",
+            "intext: | Søk i sidetekst | intext:\"k13_nord\" telegram",
+            "allintext: | Alle ord MÅ være i tekst | allintext:kurt lørenskog 13",
+            "OR / | | Enten det ene ELLER andre | \"k13\" OR \"kurt_mkn\"",
+            "AND | Begge må være til stede | \"k13\" AND \"lørenskog\"",
+            "- (minus) | Utelukk ord | \"Kurt Mikkelsen\" -facebook",
+            "* (stjerne) | Jokertegn (ukjent ord) | \"k13 * lørenskog\"",
+            "cache: | Vis lagret kopi av side | cache:t.me/k13nord",
+            "related: | Finn lignende nettsider | related:snapchat.com",
+            "define: | Definisjon av ord | define:vaas",
+            "before: | Søk etter innhold FØR dato | k13nord before:2026-01-01",
+            "after: | Søk etter innhold ETTER | k13nord after:2025-06-01",
+            "AROUND(n) | Ord innen n ord fra hvr. | kurt AROUND(5) lørenskog",
+            "map: | Kartresultater | map:lørenskog rema1000",
+            "info: | Informasjon om nettsted | info:t.me",
+            "source: | Søk i Google Nyheter kilde | kurt lørenskog source:vg.no"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "B.2 Google Dorks – Kategorisert dork-bibliotek for personkartlegging\nKATEGORI 1: IDENTIFISERING – Fra alias til reell identitet\nFormål: Koble brukernavn/alias til ekte navn, adresse, telefonnummer\n# Grunnleggende navnesøk med kryssnettsted-dekning\n\"Kurt Mikkelsen\" site:instagram.com OR site:snapchat.com OR site:tiktok.com OR site:twitter.com\n# Søk alias på tvers av alle plattformer\n\"k13nord\" OR \"k13_nord\" OR \"kurt_mkn\" OR \"kurt13live\"\n# Alias + geografisk tilhørighet\n\"k13\" \"lørenskog\" -site:google.com\n# Finn alias og ekte navn i samme dokument\nintext:\"k13\" intext:\"kurt\" intext:\"lørenskog\"\n# Eksakt fraser med personnavn\n\"Kurt Mikkelsen\" \"Lørenskog\"\n# Finn biografi-sider med navn\nintitle:\"Kurt Mikkelsen\" OR intitle:\"k13\"\n# Finn profil med kombinert navn og alder\n\"Kurt Mikkelsen\" \"13\" \"Lørenskog\" -wikipedia\n# Telefonnummersøk (hvis kjent)\n\"+47 918 34 512\" OR \"91834512\" site:*.no\n\"91834512\" -site:1881.no -site:gulesider.no\n# E-postsøk\n\"kurtmikkelsen2011@gmail.com\" OR \"@gmail.com\" \"kurt mikkelsen\"\nintext:\"kurtmikkelsen2011\"\n# Finn omtale i nyheter og offentlige dokumenter\n\"Kurt Mikkelsen\" Lørenskog filetype:pdf\n\"Kurt Mikkelsen\" site:politi.no OR site:domstol.no\nMIKROSTEG: Slik bruker du den første dork-kategorien"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Steg 1: Åpne Chrome i Inkognito-modus (Ctrl + Shift + N)",
+            "Steg 2: Gå til https://www.google.com",
+            "Steg 3: Kopier søkestrengen ordrett inn i søkefeltet: \"k13nord\" OR \"k13_nord\" OR \"kurt_mkn\" OR \"kurt13live\"",
+            "Steg 4: Trykk Enter",
+            "Steg 5: Du vil nå se en resultatside. Klikk gjennom de 10 første resultatene",
+            "Steg 6: Ta screenshot av hvert relevant resultat",
+            "Steg 7: Note nettstedenes URL, dato, og innhold i aktivitetsloggen",
+            "Steg 8: Kopier URL fra adressefeltet øverst i nettleseren til loggen"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KATEGORI 2: SOSIALE MEDIER – Plattform-for-plattform søk\n# Finne alle sosiale medieprofiler for ett navn\n\"Kurt Mikkelsen\" site:facebook.com\n\"kurt_mkn\" site:instagram.com\n\"k13nord\" site:snapchat.com\n\"kurt13live\" site:tiktok.com\n\"k13_nrw\" site:reddit.com\n\"K13#4782\" site:discord.com\n\"@k13nord\" site:t.me\n# Søk alle plattformer i én streng\n\"k13\" site:instagram.com | site:tiktok.com | site:twitter.com | site:reddit.com | site:github.com\n# Finne norske profiler med alias\n\"k13\" site:*.no\n# LinkedIn-søk uten innlogging (omgå LinkedIn-begrensnig)\n\"Kurt Mikkelsen\" site:linkedin.com/in/\n# Twitter/X-søk etter spesifikke tweets\nsite:twitter.com \"k13\" \"lørenskog\"\nsite:x.com intext:\"k13nord\"\n# Finn Snapchat-profil via Google\nsite:snapchat.com \"k13\"\ninurl:snapchat.com/add/ \"k13\"\n# TikTok-profil\nsite:tiktok.com \"@kurt13\"\nsite:tiktok.com \"k13\"\n\nKATEGORI 3: DOKUMENTFUNN – CV-er, rapporter og offentlige dokumenter\n# Finn PDF-dokumenter som nevner personen\n\"Kurt Mikkelsen\" filetype:pdf\n\"K13\" \"Lørenskog\" filetype:pdf OR filetype:docx\n# Finn Excel-filer (kan inneholde lister, telefonnumre)\n\"Mikkelsen\" filetype:xlsx site:*.no\n# Finn PowerPoint-presentasjoner\n\"Lørenskog ungdomsskole\" filetype:pptx\n# Finn offentlige dokumenter om personen\n\"Kurt Mikkelsen\" site:data.norge.no OR site:lovdata.no OR site:domstol.no\n# Finn protokoller og møtereferat fra kommunen\n\"Mikkelsen\" site:lorenskog.kommune.no filetype:pdf\n# Finn CV eller jobbsøknader\n\"Kurt Mikkelsen\" (filetype:pdf OR filetype:doc) (CV OR \"curriculum vitae\" OR \"søknad\")\n# Finn lekkede dokumenter på pastebin/hastebin\n\"Kurt Mikkelsen\" site:pastebin.com\n\"91834512\" site:pastebin.com OR site:justpaste.it\n\nKATEGORI 4: BILDEGJENFINNING – Finne bilder med Google\n# Søk etter bilder med spesifikt navn\n\"Kurt Mikkelsen\" filetype:jpg OR filetype:png OR filetype:jpeg\n# Finn alle bilder assosiert med alias på ett nettsted\nsite:instagram.com \"k13\" images\n# Finn profilbilder med navn\n\"kurt mikkelsen\" profilbilde OR \"profile picture\" OR \"profile photo\"\n# Finn bilder i nyheter\n\"Kurt Mikkelsen\" site:vg.no OR site:dagbladet.no images\n# Søk etter bilde-metadata i tekst\nintext:\"lørenskog treningssenter\" intext:\"k13\"\n\nKATEGORI 5: TIDSBASERT SØK – Hva skjedde og når?\n# Finn innhold fra spesifikt tidsrom\n\"k13nord\" after:2026-01-01 before:2026-02-28\n# Finn de eldste omtalene (for å kartlegge timeline)\n\"k13nord\" before:2024-12-31\n# Finn aktivitet i et bestemt år\n\"kurt mikkelsen\" \"lørenskog\" after:2024-01-01\n# Finn hendelser rundt en spesifikk dato\n\"k13\" \"lørenskog\" after:2026-02-05 before:2026-02-10\n# Finn nyheter fra perioden\n\"Mikkelsen\" site:romerikes-blad.no after:2025-01-01\n\nKATEGORI 6: CACHE – Finn slettet innhold\n# Se lagret kopi av en profil\ncache:t.me/k13nord\ncache:instagram.com/kurt_mkn\n# Finn arkiverte versjoner via Google cache\n\"k13nord\" \"lørenskog\" (inurl:cache OR intext:cache)\n# Kombiner cache-søk med innhold\ncache:snapchat.com/add/k13nord\n# Finn sider som linker til (nå slettet) profil\nlink:t.me/k13nord\nViktig merknad om cache: Google har i 2024-2026 gradvis fjernet den klassiske cache: -funksjonen.\nBruk i stedet Wayback Machine (https://web.archive.org) og archive.ph for å se historiske kopier av nettsider.\n\nKATEGORI 7: NETTVERKSANALYSE VIA GOOGLE\n# Finn hvem som omtaler objektet (nettverksbygging)\n\"k13\" \"nordlink\" OR \"anders berg\"\n# Finn felles grupper via omtale\n\"k13nord\" \"lørenskog gutta\"\n# Finn hvem som tagger objektet på sosiale medier\n\"@kurt_mkn\" OR \"tagging kurt\" site:instagram.com\n# Finn nettverkskoblinger via telefonnummer\n\"91834512\" AND (\"nordlink\" OR \"BK\")\n# Finn Discord-omtaler\n\"K13#4782\" site:discord.com OR site:disboard.org\n# Finn Vipps-koblingspunkter (via omtale av betalinger)\n\"k13\" \"vipps\" site:*.no\n\nKATEGORI 8: SPESIALDORKS FOR NORSKE ETTERFORSKERE\n# Søk i norske offentlige registre\n\"Kurt Mikkelsen\" site:brreg.no\n\"Hanne Mikkelsen\" site:1881.no\n\"Mikkelsen\" \"Skoleveien\" site:gulesider.no\n# Domeneregistrering (er personen domeneeier?)\n\"Kurt Mikkelsen\" site:domeneshop.no OR site:whois.domaintools.com\n# Norske nyhetskilder\n\"k13\" OR \"k13nord\" site:nrk.no OR site:vg.no OR site:dagbladet.no\n# Norske forum og nettsamfunn\n\"k13\" site:diskusjon.no OR site:freak.no OR site:ung.no\n# Kriminell historikk (offentlige rettsavgjørelser)\n\"Kurt Mikkelsen\" site:lovdata.no OR site:domstol.no\n# Finn person i offentlige møteprotokoller\n\"Mikkelsen\" site:lorenskog.kommune.no\n# Finn i Folkeregisteret-eksponerte tjenester\n\"Kurt Mikkelsen\" \"Lørenskog\" \"1473\"\n\nKATEGORI 9: LEKKASJE- OG DATABREACH-SØK\n# Finn e-post i lekkede databaser (via pastebin)\n\"kurtmikkelsen2011@gmail.com\" site:pastebin.com\n\"@gmail.com\" \"91834512\" site:pastebin.com\n# Søk Intelx via Google\nsite:intelx.io \"k13nord\"\nsite:dehashed.com \"kurtmikkelsen\"\n# Finn passordlekkasjer knyttet til e-post\n\"kurtmikkelsen2011\" (password OR passwd OR \"leaked\")\n# Finn Snapchat- eller Instagram-lekkasjer\n\"k13nord\" \"leaked\" OR \"leak\" OR \"dump\"\n# Kombiner brukernavn med datalekkasje-sider\n\"k13_nord\" site:haveibeenpwned.com OR site:dehashed.com\n\nB.3 Google Avansert søk – Grensesnittet for nybegynnere\nFor etterforskere som ikke er komfortabel med å skrive dorks manuelt, tilbyr Google et grafisk grensesnitt.\nMikrosteg: Bruke Google Avansert søk"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Steg 1: Åpne Chrome i Inkognito-modus",
+            "Steg 2: Gå til: https://www.google.com/advanced_search",
+            "Steg 3: Du vil se følgende felter:\n┌──────────────────────────────────────────────────┐\n│ Google Avansert søk                               │\n├──────────────────────────────────────────────────┤\n│ Alle disse ordene:     [kurt mikkelsen lørenskog] │\n│ Denne nøyaktige setningen: [\"k13nord\"]            │\n│ Noen av disse ordene:  [snapchat instagram]       │\n│ Ingen av disse ordene: [facebook twitter]         │\n├──────────────────────────────────────────────────┤\n│ Tall fra – til:        [– ]                       │\n│ Språk:                 [Norsk]                    │\n│ Region:                [Norge]                    │\n│ Sist oppdatert:        [Siste 12 måneder]         │\n│ Nettsted eller domene: [instagram.com]            │\n│ Søketermene vises på:  [I url-en]                 │\n│ SafeSearch:            [Vis alt]                  │\n│ Filtype:               [PDF-dokument]             │\n│ Bruksrettigheter:      [Ikke filtrert]            │\n└──────────────────────────────────────────────────┘",
+            "Steg 4: Fyll inn relevante felter",
+            "Steg 5: Klikk \"Avansert søk\"",
+            "Steg 6: Legg merke til URL-en som dannes – den er en dork du kan gjenbruke"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "B.4 Case: Kurt Mikkelsen – Google-søk trinn for trinn\nSituasjon: Etterforskeren kjenner kun til brukernavn \"@k13_nord\" fra en rapport. Skal nå kartlegge hvem dette er.\nSØKERUNDE 1 – Identifisering av alias (5 minutter)\nSøk 1: \"@k13_nord\" OR \"k13_nord\" OR \"k13nord\"\nForventede resultater:\n- Snapchat-profil (snapscore, venner)\n- Telegram-gruppe-omtale\n- Reddit-kommentar (u/k13_nrw)\n- Instagram-profil (@kurt_mkn)\n- TikTok-profil (@kurt13live)\nKonklusjon steg 1:\nAlias \"k13\" brukes på minst 5 plattformer.\nOppdager at Instagram-bio sier \"Lørenskog | 13\"\nSØKERUNDE 2 – Koble alias til ekte navn (10 minutter)\nSøk 2: \"k13\" \"lørenskog\" \"13 år\" OR \"13\" site:instagram.com\nSøk 3: \"@kurt_mkn\" site:instagram.com\nSøk 4: \"kurt\" \"lørenskog\" \"13\" -site:facebook.com\nForventede resultater:\n- Instagram-profil med bio \"Kurt | Lørenskog | 13\"\n- TikTok-video med visningsnavn \"KurtM13\"\n- Reddit-innlegg: \"Hvordan tjene penger som 13?\"\nKonklusjon steg 2:\nAlias K13 = \"Kurt\", 13 år, Lørenskog\nSØKERUNDE 3 – Full identitetsbekreftelse (15 minutter)\nSøk 5: \"Kurt Mikkelsen\" \"Lørenskog\"\nSøk 6: \"Kurt Mikkelsen\" site:1881.no\nSøk 7: \"Hanne Mikkelsen\" \"Skoleveien\" \"Lørenskog\"\nSøk 8: \"kurtmikkelsen2011@gmail.com\"\nForventede resultater:\n- 1881.no: Kurt Mikkelsen, Skoleveien 12, 1473 Lørenskog\n- Gammel Instagram-bio (cachet): \"kurtmikkelsen2011@gmail.com\"\n- Folkeregister-eksponert tjeneste: Fødselsdato 22.09.2011\nKonklusjon steg 3:\nFull identitet bekreftet: Kurt Mikkelsen, 13 år\nAdresse: Skoleveien 12, 1473 Lørenskog\nSØKERUNDE 4 – Nettverkskartlegging (20 minutter)\nSøk 9: \"k13\" \"nordlink81\" OR \"nordlink\"\nSøk 10: \"anders berg\" \"lørenskog\" site:*.no\nSøk 11: \"NordLink81\" site:instagram.com\nSøk 12: \"BK\" \"lørenskog\" \"business\"\nSøk 13: \"Mikkelsen\" \"lørenskog\" \"vold\" OR \"kriminalitet\" site:romerikes-blad.no\nForventede resultater:\n- Anders Berg omtalt i lokalavis (vold 2021)\n- @NordLink81 sin Instagram-profil\n- Mulige koblinger via omtale i grupper"
+        },
+        {
+          "type": "paragraph",
+          "data": "TPS-vurdering for Google-funn:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Funn | T | P | S | Kilde",
+            "1881.no-adresse | A | 1 | MODERAT | Offentlig register",
+            "\"Instagram-bio \"\"13\"\"\" | C | 2 | HØY | Selvrapportert",
+            "Reddit-innlegg | C | 2 | MODERAT | Konto-historikk",
+            "Nyhetsartikkel om nettverket | B | 2 | MODERAT | Journalistisk kilde",
+            "Pastebin e-postfunn | D | 3 | KRITISK | Ukjent kilde"
+          ]
+        }
+      ]
     },
     {
-      "term": "DEL C: BING – OPERATORER OG UNIKE MULIGHETER",
-      [cite_start]"definisjon": "C.1 Bing Operatorer – Komplett overikt[cite: 1155, 1159].\n\n• AND / & | Begge ord MÅ finnes | [cite_start]\"K13\" AND \"lørenskog\" [cite: 1163]\n• OR / | / || | Enten det ene eller andre | [cite_start]Snapchat OR Telegram \"k13\" [cite: 1165]\n• NOT / - | Utelukk ord | [cite_start]\"k13\" NOT youtube [cite: 1167]\n• near:n | Ord innen n ord fra andre | [cite_start]Ukraine near:5 cyberwar [cite: 1171, 1172]\n• domain: | Inkl. alle underdomener | [cite_start]\"K13\" domain:instagram.com [cite: 1175, 1176]\n• ext: | Filnavn-utvidelse | [cite_start]\"Mikkelsen\" ext:pdf [cite: 1180]\n• contains: | Sider med link til filtype | [cite_start]\"lørenskog\" contains:pdf [cite: 1182, 1183]\n• inbody: | [cite_start]Søk i sideinnhold/tekst | inbody:\"k13nord\" [cite: 1186]\n• instreamset: | [cite_start]Søk i URL eller tittel | instreamset:(url title):\"k13\" [cite: 1190]\n• IP: | Søk etter IP-adresse | [cite_start]\"lørenskog\" ip:82.134.0.0 [cite: 1194, 1195]\n• loc: | Land/region | [cite_start]\"k13\" loc:no [cite: 1196]\n• feed: | [cite_start]Finn RSS/Atom-strømmer | feed:\"lørenskog\" [cite: 1200][cite_start]\n\nC.2 Bing-spesifikke dorks for personkartlegging [cite: 1206][cite_start].\n# IP-adressesøk (unikt for Bing):\n\"lørenskog\" ip:82.134.0.0/16 [cite: 1208][cite_start]\n# Near-operator:\n\"k13\" near:3 \"lørenskog\" [cite: 1214][cite_start]\n# Contains-operator for filer:\n\"lørenskog ungdomsskole\" contains:pdf [cite: 1225][cite_start]\n\nC.3 Bings Image Search[cite: 1230]. □ Steg 1: Gå til bing.com/images. □ Steg 2: Klikk på kamera-ikonet. [cite_start]□ Steg 3: Last opp bilde eller lim inn URL[cite: 1232, 1233]. [cite_start]Fordel: Bing viser ofte resultater fra norske nettsider som Google overser[cite: 1238]."
+      "id": "s04",
+      "overskrift": "DEL C: BING – OPERATORER OG UNIKE MULIGHETER",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "C.1 Bing Operatorer – Komplett referansetabell\nBing har et annet operatorsett enn Google, og indekserer noen nettsider bedre.\nNorske offentlige nettsider er i noen tilfeller bedre representert i Bing."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "OPERATOR | BESKRIVELSE | EKSEMPEL",
+            "AND / & | Begge ord MÅ finnes | \"K13\" AND \"lørenskog\"",
+            "OR / | / || | Enten det ene eller andre | Snapchat OR Telegram \"k13\"",
+            "NOT / - | Utelukk ord | \"k13\" NOT youtube",
+            "\"...\" | Eksakt frase | \"Kurt Mikkelsen Lørenskog\"",
+            "near:n | Ord innen n ord fra andre | Ukraine near:5 cyberwar",
+            "site: | Kun ett nettsted | \"k13\" site:reddit.com",
+            "domain: | Inkl. alle underdomener | \"K13\" domain:instagram.com",
+            "filetype: | Begrens til filtype | \"Mikkelsen\" filetype:pdf",
+            "ext: | Filnavn-utvidelse | \"Mikkelsen\" ext:pdf",
+            "contains: | Sider med link til filtype | \"lørenskog\" contains:pdf",
+            "intitle: | Søk i sidetittel | intitle:\"Kurt Mikkelsen\"",
+            "inbody: | Søk i sideinnhold/tekst | inbody:\"k13nord\"",
+            "inanchor: | Søk i lenketekst | inanchor:\"k13\"",
+            "instreamset: | Søk i URL eller tittel | instreamset:(url title):\"k13\"",
+            "url: | Sjekk om side er i Bing | url:t.me/k13nord",
+            "IP: | Søk etter IP-adresse | \"lørenskog\" ip:82.134.0.0",
+            "loc: | Land/region | \"k13\" loc:no",
+            "language: | Søk på bestemt språk | \"k13\" language:no",
+            "feed: | Finn RSS/Atom-strømmer | feed:\"lørenskog\"",
+            "hasfeed: | Sider med RSS og søkeord | hasfeed:k13",
+            "define: | Definisjon av ord | define:vaas"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "C.2 Bing-spesifikke dorks for personkartlegging\n# IP-adressesøk (unikt for Bing – Google støtter ikke dette)\n\"lørenskog\" ip:82.134.0.0/16\n# → Finn nettsider fra Telenors IP-blokk i Lørenskog-området\n# Instreamset-søk (søk i URL OG tittel samtidig)\ninstreamset:(url title):\"k13\"\ninstreamset:(url):\"kurt-mikkelsen\"\n# Near-operator (ord nær hverandre) – ikke tilgjengelig i Google\n\"k13\" near:3 \"lørenskog\"\n# → Finn sider der \"k13\" og \"lørenskog\" er innen 3 ord fra hverandre\n# Domene-søk med underdomener\n\"Kurt Mikkelsen\" domain:snapchat.com\n\"k13\" domain:instagram.com\n# Norsk-språklig søk\n\"k13\" language:no\n\"kurt mikkelsen\" language:no site:*.no\n# Kombiner loc og filetype\n\"Kurt Mikkelsen\" loc:no filetype:pdf\n# Bing-spesifikt: Contains-operator for filer\n\"lørenskog ungdomsskole\" contains:pdf\n# → Finn alle sider som linker til PDF-filer fra skolen\n# Inbody-søk (bredere enn Googles intext:)\ninbody:\"k13_nord\" inbody:\"vipps\"\ninbody:\"Mikkelsen\" inbody:\"lørenskog\"\n\nC.3 Bings Image Search – for bildeetterforskning\nBing Images gir noen ganger bedre resultater enn Google for norske profiler.\nMikrosteg: Reverse Image Search på Bing"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Steg 1: Gå til https://www.bing.com/images",
+            "Steg 2: Klikk på kamera-ikonet i søkefeltet (\"Søk med et bilde\")",
+            "Steg 3: Velg \"Last opp et bilde\" og last opp Kurts profilbilde",
+            "Steg 4: Alternativt: Lim inn URL til profilbildet"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Du vil nå se:\nLignende bilder fra internett\nNettsider der bildet er brukt\nAlternative versjoner av bildet\nFordel med Bing Images: Bing viser ofte resultater fra norske nettsider som Google overser."
+        }
+      ]
     },
     {
-      "term": "DEL D: YANDEX – DEN RUSSISKE SØKEMOTOREN SOM FINNER ANSIKTER",
-      [cite_start]"definisjon": "D.1 Hvorfor Yandex er kritisk for OSINT[cite: 1240]. Google er en hovednøkkel; [cite_start]Yandex er en spesialnøkkel for ansiktsgjenkjenning og østeuropeisk innhold[cite: 1241, 1242]. [cite_start]Relevant fordi norske ungdommer bruker østeuropeiske tjenester som VKontakte, og Yandex-bildesøk finner ansikter Google overser [cite: 1245, 1246, 1247][cite_start].\n\nD.2 Yandex Operatorer – Komplett oversikt[cite: 1250, 1252].\n\n• & | Ord i SAMME setning | [cite_start]Kurt & Lørenskog [cite: 1258]\n• && | Ord på SAMME webside | [cite_start]K13 && NordLink [cite: 1260]\n• ~~ / - | [cite_start]NOT – utelukk ord | k13 ~~ youtube [cite: 1265]\n• ! | Tving eksakt ord | [cite_start]!k13 !lørenskog [cite: 1269]\n• mime: | Filtype | [cite_start]\"Mikkelsen\" mime:pdf [cite: 1274]\n• domain: | Begrens til domene | [cite_start]\"k13\" domain:instagram.com [cite: 1276]\n• rhost: | [cite_start]Søk i omvendt domene-fmt (subdomene-søk) | rhost:*.no* [cite: 1288-1290][cite_start]\n\nD.3 Yandex Images – Ansiktsgjenkjenning[cite: 1292]. [cite_start]Analogi: Politi-skisseartist møter AI[cite: 1293]. [cite_start]Den tar et eksisterende bilde og finner ALLE andre steder dette ansiktet dukker opp [cite: 1294][cite_start].\n\nMikrosteg[cite: 1296]: □ Steg 1: Åpne Chrome i Inkognito. □ Steg 2: Gå til yandex.com/images/. □ Steg 3: Klikk kamera-ikonet. [cite_start]□ Steg 4: Last opp fil eller lim inn bilde-URL[cite: 1297, 1298]. [cite_start]□ Steg 7: Du vil nå se resultater som viser identisk person på tvers av Snapchat, Instagram, TikTok og Telegram [cite: 1299-1313][cite_start].\n\nYandex vs Google i bildesøk[cite: 1319]:\n• Ansiktsgjenkjenning | ✅ Meget god | [cite_start]⚠️ Begrenset [cite: 1320]\n• Tekst i bilder (OCR) | ✅ God | [cite_start]✅ God [cite: 1320]\n• Østeuropeisk innhold | ✅ Excellent | [cite_start]⚠️ Begrenset [cite: 1320]\n• Sosiale medier (russiske) | ✅ VKontakte, OK.ru | [cite_start]❌ Svak [cite: 1320][cite_start]\n\nD.4 Yandex-spesifikke OSINT-dorks [cite: 1321][cite_start].\n# Ord i samme setning: \"k13\" & \"lørenskog\" [cite: 1325][cite_start]\n# Finn Telegram-profil: k13nord site:t.me [cite: 1329][cite_start]\n# Rhost-søk: k13 rhost:*.no* [cite: 1343]"
+      "id": "s05",
+      "overskrift": "DEL D: YANDEX – DEN RUSSISKE SØKEMOTOREN SOM FINNER ANSIKTER",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "D.1 Hvorfor Yandex er kritisk for OSINT\nAnalogi: Ulike nøkler åpner ulike låser\nGoogle er en hovednøkkel som åpner de fleste dører. Yandex er en spesialnøkkel for én bestemt dør – ansiktsgjenkjenning og østeuropeisk innhold.\nYandex, søkemotoren til den russiske teknologigiganten, utmerker seg innen ansiktsgjenkjenning og identifisering av objekter i østeuropeiske sammenhenger, noe som gjør den svært verdifull for etterforskning knyttet til disse regionene.\nSocial Links\nFor norske etterforskere er dette relevant fordi:\nNorske ungdommer bruker østeuropeiske tjenester og VKontakte\nYandex-bildesøk finner ansikter på tvers av plattformer Google overser\nYandex har en annen indeks enn Google – noen sider dukker kun opp her\nYandex er overlegent Google for ansiktsgjenkjenning fra bilder\n\nD.2 Yandex Operatorer – Komplett referansetabell"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "OPERATOR | BESKRIVELSE | EKSEMPEL",
+            "\"...\" | Eksakt frase | \"Kurt Mikkelsen\"",
+            "& | Ord i SAMME setning | Kurt & Lørenskog",
+            "&& | Ord på SAMME webside | K13 && NordLink",
+            "| | OR – enten/eller | k13 | kurt_mkn | k13nord",
+            "~~ / - | NOT – utelukk ord | k13 ~~ youtube",
+            "~ | Neste ord er IKKE ønsket | Lørenskog ~ Russia",
+            "! | Tving eksakt ord (ingen synonymer/varianter) | !k13 !lørenskog",
+            "* | Jokertegn (ukjent ord) | \"k13 * lørenskog\"",
+            "mime: | Filtype | \"Mikkelsen\" mime:pdf",
+            "domain: | Begrens til domene | \"k13\" domain:instagram.com",
+            "site: | Begrens til nettsted | \"k13\" site:vk.com",
+            "title:( ) | Søk i sidetittel | title:(kurt mikkelsen)",
+            "url: | Søk i URL-adresse | url:k13nord",
+            "inurl: | Ord i URL | inurl:k13nord",
+            "anchor:( ) | Søk i lenketekst | anchor:(kurt mikkelsen)",
+            "rhost: | Søk i omvendt domene-fmt (fra høyre, nyttig for subdomene-søk) | rhost:*.no*"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "D.3 Yandex Images – Ansiktsgjenkjenning trinn for trinn\nAnalogi: Politi-skisseartist møter AI\nEn tradisjonell politiskisseartist lager et bilde basert på vitnesbyrd. Yandex Images gjør det omvendt – den tar et eksisterende bilde og finner ALLE andre steder dette ansiktet dukker opp på internett.\nDet er som å sende skisseartistens bilde til alle aviser i verden og be dem sjekke om de kjenner igjen personen.\nMikrosteg: Yandex bildesøk for ansiktsgjenkjenning"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Steg 1: Åpne Chrome i Inkognito-modus (Ctrl + Shift + N)",
+            "Steg 2: Gå til: https://yandex.com/images/",
+            "Steg 3: Klikk kamera-ikonet til høyre i søkefeltet",
+            "Steg 4: Velg \"Select file\" for å laste opp et bilde",
+            "Steg 3b: Høyreklikk på Kurts profilbilde på Instagram",
+            "Steg 4b: Velg \"Kopier bildeadresse\"",
+            "Steg 5b: Lim inn URL i Yandex-søkefeltet",
+            "Steg 6: Klikk på søkeknappen (forstørrelsesglass)",
+            "Steg 7: Du vil nå se:\nYandex resultatside:\n┌────────────────────────────────────────────────────────┐\n│  🔍  Søkeresultater for bilde                             │\n├────────────────────────────────────────────────────────┤\n│ \"Personen kan ligne på: Kurt Mikkelsen\"                 │\n│                                                         │\n│ Lignende bilder funnet på:                              │\n│ → snapchat.com/add/k13_nord (profilbilde)               │\n│ → instagram.com/kurt_mkn (profilbilde)                  │\n│ → tiktok.com/@kurt13live (profilbilde)                  │\n│ → t.me/k13nord (Telegram-profil)                        │\n│                                                         │\n│ Tilsvarende bilder (antall): 4 av 4 = identisk person  │\n└────────────────────────────────────────────────────────┘",
+            "Steg 8: Klikk på hvert resultat og verifiser at det er samme person",
+            "Steg 9: Ta screenshot av resultatene med URL synlig i adressefeltet",
+            "Steg 10: Generer SHA-256 hash av screenshot-filen"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Hva Yandex gjør som Google IKKE gjør:\nYandex kan hjelpe deg med å finne noen via foto, og søke etter relevante bilder.\nDet utmerker seg ikke bare med å finne lignende bilder, men gjenkjenner også tekst på bildet og angir plasseringen av kjente landemerker.\nNår man leter etter personer i Øst-Europa, vil det overgå ethvert annet verktøy for omvendt bildesøk. OSINT Team\nYandex vs Google i bildesøk:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Funksjon | Yandex | Google",
+            "Ansiktsgjenkjenning | Meget god | Begrenset",
+            "Tekst i bilder (OCR) | God | God",
+            "Landemerker | God | God",
+            "Norske profiler | God dekning | God dekning",
+            "Østeuropeisk innhold | Excellent | Begrenset",
+            "Sosiale medier (russiske) | VKontakte, OK.ru | Svak"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "D.4 Yandex-spesifikke OSINT-dorks\n# Eksakt søk med Yandex (tvinger nøyaktig match)\n!k13 !lørenskog !mikkelsen\n# Ord i samme setning (unikt for Yandex)\n\"k13\" & \"lørenskog\"\n# Ord på samme side\nk13 && NordLink81\n# Finn Telegram-profil via Yandex\nk13nord site:t.me\n# Finn VKontakte-profil (russisk Facebook)\n\"Kurt Mikkelsen\" site:vk.com\n\"k13\" site:vk.com\n# Yandex-spesifikt mime-søk\n\"Mikkelsen\" mime:pdf domain:no\n# Title-søk (Yandex-sintaks)\ntitle:(k13 lørenskog)\ntitle:(\"kurt mikkelsen\")\n# Kombiner site og title\ntitle:(k13) site:instagram.com\n# Finn bilder fra norske nettsider\n\"k13\" site:*.no mime:jpeg OR mime:png\n# Rhost-søk (omvendt domene – nyttig for norske subdomener)\nk13 rhost:*.no*"
+        }
+      ]
     },
     {
-      "term": "DEL E: REVERSE IMAGE SEARCH – SAMMENLIGNING OG METODIKK",
-      [cite_start]"definisjon": "E.1 De tre store bildesøkemotorene[cite: 1345, 1347].\n\n• Google Images | ✅ Størst bildeindeks, objektgjenkjenning | [cite_start]❌ Svak ansiktsgjenkjenning [cite: 1351-1354]\n• Yandex Images | ✅ Sterkest ansiktsgjenkjenning, OCR | [cite_start]⚠️ Svekket ansiktsgjenkjenning etter 2022 [cite: 1357-1361]\n• TinEye | ✅ Spesialisert på kildesporing, identiske bilder | [cite_start]❌ Liten database [cite: 1364-1367]\n• ImgOps | ✅ Søke ALLE bildetjenester med ett klikk | [cite_start]URL: imgops.com/upload [cite: 1375-1378]\n• PimEyes | ✅ Best ansiktsgjenkjenning (AI) | [cite_start]❌ Betalt, ⚠️ Juridisk sensitiv [cite: 1380-1383][cite_start]\n\nE.2 Protokoll: Reverse Image Search[cite: 1386]. [cite_start]Beste praksis er å bruke ALLE tre søkemotorer på hvert bilde[cite: 1387]. □ Steg 1: Kopier bildeadresse (URL). □ Steg 2: Google Images. □ Steg 3: Yandex Images. □ Steg 4: TinEye (noter \"earliest\" dato). □ Steg 5: ImgOps (Search all). [cite_start]□ Steg 7: SHA-256 hash alle screenshot-filer [cite: 1388-1409]."
+      "id": "s06",
+      "overskrift": "DEL E: REVERSE IMAGE SEARCH – SAMMENLIGNING OG METODIKK",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "E.1 De tre store bildesøkemotorene i OSINT"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "VERKTØY | STYRKER OG SVAKHETER",
+            "Google Images | Størst bildeindeks, Objektgjenkjenning (klesplagg, biler), Kildesporing for bilder, Svak ansiktsgjenkjenning. URL: images.google.com",
+            "Yandex Images | Sterkest ansiktsgjenkjenning, Finner bilder på tvers av plattformer, Gjenkjenner tekst i bilder (OCR), Brukes aktivt av Bellingcat og Interpol, Har svekket ansiktsgjenkjenning etter 2022. URL: yandex.com/images",
+            "TinEye | Spesialisert på kildesporing, Finner IDENTISKE bilder (ikke varianter), Historisk arkiv (når bildet ble brukt), Liten database sammenlignet med Google. URL: tineye.com",
+            "Bing Visual Search | Kommersiell gjenkjenning (produkter, logoer), God for landemerker, Middels for ansikter. URL: bing.com/images",
+            "ImgOps | Lar deg søke ALLE bildetjenester i én klikk, Gratis, nettleserbasert, EXIF-metadata, OCR, QR-dekoding. URL: imgops.com/upload",
+            "PimEyes | Best ansiktsgjenkjenning (AI-drevet), Finner personen på tvers av hele nettet, Krever betalt abonnement, Juridisk sensitiv (ansiktsID av ukjente). URL: pimeyes.com"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "E.2 Protokoll: Reverse Image Search for etterforskning\nBeste praksis fra Bellingcat og erfarne OSINT-etterforskere er å bruke ALLE tre søkemotorer på hvert bilde, ettersom de returnerer ulike resultater.\nMikrosteg: Komplett Reverse Image Search-protokoll"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Steg 1: Hent bildet uten å laste det ned",
+            "Steg 2: Google Images",
+            "Steg 3: Yandex Images",
+            "Steg 4: TinEye",
+            "Steg 5: ImgOps (aggregator)",
+            "Steg 6: Sammenlign og dokumenter alle unike treff",
+            "Steg 7: SHA-256 hash alle screenshot-filer",
+            "Steg 8: TPS-vurder hvert funn"
+          ]
+        }
+      ]
     },
     {
-      "term": "DEL F: KOMBINERT SØKEMETODIKK – FULL PERSONKARTLEGGING",
-      [cite_start]"definisjon": "F.1 Den komplette søkeprosessen fra A til Å[cite: 1411]. [cite_start]STARTPUNKT: @k13_nord[cite: 1413].\n\n• RUNDE 1: GOOGLE – ALIAS-KARTLEGGING | Søk: \"@k13_nord\" OR \"k13_nord\" | [cite_start]Mål: Finne alle plattformer [cite: 1417-1422]\n• RUNDE 2: GOOGLE – IDENTIFISERING | Søk: \"kurt mikkelsen\" site:1881.no | [cite_start]Mål: Koble alias til ekte navn [cite: 1424-1432]\n• RUNDE 3: YANDEX – BILDESØK | Handling: Profilbilde gjennom Yandex + Google + TinEye | [cite_start]Mål: Finne alle nettsteder med samme ansikt [cite: 1434-1440]\n• RUNDE 4: BING – ALTERNATIVT INDEX | Søk: \"k13\" near:5 \"lørenskog\" | [cite_start]Mål: Finne innhold Google overser [cite: 1442-1450]\n• RUNDE 5: DOKUMENTSØK | Søk: \"Kurt Mikkelsen\" filetype:pdf | [cite_start]Mål: Offentlige dokumenter, skoler [cite: 1452-1460]\n• RUNDE 6: NETTVERKSSØK | Søk: \"k13\" \"nordlink81\" | [cite_start]Mål: Knytte objektet til kontakter [cite: 1462-1470]\n• RUNDE 7: CACHE OG HISTORIKK | Søk: cache:t.me/k13nord | [cite_start]Mål: Finne slettet innhold [cite: 1472-1480]\n• RUNDE 8: LEKKASJESØK | Søk: \"kurtmikkelsen2011@gmail.com\" site:pastebin.com | [cite_start]Mål: Finne eksponert info [cite: 1482-1491]\n\nRESULTAT: Full personprofil bygget. Total tid: ~1,5-2 timer. Kostnad: 0 kr. [cite_start]Kontakt med objekt: Ingen [cite: 1493-1498][cite_start].\n\nF.2 Lina Grim – Enkelt case[cite: 1499]. Total søketid for Lina: 20 minutter. Total søketid for Kurt: 90 minutter. [cite_start]Dette illustrerer at økt OPSEC-nivå øker etterforskningstiden[cite: 1511, 1512]."
+      "id": "s07",
+      "overskrift": "DEL F: KOMBINERT SØKEMETODIKK – FULL PERSONKARTLEGGING",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "F.1 Den komplette søkeprosessen fra A til Å\n╔══════════════════════════════════════════════════════════════╗\n║  STARTPUNKT: @k13_nord (Snapchat-brukernavn)                   ║\n╚══════════════════════════════════════════════════════════════╝\n↓\n╔══════════════════════════════════════════════════════════════╗\n║  RUNDE 1: GOOGLE – ALIAS-KARTLEGGING                           ║\n║                                                                 ║\n║  Søk: \"@k13_nord\" OR \"k13_nord\" OR \"k13nord\" OR \"kurt13live\"   ║\n║  Mål: Finne alle plattformer der alias brukes                   ║\n║  Tid: 10 minutter                                               ║\n╚══════════════════════════════════════════════════════════════╝\n↓\n╔══════════════════════════════════════════════════════════════╗\n║  RUNDE 2: GOOGLE – IDENTIFISERING                              ║\n║                                                                 ║\n║  Søk: \"k13\" \"lørenskog\" \"13\" site:instagram.com                ║\n║  Søk: \"@kurt_mkn\" site:instagram.com                           ║\n║  Søk: \"kurt mikkelsen\" \"1473\" OR \"lørenskog\" site:1881.no      ║\n║  Mål: Koble alias til ekte navn og adresse                     ║\n║  Tid: 15 minutter                                               ║\n╚══════════════════════════════════════════════════════════════╝\n↓\n╔══════════════════════════════════════════════════════════════╗\n║  RUNDE 3: YANDEX – BILDESØK                                    ║\n║                                                                 ║\n║  Handling: Kjør profilbilde gjennom Yandex + Google + TinEye   ║\n║  Mål: Finne alle nettsteder der samme ansikt/bilde finnes      ║\n║  Tid: 15 minutter                                               ║\n╚══════════════════════════════════════════════════════════════╝\n↓\n╔══════════════════════════════════════════════════════════════╗\n║  RUNDE 4: BING – ALTERNATIVT INDEX                             ║\n║                                                                 ║\n║  Søk: \"kurt mikkelsen\" inbody:\"lørenskog\" language:no          ║\n║  Søk: \"k13\" near:5 \"lørenskog\"                                 ║\n║  Søk: \"91834512\" ip:82.0.0.0/8                                 ║\n║  Mål: Finne innhold Google overser                             ║\n║  Tid: 10 minutter                                               ║\n╚══════════════════════════════════════════════════════════════╝\n↓\n╔══════════════════════════════════════════════════════════════╗\n║  RUNDE 5: DOKUMENTSØK                                          ║\n║                                                                 ║\n║  Søk: \"Kurt Mikkelsen\" filetype:pdf OR filetype:docx           ║\n║  Søk: \"Mikkelsen\" site:lorenskog.kommune.no filetype:pdf       ║\n║  Søk: \"k13\" \"lørenskog\" filetype:pdf                           ║\n║  Mål: Offentlige dokumenter, skolelister, protokoller          ║\n║  Tid: 10 minutter                                               ║\n╚══════════════════════════════════════════════════════════════╝\n↓\n╔══════════════════════════════════════════════════════════════╗\n║  RUNDE 6: NETTVERKSSØK                                         ║\n║                                                                 ║\n║  Søk: \"k13\" \"nordlink81\" OR \"anders berg\"                      ║\n║  Søk: \"anders berg\" \"lørenskog\" site:romerikes-blad.no         ║\n║  Søk: \"@NordLink81\" site:instagram.com                         ║\n║  Mål: Knytte objektet til kjente kontakter                     ║\n║  Tid: 20 minutter                                               ║\n╚══════════════════════════════════════════════════════════════╝\n↓\n╔══════════════════════════════════════════════════════════════╗\n║  RUNDE 7: CACHE OG HISTORIKK                                   ║\n║                                                                 ║\n║  Søk: cache:t.me/k13nord                                       ║\n║  Søk: site:web.archive.org t.me/k13nord                        ║\n║  Søk: \"k13nord\" before:2024-01-01                              ║\n║  Mål: Finne slettet innhold og historiske profiler             ║\n║  Tid: 10 minutter                                               ║\n╚══════════════════════════════════════════════════════════════╝\n↓\n╔══════════════════════════════════════════════════════════════╗\n║  RUNDE 8: LEKKASJESØK                                          ║\n║                                                                 ║\n║  Søk: \"kurtmikkelsen2011@gmail.com\" site:pastebin.com          ║\n║  Søk: \"91834512\" site:pastebin.com                             ║\n║  Direkte: https://haveibeenpwned.com → sjekk e-post/tlf.       ║\n║  Direkte: https://intelx.io → søk brukernavn og tlf.           ║\n║  Mål: Finne eksponert informasjon fra datalekkasjer            ║\n║  Tid: 15 minutter                                               ║\n╚══════════════════════════════════════════════════════════════╝\n↓\n╔══════════════════════════════════════════════════════════════╗\n║  RESULTAT: Full personprofil bygget via søkemotorer            ║\n║  Total tid: ~1,5-2 timer                                        ║\n║  Kostnad: 0 kr                                                  ║\n║  Kontakt med objekt: Ingen                                      ║\n╚══════════════════════════════════════════════════════════════╝\n\nF.2 Lina Grim – Enkelt case for sammenligning\nLinas søkeprosess er drastisk kortere grunnet åpen profil:\nSøk 1: \"Lina Grim\" site:instagram.com\nResultat: @linapina96 – åpen profil, 847 følgere, daglige Stories\nSøk 2: \"Lina Grim\" site:linkedin.com/in/\nResultat: Lina Grim – Student UiO, samfunnsøkonomi, Røde Kors-frivillig\nSøk 3: \"Lina Grim\" site:1881.no\nResultat: Lina Grim, Oslo, telefon, adresse\nSøk 4: \"linapina96\"\nResultat: Samme brukernavn på TikTok, Twitter, Facebook, Snapchat\nSøk 5 (bildesøk Yandex): Profilbilde\nResultat: 6 treff – alle er Linas egne profiler\nTotal søketid for Lina: 20 minutter. Total søketid for Kurt: 90 minutter.\nDette illustrerer at økt OPSEC-nivå øker etterforskningstiden – men eliminerer den ikke."
+        }
+      ]
     },
     {
-      "term": "DEL G: SPESIALVERKTØY OG SUPPLERENDE SØKEMOTORER",
-      [cite_start]"definisjon": "G.1 DuckDuckGo – Anonymt søk for etterforskeren[cite: 1514]. DuckDuckGo logger ingenting. [cite_start]Etterforskeren bruker dette for å beskytte sin egen identitet under søk[cite: 1516, 1518].\n\n# Bang-operatorer:\n\"k13 lørenskog\" !youtube | \"kurt mikkelsen\" !instagram | [cite_start]\"k13nord\" !twitter [cite: 1520-1523][cite_start].\n\nG.2 Carrot2 – Visuell klyngesøkemotor[cite: 1529]. [cite_start]Samler resultater og visualiserer dem som temaklynger (f.eks. \"Ungdomskriminalitet\", \"Instagram profil\") [cite: 1530-1537][cite_start].\n\nG.3 Wayback Machine og Archive.today[cite: 1538]. □ Steg 1: Gå til web.archive.org. □ Steg 2: Skriv inn URL (t.me/k13nord). [cite_start]□ Steg 3: Se historiske versjoner via tidslinje[cite: 1541]."
+      "id": "s08",
+      "overskrift": "DEL G: SPESIALVERKTØY OG SUPPLERENDE SØKEMOTORER",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "G.1 DuckDuckGo – Anonymt søk for etterforskeren selv\nAnalogi: Spion i full mufti\nNår etterforskeren bruker Google, logger Google søkene. DuckDuckGo logger ingenting.\nDet er som forskjellen mellom å spørre etter veien iført uniform, eller iført sivilt tøy.\nEtterforskeren bruker DuckDuckGo for å beskytte sin egen identitet under søk, ikke nødvendigvis fordi resultatene er bedre.\nDuckDuckGo-spesifikke operatorer (fra prosjektdokumentet):\n# DuckDuckGo Bang-operatorer (! dirigerer til annen motor)\n\"k13 lørenskog\" !youtube → Søk direkte på YouTube\n\"kurt mikkelsen\" !instagram → Søk på Instagram\n\"k13nord\" !twitter → Søk på Twitter/X\n\"k13\" !reddit → Søk på Reddit\n# Vanlige operatorer (samme som Google)\nsite:instagram.com \"k13\"\nintitle:\"k13\" lørenskog\ninbody:\"kurt mikkelsen\"\n\nG.2 Carrot2 – Visuell klyngesøkemotor\nCarrot2 (carrot2.org) samler resultater fra flere søkemotorer og visualiserer dem som kart eller sektordiagram.\nFor etterforskere er dette nyttig for å identifisere temaklynger – hvilke emner dukker opp oftest i sammenheng med objektet?\n# Eksempel: Søk på \"k13 lørenskog\" i Carrot2\n# → Visualiserer at resultatene klynger seg i:\n# Klynge 1: \"Ungdomskriminalitet\" (40%)\n# Klynge 2: \"Lørenskog sentrum\" (25%)\n# Klynge 3: \"Instagram profil\" (20%)\n# Klynge 4: \"Treningssenter\" (15%)\n\nG.3 Wayback Machine og Archive.today – Slettet innhold\nDisse tjenestene arkiverer nettsider og gjør dem tilgjengelig selv etter at originalen er slettet.\nMikrosteg: Finne slettet profil\n□ Steg 1: Gå til https://web.archive.org □ Steg 2: Skriv inn: https://t.me/k13nord □ Steg 3: En tidslinje vises – klikk på datoer for å se historiske versjoner □ Steg 4: For raskere søk: https://archive.ph/`https://t.me/k13nord`\nAlternativt Google cache-søk:\n# Finn sider Google cachet men som nå er slettet\n\"k13nord\" site:webcache.googleusercontent.com"
+        }
+      ]
     },
     {
-      "term": "DEL H: JURIDISK RAMMEVERK FOR SØKEMOTORBRUK",
-      [cite_start]"definisjon": "✅ LOVLIG – SØKEMOTORBRUK (strpl. § 196)[cite: 1547]. Alt søkemotorbasert arbeid er passiv rekognisering. [cite_start]Du leser søkemotorens lagrede kopi av offentlig innhold [cite: 1550-1559][cite_start].\n\n⚠️ VURDER JURIDISK [cite: 1561][cite_start]: Bruke funnet info aktivt mot objektet, laste ned dokumenter som krever autentisering, bruke Google til å finne tekniske sårbarheter, og PimEyes-ansiktsID [cite: 1565-1569][cite_start].\n\n⛔ FORBUDT – ALDRI GJØRES [cite: 1573][cite_start]: Hacke systemer, bruke lekkede passord, bruke andres kredittkortinfo funnet i lekkasjer, og dele bilder av mindreårige [cite: 1576-1580]."
+      "id": "s09",
+      "overskrift": "DEL H: JURIDISK RAMMEVERK FOR SØKEMOTORBRUK",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "LOVLIG – SØKEMOTORBRUK (strpl. § 196)\nALT søkemotorbasert arbeid er passiv rekognisering:\n• Google, Bing, Yandex-søk på navn/brukernavn/tlf.nr.\n• Dork-søk med avanserte operatorer\n• Bildesøk og reverse image search\n• Cache-søk (Google/Bing/Yandex sine kopier)\n• Wayback Machine / Archive.today\n• Lekkasjedatabase-søk (HaveIBeenPwned, Intelx)\nDu kontakter ingen, du forstyrrer ingen.\nDu leser søkemotorens lagrede kopi av offentlig innhold."
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VURDER JURIDISK – SPESIELLE SITUASJONER\n• Bruke funnet informasjon aktivt mot objektet\n• Laste ned dokumenter som krever autentisering\n• Bruke Google til å finne tekniske sårbarheter (computer fraud-lovgiving kan gjelde)\n• PimEyes-ansiktsgjenkjenning (personverndirektivet)\n• Dele søkeresultater med uautoriserte parter"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "FORBUDT – ALDRI GJØRES\n• Bruke funnet informasjon til å hacke systemer\n• Laste ned og bruke lekkede passord/kontoer\n• Søke etter tekniske exploits og bruke dem\n• Bruke andres kredittkortinfo funnet i lekkasjer\n• Dele bilder av mindreårige funnet via bildesøk"
+        }
+      ]
     },
     {
-      "term": "DEL I: OPERATIV SIKKERHET VED SØKEMOTORBRUK",
-      [cite_start]"definisjon": "I en etterforskning kan fingeravtrykk på glasset bli problematisk [cite: 1583-1585]. [cite_start]OPSEC-protokoll[cite: 1586]:\n□ Steg 1: Alltid bruk Inkognito-modus. □ Steg 2: Slå på VPN FØR du søker. □ Steg 3: Bruk DuckDuckGo for sensitive søk. □ Steg 4: Logg ut av alle Google-kontoer. □ Steg 5: ALDRI klikk på lenker du ikke stoler på. □ Steg 6: ALDRI søk på sak-spesifikk info fra privat enhet. [cite_start]□ Steg 7: Bruk dedikert undersøkelses-PC [cite: 1587][cite_start].\n\nFor svært sensitive søk – bruk Tor Browser for anonymisering gjennom 3 krypterte noder[cite: 1588, 1589]."
+      "id": "s10",
+      "overskrift": "DEL I: OPERATIV SIKKERHET VED SØKEMOTORBRUK",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Analogi: Fingeravtrykk på glasset\nNår du søker på Google, etterlater du fingeravtrykk. Google logger IP-adressen din, tidspunktet, og nøyaktig hva du søkte etter.\nI en etterforskning kan dette bli problematisk hvis objektet har kontakter i IP-sporingsbransjen.\nAnbefalt OPSEC-protokoll for søk:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Steg 1: Alltid bruk Inkognito-modus (Ctrl + Shift + N i Chrome)",
+            "Steg 2: Slå på VPN FØR du søker (VPN skjuler din reelle IP-adresse)",
+            "Steg 3: Bruk DuckDuckGo for sensitive søk (ingen søkelogging)",
+            "Steg 4: Logg ut av alle Google-kontoer FØR søk",
+            "Steg 5: ALDRI klikk på lenker du ikke stoler på (kan logge din IP)",
+            "Steg 6: ALDRI søk på sak-spesifikk informasjon fra privat enhet",
+            "Steg 7: Bruk dedikert undersøkelses-PC (ikke jobbmaskin med faste kontoer)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "For svært sensitive søk – bruk Tor Browser: Tor anonymiserer internett-trafikk gjennom 3 krypterte noder.\nBruk kun for de aller mest sensitive søk, da Tor er saktere og kan trigge CAPTCHA."
+        }
+      ]
     },
     {
-      "term": "DEL J: SJEKKLISTE OG KONTROLLSPØRSMÅL",
-      [cite_start]"definisjon": "✓ SJEKKLISTE – SØKEMOTORETTERFORSKNING[cite: 1591].\n\nFØR DU BEGYNNER: Inkognito på? VPN på? Logget ut av Google? [cite_start]Aktivitetslogg klar? [cite: 1593-1596].\nUNDER SØK: Prøvd alias på alle plattformer? Brukt filetype: og before:/after:? [cite_start]Sjekket Wayback Machine? [cite: 1598-1603].\nBILDESØK: Søkt på Google + Yandex + TinEye? Dokumentert med screenshot? [cite_start]ImgOps brukt? [cite: 1612-1615].\nETTER SØK: Dokumentert med dato/klokkeslett? SHA-256 hash generert? [cite_start]TPS-vurdering gjort? [cite: 1616-1619][cite_start].\n\n✓ KONTROLLSPØRSMÅL[cite: 1623]: Hva er forskjellen på site: og domain: i Bing? Hvorfor gir Yandex bedre ansiktsgjenkjenning? Hva er GHDB? [cite_start]Hva er TPS-vurderingen for info i en lekkasjedatabase? [cite: 1624-1630]."
+      "id": "s11",
+      "overskrift": "DEL J: SJEKKLISTE OG KONTROLLSPØRSMÅL",
+      "komponenter": [
+        {
+          "type": "list",
+          "data": [
+            "Er Inkognito-modus aktivert?",
+            "Er VPN på?",
+            "Er du logget ut av alle personlige Google-kontoer?",
+            "Er aktivitetslogg (Excel) klar og navngitt?",
+            "Har du lest juridisk grenseoppgang for søkemotorer?",
+            "Har du prøvd alias på tvers av alle plattformer?",
+            "Har du brukt filetype: for dokumentsøk?",
+            "Har du brukt before:/after: for tidsbasert søk?",
+            "Har du brukt cache: for å sjekke slettede sider?",
+            "Har du søkt via Wayback Machine?",
+            "Har du prøvd Bing-spesifikke operatorer (near:, IP:, inbody:)?",
+            "Har du gjort visuelt bildesøk på Bing?",
+            "Har du prøvd loc: og language: for norsk-filtrering?",
+            "Har du lastet opp profilbilde til Yandex Images?",
+            "Har du sjekket russiske plattformer (VKontakte)?",
+            "Har du notert alle bilde-treff med URL?",
+            "Er bildet søkt på Google + Yandex + TinEye?",
+            "Er alle treff dokumentert med screenshot?",
+            "Er ImgOps brukt for aggregert søk?",
+            "Er alle funn dokumentert med dato og klokkeslett?",
+            "Er SHA-256 hash generert for alle bevis-screenshot?",
+            "Er TPS-vurdering gjort per funn?",
+            "Er filer navngitt etter standard (ÅÅÅÅMMDD_søkemotor_søkestreng)?",
+            "Er backup gjort (3-2-1-regel)?",
+            "Er eventuell barnevernmelding vurdert?"
+          ]
+        },
+        {
+          "type": "list",
+          "data": [
+            "Hva er forskjellen på site: og domain: i Bing?",
+            "Hvilken søkeoperator viser Googles lagrede kopi av en nettside?",
+            "Hvorfor gir Yandex bedre ansiktsgjenkjenning enn Google?",
+            "Hva betyr before:2026-01-01 i et Google-søk?",
+            "Hvorfor bør etterforskeren aldri bruke personlig Google-konto?",
+            "Hva er GHDB og hvordan kan det brukes lovlig?",
+            "Hva er TPS-vurderingen for informasjon funnet i en lekkasjedatabase?",
+            "Hva er ImgOps og hva gjør det?"
+          ]
+        }
+      ]
     },
     {
-      "term": "DEL K: VANLIGE FEIL I SØKEMOTORETTERFORSKNING",
-      [cite_start]"definisjon": "⚠️ VANLIGE FEIL[cite: 1634].\n\n• FEIL 1: \"Jeg fant ikke noe på første side = ikke noe å finne\". [cite_start]Fakta: Relevante funn kan ligge på side 5-15 [cite: 1637-1639].\n• FEIL 2: \"Google er den eneste søkemotoren\". [cite_start]Fakta: Bing, Yandex og DuckDuckGo har forskjellige indekser [cite: 1641-1643].\n• FEIL 3: \"Jeg søker på det fulle navnet\". [cite_start]Fakta: Søk på alias og brukernavn [cite: 1645-1647].\n• FEIL 4: \"Slettet = Borte\". [cite_start]Fakta: Arkivtjenester bevarer innhold i år [cite: 1649-1651].\n• FEIL 5: \"Jeg brukte min jobbkonto på Google\". [cite_start]Fakta: Google lagrer søkehistorikk [cite: 1653-1655].\n• FEIL 6: \"Lekkasjedatabasen bekrefter alt\". [cite_start]Fakta: Sekundærkilder (TPS: D-3), aldri bevis alene [cite: 1657-1659].\n• FEIL 7: \"Yandex ga dårlig resultat på norsk person\". [cite_start]Fakta: Prøv yandex.ru/images [cite: 1661-1663]."
+      "id": "s12",
+      "overskrift": "DEL K: VANLIGE FEIL I SØKEMOTORETTERFORSKNING",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VANLIGE FEIL – SØKEMOTORETTERFORSKNING\nFEIL 1: \"Jeg fant ikke noe på første side = ikke noe å finne\"\nFakta: Google viser 10 resultater per side. Relevante funn kan ligge på side 5-15. Klikk \"Neste\" og se dypere.\nFEIL 2: \"Google er den eneste søkemotoren jeg trenger\"\nFakta: Bing, Yandex og DuckDuckGo har delvis forskjellige indekser. Unike funn dukker opp i alternative motorer.\nFEIL 3: \"Jeg søker på det fulle navnet\"\nFakta: Kriminelle bruker sjelden fullt navn. Søk på alias, brukernavn og deler av navn.\nFEIL 4: \"Slettet = Borte\"\nFakta: Wayback Machine, archive.ph og Google Cache bevarer slettet innhold i måneder/år.\nFEIL 5: \"Jeg brukte min jobbkonto på Google til søk\"\nFakta: Google lagrer søkehistorikk på kontoen. Bruk alltid Inkognito + VPN + utlogget konto.\nFEIL 6: \"Lekkasjedatabasen bekrefter at han er kriminell\"\nFakta: Lekkede databaser er sekundærkilder (TPS: D-3). De gir ledende informasjon, aldri bevis alene.\nFEIL 7: \"Yandex ga dårlig resultat på norsk person\"\nFakta: Yandex.RU (russisk versjon) gir oftere bedre resultater enn yandex.com. Prøv: yandex.ru/images"
+        }
+      ]
     },
     {
-      "term": "OPPSUMMERING",
-      [cite_start]"definisjon": "SØKEMOTORER ER DET KRAFTIGSTE GRATIS OSINT-VERKTØYET[cite: 1665]. [cite_start]Google dorking gjør bruk av operatorer som lar brukere modifisere søkeresultatene [cite: 1667][cite_start].\n\nSøkemotorer er den første ressursen av tre grunner: Ingen annen metode er like rask, like passiv, eller like gratis [cite: 1668-1671].\n\nHusk det overordnede prinsippet: Søkemotorer har allerede indeksert informasjonen. [cite_start]Din oppgave er å lære å stille de riktige spørsmålene [cite: 1672-1674]. [cite_start]Uklarhet er ikke beskyttelse; hvis en fil eksisterer på det offentlige nettet, vil robotter finne den[cite: 1675, 1676]."
+      "id": "s13",
+      "overskrift": "OPPSUMMERING: SØKEMOTORER ER DET KRAFTIGSTE GRATIS OSINT-VERKTØYET",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "De fleste begynner sin nettsøking ved enkelt å skrive nøkkelord inn i søkefeltet, men ved å gjøre det har man allerede gått glipp av en mulighet til å optimere resultatene.\nGoogle dorking gjør bruk av kommandoer kalt operatorer som lar brukere modifisere søkeresultatene på mange måter. Maltego\nSøkemotorer er den første og ofte kraftigste ressursen i enhver digital etterforskning, av tre grunner:\nIngen annen metode er like rask – en erfaren etterforsker kan bygge en komplett basisprofil på et objekt på under 30 minutter via søkemotorer alene.\nIngen annen metode er like passiv – søkemotorbruk etterlater ingen spor hos objektet, krever ingen kontakt og gir ingen varsler.\nOg ingen annen metode er like gratis – alle operatorene, dorkene og søkestrengene i dette kapittelet koster 0 kroner å bruke.\nHusk det overordnede prinsippet:\nSøkemotorer har allerede indeksert informasjonen. Oppgaven din som etterforsker er ikke å finne informasjonen – den er allerede funnet og lagret.\nDin oppgave er å lære å stille de riktige spørsmålene.\nGoogle Dorking demonstrerer et grunnleggende sikkerhetsprinsipp: Uklarhet er ikke beskyttelse.\nHvis en fil eksisterer på det offentlige nettet uten eksplisitte tilgangskontroller, vil Googles robotter finne den og indeksere den for alle som kjenner riktig syntaks.\nRecOsint"
+        }
+      ]
     }
   ]
 }
