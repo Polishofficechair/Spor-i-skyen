@@ -1,51 +1,30 @@
+
 {
-  "tittel": "AI I BRÅK",
-  "undertittel": "GRUNNLEGGENDE OM KUNSTIG INTELLIGENS",
-  "ordliste": [],
-  "seksjoner": 
-    {
-      "id": "s01",
-      "overskrift": "FORORD / INNLEDNING",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "AI I OSINT-ETTERFORSKNING FOR POLITIET"
-        },
-        {
-          "type": "paragraph",
-          "data": "KAPITTEL 0: GRUNNLEGGENDE OM KUNSTIG INTELLIGENS,"
-        }
-      ]
-    },
-    {
-      "id": "s02",
-      "overskrift": "0.1 HVA ER KUNSTIG INTELLIGENS?",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "0.1.1 Definisjon og hverdagsanalogi"
-        },
-        {
-          "type": "callout",
-          "kind": "TIP",
-          "data": "HVORFOR ER DETTE VIKTIG?"
-       },
-        {
-          "type": "paragraph",
-          "data": "Analogi: Kunstig intelligens (AI) er som en svært rask lærling som har lest millioner av bøker, men aldri forstår hva den leser. Den kan gjenkjenne mønstre og svare på spørsmål basert på hva den har “sett” før, men den tenker ikke selv."
-        },
-        {
-          "type": "paragraph",
-          "data": "Praksis: For etterforskeren betyr dette at AI er et kraftfullt verktøy for å:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Analysere enorme mengder data på kort tid",
-            "Finne mønstre mennesker ikke ser",
-            "Automatisere repetitive oppgaver",
-            "Generere rapportutkast og sammendrag"
-          ]
+"tittel": "AI I OSINT-ETTERFORSKNING FOR POLITIET",
+"undertittel": "",
+"ordliste": [],
+"seksjoner": [
+{
+"id": "s01",
+"overskrift": "KAPITTEL 0: GRUNNLEGGENDE OM KUNSTIG INTELLIGENS",
+"komponenter": [
+{
+"type": "paragraph",
+"data": "0.1 HVA ER KUNSTIG INTELLIGENS?\n0.1.1 Definisjon og hverdagsanalogi"
+},
+{
+"type": "callout",
+"kind": "TIP",
+"data": "HVORFOR ER DETTE VIKTIG?\nAnalogi: Kunstig intelligens (AI) er som en svært rask lærling som har lest millioner av bøker, men aldri forstår hva den leser.\nDen kan gjenkjenne mønstre og svare på spørsmål basert på hva den har “sett” før, men den tenker ikke selv.\nPraksis: For etterforskeren betyr dette at AI er et kraftfullt verktøy for å:"
+},
+{
+"type": "list",
+"data": [
+"∙ Analysere enorme mengder data på kort tid",
+"∙ Finne mønstre mennesker ikke ser",
+"∙ Automatisere repetitive oppgaver",
+"∙ Generere rapportutkast og sammendrag"
+]
         },
         {
           "type": "paragraph",
