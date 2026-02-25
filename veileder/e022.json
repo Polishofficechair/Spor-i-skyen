@@ -1,0 +1,1832 @@
+{
+  "tittel": "DIGITAL ETTERFORSKNING – KOMPLETT METODEVERK",
+  "undertittel": "",
+  "ordliste": [],
+  "seksjoner": [
+    {
+      "id": "s01",
+      "overskrift": "MODUL 1: FRA TIPS TIL IDENTIFISERING (SNAPCHAT)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "CASE: Politiet har mottatt et tips via Nettpatruljen: \"Sjekk ut brukeren betongen81 på Snap. Han styrer dop-salg på Romerike og sender folk for å banke skyldnere.\""
+        },
+        {
+          "type": "paragraph",
+          "data": "Din oppgave er å finne ut hvem som skjuler seg bak dette brukernavnet, og om det kan knyttes til den kjente kriminelle aktøren Ståle Vold."
+        },
+        {
+          "type": "paragraph",
+          "data": "DEL A: UNDERVISNINGSKAPITTEL"
+        },
+        {
+          "type": "paragraph",
+          "data": "1. INNGANGSVERDIER – HVA HAR DU EGENTLIG?"
+        },
+        {
+          "type": "paragraph",
+          "data": "Før du trykker på en eneste tast, må du forstå hva du har. Du har et brukernavn."
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR: Forskjellen på et navn og en \"handle\"\n\nI den fysiske verden er et navn (Ståle Vold) koblet til et personnummer. I den digitale verden er et brukernavn (som betongen81) som en graffiti-tag på en vegg. Hvem som helst kan ha skrevet det. Vår jobb er å finne personen som holder sprayboksen. Uten å koble brukernavnet til en fysisk person (Folkeregisteret), har vi ingen straffesak."
+        },
+        {
+          "type": "paragraph",
+          "data": "BEGREPSORDLISTE"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Inngangsverdi: Det sporet du starter med (her: betongen81).",
+            "Brukernavn (Handle): Det unike navnet brukeren logger inn med. Kan ikke endres ofte.",
+            "Visningsnavn (Display Name): Navnet som vises for venner (f.eks. \"Sjefen\"). Kan endres daglig.",
+            "Sokkedukke (Sock puppet): En fiktiv konto du bruker for å undersøke andre uten å bli avslørt.",
+            "Snap Score: Et tall som viser hvor aktiv en bruker er (antall sendte/mottatte snaps)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "2. METODE FOR SIKKER SNAPCHAT-SJEKK"
+        },
+        {
+          "type": "paragraph",
+          "data": "Vi skal nå undersøke kontoen uten at betongen81 vet at politiet ser på ham."
+        },
+        {
+          "type": "paragraph",
+          "data": "2.1 Forberedelse (OPSEC)"
+        },
+        {
+          "type": "paragraph",
+          "data": "ALDRI bruk din private telefon eller tjenestetelefonen du har i lomma."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Hvis du søker opp betongen81 fra din private telefon, kan du dukke opp som \"Forslag til venner\" hos ham. Da er operasjonen brent.",
+            "Krav: Bruk en dedikert \"sokkedukke\"-telefon (Android/iPhone) som ikke er koblet til politiets nettverk eller dine kontakter."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "2.2 Steg-for-steg: Den første sjekken"
+        },
+        {
+          "type": "paragraph",
+          "data": "Oppgave: Validere at brukeren eksisterer og hente basisinformasjon."
+        },
+        {
+          "type": "paragraph",
+          "data": "HANDLING:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Åpne Snapchat på din sokkedukke-telefon.",
+            "Trykk på \"Legg til venner\" (ikonet med en person og et plusstegn øverst til høyre).",
+            "Skriv inn brukernavnet: betongen81.",
+            "Viktig: Ikke trykk \"Legg til\" (Add) ennå!",
+            "Trykk på profilbildet (Bitmoji/Avatar) som dukker opp i listen.",
+            "Se på profilen. Du er nå inne på hans offentlige profilkort."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "HVA SKAL DU NOTERE DEG? (DOKUMENTASJON)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Visningsnavn: Hva kaller han seg? (Ståle? BK? En emoji?).",
+            "Funn: Visningsnavnet er \"🏗️ BK 🏗️\".",
+            "Snap Score: Står under navnet.",
+            "Funn: Score er 154,302.",
+            "Analyse: En høy score (>50k) indikerer svært aktiv bruk. For en dopsak kan dette indikere hyppig salg/kommunikasjon.",
+            "Bitmoji/Avatar: Hvordan ser figuren ut?",
+            "Funn: Figuren har skjegg, solbriller og en svart hettegenser.",
+            "Snap Map (hvis synlig): Har han glemt å slå av posisjon?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "FORVENTET RESULTAT:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Du har bekreftet at kontoen eksisterer, at den er aktiv (høy score), og du har visuelle kjennetegn (BK = Betongen/Bygg?)."
+        },
+        {
+          "type": "paragraph",
+          "data": "2.3 Pivotering: \"Glemt passord\"-trikset"
+        },
+        {
+          "type": "paragraph",
+          "data": "Dette er et av de eldste og mest effektive triksene for å koble et brukernavn til et telefonnummer eller e-post uten å ha teknisk kompetanse."
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR: Å finne den \"digitale nøkkelen\"\n\nSnapchat vil ikke fortelle deg hvem eieren er. Men hvis du later som du er eieren og har glemt passordet, vil Snapchat gi deg et hint om hvor de sender gjenopprettingskoden. Dette hintet kan være den avgjørende brikken."
+        },
+        {
+          "type": "paragraph",
+          "data": "STEG-FOR-STEG:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Gå til nettleseren på din PC (ikke telefonen). Gå til accounts.snapchat.com.",
+            "Skriv inn brukernavnet: betongen81.",
+            "Klikk på \"Glemt passord\" (Forgot Password).",
+            "Velg \"Via telefonnummer\" (Phone Number).",
+            "OBS: IKKE trykk videre/send SMS. Bare se på skjermen.",
+            "Les hintet: Snapchat vil vise noe slikt som: Vi sender en kode til ******74."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "PRAKTISK EKSEMPEL (STÅLE VOLD):"
+        },
+        {
+          "type": "paragraph",
+          "data": "Du gjør dette på betongen81."
+        },
+        {
+          "type": "paragraph",
+          "data": "Skjermen viser: Verifiser nummer som slutter på ******74."
+        },
+        {
+          "type": "paragraph",
+          "data": "ANALYSE:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Du har nå et delvis telefonnummer."
+        },
+        {
+          "type": "paragraph",
+          "data": "Søk i politiets registre (BL/Indicia) på Ståle Vold."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Hans registrerte nummer er: +47 482 91 774.",
+            "Det slutter på 74.",
+            "Match: Dette styrker hypotesen kraftig."
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VANLIGE FEIL (Oransje boks)\n\nFEIL: Ta skjermbilde (screenshot) inne i Snapchat-appen.\n\nHvorfor: Snapchat varsler brukeren: \"X tok et skjermbilde!\" Ståle vet nå at han er overvåket.\n\nGjør dette: Bruk en annen telefon til å ta bilde av skjermen, eller bruk skjermopptak på en PC via en emulator (som beskrevet i de tekniske filene).\n\nFEIL: Glemme å sjekke brukernavnet på andre plattformer.\n\nHvorfor: Kriminelle er også vanedyr. betongen81 finnes kanskje også på Instagram eller TikTok.\n\nFEIL: Legge til brukeren som venn med en tom, ny konto.\n\nHvorfor: En konto med 0 poeng og ingen bilde ser ut som politi. Du blir blokkert umiddelbart."
+        },
+        {
+          "type": "paragraph",
+          "data": "KONTROLLSPØRSMÅL"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Hvorfor skal du ikke bruke din private telefon til å søke opp betongen81?",
+            "Hva kan en høy \"Snap Score\" fortelle oss om rollen til en mistenkt i en narkotikasak?",
+            "Hva er formålet med \"Glemt passord\"-trikset, og hva må du ikke gjøre under prosessen?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "3. EKSEMPEL: KONTRAST MELLOM OBJEKTENE"
+        },
+        {
+          "type": "paragraph",
+          "data": "For å forstå vanskelighetsgraden, la oss se hva som skjer når vi gjør det samme søket på våre to fiktive personer."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "| Handling | Ståle Vold (betongen81) - VANSKELIG | Lina Grim (linapina96) - ENKEL |",
+            "|---|---|---|",
+            "| Søk i app | Visningsnavn: \"🏗️ BK\". Ingen etternavn. | Visningsnavn: \"Lina Grim 💖\". Fullt navn. |",
+            "| Profilbilde | Avatar med solbriller og hette. Anonym. | Selfie av henne selv på ferie. |",
+            "| Snap Map | \"Ghost Mode\" (avslått). Ingen lokasjon. | Viser nøyaktig posisjon (Storgata 12). |",
+            "| Glemt passord | Telefon slutter på **74. (Burner/Kontantkort?). | E-post hint: li******@gmail.com. |",
+            "| Konklusjon | Krever videre analyse og kryssjekk. | Identifisert umiddelbart. |"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "DEL B: RAPPORTKLAR TEKST"
+        },
+        {
+          "type": "paragraph",
+          "data": "Her er teksten du klipper ut og limer inn i politirapporten din. Merk skillet mellom hva du ser (observasjon) og hva du tror (vurdering)."
+        },
+        {
+          "type": "paragraph",
+          "data": "RAPPORT: DIGITAL IDENTIFISERING AV SNAPCHAT-KONTO \"betongen81\""
+        },
+        {
+          "type": "paragraph",
+          "data": "1. MANDAT OG PROBLEMSTILLING"
+        },
+        {
+          "type": "paragraph",
+          "data": "Bakgrunn for undersøkelsen er tips om at brukernavnet betongen81 på Snapchat benyttes til omsetning av narkotika og koordinering av vold. Formålet er å identifisere brukeren bak kontoen."
+        },
+        {
+          "type": "paragraph",
+          "data": "2. INNGANGSVERDIER"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "| Verdi | Type | Kilde | Verifisert |",
+            "| :--- | :--- | :--- | :--- |",
+            "| betongen81 | Brukernavn | Tipsmottak | Ja (eksisterer på plattform) |",
+            "| Ståle Vold | Mistenkt | Etterretningsopplysninger | Nei (skal kobles) |"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "3. METODE"
+        },
+        {
+          "type": "paragraph",
+          "data": "Søk ble utført [DATO] kl. [TID] ved bruk av dedikert søkeprofil (sokkedukke) på Snapchat (iOS app versjon X). Ingen aktiv kontakt ble opprettet med brukeren. \"Glemt passord\"-funksjonalitet på accounts.snapchat.com ble benyttet for å identifisere gjenopprettingsinformasjon."
+        },
+        {
+          "type": "paragraph",
+          "data": "4. FUNN – IDENTITET"
+        },
+        {
+          "type": "paragraph",
+          "data": "OBSERVASJON:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Brukernavn: betongen81",
+            "Visningsnavn: \"🏗️ BK 🏗️\"",
+            "Snap Score: 154,302 (Indikerer svært høy aktivitet)",
+            "Avatar: Mannlig figur, mørkt hår, skjegg, solbriller."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Kryssjekk (Glemt passord):"
+        },
+        {
+          "type": "paragraph",
+          "data": "Ved forsøk på passordgjenoppretting oppgir tjenesten at en verifiseringskode vil bli sendt til et telefonnummer som slutter på 74."
+        },
+        {
+          "type": "paragraph",
+          "data": "5. ANALYSE OG KRYSSKOBLING"
+        },
+        {
+          "type": "paragraph",
+          "data": "Mistenkte Ståle Vold (f. 17.04.1981) er i politiets systemer registrert med telefonnummer +47 482 91 774."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Brukernavnet inneholder tallet \"81\", som samsvarer med mistenktes fødselsår (1981).",
+            "Visningsnavnet \"BK\" og \"Betongen\" samsvarer med mistenktes kjente alias \"Betongen\".",
+            "Gjenopprettingsnummeret slutter på 74, som samsvarer med mistenktes registrerte telefonnummer."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "6. ALTERNATIVHYPOTESER"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Kontoen tilhører Ståle Vold (Hovedhypotese). Styrkes av navnelikhet, fødselsår og telefonsuffiks.",
+            "Kontoen tilhører en annen person født i 1981 med telefonnummer som slutter på 74. (Lite sannsynlig grunnet alias-samsvar \"Betongen\").",
+            "Kontoen er en \"fan-konto\" eller kopi opprettet av andre."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "7. KONKLUSJON"
+        },
+        {
+          "type": "paragraph",
+          "data": "Det vurderes med Konfidensgrad A2 (Høy sannsynlighet, bekreftet via delvis teknisk match og alias) at Snapchat-kontoen betongen81 disponeres av Ståle Vold."
+        },
+        {
+          "type": "paragraph",
+          "data": "Det anbefales å begjære utlevering av abonnementsinformasjon (BSI) og IP-logger fra Snap Inc. for endelig verifisering."
+        },
+        {
+          "type": "paragraph",
+          "data": "DEL C: OPERATIVT UTFYLLINGSSKJEMA"
+        },
+        {
+          "type": "paragraph",
+          "data": "For å sikre at du har gjort alt riktig, fyll ut dette skjemaet før du leverer saken til påtaleansvarlig."
+        },
+        {
+          "type": "paragraph",
+          "data": "15.2 Inngangsverdier"
+        },
+        {
+          "type": "paragraph",
+          "data": "Instruksjon: Fyll inn det du startet med."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Inngangsverdi: betongen81",
+            "Type: Snapchat Brukernavn",
+            "Kilde: Tips",
+            "Verifisert: Ja (kontoen er aktiv)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "15.3 Identitetsopplysninger (Funn)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Instruksjon: Hva fant du på profilen?"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "| Datapunkt | Observasjon | Kilde | Dato | Kommentar |",
+            "|---|---|---|---|---|",
+            "| Visningsnavn | Eks: 🏗️ BK 🏗️ | Snapchat App | 15.02.2026 | Alias for Betongen |",
+            "| Telefon-hint | *Eks: *****74 | Snapchat Web | 15.02.2026 | Matcher Ståle Volds nummer |",
+            "| Snap Score | Eks: 154,302 | Snapchat App | 15.02.2026 | Høyt aktivitetsnivå |"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "15.8 TPS-Vurdering"
+        },
+        {
+          "type": "paragraph",
+          "data": "Instruksjon: Hvor bra er beviset?"
+        },
+        {
+          "type": "list",
+          "data": [
+            "TROVERDIGHET: Høy (Data kommer direkte fra Snapchats systemer).",
+            "PÅLITELIGHET: Høy (Telefon-hintet er en teknisk verdi, ikke en mening).",
+            "SENSITIVITET: Lav (Dette er åpne kilder, ingen tvangsmidler brukt ennå)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "ANBEFALT NESTE STEG:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "☐ Sjekk om brukernavnet betongen81 finnes på Telegram.",
+            "☐ Sjekk om nummeret ...774 er registrert på Vipps for å få 100% navnebekreftelse."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Dette var Modul 1. Vi har nå etablert en kobling mellom tipset og Ståle Vold. I neste modul skal vi se hvordan vi bruker denne informasjonen til å kartlegge nettverket hans på andre plattformer (Kryssplattform-analyse)."
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "overskrift": "MODUL 2: KRYSSPLATTFORM-ANALYSE OG PIVOTERING",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "2."
+        },
+        {
+          "type": "paragraph",
+          "data": "Her er Modul 2. Vi bygger direkte videre på funnene fra forrige modul."
+        },
+        {
+          "type": "paragraph",
+          "data": "I Modul 1 identifiserte vi at Snapchat-kontoen betongen81 høyst sannsynlig tilhører Ståle Vold og er knyttet til telefonnummeret som slutter på 74. Nå skal vi bruke denne informasjonen til å kartlegge hele hans digitale nettverk."
+        },
+        {
+          "type": "paragraph",
+          "data": "DIGITAL ETTERFORSKNING – KOMPLETT METODEVERK"
+        },
+        {
+          "type": "paragraph",
+          "data": "CASE-STATUS: Vi har et bekreftet brukernavn (betongen81) og et delvis telefonnummer (...91774). Vi mistenker at Ståle driver grov narkotikakriminalitet. Snapchat er flyktig (innhold forsvinner). Vi må finne plattformene der bevisene lagres: Instagram (visuell livsstil/flexing) og Telegram (logistikk/salg)."
+        },
+        {
+          "type": "paragraph",
+          "data": "DEL A: UNDERVISNINGSKAPITTEL"
+        },
+        {
+          "type": "paragraph",
+          "data": "1. PIVOTERING: KUNSTEN Å HOPPE FRA APP TIL APP"
+        },
+        {
+          "type": "paragraph",
+          "data": "Dette kapittelet lærer deg hvordan ett lite spor (et brukernavn) kan åpne dører til ti nye rom."
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR: Kriminelle er også vanedyr\n\nSelv profesjonelle aktører som Ståle Vold hater å huske hundre forskjellige passord og brukernavn. Derfor gjenbruker de aliaser. Hvis han heter betongen81 på Snapchat, heter han sannsynligvis noe lignende på Instagram eller Gmail. Vi kaller dette Pivotering – å bruke ett funn som springbrett til det neste."
+        },
+        {
+          "type": "paragraph",
+          "data": "BEGREPSORDLISTE"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Pivotering (Pivoting): Å flytte etterforskningen fra ett datapunkt til et annet (f.eks. fra brukernavn → til e-post → til ny konto).",
+            "Brukernavns-oppslag (Username Enumeration): Å sjekke om et spesifikt navn er registrert på hundrevis av nettsteder samtidig.",
+            "Flexing: Å vise frem penger, dyre klokker eller biler for å bygge status i kriminelle miljøer."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "1.1 Steg-for-steg: Manuell Pivotering"
+        },
+        {
+          "type": "paragraph",
+          "data": "Vi starter med å sjekke de \"store\" plattformene manuelt. Dette er sikrere enn å bruke automatiske verktøy som sender støyende trafikk."
+        },
+        {
+          "type": "paragraph",
+          "data": "Oppgave: Finn Ståle på Instagram basert på Snapchat-funnet."
+        },
+        {
+          "type": "paragraph",
+          "data": "HANDLING:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Åpne nettleseren på din sokkedukke-maskin (VM).",
+            "Gå til Instagram: instagram.com.",
+            "Søk etter eksakt match: Skriv inn betongen81 i søkefeltet.",
+            "Resultat: Ingen treff.",
+            "Søk etter variasjoner (Logisk gjetning):",
+            "Kriminelle bruker ofte variasjoner av:",
+            "Alias + Fødselsår (betongen1981, bk_81)",
+            "Alias + Geografi (betongen_oslo, bk_romerike)",
+            "Alias + Rolle (bk_transport, nordlink_import)",
+            "Prøv variasjonen: bk_nordlink.",
+            "Resultat: TREFF. En lukket profil med 400 følgere."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "DOKUMENTASJON (Viktig!):"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Du ser profilbildet: En Rolex-klokke.",
+            "Handling: Ta skjermbilde med en gang. Lagre som SAK-ID_Instagram_Funn_Dato.png.",
+            "Handling: Kopier URL-en: instagram.com/bk_nordlink."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "1.2 Universell Brukermodell: Visuell Kobling"
+        },
+        {
+          "type": "paragraph",
+          "data": "Nå har vi en konto på Snap (betongen81) og en på Instagram (bk_nordlink). Er det samme person?"
+        },
+        {
+          "type": "paragraph",
+          "data": "ANALYSE AV PROFILBILDE:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "På Snapchat-avataren så vi \"solbriller og skjegg\".",
+            "På Instagram-profilbildet ser vi en arm med en Rolex Submariner (grønn urskive).",
+            "Zoom inn: I bakgrunnen av klokkebildet ser vi et spesielt flismønster på kjøkkenveggen.",
+            "Søk: Vi sjekker Ståle Volds private, åpne Facebook-profil (som vi fant via navnesøk). Der er det et bilde av ham som lager mat.",
+            "Match: Samme fliser på kjøkkenet."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KONKLUSJON: Vi har nå knyttet den kriminelle Instagram-profilen (bk_nordlink) til privatpersonen Ståle Vold via visuelle omgivelser (Interiør)."
+        },
+        {
+          "type": "paragraph",
+          "data": "2. TELEGRAM: DER KRIMINALITETEN SKJER"
+        },
+        {
+          "type": "paragraph",
+          "data": "Telegram er \"hovedkontoret\" for moderne norsk kriminalitet (CaaS/VaaS). Å finne Ståle her er kritisk for å bevise omfang."
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR: Telefonnummeret er nøkkelen\n\nDu kan ikke søke etter telefonnumre i Telegrams søkefelt. Men, hvis du legger nummeret til i kontaktlisten på din tjenestetelefon, vil Telegram fortelle deg om personen har en konto. Dette er den farligste delen av digital etterforskning (OPSEC), så følg nøye med."
+        },
+        {
+          "type": "paragraph",
+          "data": "2.1 Forberedelse til Kontaktsynkronisering"
+        },
+        {
+          "type": "paragraph",
+          "data": "Advarsel: Hvis du gjør dette feil, får Ståle en melding: \"Din venn Politiet har blitt med på Telegram!\""
+        },
+        {
+          "type": "paragraph",
+          "data": "KRAV TIL UTSTYR:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "En \"skitten\" smarttelefon (Sokkedukke-telefon) med eget SIM-kort.",
+            "Ingen andre kontakter lagret på telefonen enn målobjektet.",
+            "Innstillinger i Telegram:",
+            "Privacy & Security -> Phone Number -> Who can see my phone number = NOBODY.",
+            "Sync Contacts = ON (bare midlertidig)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "2.2 Steg-for-steg: Finne Ståle på Telegram"
+        },
+        {
+          "type": "paragraph",
+          "data": "HANDLING:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "På sokkedukke-telefonen: Lagre Ståles nummer +47 482 91 774 i telefonens kontaktliste. Kall kontakten \"Mål 1\".",
+            "Åpne Telegram-appen.",
+            "Gå til \"Contacts\".",
+            "Dra fingeren ned for å oppdatere (Refresh).",
+            "Se etter \"Mål 1\".",
+            "Resultat: Kontakten dukker opp! Telegram viser at \"Mål 1\" bruker navnet @NordLink81."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "HVA SER VI? (OBSERVASJON):"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Brukernavn: @NordLink81. (Igjen \"Nordlink\" + \"81\" - mønsteret bekreftes).",
+            "Bio: \"Import & Logistikk. 🇩🇪 ➡️ 🇳🇴. DM for pris.\"",
+            "Profilbilde: En lastebil."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "TOLKNING:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "\"Import & Logistikk\" + Tysk/Norsk flagg = Indikator på innførsel av narkotika.",
+            "\"DM for pris\" = Salgsvirksomhet (CaaS - Crime as a Service)."
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VANLIGE FEIL (Oransje boks)\n\nFEIL: Synkronisere kontakter fra din private telefon.\n\nKonsekvens: Alle dine venner, tanter og kollegaer lastes opp til sokkedukke-profilen din. Dette ødelegger profilens troverdighet.\n\nFEIL: Glemme å sjekke \"Last Seen\".\n\nHvorfor: Hvis det står \"Last seen recently\", er han aktiv NÅ. Hvis det står \"Last seen a long time ago\", er kontoen kanskje død.\n\nFEIL: Starte en chat.\n\nRegel: Vi bare kikker. Vi snakker ikke. Start aldri en chat med mindre du har ordre om kommunikasjonskontroll/infiltrasjon."
+        },
+        {
+          "type": "paragraph",
+          "data": "KONTROLLSPØRSMÅL"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Hva er \"Pivotering\" i denne sammenhengen?",
+            "Hvilket visuelt bevis koblet Instagram-kontoen til privatpersonen Ståle Vold?",
+            "Hvorfor må du sette \"Who can see my phone number\" til \"Nobody\" i Telegram før du legger til mistenkte?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "3. EKSEMPEL: KONTRAST I DIGITALE SPOR"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "| Plattform | Ståle Vold (Vanskelig) | Lina Grim (Enkel) |",
+            "|---|---|---|",
+            "| Instagram | Privat profil. Ingen ansiktsbilder. Alias: bk_nordlink. Kobling via kjøkkenfliser. | Åpen profil. Tusenvis av selfies. Fullt navn. |",
+            "| Telegram | Skjult nummer (må synkroniseres). Bio: Kodespråk (\"Logistikk\"). | Bruker ikke Telegram, eller har åpen profil med bilde av seg selv. |",
+            "| Mønster | Gjenbruker \"81\", \"BK\", \"Nordlink\". | Gjenbruker \"Lina\", \"Pina\", \"96\". |"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "DEL B: RAPPORTKLAR TEKST"
+        },
+        {
+          "type": "paragraph",
+          "data": "RAPPORT: KRYSSPLATTFORM-ANALYSE AV IDENTITET \"STÅLE VOLD\""
+        },
+        {
+          "type": "paragraph",
+          "data": "1. MANDAT"
+        },
+        {
+          "type": "paragraph",
+          "data": "Formålet med undersøkelsen var å identifisere ytterligere digitale kontaktpunkter for subjektet Ståle Vold, med utgangspunkt i Snapchat-kontoen betongen81."
+        },
+        {
+          "type": "paragraph",
+          "data": "2. METODE"
+        },
+        {
+          "type": "paragraph",
+          "data": "Det er benyttet manuell pivotering basert på navnevariasjoner og teknisk kontaktsynkronisering (Contact Enumeration) mot plattformene Instagram og Telegram."
+        },
+        {
+          "type": "paragraph",
+          "data": "3. FUNN – KRYSSKOBLINGER"
+        },
+        {
+          "type": "paragraph",
+          "data": "A. Instagram"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Funn: Profil med brukernavn @bk_nordlink.",
+            "Kobling: Profilbildet viser en Rolex Submariner. Bakgrunnen (interiør/fliser) samsvarer 100% med interiørbilder funnet på den åpne Facebook-profilen til Ståle Vold.",
+            "Status: Lukket profil. 412 følgere.",
+            "Konfidensgrad: B1 (Bekreftet via visuell sammenligning av to uavhengige kilder)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "B. Telegram"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Funn: Ved søk på telefonnummer +47 482 91 774 ble det identifisert en Telegram-konto.",
+            "Brukernavn: @NordLink81.",
+            "Bio: \"Import & Logistikk. 🇩🇪 ➡️ 🇳🇴. DM for pris.\"",
+            "Kobling: Brukernavnet kombinerer elementer fra Instagram (Nordlink) og fødselsår (81).",
+            "Konfidensgrad: A1 (Direkte teknisk kobling til bekreftet telefonnummer)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "4. ANALYSE"
+        },
+        {
+          "type": "paragraph",
+          "data": "Det er identifisert et sammenhengende digitalt økosystem der subjektet benytter aliasene \"BK\", \"Betongen\" og \"Nordlink\". Telegram-biografien indikerer grensekryssende virksomhet (Tyskland-Norge) og salgsvirksomhet (\"DM for pris\"), noe som styrker hypotesen om organisert innførsel."
+        },
+        {
+          "type": "paragraph",
+          "data": "5. ANBEFALING"
+        },
+        {
+          "type": "paragraph",
+          "data": "Det anbefales å igangsette overvåking av de åpne kanalene (Telegram-bio og status) samt søke om utlevering av IP-logger for Instagram-kontoen @bk_nordlink for å kartlegge fysiske bevegelser."
+        },
+        {
+          "type": "paragraph",
+          "data": "DEL C: OPERATIVT UTFYLLINGSSKJEMA"
+        },
+        {
+          "type": "paragraph",
+          "data": "15.6 Kryssplattformindikatorer"
+        },
+        {
+          "type": "paragraph",
+          "data": "Instruksjon: Fyll inn hva som binder kontoene sammen."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "| Indikator | Plattformer | Styrke | Dokumentasjon | Kommentar |",
+            "|---|---|---|---|---|",
+            "| Alias | Snap (betongen81) ↔ Telegram (NordLink81) | Sterk | Skjermbilde_04.png | Gjenbruk av \"81\" |",
+            "| Telefon | Politiregister ↔ Telegram | A1 (Bevist) | Skjermbilde_05.png | Direkte treff i kontaktliste |",
+            "| Visuell | Instagram ↔ Facebook | Moderat | Skjermbilde_06.png | Match på kjøkkenfliser |"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "15.10 Analyse og Konklusjon"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Sannsynlighetsgrad: Høy (A1).",
+            "Begrunnelse: Vi har nå teknisk bevis (telefonnummer) som knytter Ståle Vold til Telegram-kontoen @NordLink81, og visuelt bevis som knytter ham til Instagram-kontoen.",
+            "Konklusjon: Objektet bruker Telegram for logistikk/salg. Dette bekrefter tipset om narkotikaaktivitet."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "NESTE STEG I ETTERFORSKNINGEN:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "☐ Sjekk om @NordLink81 er medlem av åpne Telegram-grupper for narkotikasalg.",
+            "☐ Utfør \"Pattern of Life\"-analyse: Når på døgnet er han aktiv på Telegram? (Se etter aktivitet på nattestid i helger)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Dette var Modul 2. Vi har nå kartlagt nettverket. I neste modul (Modul 3) skal vi se på innholdet og aktiviteten. Vi skal lære å tolke emoji-språket i Telegram-bioen (\"🔌\", \"❄️\") og se hvordan vi kan finne ut hvor bildene hans er tatt (Geolokalisering), selv om han har slått av GPS."
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "overskrift": "MODUL 3: INNHOLDSANALYSE, EMOJI-KODER OG GEOLOKALISERING",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "3."
+        },
+        {
+          "type": "paragraph",
+          "data": "Her kommer Modul 3. Nå som vi har funnet kontoene (Modul 1 & 2), skal vi analysere innholdet for å bevise kriminell handling."
+        },
+        {
+          "type": "paragraph",
+          "data": "I denne modulen skal vi dechiffrere kodespråket Ståle Vold bruker på Telegram for å selge narkotika, og vi skal finne ut nøyaktig hvor han gjemmer varene sine ved å analysere bakgrunnen i et bilde på Instagram."
+        },
+        {
+          "type": "paragraph",
+          "data": "DIGITAL ETTERFORSKNING – KOMPLETT METODEVERK"
+        },
+        {
+          "type": "paragraph",
+          "data": "CASE-STATUS: Vi har funnet Telegram-kontoen @NordLink81 og Instagram-profilen @bk_nordlink."
+        },
+        {
+          "type": "list",
+          "data": [
+            "På Telegram står det: \"Nye varer. ❄️🧱. 🇩🇪 ➡️ 🇳🇴. DM 🔌\".",
+            "På Instagram har han postet et bilde av en BMW X5 parkert foran et gult trehus, med teksten \"Lageret er fullt\".",
+            "Mål: Bevise at \"varene\" er narkotika og finne adressen til \"lageret\"."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "DEL A: UNDERVISNINGSKAPITTEL"
+        },
+        {
+          "type": "paragraph",
+          "data": "1. DET DIGITALE KODESPRÅKET (EMOJI-ANALYSE)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Kriminelle snakker sjelden i klartekst. De bruker emojier for å ha en \"plausible deniability\" (troverdig benektelse) i retten. \"Jeg solgte bare snø-utstyr,\" kan de si om en snøkrystall."
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR: Å lese mellom linjene\n\nI 2026 er emojier ikke bare pynt; det er en global, kriminell meny. Hvis du ikke forstår hva en 🔌 betyr i en narkotikasak, går du glipp av tilståelsen som står rett foran deg. Vi skal nå oversette Ståles bio fra \"uskyldig\" til \"straffbar\"."
+        },
+        {
+          "type": "paragraph",
+          "data": "BEGREPSORDLISTE"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Semiotikk: Læren om tegn og symboler (hva betyr en emoji i en spesifikk kontekst?).",
+            "Plug (🔌): Slang for en grossist eller leverandør (\"stikkontakten\" du kobler deg til).",
+            "Brick/Murstein (🧱): Slang for en kilo med narkotika (pakket som en murstein)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "1.1 Steg-for-steg: Dekoding av bioen"
+        },
+        {
+          "type": "paragraph",
+          "data": "La oss se på Ståle Volds Telegram-bio: \"❄️🧱. 🇩🇪 ➡️ 🇳🇴. DM 🔌\""
+        },
+        {
+          "type": "paragraph",
+          "data": "HANDLING:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Isoler symbolene: ❄️, 🧱, 🔌.",
+            "Sjekk konteksten: Profilen heter \"Import & Logistikk\".",
+            "Slå opp i Emojipedia eller politiets interne lister (Indicia):",
+            "❄️ (Snowflake): Universell kode for Kokain.",
+            "🧱 (Brick): Kode for kvantumet 1 kg (en \"plate\").",
+            "🔌 (Electric Plug): Kode for Dealer/Leverandør.",
+            "🇩🇪 ➡️ 🇳🇴: Transportrute Tyskland til Norge."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "ANALYSE:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Ståle skriver i praksis: \"Jeg selger kilosplater med kokain, importert fra Tyskland til Norge. Send melding til dealeren.\""
+        },
+        {
+          "type": "paragraph",
+          "data": "1.2 CaaS og VaaS – Kriminelle Tjenester"
+        },
+        {
+          "type": "paragraph",
+          "data": "På Snapchat-kontoen betongen81 ser vi en annen kode: \"Trenger 🔨 i Lillestrøm. 5k.\""
+        },
+        {
+          "type": "list",
+          "data": [
+            "CaaS (Crime as a Service): Salg av varer/tjenester.",
+            "VaaS (Violence as a Service): Bestilling av vold.",
+            "Tolkning: 🔨 (Hammer) betyr ofte \"grov vold\" eller \"innkreving\". \"5k\" er prisen (5000 kr). Ståle bestiller her en voldshandling."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "2. GEOLOKALISERING (GEOINT) – FINN \"LAGERET\""
+        },
+        {
+          "type": "paragraph",
+          "data": "Vi har et bilde fra Instagram av Ståles BMW X5. Vi vet ikke hvor det er tatt, og GPS-data er fjernet av Instagram. Hvordan finner vi huset?"
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR: Bilder lyver aldri\n\nSelv om metadata (GPS) er borte, inneholder selve bildet tusenvis av spor. Et gatenavn, en spesiell type lyktestolpe, eller fargen på naboens tak. Dette kalles IMINT (Imagery Intelligence). Vi skal finne Ståles \"lager\" kun ved å se på bildet."
+        },
+        {
+          "type": "paragraph",
+          "data": "2.1 Steg-for-steg: Manuell Geolokalisering"
+        },
+        {
+          "type": "paragraph",
+          "data": "Inngangsverdi: Bilde av BMW X5 foran et gult hus."
+        },
+        {
+          "type": "paragraph",
+          "data": "HANDLING:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Grovsortering (Hvor i verden?):",
+            "Vi vet Ståle bor på \"Romerike\" (fra Folkeregisteret).",
+            "Bilen har norske skilter (starter på \"EV\" = Elbil/Oslo-registrert).",
+            "Huset er gult, treverk, norsk arkitektur.",
+            "Konklusjon: Vi er i Norge, sannsynligvis Romerike.",
+            "Finn unike identifikatorer (Ankre):",
+            "Se bak bilen. Er det et firmanavn? Et skilt?",
+            "Funn: I refleksjonen på bilvinduet ser vi et skilt som sier \"...veien 12\".",
+            "Funn: Naboens hus har et veldig bratt, svart tak.",
+            "Bruk Google Maps / Earth:",
+            "Vi vet at Ståle har tilknytning til Strømmen.",
+            "Søk på \"Gule hus Strømmen\" (Dette er for grovt).",
+            "Søk på gater som slutter på \"...veien\" i nærheten av Strømmen Storsenter.",
+            "Verifisering (Street View):",
+            "Vi \"kjører\" rundt i Google Street View i området rundt Ståles folkeregistrerte adresse.",
+            "Resultat: 500 meter fra hans hjemmeadresse finner vi et gult hus som matcher bildet 100%. Adressen er Sagveien 12, Strømmen."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KONKLUSJON: Ståle bruker naboens/en bekjents eiendom som lager, eller har leid en Airbnb på denne adressen."
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VANLIGE FEIL (Oransje boks)\n\nFEIL: Å tro at emojis bare er tull. Fakta: I narkotikasaker er emojis ofte det eneste beviset på hva slags stoff det er snakk om før beslaget.\n\nFEIL: Å gi opp fordi bildet ikke har GPS. Fakta: Visuell informasjon (skilt, fjell, bygg) er ofte mer nøyaktig enn GPS, som kan spoofes (forfalskes).\n\nFEIL: Å overse refleksjoner. Fakta: Solbriller, vinduer og øyne kan speile omgivelsene bak fotografen."
+        },
+        {
+          "type": "paragraph",
+          "data": "KONTROLLSPØRSMÅL"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Hva betyr kombinasjonen ❄️ + 🧱 i en narkotikasammenheng?",
+            "Hva er forskjellen på CaaS og VaaS i Ståles profil?",
+            "Nevn to \"ankre\" du kan se etter i et bilde for å finne lokasjonen."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "DEL B: RAPPORTKLAR TEKST"
+        },
+        {
+          "type": "paragraph",
+          "data": "RAPPORT: INNHOLDSANALYSE OG GEOLOKALISERING AV OBJEKT \"STÅLE VOLD\""
+        },
+        {
+          "type": "paragraph",
+          "data": "1. MANDAT"
+        },
+        {
+          "type": "paragraph",
+          "data": "Formålet var å analysere innholdet på de identifiserte profilene for å avdekke kriminell aktivitet og lokalisere mulige oppbevaringssteder."
+        },
+        {
+          "type": "paragraph",
+          "data": "2. FUNN – KODESPRÅK OG EMOJI-ANALYSE"
+        },
+        {
+          "type": "paragraph",
+          "data": "Observasjon:"
+        },
+        {
+          "type": "paragraph",
+          "data": "På Telegram-profilen @NordLink81 er følgende bio-tekst publisert:"
+        },
+        {
+          "type": "paragraph",
+          "data": "\"Import & Logistikk. 🇩🇪 ➡️ 🇳🇴. DM for pris. ❄️🧱\""
+        },
+        {
+          "type": "paragraph",
+          "data": "Analyse og Vurdering:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Basert på Kripos' oversikt over narkotikakoder på sosiale medier, vurderes symbolbruken som følger:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "❄️ (Snøkrystall): Indikator for kokain.",
+            "🧱 (Murstein): Indikator for kvantumet \"kilo\" eller \"plate\" (komprimert narkotika).",
+            "🇩🇪 ➡️ 🇳🇴: Indikerer innførselsrute Tyskland–Norge."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Vurdering: Det vurderes med Konfidensgrad A2 at profilen benyttes til å markedsføre salg av kokain i kiloklassen."
+        },
+        {
+          "type": "paragraph",
+          "data": "3. FUNN – GEOLOKALISERING AV \"LAGER\""
+        },
+        {
+          "type": "paragraph",
+          "data": "Observasjon:"
+        },
+        {
+          "type": "paragraph",
+          "data": "På Instagram-profilen @bk_nordlink ble det [DATO] publisert et bilde av en BMW X5 (Reg.nr EV 12345) parkert foran et gult trehus."
+        },
+        {
+          "type": "paragraph",
+          "data": "Metode for lokalisering:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Ved manuell analyse av bildet (IMINT) ble det identifisert et delvis gatenavnskilt i refleksjonen på bilens sidevindu. Ved søk i karttjenester i området rundt subjektets bosted (Strømmen), ble det identifisert et objekt som samsvarer med bygningsmassen på bildet."
+        },
+        {
+          "type": "paragraph",
+          "data": "Resultat:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Adressen er identifisert som Sagveien 12, 2010 Strømmen."
+        },
+        {
+          "type": "paragraph",
+          "data": "Eier av eiendommen er [NAVN], som er daglig leder i Ståle Volds bemanningsbyrå."
+        },
+        {
+          "type": "paragraph",
+          "data": "4. KONKLUSJON"
+        },
+        {
+          "type": "paragraph",
+          "data": "Innholdsanalysen bekrefter mistanken om organisert narkotikasalg. Geolokaliseringen har avdekket en skjult adresse (Sagveien 12) som knyttes til nettverket, og som bør vurderes som mål for ransaking."
+        },
+        {
+          "type": "paragraph",
+          "data": "DEL C: OPERATIVT UTFYLLINGSSKJEMA"
+        },
+        {
+          "type": "paragraph",
+          "data": "15.4 Aktivitet (Innholdsanalyse)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Instruksjon: Hva betyr symbolene du fant?"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "| Aktivitetstype | Observasjon | Tidsrom | Dokumentasjon | Relevans |",
+            "|---|---|---|---|---|",
+            "| Bio-tekst | \"❄️🧱\" | 15.02.26 | Skjermbilde_08.png | Narkotika (Kokain, Kilo) |",
+            "| VaaS-annonse | \"Trenger 🔨\" | 14.02.26 | Skjermbilde_09.png | Bestilling av vold |"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "15.10 Analyse og Konklusjon"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Sannsynlighetsgrad: Høy (A1/A2).",
+            "Begrunnelse: Emojier er konsistente med kjent modus for narkotikasalg. Lokasjonen er verifisert visuelt og koblet til Ståles nettverk via eiendomsregisteret.",
+            "Konklusjon: Sagveien 12 er sannsynligvis et \"stash house\" eller møteplass."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "NESTE STEG I ETTERFORSKNINGEN:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "☐ Spaning: Iverksett fysisk spaning mot Sagveien 12.",
+            "☐ Kryptospor: Se etter om Ståle har delt en Bitcoin-adresse i chatten for betaling. (Dette leder til Modul 4)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Dette var Modul 3. Vi har nå bekreftet hva han selger og hvor han er. I neste modul (Modul 4) skal vi \"følge pengene\". Vi skal se på hvordan vi finner kryptovaluta-sporene hans og bruker Blockchair til å se hvor pengene tar veien."
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "overskrift": "MODUL 4: FØLG PENGENE – KRYPTOVALUTA OG BLOCKCHAIN-ANALYSE",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "4."
+        },
+        {
+          "type": "paragraph",
+          "data": "Her kommer Modul 4. I de foregående modulene har vi identifisert Ståle Vold på Snapchat, kartlagt nettverket hans på Instagram/Telegram, og lokalisert et fysisk lager."
+        },
+        {
+          "type": "paragraph",
+          "data": "Nå skal vi finne pengene. Dette er ofte det fellende beviset som binder den digitale aktiviteten til profitten."
+        },
+        {
+          "type": "paragraph",
+          "data": "DIGITAL ETTERFORSKNING – KOMPLETT METODEVERK"
+        },
+        {
+          "type": "paragraph",
+          "data": "CASE-STATUS: Vi har infiltrert Ståles åpne digitale nettverk. I en Discord-chat på serveren HardSteel_V har han delt en tekststreng med en kjøper:"
+        },
+        {
+          "type": "paragraph",
+          "data": "bc1qv0ld81nordlink983847"
+        },
+        {
+          "type": "paragraph",
+          "data": "Dette er en Bitcoin-adresse. Dette er din \"rykende pistol\"."
+        },
+        {
+          "type": "paragraph",
+          "data": "DEL A: UNDERVISNINGSKAPITTEL"
+        },
+        {
+          "type": "paragraph",
+          "data": "1. KRYPTOVALUTA: DEN ÅPNE HOVEDBOKEN"
+        },
+        {
+          "type": "paragraph",
+          "data": "Mange tror krypto er anonymt. Det er feil. Bitcoin er pseudonymt."
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR: Blockchain glemmer aldri\n\nTenk deg en bank der alle transaksjoner er offentlige, men kontonumrene er tilfeldige tallrekker. Hvis du vet hvem som eier kontonummeret (Ståle), kan du se hver eneste krone han har tjent og brukt, helt tilbake til start. Blockchain er en uforanderlig hovedbok. Vi skal nå bruke Ståles adresse for å se hvor mye han tjener på narkotikasalg."
+        },
+        {
+          "type": "paragraph",
+          "data": "BEGREPSORDLISTE"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Wallet-adresse: \"Kontonummeret\" i krypto (f.eks. bc1q...).",
+            "Blockchain: Den offentlige loggen over alle transaksjoner som noensinne har skjedd.",
+            "Explorer (Block Explorer): En søkemotor for blockchain (f.eks. Blockchair, Blockchain.com).",
+            "Fiat-gate: Punktet der krypto veksles til vanlige penger (f.eks. Coinbase eller en lokal veksler)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "1.1 Steg-for-steg: Grunnleggende Blockchain-søk"
+        },
+        {
+          "type": "paragraph",
+          "data": "Vi skal bruke et gratis verktøy for å se på Ståles økonomi."
+        },
+        {
+          "type": "paragraph",
+          "data": "HANDLING:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Åpne nettleseren (i VM).",
+            "Gå til: blockchair.com (eller blockchain.com).",
+            "Kopier adressen: bc1qv0ld81nordlink983847 (fra Discord-chatten).",
+            "Lim inn i søkefeltet og trykk Enter."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "HVA SER DU ETTER? (ANALYSE):"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Total Received: Hvor mye har kommet inn totalt?",
+            "Funn: 4.2 BTC (ca. 2,5 millioner NOK).",
+            "Transaction Count: Hvor mange transaksjoner?",
+            "Funn: 320 innkommende transaksjoner.",
+            "Tolkning: Mange små beløp inn = Salg av brukerdoser/småpartier. Få store beløp ut = Betaling til grossist.",
+            "Første/Siste aktivitet: Når startet dette?",
+            "Funn: Første transaksjon 12.03.2024. Siste i dag."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "FORVENTET RESULTAT:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Du har nå bekreftet at adressen er aktiv og håndterer store summer som ikke samsvarer med Ståles inntekt som \"logistikkonsulent\"."
+        },
+        {
+          "type": "paragraph",
+          "data": "1.2 Mønsteranalyse: \"Kaffe-testen\""
+        },
+        {
+          "type": "paragraph",
+          "data": "Hvordan vet vi at dette er narkopenger og ikke bare sparing?"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Se på beløpene:",
+            "Er det mange transaksjoner på nøyaktig 0.005 BTC? (Standardpris for et parti).",
+            "Kommer pengene inn sent på kvelden/helg? (Samsvarer med Telegram-aktivitet)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "PRAKTISK EKSEMPEL (STÅLE VOLD):"
+        },
+        {
+          "type": "paragraph",
+          "data": "Vi ser at hver fredag kveld mellom 22:00 og 02:00 kommer det inn 10-15 transaksjoner på ca. 2000-5000 kroner. Dette er klassisk \"helgesalg\"-mønster."
+        },
+        {
+          "type": "paragraph",
+          "data": "1.3 Avansert: Finne veien ut (Cashing Out)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Ståle kan ikke kjøpe mat på Rema 1000 med Bitcoin. Han må veksle dem."
+        },
+        {
+          "type": "paragraph",
+          "data": "HANDLING:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Se på \"Sent\"-transaksjonene (penger ut).",
+            "Følg de store beløpene. Hvor går de?",
+            "Bruk verktøy som Bitquery eller Walletexplorer for å se om mottaker-adressen er merket.",
+            "Funn: Pengene går til en adresse merket som \"Binance Hot Wallet\"."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "ANALYSE:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Ståle sender pengene sine til Binance (en kryptobørs) for å veksle til norske kroner. Binance krever ID (Pass/Førerkort) for å opprette konto (KYC - Know Your Customer)."
+        },
+        {
+          "type": "paragraph",
+          "data": "KONKLUSJON: Vi kan nå sende en juridisk forespørsel til Binance om å få utlevert navnet bak kontoen som mottok pengene fra Ståles wallet. Dette vil gi oss 100% ID-bekreftelse."
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VANLIGE FEIL (Oransje boks)\n\nFEIL: Å tro at du kan \"fryse\" en wallet selv.\n\nFakta: Bare eieren har nøkkelen. Politiet må beslaglegge nøklene eller be børsen (Binance) fryse kontoen pengene sendes til.\n\nFEIL: Å blande sammen Bitcoin (BTC) og Ethereum (ETH).\n\nFakta: De er forskjellige nettverk. Du finner ikke en ETH-adresse i en BTC-explorer. Sjekk alltid formatet (bc1... er BTC, 0x... er ETH).\n\nFEIL: Å glemme å ta hash av skjermbildet.\n\nFakta: Blockchain er dynamisk. Saldoen endres. Dokumenter status NÅ."
+        },
+        {
+          "type": "paragraph",
+          "data": "KONTROLLSPØRSMÅL"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Hva er forskjellen på en \"Wallet\" og en \"Exchange\" (Børs)?",
+            "Hvorfor er \"Total Received\" et viktig tall for inndragning?",
+            "Hva betyr KYC, og hvorfor er det bra for politiet?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "DEL B: RAPPORTKLAR TEKST"
+        },
+        {
+          "type": "paragraph",
+          "data": "RAPPORT: FINANSIELL KARTLEGGING (KRYPTOVALUTA) - STÅLE VOLD"
+        },
+        {
+          "type": "paragraph",
+          "data": "1. MANDAT"
+        },
+        {
+          "type": "paragraph",
+          "data": "Identifisere og analysere mistenktes bruk av kryptovaluta i forbindelse med mistenkt omsetning av narkotika."
+        },
+        {
+          "type": "paragraph",
+          "data": "2. FUNN – BLOCKCHAIN-ANALYSE"
+        },
+        {
+          "type": "paragraph",
+          "data": "Observasjon:"
+        },
+        {
+          "type": "paragraph",
+          "data": "I en Discord-samtale datert [DATO] delte brukeren HardSteel_V Bitcoin-adressen: bc1qv0ld81nordlink983847."
+        },
+        {
+          "type": "paragraph",
+          "data": "Ved oppslag i offentlig blokkjede (Blockchair.com) viser adressen følgende historikk:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Total omsetning: 4.2 BTC (ca. 2.5 MNOK).",
+            "Transaksjonsmønster: Høyfrekvente innbetalinger av småbeløp (ekvivalent 2000-5000 NOK) i tidsrommet fredag-lørdag kveld.",
+            "Utgående midler: Større beløp overføres periodisk til en klynge adresser identifisert som tilhørende vekslingstjenesten Binance."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "3. ANALYSE"
+        },
+        {
+          "type": "paragraph",
+          "data": "Transaksjonsmønsteret (mange små inn, få store ut) er konsistent med salg av varer mot sluttbruker, etterfulgt av hvitvasking/veksling. Koblingen mot Binance indikerer at brukeren har en verifisert konto hos denne aktøren."
+        },
+        {
+          "type": "paragraph",
+          "data": "4. KONKLUSJON"
+        },
+        {
+          "type": "paragraph",
+          "data": "Det er sannsynliggjort at Ståle Vold benytter den identifiserte adressen til å motta oppgjør for straffbare handlinger. Midlene kanaliseres videre til Binance."
+        },
+        {
+          "type": "paragraph",
+          "data": "5. ANBEFALING"
+        },
+        {
+          "type": "paragraph",
+          "data": "Det utferdiges umiddelbart en rettsanmodning til Binance om utlevering av kontoinformasjon (KYC) og transaksjonslogg for mottakeradressen, samt frysing av midler."
+        },
+        {
+          "type": "paragraph",
+          "data": "DEL C: OPERATIVT UTFYLLINGSSKJEMA"
+        },
+        {
+          "type": "paragraph",
+          "data": "15.2 Inngangsverdier (Ny)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Inngangsverdi: bc1qv0ld81nordlink983847",
+            "Type: Bitcoin Wallet (BTC)",
+            "Kilde: Discord (Melding fra HardSteel_V)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "15.10 Analyse og Konklusjon"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Sannsynlighetsgrad: Høy (A1).",
+            "Begrunnelse: Adressen ble delt direkte av mistenkte. Pengestrømmen matcher narkotikasalg. Koblingen mot Binance gir mulighet for ID-bekreftelse.",
+            "Konklusjon: Betydelige verdier unndras beskatning og stammer trolig fra kriminalitet."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "NESTE STEG I ETTERFORSKNINGEN:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "☐ Send utleveringsbegjæring til Binance.",
+            "☐ Beregn totalt utbytte for inndragning.",
+            "☐ Modul 5: Nå som vi har alt (Identitet, Nettverk, Lager, Penger), skal vi sette det sammen i en endelig Tidslinje for å vise retten det totale bildet."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Dette var Modul 4. Vi har nå fulgt pengene helt til \"utgangsdøra\" hos Binance. I neste og siste modul (Modul 5) skal vi sy alt sammen: Tidslinjeanalyse, Sluttrapport og Forberedelse til retten."
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "overskrift": "MODUL 5: SAMMENSTILLING, TIDSLINJEANALYSE OG SLUTTRAPPORT",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "5."
+        },
+        {
+          "type": "paragraph",
+          "data": "Her er Modul 5. Dette er den avsluttende modulen i metodeverket."
+        },
+        {
+          "type": "paragraph",
+          "data": "Vi har nå samlet alle brikkene: Identiteten (Snapchat), Nettverket (Instagram/Telegram), Varene/Lokasjonen (Geolokalisering) og Pengene (Krypto)."
+        },
+        {
+          "type": "paragraph",
+          "data": "Nå skal vi sette brikkene sammen til et bilde som tåler å bli vist i en rettssal."
+        },
+        {
+          "type": "paragraph",
+          "data": "DIGITAL ETTERFORSKNING – KOMPLETT METODEVERK"
+        },
+        {
+          "type": "paragraph",
+          "data": "CASE-STATUS: Du sitter med gigabyte med data om Ståle Vold. Du vet hvem han er, hva han gjør, hvor han er, og hvor han gjemmer pengene. Men data er ikke bevis før det er strukturert. Din jobb nå er å fortelle historien om hvordan alt henger sammen, slik at en dommer forstår det uten tvil."
+        },
+        {
+          "type": "paragraph",
+          "data": "DEL A: UNDERVISNINGSKAPITTEL"
+        },
+        {
+          "type": "paragraph",
+          "data": "1. TIDSLINJEN: ETTERFORSKERENS STERKESTE VÅPEN"
+        },
+        {
+          "type": "paragraph",
+          "data": "Kriminelle handlinger skjer ikke i et vakuum. De skjer i tid."
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR: Tidslinjen avslører løgnen\n\nHvis Ståle sier \"Jeg har ikke noe med den Instagram-kontoen å gjøre\", men tidslinjen viser at han logget på Telegram med sin private telefon nøyaktig i det minuttet et bilde ble lastet opp på Instagram-kontoen – da har vi en korrelasjon. Tidslinjen knytter den fysiske personen til de digitale handlingene."
+        },
+        {
+          "type": "paragraph",
+          "data": "1.1 Hvordan bygge en operativ tidslinje"
+        },
+        {
+          "type": "paragraph",
+          "data": "Vi bruker data fra alle modulene våre for å se etter \"The Golden Minute\" – øyeblikket der alt skjer samtidig."
+        },
+        {
+          "type": "paragraph",
+          "data": "DATA SOM SKAL INN:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Telegram: Melding i bio/chat (\"Nye varer ❄️\").",
+            "Krypto: Innbetaling til wallet (bc1q...).",
+            "Instagram: Bilde av BMW foran lageret (\"Lageret er fullt\").",
+            "Snapchat: Melding om vold (\"Trenger 🔨\")."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "PRAKTISK EKSEMPEL (STÅLE VOLD - FREDAGSKVELDEN):"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "| Tidspunkt (UTC) | Plattform | Handling | Kilde |",
+            "|---|---|---|---|",
+            "| 22:03 | Telegram | Ståle (@NordLink81) endrer status til \"Online\". | Kontaktsjekk |",
+            "| 22:05 | Discord | HardSteel deler wallet-adresse til en kjøper. | Chatlogg |",
+            "| 22:15 | Blockchain | 0.5 BTC kommer inn på wallet bc1q.... | Blockchair |",
+            "| 22:20 | Instagram | @bk_nordlink poster bilde: \"Lageret er fullt ❄️\". | Tidsstempel |",
+            "| 22:25 | Snapchat | betongen81 sender Snap fra Sagveien 12 (Lageret). | Snap Map |"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "ANALYSE:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Vi ser en kjede av hendelser: Han får en bestilling (Discord), mottar penger (Blockchain), bekrefter at varen er på plass (Instagram), og befinner seg fysisk på stedet (Snapchat). Det er usannsynlig at dette er tilfeldig."
+        },
+        {
+          "type": "paragraph",
+          "data": "2. HYPOTESETESTING: DJEVELENS ADVOKAT"
+        },
+        {
+          "type": "paragraph",
+          "data": "Før du leverer rapporten, må du prøve å ødelegge din egen sak. Dette kalles Falsifisering."
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "HVORFOR: Unngå tunnelsyn\n\nDet verste en etterforsker kan gjøre er å bestemme seg for svaret på forhånd (Bekreftelsesbias). Du må spørre: \"Finnes det en annen, uskyldig forklaring?\" Hvis du ikke gjør det, vil forsvarsadvokaten gjøre det for deg i retten."
+        },
+        {
+          "type": "paragraph",
+          "data": "2.1 De tre obligatoriske mot-hypotesene"
+        },
+        {
+          "type": "paragraph",
+          "data": "For Ståle Vold-saken må vi teste disse:"
+        },
+        {
+          "type": "paragraph",
+          "data": "Hypotese 1 (Vår hovedteori): Ståle Vold administrerer alle kontoene og selger narkotika."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Støttes av: Telefonnummer-kobling, visuell match (kjøkken), tidslinje-samsvar."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Hypotese 2 (Alternativ): Noen har stjålet identiteten til Ståle og prøver å ramme ham."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Test: Er det sannsynlig at en identitetstyv også har tilgang til Ståles kjøkken for å ta bilder? Er det sannsynlig at tyven har brukt Ståles telefonnummer i 5 år?",
+            "Konklusjon: Svært lite sannsynlig (C4)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Hypotese 3 (Alternativ): Kontoene deles av en vennegjeng (\"Kollektiv bruk\")."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Test: Vi ser aktivitet fra ulike IP-adresser, men språkbruken og \"Jeg\"-formen er konsistent.",
+            "Konklusjon: Mulig, men Ståle er uansett hovedadministrator (A1)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "3. JURIDISK PAKKING OG BEVISKJEDE"
+        },
+        {
+          "type": "paragraph",
+          "data": "Hvordan sikrer vi at skjermbildene våre er gyldige bevis om 6 måneder?"
+        },
+        {
+          "type": "paragraph",
+          "data": "BEGREPSORDLISTE"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Hashing: Å lage et digitalt fingeravtrykk av bevisfilen (SHA-256).",
+            "Integritet: At beviset er nøyaktig det samme nå som da det ble hentet.",
+            "Hunchly: Et verktøy som automatisk lagrer og hasher alt du ser i nettleseren."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "3.1 Steg-for-steg: Sikring for retten"
+        },
+        {
+          "type": "paragraph",
+          "data": "Du skal ikke bare ta et skjermbilde og lime det inn i Word."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Bruk et sikringsverktøy: Aktiver Hunchly (eller ta manuelle hashes).",
+            "Ta skjermbilde/opptak: Sørg for at URL, dato og klokkeslett (systemklokke) er synlig.",
+            "Generer Hash:",
+            "Handling: Høyreklikk på bildefilen -> CRC SHA -> SHA-256.",
+            "Resultat: a3d5f8... (en lang rekke tall/bokstaver).",
+            "Lim inn i rapport: Skriv hash-verdien under bildet i rapporten."
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VANLIGE FEIL (Oransje boks)\n\nFEIL: Glemme å dokumentere tidssone.\n\nProblem: \"Kl. 14:00\" betyr ingenting uten tidssone. Er det norsk tid (CET) eller server-tid (UTC)? Kriminelle opererer ofte i UTC.\n\nFEIL: Blande fakta og vurdering.\n\nProblem: Å skrive \"Ståle selger dop\" er en vurdering. Fakta er: \"Profilen postet bilde av hvitt pulver\".\n\nFEIL: Utelate det som ikke passet.\n\nProblem: Hvis du fant en profil som ikke passet inn i teorien din, må du nevne den. Ærlighet bygger troverdighet."
+        },
+        {
+          "type": "paragraph",
+          "data": "DEL B: RAPPORTKLAR TEKST"
+        },
+        {
+          "type": "paragraph",
+          "data": "SLUTTRAPPORT: OSINT-KARTLEGGING AV \"STÅLE VOLD\""
+        },
+        {
+          "type": "paragraph",
+          "data": "1. SAMMENDRAG (EXECUTIVE SUMMARY)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Etterforskningen har identifisert et sammenhengende digitalt økosystem knyttet til objektet Ståle Vold (f. 1981). Funnene indikerer med høy grad av sannsynlighet (A1) at objektet administrerer profiler på Snapchat, Telegram og Instagram som benyttes til organisert omsetning av narkotika og bestilling av voldstjenester."
+        },
+        {
+          "type": "paragraph",
+          "data": "2. HOVEDFUNN (SAMMENSTILLING)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "| Datapunkt | Funn | Kobling til Ståle Vold | Konfidens |",
+            "|---|---|---|---|",
+            "| Snapchat | betongen81 | Gjenopprettingstlf slutter på 74. | A2 |",
+            "| Telegram | @NordLink81 | Lagret på tlf nr +47...774. | A1 |",
+            "| Instagram | @bk_nordlink | Visuell match (kjøkken/klokke). | B1 |",
+            "| Krypto | bc1q... | Delt av bruker HardSteel (Discord). | B2 |",
+            "| Lokasjon | Sagveien 12 | Geolokalisering av bildefunn. | A2 |"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "3. VURDERING AV MODUS (CAAS/VAAS)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Aktiviteten på tvers av plattformene viser en profesjonalisert forretningsmodell:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Markedsføring: Skjer visuelt på Instagram (Flexing).",
+            "Logistikk: Koordineres på Telegram (Kryptert).",
+            "Oppgjør: Skjer via Kryptovaluta (Hvitvasking).",
+            "Voldsutøvelse: Bestilles via Snapchat (\"Trenger 🔨\")."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "4. KONKLUSJON OG ANBEFALING"
+        },
+        {
+          "type": "paragraph",
+          "data": "Det digitale bevisbildet gir skjellig grunn til mistanke om grov narkotikakriminalitet."
+        },
+        {
+          "type": "paragraph",
+          "data": "Det anbefales umiddelbar pågripelse og ransaking av folkeregistrert adresse og den identifiserte lokasjonen Sagveien 12, med mål om å sikre digitale enheter før de kan fjernslettes (se Modul 4, Krypto)."
+        },
+        {
+          "type": "paragraph",
+          "data": "DEL C: OPERATIVT UTFYLLINGSSKJEMA (SLUTTKONTROLL)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Før du sender saken fra deg, sjekk dette:"
+        },
+        {
+          "type": "paragraph",
+          "data": "15.10 Analyse og Konklusjon (Sluttvurdering)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Samlet Sannsynlighetsgrad: ☐ Lav ☐ Moderat ☒ Høy (A1)",
+            "Begrunnelse: Vi har tekniske bevis (telefonnummer) på to plattformer, visuelle bevis på en tredje, og finansiell kobling via blockchain. Tidslinjen viser koordinert aktivitet.",
+            "Alternativhypotese vurdert: \"Identitetstyveri\" er vurdert som usannsynlig (C4) grunnet tidsspenn og tilgang til fysisk bolig."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "SJEKKLISTE FOR BEVISPAKKE:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "☐ Er alle skjermbilder original-lagret med Hash (SHA-256)?",
+            "☐ Er inngangsverdiene (Tlf/E-post) verifisert mot registre?",
+            "☐ Er rapporten rensket for emosjonelt språk (\"drittsekk\", \"tydeligvis\")?",
+            "☐ Er det vedlagt en ordliste for faguttrykk (UID, Hash, Tor) for juristen?"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Gratulerer! Du har nå fullført kurset."
+        },
+        {
+          "type": "paragraph",
+          "data": "Du har tatt Ståle Vold fra et anonymt tips på Snapchat, gjennom en kompleks digital etterforskning, og levert en ferdig pakke som gir grunnlag for pågripelse."
+        },
+        {
+          "type": "paragraph",
+          "data": "Vil du at jeg skal generere en \"Kvikk-guide\" (Cheat Sheet) på én side som oppsummerer alle kommandoer og verktøy fra Modul 1-5, til å henge på kontorveggen?"
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "overskrift": "OPERATIV KVIKK-GUIDE: DIGITAL ETTERFORSKNING (AK)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "6."
+        },
+        {
+          "type": "paragraph",
+          "data": "Her er den Operative Kvikk-guiden."
+        },
+        {
+          "type": "paragraph",
+          "data": "Denne er designet for å skrives ut og henges ved siden av skjermen din. Den oppsummerer alle de mest kritiske teknikkene, verktøyene og kommandoene vi har gjennomgått i kurset, ribbet for teori."
+        },
+        {
+          "type": "paragraph",
+          "data": "🕵️ OPERATIV KVIKK-GUIDE: DIGITAL ETTERFORSKNING (AK)"
+        },
+        {
+          "type": "paragraph",
+          "data": "Versjon 2026 – Øst Politidistrikt Standard"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "OPSEC: FØR DU RØRER TASTATURET\n\nAldri bruk privat utstyr eller politinett direkte mot kriminelle mål.\n\nAlltid bruk dedikert etterforskningsmaskin (VM) + VPN/Proxy.\n\nAlltid bruk \"sokkedukke\" (fiktiv profil) ved innlogging på sosiale medier."
+        },
+        {
+          "type": "paragraph",
+          "data": "1. IDENTIFISERING (INNGANGSVERDIER)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "| Hvis du har... | Gjør dette (Metode) | Verktøy/URL |",
+            "|---|---|---|",
+            "| Brukernavn | Sjekk om det finnes på 100+ sider. | whatsmyname.app eller namechk.com |",
+            "| Telefonnr. | Sjekk Vipps for navn. Sjekk Telegram for bruker. | Tjenestetelefon (synk kontakter) |",
+            "| E-post | Sjekk om den er i datalekkasjer. | haveibeenpwned.com / epieos.com |",
+            "| Bilde | Omvendt bildesøk (fjes/steder). | pimeyes.com (fjes), yandex.com (generelt) |"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "2. PLATTFORM-SPESIFIKKE TEKNIKKER"
+        },
+        {
+          "type": "paragraph",
+          "data": "👻 SNAPCHAT (\"Glemt Passord\"-trikset)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Mål: Finne delvis telefonnummer/e-post.",
+            "Metode: Gå til accounts.snapchat.com -> Skriv brukernavn -> Klikk \"Forgot Password\".",
+            "Se etter: \"We will send a code to ******74\". (Ikke trykk send!)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "📸 INSTAGRAM (Finne UID)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Mål: Finne permanent ID som tåler navnebytte.",
+            "Metode: Gå til profil i nettleser -> Høyreklikk \"Vis sidekilde\" -> Ctrl+F.",
+            "Søk etter: \"profilePage_\" eller \"user_id\". Tallet bak er UID."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "✈️ TELEGRAM (Nummer-avsløring)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Mål: Koble tlf.nr til brukernavn.",
+            "Metode: Lagre mistenktes nr. i kontaktlisten på \"skitten\" telefon -> Åpne Telegram -> Oppdater kontakter.",
+            "Se etter: Dukker det opp en profil? Sjekk Bio og \"Last Seen\"."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "🎵 TIKTOK (Tidsstempel)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Mål: Finne nøyaktig tidspunkt for en video.",
+            "Metode: Vis sidekilde på video -> Ctrl+F -> Søk \"createTime\".",
+            "Verktøy: Kopier tallet -> Lim inn i unixtimestamp.com."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "3. GOOGLE DORKS (SØKE-SNARVEIER)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "| Dork-kommando | Hva den gjør | Eksempel |",
+            "|---|---|---|",
+            "| \"...\" | Søker etter eksakt frase. | \"Ståle Vold\" |",
+            "| site: | Søker kun på én nettside. | site:twitter.com \"betongen81\" |",
+            "| filetype: | Finner spesifikke filer. | filetype:pdf \"kriminell\" |",
+            "| intext: | Finner tekst i \"body\" på siden. | intext:\"selger\" site:instagram.com |"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "4. INNHOLDSANALYSE (KODER & GEO)"
+        },
+        {
+          "type": "paragraph",
+          "data": "💊 EMOJI-DEKODER (Narkotika/Vold)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "❄️ = Kokain",
+            "🧱 = Kilo / Plate (Hasj/Kokain)",
+            "🔌 = Dealer / Leverandør (\"The Plug\")",
+            "🔨 = Vold / Innkreving (VaaS)",
+            "🍃 / 🥦 = Cannabis"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "🌍 GEOLOKALISERING (IMINT)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Fjern det åpenbare: Se bort fra personen i bildet.",
+            "Se etter ankre: Skilt, unike bygninger, fjellformasjoner, refleksjoner i vinduer.",
+            "Verifiser: Bruk Google Street View eller Google Earth Pro (3D) for å bekrefte vinkel."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "5. FINANSIELL SPORING (KRYPTO)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Bitcoin-adresse: Starter ofte på 1, 3 eller bc1. (Eks: bc1qv0...)",
+            "Søkeverktøy: Bruk blockchair.com eller blockchain.com.",
+            "Røde flagg:",
+            "Mange små beløp inn (salg).",
+            "Store beløp ut til \"Binance\" / \"Coinbase\" (Hvitvasking/Cashing out)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "6. RAPPORTERING & BEVISKJEDE (SJEKKLISTE)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "☐ Dokumenter tid: Noter dato, klokkeslett og tidssone (UTC/CET) for alle funn.",
+            "☐ Sikre bevis: Ta skjermbilder/opptak. Bruk Hunchly hvis tilgjengelig.",
+            "☐ Hash-verdi: Generer SHA-256 hash av bevisfilene umiddelbart.",
+            "☐ Skill snørr og bart: Skriv tydelig hva som er Observasjon (Fakta) og hva som er Vurdering (Din mening).",
+            "☐ Konfidens: Gi en score (A1 = Sikkert, C4 = Gjetning)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Dette avslutter det komplette metodeverket."
+        }
+      ]
+    }
+  ]
+}
