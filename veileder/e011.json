@@ -1,6 +1,6 @@
 {
-  "tittel": "ÅK PÅ PERSONER",
-  "undertittel": "Navn,ID",
+  "tittel": "KARTLEGGING AV PERSONERS DIGITALE FOTSPOR",
+  "undertittel": "",
   "ordliste": [],
   "seksjoner": [
     {
@@ -17171,7 +17171,7 @@
         },
         {
           "type": "paragraph",
-          "data": "21.6 LITTERATUR OG KILD'ER (VIDERE LESING)"
+          "data": "21.6 LITTERATUR OG KILDER (VIDERE LESING)"
         },
         {
           "type": "paragraph",
@@ -17421,11 +17421,6 @@
           "type": "paragraph",
           "data": "Hvis du svarte NEI på noen: Gå tilbake til det aktuelle kapitlet."
         },
-      {
-      "id": "s24",
-      "overskrift": "DEL B: RAPPORTMAL (POLITIRAPPORT – BL-KOMPATIBEL)",
-      "komponenter": [
-        {
         {
           "type": "paragraph",
           "data": "DEL B: RAPPORTMAL (POLITIRAPPORT – BL-KOMPATIBEL)"
