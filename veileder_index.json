@@ -8,11 +8,50 @@
     "tittel": "BRÅK på person"
   },
   {
-    "id": 3,
-    "tittel": "Facebook OSINT"
+    "id": 15,
+    "tittel": "SØKEMOTORER"
   },
   {
-    "id": 4,
-    "tittel": "Snapchat Data"
+    "id": 21,
+    "tittel": "ÅK FOR PEL"
+  },
+  {
+    "id": 22,
+    "tittel": "BRUKERNAVN I ÅK"
+  },
+  {
+    "id": 23,
+    "tittel": "FACEBOOK"
+  },
+  {
+    "id": 25,
+    "tittel": "TELEGRAM"
+  },
+  {
+    "id": 27,
+    "tittel": "DISCORD"
+  },
+  {
+    "id": 35,
+    "tittel": "LEAKS & STEALERLOGS"
+  },
+  {
+    "id": 37,
+    "tittel": "IP ADRESSER"
+  },{
+    "id": 39,
+    "tittel": "KRYPTOVALUTA"
+  },
+  {
+    "id": 41,
+    "tittel": "BRÅK PÅ DARKWEB"
+  },
+  {
+    "id": 44,
+    "tittel": "AI & BRÅK"
+  },
+  {
+    "id": 48,
+    "tittel": "SIGNAL"
   }
 ]
