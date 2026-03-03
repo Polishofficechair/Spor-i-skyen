@@ -516,31 +516,6 @@
         },
         {
           "type": "paragraph",
-          "data": "Statistikk som sjokkerer:"
-        },
-        {
-          "type": "paragraph",
-          "data": "Ifølge Kripos (2022) er:"
-        },
-        {
-          "type": "paragraph",
-          "data": "89% av ungdomskriminelle aktive på minst 3 sosiale medier"
-        },
-        {
-          "type": "paragraph",
-          "data": "67% av VaaS-rekruttering (Violence as a Service) skjer via Snapchat eller Telegram"
-        },
-        {
-          "type": "paragraph",
-          "data": "45% av mindreårige som begår alvorlig kriminalitet har digitale fotavtrykk som KUNNE ha avdekket advarselssignaler – hvis noen hadde sett etter"
-        },
-        {
-          "type": "callout",
-          "kind": "CASE",
-          "data": "Case: \"Før og etter\""
-        },
-        {
-          "type": "paragraph",
           "data": "Før digital etterforskning:"
         },
         {
@@ -2463,30 +2438,6 @@
         },
         {
           "type": "paragraph",
-          "data": "Statistikk (Kripos 2022):"
-        },
-        {
-          "type": "paragraph",
-          "data": "34% økning i VaaS-relaterte saker 2023-2025"
-        },
-        {
-          "type": "paragraph",
-          "data": "67% av utførende er under 18 år"
-        },
-        {
-          "type": "paragraph",
-          "data": "89% av rekruttering skjer via Snapchat eller Telegram"
-        },
-        {
-          "type": "paragraph",
-          "data": "4.2 Ungdomskriminalitet og digital rekruttering"
-        },
-        {
-          "type": "paragraph",
-          "data": "Hvordan foregår rekruttering?"
-        },
-        {
-          "type": "paragraph",
           "data": "FASE 1: IDENTIFIKASJON (Finne målgruppen)"
         },
         {
@@ -2874,59 +2825,7 @@
         },
         {
           "type": "paragraph",
-          "data": "NÅR ESKALERE TIL BARNEVERN?"
-        },
-        {
-          "type": "paragraph",
-          "data": "╔═══════════════════════════════════════════════════════════╗"
-        },
-        {
-          "type": "paragraph",
-          "data": "║ 🚨 MELD TIL BARNEVERN HVIS:                               ║"
-        },
-        {
-          "type": "paragraph",
-          "data": "║                                                           ║"
-        },
-        {
-          "type": "paragraph",
-          "data": "║ 1. Mindreårig (under 18 år) OG minst 3 indikatorer       ║"
-        },
-        {
-          "type": "paragraph",
-          "data": "║ 2. Under 15 år OG minst 2 indikatorer                     ║"
-        },
-        {
-          "type": "paragraph",
-          "data": "║ 3. Bekymring for barnets sikkerhet/utvikling             ║"
-        },
-        {
-          "type": "paragraph",
-          "data": "║ 4. Mistanke om utnyttelse av voksne                       ║"
-        },
-        {
-          "type": "paragraph",
-          "data": "║                                                           ║"
-        },
-        {
-          "type": "paragraph",
-          "data": "║ IKKE vent på \"hard bevis\" – barnevernet vurderer videre.  ║"
-        },
-        {
-          "type": "paragraph",
-          "data": "║                                                           ║"
-        },
-        {
-          "type": "paragraph",
-          "data": "║ Kontakt: Kommunens barnevernstjeneste (lokalt)           ║"
-        },
-        {
-          "type": "paragraph",
-          "data": "║ Kripos: 23 20 80 00 (ved mistanke om organisert krim)    ║"
-        },
-        {
-          "type": "paragraph",
-          "data": "╚═══════════════════════════════════════════════════════════╝"
+          "data": ""
         }
       ]
     },
@@ -6977,15 +6876,15 @@
         },
         {
           "type": "paragraph",
-          "data": "╔═══════════════════════════════════════════════════════════╗"
+          "data": ""
         },
         {
           "type": "paragraph",
-          "data": "║ BISTANDSFORESPØRSEL - IKT-KRIMINALITET                    ║"
+          "data": "║ BISTANDSFORESPØRSEL -                    ║"
         },
         {
           "type": "paragraph",
-          "data": "╚═══════════════════════════════════════════════════════════╝"
+          "data": ""
         },
         {
           "type": "paragraph",
@@ -6993,7 +6892,7 @@
         },
         {
           "type": "paragraph",
-          "data": "TIL: IKT-krimenhet, Kripos"
+          "data": "TIL:bistandsanmodning Kripos"
         },
         {
           "type": "paragraph",
@@ -7856,52 +7755,6 @@
           "type": "paragraph",
           "data": "21. Kontaktinformasjon"
         },
-        {
-          "type": "paragraph",
-          "data": "KRIPOS BRÅK-TEAM:"
-        },
-        {
-          "type": "paragraph",
-          "data": "Telefon: 23 20 80 00"
-        },
-        {
-          "type": "paragraph",
-          "data": "E-post: kripos@politiet.no"
-        },
-        {
-          "type": "paragraph",
-          "data": "IKT-KRIMENHET:"
-        },
-        {
-          "type": "paragraph",
-          "data": "Telefon: 23 20 81 00 (Kripos)"
-        },
-        {
-          "type": "paragraph",
-          "data": "BARNEVERN (Lørenskog kommune):"
-        },
-        {
-          "type": "paragraph",
-          "data": "Telefon: 67 93 00 00"
-        },
-        {
-          "type": "paragraph",
-          "data": "JURIST (Oslo politidistrikt):"
-        },
-        {
-          "type": "paragraph",
-          "data": "Intern: Kontakt via BL-system"
-        },
-        {
-          "type": "paragraph",
-          "data": "NØDNUMMER (ved umiddelbar fare):"
-        },
-        {
-          "type": "paragraph",
-          "data": "112"
-        }
-      ]
-    },
     {
       "id": "s17",
       "overskrift": "DEL B: RAPPORTKLAR TEKST",
@@ -7916,19 +7769,19 @@
         },
         {
           "type": "paragraph",
-          "data": "╔═══════════════════════════════════════════════════════════╗"
+          "data": ""
         },
         {
           "type": "paragraph",
-          "data": "║                   POLITIRAPPORT                           ║"
+          "data": "                POLITIRAPPORT                           "
         },
         {
           "type": "paragraph",
-          "data": "║              DIGITAL ETTERFORSKNING (BRÅK)               ║"
+          "data": "             DIGITAL ETTERFORSKNING (BRÅK)               "
         },
         {
           "type": "paragraph",
-          "data": "╚═══════════════════════════════════════════════════════════╝"
+          "data": ""
         },
         {
           "type": "paragraph",
