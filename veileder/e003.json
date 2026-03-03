@@ -88,11 +88,6 @@
           "data": "En IP-adresse (Internet Protocol-adresse) er som et husnummer på internett. Akkurat som postbudet trenger din hjemmeadresse for å levere post, trenger internett IP-adressen din for å vite hvor data skal sendes."
         },
         {
-          "type": "callout",
-          "kind": "CASE",
-          "data": "Eksempel:"
-        },
-        {
           "type": "paragraph",
           "data": "Din hjemmeadresse: Skoleveien 12, 1473 Lørenskog"
         },
@@ -661,11 +656,6 @@
         {
           "type": "paragraph",
           "data": "En registrering på en digital plattform"
-        },
-        {
-          "type": "callout",
-          "kind": "CASE",
-          "data": "Eksempel: @k13_nord på Snapchat"
         },
         {
           "type": "paragraph",
@@ -2138,11 +2128,6 @@
         {
           "type": "paragraph",
           "data": "Små bokstaver, minimal punktum, samme slang på tvers av plattformer"
-        },
-        {
-          "type": "callout",
-          "kind": "CASE",
-          "data": "Eksempel:"
         },
         {
           "type": "paragraph",
@@ -4302,115 +4287,111 @@
         },
         {
           "type": "paragraph",
-          "data": "╔═══════════════════════════════════════════════════════════╗"
+          "data": " 🚨 ESKALER TIL IKT-KRIMENHET NÅR:                         "
         },
         {
           "type": "paragraph",
-          "data": "║ 🚨 ESKALER TIL IKT-KRIMENHET NÅR:                         ║"
+          "data": "║                                                           "
         },
         {
           "type": "paragraph",
-          "data": "║                                                           ║"
+          "data": " 1. KRYPTERT KOMMUNIKASJON                                 "
         },
         {
           "type": "paragraph",
-          "data": "║ 1. KRYPTERT KOMMUNIKASJON                                 ║"
+          "data": "    • Telegram-meldinger (end-to-end kryptert)             "
         },
         {
           "type": "paragraph",
-          "data": "║    • Telegram-meldinger (end-to-end kryptert)             ║"
+          "data": "    • Signal, Wire, WhatsApp (krypterte apper)             "
         },
         {
           "type": "paragraph",
-          "data": "║    • Signal, Wire, WhatsApp (krypterte apper)             ║"
+          "data": "   • Du trenger INNHOLDET, ikke bare metadata             "
         },
         {
           "type": "paragraph",
-          "data": "║    • Du trenger INNHOLDET, ikke bare metadata             ║"
+          "data": "                                                           "
         },
         {
           "type": "paragraph",
-          "data": "║                                                           ║"
+          "data": " 2. IP-ADRESSE SPORING                                     "
         },
         {
           "type": "paragraph",
-          "data": "║ 2. IP-ADRESSE SPORING                                     ║"
+          "data": "   • Du trenger å vite hvem som brukte en IP              "
         },
         {
           "type": "paragraph",
-          "data": "║    • Du trenger å vite hvem som brukte en IP              ║"
+          "data": "    • Krever samarbeid med internettleverandør (Telenor)   "
         },
         {
           "type": "paragraph",
-          "data": "║    • Krever samarbeid med internettleverandør (Telenor)   ║"
+          "data": "    • Krever rettslig kjennelse (strpl. § 197)             "
         },
         {
           "type": "paragraph",
-          "data": "║    • Krever rettslig kjennelse (strpl. § 197)             ║"
+          "data": "                                                           "
         },
         {
           "type": "paragraph",
-          "data": "║                                                           ║"
+          "data": " 3. DATABESLAG                                             "
         },
         {
           "type": "paragraph",
-          "data": "║ 3. DATABESLAG                                             ║"
+          "data": "    • Fysisk enhet (telefon, PC) må analyseres             "
         },
         {
           "type": "paragraph",
-          "data": "║    • Fysisk enhet (telefon, PC) må analyseres             ║"
+          "data": "    • Kryptert harddisk må dekrypteres                     "
         },
         {
           "type": "paragraph",
-          "data": "║    • Kryptert harddisk må dekrypteres                     ║"
+          "data": "    • Slettede data må gjenopprettes                       "
         },
         {
           "type": "paragraph",
-          "data": "║    • Slettede data må gjenopprettes                       ║"
+          "data": "                                                           "
         },
         {
           "type": "paragraph",
-          "data": "║                                                           ║"
+          "data": " 4. AVANSERT NETTVERKSANALYSE                              "
         },
         {
           "type": "paragraph",
-          "data": "║ 4. AVANSERT NETTVERKSANALYSE                              ║"
+          "data": "    • Maltego, i2 Analyst's Notebook (krever lisens)      "
         },
         {
           "type": "paragraph",
-          "data": "║    • Maltego, i2 Analyst's Notebook (krever lisens)       ║"
+          "data": "    • Automatisert scraping av 1000+ profiler              "
         },
         {
           "type": "paragraph",
-          "data": "║    • Automatisert scraping av 1000+ profiler              ║"
+          "data": "   • Maskinlæring for mønstergjenkjenning                 "
         },
         {
           "type": "paragraph",
-          "data": "║    • Maskinlæring for mønstergjenkjenning                 ║"
+          "data": "║                                                           "
         },
         {
           "type": "paragraph",
-          "data": "║                                                           ║"
+          "data": " 5. DARK WEB ETTERFORSKNING                                "
         },
         {
           "type": "paragraph",
-          "data": "║ 5. DARK WEB ETTERFORSKNING                                ║"
+          "data": "    • Tor-nettverk undersøkelse                            "
         },
         {
           "type": "paragraph",
-          "data": "║    • Tor-nettverk undersøkelse                            ║"
+          "data": "    • Kryptovaluta-sporing (Bitcoin, Monero)               "
         },
         {
           "type": "paragraph",
-          "data": "║    • Kryptovaluta-sporing (Bitcoin, Monero)               ║"
+          "data": "    • Krever spesialisert kompetanse og verktøy            "
         },
         {
           "type": "paragraph",
-          "data": "║    • Krever spesialisert kompetanse og verktøy            ║"
-        },
-        {
-          "type": "paragraph",
-          "data": "╚═══════════════════════════════════════════════════════════╝"
+          "data": ""
         },
         {
           "type": "callout",
@@ -4465,10 +4446,6 @@
         {
           "type": "paragraph",
           "data": "GOD forespørsel:"
-        },
-        {
-          "type": "paragraph",
-          "data": "╔═══════════════════════════════════════════════════════════╗"
         },
         {
           "type": "paragraph",
@@ -4613,10 +4590,6 @@
         {
           "type": "paragraph",
           "data": "║ • TPS-vurdering                                           ║"
-        },
-        {
-          "type": "paragraph",
-          "data": "╚═══════════════════════════════════════════════════════════╝"
         },
         {
           "type": "paragraph",
