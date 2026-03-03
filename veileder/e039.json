@@ -109,13 +109,12 @@
       "overskrift": "FORFATTER",
       "komponenter": [
         {
+         {
           "type": "paragraph",
           "data": "Skrevet av Spesialetterforsker Trygve Justad Bjørntvedt."
         }
       ]
-    }
-  ]
-}
+    },
     {
       "id": "s03",
       "overskrift": "BRÅK-KARTLEGGING – FRA LOMMEBOK TIL IDENTITET",
