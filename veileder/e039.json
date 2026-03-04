@@ -10,24 +10,24 @@
           "type": "grid",
           "data": [
             "Begrep | Definisjon",
-            [cite_start]"Kryptovaluta | Digital valuta basert på kryptografi og blokkjedeteknologi. Ingen sentralbank[cite: 5].",
-            "Blokkjede | [cite_start]En offentlig, uforanderlig digital regnskapsbok[cite: 7].",
-            "Lommebok | [cite_start]Programvare som lagrer kryptografiske nøkler (bankboks-analogi)[cite: 10, 11].",
-            "Lommebokadresse | [cite_start]Alfanumerisk kode (kontonummer-analogi) for sending/mottak[cite: 13, 15].",
-            "Pseudonymitet | [cite_start]Transaksjoner er synlige, men ikke direkte koblet til navn[cite: 16, 17].",
-            "Private Key | [cite_start]Hemmelig kode som beviser eierskap (PIN-kode-analogi)[cite: 19, 20].",
-            "Seed-frase | [cite_start]Hovednøkkel på 12-24 ord som gir full tilgang til midlene[cite: 21, 22].",
-            "UTXO | [cite_start]Unspent Transaction Output – vekselpenger på Bitcoin[cite: 24].",
-            "On-ramp / Off-ramp | [cite_start]Tjenester for å kjøpe eller selge krypto mot tradisjonell valuta (fiat)[cite: 26, 28].",
-            "KYC / AML | [cite_start]Krav om identitetsverifikasjon og hvitvaskingsregler[cite: 30, 32].",
-            "Mixer / Tumbler | [cite_start]Tjeneste som blander transaksjoner for å skjule pengesporet[cite: 33].",
-            "CoinJoin | [cite_start]Metode der flere brukere kombinerer transaksjoner i én felles struktur[cite: 35, 36].",
-            "Chain Hopping | [cite_start]Veksling mellom ulike kryptovalutaer for å miste sporingslogikken[cite: 38].",
-            "Monero (XMR) | [cite_start]Personvernsmynt med innebygd anonymisering[cite: 40].",
-            "DEX | [cite_start]Desentralisert børs uten KYC og sentral aktør[cite: 43].",
-            "Clustering | [cite_start]Gruppering av adresser som tilhører samme person/enhet[cite: 47].",
-            "NFT | [cite_start]Digitalt eiersskapsbevis (Non-Fungible Token)[cite: 53].",
-            "PayID | [cite_start]Forenklet identifikator knyttet til en Binance-konto [cite: 59, 60]"
+            "Kryptovaluta | Digital valuta basert på kryptografi og blokkjedeteknologi. Ingen sentralbank[cite: 5].",
+            "Blokkjede | En offentlig, uforanderlig digital regnskapsbok[cite: 7].",
+            "Lommebok | Programvare som lagrer kryptografiske nøkler (bankboks-analogi)[cite: 10, 11].",
+            "Lommebokadresse | Alfanumerisk kode (kontonummer-analogi) for sending/mottak[cite: 13, 15].",
+            "Pseudonymitet | Transaksjoner er synlige, men ikke direkte koblet til navn[cite: 16, 17].",
+            "Private Key | Hemmelig kode som beviser eierskap (PIN-kode-analogi)[cite: 19, 20].",
+            "Seed-frase | Hovednøkkel på 12-24 ord som gir full tilgang til midlene[cite: 21, 22].",
+            "UTXO | Unspent Transaction Output – vekselpenger på Bitcoin[cite: 24].",
+            "On-ramp / Off-ramp | Tjenester for å kjøpe eller selge krypto mot tradisjonell valuta (fiat)[cite: 26, 28].",
+            "KYC / AML | Krav om identitetsverifikasjon og hvitvaskingsregler[cite: 30, 32].",
+            "Mixer / Tumbler | Tjeneste som blander transaksjoner for å skjule pengesporet[cite: 33].",
+            "CoinJoin | Metode der flere brukere kombinerer transaksjoner i én felles struktur[cite: 35, 36].",
+            "Chain Hopping | Veksling mellom ulike kryptovalutaer for å miste sporingslogikken[cite: 38].",
+            "Monero (XMR) | Personvernsmynt med innebygd anonymisering[cite: 40].",
+            "DEX | Desentralisert børs uten KYC og sentral aktør[cite: 43].",
+            "Clustering | Gruppering av adresser som tilhører samme person/enhet[cite: 47].",
+            "NFT | Digitalt eiersskapsbevis (Non-Fungible Token)[cite: 53].",
+            "PayID | Forenklet identifikator knyttet til en Binance-konto [cite: 59, 60]"
           ]
         }
       ]
@@ -38,27 +38,27 @@
       "komponenter": [
         {
           "type": "paragraph",
-          [cite_start]"data": "**Analogi: Den åpne regnskapsbok i et glasshus.** Tenk deg et regnskap som alle kan lese, ingen kan slette, og som eksisterer i tusenvis av kopier verden over[cite: 63, 64]. [cite_start]Det finnes ingen sentralbank; alle noder i nettverket holder regnskapet[cite: 65]."
+          "data": "**Analogi: Den åpne regnskapsbok i et glasshus.** Tenk deg et regnskap som alle kan lese, ingen kan slette, og som eksisterer i tusenvis av kopier verden over[cite: 63, 64]. Det finnes ingen sentralbank; alle noder i nettverket holder regnskapet[cite: 65]."
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "**Kontrast til tradisjonell bank:** Mens en Vipps-overføring er privat mellom banken og partene, er en Bitcoin-overføring synlig for alle som vet adressene[cite: 66, 67]."
+          "data": "**Kontrast til tradisjonell bank:** Mens en Vipps-overføring er privat mellom banken og partene, er en Bitcoin-overføring synlig for alle som vet adressene[cite: 66, 67]."
         },
         {
           "type": "paragraph",
-          "data": "**Pseudonymitet – ikke anonymitet:** Dette er det viktigste begrepet. [cite_start]Brukere er representert av adresser, noe som gjør dem teknisk anonyme, men deres fotavtrykk kan spores[cite: 70, 71]."
+          "data": "**Pseudonymitet – ikke anonymitet:** Dette er det viktigste begrepet. Brukere er representert av adresser, noe som gjør dem teknisk anonyme, men deres fotavtrykk kan spores[cite: 70, 71]."
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"ANONYMITET: Sporene finnes ikke (f.eks. kontanter, XMR-transaksjoner)[cite: 73, 74].",
-            [cite_start]"PSEUDONYMITET: Sporene finnes, men er ikke koblet til navn (f.eks. Bitcoin, Ethereum)[cite: 75, 76]."
+            "ANONYMITET: Sporene finnes ikke (f.eks. kontanter, XMR-transaksjoner)[cite: 73, 74].",
+            "PSEUDONYMITET: Sporene finnes, men er ikke koblet til navn (f.eks. Bitcoin, Ethereum)[cite: 75, 76]."
           ]
         },
         {
           "type": "callout",
           "kind": "TIP",
-          [cite_start]"data": "En Bitcoin-lommebokadresse er som et fingeravtrykk: Unikt og sporbart dersom man klarer å koble det til en database[cite: 78, 80]."
+          "data": "En Bitcoin-lommebokadresse er som et fingeravtrykk: Unikt og sporbart dersom man klarer å koble det til en database[cite: 78, 80]."
         }
       ]
     },
@@ -69,15 +69,15 @@
         {
           "type": "list",
           "data": [
-            [cite_start]"Ingen bankgodkjenning: Kan opprette lommebok uten ID eller navn[cite: 84, 85].",
-            [cite_start]"Grenseløse overføringer: Millionbeløp kan sendes globalt uten SWIFT-kontroll[cite: 87, 88].",
-            [cite_start]"Irreversibilitet: Transaksjoner kan ikke angres av en bank[cite: 91, 92].",
-            [cite_start]"Teknologisk barriere: Mange etterforskere mangler kompetanse på feltet[cite: 97, 98]."
+            "Ingen bankgodkjenning: Kan opprette lommebok uten ID eller navn[cite: 84, 85].",
+            "Grenseløse overføringer: Millionbeløp kan sendes globalt uten SWIFT-kontroll[cite: 87, 88].",
+            "Irreversibilitet: Transaksjoner kan ikke angres av en bank[cite: 91, 92].",
+            "Teknologisk barriere: Mange etterforskere mangler kompetanse på feltet[cite: 97, 98]."
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "**Kriminalitetstyper:** Systematisk bruk i ransomware, narkotikahandel (dark web), hvitvasking og Violence as a Service (VaaS) [cite: 101-105]."
+          "data": "**Kriminalitetstyper:** Systematisk bruk i ransomware, narkotikahandel (dark web), hvitvasking og Violence as a Service (VaaS) [cite: 101-105]."
         }
       ]
     },
@@ -87,32 +87,32 @@
       "komponenter": [
         {
           "type": "paragraph",
-          [cite_start]"data": "**Teknikk 1: Mixers og Tumblers.** Tjenester som blander krypto fra hundrevis av brukere for å bryte pengesporet[cite: 111, 115]."
+          "data": "**Teknikk 1: Mixers og Tumblers.** Tjenester som blander krypto fra hundrevis av brukere for å bryte pengesporet[cite: 111, 115]."
         },
         {
           "type": "callout",
           "kind": "CASE",
-          "data": "Sluk fungerer en mixer: Kriminell sender 1 BTC til tjenesten -> Mixeren blander med andre -> Kriminell mottar 0.99 BTC fra en helt annen adresse. [cite_start]Ny \"ren\" Bitcoin[cite: 113, 122, 124]."
+          "data": "Sluk fungerer en mixer: Kriminell sender 1 BTC til tjenesten -> Mixeren blander med andre -> Kriminell mottar 0.99 BTC fra en helt annen adresse. Ny \"ren\" Bitcoin[cite: 113, 122, 124]."
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "**Teknikk 2: CoinJoin.** Kombinerer betalinger fra ulike avsendere i én enkelt transaksjon for å skjule hvem som sendte til hvem[cite: 130, 131]."
+          "data": "**Teknikk 2: CoinJoin.** Kombinerer betalinger fra ulike avsendere i én enkelt transaksjon for å skjule hvem som sendte til hvem[cite: 130, 131]."
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "**Teknikk 3: Chain Hopping.** Veksling mellom ulike krypto-typer (f.eks. BTC til Monero) for å miste sporingslogikken[cite: 134, 136]."
+          "data": "**Teknikk 3: Chain Hopping.** Veksling mellom ulike krypto-typer (f.eks. BTC til Monero) for å miste sporingslogikken[cite: 134, 136]."
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "**Teknikk 4: Personvernsmynter.** Monero (XMR) er gullstandarden og bruker ring-signaturer, stealth-adresser og RingCT for å skjule avsender, mottaker og beløp[cite: 150, 151, 153]."
+          "data": "**Teknikk 4: Personvernsmynter.** Monero (XMR) er gullstandarden og bruker ring-signaturer, stealth-adresser og RingCT for å skjule avsender, mottaker og beløp[cite: 150, 151, 153]."
         },
         {
           "type": "grid",
           "data": [
             "Egenskap | CEX (Sentralisert) | DEX (Desentralisert)",
-            "KYC-krav | [cite_start]Ja (pass påkrevd) [cite: 175] | [cite_start]Nei [cite: 175]",
-            "Identitetsdata | [cite_start]Lagret [cite: 176] | [cite_start]Ingen [cite: 176]",
-            "Rettslig utlevering | [cite_start]Mulig [cite: 177] | [cite_start]Umulig (ingen eier) [cite: 177]"
+            "KYC-krav | Ja (pass påkrevd) [cite: 175] | Nei [cite: 175]",
+            "Identitetsdata | Lagret [cite: 176] | Ingen [cite: 176]",
+            "Rettslig utlevering | Mulig [cite: 177] | Umulig (ingen eier) [cite: 177]"
           ]
         }
       ]
@@ -123,32 +123,32 @@
       "komponenter": [
         {
           "type": "paragraph",
-          [cite_start]"data": "Clustering er gruppering av adresser som tilhører samme person basert på mønsteranalyse[cite: 181, 184]."
+          "data": "Clustering er gruppering av adresser som tilhører samme person basert på mønsteranalyse[cite: 181, 184]."
         },
         {
           "type": "paragraph",
-          "data": "**B.1.1 Co-spending (Samforbruk):** Den sterkeste heuristikken. [cite_start]Hvis flere adresser brukes som inputs i én transaksjon, tilhører de sannsynligvis samme eier[cite: 188, 189]."
+          "data": "**B.1.1 Co-spending (Samforbruk):** Den sterkeste heuristikken. Hvis flere adresser brukes som inputs i én transaksjon, tilhører de sannsynligvis samme eier[cite: 188, 189]."
         },
         {
           "type": "callout",
           "kind": "TIP",
-          "data": "Vekseladresser: Bitcoin sender automatisk \"vekslepenger\" tilbake til en ny adresse kontrollert av avsender. [cite_start]Dette er et effektivt verktøy for clustering[cite: 205, 216]."
+          "data": "Vekseladresser: Bitcoin sender automatisk \"vekslepenger\" tilbake til en ny adresse kontrollert av avsender. Dette er et effektivt verktøy for clustering[cite: 205, 216]."
         },
         {
           "type": "grid",
           "data": [
             "Verktøy | Beskrivelse",
-            "Chainalysis Reactor | [cite_start]Industristandard for politiet[cite: 249].",
-            "Breadcrumbs.app | [cite_start]GRATIS visuelt verktøy for nybegynnere[cite: 256, 258].",
-            "Blockchair | [cite_start]GRATIS multi-valuta utforsker (BTC, ETH, XMR)[cite: 272]."
+            "Chainalysis Reactor | Industristandard for politiet[cite: 249].",
+            "Breadcrumbs.app | GRATIS visuelt verktøy for nybegynnere[cite: 256, 258].",
+            "Blockchair | GRATIS multi-valuta utforsker (BTC, ETH, XMR)[cite: 272]."
           ]
         },
         {
           "type": "list",
           "data": [
-            [cite_start]"Sirkulære bevegelser: Indikerer mixer-aktivitet[cite: 276, 277].",
-            [cite_start]"Stjerne-formasjon: Indikerer sentral kontroll (hub) som f.eks. børsinnskudd[cite: 280, 281].",
-            [cite_start]"Peel Chain: Gradvis reduksjon av beløp for å skjule seg i støyen[cite: 284, 286]."
+            "Sirkulære bevegelser: Indikerer mixer-aktivitet[cite: 276, 277].",
+            "Stjerne-formasjon: Indikerer sentral kontroll (hub) som f.eks. børsinnskudd[cite: 280, 281].",
+            "Peel Chain: Gradvis reduksjon av beløp for å skjule seg i støyen[cite: 284, 286]."
           ]
         }
       ]
@@ -159,27 +159,27 @@
       "komponenter": [
         {
           "type": "paragraph",
-          [cite_start]"data": "Etterforskeren kan koble en adresse til en person via \"lekkasjer\" der brukeren selv eksponerer informasjonen i sosiale medier[cite: 335, 336]."
+          "data": "Etterforskeren kan koble en adresse til en person via \"lekkasjer\" der brukeren selv eksponerer informasjonen i sosiale medier[cite: 335, 336]."
         },
         {
           "type": "grid",
           "data": [
             "Signal | Betydning",
-            "Laser Eyes | [cite_start]Bitcoin-entusiast[cite: 341].",
-            "NFT-profilbilde | [cite_start]Eier av verdifulle digitale eiendeler[cite: 342, 343].",
-            "HODL / Diamond Hands | [cite_start]Langtidsinvestor[cite: 345, 348].",
-            "$BTC / $ETH i bio | [cite_start]Bruker ticker-symboler for å vise portefølje[cite: 347]."
+            "Laser Eyes | Bitcoin-entusiast[cite: 341].",
+            "NFT-profilbilde | Eier av verdifulle digitale eiendeler[cite: 342, 343].",
+            "HODL / Diamond Hands | Langtidsinvestor[cite: 345, 348].",
+            "$BTC / $ETH i bio | Bruker ticker-symboler for å vise portefølje[cite: 347]."
           ]
         },
         {
           "type": "callout",
           "kind": "TIP",
-          [cite_start]"data": "Binance PayID-søk: Ved å taste inn en e-post eller telefonnummer i Binance Pay, kan man få ut verifisert navn og profilbilde[cite: 399, 407, 408]."
+          "data": "Binance PayID-søk: Ved å taste inn en e-post eller telefonnummer i Binance Pay, kan man få ut verifisert navn og profilbilde[cite: 399, 407, 408]."
         },
         {
           "type": "callout",
           "kind": "LEGAL",
-          "data": "Binance PayID-teknikken er passiv observasjon av informasjon gjort tilgjengelig for brukere. [cite_start]Det krever normalt ikke rettslig kjennelse, men dokumenter utførelsen nøye[cite: 416, 419]."
+          "data": "Binance PayID-teknikken er passiv observasjon av informasjon gjort tilgjengelig for brukere. Det krever normalt ikke rettslig kjennelse, men dokumenter utførelsen nøye[cite: 416, 419]."
         }
       ]
     },
@@ -190,16 +190,16 @@
         {
           "type": "list",
           "data": [
-            [cite_start]"Straffeprosessloven § 210: Utleveringspålegg for KYC-data og transaksjonshistorikk[cite: 561, 564].",
-            [cite_start]"Hvitvaskingsloven §§ 4-9: Rapporteringsplikt for mistenkelige transaksjoner over 15 000 kr[cite: 567, 570].",
-            [cite_start]"MiCA-regulering: Kommende EU-krav om full KYC og 'Travel Rule' for krypto[cite: 572, 575].",
-            [cite_start]"MLAT: Internasjonalt samarbeid for utlevering fra utenlandske børser[cite: 577, 579]."
+            "Straffeprosessloven § 210: Utleveringspålegg for KYC-data og transaksjonshistorikk[cite: 561, 564].",
+            "Hvitvaskingsloven §§ 4-9: Rapporteringsplikt for mistenkelige transaksjoner over 15 000 kr[cite: 567, 570].",
+            "MiCA-regulering: Kommende EU-krav om full KYC og 'Travel Rule' for krypto[cite: 572, 575].",
+            "MLAT: Internasjonalt samarbeid for utlevering fra utenlandske børser[cite: 577, 579]."
           ]
         },
         {
           "type": "callout",
           "kind": "WARNING",
-          "data": "Børser sletter ofte logger etter 90-180 dager. [cite_start]Send alltid preserveringsanmodning umiddelbart[cite: 725, 726]."
+          "data": "Børser sletter ofte logger etter 90-180 dager. Send alltid preserveringsanmodning umiddelbart[cite: 725, 726]."
         }
       ]
     },
@@ -210,17 +210,17 @@
         {
           "type": "list",
           "data": [
-            [cite_start]"Er adressen søkt i blockchain-utforsker og visualisert[cite: 729, 730]?",
-            [cite_start]"Er e-post/telefon sjekket mot Binance Pay[cite: 733]?",
-            [cite_start]"Er det sjekket for vanity wallet-elementer (f.eks. navn i adressen)[cite: 734]?",
-            [cite_start]"Er preserveringsanmodning sendt til relevant børs[cite: 740]?",
-            [cite_start]"Er KYC-data kryssverifisert mot Folkeregisteret[cite: 744]?",
-            [cite_start]"Er alle transaksjonshasher dokumentert med SHA-256 hash[cite: 747, 748]?"
+            "Er adressen søkt i blockchain-utforsker og visualisert[cite: 729, 730]?",
+            "Er e-post/telefon sjekket mot Binance Pay[cite: 733]?",
+            "Er det sjekket for vanity wallet-elementer (f.eks. navn i adressen)[cite: 734]?",
+            "Er preserveringsanmodning sendt til relevant børs[cite: 740]?",
+            "Er KYC-data kryssverifisert mot Folkeregisteret[cite: 744]?",
+            "Er alle transaksjonshasher dokumentert med SHA-256 hash[cite: 747, 748]?"
           ]
         },
         {
           "type": "paragraph",
-          [cite_start]"data": "**Oppsummering:** Kryptosaker koker ned til å finne punktet der kryptoen berører et identifiserbart system (KYC-børs eller bank)[cite: 756, 757]. [cite_start]Blokkjedeanalyse er et etterforskningsinstrument (leads), mens det endelige beviset er KYC-data bekreftet via rettslig utlevering[cite: 547, 548]."
+          "data": "**Oppsummering:** Kryptosaker koker ned til å finne punktet der kryptoen berører et identifiserbart system (KYC-børs eller bank)[cite: 756, 757]. Blokkjedeanalyse er et etterforskningsinstrument (leads), mens det endelige beviset er KYC-data bekreftet via rettslig utlevering[cite: 547, 548]."
         }
       ]
     }
