@@ -38,7 +38,8 @@
   {
     "id": 37,
     "tittel": "IP ADRESSER"
-  },{
+  },
+  {
     "id": 39,
     "tittel": "KRYPTOVALUTA"
   },
@@ -49,9 +50,32 @@
   {
     "id": 44,
     "tittel": "AI & BRÅK"
-  },
-  {
+  },{
     "id": 48,
     "tittel": "SIGNAL"
+  },
+  {
+    "id": 45,
+    "tittel": "Test4"
+  },
+  {
+    "id": 46,
+    "tittel": "Test5"
+  },
+  {
+    "id": 47,
+    "tittel": "test1"
+  },
+  {
+    "id": 40,
+    "tittel": "test2"
+  },
+  {
+    "id": 49,
+    "tittel": "test3"
+  },
+  {
+    "id": 50,
+    "tittel": "test6"
   }
 ]
