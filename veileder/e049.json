@@ -1,0 +1,148 @@
+{
+  "tittel": "AI I OSINT-ETTERFORSKNING",
+  "undertittel": "GRUNNLEGGENDE OM KUNSTIG INTELLIGENS",
+  "ordliste": [],
+  "seksjoner": [
+    {
+      "id": "s01",
+      "overskrift": "0.1 Det digitale åstedet: Hvorfor internett alltid etterlater spor",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          [cite_start]"data": "Internett er som snø på bakken. Hver gang noen går over en snødekt gate, etterlater de fotspor. Selv om snøen smelter eller noen prøver å viske ut sporene, vil det alltid være rester – kanskje mikroskopiske, men sporene finnes. På internett er dette enda mer permanent[cite: 36]."
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "Analogi: Snøen som aldri smelter helt. [cite_start]Tenk deg at hver gang du besøker en nettside, sender en melding, eller liker et bilde, etterlater du et fotspor i digital snø[cite: 36]."
+        },
+        {
+          "type": "list",
+          "data": [
+            [cite_start]"Identifisere hvem som har gjort hva [cite: 36]",
+            [cite_start]"Finne ut når og hvor noe skjedde [cite: 36]",
+            [cite_start]"Forstå hvem som kjenner hvem [cite: 36]",
+            [cite_start]"Rekonstruere hendelsesforløp [cite: 36]"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "LEGAL",
+          "data": "Viktig juridisk poeng: Selv om sporene finnes, betyr ikke det at politiet kan hente dem uten videre. [cite_start]Vi må alltid følge loven (straffeprosessloven §§ 196, 197)[cite: 37]."
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "overskrift": "0.2 Din digitale uniform: Hva er en IP-adresse?",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "En IP-adresse (Internet Protocol-adresse) er som et husnummer på internett. [cite_start]Akkurat som postbudet trenger din hjemmeadresse for å levere post, trenger internett IP-adressen din for å vite hvor data skal sendes[cite: 37]."
+        },
+        {
+          "type": "paragraph",
+          [cite_start]"data": "**Eksempel:**\nDin hjemmeadresse: Skoleveien 12, 1473 Lørenskog\nDin IP-adresse: 82.134.47.23 [cite: 37]"
+        },
+        {
+          "type": "list",
+          "data": [
+            [cite_start]"Registreres av Snapchat (de lagrer hvem som logget inn fra hvor) [cite: 38]",
+            [cite_start]"Kan kobles til Telenor (internettleverandøren) [cite: 38]",
+            [cite_start]"Telenor kan (med rettskjennelse) fortelle oss hvilken kunde som hadde den IP-adressen på det tidspunktet [cite: 38]"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          [cite_start]"data": "Husk: Vi kan IKKE se IP-adresser uten rettshjelp (krever politifullmakter) og vi kan IKKE spore IP-adresser selv[cite: 38]."
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "overskrift": "0.3 Sporsikring 101: Hvordan unngå å bli oppdaget",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Når en krimtekniker skal undersøke et åsted, bruker de hansker og beskyttelsesdrakter. [cite_start]Digital etterforskning krever også \"digitale hansker\"[cite: 39]."
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "VPN (Virtual Private Network): En tunnel som skjuler hvor du er. [cite_start]Som å bruke en postboks i en annen by – postbudet tror du bor der[cite: 39]."
+        },
+        {
+          "type": "list",
+          "data": [
+            [cite_start]"Bruk anonym nettleser (Incognito) [cite: 39]",
+            [cite_start]"Bruk en separert PC/enhet kun til etterforskning [cite: 40]",
+            [cite_start]"Aldri logg inn på dine egne sosiale medier på etterforskningskontoen [cite: 41]"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "overskrift": "0.4 Mental HMS: Hvorfor du må skru av bildevisning",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Når du jobber med slipemaskin på verksted, bruker du vernebriller. [cite_start]Det samme gjelder digital etterforskning av potensielt traumatiserende innhold[cite: 41]."
+        },
+        {
+          "type": "list",
+          "data": [
+            [cite_start]"Skru av automatisk bildevisning i nettleser [cite: 43]",
+            [cite_start]"Bruk \"blur NSFW content\"-funksjoner [cite: 43]",
+            [cite_start]"Ha en kollega til stede som \"safety observer\" [cite: 43]"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "STOPP UMIDDELBART hvis du finner CSAM/CSEM: 1. Ikke se på materialet. 2. Ikke ta screenshot. 3. [cite_start]Kontakt Kripos (23 20 80 00)[cite: 44]."
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "overskrift": "0.5 Juridisk bevissthet: Forskjellen på lovlig observasjon og ulovlig provokasjon",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          [cite_start]"data": "Det er lovlig å se inn gjennom et vindu hvis gardinene er åpne (offentlig tilgjengelig), men ulovlig å bryte seg inn selv om døren står åpen[cite: 45]."
+        },
+        {
+          "type": "list",
+          "data": [
+            [cite_start]"✅ LOVLIG: Å besøke åpne profiler, google brukernavn, bruke offentlige registre [cite: 45, 46]",
+            [cite_start]"❌ KREVER BESLUTNING: Sende venneforespørsel, like innlegg, bli medlem av lukket gruppe [cite: 46]",
+            [cite_start]"⛔ ULOVLIG (Provokasjon): Chatte for å få noen til å innrømme noe, late som du vil kjøpe narkotika [cite: 47]"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "EKSTRA VARSOMHET VED MINDREÅRIGE: Barn under 15 år er under kriminell lavalder. De kan IKKE tiltales strafferettslig. [cite_start]Prioriter melding til barnevern[cite: 48]."
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "overskrift": "Kontaktinformasjon",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "Enhet | Kontaktinfo",
+            "Kripos BRÅK-team | [cite_start]Telefon: 23 20 80 00 [cite: 228]",
+            "IKT-Krimenhet | [cite_start]Telefon: 23 20 81 00 [cite: 228]",
+            "Barnevern Lørenskog | [cite_start]Telefon: 67 93 00 00 [cite: 228]",
+            "Nødnummer | [cite_start]112 [cite: 228]"
+          ]
+        }
+      ]
+    }
+  ]
+}
