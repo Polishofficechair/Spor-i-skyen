@@ -1,0 +1,112 @@
+{
+  "tittel": "AI I OSINT-ETTERFORSKNING",
+  "undertittel": "KRYPTOVALUTA OG BLOKKJEDETEKNOLOGI",
+  "ordliste": [],
+  "seksjoner": [
+    {
+      "id": "s01",
+      "overskrift": "1.0 Grunnleggende om Kryptovaluta",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Kryptovaluta er digital valuta basert på kryptografi og blokkjedeteknologi. Det eksisterer ingen sentralbank, og det finnes ingen fysiske sedler. Eksempler inkluderer Bitcoin (BTC), Ethereum (ETH) og Monero (XMR)."
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "DEFINISJON: En blokkjede er en offentlig, uforanderlig digital regnskapsbok. Tenk på det som en notisbok der ALLE transaksjoner skrives ned; alle kan lese den, og ingen kan slette noe."
+        },
+        {
+          "type": "paragraph",
+          "data": "En lommebok (wallet) er programvare som lagrer kryptografiske nøkler. Det er viktig å forstå at lommeboken ikke inneholder selve pengene, men nøklene som gir tilgang til dem."
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "overskrift": "1.1 Pseudonymitet vs. Anonymitet",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "En vanlig misoppfatning er at kryptovaluta er helt anonymt. I virkeligheten er de fleste blokkjeder pseudonyme."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Transaksjoner er synlige for alle.",
+            "Avsender og mottaker identifiseres med alfanumeriske adresser.",
+            "Koblingen til en ekte identitet skjer ofte ved 'on-ramps' eller 'off-ramps' (børser)."
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "EKSEMPEL: En etterforsker ser at adresse A har sendt 0.5 BTC til adresse B. Ved å bruke blokkjedeanalyse kan man se at adresse B senere sender midler til en kjent børs som krever legitimasjon (KYC)."
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "overskrift": "1.2 Sikring av bevis og Private Keys",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VIKTIG: En 'Private Key' er den hemmelige koden som beviser eierskap. Hvis en mistenkt mister sin Private Key eller Seed Phrase, er midlene tapt for alltid. Politiet kan ikke 'nullstille passordet' på en desentralisert blokkjede."
+        },
+        {
+          "type": "paragraph",
+          "data": "Ved beslag av digitalt utstyr er det kritisk å identifisere 12 eller 24 ord (Seed Phrase) skrevet ned på papir eller lagret i passordbehandlere."
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "overskrift": "1.3 Etterforskingsmetodikk",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "For å identifisere bakmenn bak virtuelle transaksjoner, benyttes kombinasjonen av tre elementer:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Blokkjedeanalyse for å spore pengestrømmen.",
+            "OSINT for å koble adresser til brukernavn på forum eller sosiale medier.",
+            "Rettslig utlevering fra vekslingstjenester (VASP/Børser)."
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "LEGAL",
+          "data": "JURIDISK: Transaksjoner registreres pseudonymt. FATF bemerker at myndigheter globalt har utfordringer med å identifisere hvem som er bak virtuelle aktiva, men ved bruk av korrekt metodikk kan pseudonymiteten kollapse."
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "overskrift": "Oppsummering",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Nøkkelprinsippet i kryptoetterforskning er å finne punktet der kryptovalutaen berører et identifiserbart system – en børs, en bankkonto eller et telefonnummer i Vipps."
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "overskrift": "Sjekkliste for etterforskeren",
+      "komponenter": [
+        {
+          "type": "list",
+          "data": [
+            "Er adresseformatet identifisert (f.eks. Bech32 for Bitcoin)?",
+            "Er alle on-ramp/off-ramp punkter logget?",
+            "Er TPS-vurdering dokumentert per funnkategori?",
+            "Er rapporten skrevet med klart skille mellom observasjon og tolkning?"
+          ]
+        }
+      ]
+    }
+  ]
+}
