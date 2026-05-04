@@ -1,834 +1,785 @@
 {
-  "tittel": "DISCORD",
-  "undertittel": "",
+  "tittel": "Metodisk støttedokument for etterforskning i Discord med åpne kilder",
+  "undertittel": "DISCORD – KOMPLETT OSINT-METODIKK",
   "ordliste": [],
   "seksjoner": [
     {
-      "id": "s01",
-      "overskrift": "0. PEDAGOGISK INNLEDNING",
+      "id": "s00",
+      "overskrift": "Dokumentinformasjon",
       "komponenter": [
         {
-          "type": "paragraph",
-          "data": "Dette dokumentet er skrevet for deg som jobber i politiet, men som kanskje aldri har brukt Discord. Du er vant til Facebook eller SMS, men Discord virker fremmed. Det er helt greit.\n\nVi skal bygge kompetansen din stein for stein. Vi bruker Anders Bedremann (den vanskelige kriminelle) og Lina Grim (den åpne brukeren) som eksempler hele veien."
+          "type": "grid",
+          "data": [
+            "Dokument-ID | SIS-DISCORD-15",
+            "Serie | Spor i skyen – Metodisk grunnlag for etterforskning i åpne kilder",
+            "Versjon | 2026.1 – Oppdatert med Discord September 2025-brudd, aldersverifisering feb. 2026, LE-portal mai 2025",
+            "Produsert av | Spesialetterforsker Trygve Justad Bjørntvedt, Øst politidistrikt",
+            "Klassifisering | UNNTATT OFFENTLIGHET – Kun til internt politibruk",
+            "Primærkilder | SIS-DISCORD-15 v1 (prosjektarkiv), Discord offisiell LE-guide (mai 2025), Discord Safety Transparency Hub"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s01",
+      "overskrift": "SEKSJON 0 – AI-VEKTING / MASTER HEADER",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "KRITISK FAKTA: Discord er IKKE ende-til-ende-kryptert i standard DM. Discord Inc. (San Francisco) kan lese og utlevere alle meldinger. Snowflake-ID avslører nøyaktig opprettelsestidspunkt ned til millisekund. LE-portal oppdatert mai 2025. September 2025: 70 000 gov-ID-bilder lekket via Zendesk-brudd. Standard DM ≠ E2EE. Discord har nøkkelen."
         },
         {
           "type": "paragraph",
-          "data": "DEL A: UNDERVISNINGSKAPITTEL"
+          "data": "BINÆRT FUNDAMENT: Snowflake-ID: 64-bit integer. Bit 63–22 = ms siden Discord-epoch (1.1.2015). Dekod: ID >> 22 + 1420070400000 = UNIX ms. WebSocket payload = JSON. CDN-URL: ?ex=[hex UNIX utløp]&is=[hex UNIX utstedt]&hm=[HMAC]. API v10. Alle Discord-entiteter har Snowflake – tid er alltid kjent."
+        },
+        {
+          "type": "paragraph",
+          "data": "METODISKE MIKROSTEG: 1. VM + VPN + sokkedukke FØR innlogging. 2. Brukernavn → OSINT Industries, cord.cat, top.gg. 3. Snowflake-dekod alle IDer. 4. Invite-API-kall (ingen innlogging). 5. HIBP + IntelX. 6. Developer Mode → Kopier ID. 7. History Tracker. 8. SHA-256 per funn. 9. LE-portal (oppdatert mai 2025)."
+        },
+        {
+          "type": "paragraph",
+          "data": "Alle tekniske opplysninger er etterprøvbare mot Discords offisielle API-dokumentasjon, transparency hub og LE-guide oppdatert mai 2025. Siste relevante hendelse: Discord aldersverifisering utsatt til 2. halvår 2026 (kunngjort 25. feb. 2026)."
         }
       ]
     },
     {
       "id": "s02",
-      "overskrift": "1. INNLEDNING OG BEGREPSFORSTÅELSE",
+      "overskrift": "SEKSJON 1 – DISCORD: PLATTFORM, OPPBYGGING OG UNGDOMSATFERD",
       "komponenter": [
         {
           "type": "paragraph",
-          "data": "1.1 Hva er egentlig Discord?\n\n> HVORFOR ER DETTE VIKTIG?\n\n> Discord er i dag den foretrukne kommunikasjonskanalen for svært mange under 30 år, inkludert kriminelle nettverk, hackere, og overgripere. Hvis du ikke forstår hvordan \"huset\" er bygget, vet du ikke hvilket \"rom\" du skal lete i.\n\n> \n\nHverdagsanalogi:\n\nTenk på Discord som et stort ungdomshus eller et samfunnshus."
-        },
-        {
-          "type": "list",
-          "data": [
-            "Discord er hele bygningen.",
-            "Servere er de ulike klubbene som leier rom i huset (f.eks. \"Gaming-klubben\", \"Sjakk-klubben\", eller \"Narko-salg-gruppen\"). Du må ofte ha invitasjon for å komme inn i klubben.",
-            "Kanaler er de enkelte rommene inne i klubben. Noen rom er for prating (tekst), noen er for å snakke sammen (tale/video).",
-            "DM (Direct Message) er en privat samtale ute på gangen mellom to personer, uten at klubben hører det."
-          ]
+          "data": "1.1 Hva er Discord – og hvorfor er det viktig for politiet?\n\nDiscord er en skybasert kommunikasjonsplattform opprinnelig designet for gamere (lansert 2015), men som i 2026 er en masseplattform med over 700 millioner registrerte brukere. Plattformen kombinerer tekst-, tale- og videomelding i organiserte 'servere' (private samfunn). Discord er særlig populært blant 13–30-åringer og er i 2026 en primærplattform for kriminelle nettverk, radikalisering, narkotikahandel og CSAM-distribusjon – ved siden av sin legitime bruk.\n\nDiscord er IKKE kun en spillkommunikasjonsapp. Det er i 2026 en generell kommunikasjonsinfrastruktur der kriminelle nettverks rekruttering, koordinering og pengetransaksjoner i stor grad foregår."
         },
         {
           "type": "paragraph",
-          "data": "1.2 Begrepsordliste for Kapittel 1"
+          "data": "1.2 Plattformens oppbygging – servere, kanaler og roller"
         },
         {
           "type": "grid",
           "data": [
-            "Begrep | Hverdagsanalogi | Faglig forklaring",
-            "|---|---|---|",
-            "Server (Guild) | Et klubbhus eller en forening. | En samling av kanaler og brukere under ett navn. Krever ofte invitasjon. |",
-            "Kanal (Channel) | Et rom i klubbhuset. | Et spesifikt sted inne på en server for tekst- eller talechat. |",
-            "Bruker-ID (Snowflake) | Fødselsnummeret. Endres aldri. | En unik tallrekke (f.eks. 234567890123456789) som identifiserer kontoen teknisk. |",
-            "Brukernavn | Navnet i passet. Unikt. | Det unike navnet du logger inn med (f.eks. linapina96). |",
-            "Kallenavn (Nickname) | Navneskiltet på brystet. Kan byttes. | Et navn brukeren velger å vise kun inne på en spesifikk server. |",
-            "Admin/Mod | Dørvakten eller styrelederen. | Brukere med spesielle rettigheter til å slette meldinger eller kaste ut folk. |",
-            "Bot | En robot-sekretær. | Automatiserte programmer som utfører oppgaver (f.eks. spiller musikk, logger aktivitet). |"
+            "Komponent | Beskrivelse | Etterforskningsverdi",
+            "Server (Guild) | Privat eller offentlig fellesskap med opptil 250 000 brukere. Organisert i kanaler. | Snowflake-ID avslører opprettelsesdato. Admin/eier kan utleveres via LE-forespørsel.",
+            "Kanal | Tekstkanal, talekanal, videkanal eller forumkanal innenfor en server. | Kanalens Snowflake avslører opprettelsesdato. Meldingshistorikk bevares inntil sletting.",
+            "DM (Direct Message) | 1-til-1 privat melding mellom to brukere. | Ikke E2EE i standard. Discord kan utlevere innhold med kjennelse.",
+            "GDM (Group DM) | Privat gruppemelding med opptil 10 brukere. | Samme krypteringsstatus som DM – ikke E2EE standard.",
+            "Rolle (Role) | Admin-definerte tilgangsnivåer innenfor en server. | Avslører hierarki – hvem er admin/moderator/rekrutterer.",
+            "Bot | Automatisert konto som utfører funksjoner i server. | Bot-token kobler til eier-konto – kan spores via API.",
+            "Invitasjonslenke | discord.gg/[kode] gir tilgang til server. | API-kall avslører server-ID, navn og Snowflake til skaperen.",
+            "Thread | Undersamtale i en tekstkanal. | Egne Snowflake-IDer – eget meldingshistorikk."
           ]
+        },
+        {
+          "type": "paragraph",
+          "data": "1.3 Ungdomsatferd og kriminell bruk på Discord\n\nDiscord er ungdommens primære kommunikasjonskanal for gaming, men er i kriminelle miljøer brukt til:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Kriminalitetskategori | Discord-bruksmønster | OSINT-strategi",
+            "Narkotikahandel | Åpne servere med 'plug'-kanaler og DM-salg via emoji-koder | Kanalanalyse + emoji-dekoding (Claude/AI)",
+            "Svindel/phishing | Koordinering av phishing-kampanjer, salg av kompromitterte kontoer | Server-kartlegging + lekkasjesøk (HIBP, IntelX)",
+            "CSAM-distribusjon | Private servere med rollebasert tilgang – invitasjonslenker deles i andre kriminalfora | Invite-analyse + LE-forespørsel (preservation request umiddelbart)",
+            "Radikalisering | Høyreekstreme/islamistiske servere med gradert tilgang | Passiv observasjon + server-kartlegging",
+            "Ransomware/cyberkriminalitet | Koordinering av angrep, salg av malware og RAT-verktøy | Brukernavnpivå til GitHub, hacker-forum",
+            "Grooming | Voksne kontakter mindreårige via gaming-servere | Særlig OPSEC-krav – se SIS-MINOR-14"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "1.4 Emoji-kommunikasjon mellom brukere\n\nDiscord-brukere, særlig i kriminelle miljøer, bruker emoji som et kodifisert kommunikasjonssystem. Dette er ikke tilfeldig – det er systematisk obfuskering designet for å unngå automatisk tekstfiltrering og gjøre innhold vanskeligere å tolke for utenforstående."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Emoji | Kriminell kontekst | Klar tekst | Kategori",
+            "🌿 / 🍃 | Cannabis-salg | Gress / marijuana | Narkotika",
+            "❄️ / 🤧 | Kokain-salg | Snø / kokain | Narkotika",
+            "🍄 | Sopp / psilocybin-salg | Psilocybin-sopp | Narkotika",
+            "💊 / 🍬 | Piller – opiater/benzo | Piller/tabletter | Narkotika",
+            "🔫 / 🍌 | Våpen | Pistol (🍌 = kode) | Vold/våpen",
+            "🏧 / 💸 | Pengetransaksjoner | ATM / kontanter | Hvitvasking",
+            "📦 / 📫 | Forsendelse | Pakke i post | Narkotikalevering",
+            "🧢 | Selger/dealer | 'Cap' = begrensning eller kode | Narkotika",
+            "👀 | Tilgjengelig/åpen for salg | 'Eyes' = ser/observer | Generell kode",
+            "✅ / ☑️ | Transaksjonsbekreftelse | Godkjent/bekreftet | Generell kode",
+            "🔒 / 🛡️ | Privat/sikker kanal | Sikkerhet | OPSEC",
+            "W / L | Vinn/tap – godkjent/avvist | Win/Loss | Gamer-slang overført til krim"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "Viktig for AI-analyse: Discord-kriminalmiljøer kombinerer emoji med l33t-speak (tall som bokstaver: 4=A, 3=E), gamer-slang ('riced'=bevæpnet, 'plug'=dealer, 'pack'=narkotika) og kodede brukernavn. Bruk Claude (lokal instans) for kontekstuell dekoding av lange meldingssekvenser. Aldri last opp saksdokumenter til skybasert AI."
         }
       ]
     },
     {
       "id": "s03",
-      "overskrift": "2. UNIVERSELL BRUKERMODELL FOR DISCORD (ATTACK SURFACE)",
+      "overskrift": "SEKSJON 2 – 20 TEKNISKE KRAV (KT-01 til KT-20)",
       "komponenter": [
         {
           "type": "paragraph",
-          "data": "For å kartlegge en bruker, må vi vite hva som er mulig å finne. Vi tar utgangspunkt i angrepsflaten for Discord."
+          "data": "KT-01 | Definisjon – Juridisk og teknisk kategorisering"
         },
         {
-          "type": "paragraph",
-          "data": "2.1 Identitetsmarkører – Hvem er objektet?\n\nPå Discord er identitet todelt: Det du ser, og det som er teknisk fast.\n\n> TIPS:\n\n> Discord gjennomgikk en stor endring i 2023. Før het man Navn#1234 (Discriminator). Nå heter man bare @uniktnavn (som på Twitter/Instagram). Du vil møte begge deler i gamle logger.\n\n> \n\nA. Det synlige laget (Hva brukeren viser frem)\n\nIfølge oversikten over angrepsflaten, består en profil av flere elementer du kan se umiddelbart:"
-        },
-        {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "Profilbilde (Avatar): Bildet de har valgt. Kan søkes opp andre steder.",
-            "Banner: Bakgrunnsbilde på profilen.",
-            "Bio: En kort tekst \"om meg\". Her skriver kriminelle ofte krypterte meldinger eller salgsinfo (f.eks. \"Wickr: salgsmann1\").",
-            "Badges (Merker): Små ikoner på profilen.",
-            "Hvorfor viktig? \"Discord Nitro Badge\" betyr at brukeren betaler for Discord. Det betyr at det finnes et betalingsspor (kredittkort/Paypal) hos Discord!"
+            "Kategori | Klassifisering | Detalj",
+            "Primærkategori | VoIP-basert IM-tjeneste med sosial serverstruktur | Kombinerer tekst, tale, video og fil-deling i en hybrid arkitektur",
+            "Teknisk arkitektur | Hybrid klient-server + CDN | REST API + WebSocket Gateway + Cloudflare CDN",
+            "Juridisk kategori (Norge) | Elektronisk kommunikasjonstjeneste (EKS) | Underlagt ekomloven og GDPR",
+            "Juridisk kategori (USA) | Interactive Computer Service / Stored Communications | Regulert av ECPA, SCA, COPPA",
+            "Aldersgrense | 13 år (COPPA) | Fra mars 2026: phased aldersverifisering (utsatt til H2 2026)",
+            "Krypteringsmodell | TLS 1.3 in-transit + AES-256 at rest (server-side) | Standard DM: IKKE E2EE. Voice/video: DAVE-protokoll (E2EE)",
+            "Registreringstype | E-post eller telefonnummer | Ikke anonym registrering – men falske e-poster er enkle å opprette"
           ]
         },
         {
           "type": "paragraph",
-          "data": "B. Det skjulte laget (Koblinger)\n\nDiscord lar brukere koble andre kontoer til profilen sin for å vise frem hva de spiller eller hører på."
+          "data": "KT-02 | Historikk – Versjonsutviklingens påvirkning på datalagring"
         },
         {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "Spotify: Viser hva de hører på akkurat nå.",
-            "Steam/Xbox/Playstation: Viser spill-aktivitet.",
-            "Twitch/YouTube/Reddit: Sosiale medier."
+            "Dato | Hendelse | Påvirkning på etterforskning",
+            "Mai 2015 | Discord lanseres for gamere | Snowflake-epoke starter 1.1.2015 – alle eldre IDer kodet til denne datoen",
+            "2016 | Bot-API introduseres | Bots kan nå lese og skrive meldinger programmatisk",
+            "2019 | Nitro-abonnement med servereforsterkere | Betalingsdata tilgjengelig via LE-forespørsel (Stripe)",
+            "2021 | Fjernelse av discriminator i mange kontekster | Brukeridentifikasjon endres fra navn#1234 til global_name",
+            "2023 (mars) | Discriminator (#XXXX) fjernes globalt | Eldre kontoer: navn#1234. Nye kontoer: @brukernavn (unikt)",
+            "2023 (mai) | DAVE-protokoll (E2EE) for voice/video innføres | Tale og video i kanaler er nå E2EE – Discord kan ikke lese/utlevere",
+            "2023 (des.) | E2EE DM opt-in (ikke standard) | Standard DM fortsatt server-side kryptert. Kun opt-in = E2EE",
+            "2023 | CDN-URLer med HMAC-signatur og 24-timers utløp | SHA-256 av bildet OG URL – lenken utløper, filen kan bli borte",
+            "2024 (apr.) | Spy.pet-skandale: 600M+ meldinger scraped | Demonstrerte at tredjeparter kan aggregere Discord-data massivt",
+            "Sep. 2025 | Zendesk-brudd: 70 000 gov-ID-bilder lekket | Aldersverifiseringsprosessen kompromittert – relevans for LE-ID-sjekk",
+            "Feb. 2026 | Aldersverifisering utsatt til H2 2026 | k-ID (tredjepart) skal verifisere alder via selfie eller gov-ID",
+            "Mai 2025 | LE-guide oppdatert | Oppdatert prosedyre for LE-henvendelser og preservation requests"
           ]
         },
         {
           "type": "paragraph",
-          "data": "Praktisk Eksempel – Lina Grim:\n\nLina har koblet Spotify til Discord. Du ser på profilen hennes at hun hører på \"Kygo - Stole the Show\".\n\n* Analyse: Vi vet at hun er online nå. Vi kan potensielt finne Spotify-kontoen hennes, som ofte er registrert med ekte navn (Lina Grim).\n\nPraktisk Eksempel – Anders Bedremann:\n\nAnders har ingen \"Connected Accounts\". Han har en standard Discord-logo som profilbilde.\n\n* Analyse: Høy OPSEC (sikkerhetsbevissthet). Vi må stole på tekniske spor (ID)."
+          "data": "KT-03 | Eier/Lov – Juridisk enhet og lagringslovgivning"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Parameter | Detalj | Etterforskningsrelevans",
+            "Juridisk enhet | Discord, Inc. | Registrert i Delaware, USA",
+            "Operasjonelt HQ | 444 De Haro Street, Suite 200, San Francisco, CA 94107, USA | Alle LE-forespørsler rutes hit via MLAT",
+            "Norsk kanal | Via Kripos (kripos@politiet.no) → Riksadvokaten → US DoJ → Discord | MLAT-prosessen er tidkrevende – preservation request umiddelbart",
+            "US Cloud Act (2018) | USA kan pålegge Discord å utlevere data lagret utenfor USA | Norske saker krever MLAT eller direct LE-forespørsel",
+            "GDPR (EU) Art. 4, 17 | Discord er databehandler for EU-brukere | Bruker har rett til sletting – LE kan blokkere med preservation request",
+            "ECPA / SCA | Innhold krever search warrant. Metadata krever subpoena | Norsk kjennelse konverteres til US-ekvivalent via MLAT",
+            "COPPA (USA) | Brukere under 13: Discord plikter å slette data | Kan vanskeliggjøre etterforskning av mindreårige",
+            "DSA (EU) 2024+ | Discord har Government Request Portal for EU-myndigheter | Trusted Flaggers og EU-myndigheter prioriteres"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-04 | Teknologi – Stack og dataflyt"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Komponent | Teknologi | Dataformat | Etterforskningsrelevans",
+            "Frontend (klient) | React + TypeScript (web), Electron (desktop), Swift/Kotlin (mobil) | HTML/CSS/JS bundle | Electron-app: DevTools tilgjengelig i debug-modus",
+            "Backend | Elixir (Gateway/WebSocket), Rust (voice), Python/Go (diverse) | JSON (API), WebSocket frames | Skalert for millioner av samtidige tilkoblinger",
+            "REST API | discord.com/api/v10 (gjeldende) | JSON over HTTPS | API v10 er current (2026) – v6 og eldre er utfaset",
+            "WebSocket Gateway | gateway.discord.gg | JSON-kodet WebSocket-rammer | Heartbeat hvert ~41 sek – mønster synlig i PCAP",
+            "CDN (vedlegg) | cdn.discordapp.com (Cloudflare) | HTTPS + signerte URLer | URL-struktur inneholder Snowflake-tidsstempler",
+            "Voice/Video | DAVE-protokoll (E2EE, 2023) | UDP/DTLS | Kryptert – Discord kan ikke utlevere innhold",
+            "Databaseinfrastruktur | AWS (primær) + Cassandra (NoSQL) + Redis (cache) | Proprietære formater | Discord lagrer meldinger i Cassandra-cluster"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-05 | Kryptering – Algoritmer og nøkkelkontroll"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Kontekst | Algoritme | E2EE | Nøkkel hos | Etterforskningsrelevans",
+            "Transport (all trafikk) | TLS 1.3 | Nei – tunnel-kryptering | Discord/Cloudflare | Discord kan lese all trafikk i transit",
+            "Lagring (at rest) | AES-256 | Nei | Discord Inc. | Discord kan lese og utlevere med kjennelse",
+            "Standard DM | TLS 1.3 + AES-256 at rest | NEI – server-side kryptert | Discord Inc. | KRITISK: Discord kan utlevere DM-innhold med kjennelse",
+            "DM (E2EE opt-in, 2023+) | MLS (Messaging Layer Security) via DAVE | JA – kun ved opt-in | Kun brukerne | Discord KAN IKKE utlevere E2EE DM-innhold",
+            "Voice/Video (kanaler, 2023+) | DAVE-protokoll / MLS | JA | Kun deltakerne | Kriminelle som bruker voice kan ikke avlyttes via Discord",
+            "Passordhashing | bcrypt (saltet) | N/A | Discord | Passord er ikke tilgjengelig for LE",
+            "Bot-token | Bearer Token i HTTPS-header | N/A | Bot-eier | Bot-token identifiserer eier-konto"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "KRITISK: Standard Discord DM-er er IKKE E2EE. De fleste kriminelle brukere er ikke klar over E2EE opt-in og bruker standard (ukrypterte) DM-er. Discord Inc. kan lese og utlevere innholdet med gyldig rettslig pålegg."
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-06 | Unik-ID – Snowflake-format og dekoding"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Bit-posisjon | Antall bits | Innhold | Etterforskningsverdi",
+            "63–22 | 42 bits | Millisekunder siden Discord-epoch (1. jan. 2015 00:00:00 UTC) | Nøyaktig tidsstempel ned til millisekund – alltid tilgjengelig",
+            "21–17 | 5 bits | Worker-ID (intern Discord-server) | Identifiserer Discord-infrastruktur som genererte IDen",
+            "16–12 | 5 bits | Prosess-ID | Intern – ikke direkte brukbar for etterforsker",
+            "11–0 | 12 bits | Sekvensteller (opptil 4096 per ms per worker) | Indikerer om mange IDer ble generert i løpet av samme millisekund"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "Snowflake-dekoding – praktisk eksempel: Eksempel Snowflake: 175928847299117063. Steg 1: 175928847299117063 >> 22 = 41944201. Steg 2: 41944201 + 1420070400000 = 1462014601000 (UNIX ms). Steg 3: new Date(1462014601000) → 2016-04-30T11:43:21.000Z. Verktøy: discord.dog/tools/snowflake-decoder | singhajit.com/tools/snowflake-decoder. Aktiver Developer Mode: Innstillinger → Avansert → Utviklermodus → PÅ"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Discord-objekt | URL / Lokasjon | Snowflake gir",
+            "Bruker-ID | discord.com/users/[USER_ID] | Kontopprettelsesdato og -klokkeslett ned til ms",
+            "Server (Guild) ID | discord.com/channels/[GUILD_ID] | Serverens opprettelsesdato",
+            "Kanal-ID | discord.com/channels/[GUILD]/[CHANNEL_ID] | Kanalens opprettelsesdato",
+            "Melding-ID | discord.com/channels/[G]/[C]/[MSG_ID] | Nøyaktig meldingstidspunkt",
+            "Vedlegg-ID | cdn.discordapp.com/attachments/[C]/[ATT_ID]/fil.jpg | Opplastingstidspunkt",
+            "Emoji-ID | discord.com/emojis/[EMOJI_ID] | Når custom emoji ble laget",
+            "Rolle-ID | Via Developer Mode i serversettinger | Rollens opprettelsesdato"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-07 | Lekkasjer – Kjente datasett og eksponerte felt"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Dato | Hendelse | Eksponerte felter | Søkeverktøy",
+            "Mars 2023 | Discord.io tredjeparts bot-plattform kompromittert | Brukernavn, e-post, Discord-ID, hashet passord (760 000 brukere) | HaveIBeenPwned, IntelX",
+            "Mai 2023 | Discord-supportsystem (Zendesk) – 180 000 poster | Brukernavn, e-post, supporttickets | IntelX, LeakCheck",
+            "Apr. 2024 | Spy.pet-dataskraper avslørt – 600M+ meldinger | Meldingsinnhold, brukernavn, server-IDer, tidsstempler | Wired/Arstechnica (referanse)",
+            "Sep. 2025 | Zendesk-partnerdatabrudd – Lapsus$/Scattered Hunters | Brukernavn, e-post, IP, gov-ID-foto (70 000 brukere), delvis billing | Discord offisiell rapport, IntelX",
+            "2025 (løpende) | Combo-lister distribuert via Discord-kanaler | E-post+passord-par fra andre lekkasjer, Discord-brukernavn inkludert | HIBP, Dehashed, IntelX"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-08 | URL-data – Parameterdekonstruksjon og Snowflake i URL"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "URL-format | Parametere | Hva det avslører",
+            "discord.com/channels/[GUILD]/[CH]/[MSG] | Tre Snowflake-IDer | Guild-, kanal- og meldingstidsstempel",
+            "discord.gg/[KODE] | 6–8 tegn base62-kode | Server-ID, navn, antall brukere, Snowflake til lenke-skaper",
+            "discord.com/users/[USER_ID] | Bruker-Snowflake | Kontopprettelsesdato",
+            "cdn.discordapp.com/attachments/[CH]/[ATT]/fil.jpg | To Snowflake-IDer | Kanal + vedlegg-opplastingstidspunkt",
+            "media.discordapp.net/...?ex=&is=&hm= | ex=utløp (hex UNIX), is=utstedt (hex UNIX), hm=HMAC | Signert URL – ex og is = nøyaktig utstedelse og utløp",
+            "discord.com/api/v10/invites/[KODE]?with_counts=true | JSON-respons | guild.id, guild.name, inviter.id (Snowflake), member_count, expires_at"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "CDN-URL utløp – viktig for bevisinnhenting: Fra 2023 har Discord signerte CDN-URLer med 24-timers utløp. Parameteren ?ex= (hex-kodet UNIX-tidsstempel for utløp) betyr at en lenke til et Discord-vedlegg slutter å virke etter ca. 24 timer. Konsekvens: ta SHA-256 av selve bildet UMIDDELBART – ikke bare URL-en. Bruk wget eller curl for å laste ned bildet, hash filen, noter URL-en og tidsstemplet."
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-09 | Nettverk – Protokollanalyse og PCAP"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Protokoll | Port | Innhold i PCAP | Etterforskningsverdi",
+            "HTTPS/TLS 1.3 | TCP/443 | Kryptert REST API og CDN-trafikk. SNI: discord.com | Forbindelsestidspunkter loggføres",
+            "WSS (WebSocket Secure) | TCP/443 | Kryptert sanntidsmeldinger. SNI: gateway.discord.gg | Heartbeat hvert ~41 sek – identifiserbart mønster",
+            "UDP/DTLS (DAVE) | 443+ | Kryptert voice/video via DAVE-protokoll | Discord-voice-sesjonene identifiserbare via DTLS handshake",
+            "DNS | UDP/53 | discord.com, gateway.discord.gg, cdn.discordapp.com | Avsløres ved DNS-lekkasje (manglende DoH)",
+            "Cloudflare CDN | TCP/443 | 104.16.x.x (Cloudflare range) | IP-range identifiserer Discord-CDN-trafikk"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-10 | Metadata – Komplett felt-inventar"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Felt | Kilde | Datatype | Etterforskningsverdi",
+            "id (Snowflake) | Alle Discord-objekter | 64-bit int | Opprettelsestidspunkt ned til ms",
+            "username | Profil (globalt unikt siden 2023) | String | Primær identifikator – men kan endres",
+            "global_name | Profil (display name, 2023+) | String | Vises til andre – kan avvike fra username",
+            "discriminator | Historisk – fjernet 2023 | String (4 siffer) | Eldre kontoer: [navn#1234]-format",
+            "avatar hash | Profil-API | Hex-string | Spor bildehistorikk via CDN-URL",
+            "banner hash | Profil-API | Hex-string | Profilbanner – endringer tidstemples",
+            "bio | Profil | Fritekst | Kan inneholde kontaktinfo, krypterte meldinger, koder",
+            "public_flags | Profil-API | Bitmask | Badges: Staff, HypeSquad, Bug Hunter, Early Supporter, Nitro",
+            "connected_accounts | Profil | Array | GitHub, Twitter, Steam, Reddit, YouTube, Twitch, Xbox – pivå-punkt",
+            "mutual_guilds | API (med felles server) | Array | Felles servere med etterforsker-konto",
+            "created_at | Beregnet fra Snowflake | ISO8601 UTC | Kontopprettelsesdato",
+            "online_status | WebSocket event | Enum | online/idle/do_not_disturb/invisible",
+            "activities | WebSocket event | Array | Spill, musikk, custom status – brukeratferd",
+            "roles | Server-API | Array | Admin/moderator avslører hierarki",
+            "joined_at | Server-API | ISO8601 | Tidspunkt for innmelding i server",
+            "message.timestamp | Melding-objekt | ISO8601 UTC | Meldingstidspunkt",
+            "message.attachments | Melding-objekt | Array | Vedlegg: URL, filnavn, størrelse, Content-Type, Snowflake",
+            "message.edited_timestamp | Melding-objekt | ISO8601 eller null | Redigeringstidspunkt",
+            "channel.topic | Kanal-objekt | String | Kanalbeskrivelse – kan inneholde kodeord",
+            "guild.description | Server-objekt | String | Serveres beskrivelse – kriminalitetsformål kan avslørtes"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-11 | Manuelt – Etterforskning via nettleser og konsoll"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Teknikk | Fremgangsmåte | Output",
+            "Aktiver Developer Mode | Innstillinger → Avansert → Utviklermodus → PÅ | Høyreklikk-meny gir 'Kopier ID' for alle Discord-objekter",
+            "Kopier bruker-Snowflake | Høyreklikk brukernavn → Kopier ID | 64-bit Snowflake for dekoding til kontopprettelsesdato",
+            "Invite-API (uten innlogging) | curl https://discord.com/api/v10/invites/[KODE]?with_counts=true | JSON: server-ID, navn, beskrivelse, inviter-Snowflake, antall brukere",
+            "Profil-API | curl https://discord.com/api/v10/users/[USER_ID] -H 'Authorization: Bot [TOKEN]' | JSON: username, global_name, avatar, public_flags, bio",
+            "DevTools Network-tab | F12 → Nettverk → filtrer discord.com/api | Fang API-kall: guild-liste, meldingshistorikk, brukerdata",
+            "Snowflake-dekoding | discord.dog/tools/snowflake-decoder | Eksakt dato og klokkeslett for Discord-objekt",
+            "CDN-bilde-nedlasting | wget 'https://cdn.discordapp.com/...' -O bilde.jpg | Last ned vedlegg FØR URL-en utløper (24 timer)",
+            "SHA-256 hashing | sha256sum bilde.jpg > bilde.jpg.sha256 | Bevisintegritet – hash av nedlastet vedlegg",
+            "Discord History Tracker | Browser-script → lagrer SQLite-database | Lokal kopi av meldingshistorikk i servere du er med i",
+            "Disboard.org | Søk på emne/tag uten å bli med i server | Offentlig katalog over servere med beskrivelse og tematikk"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-12 | Auto – API-integrasjoner og skaleringsverktøy"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Verktøy | URL | Funksjon | Tilgang",
+            "OSINT Industries | osint.industries | Søk Discord-brukernavn/e-post mot 500+ plattformer | Betalt abonnement",
+            "Maltego | maltego.com | Graf-basert nettverksanalyse – Discord-entiteter og relasjoner | Betalt LE-lisens",
+            "cord.cat | cord.cat | Discord-spesifikk OSINT – brukernavn og ID-oppslag | Gratis",
+            "top.gg/user/[ID] | top.gg | Bot-data og profil – ofte bevart etter kontosletting | Gratis",
+            "discord.name/[ID] | discord.name | Profil-oppslag via Snowflake-ID | Gratis",
+            "Lookupguru | lookupguru.app | Discord-brukerprofil via ID | Gratis",
+            "Disboard | disboard.org | Katalog over offentlige servere – søk på emne | Gratis",
+            "Unfurl (dfir.blog) | dfir.blog/unfurl | Dekonstruerer Discord-URLer og Snowflake-tidsstempler | Gratis",
+            "ShadowDragon OIMonitor | shadowdragon.io | Monitorering av Discord-profiler over tid | Betalt (LE)",
+            "discord.py (Python) | github.com/Rapptz/discord.py | Bot-basert automatisert datainnsamling | Åpen kildekode + Bot-token"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-13 | Vakt – Regex og varsling ved profilendring"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Overvåkningsmål | Regex / Metode | Verktøy | Formål",
+            "Discord-invite-link | discord\\.gg/([a-zA-Z0-9-]{2,20}) | grep, Python re | Finn Discord-invitasjoner i tekst/logger",
+            "Discord Snowflake-ID | [0-9]{17,20} | grep, Python re | Identifiser Discord-IDer i materiale",
+            "Discord-brukernavn | @[a-zA-Z0-9_.]{2,32} | grep, Python re | Finn brukernavn i tekst",
+            "CDN-vedlegg-URL | cdn\\.discordapp\\.com/attachments/ | grep | Finn Discord-fildelinger i logger",
+            "Profilovervåking | changedetection.io mot discord.com/users/[ID] | changedetection.io | Varsler ved endring i offentlig profil",
+            "Brukernavnendring | @SangMata ikke tilgjengelig for Discord – manuell overvåking | OSINT Industries | Søk periodisk etter brukernavn-historikk",
+            "Hunchly-selektor | Konfigurer Discord-relevante søkeord som selektor i Hunchly | Hunchly | Varsler automatisk ved funn under browsing i Discord"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-14 | Sokkedukke – VPN, fingerprinting og profil-troverdighet"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Krav | Detalj | Begrunnelse",
+            "VM (SIS-VM-11) | Kali Linux VM – én per sak | Isolerer saksmappe – bevarer OVA-eksport for retten",
+            "VPN | ProtonVPN / Mullvad med WireGuard + Kill Switch | Discord logger IP ved alle innlogginger",
+            "Etterforskningskonto | Opprettet med ProtonMail via Tor – aldri tjenestee-post | Kobler ikke politistasjonen til undersøkelsen",
+            "Konto-troverdighet | Minimum 30–60 dager gammel – noe aktivitet – profilbilde | Nye kontoer flagges av Discord og serveradminer",
+            "Firefox + arkenfox.js | Normaliserer browser-fingerprint | Hindrer Discord og servere fra å fingerprinte etterforskeren",
+            "User-Agent | Bruk nettleserversjon – ikke desktop-appen | Desktop-appen sender 'DiscordBot/...' som UA i API-kall",
+            "MAC-randomisering | VirtualBox: randomiser MAC FØR oppstart | VirtualBox OUI 08:00:27 er kjent – avslører VM",
+            "Aldri like/react | Aldri klikk på reaksjoner eller 'like' | Avslører etterforsker-kontoen for server-admin"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-15 | AI – LLM og ansiktsgjenkjenning"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "AI-funksjon | Verktøy | Discord-spesifikk bruk | Begrensning",
+            "Slangdekoding | Claude/Ollama (lokal instans) | Dekod emoji-koder, gamer-sjargong, kriminell slang i meldingseksporter | SENSITIV data ALDRI til skybasert AI",
+            "Ansiktsgjenkjenning | PimEyes, FaceCheck.ID | Matche profilbilder mot internett-forekomster | Krever juridisk hjemmel i Norge",
+            "Nettverksvisualisering | Maltego + AI-transforms | Identifiser klynger i Discord-server-nettverk automatisk | Krever Snowflake-IDer som input",
+            "Tekstsummering | Claude (godkjent instans) | Summere store mengder meldingshistorikk fra Discord History Tracker | Maks datasensitivitet vurderes per sak",
+            "Oversettelse | DeepL, Whisper (lokal) | Oversette servere med russisk, arabisk, kinesisk – vanlig i kriminalnettverk | Slang oversettes dårlig – spesialist anbefales",
+            "Lydtranskripsjon | Whisper (lokal Python-instans) | Transkribere Discord-lydmeldinger (voice messages, 2023+) | Lokal kjøring er krav – sensitiv lyd"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-16 | OPSEC – Attribusjonsanalyse: spor etterforskeren etterlater"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Handling | Data registrert av Discord | Risiko | Mottiltak",
+            "Innlogging på konto | IP, User-Agent, enhetfingerprint, tidsstempel | HØY – Discord logger alt ved innlogging | VPN + arkenfox.js + etterforskningskonto",
+            "Innmelding i server | Kontoens profildata synlig for serveradmin | MODERAT – avhenger av serverens årvåkenhet | Ikke bli med med politikonto – passiv observasjon",
+            "Klikk på invitasjonslenke | IP, User-Agent, tidsstempel | HØY – Discord registrerer alle invite-klikk | VPN + Kall API direkte i stedet for å klikke",
+            "API-kall uten autentisering | IP til Discord | LAV – men etablerer søkemønster | VPN",
+            "Vedlegg-nedlasting (CDN) | IP til Cloudflare CDN (ikke målets) | LAV | Akseptabelt – CDN ser ikke mål",
+            "Bot i server | Bot-ID synlig for alle med tilgang til serverlisten | MODERAT | Bruk etterforsknings-bot, ikke privat bot",
+            "Typing indicator | Vises for motpart i DM | LAV – men avslører tilstedeværelse | Aldri åpne DM med mål i etterforskningsmodus"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-17 | Kritikk – Kryssverifisering og TPS-gradering"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Funntype | Kilde 1 | Kilde 2 (uavhengig) | TPS etter verifisering",
+            "Snowflake-ID | Discord-profil (kopiert via Developer Mode) | discord.dog/tools (dekoding bekrefter dato) | B-1-MODERAT etter begge bekrefter",
+            "Brukernavn (kan endres) | OSINT Industries – historisk søk | cord.cat – separat søk | C-2-LAV – brukernavn ikke stabilt",
+            "Invitasjonslenke – server | Invite-API (inviter-Snowflake og guild-ID) | Disboard – bekreft serverens eksistens | C-2-MODERAT etter begge",
+            "Meldingsinnhold (screenshot) | Hunchly-logg med SHA-256 | Discord History Tracker SQLite-database | C-3-LAV uten LE-utlevering",
+            "Tilkoblede kontoer (GitHub/Steam) | Discord profil – Connected Accounts | GitHub/Steam API – bekreft eksistens | B-2-MODERAT etter begge",
+            "IP fra LE-svar | Discord LE-utlevering | ISP-logg via rettslig pålegg | A-1-HØY etter begge",
+            "Breach-database-funn | HaveIBeenPwned | IntelX eller Dehashed – separat søk | C-3-LAV – kryss mot to uavhengige"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-18 | LE-Guide – Discord-politihenvendelse (oppdatert mai 2025)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Kontaktpunkt | Detalj",
+            "LE-portal URL | https://discord.com/safety/360044157931-working-with-law-enforcement (oppdatert mai 2025)",
+            "Transparency Hub | https://discord.com/safety-transparency",
+            "Emergency disclosure | Direkte til Discord Trust & Safety via portal – for umiddelbar fare for liv",
+            "Preservation request | Sendes umiddelbart via portal – Discord bevarer data under etterforskning i opptil 90 dager",
+            "Norsk kanal | Kripos (kripos@politiet.no) → MLAT (Mutual Legal Assistance Treaty) → US DoJ → Discord",
+            "Svartid (ikke-haster) | 4–8 uker typisk – preservation request kjøpes tid",
+            "Haste-saker | 24–48 timer via emergency disclosure (live i fare – 18 U.S.C. § 2702(b)(8))",
+            "DSA (EU) | Government Request Portal for EU-myndigheter – prioritert kø"
+          ]
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Rettslig grunnlag (norsk) | US-ekvivalent | Data Discord utleverer",
+            "Begjæring til Discord (grunnleggende) | Subpoena / 18 U.S.C. § 2703(d) | Brukernavn, e-post, telefon, IP-logg (60 dager), kontoopprettelsesdato",
+            "Kjennelse tingrett – strpl. § 197 | Court Order / 18 U.S.C. § 2703(d) | Alt over + servermedlemskap, enhets-IDer, betalingshistorikk",
+            "Ransakingskjennelse – strpl. § 192 | Search Warrant | Alt over + meldingsinnhold (DM og server), vedlegg, VoIP-logger",
+            "Emergency disclosure | Voluntary disclosure 18 U.S.C. § 2702(b)(8) | IP, konto – ingen kjennelse ved overhengende fare"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-19 | Jus – Norske paragrafkoblinger"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Handling | Hjemmel | Nivå | Krav",
+            "Se offentlig Discord-server / profil | Politiloven § 25 | TILLATT | Ingen – dokumenter formål og logg",
+            "Bruk HIBP / OSINT Industries passivt | Politiloven § 25 | TILLATT | Ingen – dokumenter søk og funn",
+            "Invite-API-kall (anonym, uten innlogging) | Politiloven § 25 | TILLATT | Ingen – passiv innhenting av offentlig data",
+            "Opprette etterforskningsprofil for tilgang til lukket server | Strpl. § 196 | BESLUTNING | Skriftlig politijurist/påtale FØR handling",
+            "Bli med i server med etterforskningsprofil | Strpl. § 196 | BESLUTNING | Særlig vurdering – passiv vs. aktiv spaning",
+            "Innhenting av IP og konto-metadata fra Discord | Strpl. § 197 | KJENNELSE | Tingretts kjennelse FØR LE-forespørsel",
+            "Innhenting av meldingsinnhold (DM/server) | Strpl. § 192 (ransaking) | KJENNELSE | Ransakingskjennelse – sterkest form",
+            "Mindreårige som mål/offer | Barnekonvensjonen art. 16 + strl. § 46 | SKJERPET | Se SIS-MINOR-14 – aldri direktekontakt",
+            "Ta kontakt med mål via Discord | Strpl. § 196a | ABSOLUTT GRENSE | Provokasjonsforbud – aldri uten godkjenning"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-20 | Bevis – Integritet, hashing og ikke-benektbarhet"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Krav | Metode | Kommando | Juridisk funksjon",
+            "SHA-256 per screenshot og vedlegg | sha256sum etter hvert funn | sha256sum funn_01.png >> SHA256_logg.txt | Bevisintegritet – fil er uendret etter innhenting",
+            "Last ned CDN-vedlegg FØR utløp | wget eller curl innen 24 timer | wget 'https://cdn.discordapp.com/...' -O vedlegg.jpg | CDN-URLer utløper – filen er borte etter 24t",
+            "SHA-256 av Discord History Tracker SQLite | sha256sum discord_history.db | Lagres med SHA-256-hash | Meldingshistorikk som kryptografisk bevis",
+            "Hunchly aktivt ved all browsing | Rødt ikon i Chrome FØR discord.com åpnes | Automatisk URL + MHTML + hash | Bevislogg for alle besøkte Discord-sider",
+            "UTC-tidsstempel på alle funn | date -u etter hvert screenshot | date -u >> SHA256_logg.txt | Entydig tidsreferanse for retten",
+            "Logg Developer Mode / Snowflake-dekoding | Screenshot av dekodingsverktøy + result | sha256sum snowflake_dekod.png | Dokumenter tidsstempel-analyse",
+            "OVA-eksport av VM | VBoxManage export [VM] -o [fil].ova | sha256sum [fil].ova | Beviser hele etterforsknings-miljøet",
+            "Preservation request (Discord) | Send via LE-portal umiddelbart | Bekreftelse-e-post fra Discord = bevis på bevissikring | Stopper sletting av data under MLAT-prosessen"
+          ]
         }
       ]
     },
     {
       "id": "s04",
-      "overskrift": "3. DEN VIKTIGSTE TEKNISKE METODEN: SIKRING AV BRUKER-ID (SNOWFLAKE)",
+      "overskrift": "SEKSJON 3 – TEKNISK DEKONSTRUKSJON (A-Å)",
       "komponenter": [
         {
           "type": "paragraph",
-          "data": "Dette er det viktigste kapittelet i hele kurset. Hvis du lærer én ting, la det være dette.\n\n> HVORFOR ER DETTE VIKTIG?\n\n> Et brukernavn kan endres på 2 sekunder. Anders kan hete \"NarkoKongen\" i dag og \"UsynligMann\" i morgen.\n\n> Men Bruker-ID-en (Snowflake) er en lang tallrekke (f.eks. 843123456789012345) som blir tildelt i det sekundet kontoen opprettes. Den kan ALDRI endres.\n\n> Med denne ID-en kan politiet sende forespørsel til Discord og få ut IP-adresser og e-post, uansett hva han kaller seg.\n\n> "
+          "data": "Nivå 1 – Binært: Snowflake og WebSocket-payload\n\nDiscords primære dataprimitive er Snowflake-IDen – en 64-bit (8 byte) integer. På bit-nivå:"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "Snowflake 175928847299117063 – binær representasjon:\nBinary: 0000 0010 0111 1100 1110 0001 0100 0001 0000 0000 0000 0000 0000 0001 0100 0111\nHex: 0x 02 7C E1 41 00 00 01 47\nBit 63–22 (42 bits): 0000 0010 0111 1100 1110 0001 0100 0001 = 41944201\nLegg til epoch: 41944201 + 1420070400000 = 1462014601000 ms\nKonverter: 2016-04-30T11:43:21.000Z\n\nWebSocket JSON-melding (Discord Gateway Event):\n{\"op\":0,\"d\":{\"id\":\"175928847299117063\",\"content\":\"hei\",\"author\":{\"id\":\"80351110224678912\"},\"timestamp\":\"2016-04-30T11:43:21.000000+00:00\"},\"t\":\"MESSAGE_CREATE\"}"
         },
         {
           "type": "paragraph",
-          "data": "3.1 Forberedelse: Aktivere \"Developer Mode\"\n\nFor å se disse ID-numrene, må du skru på en bryter i Discord. Dette er \"detektiv-knappen\".\n\nSteg-for-steg instruksjon"
+          "data": "Nivå 2 – Arkitektur: Fra klient til server til LE"
         },
         {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "Åpne Discord (App eller nettleser).",
-            "Finn tannhjulet: Trykk på tannhjulet (\"User Settings\") nede til venstre, ved siden av ditt eget navn.",
-            "Gå til \"Advanced\": Rull ned i menyen til venstre til du finner fanen \"Advanced\" (Avansert).",
-            "Aktiver bryter: Finn linjen som heter \"Developer Mode\" (Utviklermodus). Klikk på bryteren så den blir grønn.",
-            "Lukk menyen: Trykk på ESC eller krysset oppe til høyre."
+            "Lag | Teknologi | Protokoll | Etterforskningskonsekvens",
+            "Klient | React (web) / Electron (desktop) | HTTPS + WebSocket | Electron DevTools tilgjengelig – kan hente JWT-token i debug",
+            "TLS-handshake | TLS 1.3 – Discord server | TCP/443 | SNI-feltet avslører discord.com i Client Hello – synlig i PCAP",
+            "REST API (profil, historikk) | discord.com/api/v10 | HTTPS GET/POST JSON | IP-adresse logges per kall – tilgjengelig via LE-forespørsel",
+            "WebSocket Gateway | gateway.discord.gg | WSS (WebSocket Secure) | Sanntidsmeldinger – heartbeat hvert 41 sek – identifiserbart",
+            "CDN (vedlegg) | cdn.discordapp.com (Cloudflare) | HTTPS + signerte URLer | IP til Cloudflare – ikke målets IP. URL utløper etter 24t.",
+            "Discord-server | Cassandra NoSQL + Redis + AWS S3 | Proprietær | Meldinger lagres til sletting. LE-forespørsel gir tilgang med kjennelse.",
+            "LE-utlevering | Discord Trust & Safety → MLAT → Kripos | E-post/portal | JSON-eksport av kontodata, IP-logger, meldingsinnhold (med kjennelse)"
           ]
         },
         {
           "type": "paragraph",
-          "data": "Kontrollsjekk:\n\nDu vet at du har gjort dette riktig når du kan høyreklikke på navnet til en person og se et nytt valg nederst i menyen som heter \"Copy User ID\" (eller \"Kopier ID\")."
+          "data": "Nivå 3 – Helhet: Discord i etterforskningens store bilde"
         },
         {
-          "type": "paragraph",
-          "data": "3.2 Handling: Sikre ID-en til mistenkte\n\nNå skal vi hente \"fødselsnummeret\" til Anders Bedremann.\n\nSteg-for-steg instruksjon"
-        },
-        {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "Finn brukeren: Finn navnet til Anders i en server, i en chat, eller i vennelisten din.",
-            "Høyreklikk: Høyreklikk på navnet hans eller profilbildet hans.",
-            "Kopier ID: Velg \"Copy User ID\" helt nederst i menyen.",
-            "Lim inn: Gå til notatblokken din (eller del C i dette dokumentet) og lim inn (Ctrl+V).",
-            "RESULTAT: Du ser nå en lang tallrekke, f.eks. 102938475610293847. Dette er gull."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "3.3 Tidsstempel-analyse (Når ble kontoen laget?)\n\nID-en (Snowflake) inneholder en hemmelighet: Tidsstempelet for når kontoen ble laget er \"bakt inn\" i tallet.\n\n> HVORFOR: Hvis Anders sier \"Jeg har ikke brukt Discord på to år\", men ID-en hans viser at kontoen ble laget i forrige uke, så lyver han.\n\n> \n\nVerktøy: Du trenger ikke regne dette ut selv. Det finnes nettsider som gjør det (f.eks. hugo.moe/discord/snowflake eller discord.id).\n\nSteg-for-steg instruksjon"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Gå til verktøy: Åpne nettleseren og gå til https://discord.id.",
-            "Lim inn ID: Lim inn tallrekken du fant i sted (Anders sin ID).",
-            "Les av: Nettsiden vil fortelle deg nøyaktig dato og klokkeslett kontoen ble opprettet.",
-            "Eksempel: \"Account Created: 2024-02-14 15:30:00\"."
+            "Kriminalitetskategori | Discord-rolle | OSINT-strategi | SIS-referanse",
+            "Narkotikahandel | Åpne og private salgs-servere med emoji-prislister | Server-analyse + emoji-dekoding + invite-API | SIS-OFM-05 + emoji-guide",
+            "Cyberkriminalitet | Koordinering av angrep, salg av RAT/ransomware | Brukernavnpivå til GitHub, hacker-forum | SIS-LEAK-08",
+            "CSAM | Private servere med gradert rolletilgang | Invite-analyse + preservation request umiddelbart + LE | SIS-MINOR-14",
+            "Radikalisering | Servere med gradert tilgang og indoktrinering | Passiv serverovervåking + server-kartlegging | SIS-PIAR-01",
+            "Svindel | Phishing-koordinering, konto-salg, identitetstyveri | Lekkasjesøk (HIBP/IntelX) + Snowflake-dekoding | SIS-OFM-05",
+            "Hvitvasking | Krypto-transaksjoner koordinert via Discord | Krypto-lommebokanalyse + on-chain sporing | SIS-KRYPTO",
+            "Grooming | Voksne kontakter mindreårige via gaming-servere | Særlige juridiske krav – SIS-MINOR-14 | SIS-MINOR-14"
           ]
         }
       ]
     },
     {
       "id": "s05",
-      "overskrift": "4. SERVER-ETTERFORSKNING (KLUBBHUSET)",
+      "overskrift": "SEKSJON 4 – ANALOGI-PAR",
       "komponenter": [
         {
           "type": "paragraph",
-          "data": "I oversikten over angrepsflaten ser vi at \"Joined Servers\" (Servere man er medlem av) er en sentral del av informasjonen."
+          "data": "AP-01 | Snowflake-ID"
         },
         {
-          "type": "paragraph",
-          "data": "4.1 Gjensidige Servere (Mutual Servers)\n\nDette er den enkleste måten å se hvor en person oppholder seg, men det krever at du (din etterforskningskonto) også er medlem der.\n\n> HVORFOR: Kriminelle bruker ofte felles \"markedsplasser\" for å selge varer. Hvis du finner Anders i serveren \"Oslo Kjøp og Salg\", er det et spor.\n\n> \n\nSteg-for-steg:"
-        },
-        {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "Klikk på profilen til Anders Bedremann.",
-            "Se etter fanen som heter \"Mutual Servers\" (Felles servere).",
-            "Listen viser alle \"klubbhus\" der dere begge er medlemmer."
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "Snowflake er en 64-bit integer der bit 63–22 (42 bits) er antall millisekunder siden Discord-epoch 1.1.2015. Ingen bruker kan manipulere sin egen Snowflake. | Snowflake er som et DNA-fingeravtrykk: inneholder nøyaktig informasjon om tidspunktet for 'fødsel' – ned til millisekundet. Og i motsetning til et fødselsnummer kan ingen bruker endre sin Snowflake."
           ]
         },
         {
           "type": "paragraph",
-          "data": "4.2 Roller og Hierarki\n\nInne på en server har brukere \"Roles\" (Roller)."
+          "data": "AP-02 | Standard DM (ikke E2EE)"
         },
         {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "Analogi: I en MC-klubb har man merker som viser rang (President, Prospect, Medlem). På Discord er dette fargede navn.",
-            "Hvorfor viktig: Hvis Anders har rollen \"Verifisert Selger\" eller \"Admin\" i en narkotika-server, beviser det at han har en sentral rolle i nettverket, ikke bare en tilfeldig besøkende."
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "Standard Discord DM krypteres med AES-256 at rest, men Discord Inc. besitter nøkkelen. Discord kan lese og utlevere innholdet med rettslig pålegg. | Standard DM er som å sende et brev og gi en kopi til postkontoret. Mottakeren leser originalen, men postkontoret (Discord) har alltid en kopi – og kan åpne den hvis politiet ber om det."
           ]
         },
         {
           "type": "paragraph",
-          "data": "Vanlige Feil:\n\n> FEIL: Å tro at \"Server Nickname\" er det samme som brukernavnet.\n\n> FORKLARING: Anders kan hete \"Sjefen\" i én server og \"LilleGutt\" i en annen. Dette er bare navneskilt.\n\n> RIKTIG: Sjekk alltid den underliggende profilen og ID-en.\n\n> "
+          "data": "AP-03 | Invitasjonslenke (discord.gg/kode)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "Et API-kall til discord.com/api/v10/invites/[KODE]?with_counts=true returnerer guild.id, guild.name, inviter.id (Snowflake), member_count og expires_at – alt uten innlogging. | Invitasjonslenken er husleiekontrakten til et kriminelt lager. Du trenger ikke bryte deg inn for å se hvem som eier kontrakten – du plukker bare opp nøkkelen fra bakken og leser den."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "AP-04 | DAVE-protokoll (E2EE voice/video)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "DAVE (Discord Audio Video Encryption) bruker MLS (Messaging Layer Security) for E2EE i voice/video-kanaler siden 2023. Discord-server videresender krypterte pakker uten nøkkelen. | DAVE-krypterte talesamtaler er som et whisper-rør mellom to private rom – Discord er bare røret, ikke lytteren. Selv med ransakingskjennelse kan Discord ikke gi deg lyden av samtalen."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "AP-05 | CDN-URL med 24-timers utløp"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "Fra 2023 er Discord CDN-URLer signert med HMAC og parameterne ?ex= (utløp, hex UNIX) og ?is= (utstedt, hex UNIX). Etter ~24 timer slutter URLer å virke. | CDN-URLen er en billettluke med QR-kode – virker i 24 timer, deretter er billetten ugyldig. Beviset er filen, ikke lenken. Last ned umiddelbart, hash, logg."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "AP-06 | Tilkoblede kontoer (Connected Accounts)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "Discord-brukere kan koble GitHub, Twitter, Steam, Spotify, Xbox, Reddit, YouTube, Twitch, Battle.net og Facebook til Discord-profilen. Disse er synlige for andre brukere. | Connected Accounts er som å finne personens visittkort med lenker til alle deres sosiale profiler. Én Discord-konto åpner dørene til ti andre plattformer – og ti nye pivå-punkt."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "AP-07 | Discord History Tracker"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "Discord History Tracker er et browser-script som lagrer en lokal SQLite-database med alle meldinger i servere etterforsker har tilgang til. SHA-256 av SQLite-filen er bevisintegritet. | Discord History Tracker er som en sanntidsopptaker som tar kopi av alle brev som sendes gjennom klubben. Det som ellers ville blitt makulert av admin, er nå bevart i etterforskerens arkiv."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "AP-08 | MLAT-prosessen"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "For norsk politi: innhenting av Discord-data krever Mutual Legal Assistance Treaty (MLAT) – norsk tingrettskjennelse → Kripos → US DoJ → Discord. Preservation request blokkerer sletting mens MLAT pågår. | MLAT er som internasjonal tollavstempling. Din norske varedeklarasjon (kjennelse) er ikke gyldig i USA alene. Du trenger Kripos som tolk og US DoJ som tullmyndighet – men preservation request er som å sette pakken i karantene mens papirene ordnes."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "AP-09 | Snowflake i URL-hierarki"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "URL-en discord.com/channels/[GUILD_ID]/[CHANNEL_ID]/[MESSAGE_ID] inneholder tre Snowflake-IDer. Alle tre kan dekodes til nøyaktige tidsstempler for server-, kanal- og meldingsopprettelse. | Discord-URL-en er som en adresse med tre etasjenivåer: bygningstidspunkt (guild), roms opprettelsesdato (kanal) og tidspunktet for brevet (melding) – alt kodet i adressen."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "AP-10 | Emoji-koder i kriminelle Discord-servere"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "Kriminelle Discord-miljøer bruker emoji som systematisk obfuskering. 🌿=cannabis, ❄️=kokain, 📦=forsendelse. Kombinert med l33t-speak og gamer-slang skaper dette et flerdimensjonalt kodesystem. | Emoji-kodene er som en mafias bankersjargong – 'bananer' betyr én ting for omverdenen, noe helt annet i kretsen. Systemet er lett å dekode med kontekst, men uforståelig for utenforstående som ser meldingene isolert."
+          ]
         }
       ]
     },
     {
       "id": "s06",
-      "overskrift": "5. VANLIGE FEIL OG OPERASJONSSIKKERHET (OPSEC)",
+      "overskrift": "SEKSJON 6 – H-H-H-N MIKROSTEG: KOMPLETT ETTERFORSKNING A TIL Å",
       "komponenter": [
         {
           "type": "paragraph",
-          "data": "Feil 1: \"Typing...\" (Skriver...)\n\n> Hva skjer: Du går inn i en privat chat (DM) med Anders for å lese gamle meldinger. Du kommer borti tastaturet.\n\n> Konsekvens: Discord viser \"Politiet skriver...\" (eller ditt brukernavn) til Anders umiddelbart. Han skjønner at noen er inne i chatten.\n\n> Løsning: Les aldri DM-er fra en konto du har tatt beslag i uten å koble fra internett først, eller vær ekstremt forsiktig.\n\n> "
+          "data": "6.1 – Forberedelse og passiv innhenting"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "HVA | HVOR | HVORFOR | NÅR",
+            "Aktiver VM + VPN + sokkedukke-konto | Kali Linux VM (SIS-VM-11) + ProtonVPN + etterforskningskonto | Forhindre attribusjon – etterforsker er anonym | FØR alt annet – ingen unntak",
+            "Identifiser selektor: brukernavn, Snowflake-ID, eller invite-kode | Kildemateriale fra saken, politi-registre, vitneutsagn | Etabler ankerpunkt for videre søk | Første steg i PIAR-syklusen",
+            "Passivt søk: brukernavn i OSINT Industries, cord.cat, top.gg | Nettleser i VM – ikke innlogget på Discord | Finn ekstern info uten å etterlate spor på Discord | Alltid FØR Discord-innlogging",
+            "Invite-API-kall (uten innlogging) | Terminal: curl discord.com/api/v10/invites/[KODE] | Hent server-metadata og inviter-Snowflake – ingen logging av dette kallet | Hvis invitasjonslenke er tilgjengelig",
+            "Lekkasjesøk: e-post/brukernavn i HIBP og IntelX | haveibeenpwned.com, intelx.io, dehashed.com | Finn eksponerte passord-hashes, historiske e-poster, IP-adresser | Tidlig i etterforskningen – § 25 tillatt",
+            "SHA-256 av alle passivt innhentede funn | Terminal: sha256sum [fil] >> SHA256_logg.txt | Bevisintegritet fra dag 1 | Umiddelbart etter hvert funn – aldri i batch"
+          ]
         },
         {
           "type": "paragraph",
-          "data": "Feil 2: Bli med i servere med privat konto\n\n> Hva skjer: Du bruker din private gaming-bruker til å gå inn i en server for å etterforske.\n\n> Konsekvens: Kriminelle bruker \"Bots\" (roboter) som logger hvem som kommer inn. De ser at \"PolitiPer\" ble med.\n\n> Løsning: Bruk alltid en \"Sock Puppet\" (falsk, dedikert etterforskningskonto) som er opprettet på en sikker måte.\n\n> "
+          "data": "6.2 – Discord-innlogging og profilanalyse"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "HVA | HVOR | HVORFOR | NÅR",
+            "Aktiver Developer Mode i Discord | Innstillinger → Avansert → Utviklermodus → PÅ | Aktiverer 'Kopier ID' for alle Discord-objekter | Første gang sokkedukke logger inn",
+            "Søk opp målprofil – kopier Snowflake | Søk på brukernavn i Discord → Høyreklikk → Kopier ID | Snowflake er permanent – gir kontopprettelsesdato | Etter innlogging med sokkedukke",
+            "Dekod alle Snowflake-IDer | discord.dog/tools/snowflake-decoder | Etabler tidsstempler for alle Discord-entiteter | Etter ID-innhenting",
+            "Analyser Connected Accounts | Klikk på profil → Se tilkoblede kontoer | GitHub, Steam, Reddit etc. = nye pivå-punkt til andre plattformer | Under profilanalyse",
+            "Kartlegg mutual_guilds og mutual_friends | Via Discord API + DevTools Network-tab | Avslør felles servere og nettverk med kriminelle | Etter profil-analyse",
+            "Hunchly aktivt ved all Discord-browsing | Chrome med Hunchly (rødt ikon) – nødvendig FØR innlogging | Automatisk URL + MHTML + hash for alle Discord-sider | FØR Discord.com åpnes i Chrome"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "6.3 – Server- og kanal-kartlegging"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "HVA | HVOR | HVORFOR | NÅR",
+            "Identifiser servere via Disboard og offentlige kataloger | disboard.org – søk på relevante emner og tags | Kartlegg kriminelt nettverk uten å bli med | Passivt – § 25 – ingen beslutning nødvendig",
+            "Analyser server-emoji og kanal-navn | Offentlig del av server (uten innmelding) | Kanal-navn og custom emoji avslører aktivitetstype | Passiv observasjon",
+            "Dekod invitasjonslenken til server-ID og oppretterens Snowflake | Invite-API-kall – ingen innlogging nødvendig | Server-ID + oppretterens kontopprettelsesdato | FØR evt. innmelding i server",
+            "Vurder server-innmelding juridisk | Politijurist – beslutning strpl. § 196 | Aktiv handling – avslører sokkedukken for serveradmin | Kun etter skriftlig beslutning",
+            "Discord History Tracker i servere du har tilgang til | Browser-script → SQLite-database med meldinger | Bevar meldingshistorikk lokalt – kan slettes av admin | Kontinuerlig under etterforskning",
+            "SHA-256 av SQLite-database | sha256sum discord_history.db | Bevissikring av meldingshistorikk | Etter hver History Tracker-eksport"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "6.4 – Eskalering og juridisk innhenting"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "HVA | HVOR | HVORFOR | NÅR",
+            "Send preservation request til Discord LE-portal | discord.com/safety/360044157931-working-with-law-enforcement | Blokkerer sletting av data under MLAT-prosessen (90 dager) | Umiddelbart når etterforskning eskaleres",
+            "Klargjør norsk kjennelse (strpl. § 197 eller § 192) | Norsk tingrett – kjennelse på engelsk eller med sertifisert oversettelse | Kjennelse er grunnlag for MLAT-forespørselen | Etter preservation request er sendt",
+            "MLAT-forespørsel via Kripos | Kripos (kripos@politiet.no) → Riksadvokaten → US DoJ → Discord | Norsk kjennelse har ikke direkte jurisdiksjon over Discord | Parallelt med bevisinnhenting fra åpne kilder",
+            "Motta Discord-dataeksport og SHA-256 alle mottatte filer | E-post/ZIP fra Discord Trust & Safety | JSON med konto-data, IP-logger, meldingsinnhold (med kjennelse) | Etter Discord-respons (4–8 uker)",
+            "Integrer Discord-data med åpen kilde-funn i funnrapport | SIS-RAPPORT-13 mal – funnrapport + egenrapport | Discord-data som A-1-HØY kilde, OSINT som C-2–B-2 | Under rapportskrivingen",
+            "Registrer Discord-bruker-ID i Indicia | Politiets Indicia-system | Kobler digital Discord-identitet til personfane | Innen 24t etter ferdig rapport"
+          ]
         }
       ]
     },
     {
       "id": "s07",
-      "overskrift": "6. OPPSUMMERING DEL A (SÅ LANGT)",
+      "overskrift": "SEKSJON 7 – REFERANSEARKIV OG KRYSSREFERANSER",
       "komponenter": [
-        {
-          "type": "list",
-          "data": [
-            "Discord er bygget opp av Servere (hus), Kanaler (rom) og DM (gangprat).",
-            "Snowflake ID (Bruker-ID) er det viktigste sporet. Det er brukerens digitale fingeravtrykk som aldri endres.",
-            "Developer Mode må aktiveres for å finne denne ID-en.",
-            "Tilkoblede kontoer (Spotify, Steam) kan avsløre brukerens ekte identitet.",
-            "Nitro Badge indikerer at det finnes betalingsinformasjon (kredittkort) som politiet kan kreve utlevert."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "DEL B: RAPPORTKLAR TEKST\n\nDenne teksten er klar til å limes inn i en politirapport.\n\nRAPPORT: KARTLEGGING AV DISCORD-KONTO"
-        },
-        {
-          "type": "paragraph",
-          "data": "1. Mandat og problemstilling\n\nFormålet med undersøkelsen er å identifisere brukeren bak Discord-aliaset \"Gr8attwhatido\" og kartlegge eventuell tilknytning til straffbar virksomhet."
-        },
-        {
-          "type": "paragraph",
-          "data": "2. Inngangsverdier\n\nFølgende informasjon lå til grunn for undersøkelsen:"
-        },
         {
           "type": "grid",
           "data": [
-            "Verdi | Type | Kilde | Verifisert",
-            "|---|---|---|---|",
-            "Gr8attwhatido | Brukernavn | Tips | Nei |",
-            "Narko-Serveren | Servernavn | Tips | Nei |"
+            "Dok-ID | Tittel | Discord-kobling",
+            "SIS-DISCORD-15 | Discord-etterforskning (dette dok.) | Primærdokument",
+            "SIS-PIAR-01 | PIAR-metodikk | Overordnet rammeverk – planlegging, endex, juridisk avklaring",
+            "SIS-TPS-02 | TPS-modellen | Gradering av Discord-funn (invite-data = C, LE-data = A)",
+            "SIS-PIVOT-03 | Pivå-metodikk | Connected Accounts = pivå til andre plattformer",
+            "SIS-HASH-04 | Hashing og SHA-256 | SHA-256 av alle Discord-artifacts – CDN-vedlegg, SQLite, OVA",
+            "SIS-JUSS-05 | Juridisk rammeverk | § 25 / § 196 / § 192 per Discord-handling",
+            "SIS-OPSEC-06 | OPSEC og digital hygiene | VM, VPN, sokkedukke for Discord-etterforskning",
+            "SIS-LEAK-08 | Datalekkasjer og -brudd | Discord.io 2023, Zendesk 2025 – HIBP/IntelX-søk",
+            "SIS-VM-11 | Dedikert VM for OSINT | Teknisk plattform for all Discord-innhenting",
+            "SIS-OFM-05 | OFM – Online Footprint Methodology | Nivå 3 (Social Avenues) og Nivå 4 (Breaches) dekker Discord",
+            "SIS-RAPPORT-13 | Rapportmal og beviskjede | Format for funnrapport med Discord-data",
+            "SIS-MINOR-14 | Mindreårige i digitale saker | CSAM og grooming på Discord – særlige krav og protokoll",
+            "SIS-TELEGRAM-10 | Telegram-etterforskning | Parallell metodikk for sammenligning"
           ]
         },
         {
           "type": "paragraph",
-          "data": "3. Metode\n\nUndersøkelsen er gjennomført ved søk i åpne kilder (OSINT) på plattformen Discord. Det er benyttet passiv innhenting. Brukerens unike identifikator (Snowflake ID) er sikret ved bruk av Discords utviklermodus."
-        },
-        {
-          "type": "paragraph",
-          "data": "4. Funn – Identitet\n\nDet er identifisert en brukerkonto med følgende detaljer:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Brukernavn: gr8attwhatido (Nytt format)",
-            "Visningsnavn: \"A.B.\"",
-            "Bruker-ID (Snowflake): 843123456789012345",
-            "Analyse: Ved oppslag mot Discord-tidsstempel, viser ID-en at kontoen ble opprettet 15.03.2023.",
-            "Profilbilde: Standard Discord-logo (Grønn).",
-            "Badges: Det ble observert et \"Nitro\"-badge på profilen.",
-            "Vurdering: Dette indikerer at brukeren har et aktivt betalingsabonnement hos Discord. Dette medfører at Discord sannsynligvis besitter betalingsinformasjon (kortnummer/PayPal) knyttet til brukeren."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "5. Funn – Tilkoblede Kontoer\n\nProfilen viser ingen tilkoblede tredjepartskontoer (Steam, Spotify, Twitch). Dette vurderes som et bevisst tiltak for å skjule identitet (OPSEC)."
-        },
-        {
-          "type": "paragraph",
-          "data": "6. Analyse og Vurdering\n\nBrukeren opptrer med høy grad av anonymitet. Mangelen på personlig profilbilde og tilkoblede kontoer styrker hypotesen om at dette er en konto opprettet for spesifikke, potensielt skjulte formål. Funnet av \"Nitro\"-badge er likevel et kritisk spor, da det muliggjør identifisering via betalingsformidler ved en rettslig kjennelse mot Discord Inc."
-        },
-        {
-          "type": "paragraph",
-          "data": "7. Konklusjon\n\nKontoen er positivt identifisert via unik ID. Det anbefales å rette en formell forespørsel til Discord Inc. for utlevering av abonnementsinformasjon knyttet til ID 843123456789012345.\n\nDEL C: OPERATIVT UTFYLLINGSSKJEMA\n\nInstruksjon: Fyll ut feltene underveis i etterforskningen."
-        },
-        {
-          "type": "list",
-          "data": [
-            "Felt merket med (*) er obligatoriske.",
-            "Kursiv tekst er hjelpetekst.",
-            "<Grå tekst> er eksempler."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "1. IDENTIFISERING AV KONTO"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Felt | Instruksjon | Utfylling (Eksempel: Anders Bedremann)",
-            "|---|---|---|",
-            "Brukernavn* | Navnet med @ eller # | <Gr8attwhatido> |",
-            "Visningsnavn | Navnet som vises på profilen | <A.B.> |",
-            "Bruker-ID (Snowflake)* | Høyreklikk -> Copy ID (MÅ HA DEV MODE) | <843123456789012345> |",
-            "Opprettelsesdato | Sjekk ID på discord.id | <15.03.2023> |",
-            "Profilbilde (Avatar) | Beskriv bildet eller lim inn URL | <Standard grønn logo> |"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "2. ANGREPSFLATE-SJEKKLISTE\n\nGå gjennom profilen og kryss av for hva du finner."
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Datapunkt | Funnet? | Beskrivelse / Verdi",
-            "|---|---|---|",
-            "Nitro Badge | [x] Ja | <Indikerer betaling - VIKTIG SPOR!> |",
-            "Spotify | [ ] Nei | <Viser hva de hører på nå> |",
-            "Steam/Spill | [ ] Nei | <Kan ofte kobles til navn/venner> |",
-            "Sosiale Medier | [ ] Nei | <YouTube, Twitch, Twitter, Reddit> |",
-            "Bio-tekst | [x] Ja | <\"Kontakt meg på Session: ab123\"> |",
-            "Server Nickname | [x] Ja | <Kaller seg \"Sjefen\" i Narko-serveren> |"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "3. VURDERING AV NYTTEVERDI"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Har vi ID? Ja -> Vi kan be om data fra Discord.",
-            "Har vi Betalingsspor (Nitro)? Ja -> Vi kan finne eieren via bank.",
-            "Har vi andre kontoer? Nei -> Vi må stole på de to punktene over."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Neste steg:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "[ ] Sikre skjermbilder av hele profilen.",
-            "[ ] Starte prosess for rettsanmodning basert på ID.",
-            "- DEL 2"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "s08",
-      "overskrift": "0. PEDAGOGISK OVERGANG",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "Velkommen tilbake. I forrige del fant du \"fødselsnummeret\" (ID-en) til Anders Bedremann. Nå står du utenfor \"klubbhuset\" (Serveren) med ID-en i hånden. Nå skal vi se på hva Anders faktisk har sagt og gjort der inne.\n\nVi skal bruke Lina Grim (sivil) og Anders Bedremann (kriminell) for å vise forskjellen på uskyldig prat og straffbar handling.\n\nDEL A: UNDERVISNINGSKAPITTEL"
-        }
-      ]
-    },
-    {
-      "id": "s09",
-      "overskrift": "5. SØK OG MELDINGSANALYSE (ARKIVET)",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "I følge oversikten over angrepsflaten består brukeraktivitet primært av Posts (innlegg), som igjen deler seg inn i Comments (kommentarer/tekst), Media (bilder/video) og Links (lenker)."
-        },
-        {
-          "type": "paragraph",
-          "data": "5.1 Hvorfor søke strukturert?\n\n> HVORFOR ER DETTE VIKTIG?\n\n> En Discord-server kan ha millioner av meldinger. Å lese alt er umulig. Du må bruke \"metalldetektoren\" (søkefunksjonen) for å finne nåla i høystakken. Kriminelle sletter ofte meldinger, men hvis du sikrer dem raskt nok eller søker smart, kan du finne bevisene før de forsvinner.\n\n> \n\nHverdagsanalogi:\n\nTenk på Discord-søket som Google, men kun for innsiden av huset. Du kan be om å få se \"alt Anders sa i fjor\" eller \"alle ganger Anders sa ordet 'vipps'\"."
-        },
-        {
-          "type": "paragraph",
-          "data": "5.2 Steg-for-steg: Avansert søk (Search Operators)\n\nDiscord har en kraftig søkemotor innebygd. Vi bruker spesielle kommandoer (\"operators\") for å filtrere.\n\nForberedelse:\n\nDu må være inne på serveren du vil undersøke, eller i en DM (privat samtale) med brukeren.\n\nInstruksjon"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Finn søkefeltet: Øverst til høyre i Discord-vinduet ser du et søkefelt (forstørrelsesglass).",
-            "Søk etter spesifikk bruker (from:):",
-            "Skriv: from: etterfulgt av brukernavnet til Anders (Gr8attwhatido eller ID-en hans).",
-            "Resultat: Du ser KUN meldinger fra Anders. Alt annet støy er borte.",
-            "Søk etter innhold (has:):",
-            "Skriv: from: [Anders] has: image",
-            "Resultat: Du ser kun bilder Anders har lagt ut. Dette er kritisk for å finne tyvegods eller overgrepsmateriale (Media).",
-            "Skriv: from: [Anders] has: link",
-            "Resultat: Du ser alle lenker han har delt."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Praktisk Eksempel – Anders Bedremann:\n\nDu skriver: from: Gr8attwhatido has: image.\n\n* Resultat: 500 tekstmeldinger forsvinner. Du sitter igjen med 3 bilder. Ett av dem er et bilde av en stjålet el-sykkel.\n\nPraktisk Eksempel – Lina Grim:\n\nDu skriver: from: linapina96 content: \"fest\".\n\n* Resultat: Alle meldinger der Lina snakker om fest."
-        },
-        {
-          "type": "paragraph",
-          "data": "5.3 Sikring av Meldings-ID\n\nAkkurat som personer har en ID, har hver eneste melding en unik ID.\n\n> HVORFOR: Hvis Anders sletter meldingen med sykkelen i morgen, kan du bevise at \"Melding ID 999888777 inneholdt dette bildet\".\n\n> \n\nHandling:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Høyreklikk på meldingen (teksten eller bildet).",
-            "Velg \"Copy Message ID\" (Kopier meldings-ID). (Krever Developer Mode fra Del 1).",
-            "Lim inn i rapporten din."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "s10",
-      "overskrift": "6. TIDSANALYSE OG AKTIVITETSMØNSTRE",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "I \"Attack Surface\"-modellen ser vi at Timestamp (tidsstempel) er knyttet til alle poster, media og reaksjoner."
-        },
-        {
-          "type": "paragraph",
-          "data": "6.1 Tidslinje-analyse\n\nHverdagsanalogi:\n\nDette er som å sjekke stemplingsuret på jobb. Når er Anders aktiv?\n\nMetode:\n\nVed å se på tidsstemplene på meldingene (som du fant i kapittel 5), kan du bygge en profil:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Nattaktivitet: Poster han kun mellom kl 02:00 og 05:00? (Typisk for hackere eller rusmisbrukere med snudd døgnrytme).",
-            "Skole/Jobb: Er det stille mellom 08:00 og 16:00? (Indikerer at han er i jobb eller skole)."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Praktisk Eksempel:\n\nLina Grim poster jevnt hele dagen, men aldri etter kl 23:00.\n\nAnders Bedremann er helt stille på dagtid, men sender hundrevis av meldinger (Comments) mellom kl 01:00 og 04:00."
-        }
-      ]
-    },
-    {
-      "id": "s11",
-      "overskrift": "7. SERVER-SPESIFIKKE DATA (ROLLEN I KLUBBEN)",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "En bruker kan ha forskjellig identitet i forskjellige servere. Angrepsflaten viser at en bruker har Server Nickname (kallenavn), Server Profile Photo (server-spesifikt bilde) og Roles (roller)."
-        },
-        {
-          "type": "paragraph",
-          "data": "7.1 Server Nickname vs. Brukernavn\n\n> VANLIG FEIL:\n\n> Mange tror at navnet de ser i chatten er det ekte navnet.\n\n> FEIL: I \"Narko-serveren\" kaller Anders seg for \"Sjefen\". I \"Gaming-serveren\" kaller han seg \"NoobMaster\".\n\n> RIKTIG: Klikk på navnet for å se det ekte brukernavnet og ID-en under kallenavnet.\n\n> "
-        },
-        {
-          "type": "paragraph",
-          "data": "7.2 Roller (Roles) og Hierarki\n\nSjekk hvilke Roles brukeren har."
-        },
-        {
-          "type": "list",
-          "data": [
-            "Moderator / Admin: Har brukeren makt i serveren? Kan de slette bevis?",
-            "Bot: Er det en faktisk person, eller en robot? (Bots har et blått \"BOT\"-merke).",
-            "Custom Roles: I kriminelle servere betyr ofte roller som \"Verifisert\" eller \"VIP\" at brukeren har gjennomført handler før."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Sjekkliste for Roller:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Klikk på brukerens navn i server-listen til høyre.",
-            "Se under \"Roles\".",
-            "Noter alle farger og titler."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "s12",
-      "overskrift": "8. AKTIVE KANALER OG VOICE (LIVE-FEEDEN)",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "Angrepsflaten viser at aktivitet også skjer i Active Channels, inkludert Video og Voice (tale)."
-        },
-        {
-          "type": "paragraph",
-          "data": "8.1 Faren med Voice og Video\n\n> ADVARSEL:\n\n> Tekst blir lagret (til det slettes). Tale (Voice) og Video forsvinner i løse luften med en gang det er sagt, med mindre noen tar opptak.\n\n> \n\nHverdagsanalogi:\n\nTekst-chat er som å skrive brev. Voice-chat er som en telefonsamtale uten opptak.\n\nHvordan se om noen er i Voice:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Se i listen over kanaler til venstre.",
-            "Voice-kanaler har et lite høyttaler-ikon 🔊.",
-            "Hvis du ser brukernavnet/bildet til Anders under en Voice-kanal, betyr det at han sitter og snakker akkurat nå."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Tiltak:\n\nHvis du ser mistenkte i en Voice-kanal der det pågår kriminalitet (f.eks. live-overgrep eller planlegging):"
-        },
-        {
-          "type": "list",
-          "data": [
-            "IKKE gå inn med din bruker (du blir synlig).",
-            "Dokumenter at han er der (skjermbilde).",
-            "Dette krever ofte andre metoder (kommunikasjonsavlytting) for å fange opp innholdet."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "s13",
-      "overskrift": "9. OPPSUMMERING DEL 2",
-      "komponenter": [
-        {
-          "type": "list",
-          "data": [
-            "Søk smart: Bruk from: og has: image for å finne bevis raskt blant tusenvis av meldinger (Comments/Media/Links).",
-            "Meldings-ID: Sikre alltid ID-en til beviset, ikke bare bildet.",
-            "Tidsstempel: Bruk tidspunktene (Timestamp) til å kartlegge døgnrytme.",
-            "Roller: Sjekk om brukeren er \"Sjef\" (Admin) eller \"Løpegutt\" (Member) via Server Roles.",
-            "Voice: Vær klar over at tale forsvinner. Dokumenter tilstedeværelse i Active Channels."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Neste steg for deg:\n\nGå til Del C og fyll ut skjemaet for \"Aktivitetslogg\" basert på det du har lært.\n\nDEL B: RAPPORTKLAR TEKST (AKTIVITET)\n\nRAPPORT: ANALYSE AV DISCORD-AKTIVITET"
-        },
-        {
-          "type": "paragraph",
-          "data": "1. Funn – Server-tilhørighet og Roller\n\nBrukeren Gr8attwhatido (ID: 843123456789012345) ble observert som medlem av serveren \"Kjøp og Salg Østlandet\"."
-        },
-        {
-          "type": "list",
-          "data": [
-            "Server Nickname: Brukeren benytter kallenavnet \"Apotekeren\" i denne spesifikke serveren.",
-            "Roller: Brukeren innehar rollen \"Verifisert Selger\". Dette indikerer tillit internt i serverens hierarki."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "2. Funn – Meldingshistorikk (Posts)\n\nVed strukturert søk i serverens åpne kanaler ble det identifisert flere meldinger av interesse:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Media/Bilder: Den 14.02.2024 kl. 03:15 lastet brukeren opp et bilde (Media) av reseptbelagte legemidler.",
-            "Meldings-ID: 120567890123456789",
-            "Lenker: Brukeren har delt lenker (Links) til en ekstern kryptert meldingstjeneste (Signal) i chatten.",
-            "Kommentarer: Tekstlig innhold (Comments) bekrefter prisforespørsler og avtaler om møtesteder."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "3. Tidsanalyse (Timestamp)\n\nGjennomgang av brukerens aktivitet viser et tydelig mønster:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Brukeren er inaktiv mellom kl. 08:00 og 16:00.",
-            "Høyeste aktivitet (Posts/Reacts) forekommer mellom kl. 23:00 og 04:00.",
-            "Dette mønsteret er konsistent over en periode på 14 dager."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "4. Vurdering\n\nAktiviteten på serveren styrker mistanken om salgsvirksomhet. Bruken av server-spesifikt kallenavn (\"Apotekeren\") og rollen \"Verifisert Selger\" viser forsett og organisering. Bildematerialet knytter brukeren direkte til varepartiet.\n\nDEL C: OPERATIVT UTFYLLINGSSKJEMA (AKTIVITET)\n\nInstruksjon: Bruk dette skjemaet når du går gjennom en server eller chat-logg."
-        },
-        {
-          "type": "paragraph",
-          "data": "4. SØKEMATRISE (Hva har du lett etter?)\n\nFor å dokumentere at du har gjort jobben grundig."
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Søkeord / Operator | Formål | Resultat (Antall treff)",
-            "|---|---|---|",
-            "from: [Bruker-ID] | Se alt brukeren har skrevet | <543 meldinger> |",
-            "from: [ID] has: image | Finne bilder (Media) | <12 bilder (3 av interesse)> |",
-            "from: [ID] has: link | Finne lenker (Links) | <2 lenker (til Signal)> |",
-            "from: [ID] content: \"vipps\" | Finne betalingssnakk | <1 treff> |"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "5. BEVIS-LOGG (Enkeltmeldinger)\n\nFyll ut for de viktigste bevisene du finner."
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Dato/Tid (Timestamp)* | Type (Media/Text) | Innhold/Beskrivelse | Meldings-ID (Snowflake)*",
-            "|---|---|---|---|",
-            "<14.02.24 03:15> | <Bilde> | <Foto av piller på bord> | <12056789...> |",
-            "<14.02.24 03:16> | <Tekst> | <\"Møtes bak kiosken\"> | <12056799...> |"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "6. SERVER-PROFILERING\n\nHvordan fremstår brukeren i akkurat denne serveren?"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Datapunkt | Observasjon | Betydning",
-            "|---|---|---|",
-            "Server Nickname | <Apotekeren> | <Indikerer salgsrolle> |",
-            "Server Avatar | <Bilde av pille> | <Avviker fra hovedprofil> |",
-            "Roller (Roles) | <Verifisert, VIP> | <Har høy status i nettverket> |",
-            "Active Channels | <Voice-kanal \"Lounge\"> | <Observert i talechat 14.02> |"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "NESTE STEG FOR DEG (OPERATIVT)"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Gå inn i en test-server (lag din egen hvis du vil øve).",
-            "Prøv søkefunksjonen: Skriv has: image og se hva som skjer.",
-            "Kopier en Meldings-ID: Prøv å høyreklikke på en tekst og finne ID-en.",
-            "Dette avslutter Del 2. Du har nå kartlagt både hvem (ID) og hva (Aktivitet).",
-            "I denne siste delen skal vi kartlegge Nettverket (hvem kjenner de?), Invitasjoner (hvordan kommer de seg inn?), og til slutt hvordan du Sikrer Beviset (Dokumentasjon) for retten.",
-            "Vi fortsetter å bruke filen Discord OSINT Attack Surface.pdf som kart, spesielt punktene om Invite Links, Mutual Friends/Servers og Bots.",
-            "DIGITAL ETTERFORSKNING PÅ DISCORD: GRUNNKURS FOR POLITIELL INNHENTING (AK) - DEL 3"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "s14",
-      "overskrift": "0. PEDAGOGISK OVERGANG",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "Nå har du Anders Bedremann sin ID, og du har sett at han selger ulovlige varer i en server. Men hvem samarbeider han med? Og hvordan rekrutterer de nye kunder?\n\nVi skal se på Invitasjons-lenker som \"nøkler\" til nye rom, og Bots som \"vitner\" som husker ting selv om Anders sletter dem.\n\nDEL A: UNDERVISNINGSKAPITTEL"
-        }
-      ]
-    },
-    {
-      "id": "s15",
-      "overskrift": "10. NETTVERKSANALYSE (RELASJONER)",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "Ifølge angrepsflaten (Attack Surface) er Mutual Friends (Felles venner) og Mutual Servers (Felles servere) sentrale punkter."
-        },
-        {
-          "type": "paragraph",
-          "data": "10.1 Felles Servere (Mutual Servers) – Det geografiske kartet\n\nDette er din beste måte å forstå hvor Anders opererer.\n\n> HVORFOR: Hvis Anders er medlem av serverne \"Oslo Gaming\", \"Lillestrøm Kjøp/Salg\" og \"Romerike Bil\", har du nettopp plassert ham geografisk på Romerike, selv om han sier han bor i Bergen.\n\n> \n\nSteg-for-steg:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Klikk på profilen til Anders.",
-            "Velg fanen \"Mutual Servers\".",
-            "ANALYSE: Skriv ned navnene på alle serverne dere har felles. Dette er hans \"digitale nabolag\"."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "10.2 Invitasjons-lenker (Invite Links) – Sporet til nye rom\n\nEn invitasjonslenke ser slik ut: discord.gg/etellerannet eller discord.com/invite/kode.\n\nDisse finnes ofte i Anders sin Bio (profiltekst) eller i meldinger han sender.\n\n> ADVARSEL (OPSEC):\n\n> Hvis du klikker på en lenke, kan server-eieren se at du kom inn.\n\n> Aldri klikk på en lenke med din private konto.\n\n> \n\nMetode for trygg sjekk:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Kopier lenken (ikke klikk).",
-            "Gå til en nettleser (f.eks. Chrome) i \"Incognito/Privat\"-modus.",
-            "Lim inn lenken.",
-            "Discord viser deg en \"Preview\" (Forhåndsvisning):",
-            "Serverens navn",
-            "Antall medlemmer",
-            "Hvor mange som er online",
-            "Server-ikonet",
-            "DOKUMENTASJON: Ta skjermbilde av denne forhåndsvisningen før du vurderer å gå inn."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Praktisk Eksempel – Anders Bedremann:\n\nAnders har teksten \"Join laget mitt: discord.gg/kjeltring123\" i sin Bio.\n\n* Du sjekker: Lenken leder til en server som heter \"Kryptovaluta Norge\" med 5000 medlemmer.\n\n* Funn: Du har nå funnet et nytt sted Anders opererer, uten å ha snakket med ham."
-        }
-      ]
-    },
-    {
-      "id": "s16",
-      "overskrift": "11. BOTS – DE DIGITALE VITNENE",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "I diagrammet over angrepsflaten står det Bot. Dette er automatiserte programmer i serveren."
-        },
-        {
-          "type": "paragraph",
-          "data": "11.1 Hvorfor er Bots viktige for politiet?\n\nKriminelle glemmer ofte at Bots logger alt."
-        },
-        {
-          "type": "list",
-          "data": [
-            "Velkomst-boter: Sier \"Hei Anders, velkommen!\" når han ble med. (Gir deg dato for innmelding).",
-            "Level-boter (MEE6, ProBot): Gir poeng for hver melding man skriver. De har ofte offentlige \"Leaderboards\" (topplister) på nettet."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "11.2 Sjekk av offentlige lister (Uten å være i serveren)\n\nDette er et \"Pro Tip\" for nybegynnere.\n\nSteg-for-steg:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Vet du hva serveren heter? (F.eks. \"Narko-Serveren\").",
-            "Gå til Google.",
-            "Søk: MEE6 leaderboard \"Narko-Serveren\" (eller andre bot-navn som Carl-bot).",
-            "Hvis listen er åpen, kan du se hvem som skriver mest i serveren uten å være medlem selv.",
-            "Søk etter Anders sitt brukernavn på listen."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Resultat:\n\nDu ser at Anders er på 3. plass i serveren med 50.000 meldinger.\n\n* Analyse: Han er en kjerne-medlem, ikke en tilfeldig gjest."
-        }
-      ]
-    },
-    {
-      "id": "s17",
-      "overskrift": "12. DOKUMENTASJON OG BEVISSIKRING",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "Du har funnet beviset. Nå må du lagre det så det holder i retten."
-        },
-        {
-          "type": "paragraph",
-          "data": "12.1 Hvorfor holder ikke bare \"Print Screen\"?\n\nEt bilde kan manipuleres i Photoshop. Retten trenger å vite når bildet ble tatt, hvor det ble tatt, og at det er ekte."
-        },
-        {
-          "type": "paragraph",
-          "data": "12.2 Beste praksis for nybegynnere"
-        },
-        {
-          "type": "list",
-          "data": [
-            "Bruk skjermopptak (Video): Start opptak på PC-en din. Film at du klikker deg inn på profilen, kopierer ID-en, og viser meldingene. Det er vanskeligere å forfalske en video der du navigerer live.",
-            "Noter Tidsstempel: Skriv alltid ned NÅR du gjorde undersøkelsen.",
-            "Lagre hele nettsider: Hvis du bruker nettleser-versjonen av Discord, lagre siden som PDF (Ctrl+P -> Lagre som PDF)."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Sjekkliste for Dokumentasjon:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "[ ] Er Bruker-ID (Snowflake) synlig?",
-            "[ ] Er dato og klokkeslett synlig på PC-en din?",
-            "[ ] Har du sikret meldings-ID for de viktigste bevisene?",
-            "[ ] Har du dokumentert URL-en (nettadressen)?"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "s18",
-      "overskrift": "13. OPPSUMMERING HELE KURSET (DEL 1-3)",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "Gratulerer! Du har nå gjennomført grunnkurset i Discord-etterforskning."
-        },
-        {
-          "type": "list",
-          "data": [
-            "Identitet: Du finner alltid Bruker-ID (Snowflake) ved å bruke Developer Mode. Dette er det eneste sikre sporet.",
-            "Aktivitet: Du bruker Søk (from:, has: image) for å finne nåla i høystakken.",
-            "Tid: Du bruker Tidsstempler til å avsløre når kontoen ble laget og når personen er våken.",
-            "Nettverk: Du bruker Felles servere og Invitasjonslenker til å kartlegge hvor de opererer.",
-            "Dokumentasjon: Du sikrer bevisene med video/bilder som inkluderer unike ID-er, ikke bare navn."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "DEL B: RAPPORTKLAR TEKST (NETTVERK/OPPSUMMERING)\n\nDenne teksten oppsummerer nettverksfunnene og kan legges til i rapporten fra Del 1 og 2.\n\nRAPPORT: NETTVERKSANALYSE OG INVITASJONER"
-        },
-        {
-          "type": "paragraph",
-          "data": "1. Funn – Invitasjonslenker og Server-tilgang\n\nPå brukerens profil (Bio) ble det identifisert en invitasjonslenke: discord.gg/oslo123."
-        },
-        {
-          "type": "list",
-          "data": [
-            "Ved passiv verifisering av lenken ble det konstatert at den leder til serveren \"Oslo Undergrunn\".",
-            "Serveren har ca. 1.200 medlemmer og fremstår som en lukket markedsplass."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "2. Funn – Automatiske Logger (Bots)\n\nVed søk i åpne kilder ble brukeren Gr8attwhatido identifisert på den offentlige rangeringslisten (MEE6 Leaderboard) for serveren \"Oslo Undergrunn\"."
-        },
-        {
-          "type": "list",
-          "data": [
-            "Brukeren er rangert som nr. 4 av 1.200, med over 15.000 registrerte meldinger.",
-            "Analyse: Den høye aktiviteten bekrefter at brukeren har en sentral og aktiv rolle i nettverket over lang tid, og er ikke en passiv observatør."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "3. Samlet Vurdering (Oppsummering)\n\nEtterforskningen har identifisert brukeren med unik ID [843123456789012345]. Aktiviteten knytter brukeren direkte til kjøp og salg av narkotika via bilder og tekstmeldinger. Nettverksanalysen viser at brukeren opererer som en sentral aktør i serveren \"Oslo Undergrunn\".\n\nBevisene er sikret ved bruk av unike identifikatorer (Snowflakes) som muliggjør entydig identifikasjon og videre rettslig oppfølging mot tjenesteleverandør Discord Inc.\n\nDEL C: OPERATIVT UTFYLLINGSSKJEMA (NETTVERK)\n\nInstruksjon: Dette er siste del av skjemaet."
-        },
-        {
-          "type": "paragraph",
-          "data": "7. NETTVERKSKARTLEGGING\n\nHvem og hvor er objektet?"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Datapunkt | Funn | ID/Link",
-            "|---|---|---|",
-            "Invitasjonslenke i Bio | [x] Ja | <discord.gg/oslo123> |",
-            "Mål-server (Target) | <Oslo Undergrunn> | <Server-ID hvis mulig> |",
-            "Felles Servere | <Oslo Gaming, Romerike Bil> | <Viser geografisk tilhørighet> |",
-            "Bot-aktivitet | <Funnet på MEE6 leaderboard> | <Rank #4, Level 50> |"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "8. SLUTTKONTROLL (SJEKKLISTE FØR RAPPORT)\n\nHar du alt du trenger for en straffesak?"
-        },
-        {
-          "type": "list",
-          "data": [
-            "[ ] ID SIKRET: Jeg har Snowflake ID (tallrekken) til mistenkte.",
-            "[ ] TID SIKRET: Jeg vet når kontoen ble opprettet (via discord.id).",
-            "[ ] BEVIS SIKRET: Jeg har skjermbilder/video av de ulovlige meldingene.",
-            "[ ] SAMMENHENG: Jeg har knyttet ID-en til aktiviteten via meldings-logger.",
-            "[ ] OPSEC: Jeg har ikke avslørt meg selv (ikke klikket lenker privat/skrevet i chat)."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "NESTE STEG FOR DEG (OPERATIVT)\n\nDette avslutter kurset."
-        },
-        {
-          "type": "list",
-          "data": [
-            "Lagre alle tre delene i ett dokument.",
-            "Opprett en mappe på din tjeneste-PC som heter \"Discord_Verktøykasse\".",
-            "Bokmerk nettsiden discord.id (for å sjekke datoer).",
-            "Lykke til med etterforskningen!"
-          ]
+          "data": "DISCORD-ETTERFORSKNING | Dok-ID: SIS-DISCORD-15 | Versjon 2026.1 | Øst politidistrikt | UNNTATT OFFENTLIGHET\n\nProdusert av: Spesialetterforsker Trygve Justad Bjørntvedt | Optimert for NotebookLM og podkast | Ground Truth-status: BEKREFTET"
         }
       ]
     }
