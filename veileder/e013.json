@@ -1,0 +1,587 @@
+{
+  "tittel": "Metodisk støttedokument for etterforskning i åpne kilder",
+  "undertittel": "PIAR-METODIKK – Planlegging · Innhenting · Analyse · Rapportering",
+  "ordliste": [],
+  "seksjoner": [
+    {
+      "id": "s00",
+      "overskrift": "Dokumentinformasjon",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "Dokument-ID | SIS-PIAR-01",
+            "Serie | Spor i skyen – Metodisk grunnlag for etterforskning i åpne kilder",
+            "Versjon | 2026.1 – Oppdatert med tekniske standarder per april 2026",
+            "Produsert av | Spesialetterforsker Trygve Justad Bjørntvedt, Øst politidistrikt",
+            "Klassifisering | UNNTATT OFFENTLIGHET – Kun til internt politibruk",
+            "Optimert for | NotebookLM dyp fagsamtale og podkast-produksjon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s01",
+      "overskrift": "SEKSJON 1 – 20 TEKNISKE KRAV",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "KT-01 | Definisjon – Juridisk og teknisk kategorisering\n\nPIAR er et prosessrammeverk – ikke et teknisk system, en database eller en programvare. Metodikken klassifiseres som en etterforskningsmetodologi innenfor disiplinen OSINT (Open Source Intelligence), som igjen er én av fem klassiske etterretningsdisipliner (SIGINT, HUMINT, MASINT, GEOINT og OSINT).\n\nJuridisk kategori: PIAR er en intern operasjonell standard for politiets behandling av åpent tilgjengelig informasjon. Den opererer i skjæringsflaten mellom politiloven § 25 (passiv innhenting) og straffeprosessloven kapittel 16/16a (aktive skjulte metoder).\n\nTeknisk kategori: PIAR er et sekvensielt, iterativt prosessrammeverk bestående av fire distinkte faser med interne beslutningspunkter, kontrollsjekker og dokumentasjonskrav. Det er ikke-lineært i sine subfaser (spesielt Innhenting via pivå) men lineært i faserekkefølgen (P→I→A→R)."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Fase | Teknisk kategori | Output | Formål",
+            "P – Planlegging | Kravspesifikasjon og ressursallokering | FOI, IB-liste, søkeplan, endex-tid | Styre ressurser mot riktige mål",
+            "I – Innhenting | Datainnsamling og artifact-logging | Screenshots, URL-logg, SHA-256, Hunchly-eksport | Fange bevis uten å kontaminere",
+            "A – Analyse | Dataanalyse og hypotesetesting | TPS-graderte funn, IB-besvarelser, mønstre | Transformere rådata til innsikt",
+            "R – Rapportering | Dokumentproduksjon og beviskjede | Funnrapport + Egenrapport | Formidle funn for rettslig bruk"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-02 | Historikk – Versjonsutviklingens påvirkning på datalagring\n\nPIAR er ikke et versjonert programvaresystem, men metodikken reflekterer utviklingen i etterretningssyklusmodeller:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Periode | Hendelse | Påvirkning på metodikk",
+            "2000-2008 | OSINT-begrepet formaliseres av US IC (Intelligence Community) | Grunnlaget for sivil OSINT-bruk etableres",
+            "2010-2015 | Sosiale medier eksploderer – Facebook, Twitter, Instagram | Selektor-konseptet utvides til å inkludere profil-IDer",
+            "2015 | Hunchly lanseres av Dark River Systems | Automatisk bevislogging erstatter manuelle screenshots",
+            "2016-2018 | GDPR vedtas (2016), iverksettes (2018) | Dataminimeringsprinsippet innlemmes i planleggingsfasen",
+            "2018-2022 | Lekkasjedatabaser vokser (HIBP, IntelX, Dehashed) | Passord-hash som pivå-punkt formaliseres",
+            "2022 | Sapper Labs og Dark River Systems fusjonerer | Hunchly utvides til enterprise-versjon",
+            "Mai 2025 | Maltego kjøper opp Hunchly | Fullstendig integrert OSINT-plattform fra innhenting til graf-analyse",
+            "2026 | AI-assistert OSINT i fremmarsj (LLM for slangdekoding, bildeverifisering) | AI-fase innlemmes i metodikken som støttefunksjon"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-03 | Eier/Lov – Juridisk enhet, adresse og lagringslovgivning\n\nPIAR som metodikk eies av Øst politidistrikt (ØPD), og er utviklet i regi av etterforskningsavdelingen. PIAR er ikke en kommersiell standard, men samsvarer med internasjonale rammeverk:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Lovgivning | Geografisk virkeområde | Relevans for PIAR",
+            "Politiloven § 25 | Norge | Primærhjemmel for passiv observasjon av åpne kilder",
+            "Straffeprosessloven §§ 196-202 | Norge | Skjulte metoder – krever beslutning eller kjennelse",
+            "Personopplysningsloven (GDPR) | Norge/EU | Dataminimering, formålsbegrensning, lagringsbegrensning",
+            "Barnekonvensjonen art. 16 | Internasjonal | Skjerpede krav ved mindreårige objekter",
+            "US Cloud Act (2018) | USA – extraterritorial | Kan tvinge amerikanske tjenesteleverandører til utlevering",
+            "ECHR art. 8 | Europa | Retten til privatliv – styringsramme for all innhenting"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-04 | Teknologi – Stack og dataflyt\n\nPIAR benytter ikke én spesifikk teknologistack, men er avhengig av en rekke verktøy i ulike faser. Den tekniske dataflyten er slik:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Fase | Verktøy | Dataformat | Dataflyt",
+            "Planlegging | Word/OneNote, søkemotor | Tekst, liste | FOI → IB-er → søkeplan (lokal fil)",
+            "Innhenting – søk | Nettleser + VPN + dedikert profil | HTML, JSON | Internett → nettleser → lokal cache",
+            "Innhenting – logging | Hunchly (Chrome/Firefox extension) | MHTML, SHA-256, metadata | Side lastes → Hunchly krypterer og lagrer lokalt",
+            "Innhenting – hash | Terminal: sha256sum (Linux/Mac) / CertUtil (Windows) | 64-tegns hex-streng | Bildefil → SHA-256-algoritme → hash-streng",
+            "Analyse | Maltego, i2 Analyst's Notebook, Excel, Obsidian | Graf, CSV, tekst | Funn → relasjonskart → mønstre",
+            "Rapportering | Word, PDF, Hunchly-eksport | DOCX, PDF, ZIP | Analyse → funnrapport + egenrapport → Beslagsnett"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-05 | Kryptering – Algoritmer og nøkkelhåndtering\n\nPIAR-metodikken benytter kryptering primært for bevisintegritet, ikke for kommunikasjonsvern:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Kontekst | Algoritme | Beskrivelse | Nøkkelhåndtering",
+            "SHA-256 hash (bevis) | SHA-256 (Secure Hash Algorithm 256-bit) | Enveis hash. Produserer 64-tegns hex-streng av en fil. Ikke reversibel. | Ingen nøkkel – deterministisk algoritme",
+            "Hunchly evidenslogg | AES-256 (lokal kryptert lagring) | Hunchly krypterer og lagrer captured sider lokalt | Nøkkel tilknyttet Hunchly-lisenskonto",
+            "VPN-tunnel | OpenVPN/WireGuard (AES-256-GCM) | Krypterer all trafikk mellom etterforsker og internett | PKI-sertifikat – administrert av IT-avdelingen",
+            "Passord-hash (lekkasjedata) | Varierer: MD5, bcrypt, SHA-1, PBKDF2 | Hash av brukerpassord fra lekkasjedatabaser – brukes som pivå-punkt | Ingen nøkkel – brukes til matching, ikke dekryptering"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-06 | Unik-ID – Selektorer og format\n\nEn selektor er PIAR-metodikkens kjernekonsept for innhenting. Selektoren er det unike datapunktet som driver søket. Formatspesifikasjon:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Selektor | Format / Regex-mønster | Eksempel | Prioritet",
+            "E-postadresse | [a-z0-9._%+\\-]+@[a-z0-9.\\-]+\\.[a-z]{2,} | ola.nordmann@gmail.com | Høy – primær ID",
+            "Telefon (norsk) | \\+47[0-9]{8} eller 0047[0-9]{8} | +47 912 34 567 | Høy – primær ID",
+            "Brukernavn | [a-zA-Z0-9._\\-]{3,} | k13_nord | Høy – plattformkobling",
+            "Facebook UID (numerisk) | [0-9]{10,17} | 100012345678901 | Høy – unik per plattform",
+            "Instagram UID | [0-9]{5,15} | 12345678901 | Høy – unik per plattform",
+            "IP-adresse (IPv4) | (?:[0-9]{1,3}\\.){3}[0-9]{1,3} | 185.220.101.45 | Moderat – kan deles",
+            "IPv6-adresse | ([0-9a-fA-F]{0,4}:){2,7}[0-9a-fA-F]{0,4} | 2001:db8::1 | Moderat – kan deles",
+            "SHA-256 passord-hash | [a-fA-F0-9]{64} | 907DAD814...64 tegn | Høy – kobler kontoer",
+            "Bitcoin-adresse | [13][a-km-zA-HJ-NP-Z1-9]{25,34} | 1A1zP1eP5QGefi2... | Høy – finansspor",
+            "IMEI | [0-9]{15} | 123456789012345 | Høy – enhetssporing"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-07 | Lekkasjer – Navngitte datasett og eksponerte felter\n\nLekkasjedatabaser er et sentralt verktøy i innhentingsfasen. Følgende datasett er særlig relevante for norsk politietterforskning per 2026:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Datasett / Lekkasje | År | Eksponerte felter | Verktøy for søk",
+            "LinkedIn DataScrape | 2021 | Navn, e-post, yrke, arbeidsgiver, telefon, URL | IntelX.io, Dehashed",
+            "Facebook 533M | 2021 | Telefon, Facebook-ID, navn, fødselsdato, e-post | IntelX.io",
+            "Combination of Many Breaches (COMB) | 2021 | 21 milliarder e-post/passord-par | Dehashed, IntelX",
+            "Twitter 200M | 2023 | E-post, Twitter-brukernavn, Twitter-ID | IntelX.io",
+            "Adobe 2013 | 2013 | E-post, kryptert passord (3DES), brukernavn | HIBP, IntelX",
+            "Dropbox 2012 | 2012 | E-post, SHA-1 hash | HIBP, Dehashed",
+            "Rockyou2024 | 2024 | 9,9 milliarder passord i klartekst | Kun passord – ikke e-post"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-08 | URL-data – Parameterdekonstruksjon\n\nURL-er inneholder ofte viktig etterforskningsinformasjon skjult i parametere og base64-kodede strenger. Dekonstruksjonsmetodikk:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "URL-komponent | Eksempel | Analysemetode | Etterforskningsverdi",
+            "Profil-ID (numerisk) | facebook.com/profile.php?id=100012345 | Kopier ID, søk i OSINT-verktøy | Unik, permanent selv etter navnebytte",
+            "Base64-kodet streng | ?token=dXNlcjoxMjM0NQ== | Dekod: echo 'dXNlcjoxMjM0NQ==' │ base64 -d | Avslører: 'user:12345'",
+            "UTM-parametere | ?utm_source=email&utm_campaign=promo | Parse parametere manuelt | Avslører markedsføringskanal og kampanje",
+            "Snapchat bitmoji-URL | bitmoji.com/render/avatar/[ID] | Kopier ID, søk i Snapchat OSINT | Unik Bitmoji-ID kobler til Snapchat-konto",
+            "Google Maps koordinater | @59.9139,10.7522,15z | Parse lat/lon-verdier | Nøyaktig posisjon + zoom-nivå",
+            "Imgur/Imgbb bilde-ID | i.imgur.com/[ID].jpg | Søk bakover i tid via WaybackMachine | Avslører når bildet ble lastet opp"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-09 | Nettverk – Protokollanalyse og PCAP\n\nPIAR-metodikken opererer på applikasjonslaget (OSI-lag 7). Nettverksaspekter er relevante for OPSEC og for forståelse av dataflyt:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Protokoll | Port | PIAR-relevans | PCAP-signatur",
+            "HTTPS (TLS 1.3) | TCP/443 | All OSINT-trafikk bør gå over HTTPS. TLS 1.3 er standard 2026. | TLS ClientHello med SNI avslører måldomene",
+            "DNS-over-HTTPS (DoH) | TCP/443 | Forhindrer DNS-lekkasjer som avslører etterforskerens søk | Kryptert – ikke synlig som DNS i PCAP",
+            "OpenVPN | UDP/1194 eller TCP/443 | Standard VPN-protokoll for OSINT-arbeid | TLS-handshake mot VPN-server, deretter kryptert tunnel",
+            "WireGuard | UDP/51820 | Moderne, rask VPN-protokoll – anbefalt 2026 | Minimal metadata, CHACHA20-kryptert",
+            "Tor (SOCKS5) | TCP/9050 (lokal) / TCP/443 (til relay) | Brukes for tilgang til .onion og anonymisering | Cells i TLS – tre hops synlig i PCAP"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-10 | Metadata – Fullstendig felt-inventar i artifacts\n\nHunchly (nå eid av Maltego fra mai 2025) logger følgende metadatafelter for hvert besøk:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Felt | Datatype | Beskrivelse | Etterforskningsverdi",
+            "url | String (URL) | Fullstendig URL inkludert alle parametere | Avslører profil-IDer, søkeparametere",
+            "timestamp_utc | ISO 8601 datetime | Nøyaktig tidspunkt i UTC for sideinnlasting | Bevisbar tidslinje",
+            "page_hash_sha256 | 64-tegns hex | SHA-256 av MHTML-filen – bevisintegritet | Kan verifiseres i retten",
+            "page_title | String | HTML <title>-tag fra siden | Identifiserer side og kontekst",
+            "full_page_capture | MHTML-fil | Komplett offline kopi av siden med bilder | Bevarer siden selv om den slettes",
+            "http_status_code | Integer (200, 404 etc.) | HTTP-respons fra serveren | Bevis på tilgjengelighet på gitt tidspunkt",
+            "referer_url | String (URL) | Forrige side i navigasjonssekvensen | Viser etterforskningssti",
+            "user_tags | Liste av strings | Brukerdefinerete tags for kategorisering | Saksorganisering",
+            "case_name | String | Navn på Hunchly-casen (saken) | Sakskobling",
+            "gpg_signature | PGP-signatur | Kryptografisk signatur av opptak | Attribuerer opptak til etterforsker"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-11 | Manuelt – Utførelse via nettleser og konsoll\n\nGrunnleggende manuelle teknikker i PIAR-metodikken:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Teknikk | Metode | Output | Verktøy",
+            "Inspect Element – Network tab | F12 → Network → XHR/Fetch | JSON-svar med profil-IDer, APIer, tokens | Chrome DevTools",
+            "SHA-256 hash (Linux/Mac) | sha256sum filnavn.png | 64-tegns hash-streng | Terminal/Bash",
+            "SHA-256 hash (Windows) | CertUtil -hashfile filnavn.png SHA256 | 64-tegns hash-streng | cmd.exe",
+            "Google Dorking | site:facebook.com \"fullt navn\" yrke | Offentlige profiler med spesifikk kombinasjon | Google søk",
+            "Wayback Machine-søk | web.archive.org/web/*/URL | Historiske snapshots av siden | archive.org",
+            "WHOIS-oppslag | whois domene.no eller who.is | Registrantinfo, nameservere, registreringsdato | Terminal / who.is",
+            "Reverse Image Search | Dra bilde til images.google.com, Yandex, TinEye | Andre forekomster av bildet på nett | Nettleser",
+            "curl for API-kall | curl -s 'https://api.example.com/user?id=123' | JSON-respons med brukerdata | Terminal"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-12 | Auto – API-integrasjoner og skaleringsverktøy\n\nAutomatiserte verktøy skalerer PIAR-innhentingen, men alle funn må fortsatt TPS-graderes og SHA-256-hashes manuelt:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Verktøy | Type | Funksjon | API/Tilgang",
+            "osint.industries | Webapp/API | Søker 200+ plattformer på e-post eller brukernavn | Abonnement – betalt",
+            "IntelX.io | Webapp/API | Søk i lekkasjedatabaser, dark web, Telegram | Abonnement – betalt",
+            "HaveIBeenPwned (HIBP) API | REST API | Sjekk e-post mot kjente lekkasjer | Gratis API-nøkkel",
+            "Maigret (GitHub) | Python CLI | Søker brukernavn på 3000+ plattformer | Åpen kildekode – gratis",
+            "Sherlock (GitHub) | Python CLI | Søker brukernavn på 400+ plattformer | Åpen kildekode – gratis",
+            "Shodan CLI | REST API / CLI | Søk etter IP-adresser, enheter, åpne porter | Betalte planer, grunnleggende gratis",
+            "Maltego (Enterprise) | GUI/API | Graf-basert relasjonskartlegging – nå inkl. Hunchly | Betalt – LE-lisens",
+            "theHarvester | Python CLI | Innhenter e-poster, domener, IP-er fra søkemotorer | Åpen kildekode"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-13 | Vakt – Regex for varsling og endringssporing\n\nOvervåkingssystem for profil- eller innholdsendringer:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Mål | Regex / Søkestreng | Verktøy | Formål",
+            "E-postadresse i dokument | [a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,} | grep, Python re | Finn skjulte e-poster i tekst",
+            "Norsk telefon | (\\+47│0047)?[\\s]?[0-9]{2}[\\s]?[0-9]{2}[\\s]?[0-9]{2}[\\s]?[0-9]{2} | grep, Python re | Finn telefonnumre i fri tekst",
+            "Bitcoin-adresse | [13][a-km-zA-HJ-NP-Z1-9]{25,34} | grep, Python re | Finn kryptovaluta-adresser",
+            "IP-adresse | \\b(?:[0-9]{1,3}\\.){3}[0-9]{1,3}\\b | grep, Python re | Finn IP-adresser i logger",
+            "SHA-256 hash | [a-fA-F0-9]{64} | grep, Python re | Finn hash-verdier i lekkasjedata",
+            "Hunchly-selektor | Konfigureres i Hunchly UI (støtter regex) | Hunchly | Varsler når søkeord dukker opp under browsing",
+            "Nettstedendring | Website monitor (changedetection.io) | changedetection.io | Varsler ved endring på målprofilside"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-14 | Sokkedukke – VPN, browser-fingerprinting og profil-troverdighet\n\nSikker etterforskerprofil er en forutsetning for at PIAR-innhentingen er juridisk ren og OPSEC-sikker:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Parameter | Krav | Begrunnelse",
+            "VPN | Alltid aktiv – dedikert IP for etterforskningsprofil | Hindrer at politiets IP eksponeres mot målet eller plattformleverandøren",
+            "Browser-fingerprint | Nettleserprofil uten extensions som avslører politibruk | Browser-fingerprint sendes i HTTP-headers og kan attribuere etterforsker",
+            "User-Agent | Standard Chromium – ikke tilpasset eller utdatert versjon | Utdaterte UA-er er statistisk sjeldne og mer identifiserbare",
+            "Cookies og localStorage | Alltid tømt mellom saker – bruk inkognito-modus som minimum | Cross-site tracking via cookies kan koble etterforskersøk",
+            "Profiltroverdig het (Lebensraum) | Dedikert e-post, profilbilde, historikk – ikke nyopprettet konto | Plattformer blokkerer 'nye' kontoer med lav troverdighet",
+            "DNS-lekkasje | DNS-over-HTTPS (DoH) aktivert | DNS-forespørsler avslører søk selv med VPN",
+            "WebRTC-lekkasje | WebRTC deaktivert i nettleseren | WebRTC kan eksponere lokal IP selv gjennom VPN"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-15 | AI – LLM-støtte og ansiktsgjenkjenning\n\nAI-verktøy er i 2026 en integrert del av OSINT-metodikken som støttefunksjoner, ikke erstatninger for menneskelig analyse:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Funksjon | Verktøy | Bruksområde i PIAR | Begrensning",
+            "Slangdekoding | Claude, ChatGPT, Gemini | Dekoder kriminell sjargong, emojispråk, narko-koder i chat-screenshotter | Kan hallusinere – alltid krysssjekk",
+            "Ansiktsgjenkjenning | PimEyes, FaceCheck.ID | Verifiser profil-bilde mot andre forekomster på nett | Kan gi falske treff – TPS-S må settes til HØY",
+            "Bilde-metadata-analyse | ExifTool + Claude-analyse | Tolke tekniske EXIF-data – kameratype, GPS, tidssone | Metadata kan manipuleres",
+            "Dokumentanalyse | Claude, NotebookLM | Analysere store datamengder og sammenfatte mønstre | Sensitiv data må ikke lastes opp til skybaserte LLM-er",
+            "Oversettelse | DeepL, Google Translate | Oversett innhold fra målpersoners meldinger | Nyanser og slang oversettes dårlig – spesialister anbefales",
+            "Relasjonskartlegging | Maltego + AI-transforms | Identifiser nettverksstrukturer automatisk | Krever manuell verifikasjon av alle relasjoner"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VIKTIG: Sensitiv etterforskningsinformasjon skal ALDRI lastes opp til offentlige skybaserte AI-verktøy. Bruk kun godkjente, lokalt installerte eller on-premise AI-systemer."
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-16 | OPSEC – Attribusjonsanalyse\n\nPolitiets IP-adresse og nettleser-fingerprint kan avsløre etterforskningens eksistens for målet. Spor du etterlater:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Spor | Hvor det lagres | Risiko | Tiltak",
+            "IP-adresse | Webserver-logger hos plattform | Plattform kan varsle bruker om uvanlig innloggingsforsøk | VPN med fast dedikert IP",
+            "User-Agent streng | HTTP-header i hvert request | Avslører OS, nettleser og versjon | Standardisert UA via profil",
+            "Tidsstempel for besøk | Webserver-logger | Viser etterforskningens tidsplan | VPN – kan ikke unngås fullstendig",
+            "Like/Follow-aktivitet | Plattformens aktivitetslogg | DIREKTE varsler til målet | Aldri like, follow eller klikk på varsler",
+            "Sidebesøk på profil | Instagram, LinkedIn: 'profilbesøk'-varsler | Varsler målet om at profilen er besøkt | Ikke besøk private profiler uten kjennelse",
+            "Google Analytics / Pixel | Tredjeparts sporere på nettsider | Aggregerer besøk og kan koble IP til etterforsker | uBlock Origin eller Privacy Badger"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-17 | Kritikk – Kryssverifisering gjennom minst to uavhengige kilder\n\nPIAR-metodikken krever at alle funn bekreftes gjennom minst to uavhengige kilder før de presenteres som fakta i rapporten. TPS-graderingsmodellen (SIS-TPS-02) formaliserer dette kravet:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Funn-type | Kilde 1 | Kilde 2 (uavhengig) | TPS etter verifisering",
+            "Brukernavn på ny plattform | osint.industries – automatisk søk | Manuell verifikasjon på plattformen | B-2-MODERAT etter begge",
+            "Bilde-identifikasjon | Google Reverse Image Search | Yandex Reverse Image Search | B-1-HØY hvis begge bekrefter",
+            "E-post i lekkasje | HaveIBeenPwned.com | IntelX.io – separat søk | B-2-HØY etter krysssjekk",
+            "Geografisk posisjon | Snap Map (skjermbilde) | Google Maps – koordinat-verifisering | B-2-MODERAT etter begge",
+            "Identitetspåstand | Sosiale medier-profil | Offentlig register (Folkeregisteret via politiregister) | A-1-LAV etter offentlig kilde"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-18 | LE-Guide – Politihenvendelse til plattformleverandører\n\nDersom passiv innhenting ikke gir tilstrekkelig informasjon, og det foreligger rettslig kjennelse (strpl. § 197), kan politiet kreve utlevering fra plattformleverandørene:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Plattform / Selskap | Portal-URL for LE-henvendelse | Format | Responstid (typisk)",
+            "Meta (Facebook, Instagram, WhatsApp) | facebook.com/records/login/ | JSON-basert portal med XML/CSV-eksport | 2-4 uker med gyldig kjennelse",
+            "Google (Gmail, YouTube, Maps) | google.com/transparencyreport/ | MLAT / direct legal – ECPA-standard | 4-8 uker",
+            "Apple | apple.com/privacy/docs/legal-process-guidelines-us.pdf | E-post: le_notifications@apple.com | 4-8 uker",
+            "Snapchat | snap.com/en-US/privacy/lawenforcement | Online portal med skjema | 2-6 uker",
+            "Twitter/X | t.co/le-request | Nettbasert skjema – krever offisiell forespørsel | 4-8 uker",
+            "TikTok | tiktok.com/legal/law-enforcement | Portaltilgang for LE | 4-8 uker",
+            "Discord | dis.gd/lawenforcement | E-post til legal@discord.com | 2-6 uker",
+            "Telegram | Ingen LE-portal (pr. 2025 – kun ved terrorsaker) | telegram.org/privacy – begrenset samarbeid | Usikkert / avhengig av sak"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Alle forespørsler skal inneholde: saksnummer, navn på anmodende enhet, juridisk hjemmel (paragrafhenvisning), ID på konto/innhold som forespørres, tidsperiode, offisiell e-postadresse (politiet.no) og signatur fra påtalemyndighet."
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-19 | Jus – Spesifikke paragrafkoblinger"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Handling | Hjemmel | Nivå | Krav",
+            "Passiv observasjon av åpen profil | Politiloven § 25 | TILLATT | Ingen – men dokumenter formål",
+            "Google Dorking | Politiloven § 25 | TILLATT | Ingen – men dokumenter søk",
+            "Søk i åpen lekkasjedatabase (HIBP, IntelX) | Politiloven § 25 | TILLATT | Ingen – men dokumenter funn",
+            "Opprette konto for tilgang til registrert tjeneste | Strpl. § 196 | BESLUTNING | Skriftlig politijurist/påtale FØR handling",
+            "Systematisk kartlegging av person over tid | Strpl. § 196 | BESLUTNING | Skriftlig politijurist/påtale FØR handling",
+            "Innhenting av private meldinger fra Meta/Snapchat | Strpl. § 197 | KJENNELSE | Tingretts kjennelse FØR forespørsel sendes",
+            "IP-logger fra internettleverandør | Strpl. § 202c | KJENNELSE | Tingretts kjennelse – kommunikasjonskontroll",
+            "Falsk identitet for å manipulere mistenkte | Strpl. § 196a | ULOVLIG | Absolutt forbud – provokasjonsforbud",
+            "Omgå tekniske sikkerhetstiltak | Strl. § 201 | ULOVLIG | Absolutt forbud – uberettiget datatilgang",
+            "Behandling av spesielt sensitive kategorier | Personopplysningsloven § 11 (GDPR art. 9) | SÆRLIG VERN | Eksplisitt hjemmel og nødvendighet"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-20 | Bevis – Integritet, hashing og ikke-benektbarhet\n\nBevisintegritetskjeden i PIAR-metodikken er basert på disse ikke-forhandlingsbare prinsippene:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Krav | Metode | Verktøy | Juridisk funksjon",
+            "SHA-256 hash av hvert screenshot | sha256sum filnavn.png (Linux/Mac) CertUtil -hashfile filnavn.png SHA256 (Windows) | Terminal | Beviser at filen ikke er endret etter innhenting",
+            "Hunchly automatisk logging | Aktivt rødt ikon – aldri inaktivt under etterforskning | Hunchly (nå Maltego-eid) | Kryptografisk tidsstemplet bevis på besøk",
+            "GPG-signering av Hunchly-eksport | Hunchly signerer eksportfilen med GPG-nøkkel | Hunchly + GPG | Attribuerer bevis til etterforsker",
+            "UTC-tidsstempel | date -u i terminal eller Hunchly-metadata | Terminal / Hunchly | Entydig tidsreferanse uavhengig av tidssone",
+            "Mappestruktur per sak | Sak-[nummer]/[plattform]/[dato]/filnavn.png + hash.txt | Filsystem | Separasjon og sporbarhet per sak",
+            "Lagring på Beslagsnett | Kopi av alle funn til politiets sikrede nettverk | Beslagsnett | Bevissikring mot tap og manipulasjon",
+            "Verifisering i retten | Presenter hash + original fil – la tingretten kjøre sha256sum | Terminal + rapport | Demonstrer ikke-benektbar bevisintegritet"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "overskrift": "SEKSJON 2 – TEKNISK DEKONSTRUKSJON (A-Å)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Nivå 1 – Binært: Rådata og artifacts på laveste nivå\n\nDet binære grunnlaget for PIAR-metodikken er SHA-256-algoritmen og de artifacts den produserer. SHA-256 er en kryptografisk enveisfunksjon (hash-funksjon) som transformerer en vilkårlig mengde inputdata til en fast 256-bit (32-byte) output, representert som 64 heksadesimale tegn."
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "SHA-256 artifact-eksempel:\nInput: screenshot_k13nord_20260415_1423UTC.png (345.829 bytes)\nOutput: 3a7bd3e2360a3d29eea436fcfb7e44c735d117c42d1c1835420b6b9942dd4f1b\n\nEndres én piksel i bildet → ny hash = fullstendig annen streng\nDette er BINÆRT BEVIS for uforandret innhold."
+        },
+        {
+          "type": "paragraph",
+          "data": "Hunchly lagrer MHTML-filer (MIME HTML) – et binært arkivformat som pakker HTML, bilder og ressurser til én fil. MHTML-headeren inneholder:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Content-Type: multipart/related; type='text/html'",
+            "From: <Saved by Hunchly v2.x>",
+            "Date: [UTC tidsstempel i RFC 2822-format]",
+            "Subject: [URL og sidetittel]",
+            "Snapshot-ID: [Hunchly intern ID]"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Nivå 2 – Arkitektur: Teknisk oppbygging på internett/sky\n\nPIAR-metodikken opererer på applikasjonslaget (OSI-lag 7) og HTTP/HTTPS-protokollen. Dataflyten fra etterforsker til bevissikret funn:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Steg | Teknisk handling | Protokoll/Format | Security-kontroll",
+            "1. VPN-tunnel etableres | WireGuard UDP-handshake til VPN-server | WireGuard / CHACHA20-POLY1305 | Krypterer all trafikk fra etterforskers maskin",
+            "2. DNS-oppslag (DoH) | HTTPS-forespørsel til 1.1.1.1 eller 8.8.8.8 over port 443 | DNS-over-HTTPS (RFC 8484) | Hindrer DNS-lekkasje gjennom VPN",
+            "3. TCP/TLS-tilkobling | TLS 1.3 handshake mot måldomene | TLS 1.3 (RFC 8446) | Krypterer HTTP-trafikk – SNI kan avsløre domene",
+            "4. HTTP GET/POST | Nettleseren sender forespørsel med headers | HTTP/2 eller HTTP/3 | User-Agent og Referer sendes – OPSEC-risiko",
+            "5. Hunchly-intercept | Chrome extension intercepter HTTP-svaret via Service Worker API | JavaScript / MHTML | Lagrer lokalt – ingen sky-avhengighet (Classic)",
+            "6. SHA-256 beregning | Operativsystemets kryptobibliotek beregner hash | SHA-256 (FIPS 180-4) | Deterministisk – kan verifiseres uavhengig"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Nivå 3 – Helhet: PIAR i etterforskningens store bilde\n\nPIAR er den metodiske ryggraden som kobler alle andre SIS-dokumenter til én sammenhengende arbeidsflyt. I det store bildet er PIAR bindeleddet mellom:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Fra | Via PIAR-fase | Til | SIS-referanse",
+            "Forespørsel om informasjon (FOI) | P – Planlegging | Konkret søkestrategi med IB-er og selektorer | SIS-PIAR-01 (dette dok.)",
+            "Selektor (e-post, brukernavn, hash) | I – Innhenting via Pivå | Digitalt nettverk av funn og nye selektorer | SIS-PIVOT-03",
+            "Rådata (screenshots, URLer) | I – Innhenting via Hunchly/hash | Integritetssikrede bevisartifacts | SIS-HASH-04",
+            "Funn fra åpne kilder | A – Analyse via TPS | Graderte, pålitelighetsvurderte bevis | SIS-TPS-02",
+            "Graderte funn | R – Rapportering | Rettssikker funnrapport + egenrapport | SIS-RAPPORT-13",
+            "Sensitiv innhenting | P – Juridisk avklaring | Beslutning eller kjennelse fra påtale/tingrett | SIS-JUSS-05",
+            "Kryptovaluta-spor | I – Innhenting blokkjede | Lommebokanalyse og transaksjonssporing | SIS-KRYPTO-12",
+            "Mindreårig objekt | P – Juridisk stopp | Barnekonvensjonen og særlige krav | SIS-MINOR-14"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "overskrift": "SEKSJON 3 – ANALOGI-PAR (Teknisk sannhet + Pedagogisk bro)",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "AP-01 | PIAR-syklusen: PIAR er et sekvensielt, iterativt prosessrammeverk med fire faser: Planlegging, Innhenting, Analyse og Rapportering. Fasene er lineære i rekkefølge men iterative i innhold – spesielt innhentingen looper via pivå-mekanismen. | PIAR er som å lage en middagsrett. Planlegging = velge oppskrift og handle inn råvarer. Innhenting = tilberede ingrediensene. Analyse = smake og justere. Rapportering = servere den ferdige retten. Hopper du over ett steg, blir middagen ikke god.",
+            "AP-02 | SHA-256 hash: SHA-256 er en deterministisk, enveiskryptografisk funksjon som produserer en unik 256-bit fingeravtrykk av en digital fil. Samme inputfil produserer alltid identisk hash. Minimal endring i input gir fullstendig ny hash (avalanche effect). | SHA-256 er som et DNA-test av en digital fil. Akkurat som to mennesker aldri har identisk DNA, har to forskjellige filer aldri identisk SHA-256. Og akkurat som du ikke kan gjenskape en person fra DNA-et, kan du ikke gjenskape filen fra hashen.",
+            "AP-03 | Selektor: En selektor er et unikt datapunkt (e-post, brukernavn, IP, hash) som brukes som inngangsverdi i en søkesyklus for å identifisere én spesifikk person eller objekt på tvers av digitale plattformer. | En selektor er som nøkkelen til en postboks. Du vet ikke hva som er inni boksen, men med riktig nøkkel (selektor) åpner du den og finner alt som hører til den ene adressen.",
+            "AP-04 | Pivå-metodikk: Pivå er å bruke ett kjent datapunkt til å starte en ny søkesyklus på et nytt, ukjent datapunkt. Prosessen er ikke-lineær og iterativ – hvert funn kan bli til et nytt startpunkt. | Pivå er som å sikksakke gjennom en labyrint med rødt garn. Du fester garnet i inngangen (selektor), trekker tråden til første knutepunkt (funn), og derfra til neste og neste – til du ser hele kartet fra oven.",
+            "AP-05 | Endex-tid: Endex (end of exercise) er et forhåndsbestemt tidspunkt der innhentingen stoppes uavhengig av hva etterforskeren holder på med. Endex forhindrer scope creep og ulovlig innhenting utover det tillatelige. | Endex er som en stekeovn med timer. Uansett om kaken ser ferdig ut eller ikke – når alarmen ringer, tas den ut. Timer-disiplin forhindrer at kaken brenner seg. Etterforsker-disiplin forhindrer at saken ødelegger seg juridisk.",
+            "AP-06 | TPS-gradering: TPS er en tredimensjonal reliabilitetsgradering av etterretningskilder: Troverdighet (kildens integritet), Pålitelighet (informasjonens nøyaktighet) og Sensitivitet (konsekvens av eksponering). Graderes A-E for T og P, og LAV/MODERAT/HØY for S. | TPS er som å vurdere et vitne i retten. Troverdighet = har vitnet løyet før? Pålitelighet = er forklaringen konsistent med bevisene? Sensitivitet = vil avsløring av kilden sette andre i fare?",
+            "AP-07 | Hunchly bevissikring: Hunchly er et Chrome/Firefox-extension som automatisk logger MHTML-kopi, URL, UTC-tidsstempel og SHA-256 hash for hvert nettsted etterforskeren besøker under en aktiv etterforskning. Fra mai 2025 eid av Maltego. | Hunchly er som en dashbordkamera i etterforskningsbilen. Mens du kjører (browser), filmer kameraet (Hunchly) alt du ser – med tidskode og GPS. Du behøver ikke tenke på det. Når du trenger bevis for at du var der, spiller du av opptaket.",
+            "AP-08 | Bekreftelsesfelle (confirmation bias): Bekreftelsesfellen er den kognitive feilen der etterforskeren ubevisst søker etter og tillegger informasjon som bekrefter eksisterende hypotese mer vekt, og ignorerer eller nedvurderer motstridende informasjon. | Bekreftelsesfellen er som å se på et fotografi med fargefilter. Filteret lar bare bestemte farger gjennom. Du 'ser' bildet, men du ser bare det filteret ditt tillater. PIAR-metodikken fjerner filteret ved å kreve aktiv søk etter motbevis."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "overskrift": "SEKSJON 5 – H-H-H-N MIKROSTEG (Hva – Hvor – Hvorfor – Når)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "5.1 – Planleggingsfasen (P)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "HVA | HVOR | HVORFOR | NÅR",
+            "Les forespørselen om informasjon (FOI) | Saksmappen / oppdragsgiver | Forstå det reelle informasjonsbehovet – ikke bare overskriften | Første handling i enhver ny sak",
+            "Formuler informasjonsbehov (IB) som spørsmål | Eget arbeidsark eller OneNote | Konkretiserer hva du skal finne – Hvem? Hva? Når? Hvor? Hvordan? | Innen 30 min etter mottak av FOI",
+            "Identifiser selektorer fra eksisterende materiale | Saksmappen – dokumenter, bilder, logger | Selektorer er inngangsverdiene til søket – feil inngang = feil funn | Parallelt med IB-formulering",
+            "Gjennomfør juridisk avklaring | Politijurist eller intern sjekkliste | Forhindrer ulovlig innhenting og ugyldig bevis | FØR enhver innhenting starter",
+            "Sett endex-tid | Planleggingsdokument | Disiplinerer innhentingen og forhindrer scope creep | Under planleggingen – ALLTID",
+            "Lag søkeplan – prioritert verktøyliste | Planleggingsdokument | Styrer ressurser mot høy-sannsynlighets-funn-plattformer | Etter selektor-identifikasjon",
+            "Klargjør arbeidsmiljøet | Etterforskningsmaskin | VPN, Hunchly, mappestruktur, profiler klare – ingen pausing midt i søk | Siste steg i planlegging"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "5.2 – Innhentingsfasen (I)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "HVA | HVOR | HVORFOR | NÅR",
+            "Aktiver Hunchly – sjekk rødt ikon | Chrome/Firefox nettleser | Alle besøkte sider logges automatisk fra dette øyeblikket | FØR nettleseren åpnes for etterforskning",
+            "Lokalisér informasjonen på riktig kilde | Målrettet plattform (Facebook, Google, IntelX etc.) | Sikrer at du finner primærkilden, ikke en sekundærgjengivelse | Hvert søkesteg – alltid",
+            "Ta screenshot umiddelbart etter funn | Nettleser + skjermdump-verktøy | Bevarer siden slik den ser ut – kan slettes av bruker sekunder etter | Umiddelbart etter funn – IKKE etter analyse",
+            "Beregn SHA-256 hash av filen | Terminal: sha256sum filnavn.png | Kryptografisk bevis for at filen er uendret etter innhenting | Rett etter hvert screenshot – aldri i batch etterpå",
+            "Logg funnet i søkeloggen | Eget loggark eller Hunchly-note | Sporbar søkehistorikk – viser etterforskningssti i retten | Fortløpende – ikke retrospektivt",
+            "Krysskjekk funnet mot uavhengig kilde | Annen plattform eller verktøy | Ingen funn er bekreftet med bare én kilde – TPS-krav | Etter hvert primærfunn",
+            "Vurder pivå: har du ett nytt datapunkt? | Eget vurderingspunkt | Hvert nytt datapunkt kan åpne ny søkesyklus | Etter hvert funn – kontinuerlig",
+            "Stopp ved endex-tid | Klokken / kalender | Juridisk og metodisk disiplin – ikke forhandlingsbart | Nøyaktig ved forhåndsbestemt tidspunkt"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "5.3 – Analysefasen (A)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "HVA | HVOR | HVORFOR | NÅR",
+            "Sorter alle funn under riktig IB | Analyse-arbeidsbok eller Maltego-graf | Strukturerer dataene slik at IB-svar blir synlige | Etter at innhentingen er avsluttet (endex)",
+            "TPS-grader hvert funn | SIS-TPS-02 graderingsmodell | Fjerner subjektivitet – tvinger etterforskeren til å vurdere reliabilitet | Parallelt med IB-sortering",
+            "Kartlegg relasjoner mellom funn | Maltego, i2 eller manuelt kart | Avdekker mønstre, nettverk og sammenhenger | Etter sortering og gradering",
+            "Formuler minst tre alternative hypoteser | Eget analyseark | Bekjemper bekreftelsesfellen aktivt | Før konklusjonene skrives",
+            "Søk aktivt etter motbevis | Alle tilgjengelige plattformer | Utelukker alternative forklaringer – styrker analysen | Parallelt med hypoteseformulering",
+            "Identifiser ubesvarte IB-er og gap | IB-oversikten fra planleggingen | Gapanalyse = fremtidige søkebehov + begrensningsseksjon i rapport | Avsluttende del av analyse"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "5.4 – Rapporteringsfasen (R)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "HVA | HVOR | HVORFOR | NÅR",
+            "Skriv funnrapport med alle tekniske detaljer | Word-mal (SIS-RAPPORT-13) | Teknisk dokumentasjon for bevisrekken – ikke tolkning her | Etter avsluttet analyse",
+            "Skriv egenrapport – den narrative tolkingen | Word-mal (SIS-RAPPORT-13) | Forklarer funnene for dommere og aktor – menneskelig kontekst | Etter funnrapporten",
+            "Verifiser at alle funn har TPS-gradering | Funnrapporten | Manglende TPS = ugyldig funn i retten | Gjennomgang før ferdigstilling",
+            "Verifiser at alle funn har SHA-256 hash | Funnrapporten + filsystem | Manglende hash = bevisintegritet kan bestrides i retten | Gjennomgang før ferdigstilling",
+            "Skriv begrensningsseksjon | Rapport seksjon | Ærlighet om hva som IKKE ble funnet styrker, ikke svekker, rapporten | Siste del av rapporten",
+            "Eksporter og bevis-lagre Hunchly-case | Hunchly → Export → Full Case | ZIP-arkiv med alle MHTML-filer, hashes og metadata – lagres på Beslagsnett | Etter ferdigskrevet rapport",
+            "Registrer UIDs i Indicia | Politiets Indicia-system | Kobler digitale identifikatorer til personregisteret for fremtidig søk | Innen 24t etter ferdig rapport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "overskrift": "SEKSJON 6 – REFERANSEARKIV OG KRYSSREFERANSER",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "6.1 – SIS-seriens dokumentstruktur"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Dok-ID | Tittel | Kobling til PIAR | Kritisk for fase",
+            "SIS-PIAR-01 | PIAR-metodikk (dette dokumentet) | Overordnet rammeverk | Alle faser",
+            "SIS-TPS-02 | TPS-modellen | Kildekritikk og gradering av funn | A – Analyse",
+            "SIS-PIVOT-03 | Pivå-metodikk | Fra funn til ny søkesyklus | I – Innhenting",
+            "SIS-HASH-04 | Hashing og SHA-256 | Bevisintegritet og dokumentasjon | I – Innhenting",
+            "SIS-JUSS-05 | Juridisk rammeverk | Lovlige grenser og hjemler | P – Planlegging",
+            "SIS-OPSEC-06 | OPSEC og digital hygiene | Sikker etterforsker-ID og profil | P – Planlegging + I",
+            "SIS-SELER-07 | Selektorer og identifikatorer | Inngangsverdier for søk | P – Planlegging",
+            "SIS-LEAK-08 | Datalekkasjer og -brudd | Lekkasjesøk som innhentingsmetode | I – Innhenting",
+            "SIS-SOSMED-09 | Sosiale medier – generell metodikk | Plattformspesifikk innhenting | I – Innhenting",
+            "SIS-GEO-10 | Geolokasjon og bildeanalyse | EXIF, skygge, kronolokasjon | A – Analyse",
+            "SIS-DARK-11 | Mørk web – grunnmetodikk | Tor, .onion – utvidet innhenting | I – Innhenting",
+            "SIS-KRYPTO-12 | Kryptovaluta-etterforskning | Blokkjedesporing, lommebokanalyse | I + A",
+            "SIS-RAPPORT-13 | Rapportmal og beviskjede | Standardmal for funnrapport og egenrapport | R – Rapportering",
+            "SIS-MINOR-14 | Mindreårige i digitale saker | Særlige krav ved unge objekter | P – Planlegging"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "6.2 – Oppdatert verktøyregister (april 2026)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Verktøy | Status 2026 | Endring siden 2024 | Bruk i PIAR",
+            "Hunchly | Aktivt – eid av Maltego (mai 2025) | Maltego-integrasjon tilgjengelig. Hunchly Cloud (Kasm Workspaces) ny plan. | I – primær bevislogger",
+            "Maltego | Aktivt – enterprise-plattform | Hunchly-integrasjon = end-to-end workflow | A – relasjonskart",
+            "IntelX.io | Aktivt – søkemotor for lekkasjer | Telegram-indeksering forbedret | I – lekkasjesøk",
+            "HaveIBeenPwned | Aktivt – HIBP v3 API | Domain Search API for politi tilgjengelig | I – e-postsøk",
+            "Maigret | Aktivt – GitHub oppdatert | 3000+ plattformer støttet | I – brukernavn-søk",
+            "Sherlock | Aktivt – GitHub | 400+ plattformer | I – brukernavn-søk",
+            "osint.industries | Aktivt – abonnement | Utvidet til Telegram og Discord | I – multisøk",
+            "PimEyes | Aktivt – betalt | Bedre håndtering av niqab/hettegenser-bilder | A – ansiktsverifisering",
+            "FaceCheck.ID | Aktivt – begrenset gratis | Ny: LE-program for politiet | A – ansiktsverifisering"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "PIAR-METODIKK | Dok-ID: SIS-PIAR-01 | Versjon 2026.1 | Øst politidistrikt | UNNTATT OFFENTLIGHET\n\nProdusert av: Spesialetterforsker Trygve Justad Bjørntvedt | Optimert for NotebookLM og podkast-produksjon | Ground Truth-status: BEKREFTET"
+        }
+      ]
+    }
+  ]
+}
