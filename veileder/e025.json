@@ -1,607 +1,755 @@
 {
-  "tittel": "TELEGRAM",
-  "undertittel": "KOMPLETT DIGITAL ETTERFORSKNING PÅ TELEGRAM",
+  "tittel": "Metodisk støttedokument for etterforskning i Telegram med åpne kilder",
+  "undertittel": "TELEGRAM-ETTERFORSKNING – Plattform · Kryptering · Emoji-kode · OSINT · Ungdomsbruk · LE-protokoll",
   "ordliste": [],
   "seksjoner": [
     {
+      "id": "s00",
+      "overskrift": "Dokumentinformasjon",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "Dok-ID | SIS-TELEGRAM-17",
+            "Versjon | 1.0 – April 2026",
+            "Status | AKTIV",
+            "Produsert av | Spesialetterforsker Trygve Justad Bjørntvedt, Øst politidistrikt",
+            "Gradering | UNNTATT OFFENTLIGHET – Kun til internt politibruk",
+            "TLP | TLP:AMBER",
+            "Primærkilder | SIS-TELEGRAM-10, core.telegram.org, LE-transparensrapport 2024/2025, Emoji-politirapport"
+          ]
+        }
+      ]
+    },
+    {
       "id": "s01",
-      "overskrift": "TEMAKAPITTEL: TELEGRAM",
+      "overskrift": "DEL 1 — HVA ER TELEGRAM OG HVORDAN BRUKES DET?",
       "komponenter": [
         {
           "type": "paragraph",
-          "data": "KOMPLETT DIGITAL ETTERFORSKNING PÅ TELEGRAM – TELEFON OG WINDOWS-PC\n\nFra åpen kilde til full brukeravdekking – metoder, verktøy, exploits og juridikk"
+          "data": "1.1 Plattformoversikt og brukermasse\n\nTelegram i tall (april 2026): 1 milliard månedlig aktive brukere. 500 millioner daglig aktive brukere. Tredje mest populære meldingsapp globalt etter WhatsApp og WeChat. Over 15 millioner Premium-abonnenter.\n\nPrimær demografi: Alder 18–34 år dominerer (53,5% av brukerne). 56,8% menn, 43,2% kvinner. Sterk vekst blant unge i Norden, Øst-Europa, Midtøsten og Sørøst-Asia."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Kommunikasjonstype | Beskrivelse | Maks størrelse | Kryptering",
+            "Direktemelding (sky) | 1-til-1 chat lagret i Telegrams sky. Tilgjengelig på alle enheter | — | MTProto 2.0. Telegram-server HAR nøkkel",
+            "Secret Chat | Enhet-til-enhet E2EE. Sluttidspunkt innstilles av bruker | — | Diffie-Hellman 2048-bit. Server ser ALDRI innhold",
+            "Gruppe | Chatrom for opptil 200 000 medlemmer | 200 000 mdl. | MTProto 2.0 — IKKE E2EE",
+            "Supergruppe | Avansert gruppe m/admin-funksjoner, threads og polls | 200 000 mdl. | MTProto 2.0 — IKKE E2EE",
+            "Kanal (channel) | Sendingskanal — admin poster, følgere leser | Ubegrenset | MTProto 2.0 — IKKE E2EE",
+            "Bot | Automatisert konto via Bot API (HTTPS/JSON) | — | HTTPS TLS — ikke MTProto",
+            "VoIP-anrop | Kryptert tale/videosamtale | — | DTLS-SRTP. Emoji-fingerprint for verifisering",
+            "Forum (Topics) | Trådbasert diskusjon i grupper (innført 2022) | 200 000 mdl. | Som supergruppe"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "1.2 Ungdommens bruk av Telegram i Norge\n\nHvorfor unge velger Telegram: Telegram er blitt det foretrukne kommunikasjonsverktøyet for norsk ungdom i kriminelle miljøer fordi: (1) ingen reklamesporing, (2) store grupper tillatt, (3) filoverføring uten begrensning, (4) anonyme kanaler uten registrert profil for lesere, og (5) lett tilgjengelig for koordinering av sosiale aktiviteter."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Bruksmønster | Beskrivelse | Etterforskningsrelevans",
+            "Vennegrupper | Koordinering av sosiale aktiviteter, fester, møtesteder. Typisk 5-20 deltakere | Etablerer sosiale nettverk og relasjoner. TPS: B-kilde",
+            "Klassegrupper | Skolekoordinering. Brukes til deling av oppgaver, beskjeder og sosialt innhold | Bekrefter alder, skole og lokasjon. TPS: A-kilde ved skoleadmin",
+            "Salgskanaler (narkotika) | Krypterte emojimeldinger. Typisk én-veis kanal + privat DM for ordre | Høy etterforskningsverdi — se emoji-seksjon",
+            "Spillgrupper | Gaming-koordinering (Fortnite, CS2, Minecraft m.fl.). Stort engasjement hos gutter 12-18 | Avslører brukermønstre og relasjoner",
+            "Ekstremistiske grupper | Politisk radikalisering via kanaler og grupper. Voksende problem blant unge menn | Høy prioritet — Strpl. §§ 147a-147c",
+            "Ulovlig innholdsdeling | CSAM, tyvegods-bilder, vold-videoer. Typisk lukkede grupper m/invitelenke | KRITISK — se SIS-MINOR-14. Straks rapport til NCMEC/Kripos",
+            "Mobbing-grupper | Grupper for å spreie ydmykende bilder og meldinger om medelever | Straffbart: strl. §§ 267-269 (ærekrenkelse, privat sfære)"
+          ]
         }
       ]
     },
     {
       "id": "s02",
-      "overskrift": "ORDLISTE – LES DETTE FØRST",
+      "overskrift": "DEL 2 — 20 TEKNISKE KRAV (KT-01 til KT-20)",
       "komponenter": [
         {
           "type": "paragraph",
-          "data": "📖 ORDLISTE"
+          "data": "KT-01 | DEFINISJON: Juridisk og teknisk kategorisering"
         },
         {
           "type": "grid",
           "data": [
-            "MTProto | Telegrams egenutviklede krypteringsprotokoll",
-            "User ID | Permanent, unikt tall-ID for hver Telegram-bruker\n(changes ALDRI, selv om brukernavn byttes)",
-            "Username | @brukernavn (kan endres når som helst)",
-            "Display Name | Visningsnavn (kan endres fritt, ikke unikt)",
-            "Cloud Chat | Vanlige Telegram-meldinger (lagret på serveren)",
-            "Secret Chat | Ende-til-ende-krypterte meldinger (kun på én enhet)",
-            "Supergroup | Telegram-gruppe med inntil 200 000 medlemmer",
-            "Channel | Ensrettet utsendelse (admin poster, alle leser)",
-            "Bot | Automatisert Telegram-konto (robot)",
-            "API | Grensesnitt for programmatisk tilgang til Telegram",
-            "BRÅK-bot | Bot som samler inn og gir ut informasjon om brukere",
-            "Geogramint | Verktøy som bruker Telegrams \"People Nearby\"-funksjon\nfor geografisk lokalisering",
-            "Telethon | Python-bibliotek for automatisert Telegram-tilgang",
-            "Harpoon | BRÅK-verktøy for Telegram (brukerprofiler, grupper)",
-            "Telepathy | Python-basert BRÅK-verktøy for Telegram-etterforskning",
-            "TGStat | Statistikk- og søkemotor for Telegram-kanaler",
-            "Lyzem | Søkemotor spesielt utviklet for Telegram",
-            "Intelx | Intelligence X – søker i lekkede databaser"
+            "Kategori | Klassifisering | Teknisk detalj",
+            "Juridisk kategori | Elektronisk kommunikasjonstjeneste (EKS) | Regulert av ekomloven og GDPR i Norge. Telegram er ikke underlagt norsk telelovgivning direkte.",
+            "Arkitekturtype | Hybrid sky/klient — primært sentralisert sky | Meldinger sendes via Telegrams skytjenere (ikke P2P). Secret Chat er enhet-til-enhet via Telegrams signalering.",
+            "Protokoll | MTProto 2.0 (proprietær) | Egenutviklet av Telegram. Klient-til-server. Bruker TCP/443 eller UDP/443.",
+            "Chattype: standard | Klient-server AES-256-IGE | Telegram-server har nøkkelen. IKKE E2EE.",
+            "Chattype: Secret Chat | E2EE via Diffie-Hellman 2048-bit | Nøklene er KUN på klientenhetene. Server ser ALDRI innhold.",
+            "Chattype: gruppe/kanal | Klient-server kryptering. ALDRI E2EE | Offentlige kanaler kan leses uten konto via t.me/s/[navn]",
+            "Bot API | HTTPS REST API med JSON-svar | Bot-tokens: Bearer-tokens i HTTP-header. Format: 123456:ABCdefGHI...",
+            "VoIP/Video | DTLS-SRTP (WebRTC-lignende) | Emoji-fingerprint (4 tegn) for manuell verifisering av samtalepartner"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-02 | HISTORIKK: Tidslinje over versjoner og datalagring"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Dato | Hendelse | Konsekvens for etterforskning",
+            "Aug 2013 | Telegram lanseres (iOS). MTProto 1.0 | MTProto 1.0 er nå utfaset. SHA-1 sårbart — ikke relevant for aktive saker",
+            "2014 | Grupper opptil 200 brukere | Gruppe-chatter lagres sentralt — tilgjengelig via LE-forespørsel",
+            "Des 2017 | MTProto 2.0 (v4.6) — SHA-256 erstatter SHA-1 | Forbedret sikkerhet. SHA-256 for msg_key-derivasjon",
+            "2018 | Kanaler og supergrupper (200 000) | Massiv offentlig innholdsmengde tilgjengelig for OSINT",
+            "2020 | Meldingssletting for alle — 'Delete for Everyone' | Slettede meldinger forsvinner fra sky — men kan finnes i cache4.db",
+            "Mars 2021 | 500 millioner månedlige brukere. 500M-lekkasje | Telefonnummer, bruker-ID, land, fornavn for 500M brukere eksponert",
+            "2022 | Topics/Forum-funksjon i supergrupper | Trådbasert kommunikasjon i grupper — nye OSINT-muligheter",
+            "2022 | Fragment.com lanseres — kjøp av +888-numre med TON | Anonyme Telegram-kontoer uten ekte SIM mulig. Utfordring for LE",
+            "Juni 2022 | Stories-funksjon lanseres | Bilder og video som forsvinner — ny kanal for ungdomskommunikasjon",
+            "2023 | Telegram Premium (2 GB filer, boost, stickers) | Større filer overføres — økt kapasitet for ulovlig innholdsdeling",
+            "Aug 2024 | Pavel Durov arrestert i Frankrike (Le Bourget) | Trigger for politikkendring — Telegram endrer LE-samarbeid",
+            "Sep 2024 | KRITISK: Telegram endrer LE-policy | Utleverer nå IP og telefon ved rettskjennelse i ALLE straffesaker, ikke kun terror",
+            "Q4 2024 | 900 US-LE-forespørsler, 14 641 India-forespørsler besvart | Bevis på endret samarbeid. Norske forespørsler via MLAT/Kripos",
+            "Jan 2026 | Telegram passerer 1 milliard månedlige brukere | Platformen vokser — etterforskning av norske brukere øker",
+            "Apr 2026 | Telegram Stars (betalingssystem) og e-handel | Ny finansiell infrastruktur på plattformen — kryptovaluta og betaling"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-03 | EIER/LOV: Juridisk enhet og lagringslovgivning"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Parameter | Detalj",
+            "Juridisk enhet | Telegram FZ-LLC — Dubai, UAE (De forente arabiske emirater)",
+            "Offisiell adresse | Telegram FZ-LLC, Level 41, Emirates Towers, Sheikh Zayed Road, Dubai, UAE",
+            "EU/EØS-representant | Telegram Germany GmbH, Pappelallee 78/79, 10437 Berlin, Tyskland",
+            "Grunnlegger | Pavel Durov (russisk-fransk statsborger, nå bosatt i Dubai)",
+            "Lagringslov (UAE) | UAE Cybercrime Law 5/2012 + ICT regulering. Mye svakere personvern enn GDPR",
+            "GDPR-plikt | Telegram er underlagt GDPR for europeiske brukere. EU DPA-tilsyn via Irland/Tyskland",
+            "US Cloud Act | Gjelder IKKE direkte — Telegram er ikke US-selskap. MLAT kreves for EU/US-samarbeid",
+            "Norsk ekomlov | Telegram er ikke underlagt norsk ekomlov direkte. Norsk politi må gå via Kripos og MLAT",
+            "Transparensrapport | Publiseres på Telegram.org. Q4 2024: 14 641 India-forespørsler, 900 USA-forespørsler besvart",
+            "LE-policy endring | September 2024: Telegram utleverer nå IP + telefon ved rettskjennelse i ALLE straffesaker"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-04 | TEKNOLOGI: Stack og dataflyt\n\nKlientarkitektur: Telegram-klientene (iOS, Android, Desktop) kommuniserer med Telegrams servere via MTProto 2.0-protokollen over TCP/443 eller UDP/443. Alt innhold krypteres av klienten FØR sending."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Teknologi-lag | Stack-komponent | OSINT-relevans",
+            "Meldingsprotokoll | MTProto 2.0 (proprietær). TL (Type Language) serialisering | Binær serialisering. cache4.db inneholder TL-serialiserte BLOB-data",
+            "Transportlag | TCP/443 (primær). UDP/443 (fallback). TLS-innpakning | Telegram-trafikk ser ut som HTTPS — vanskelig å blokkere",
+            "Serversystem | Linux-servere. PostgreSQL/MySQL for brukerdata (ikke bekreftet) | DC-ID (1-5) avslører brukerens registreringsregion",
+            "Medialagring | Distributert CDN. Media-ID er global referanse til fil | Media-ID kan brukes til å finne delt media på tvers av chatter",
+            "Bot API | HTTPS REST + JSON. Webhooks støttet | JSON-svar inneholder alle metadata om meldinger, brukere og grupper",
+            "Telegram Web (app) | React-basert SPA. web.telegram.org/k/ (ny) og /a/ (gammel) | Hunchly fungerer med web.telegram.org. Logg alle sidevisninger",
+            "TON blockchain | The Open Network — integrert kryptovaluta | Fragment.com: kjøp av +888-numre. Telegram Stars: betaling",
+            "Klientdatabasen | SQLite (cache4.db på Android/iOS). Proprietær format | BLOB-deserialisering krever Oxygen Forensic eller Belkasoft X"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-05 | KRYPTERING: Algoritmer og nøkkelhåndtering"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Chattype | Kryptering | Nøkkelholder | LE-tilgang",
+            "Sky-chat (standard) | AES-256-IGE (Infinite Garble Extension). msg_key = SHA-256 av nøkkel + melding | Telegram-server. Nøklene lagres på DC-serverne | JA — siden sep. 2024 ved rettskjennelse",
+            "Secret Chat | Diffie-Hellman 2048-bit. Session-nøkler kun på enhetene | KUN klientenhetene. Telegram-server har aldri tilgang | NEI — E2EE. Kun beslag av enhet gir tilgang",
+            "Gruppe/Kanal | AES-256-IGE via MTProto 2.0. Klient-server | Telegram-server. Som sky-chat | JA — ved rettskjennelse",
+            "VoIP/Video | DTLS-SRTP. Emoji-fingerprint for autentisering | Klientene. End-to-end for lyd og video | NEI — E2EE for selve samtalen",
+            "Lokal cache | SQLite AES-256 (passcode-kryptert). Varierer per OS | Brukerens enhet. Passord-beskyttet | KUN via beslaglagt enhet + passordcracking",
+            "Bot-kommunikasjon | HTTPS TLS 1.3 mellom bot og Telegram API | Telegram API-servere. HTTPS-kryptering | JA — Telegram-server har alle bot-meldinger"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-06 | UNIK-ID: Telegram-identifikatorer"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "ID-type | Format | Egenskaper | OSINT-verdi",
+            "Telegram user_id | int64 — opptil 19 sifre. Eks: 1234567890 | PERMANENT. Endres aldri selv om brukernavn/telefon endres | Primær selektor for pivå. A-kilde for identifikasjon",
+            "Brukernavn (@handle) | Alfanumerisk, 5-32 tegn, @-prefiks. Eks: @aliasname | IKKE permanent. Kan endres av bruker | Søkbar men ikke pålitelig over tid",
+            "Telefonnummer (MSISDN) | E.164: +4790123456 | Kobles til user_id ved registrering | Sterk identifikator — krever strpl. § 216b for innhenting fra Telegram",
+            "Kanal/Gruppe-ID | Negativt 64-bit integer. Eks: -1001234567890 | Permanent per kanal. -100 prefix for supergrupper | Brukes i API-kall og invite-linker",
+            "Meldings-ID | Sekvensielt heltall per kanal/chat | ID=1 = første melding. Tidsstempel kalkulerbar via ID | Tidsfesting: lav ID = tidlig i kanal-historikk",
+            "DC-ID | 1, 2, 4 eller 5 | Avslører opprinnelig registreringsregion. DC1=USA, DC2/4=Europa, DC5=Asia | Indikerer brukerens geografiske tilhørighet",
+            "Bot-token | Format: [bot_id]:[hash]. Eks: 123456:ABCdef... | Autentiserer bot mot API. Aldri eksponér bot-token! | Kompromittert token = full kontroll over boten",
+            "Fragment +888-nummer | Anonymt Telegram-nummer kjøpt med TON-kryptovaluta | Kobler ikke til ekte SIM. Sporing via TON blockchain | TON-blockchain-analyse kan avdekke wallet-eier"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-07 | LEKKASJE: Navngitte datasett og emoji-kommunikasjon som kode\n\nLekkasjedatasett"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Datasett | År | Eksponerte felt | Søk via",
+            "Telegram 500M Phone Numbers | 2021 | Telefonnummer, user_id, land, fornavn — 500 millioner brukere | IntelX.io, Dehashed, haveibeenpwned.com",
+            "Telegram combo-lister (løpende) | 2022–2026 | Telefon + user_id + brukernavn i CSV. Distribuert via TG-kanaler | IntelX.io, spesialiserte LE-verktøy",
+            "Rockyou2024 (TG-distribuert) | 2024 | 9,9 mrd. passord i klartekst — distribuert via Telegram | Kun passordanalyse — ikke direkte søkbart",
+            "MOAB (Mother Of All Breaches) | Jan 2024 | 26 mrd. records inkl. Telegram-data | IntelX.io, HIBP",
+            "Russiske combo-lister via TG | 2022–2024 | E-post, passord, Telegram-brukernavn i CSV | IntelX.io, spesialiserte LE-verktøy",
+            "Telegrammed (BTC/DarkWeb) | Løpende | Telegram-bruker-IDer koblet til kryptovalutaadresser | On-chain analyse + IntelX"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Emoji som kriminell kommunikasjonskode på Telegram\n\nBakgrunn: Bruk av emojier som kodet kommunikasjon er dokumentert i norsk politipraksis og internasjonalt. Telegram er den primære plattformen for organisert narkotikasalg via emoji-kode i 2026. Se politirapporten 'Emoji, språk og narkotika' for fullstendig gjennomgang."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Emoji | Kjent kode-betydning | Kontekst | TPS-vurdering",
+            "🍃 (blad) | Hasj, cannabis generelt | Brukt som varekategori i salgsmeldinger | P=2 kontekstuell — må krysssjekkes",
+            "🌿 (plante) | Marihuana/urter | Brukt av selgere som betegner produkt | P=2 kontekstuell",
+            "❄️ (snøflak) | Kokain | Vanlig i salgsannonser. Av og til kombinert med 💎 | P=2 kontekstuell",
+            "🎱 (biljardball) | Kokain (8-ball = 3,5 gram) | Spesifikk mengde-kode for kokain | P=1 med støttekontekst",
+            "🔮 (krystallkule) | MDMA/ecstasy (krystall-form) | Brukt av syntetiske stoff-selgere | P=2 kontekstuell",
+            "💊 (pille) | Tabletter generelt (Rivotril, Xanax, tramadol) | Kan referere til legale og illegale tabletter | P=3 — kontekst avgjørende",
+            "🍄 (sopp) | Psilocybin-sopp (magiske sopper) | Psykedelika-kategori | P=2 kontekstuell",
+            "🏔️ (fjell) | Methamfetamin (crystal meth) | Refererer til 'ice' eller 'crystal' via snøtopp | P=3 — sjeldnere i Norge",
+            "🦁 (løve) | Sterk/kvalitetsvare. Kan referere til bestemt leverandør | Merke-emoji for kjent selger | P=3 — meget kontekstuell",
+            "📦 (pakke) | Levering/forsendelse tilgjengelig | Brukes når vare er klar for salg | P=2 med kontekst",
+            "📍 (pin) | Drop-sted — geografisk levering | Kombinert med adresse eller koordinater | P=1 med PIN-koordinater",
+            "🏠 (hus) | Levering hjemme / møte hjemme | Brukes i DM-koordinering av møtested | P=2 kontekstuell",
+            "🚀 (rakett) | Rask levering eller sterk effekt | 'Rocket quality' — sterk vare | P=3 — kontekstuell",
+            "💰 / 💵 (penger) | Pris eller betaling-forespørsel | Standard i forhandlinger | P=2 kontekstuell",
+            "🤝 (håndtrykk) | Deal er gjort / avtale bekreftet | Avslutning av handel | P=1 i kjøp/salgskontekst",
+            "👃 (nese) | Innsniffer-referanse — kokain | Kroppsdel-emoji som produktreferanse | P=2 kontekstuell",
+            "🌡️ (termometer) | Sterk/ren vare ('hot stuff') | Brukt om potente produkter | P=3 — kontekstuell",
+            "🐍 (slange) | Advarsel om svindler / dårlig selger | Negativ advarsels-emoji | P=2 kontekstuell",
+            "✅ (hake) | Bekreftet ordre / verifisert selger | Positiv status-indikator | P=2 kontekstuell",
+            "❌ / 🚫 | Utsolgt / avvist ordre | Avslag-emoji | P=1 i kontekst"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-08 | URL-DATA: Dekonstruksjon av Telegram-URL-er"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "URL-mønster | Eksempel | Etterforskningsverdi",
+            "t.me/[brukernavn] | t.me/kriminelt_alias | Offentlig profil-URL — avslører brukernavn. Åpnes uten konto. Screenshot for bevis.",
+            "t.me/[brukernavn]/[meldings-ID] | t.me/kanal_navn/1234 | Spesifikk melding. Meldings-ID er sekvensielt — lav ID = tidlig i kanalhistorikk",
+            "t.me/+[base64url] | t.me/+xXYZ12345ABC | Privat invite-link. Dekod base64: avslører intern invite-token. Aktiv link = gruppe eksisterer",
+            "t.me/joinchat/[hash] | t.me/joinchat/ABCD1234 | Eldre invite-format (pre-2021). Mange aktive i delte linker",
+            "t.me/s/[kanalbrukernavn] | t.me/s/kanal_navn | Preview-URL. Les kanalinnhold uten konto og uten Telegram-innlogging",
+            "telegram.me/[brukernavn] | telegram.me/alias | Eldre URL-format. Omdirigerer til t.me — identisk funksjon",
+            "tg://proxy?server=...&secret=... | tg://proxy?server=vpn.example.com&port=443&secret=ee0000... | MTProto proxy-link. Secret = EE = TLS-modus. Avslører proxytjeneste brukt",
+            "t.me/transparency | t.me/transparency | Telegrams LE-transparens-bot. Se data om utleverte forespørsler per land"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-09 | NETTVERK: Protokollanalyse og PCAP-signatur"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Protokoll/Port | Bruk | PCAP-signatur | OPSEC-risiko",
+            "TCP/443 (HTTPS) | Primær MTProto-transport. TLS-innpakket | TLS ClientHello. SNI: *.telegram.org | Etterforskers IP synlig for Telegram",
+            "UDP/443 | Raskere MTProto-transport (QUIC-lignende) | UDP/443 til Telegram DC-IP-er | Samme OPSEC-risiko som TCP/443",
+            "TCP/80 | Fallback-transport. BRUK ALDRI for etterforskning | HTTP klartekst — all trafikk eksponert | KRITISK — aldri bruk uten TLS",
+            "TCP/5222 | XMPP-kompatibilitetsmodus (sjeldent brukt) | XMPP-header synlig | Minimalt brukt i 2026",
+            "Bot API: TCP/443 | HTTPS JSON-API mot api.telegram.org | HTTPS GET/POST til api.telegram.org | Bot-token i header avslører botens identitet",
+            "MTProto proxy | Obfuskert protokoll via konfigurerbar port | Tilfeldig-lignende datastrøm. Vanskelig å identifisere | Brukt for å omgå sensur — og LE-deteksjon"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-10 | METADATA: Fullstendig feltliste i Telegram-artifacts"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Felt | Kilde | Verdi / format | OSINT-verdi",
+            "user_id | Telegram API / bot | int64 — eks: 1234567890 | Permanent identifikator. Sterkeste selektor.",
+            "username | t.me/profil / @søk | String, 5-32 tegn: @aliasname | Søkbar. Kan endres — kombiner med user_id",
+            "first_name / last_name | Offentlig profil | String — kan være fiktivt | Brukes til kryssreferering. Ikke pålitelig alene",
+            "phone | Registrering / LE-utlevering | E.164: +4790123456 | Sterkeste selektor etter user_id. Krever LE-kjennelse",
+            "dc_id | API metadata | 1, 2, 4 eller 5 | Avslører registreringsregion (DC1=USA, DC2=EU)",
+            "last_seen_at | Profilbesøk (om synlig) | Timestamp/relativ: 'online', 'recently', 'this week' | Aktivitetsindikator — unngå synlighetsendringer",
+            "profile_photo | Offentlig profil | URL til CDN-fil med media-ID | Reverse image search — PimEyes/FaceCheck",
+            "bio | Offentlig profil | Fritekst — maks 70 tegn | Kan inneholde kontaktinfo, emojier, kode",
+            "is_bot | API-felt | Boolean: true/false | Identifiserer bot-kontoer",
+            "channel_id / group_id | API / invite-link | Negativt int64: -1001234567890 | Kobler meldinger til chat-kontekst",
+            "message_id | Melding i kanal/gruppe | Sekvensiell int per chat | Tidsstempling av melding via ID-sekvensnummer",
+            "forward_from | Videresend-metadata | user_id eller kanal-ID til opprinnelig avsender | Sporingspunkt — avslører opprinnelig kilde",
+            "media_id | Mediafil i melding | int64 — global referanse til fil | Kan spore samme fil på tvers av chatter",
+            "views | Kanal-melding | Antall visninger | Indikerer kanalens rekkevidde og innflytelse",
+            "edit_date | Redigert melding | Timestamp for siste redigering | Avslører endringer etter sending — viktig for bevis"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-11 | MANUELT: Trinn-for-trinn via nettleser og konsoll\n\nA — Passiv profilering uten konto (§ 25 — ingen beslutning kreves)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "t.me/s/[kanalbrukernavn]: Åpne nettleseren (VPN + Hunchly aktiv). Naviger til https://t.me/s/kanal_navn — les kanalinnhold uten innlogging",
+            "t.me/[brukernavn]: Åpne offentlig profil. Se profilbilde, bio, felles grupper (om synlig). Screenshot + SHA-256 umiddelbart",
+            "Meldingstidsstempling via ID: Kanalens første melding (ID=1) gir opprettelsesdato. Bruk online Snowflake-calculator for Telegram: telegram.id-converter.com",
+            "TGStat.io søk: Søk på kanalbrukernavn eller kanal-ID. Se statistikk, historikk, vekst og relaterte kanaler",
+            "Lekkasjesøk: Søk telefonnummer (+47XXXXXXXX) eller brukernavn i IntelX.io og Dehashed"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "B — Med etterforskningsprofil (§ 196 — påtalebeslutning kreves)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "@userinfobot: Videresend melding fra målbruker til @userinfobot — bot returnerer user_id, navn, brukernavn og språk",
+            "@CreationDateBot: Videresend melding til @CreationDateBot — returnerer indikasjon på kontooprrettelsestidspunkt",
+            "@SangMata: Brukernavnsporing i delte grupper — logger endringer i navn og brukernavn over tid",
+            "Gruppemedlemsliste: I gruppe med mistenkt: se 'Admins' og 'Members'-liste. Screenshot med SHA-256",
+            "web.telegram.org (Developer Tools): F12 → Network-tab → XHR-forespørsler → API-kall til api.telegram.org avslører raw JSON-data"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-12 | AUTO: API-integrasjoner og Python-automatisering"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Verktøy | Status apr. 2026 | Funksjon | Tilgang",
+            "TGStat.io | Aktivt — gratis + betalt | Kanal-statistikk, historikk, vekst, relaterte kanaler | Gratis grunnfunksjon. API betalt",
+            "Telemetr.io | Aktivt — betalt | Kanalanalyse, meldingshistorikk, abonnentutvikling | Betalt abonnement",
+            "osint.industries | Aktivt — abonnement | Søk brukernavn og telefon mot Telegram + 500+ plattformer | Betalt abonnement",
+            "IntelX.io | Aktivt — abonnement | Lekkasjedatabaser inkl. Telegram-data | Betalt — LE-rabatter",
+            "Telepathy (GitHub) | Aktivt — oppdatert 2026 | Python: skraper offentlige kanal-meldinger via Telethon | Åpen kildekode + Telegram API-nøkkel",
+            "Telerecon (GitHub) | Aktivt | Python: Telegram-etterforskningsverktøy for kanal/bruker | Åpen kildekode",
+            "Maigret (GitHub) | Aktivt | Søker Telegram-brukernavn på 3000+ plattformer | Åpen kildekode — gratis",
+            "Geogramint (GitHub) | Aktivt — oppdatert 2025 | Geolokasjon via People Nearby-funksjon | Åpen kildekode + Telegram API",
+            "telegram-phone-number-checker | Aktivt | Sjekk om telefonnummer er koblet til Telegram-konto | Åpen kildekode — krever API-credentials",
+            "Oxygen Forensic Detective | Aktivt — 2026-versjon | Forensisk parsing av cache4.db (Android og iOS) | Kommersiell — politilisens",
+            "Belkasoft X | Aktivt | Forensisk Telegram-analyse inkl. BLOB-deserialisering | Kommersiell — politilisens",
+            "Hunchly (Maltego) | Aktivt — Maltego-integrert mai 2025 | Bevislogging av web.telegram.org-besøk | Betalt — politiabonnement"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-13 | VAKT: Overvåking og varsling"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Vakttype | Metode / verktøy | Trigger",
+            "Brukernavnendring | @SangMata-bot (i felles gruppe) | Bot varsler automatisk ved endring av brukernavn eller visningsnavn",
+            "Kanalinnhold (ny post) | TGStat.io alert. Eller RSS fra t.me/s/[kanal] | Ny melding i overvåket kanal",
+            "Profil online-status | Tredjepartsverktøy (etisk vurdering nødvendig) | Endring i 'sist sett'-status",
+            "Google Alert på brukernavn | Google Alerts: \"@telegram_username\" | Ny nettside-eksponering av Telegram-brukernavn",
+            "changedetection.io | Overvåk t.me/s/[kanal]-URL | Endring i kanalinnhold detektert automatisk",
+            "IntelX nytt datasett-varsel | IntelX.io alert på selektor (telefon eller brukernavn) | Nytt lekkasjetreff på telefonnummer eller brukernavn",
+            "Regex for numre i tekst | \\+47[0-9]{8} — detekterer norske telefonnumre i kanaltekster | Automatisk flagging av norske numre i skrapede kanaler"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-14 | SOKKEDUKKE: OPSEC og etterforskningsprofil på Telegram"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Komponent | Krav og metodikk",
+            "VPN | Alltid aktivt. Mullvad (WireGuard, fast node) anbefalt. Kill Switch aktivt. Verifiser IP på ipleak.net FØR Telegram åpnes",
+            "Etterforskningsprofil | Separat Telegram-konto registrert med burner SIM (fortrinnsvis utenlandsk). Aldri bruk privat konto.",
+            "Anonymous +888-nummer | Kjøp via Fragment.com med Toncoin for full anonymitet. Skjuler ekte telefonnummer — anbefalt for aktiv spaning",
+            "Profil-troverdighet (Lebensraum) | Konto > 90 dager gammel. Profilbilde (AI-generert, sjekket mot Hive Moderation). Noe aktivitet i åpne grupper.",
+            "Telegram 2FA (passord) | Aktiver to-faktor-autentisering på etterforskningsprofil. Forhindrer kontoovertakelse",
+            "Lesekvittering | Deaktiver i Innstillinger → Personvern → Les-kvitteringer → Av. FØR du åpner noen chatter",
+            "Hunchly + web.telegram.org | Hunchly logger automatisk alle sidevisninger på web.telegram.org. Rødt ikon FØR nettleseren åpnes",
+            "API-identifikasjon | Telegram API-kall sender app_id og device_info. Velg standard Telegram-klient-app_ids — ikke tilpassede",
+            "Fingerprinting | Standardisert Firefox-profil (arkenfox.js). Ingen Telegram-spesifikke utvidelser som skiller profilen",
+            "Isolert VM | Dedikert VM per etterforskningsprofil. Ingen krysskontaminasjon mellom saker"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-15 | AI: LLM og gjenkjenningsverktøy i Telegram-etterforskning"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Funksjon | Verktøy | Telegram-spesifikk bruk | Begrensning",
+            "Emojidekoding | Claude/ChatGPT (lokal instans) | Dechifrere narko-koder og emoji-kombinasjoner i kanalmeldinger. Se KT-07 | Sensitiv tekst MÅ IKKE til offentlig skybasert LLM",
+            "Slanganalyse | LLM med systemoppdrag om kriminell sjargong | Oversette narkotikajargong fra norsk ungdomsspråk, russisk og arabisk | Alltid krysssjekk — LLM kan hallusinere",
+            "Ansiktsgjenkjenning | PimEyes.com, FaceCheck.ID | Matche profilbilde mot kjente nettoffentlige profiler | False positives — TPS-S=HØY alltid",
+            "Maskinoversettelse | DeepL (russisk, arabisk, farsi) | Oversette kanaler fra dominante kriminelle kanalspråk | Slang og sjargong oversettes dårlig av standardverktøy",
+            "Relasjonskartlegging | Maltego med Telegram-transforms | Automatisk kartlegging av relasjoner mellom kanaler, brukere og grupper | Krever API-tilgang og LE-godkjenning",
+            "Lydtranskribering | Whisper (OpenAI — lokal) | Transkribere talemeldinger og videoposter fra Telegram | Lokal kjøring er krav — sensitiv lyd kan ikke til sky",
+            "Innholdsklassifisering | Azure AI Vision / lokal CLIP | Klassifisere bilder og videoer automatisk i masseeksport | CSAM-risiko — streng OPSEC og protokoll"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-16 | OPSEC: Attribusjonsanalyse — spor etterforskeren etterlater"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Handling | Spor lagret hos | Risiko | Tiltak",
+            "Innlogging på Telegram | Telegrams servere — IP + tidsstempel + DC-tilkobling | Telegram-server vet etterforskerens IP og tidspunkt | VPN med fast IP — obligatorisk",
+            "Profilbesøk (offentlig kanal) | Telegram: økt visningsantall. Ikke sporbar til person | LAV — akseptabelt OPSEC-nivå | Lavt risiko — bruk likevel VPN",
+            "Melding-forward til @userinfobot | Boten og Telegram-server ser forwarden | Mål-bruker kan se at meldingen er forwardet | Kun @userinfobot — ikke kommersielle tredjepartsbots",
+            "Gruppemedlemskap | Telegram-server + gruppeadministratorer | Adminlisten over gruppemedlemmer eksponerer etterforskningsprofil | Vurder nødvendighet. Alternativt: t.me/s/-lenke",
+            "Typing-status | Motpart ser 'skriver...' i direktemelding | Avslører at etterforskeren er aktiv | Aldri åpne private chatter med mål i etterforskningsmodus",
+            "Lese-kvittering (blå haker) | Synlig for avsender i direktemeldinger | Avslører at meldingen er lest — avslører aktivitet | Deaktiver lesekvitteringer i innstillinger FØR undersøkelse",
+            "User-Agent (Telegram Web) | web.telegram.org serverlogg | Nettlesertype og OS synlig | Standardisert UA i etterforskningsnettleser",
+            "API app_id | Telegram API-logg | Identifiserer hvilken klient som brukes | Bruk offisielle Telegram-klient-app_ids"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-17 | KRITIKK: Kryssverifisering via minst to uavhengige kilder"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Funn-type | Kilde 1 (primær) | Kilde 2 (uavhengig) | TPS etter verifisering",
+            "Telegram user_id | @userinfobot via videresending | Telegram API getUser direkte (med API-nøkkel) | B-2-HØY etter begge bekrefter",
+            "Telefonnummer-kobling | IntelX.io — søk etter telefonnummer | Telegram phone-number-checker (GitHub) | B-2-MODERAT — begge er avhengig av lekkasjedata",
+            "Kanal-opprettelsesdato | Meldings-ID #1 i kanalen (timestamp) | TGStat.io kanalstatistikk | B-1-LAV etter begge bekrefter dato",
+            "Brukernavnhistorikk | @SangMata-bot (hvis admin i felles gruppe) | Tredjepartsindekser (telegago.ru) | C-3-HØY — begge er usikre tredjepartskilder",
+            "Ekte identitet fra profilbilde | PimEyes.com reverse image search | FaceCheck.ID + Google Images | B-2-HØY etter alle tre bekrefter — men TPS-S=HØY",
+            "Kanalinnhold | t.me/s/[kanal] direkte skraping | TGStat.io historisk innhold | B-2-MODERAT — begge avhengig av Telegram-tilgjengelighet",
+            "Emoji-meldingsbetydning | Politirapport om emojispråk (kriminell jargong) | LLM-analyse + krysssjekk mot kjente dealer-kanaler | C-2-MODERAT — kontekst er alt"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-18 | LE-GUIDE: Portal og format for rettslig henvendelse til Telegram"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VIKTIG OPPDATERING September 2024: Telegram endret policy etter Durov-arrestasjonen. Telegram utleverer nå IP-adresse og telefonnummer ved rettskjennelse i ALLE straffesaker — ikke kun terrorisme. I Q4 2024 ble 900 US-forespørsler og 14 641 India-forespørsler behandlet."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Parameter | Detalj",
+            "Primær henvendelseskanal (norsk politi) | Kripos → MLAT (Mutual Legal Assistance Treaty) → Interpol NCB Dubai. Norsk politi henspiller IKKE direkte til Telegram.",
+            "Telegram LE-kontakt (intern) | Offisiell LE-kontaktkanal finnes via tjenestelige kanaler. Kripos har etablert kontakt.",
+            "Nødhenvendelse (emergency) | Telegram: abuse@telegram.org for umiddelbar trussel mot liv. Kripos koordinerer for norske politidistrikter.",
+            "Juridisk format | Kjennelse fra norsk tingrett (strpl. § 197) oversatt og fremsendt via Kripos. Krav: saksnummer, hjemmel, spesifikke data som etterspørres.",
+            "Data Telegram utleverer (etter rettskjennelse) | IP-adresse ved registrering og siste innlogging, telefonnummer, registreringsdato, DC-tilhørighet. IKKE meldingsinnhold for standard chatter.",
+            "Tidshorisont | Standard MLAT: 3-12 måneder. Emergency request: dager til uker via Kripos/Interpol.",
+            "Transparensstatistikk | t.me/transparency — Telegrams åpne transparens-bot viser LE-forespørsler per land per periode",
+            "Meldingsinnhold | Kun mulig å innhente ved beslaglagt enhet (Secret Chat) eller driftsavbrudd-scenarioer. Standard cloud-chat: forespørsel om innhold besvares ikke uten videre."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-19 | JUS: Juridiske hjemler for Telegram-etterforskning"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Hjemmel | Handling | Merknad",
+            "Politiloven § 25 | Passiv observasjon av åpne kanaler/profiler via t.me/s/ | Lovlig uten beslutning. Åpent tilgjengelig innhold.",
+            "Strpl. § 196 | Opprette etterforskningsprofil for tilgang til lukkede grupper | Skriftlig påtalebeslutning FØR iverksetting",
+            "Strpl. § 196a | Absolutt forbud — provokasjonsforbudet | Aldri fremprovosere handling fra mistenkt via Telegram",
+            "Strpl. § 197 | Kjennelse fra tingretten — utlevering av abonnementsdata fra Telegram | Brukes ved LE-forespørsel til Telegram via Kripos/MLAT",
+            "Strpl. § 216b | Kommunikasjonsdata (trafikkdata) — hvem kommuniserte med hvem | Tingretts kjennelse + strafferamme-krav",
+            "Strpl. § 216a | Kommunikasjonskontroll — avlytting av innhold | Lagmannsrettskjennelse. Strengeste hjemmel.",
+            "Strpl. § 203 | Utlevering av beslag fra enhet (cache4.db) | Beslaglagt telefon med Telegram-data — standardbeslag",
+            "Strl. §§ 147a-147c | Terroristisk innhold og finansiering på Telegram | Høy prioritet. Kripos koordinerer.",
+            "Barnekonvensjonen art. 3 | CSAM på Telegram. Mindreåriges beste interesse | Se SIS-MINOR-14. Umiddelbar rapportering til NCMEC.",
+            "GDPR art. 6 (1)(e) | Behandling av personopplysninger innhentet fra Telegram | Formålsbegrensning — kun til etterforskningsformål",
+            "EMK art. 8 | Retten til privatliv — proporsjonalitet | Telegramovervåking skal stå i rimelig forhold til saken"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-20 | BEVIS: Integritetskrav og dokumentasjon"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Steg | Handling | Verktøy | Output / Juridisk verdi",
+            "1 | Hunchly aktivt FØR Telegram åpnes | Hunchly Chrome-extension (rødt ikon) | Automatisk URL, tidsstempel og MHTML for hvert besøk",
+            "2 | Screenshot av funn umiddelbart | Shift+PrtScr (Kali) / OS-screenshot | PNG-fil med tidsstemplet filnavn",
+            "3 | SHA-256 av screenshot | sha256sum screenshot.png i terminal | 64-tegns hash-streng — bevisintegritet",
+            "4 | UTC-tidsstempel | date -u i terminal | ISO 8601 UTC — internasjonalt entydig",
+            "5 | Logg i Hunchly-note | Hunchly note-funksjon per funn | Hash + tidsstempel i Hunchly-databasen",
+            "6 | TPS-gradering per funn | SIS-TPS-02 — faglig skjønn | T=[A-F], P=[1-6], S=[LAV/MODERAT/HØY/KRITISK]",
+            "7 | Lagre rådata (meldings-JSON) | Developer Tools → Network → API-respons kopier | Rå JSON — primærbevis fremfor screenshot",
+            "8 | Wayback Machine-arkivering | web.archive.org/save/[URL] | Tredjeparts arkivering — nøytralt bevis",
+            "9 | Hunchly Full Case Export | Hunchly → Export → Full Case | ZIP med MHTML, hashes og metadata — komplett bevisdokumentasjon",
+            "10 | Dokumenter i SIS-RAPPORT-13 | Word-mal rapport_mal.docx | Funnrapport + egenrapport per innhentingsøkt"
           ]
         }
       ]
     },
     {
       "id": "s03",
-      "overskrift": "KAPITTEL A: TELEGRAM – PLATTFORMEN FORSTÅTT FRA BUNNEN",
+      "overskrift": "DEL 3 — TEKNISK DEKONSTRUKSJON (A–Å)",
       "komponenter": [
         {
           "type": "paragraph",
-          "data": "A.1 Hva er Telegram, egentlig?\n\nAnalogi: Et kjøpesenter med noen åpne og mange låste butikker\n\nTelegram er ikke én ting – det er en hybrid plattform. Tenk deg et kjøpesenter:\n\nÅpne butikker (kanaler/grupper): Hvem som helst kan gå inn, lese, se\n\nHalvåpne butikker (offentlige grupper): Du kan se inn, men må registrere deg for å gå inn\n\nLåste butikker (private grupper): Kun med invitasjon\n\nBakholdene (Secret Chats): Bare de to som snakker vet hva som sies\n\nFor en etterforsker betyr dette:\n\nTelegram er langt mer åpent enn de fleste tror. Kriminelle velger Telegram fordi de TROR det er anonymt. Men plattformens arkitektur lekker informasjon på måter de ikke forstår."
+          "data": "NIVÅ 1 — BINÆRT: Rådata og artifacts på laveste nivå\n\n1.1 MTProto-melding på byte-nivå\n\nMTProto 2.0 kryptert melding (forenklet struktur):\n\n[auth_key_id: 8 bytes]  — identifiserer krypteringsnøkkelen\n[msg_key: 16 bytes]     — SHA-256 av nøkkel + melding (brukt til AES-derivasjon)\n[encrypted_data: N bytes] — AES-256-IGE kryptert payload\n\nDekryptert payload inneholder TL-serialisert objekt:\n  [4B: TL-type-ID (little-endian)]  — identifiserer meldingstype\n  [8B: message_id (timestamp-basert)] — unik per melding\n  [4B: seq_no]  — sekvensieringsverdi\n  [4B: bytes]   — lengde på meldingsdata\n  [N: message_data] — TL-serialisert meldingsobjekt\n\nEksempel TL-type-ID for sendMessage: 0x1c91f91c (hex, little-endian: 1c f9 91 1c)"
         },
         {
           "type": "paragraph",
-          "data": "Fire viktige misforståelser om Telegram-sikkerhet:"
+          "data": "1.2 cache4.db SQLite-struktur\n\nAndroid-database: /data/data/org.telegram.messenger/files/cache4.db\niOS: ~/Library/Application Support/Accounts/[DC-ID]/postbox.db\n\nTabeller i cache4.db:\n  messages     — lagrede meldinger (BLOB: TL-serialisert)\n  chats        — chat-metadata (BLOB)\n  users        — brukerdata (BLOB)\n  media        — mediafiler-metadata\n  securevals   — krypterte sensitive verdier\n\nBLOB deserialisering:\n  Åpne i Oxygen Forensic Detective eller Belkasoft X\n  Manuelt: python3 -c \"import tl_base; tl_base.deserialize(blob_bytes)\""
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "1.3 Bot API JSON-svar\n\nGET https://api.telegram.org/bot[TOKEN]/getUpdates\n\nSvar (JSON-utdrag):\n{\n  \"ok\": true,\n  \"result\": [{\n    \"update_id\": 987654321,\n    \"message\": {\n      \"message_id\": 42,\n      \"from\": {\n        \"id\": 1234567890,    ← Telegram user_id (permanent)\n        \"first_name\": \"Ola\",\n        \"username\": \"alias\",\n        \"language_code\": \"no\"\n      },\n      \"chat\": {\"id\": -1001234567890},  ← Gruppe/kanal-ID\n      \"date\": 1713692400,  ← Unix-timestamp UTC\n      \"text\": \"🍃 100g available 📍\"\n    }\n  }]\n}"
+        },
+        {
+          "type": "paragraph",
+          "data": "NIVÅ 2 — ARKITEKTUR: Teknisk oppbygging"
         },
         {
           "type": "grid",
           "data": [
-            "Misforståelse | Virkelighet",
-            "\"Telegram er ende-til-ende-kryptert\" | Nei. Kun Secret Chats er E2EE. Vanlige chatter lagres på Telegrams servere som \"cloud chats\"",
-            "\"Brukernavnet mitt kan ikke spores\" | Feil. User ID er permanent og kan aldri endres",
-            "\"Jeg er anonym i grupper\" | Delvis feil. User ID vises for alle i gruppen (via bots)",
-            "\"Slettede meldinger forsvinner\" | Nei. Tredjepartsverktøy og arkiver fanger opp innhold"
+            "Lag | Dataflyt | OSINT-mulighet",
+            "Klient → Telegram DC | Klienten AES-256-IGE-krypterer meldingen med MTProto 2.0. Sendes via TCP/443 til nærmeste DC | DC-ID i pakke-header avslører registreringsregion",
+            "DC-til-DC | Meldinger formidles mellom Telegrams DC-er (1-5). Lagres kryptert på sky | Telegram-server lagrer sky-chat-meldinger. LE-kjennelse kan gi tilgang",
+            "Kanal-distribusjon | Admin-post sendes via DC til alle abonnenter. Lagres i skyen | Offentlig tilgjengelig via t.me/s/. Historikk indexert av TGStat",
+            "Bot API-lag | Bot-serveren sender HTTPS-forespørsler til api.telegram.org. JSON-svar | Bot-meldinger inneholder full bruker-metadata i JSON",
+            "Mediasystem | Filer lastes til Telegram CDN med media_id. Global referanse | Samme fil (hash) kan spores på tvers av chatter via media_id",
+            "TON blockchain | Fragment.com kjøp av +888-numre betales med Toncoin | TON on-chain analyse kan koble wallet til andre transaksjoner"
           ]
         },
         {
           "type": "paragraph",
-          "data": "A.2 Telegrams tekniske arkitektur – hva etterforskeren trenger å vite\n\nDen permanente User ID – \"Ditt usynlige personnummer på Telegram\"\n\nI motsetning til brukernavn og telefonnummer, som kan endres, tildeles hver Telegram-konto en permanent numerisk ID ved registrering. Denne ID-en forblir uendret og er et verdifullt verktøy for identifikasjon.\n\nAnalogi: Personnummer vs. Navn\n\nTenk på User ID som et personnummer. Du kan skifte navn, flytte, endre utseende – men personnummeret ditt forblir det samme hele livet. På Telegram kan du bytte brukernavn ti ganger i måneden, men User ID-en er den samme fra dag én til kontoen slettes.\n\nPraktisk betydning:\n\nNår @k13nord bytter brukernavn til @nytt_navn for å unngå politiet, kan etterforskere fremdeles spore ham via den permanente User ID-en."
+          "data": "NIVÅ 3 — HELHET: Strategisk plassering i etterforskningen"
         },
         {
-          "type": "paragraph",
-          "data": "User ID-struktur:\n\nBruker:     ID = 1234567890   (positivt tall)\n\nBot:        ID = 987654321    (positivt tall, men identifisert som bot)\n\nGruppe:     ID = -1234567890  (negativt tall)\n\nKanal:      ID = -10012345678 (negativt tall, starter med -100)"
-        },
-        {
-          "type": "paragraph",
-          "data": "Hva User ID avslører:\n\nKontoalder: Lavere ID = eldre konto (de første brukerne har meget lave IDer)\n\nRegistreringstidspunkt: Via bot kan man estimere når kontoen ble opprettet\n\nKonsistens: Samme person på tvers av endringer i brukernavn"
-        },
-        {
-          "type": "paragraph",
-          "data": "Krypteringsrealiteten – hva er faktisk kryptert?\n\n╔══════════════════════════════════════════════════════════╗\n\n║  TELEGRAM KRYPTERINGSOVERSIKT                             ║\n\n╠══════════════════════════════════════════════════════════╣\n\n║                                                           ║\n\n║  SECRET CHAT (Hemmelig samtale)                          ║\n\n║  ✅ Ende-til-ende-kryptert (E2EE)                         ║\n\n║  ✅ Ingen lagring på server                               ║\n\n║  ✅ Kun på én enhet (ikke synkronisert)                   ║\n\n║  ✅ Selvdestruering mulig                                 ║\n\n║  ❌ Ekstremt sjelden brukt av kriminelle (upraktisk)      ║\n\n║                                                           ║\n\n║  VANLIG CHAT / CLOUD CHAT (99% av alle meldinger)        ║\n\n║  ❌ IKKE ende-til-ende-kryptert                           ║\n\n║  ❌ Lagres på Telegrams servere (Russland/Dubai/USA)      ║\n\n║  ⚠️  Kryptert mellom deg og server, men server kan lese  ║\n\n║  ⚠️  Tilgjengelig med rettslig kjennelse til Telegram    ║\n\n║                                                           ║\n\n║  GRUPPESAMTALER                                           ║\n\n║  ❌ Aldri ende-til-ende-kryptert                          ║\n\n║  ❌ Lagres på server                                      ║\n\n║  ✅ Tilgjengelig for BRÅK (metadata, struktur)           ║\n\n╚══════════════════════════════════════════════════════════╝\n\nPraktisk konsekvens: Standardinnstillinger i Telegram skaper betydelige sikkerhetsgap. Plattformen muliggjør sporing gjennom permanente konto-IDer som vedvarer til tross for endringer i brukernavn. BRÅK-bots utnytter disse IDene for å korrelere aktivitet på tvers av grupper, koble meldinger, identifisere medlemskap og noen ganger avsløre telefonnumre."
+          "type": "list",
+          "data": [
+            "Telegram er ikke mørk web — det er halvåpent: Offentlige kanaler er fullt tilgjengelige uten konto. Kriminelle miljøer etablerer seg her fordi de når mange mottakere, men tror de er skjult. De er ikke det — offentlige kanaler er OSINT-gull.",
+            "Secret Chats er den reelle veggen: Enkel Telegram-bruk er ikke E2EE. Den ekte etterforskningsutfordringen er Secret Chats — men de brukes sjelden av norske kriminelle fordi de er lite intuitive og forsvinner ved enhetsskifte.",
+            "Emojispråket er nøkkelen for norsk ungdomskriminalitet: Norske tenåringer som selger narkotika via Telegram bruker emoji som primærspråk fordi det er raskt, muntlig forstått i miljøet og unnviker nøkkelordfiltre.",
+            "Fragment.com og +888-numre er den nye anonymiseringsmetoden: Post-2022 kan kriminelle bruke Telegram uten ekte SIM-kortregistrering. TON-blockchain-sporing er den eneste tekniske metoden for å koble disse til ekte identitet.",
+            "cache4.db er det digitale hukommelsessenteret: Selv om Telegram-serverne ikke gir meldingsinnhold, kan en beslaglagt telefon gi tilgang til historikk via cache4.db — inkludert potensielt slettede meldinger via WAL-fil."
+          ]
         }
       ]
     },
     {
       "id": "s04",
-      "overskrift": "KAPITTEL B: TELEGRAMS ANGREPFLATE FOR BRÅK",
+      "overskrift": "DEL 4 — ANALOGI-PAR",
       "komponenter": [
         {
-          "type": "paragraph",
-          "data": "B.1 Informasjonslagene – hva kan avdekkes?\n\n┌─────────────────────────────────────────────────────────┐\n\n│         TELEGRAM ANGREPFLATE (BRÅK ATTACK SURFACE)     │\n\n├─────────────────────────────────────────────────────────┤\n\n│                                                          │\n\n│  LAG 1: PROFIL (alltid tilgjengelig)                    │\n\n│  • Visningsnavn (Display Name)                           │\n\n│  • Brukernavn (@username)                                │\n\n│  • Profilbilde(r) (inkl. historiske)                     │\n\n│  • Bio/beskrivelse                                       │\n\n│  • Permanent User ID (via bot)                           │\n\n│  • Kontoopprettelsesdato (via bot)                       │\n\n│                                                          │\n\n│  LAG 2: AKTIVITET (delvis tilgjengelig)                 │\n\n│  • Online-status (\"Online\", \"Recently\", \"Last seen\")    │\n\n│  • Tidspunkt for siste aktivitet                         │\n\n│  • Gruppemedlemskap (offentlige grupper)                 │\n\n│  • Meldinger i offentlige kanaler                        │\n\n│                                                          │\n\n│  LAG 3: METADATA (indirekte tilgjengelig)               │\n\n│  • Telefonnummer (hvis eksponert i innstillinger)        │\n\n│  • IP-adresse (via filnedlasting eller direkte kall)    │\n\n│  • Enhetsttype (via API)                                 │\n\n│  • Geografisk lokasjon (\"People Nearby\"-funksjon)       │\n\n│                                                          │\n\n│  LAG 4: INNHOLD (krever tilgang/kjennelse)              │\n\n│  • Meldingsinnhold (Cloud Chats: krever rettslig hjelp) │\n\n│  • Filer og media (metadata kan leses)                   │\n\n│  • Secret Chats (praktisk utilgjengelig)                 │\n\n└─────────────────────────────────────────────────────────┘"
-        },
-        {
-          "type": "paragraph",
-          "data": "B.2 Privacy-innstillingene – og hva de IKKE skjuler\n\nTelegram har følgende privacy-innstillinger som brukere kan endre:"
-        },
-        {
           "type": "grid",
           "data": [
-            "Innstilling | Mulige verdier | Hva det betyr for etterforsker",
-            "Telefonnummer | Alle / Kontakter / Ingen | Selv \"Ingen\" eksponerer nummeret via lekkede databaser",
-            "Online-status | Alle / Kontakter / Ingen | Kan brukes til aktivitetskartlegging (se B.4)",
-            "Profilbilde | Alle / Kontakter / Ingen | Historiske bilder cachet i tredjepartsdatabaser",
-            "Videresending | Alle / Kontakter / Ingen | Linker videresending til originalmelding (User ID lekker)",
-            "Grupper & kanaler | Alle / Kontakter | Hvem kan legge deg til (ikke hvem som kan se deg)"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Kritisk svakhet: Selv med alle innstillinger på \"Ingen\" er User ID permanent synlig for alle i samme gruppe. Bots kan skrape dette."
-        },
-        {
-          "type": "paragraph",
-          "data": "B.3 Kjente lekkasjer og databaser (Historical Exploits)\n\nExploit 1: 2020-lekkasjen – 900 MB telefonnumre\n\nI 2020 dukket det opp en 900 MB database med telefonnumre og identifikatorer for millioner av brukere på det mørke nettet. En separat hendelse eksponerte 42 millioner poster om iranske Telegram-brukere via en usikret database.\n\nPraktisk bruk for etterforsker:\n\nDisse databasene er fortsatt delvis tilgjengelige via:\n\nHave I Been Pwned: https://haveibeenpwned.com\n\nIntelligence X (Intelx): https://intelx.io\n\nLeak-lookup: https://leak-lookup.com\n\nSøk på telefonnummer, brukernavn eller e-post for å se om personen dukker opp i lekkede databaser."
-        },
-        {
-          "type": "paragraph",
-          "data": "Exploit 2: Profilbilde-historikk (ikke slettet)\n\nTelegram cacher historiske profilbilder. Selv om en bruker bytter profilbilde, er det gamle bildet fortsatt tilgjengelig i en periode via:\n\nURL-mønster:\n\nhttps://t.me/brukernavn\n\n→ Klikk på profilbildet\n\n→ Bla gjennom historiske bilder (vises i profilen)\n\nTredjepartsarkiv: Telelog og andre databaser cacher profilbilder automatisk. Selv slettede bilder kan finnes i disse arkivene."
-        },
-        {
-          "type": "paragraph",
-          "data": "Exploit 3: Online-status timing-angrep\n\nDette er en av de kraftigste BRÅK-metodene på Telegram, og den krever ingen spesialverktøy.\n\nAnalogi: Vinduslyset hjemme\n\nTenk deg at du bor i et nabolag og vil vite hvornår naboen er hjemme. Hver gang lyset slår seg på i stua, vet du at noen er hjemme. Online-statusen på Telegram fungerer på samme måte – du kan se et \"lys\" tenne seg.\n\nSlik fungerer det:\n\nTelegram viser én av fire statuser:\n\n\"Online\" = Aktiv akkurat nå\n\n\"Last seen recently\" = Aktiv siste 1-24 timer\n\n\"Last seen within a week\" = Aktiv siste 1-7 dager\n\n\"Last seen within a month\" = Aktiv siste 1-30 dager\n\nTiming-angrep (Online Status Tracking):\n\nVed å observere når en bruker veksler mellom \"Online\" og \"Last seen recently\", kan man kartlegge:\n\nNår personen sover (lang offline-periode)\n\nNår personen er aktiv (online-vinduer)\n\nOm to personer kommuniserer (begge online samtidig = kommuniserer?)\n\nAktivitetsrytme (jobber natt? aktiv sent?)"
-        },
-        {
-          "type": "paragraph",
-          "data": "Mikrosteg: Manuell online-statusovervåking (Telegram Desktop/Windows)\n\nFORBEREDELSE:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "□ Steg 1: Åpne Telegram Desktop på Windows-PC □ Steg 2: Lag eller bruk en dedikert undersøkelseskonto (ikke personlig konto!) □ Steg 3: Legg til målet som kontakt (kun hvis de er i felles gruppe, eller du har nummeret) □ Steg 4: Åpne en chat med målet (start en tom chat – de trenger ikke svare) □ Steg 5: Åpne Excel for loggføring"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "OVERVÅKING:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "□ Steg 6: Observer status øverst i chat-vinduet",
-            "\"Online\" → grønn prikk + tekst \"online\"",
-            "\"Last seen recently\" → tekst vises",
-            "□ Steg 7: Noter i Excel:"
+            "TEKNISK SANNHET: MTProto 2.0 (teknisk) | PEDAGOGISK ANALOGI: MTProto 2.0 (pedagogisk)",
+            "MTProto 2.0 er Telegrams proprietære kryptografiske protokoll som bruker AES-256-IGE for kryptering og SHA-256 for nøkkelderivering. Klient-server-arkitektur betyr at Telegram-serverne HAR nøklene for vanlige chatter. | MTProto er som et låsbart bankbrev. Du legger brevet i en forseglet konvolutt (kryptering). Banken (Telegram-server) forsegler det og leverer det. Men banken har nøkkelen til boksene — bare Secret Chat er som en personlig safe der banken aldri ser innholdet."
           ]
         },
         {
           "type": "grid",
           "data": [
-            "| Dato       | Klokkeslett | Status    | Varighet | Notater |",
-            "|------------|-------------|-----------|----------|---------|",
-            "| 19.02.2026 | 20:45       | Online    | 35 min   | |",
-            "| 19.02.2026 | 21:20       | Offline   | 45 min   | Mulig møte |",
-            "| 19.02.2026 | 22:05       | Online    | 120 min  | |"
+            "TEKNISK SANNHET: Telegram user_id (teknisk) | PEDAGOGISK ANALOGI: Telegram user_id (pedagogisk)",
+            "Telegram user_id er en permanent 64-bit integer som tildeles ved registrering og aldri endres, selv om brukernavn, telefonnummer og profilbilde skiftes. Det er den eneste pålitelige permanente identifikatoren. | user_id er som personnummeret til en Telegram-bruker. Kallenavnet kan skifte, adressen kan flytte, ansiktet kan forandres — men personnummeret er det samme hele livet. Brukernavn er kallenavn. user_id er personnummer."
           ]
         },
         {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "□ Steg 8: Gjenta over 7+ dager for å identifisere mønstre"
+            "TEKNISK SANNHET: Emoji-kode i narkotikahandel (teknisk) | PEDAGOGISK ANALOGI: Emoji-kode (pedagogisk)",
+            "Emojier brukes som kryptert sjargong i kriminell kommunikasjon — de er semantisk entydige innenfor et subkulturelt fellesskap, unngår tekstbaserte nøkkelordfiltre og gir plausibel forklarbarhet ('jeg snakket om planter'). | Emojier i narkotikahandel er som lommebokbilder blant kriminelle på 1970-tallet. Alle i kretsen vet at en bestemt lommebok betyr penger. Utenforstående ser bare bilder. Politiet lærer seg snart koden."
           ]
         },
         {
-          "type": "paragraph",
-          "data": "Hva du vil se:\n\nFor @k13nord:\n\nMandag: Online 20:10-00:25 (4,5 timer)\n\nTirsdag: Online 20:30-23:45 (3,5 timer)\n\nOnsdag: Online 20:15-20:58 → OFFLINE 21:00-21:52 → Online 21:55-00:10\n\n        ↑ KRITISK: 52 minutters avbrudd (fysisk møte?)\n\nTorsdag: Online 20:00-00:00 (4 timer)"
-        },
-        {
-          "type": "callout",
-          "kind": "LEGAL",
-          "data": "Juridisk vurdering: ✅ Lovlig: Online-status er offentlig delt informasjon (strpl. § 196). Det kreves ingen aktiv handling – kun observasjon av det brukeren selv velger å eksponere."
-        },
-        {
-          "type": "paragraph",
-          "data": "Exploit 4: Videresendingslenke – User ID-lekkasje\n\nHva er dette?\n\nNår noen videresender en melding fra én chat til en annen, legger Telegram automatisk ved en link til originalbrukeren. Denne linken inneholder brukerens User ID – selv om brukeren ikke har et offentlig brukernavn.\n\nSlik ser det ut:\n\n[Videresendt fra: Kurt]  ← Klikk her\n\n↓\n\nDu ser: @k13nord  (hvis brukernavn er satt)\n\nELLER\n\nDu ser: bruker1234567890  (User ID hvis intet brukernavn)\n\nPraktisk prosedyre:"
-        },
-        {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "□ Steg 1: Se etter videresente meldinger i offentlige grupper hvor objektet er aktivt □ Steg 2: Klikk på \"Videresendt fra: [Navn]\" □ Steg 3: Du vil enten se brukernavnet ELLER User ID-en □ Steg 4: Bruk User ID-en i bot-søk (se seksjon C.2)"
+            "TEKNISK SANNHET: Secret Chat E2EE (teknisk) | PEDAGOGISK ANALOGI: Secret Chat (pedagogisk)",
+            "Secret Chat bruker Diffie-Hellman 2048-bit nøkkelutveksling for å etablere en session-nøkkel som KUN eksisterer på de to klientenhetene. Telegram-serveren er kun signaleringsformidler — den ser aldri innholdet. | Secret Chat er som å hviske til hverandre i et lydisolert rom. Telegrams server er veggen mellom rommene — den formidler at dere vil snakke, men hører aldri hva dere sier. Uten din enhet: ingen tilgang."
+          ]
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET: cache4.db og BLOB-deserialisering (teknisk) | PEDAGOGISK ANALOGI: cache4.db (pedagogisk)",
+            "cache4.db er en SQLite-database på brukerens enhet som lagrer Telegram-data som TL-serialiserte (Type Language) BLOB-objekter. Rådataene er binære og krever spesialisert verktøy (Oxygen Forensic, Belkasoft X) for å deserialiseres til lesbar form. | cache4.db er som en kryptert dagbok skrevet på et hemmelig språk. Dagboken (SQLite-filen) er rett foran deg på skrivebordet — men du kan ikke lese den uten Rosetta-stenen (BLOB-deserialiseringsverktøyet)."
+          ]
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET: DC-ID og geografisk tilhørighet (teknisk) | PEDAGOGISK ANALOGI: DC-ID (pedagogisk)",
+            "Telegrams Data Center-ID (1-5) bestemmes ved registrering og avslører brukerens opprinnelige registreringsregion. DC1=USA/Øst, DC2/4=Amsterdam/EU, DC5=Singapore. DC-ID endres ikke selv om brukeren flytter. | DC-ID er som hemmelig statsborgerskap i en digital stat. Du kan bo i Norge — men Telegram-pass-et ditt er utstedt i Singapore fordi du registrerte der. Passet endres ikke ved adressebytte."
+          ]
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET: Fragment +888-nummer (teknisk) | PEDAGOGISK ANALOGI: Fragment +888 (pedagogisk)",
+            "Fragment.com er Telegram-tilknyttet markedsplass på TON-blockchain der man kan kjøpe anonyme Telegram-numre (+888) med Toncoin uten å koble til ekte SIM-kort. Sporbarhet avhenger av blockchain-analyse. | Et Fragment +888-nummer er som å kjøpe et hustelefonnummer i et borettslag uten å oppgi hvem du er — betalt kontant (Toncoin). Nummerserien eksisterer, men adressen er på en wallet, ikke en person."
+          ]
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET: TGStat og Telemetr (teknisk) | PEDAGOGISK ANALOGI: Kanal-analyseverktøy (pedagogisk)",
+            "TGStat.io og Telemetr.io er tredjeparts analysetjenester som indekserer offentlige Telegram-kanaler og tilbyr statistikk over abonnent-utvikling, meldingshistorikk, geografisk distribusjon og relaterte kanaler via Telegram Bot API. | TGStat er som en offentlig bibliotekskatalog over alle åpne Telegram-kanaler. Akkurat som du kan finne alle bøker et bibliotek har hatt — kan TGStat fortelle deg all historikk for en offentlig kanal."
           ]
         }
       ]
     },
     {
       "id": "s05",
-      "overskrift": "KAPITTEL C: MANUELL KARTLEGGING PÅ TELEGRAM (L1-L2)",
+      "overskrift": "DEL 6 — H-H-H-N MIKROSTEG: Telegram-etterforskning fra A til Å",
       "komponenter": [
         {
           "type": "paragraph",
-          "data": "Alt i dette kapittelet er nettleser- og app-basert. Ingen installasjon kreves.\n\nC.1 Søk via Telegram-appen og Telegram Web\n\nA) SØKE PÅ BRUKERNAVN (direkte søk)\n\nPå telefon (iOS/Android):"
+          "data": "Komplett etterforskning av en Telegram-bruker — fra selektor til rapport.\n\nFASE 1: Planlegging og juridisk avklaring"
         },
         {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "□ Steg 1: Åpne Telegram-appen □ Steg 2: Trykk på forstørrelsesglasset (søkeikon) øverst □ Steg 3: Skriv inn brukernavnet: \"@k13nord\" □ Steg 4: Under \"Global Search\" vil profilen vises (hvis den eksisterer) □ Steg 5: Trykk på profilen"
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Definer informasjonsbehov (IB) | Saksmappen (SIS-PIAR-01 planleggingsfase) | Klart formulert IB sikrer proporsjonalitet og lovlighet | FØR enhver innhenting",
+            "2 | Klassifiser innhentingstype | Juridisk sjekkliste: åpen kanal vs. lukket gruppe vs. DM | Åpen kanal = § 25. Lukket gruppe = § 196. DM = § 196 + vurder § 216 | Under planlegging",
+            "3 | Innhent § 196-beslutning om nødvendig | Politijurist — skriftlig beslutning | Obligatorisk FØR tilgang til lukkede grupper eller DM med etterforskningsprofil | FØR operasjon",
+            "4 | Identifiser selektor | Brukernavn (@handle), telefonnummer (+47...) eller kjent Telegram-ID | Selektoren er inngangsverdien til all søking — uten den: ingen søk | Etter juridisk avklaring"
           ]
         },
         {
           "type": "paragraph",
-          "data": "Du vil nå se:\n\nVisningsnavn (\"K13\" eller \"Kurt\")\n\nProfilbilde\n\nBio (hvis satt)\n\nAntall felles grupper (vises automatisk)\n\nSiste aktivitet (\"Online\" / \"Last seen recently\")\n\nPå Windows PC (Telegram Desktop):"
+          "data": "FASE 2: Passiv innhenting (Politiloven § 25)"
         },
         {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "□ Steg 1: Åpne Telegram Desktop □ Steg 2: Klikk i søkefeltet øverst til venstre □ Steg 3: Skriv \"@k13nord\" □ Steg 4: Profilen vises under \"Global Search\""
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Åpne kanal via t.me/s/-lenke | Nettleser + VPN + Hunchly aktivt. URL: https://t.me/s/[kanalbrukernavn] | Leser kanalinnhold uten innlogging — 100% passivt og lovlig | FØR etterforskningsprofil aktiveres",
+            "2 | Søk brukerprofil via t.me/[brukernavn] | Nettleser — samme VPN + Hunchly-sesjon | Profilbilde, bio, sist sett, felles grupper (om synlig). Screenshot + SHA-256 | Etter kanalinnhenting",
+            "3 | TGStat.io kanalanalyse | tgstat.io → søk på kanalbrukernavn | Statistikk, historikk, vekst, relaterte kanaler, språkprofil | Parallelt med passiv innhenting",
+            "4 | Lekkasjesøk telefonnummer/brukernavn | IntelX.io og haveibeenpwned.com | Koble telefonnummer til Telegram-konto fra 500M-lekkasjedatasettet | Etter identifikasjon av selektor",
+            "5 | Wayback Machine — historisk profil | web.archive.org søk på t.me/[brukernavn] | Historiske snapshots av profil — bio, bilder, brukernavn som er endret | Parallelt med annen innhenting"
           ]
         },
         {
           "type": "paragraph",
-          "data": "B) SØKE VIA URL (Telegram Web – nettleser uten app)"
+          "data": "FASE 3: Med etterforskningsprofil (§ 196 — etter beslutning)"
         },
         {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "□ Steg 1: Åpne Chrome i Inkognito-modus (Ctrl + Shift + N) □ Steg 2: Gå til: https://t.me/k13nord □ Steg 3: Siden viser profilinformasjon (brukernavn, navn, profilbilde, bio)"
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Aktiver OPSEC-infrastruktur | VPN (Mullvad, fast node) + Kill Switch + Hunchly + etterforskningsprofil i Telegram | Lesekvittering MÅ deaktiveres FØR profilen åpnes | FØR innlogging på Telegram",
+            "2 | @userinfobot: innhent user_id | Telegram-app: videresend melding fra mål til @userinfobot | Bot returnerer permanent user_id + navn + brukernavn + DC-ID | Etter beslutning er innhentet",
+            "3 | @CreationDateBot: kontoalder | Videresend melding til @CreationDateBot | Indikasjon på kontooprrettelsestidspunkt — krysskjekk med TGStat | Etter user_id er bekreftet",
+            "4 | Bli med i gruppe (passivt) | Telegram-app med etterforskningsprofil — bruk invite-link | Kan lese gruppeinnhold. Adminliste kan avsløre admin-profiler | Etter beslutning. Passiv observasjon — ingen interaksjon",
+            "5 | Medlemsliste-screenshot | Telegram → Gruppe → Deltakerinfo → Members | Beviser hvem som er i gruppen. SHA-256 + UTC umiddelbart | Under gruppeobservasjon"
           ]
         },
         {
           "type": "paragraph",
-          "data": "Hva du ser uten å logge inn:\n\nEksempel på t.me-side:\n\n┌─────────────────────────────┐\n\n│  [Profilbilde]               │\n\n│  K13                         │\n\n│  @k13nord                   │\n\n│  12 subscribers              │\n\n│  [OPEN IN TELEGRAM]-knapp    │\n\n└─────────────────────────────┘"
+          "data": "FASE 4: Emoji-analyse og innholdsfortolkning"
         },
         {
-          "type": "paragraph",
-          "data": "C) SØKE PÅ GRUPPER/KANALER"
-        },
-        {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "□ Steg 1: I Telegram-søk, skriv inn gruppenavnet □ Steg 2: For eksempel: \"BK Nettverk\" eller \"Lørenskog\" □ Steg 3: Telegram viser offentlige grupper og kanaler med dette navnet □ Steg 4: Klikk på gruppen for å se: navn, beskrivelse, antall medlemmer, admin-info"
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Identifiser emoji-mønstre | Kanal/gruppe-meldinger — noter emojier i kontekst | Emojier uten kontekst er ikke bevis. Mønster over tid = bevis | Løpende under innhenting",
+            "2 | Sammenlign med emoji-politirapport | Interne politiressurser + SIS-TELEGRAM-17 KT-07 | Kryssreferanse mot dokumentert narkotikajargon | Etter identifikasjon av emojimønstre",
+            "3 | LLM-analyse (lokal) | Offline LLM (Llama 3) — last inn kontekst fra kanal | Systematisk analyse av meldingsmønstre, frekvens og innholdskategorier | Etter at meldingsdata er innsamlet",
+            "4 | TPS-gradering av emoji-funn | SIS-TPS-02 — emoji-fortolkning er C-kilde som krever korroborasjon | Emojier alene = C-kilde. Med kontekst og korroborasjon: B-kilde | Per funn, FØR rapport"
           ]
         },
         {
           "type": "paragraph",
-          "data": "D) SØKE VED HJELP AV GOOGLE DORKS\n\n# Finne Telegram-brukerprofiler:\n\nsite:t.me \"k13nord\"\n\n# Finne Telegram-grupper med tema:\n\nsite:t.me \"lørenskog\" \"vold\" OR \"jobb\" OR \"business\"\n\n# Finne invite-lenker:\n\nsite:t.me/joinchat \"lørenskog\"\n\n# Kombinasjon:\n\nsite:t.me (\"k13\" OR \"kurt\") \"lørenskog\""
+          "data": "FASE 5: Profilbilde og visuell etterforskning"
         },
         {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "□ Steg 1: Gå til https://www.google.com □ Steg 2: Skriv inn dork (se eksempler over) □ Steg 3: Se gjennom resultater □ Steg 4: Klikk på relevante t.me-linker"
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Hent profilbilde | Screenshot av profilbilde fra t.me/[brukernavn] via VPN | Original bildefil er primærbevis. SHA-256 umiddelbart | Etter åpning av profil",
+            "2 | PimEyes.com reverse image search | pimeyes.com — last opp profilbilde | Matcher mot milliarder av nettbilder — identifiserer mulig ekte person | Etter SHA-256 av originalbilde",
+            "3 | FaceCheck.ID + Google Images | Kryssreferanse — uavhengig kilde | Konfirmerer eller avkrefter PimEyes-funn | Etter PimEyes-søk",
+            "4 | TPS-gradering bildeidentifikasjon | Ansiktsgjenkjenning: S=HØY alltid. To uavhengige match: P=2 | Ansiktsgjenkjenning er et teknisk hjelpemiddel — ikke bevis alene | Per funn, FØR rapport"
           ]
         },
         {
           "type": "paragraph",
-          "data": "C.2 Telegram-bots for brukerinformasjon\n\nAnalogi: En database med åpent skranke\n\nNoen Telegram-bots fungerer som en database med åpent skranke. Du spør boten om en bruker, og den gir deg informasjon som er samlet fra offentlige kilder og Telegrams API.\n\nVIKTIGSTE BOTS FOR BRÅK:"
+          "data": "FASE 6: LE-forespørsel og avslutning"
         },
         {
-          "type": "paragraph",
-          "data": "Bot 1: @username_to_id_bot (User ID-oppslag)\n\nFormål: Finn den permanente User ID til en Telegram-bruker\n\nMikrosteg:"
-        },
-        {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "□ Steg 1: Åpne Telegram □ Steg 2: Søk etter: \"@username_to_id_bot\" □ Steg 3: Start en chat med boten (/start) □ Steg 4: Skriv inn brukernavnet: \"@k13nord\" □ Steg 5: Boten returnerer:"
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Vurder behov for Telegram-data | Hva kan Telegram utlevere? IP + telefon ved kjennelse. Ikke meldingsinnhold | Telegram utleverer IKKE meldingsinnhold for standard chatter | Etter at OSINT er uttømt",
+            "2 | Skriv begjæring til tingrett (strpl. § 197) | Politijurist — tingretts kjennelse med saksnummer og hjemmel | Kjennelse er nødvendig for Telegram-utlevering via Kripos/MLAT | Etter vurdering med jurist",
+            "3 | Kripos koordinerer MLAT | Kripos sender via INTERPOL NCB Dubai til Telegram | Tidshorisont: standard 3-12 måneder. Emergency: dager | Etter tingretts kjennelse er innhentet",
+            "4 | SHA-256 av alle funn + Hunchly Full Export | sha256sum * → hash_logg.txt. Hunchly → Full Case Export | Komplett beviskjede for rapport. Alle artifacts hashede | Etter avsluttet innhentingsøkt",
+            "5 | Skriv funnrapport + egenrapport (SIS-RAPPORT-13) | Word-mal rapport_mal.docx — funnskjema + egenrapport | Juridisk holdbar dokumentasjon av alle Telegram-funn | Etter avsluttet etterforskning"
           ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Brukernavn: @k13nord\n\nUser ID: 1234567890\n\nNavn: K13"
-        },
-        {
-          "type": "list",
-          "data": [
-            "□ Steg 6: Noter User ID i aktivitetslogg □ Steg 7: Ta screenshot"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Bevisverdi: User ID er permanent. Selv om @k13nord bytter til @nytt_navn, er ID-en den samme."
-        },
-        {
-          "type": "paragraph",
-          "data": "Bot 2: @GetIDsBot (alternativt User ID-oppslag)\n\nFormål: Hent User ID fra en videresend melding\n\nMikrosteg:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "□ Steg 1: Finn en melding som Kurt har sendt i en offentlig gruppe □ Steg 2: Videresend denne meldingen til @GetIDsBot □ Steg 3: Boten returnerer User ID-en til den opprinnelige avsenderen"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Fordel: Fungerer selv om brukeren ikke har et offentlig brukernavn."
-        },
-        {
-          "type": "paragraph",
-          "data": "Bot 3: @creationdatebot (Kontoopprettelsesdato)\n\nFormål: Finn ut omtrent når en Telegram-konto ble opprettet\n\nMikrosteg:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "□ Steg 1: Finn en melding fra Kurt i en offentlig gruppe □ Steg 2: Videresend meldingen til @creationdatebot □ Steg 3: Boten returnerer:"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Konto @k13nord\n\nOmtrentlig opprettelsesdato: November-Desember 2023\n\n(Basert på User ID-range)"
-        },
-        {
-          "type": "paragraph",
-          "data": "Bevisverdi: Bekrefter når kontoen ble opprettet. Viktig for å forstå rekrutteringstidslinje."
-        },
-        {
-          "type": "paragraph",
-          "data": "Bot 4: @BotoDetective / @CALLNAMOBOT (Avansert søk)\n\nFormål: Søk etter bruker via telefonnummer, navn, e-post eller sosiale medie-ID\n\nMikrosteg:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "□ Steg 1: Søk etter \"@BotoDetective\" i Telegram □ Steg 2: Start boten □ Steg 3: Velg søketype (telefonnummer, navn, e-post) □ Steg 4: Skriv inn søkedata □ Steg 5: Boten returnerer kobling til Telegram-konto (hvis funnet)"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Viktig: Denne boten krever at du autoriserer din egen Telegram-konto. Bruk aldri din personlige konto til dette. Bruk alltid en dedikert undersøkelseskonto."
-        },
-        {
-          "type": "paragraph",
-          "data": "Bot 5: @Lyzem_bot (Søkemotor for Telegram)\n\nFormål: Søk gjennom offentlige Telegram-meldinger etter nøkkelord\n\nMikrosteg:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "□ Steg 1: Søk \"@Lyzem_bot\" i Telegram □ Steg 2: Start boten □ Steg 3: Skriv inn søkeord: \"k13 lørenskog\" ELLER \"BK Nettverk\" □ Steg 4: Boten søker gjennom offentlige Telegram-grupper og kanaler □ Steg 5: Se resultater – kan finne meldinger Kurt har sendt i offentlige grupper"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "C.3 Tredjepartsverktøy (Nettleserbasert)\n\nVerktøy 1: TGStat.com (Statistikk og søk)\n\nFormål: Analyse av offentlige Telegram-kanaler og grupper"
-        },
-        {
-          "type": "list",
-          "data": [
-            "□ Steg 1: Gå til https://tgstat.com □ Steg 2: Skriv inn kanalnavn eller brukernavn i søkefeltet □ Steg 3: Se statistikk: Vekst i abonnenter, aktivitet, toppposter"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Hva du kan finne:\n\nHistorisk vekst i gruppe/kanal\n\nToppinnlegg\n\nRelaterte kanaler\n\nAdmin-informasjon (for offentlige kanaler)"
-        },
-        {
-          "type": "paragraph",
-          "data": "Verktøy 2: Lyzem.com (Søkemotor for Telegram)\n\nFormål: Søk i Telegram-innhold via nettleser (uten å installere noe)"
-        },
-        {
-          "type": "list",
-          "data": [
-            "□ Steg 1: Gå til https://lyzem.com □ Steg 2: Skriv inn søkeord i søkefeltet (brukernavn, tema, gruppe) □ Steg 3: Se gjennom resultater – offentlige meldinger og profiler"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Case: Kurt-søk på Lyzem:\n\nSøk: \"k13nord\" OR \"k13 lørenskog\"\n\nResultat:\n\n- 3 meldinger i offentlig gruppe \"Lørenskog 🏴\"\n\n  Dato: 8. februar 2026\n\n  Innhold: \"hvem er det nye\"\n\n- 1 melding i kanal \"norsk drill\"\n\n  Dato: 12. januar 2026\n\n  Innhold: \"🔥🔥\""
-        },
-        {
-          "type": "paragraph",
-          "data": "Verktøy 3: Telegago / XTEA.io (Kanalkatalog)\n\nFormål: Finn Telegram-grupper og kanaler basert på tema eller nøkkelord"
-        },
-        {
-          "type": "list",
-          "data": [
-            "□ Steg 1: Gå til https://xtea.io □ Steg 2: Søk etter: \"lørenskog\" ELLER \"business oslo\" ELLER \"BK\" □ Steg 3: Se liste over offentlige grupper/kanaler □ Steg 4: Klikk på relevante kanaler for å se innhold og admin"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Verktøy 4: Intelligence X – Intelx.io (Lekkede databaser)\n\nFormål: Søk om Telegram-brukernavn eller telefonnummer finnes i lekkede databaser"
-        },
-        {
-          "type": "list",
-          "data": [
-            "□ Steg 1: Gå til https://intelx.io □ Steg 2: Skriv inn: \"@k13nord\" ELLER \"+4791834512\" □ Steg 3: Se om disse finnes i tidligere lekkede Telegram-databaser □ Steg 4: Gratis tier gir begrensede resultater – norsk politi kan søke om tilgang"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Hva du kan finne:\n\nTelefonnummer koblet til brukernavn (fra 2020-lekkasjen)\n\nHistoriske brukernavn (fra Telegram-databaser)\n\nE-postadresser koblet til kontoen"
-        },
-        {
-          "type": "paragraph",
-          "data": "Verktøy 5: Wayback Machine – arkiverte Telegram-sider\n\nFormål: Se historisk innhold fra offentlige Telegram-kanaler"
-        },
-        {
-          "type": "list",
-          "data": [
-            "□ Steg 1: Gå til https://web.archive.org □ Steg 2: Skriv inn: \"t.me/k13nord\" □ Steg 3: Se om siden er arkivert □ Steg 4: Klikk på historiske snapshots for å se tidligere profilinfo"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Bevisverdi: Kan vise at brukernavn var aktivt på et bestemt tidspunkt, eller at profilteksten inneholdt informasjon som nå er slettet."
         }
       ]
     },
     {
       "id": "s06",
-      "overskrift": "KAPITTEL D: AVANSERTE METODER OG VERKTØY (L3-L4)",
+      "overskrift": "DEL 7 — REFERANSEARKIV OG KILDEGRUNNLAG",
       "komponenter": [
         {
           "type": "paragraph",
-          "data": "Dette kapittelet krever noe teknisk kompetanse. IKT-enhet kan bistå ved behov.\n\nD.1 Telegram Desktop på Windows – skjulte muligheter\n\nTelegram Desktop gir ekstra muligheter sammenlignet med mobilappen:\n\nA) EKSPORT AV CHATHISTORIKK (Lovlig fra egne chatter)\n\nTelegram Desktop lar deg eksportere all chathistorikk fra dine egne samtaler som HTML eller JSON. Dette er nyttig for:\n\nDokumentere samtaler du har hatt med objektet\n\nAnalysere meldingsfrekvens og tidsmønstre\n\nMikrosteg:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "□ Steg 1: Åpne Telegram Desktop (Windows) □ Steg 2: Åpne den aktuelle chatten □ Steg 3: Klikk de tre prikkene øverst til høyre (⋮) □ Steg 4: Velg \"Export Chat History\" □ Steg 5: Velg format (HTML anbefalt for bevis) □ Steg 6: Velg hva som skal inkluderes (tekst, bilder, filer) □ Steg 7: Klikk \"Export\" □ Steg 8: Lagre filen: 20260219_telegram_chat_k13nord.html □ Steg 9: Generer SHA-256 hash for bevissikring"
-          ]
-        },
-        {
-          "type": "callout",
-          "kind": "LEGAL",
-          "data": "Juridisk vurdering: ✅ Lovlig: Eksport av dine egne samtaler med objektet. Forutsetter at samtalen ble innledet lovlig (strpl. § 196)."
-        },
-        {
-          "type": "paragraph",
-          "data": "B) MEMBERS-SCRAPING VED HJELP AV TAMPERMONKEY (Windows + Chrome)\n\nNB: Krever installasjon av nettleserutvidelse – vurder med IT-avdeling\n\nHva er dette?\n\nTamperMonkey er en nettleserutvidelse som lar deg kjøre egendefinerte scripts på nettsider. Med et Telegram-spesifikt script kan du:\n\nEksportere alle medlemmer i en gruppe du er med i\n\nSe liste over User IDs og brukernavn\n\nEksportere til CSV/Excel for analyse\n\nRelevant script fra prosjektdokumentet: Fra Tactics_for_Telegram_BRÅK.pdf: \"Det finnes en utvidelse for skraping av brukere og meldinger i en gruppe/kanal, tilgjengelig for Google Chrome og Mozilla-nettlesere. Den kalles Greasemonkey i Mozilla Firefox og TamperMonkey i Google Chrome.\"\n\nScripts som brukes:\n\ntelegramScript.User.js\n\ngetUsers.User.js\n\nTilgjengelig via: https://gist.github.com/fabledowl/\n\nMikrosteg (konseptuell oversikt):"
-        },
-        {
-          "type": "list",
-          "data": [
-            "□ Steg 1: Installer TamperMonkey i Chrome (krever IT-godkjenning) □ Steg 2: Legg til Telegram-scripts i TamperMonkey □ Steg 3: Åpne https://web.telegram.org □ Steg 4: Naviger til gruppen (f.eks. \"Lørenskog 🏴\" – offentlig) □ Steg 5: Et nytt panel vises til venstre med:",
-            "Antall synlige medlemmer",
-            "\"Export Users\"-knapp",
-            "\"Export Messages\"-knapp □ Steg 6: Klikk \"Export Users\" → CSV-fil med alle synlige medlemmer □ Steg 7: Åpne CSV i Excel"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Output-eksempel:\n\nUser_ID,   Username,     Display_Name, Status\n\n1234567890, k13nord,     K13,          Online (18:32)\n\n9876543210, NordLink81,  Anders,       Last seen recently\n\n5555555555, BKindustrien, BK,          Last seen within a week"
-        },
-        {
-          "type": "callout",
-          "kind": "WARNING",
-          "data": "Juridisk vurdering: ⚠️ Gråsone: Kun i grupper du er lovlig innmeldt i. Kan ikke brukes i private grupper du har infiltrert via falsk identitet."
-        },
-        {
-          "type": "paragraph",
-          "data": "D.2 Harpoon – kraftig Python-basert BRÅK-verktøy\n\nKrever Python. IKT-enhet kan kjøre dette.\n\nHva er Harpoon?\n\nHarpoon er et kommandolinje-verktøy som henter informasjon fra Telegram via API. Det kan:\n\nHente komplett profilinformasjon om en bruker\n\nListe alle medlemmer i en gruppe\n\nSøke gjennom meldinger i kanaler\n\nKoble Telegram til andre plattformer (Twitter, Have I Been Pwned, etc.)\n\nKrav:\n\nPython 3.x installert\n\nTelegram API-nøkler (App ID + API Hash, gratis fra my.telegram.org)\n\nTelefonnummer for innlogging\n\nEksempel på bruk (for IKT-enhet):\n\n# Hente brukerinformasjon\n\nharpoon telegram user k13nord\n\n# Output:\n\n{\n\n  \"username\": \"k13nord\",\n\n  \"user_id\": 1234567890,\n\n  \"first_name\": \"Kurt\",\n\n  \"last_name\": null,\n\n  \"bio\": \"Real one 🇳🇴\",\n\n  \"phone\": null,  # (skjult av bruker)\n\n  \"verified\": false,\n\n  \"bot\": false,\n\n  \"creation_date\": \"approx. Nov 2023\"\n\n}\n\n# Liste alle medlemmer i en gruppe\n\nharpoon telegram members -g LørenskogGutta\n\n# Søke gjennom kanal-meldinger\n\nharpoon telegram search -c BKNettverk -q \"jobb\""
-        },
-        {
-          "type": "paragraph",
-          "data": "D.3 Telepathy – Python BRÅK-toolkit for Telegram\n\nKrever Python. IKT-enhet kan kjøre dette.\n\nHva er Telepathy?\n\nTelepathy er et åpent kildekode BRÅK-verktøy spesielt utviklet for Telegram-etterforskning. Det kan:\n\nAnalysere kanaler og grupper i dybden\n\nEksportere komplett meldingshistorikk (fra offentlige kanaler)\n\nIdentifisere admin-struktur\n\nFinne overlappende medlemmer mellom grupper\n\nEksempel på bruk:\n\n# Analyser en offentlig kanal\n\npython telepathy.py -t BKNettverk --comprehensive\n\n# Finn felles medlemmer mellom to grupper\n\npython telepathy.py --compare \"LørenskogGutta\" \"BKNettverk\"\n\n# Output viser hvilke brukere som er i BEGGE gruppene\n\n# → Identifiserer brobyggere i nettverket\n\n# Eksporter meldingshistorikk\n\npython telepathy.py -t LørenskogGutta --export-messages"
-        },
-        {
-          "type": "paragraph",
-          "data": "D.4 Geogramint – Geografisk lokalisering via Telegram\n\nKrever Python. IKT-enhet bør konsulteres.\n\nHva er Geogramint?\n\nGeogramint er et BRÅK-verktøy som bruker Telegrams \"People Nearby\"-API til å geografisk lokalisere brukere. Det fungerer ved å simulere GPS-spoofing og triangulere posisjon.\n\nTeknisk prinsipp:\n\n1. Etterforskeren \"sender\" sin posisjon til Telegram-API som\n\n   koordinat A (f.eks. 59.9286° N, 10.9547° E)\n\n2. Telegram svarer med liste over brukere innen 1-5 km\n\n3. Etterforskeren sender koordinat B (50m nord for A)\n\n4. Telegram svarer med ny liste + avstand for hvert objekt\n\n5. Etterforskeren sender koordinat C (50m vest for A)\n\n6. Tre avstandsmålinger → trianguleringsalgoritme\n\n7. Resultat: Objektets posisjon ± 50-100 meter\n\nForutsetning: Objektet MÅ ha aktivert \"People Nearby\"-funksjonen i Telegram-innstillingene. Ikke alle gjør dette.\n\nJuridisk vurdering:\n\n╔══════════════════════════════════════════════════════════╗\n\n║ 🛑 JURIDISK STOPP: GEOGRAMINT                             ║\n\n║                                                           ║\n\n║ ⚠️ VURDER GRUNDIG FØR BRUK:                              ║\n\n║                                                           ║\n\n║ Selv om \"People Nearby\" er en frivillig funksjon, kan    ║\n\n║ systematisk triangulering via GPS-spoofing anses som     ║\n\n║ \"teknisk sporing\" som krever hjemmel (strpl. § 202c).    ║\n\n║                                                           ║\n\n║ ✅ TRYGT: Manuell observasjon av \"People Nearby\"-listen  ║\n\n║    uten GPS-spoofing. Kun se hvem som er i nærheten      ║\n\n║    fra din faktiske posisjon.                            ║\n\n║                                                           ║\n\n║ ❌ KREVER VURDERING: Systematisk triangulering via       ║\n\n║    spoofet GPS for å finne nøyaktig posisjon.            ║\n\n║                                                           ║\n\n║ Ved mindreårige: Konsulter alltid jurist FØR bruk        ║\n\n║ av denne metoden.                                        ║\n\n╚══════════════════════════════════════════════════════════╝"
-        }
-      ]
-    },
-    {
-      "id": "s07",
-      "overskrift": "KAPITTEL E: FULLSTENDIG KARTLEGGING AV EN TELEGRAM-BRUKER",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "E.1 Den komplette metodikken – fra brukernavn til full profil\n\nHer samler vi ALT i ett strukturert arbeidsflytdiagram. Dette er den komplette prosessen for å kartlegge @k13nord.\n\n╔══════════════════════════════════════════════════════════╗\n\n║ STARTPUNKT: @k13nord (Telegram-brukernavn)               ║\n\n╚══════════════════════════════════════════════════════════╝\n\n              ↓\n\n╔══════════════════════════════════════════════════════════╗\n\n║ STEG 1: PROFILANALYSE (5-10 minutter)                    ║\n\n║                                                           ║\n\n║ 1a. Telegram-søk → @k13nord → Hent: Navn, bio, bilde    ║\n\n║ 1b. t.me/k13nord → Nettleser → Hent: Abonnenter          ║\n\n║ 1c. @username_to_id_bot → Hent: Permanent User ID        ║\n\n║ 1d. @creationdatebot → Hent: Kontoopprettelsesdato        ║\n\n║ 1e. Reverse image search på profilbilde                   ║\n\n╚══════════════════════════════════════════════════════════╝\n\n              ↓\n\n╔══════════════════════════════════════════════════════════╗\n\n║ STEG 2: AKTIVITETSANALYSE (Løpende over 7 dager)         ║\n\n║                                                           ║\n\n║ 2a. Online-status-overvåking (timing-analyse)            ║\n\n║ 2b. Snapshot online-status kl. 09:00, 15:00, 21:00       ║\n\n║ 2c. Identifiser aktivitetsvindu (når er objektet aktiv?) ║\n\n║ 2d. Identifiser avbrudd (mønstre som Onsdags-møtet)      ║\n\n╚══════════════════════════════════════════════════════════╝\n\n              ↓\n\n╔══════════════════════════════════════════════════════════╗\n\n║ STEG 3: GRUPPEANALYSE (30-60 minutter)                   ║\n\n║                                                           ║\n\n║ 3a. Se felles grupper i profil                           ║\n\n║ 3b. Søk objektets brukernavn i Lyzem/TGStat              ║\n\n║ 3c. Finn offentlige grupper objektet er i                ║\n\n║ 3d. Analyser hvert gruppeskrivemønster og rolle           ║\n\n║ 3e. TamperMonkey-export av synlige gruppemedlemmer       ║\n\n╚══════════════════════════════════════════════════════════╝\n\n              ↓\n\n╔══════════════════════════════════════════════════════════╗\n\n║ STEG 4: NETTVERKSANALYSE (60-90 minutter)                ║\n\n║                                                           ║\n\n║ 4a. Identifiser alle admin-profiler i felles grupper     ║\n\n║ 4b. Finn brukere som interagerer mye med objektet        ║\n\n║ 4c. Bruk Telepathy til å finne overlappende gruppemedl.  ║\n\n║ 4d. Kartlegg hierarki: Hvem er admin? Hvem er bruker?   ║\n\n║ 4e. Tegn nettverkskart (hvem kjenner hvem)               ║\n\n╚══════════════════════════════════════════════════════════╝\n\n              ↓\n\n╔══════════════════════════════════════════════════════════╗\n\n║ STEG 5: IDENTITETSBEKREFTELSE (30-60 minutter)           ║\n\n║                                                           ║\n\n║ 5a. Kryss-plattform søk på brukernavn \"k13nord\"         ║\n\n║ 5b. Reverse image search på profilbilde                  ║\n\n║ 5c. Intelx.io søk på brukernavn + telefonnummer         ║\n\n║ 5d. Lyzem-søk etter historiske meldinger                 ║\n\n║ 5e. Wayback Machine på t.me/k13nord                      ║\n\n║ 5f. Koble til Instagram/Snapchat-profil (krysskoblings-  ║\n\n║     teknikker fra tidligere kapitler)                    ║\n\n╚══════════════════════════════════════════════════════════╝\n\n              ↓\n\n╔══════════════════════════════════════════════════════════╗\n\n║ STEG 6: LEKKASJE-SØK (15-30 minutter)                   ║\n\n║                                                           ║\n\n║ 6a. Intelx.io: Søk \"@k13nord\" i lekkede Telegram-data   ║\n\n║ 6b. HIBP (haveibeenpwned.com): Søk på telefonnummer      ║\n\n║ 6c. Leak-lookup: Søk etter e-post/telefon i lekkede DB  ║\n\n║ 6d. Sjekk 2020-Telegram-databasen for telefonnummer     ║\n\n╚══════════════════════════════════════════════════════════╝\n\n              ↓\n\n╔══════════════════════════════════════════════════════════╗\n\n║ STEG 7: DOKUMENTASJON OG TPS-VURDERING                  ║\n\n║                                                           ║\n\n║ 7a. Screenshot alle funn med tidsstempel                 ║\n\n║ 7b. SHA-256 hash alle bevis-filer                        ║\n\n║ 7c. TPS-vurdering per funn                               ║\n\n║ 7d. Lag strukturert rapport (Del B-mal)                  ║\n\n╚══════════════════════════════════════════════════════════╝\n\n              ↓\n\n╔══════════════════════════════════════════════════════════╗\n\n║ SLUTTRESULTAT:                                            ║\n\n║ @k13nord → Kurt Mikkelsen → Full profil + nettverk       ║\n\n╚══════════════════════════════════════════════════════════╝"
-        },
-        {
-          "type": "paragraph",
-          "data": "E.2 Case: @k13nord – Komplett kartlegging trinn for trinn\n\nSTEG 1: Profilanalyse (gjennomført 19.02.2026 kl. 09:00)"
+          "data": "7.1 SIS-serie kryssreferanser"
         },
         {
           "type": "grid",
           "data": [
-            "Informasjon | Verdi | Kilde | TPS",
-            "Brukernavn | @k13nord | Telegram-søk | A-1-HØY",
-            "Permanent User ID | 1234567890 | @username_to_id_bot | A-1-HØY",
-            "Visningsnavn | K13 | Telegram-profil | C-1-HØY",
-            "Bio | \"Real one 🇳🇴\" | Telegram-profil | C-2-HØY",
-            "Kontoalder | Opprettet ca. nov. 2023 | @creationdatebot | C-3-MODERAT",
-            "Abonnenter | 12 (kanal ikke aktiv) | t.me/k13nord | B-1-LAV",
-            "Profil-bilderevers: Samme bilde funnet på Snapchat (@k13_nord), Instagram (@kurt_mkn), TikTok (@kurt13live). |  |  | "
+            "Dok-ID | Tittel | Relevans for SIS-TELEGRAM-17",
+            "SIS-PIAR-01 | PIAR-metodikk | Rammeverk — Telegram-etterforskning er I-fasen (innhenting) i PIAR",
+            "SIS-TPS-02 | TPS-modellen | Kildekritikk per Telegram-funn. Emoji = C-kilde. Offentlig kanal = B/C.",
+            "SIS-PIVOT-03 | Pivå-metodikk | Telegram user_id → e-post → brukernavn → sosiale profiler",
+            "SIS-HASH-04 | Hashing og SHA-256 | SHA-256 obligatorisk for alle screenshots og cache4.db-filer",
+            "SIS-JUSS-05 | Juridisk rammeverk | §§ 196, 196a, 197, 216a, 216b for Telegram-innhenting",
+            "SIS-OPSEC-06 | OPSEC og digital hygiene | Lesekvittering-deaktivering, VPN, etterforskningsprofil",
+            "SIS-LEAK-08 | Datalekkasjer og -brudd | 500M Telegram-lekkasje og combo-lister fra TG-kanaler",
+            "SIS-KRYPTO-12 | Kryptovaluta-etterforskning | TON blockchain og Fragment.com +888-numre",
+            "SIS-RAPPORT-13 | Rapportmal og beviskjede | Funnrapport for Telegram-funn — alle felter obligatoriske",
+            "SIS-MINOR-14 | Mindreårige i digitale saker | CSAM via Telegram — særlige krav og umiddelbar protokoll",
+            "SIS-SOKE-17 | Sokkedukke og legende | Etterforskningsprofil-opprettelse for Telegram",
+            "SIS-VPN-16 | VPN og proxy | Mullvad WireGuard for Telegram-etterforskning",
+            "SIS-TELEGRAM-17 | Dette dokumentet | Primærreferanse for Telegram-etterforskning 2026"
           ]
         },
         {
           "type": "paragraph",
-          "data": "TPS samlet steg 1: T: C, P: 1-2, S: HØY"
-        },
-        {
-          "type": "paragraph",
-          "data": "STEG 2: Aktivitetsanalyse (7 dager, 12-18. februar 2026)\n\nOnline-status observert 3 ganger daglig (09:00, 15:00, 21:00):\n\nAKTIVITETSOPPSUMMERING:\n\nGjennomsnittlig online-tid: 20:00-00:30 (primærvindu)\n\nGjennomsnittlig offline-tid: 01:00-07:00 (søvn), 08:00-14:00 (skole)\n\nKRITISKE OBSERVASJONER:\n\nOnsdag 14.02:\n\n  20:45 → Online (normal)\n\n  21:00 → OFFLINE (ALL aktivitet stanser)\n\n  21:50 → Online igjen\n\n  Varighet: 50 minutter\n\nOnsdag 07.02:\n\n  21:00 → OFFLINE\n\n  21:48 → Online igjen\n\n  Varighet: 48 minutter\n\nOnsdag 21.02:\n\n  21:00 → OFFLINE\n\n  21:53 → Online igjen\n\n  Varighet: 53 minutter\n\nMØNSTER: Onsdager kl. 21:00, ca. 50 minutters avbrudd (3 observasjoner)"
-        },
-        {
-          "type": "paragraph",
-          "data": "STEG 3: Gruppeanalyse\n\nKurts Telegram-tilstedeværelse i grupper:"
+          "data": "7.2 Kildegrunnlag"
         },
         {
           "type": "grid",
           "data": [
-            "Gruppe | Type | Størrelse | Kurts rolle | Aktivitet",
-            "\"Lørenskog 🏴\" | Offentlig | 67 medl. | Vanlig bruker | Lav (leser)",
-            "\"BK Nettverk\" | Privat/kryptert | 142 medl. | Ny bruker | Ukjent (kryptert)"
+            "Kilde | Referanse",
+            "SIS-TELEGRAM-10 (primærkilde) | Spesialetterforsker Trygve Justad Bjørntvedt — Telegram-etterforskning v2026.1",
+            "Telegram Core Documentation | core.telegram.org — MTProto 2.0, Bot API, TL Language spesifikasjoner",
+            "Telegram Transparensrapport Q4 2024 | Publisert på telegram.org — 900 US-forespørsler, 14 641 India-forespørsler",
+            "Emoji, språk og narkotika (politirapport) | Norsk politirapport om emoji-bruk i kriminelle miljøer (intern)",
+            "DemandSage: Telegram Users Statistics 2026 | demandsage.com — 1 milliard brukere, demografi, daglig aktive brukere",
+            "DeepStrike.io: Dark Web Telegram 2026 | deepstrike.io/blog — kriminell bruk av Telegram i 2026",
+            "OSINT Techniques (Bazzell 2024) | Michael Bazzell — Telegram OSINT-metodikk",
+            "ESPY: Telegram OSINT Guide 2025 | espysys.com — Telethon, bots, chat history analysis",
+            "Authentic8: Understanding Telegram for OSINT | authentic8.com — Telegargo, Telepathy, investigative fundamentals",
+            "TGStat API-dokumentasjon | tgstat.io/docs — kanalstatistikk og historikkindeksering",
+            "Straffeprosessloven (1981) | §§ 196, 196a, 197, 203, 216a, 216b",
+            "Politiloven (1995) | § 25 — passiv innhenting av åpen informasjon",
+            "Straffeloven (2005) | §§ 147a-147c (terror), 267-269 (ærekrenkelse)",
+            "GDPR (2018) | Forordning (EU) 2016/679 — art. 6(1)(e), formålsbegrensning",
+            "Oxygen Forensic Detective 2026 | oxygen-forensic.com — cache4.db parsing-kapabiliteter"
           ]
         },
         {
           "type": "paragraph",
-          "data": "Analyse av \"Lørenskog 🏴\" (offentlig, tilgjengelig):\n\nMeldinger fra @k13nord (3 funnet via Lyzem-søk):\n\n\"hvem er det nye\" (8. februar, 14:30)\n\n\"ok\" (15. januar, 20:12)\n\n\"når\" (8. januar, 21:55)\n\nMeldingsanalyse:\n\nMinimal innhold (1-4 ord)\n\nSpørrende tone (\"hvem\", \"når\")\n\nKonsistent med profil på andre plattformer (passiv mottaker)"
-        },
-        {
-          "type": "paragraph",
-          "data": "STEG 4: Nettverksanalyse – Gruppeover lapp\n\nOverlappende medlemmer mellom \"Lørenskog 🏴\" og kjente kriminelle kontakter:"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Bruker | \"Lørenskog 🏴\" | @NordLink81 sine kontakter | TPS",
-            "@k13nord | ✅ Ja | ✅ Ja (Snapchat) | C-2-HØY",
-            "@NordLink81 | ✅ Ja | - | C-2-HØY",
-            "@skolevenn_m | ✅ Ja | ❌ Nei | B-2-LAV"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "Funn: Anders Berg (@NordLink81) er OGSÅ i \"Lørenskog 🏴\". Dette bekrefter relasjonen utover Snapchat."
-        },
-        {
-          "type": "paragraph",
-          "data": "STEG 5 + 6: Identitetsbekreftelse og lekkasje-søk\n\nIntelx.io-søk på \"@k13nord\":\n\nResultat: 2 treff\n\n1. Telegram-database (2024): Konto @k13nord eksisterer,\n\n   telefonnummer tilknyttet: +4791834512 (via 2024-scrape)\n\n2. Brukernavn @k13nord assosiert med e-post:\n\n   kurtmikkelsen2011@gmail.com (via krysslekkasje)\n\nViktig merknad: Lekkede data fra tredjeparter er juridisk sett \"sekundær kilde\" (TPS: D) og kan ikke alene bekrefte identitet. Bruk som ledende informasjon, kryssverifiser med primærkilder."
-        },
-        {
-          "type": "paragraph",
-          "data": "E.3 TPS-matrise: Telegram-spesifikke funn"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Funn | T | P | S | Handling",
-            "User ID 1234567890 = @k13nord | A | 1 | HØY | Dokumenter, bruk til kryss-plattform",
-            "Onsdags-avbrudd (timing-analyse) | C | 2 | KRITISK | Dokumenter, planlegg fysisk overvåking",
-            "Gruppemedlemskap \"Lørenskog 🏴\" | B | 1 | MODERAT | Analyser meldinger",
-            "Gruppemedlemskap \"BK Nettverk\" | C | 2 | KRITISK | IKT-enhet for innhold",
-            "Telefon i Intelx-database | D | 3 | KRITISK | Kryssverifiser, ikke alene-bevis",
-            "@NordLink81 i felles gruppe | C | 1 | HØY | Bekreftelse på relasjon"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "s08",
-      "overskrift": "KAPITTEL F: JURIDISK RAMMEVERK FOR TELEGRAM-ETTERFORSKNING",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "F.1 Hva er lovlig uten kjennelse?\n\n╔══════════════════════════════════════════════════════════╗\n\n║ ✅ LOVLIG UTEN KJENNELSE (strpl. § 196)                   ║\n\n╠══════════════════════════════════════════════════════════╣\n\n║                                                           ║\n\n║ PROFIL:                                                   ║\n\n║ • Søke offentlige profiler via Telegram-søk               ║\n\n║ • Besøke t.me/brukernavn                                  ║\n\n║ • Observere offentlig synlig bio, navn, profilbilde       ║\n\n║ • Hente User ID via bot (offentlig API)                   ║\n\n║ • Hente kontoopprettelsesdato via bot                     ║\n\n║                                                           ║\n\n║ AKTIVITET:                                                ║\n\n║ • Observere online-status (offentlig delt av bruker)      ║\n\n║ • Lese meldinger i offentlige grupper/kanaler             ║\n\n║ • Søke i Lyzem, TGStat etter offentlige meldinger         ║\n\n║ • Wayback Machine-søk på offentlig Telegram-innhold       ║\n\n║                                                           ║\n\n║ LEKKASJE-DATABASER:                                       ║\n\n║ • Søke i offentlig tilgjengelige lekkasje-databaser       ║\n\n║ • (HIBP, Intelx) for å finne kobling telefon/brukernavn  ║\n\n║                                                           ║\n\n║ GRUPPER:                                                  ║\n\n║ • Lese innhold i åpne/offentlige grupper                  ║\n\n║ • Analysere synlige gruppemedlemmer                       ║\n\n╚══════════════════════════════════════════════════════════╝\n\n\n\n╔══════════════════════════════════════════════════════════╗\n\n║ ⚠️ KREVER JURIST-VURDERING                                ║\n\n╠══════════════════════════════════════════════════════════╣\n\n║                                                           ║\n\n║ • Infiltrere private grupper (selv som passiv observatør)║\n\n║ • GPS-spoofing for People Nearby-triangulering           ║\n\n║ • Automatisert scraping med bot-verktøy                   ║\n\n║ • Bli med i lukkede grupper via invite-link               ║\n\n║ • Bruke falsk identitet for tilgang til gruppe           ║\n\n╚══════════════════════════════════════════════════════════╝\n\n\n\n╔══════════════════════════════════════════════════════════╗\n\n║ ❌ KREVER RETTSLIG KJENNELSE (strpl. § 197)               ║\n\n╠══════════════════════════════════════════════════════════╣\n\n║                                                           ║\n\n║ • Lese innhold i private/krypterte Telegram-grupper      ║\n\n║ • Tvinge Telegram til å utlevere meldingsinnhold         ║\n\n║ • Be Telegram utlevere IP-adresser (innloggingslogg)     ║\n\n║ • Be Telegram utlevere telefonnummer (subscriber info)   ║\n\n║ • Dataavlesning av fysisk enhet (iPhone med Telegram)    ║\n\n╚══════════════════════════════════════════════════════════╝\n\n\n\n╔══════════════════════════════════════════════════════════╗\n\n║ ⛔ ALLTID FORBUDT                                          ║\n\n╠══════════════════════════════════════════════════════════╣\n\n║                                                           ║\n\n║ • Chatte med objektet for å lokke fram informasjon       ║\n\n║ • Be objektet utføre handlinger                          ║\n\n║ • Hacke Telegram-konto eller omgå kryptering             ║\n\n║ • Provokasjon/agentprovokasjon (strpl. § 196a)           ║\n\n║ • Særskilt ved mindreårige: aktiv kontakt med barn       ║\n\n╚══════════════════════════════════════════════════════════╝"
-        },
-        {
-          "type": "paragraph",
-          "data": "F.2 Rettslig bistand – hva kan Telegram utlevere?\n\nTelegram har siden Pavel Durovs arrestasjon i Frankrike (august 2024) blitt noe mer samarbeidsvillig med rettshjemsbegjæringer. Fra Telegrams egne retningslinjer:\n\nTelegram utleverer (med gyldig kjennelse):\n\nTelefonnummer koblet til konto\n\nIP-adresser for innlogging\n\nEnhetstinformasjon (iOS/Android, versjon)\n\nSiste aktivitetsdato\n\nTelegram utleverer IKKE:\n\nMeldingsinnhold fra Cloud Chats (pr. 2026 – kan endre seg)\n\nMeldingsinnhold fra Secret Chats (matematisk umulig uten enheten)\n\nKontakter-listen\n\nProsedyre for norsk politi:\n\nNorge kan sende forespørsel via:\n\nInterpol (I-24/7): For hastetilfeller\n\nMLAT (Mutual Legal Assistance Treaty): Standard kanalen via Justisdepartementet\n\nKripos Internasjonalt: Kan formidle forespørsel\n\nForventet responstid:\n\nHasteforespørsel (MLAT Emergency): 3-14 dager\n\nOrdinær MLAT-forespørsel: 3-12 måneder"
-        },
-        {
-          "type": "paragraph",
-          "data": "F.3 Vanlige feil og TPS-fallgruver\n\n╔══════════════════════════════════════════════════════════╗\n\n║ ⚠️ VANLIGE FEIL I TELEGRAM-ETTERFORSKNING                 ║\n\n╠══════════════════════════════════════════════════════════╣\n\n║                                                           ║\n\n║ FEIL 1: \"Jeg trodde alle chatter var krypterte\"          ║\n\n║ Fakta: Kun Secret Chats er E2EE. Vanlige chatter er      ║\n\n║ ikke ende-til-ende krypterte og er tilgjengelige med     ║\n\n║ rettslig bistand.                                        ║\n\n║                                                           ║\n\n║ FEIL 2: \"Brukeren byttet navn, vi finner ham ikke\"       ║\n\n║ Fakta: User ID er permanent. Bruk @username_to_id_bot    ║\n\n║ for å finne ID, og spor videre via ID.                   ║\n\n║                                                           ║\n\n║ FEIL 3: \"Gruppen er privat, vi kan ikke gjøre noe\"       ║\n\n║ Fakta: Vi kan se HVEM som er i gruppen (i offentlige     ║\n\n║ grupper), kartlegge nettverket rundt gruppen, og         ║\n\n║ søke kjennelse for innhold.                              ║\n\n║                                                           ║\n\n║ FEIL 4: \"Intelx-data er bevis\"                           ║\n\n║ Fakta: Lekkede databaser er SEKUNDÆRKILDER (TPS: D).     ║\n\n║ De kan gi ledende informasjon, men krever               ║\n\n║ kryssverifisering med primærkilder.                      ║\n\n║                                                           ║\n\n║ FEIL 5: \"Jeg logget inn med min jobbkonto\"               ║\n\n║ Fakta: Bruk ALLTID dedikert undersøkelseskonto.          ║\n\n║ Din ekte konto kan varsle objektet, og aktiviteten       ║\n\n║ din kan spores tilbake til politiet.                     ║\n\n║                                                           ║\n\n║ FEIL 6: \"Meldingen er slettet, den er borte\"            ║\n\n║ Fakta: Lyzem, Wayback Machine og andre arkiver kan      ║\n\n║ ha cachet innholdet. Sjekk alltid arkiv.                 ║\n\n╚══════════════════════════════════════════════════════════╝"
-        }
-      ]
-    },
-    {
-      "id": "s09",
-      "overskrift": "KAPITTEL G: KONTROLLSPØRSMÅL OG SJEKKLISTER",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "✓ KONTROLLSPØRSMÅL – TELEGRAM-ETTERFORSKNING\n\nFØR START:"
-        },
-        {
-          "type": "list",
-          "data": [
-            "□ Har jeg opprettet dedikert undersøkelseskonto?",
-            "(Aldri bruk personlig konto)",
-            "□ Har jeg slått på VPN?",
-            "□ Har jeg aktivitetslogg åpen og klar?",
-            "□ Har jeg lest juridisk grenseoppgang?",
-            "□ Er objektet mindreårig? (Ekstra varsomhet kreves)",
-            "UNDER INNHENTING:",
-            "□ Har jeg dokumentert hvert steg med screenshot?",
-            "□ Har jeg notert dato og klokkeslett for hvert funn?",
-            "□ Har jeg hentet User ID (permanent identifier)?",
-            "□ Har jeg sjekket online-status over tid?",
-            "□ Har jeg søkt i Lyzem/TGStat etter offentlige meldinger?",
-            "□ Har jeg søkt i Intelx for lekkede data?",
-            "TPS-SJEKK:",
-            "□ For hvert funn: Har jeg vurdert T (troverdighet)?",
-            "□ For hvert funn: Har jeg vurdert P (pålitelighet)?",
-            "□ For hvert funn: Har jeg vurdert S (sensitivitet)?",
-            "□ Er sensitiv informasjon om mindreårige markert KRITISK?",
-            "ETTER INNHENTING:",
-            "□ SHA-256 hash generert for alle bevis-filer?",
-            "□ Filer navngitt etter standard (ÅÅÅÅMMDD_plattform_bruker)?",
-            "□ Backup gjort (3-2-1-regelen)?",
-            "□ Barnevernmelding vurdert (hvis mindreårig)?",
-            "□ IKT-enhet kontaktet (hvis kryptert innhold ønskes)?"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "s10",
-      "overskrift": "OPPSUMMERING: TELEGRAM ER IKKE UGJENNOMTRENGELIG",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "Telegram omsetter seg som \"den sikre appen\". For kriminelle som bruker den uten forståelse av arkitekturen, er det en falsk trygghet.\n\nDet etterforskere kan avdekke uten kjennelse:\n\nFull profil – navn, bilde, bio, brukernavn, User ID, kontoalder\n\nAktivitetsmønstre – når objektet er online, avbrudd, rutiner\n\nGruppemedlemskap – hvilke offentlige grupper objektet deltar i\n\nMeldingshistorikk – i offentlige grupper via søkemotorer\n\nNettverkskart – hvem er i samme grupper, hvem er admin\n\nHistorisk informasjon – profilbilder, slettede meldinger via arkiver\n\nIdentitetsbekreftelse – kobling til andre plattformer via brukernavn + bilde\n\nDet krever kjennelse:\n\nInnhold i private Cloud Chats\n\nIP-adresser fra Telegrams server\n\nTelefonnummer direkte fra Telegram\n\nMeldingen til etterforskeren: Telegrams offentlige kanaler, grupper og brukerprofiler opererer med minimal moderering, noe som tillater ukontrollert informasjonsspredning. Kombinert med muligheten til å opprette anonyme kontoer gjør dette Telegram til et attraktivt knutepunkt for kriminalitet – men for BRÅK-etterforskere er det en datakilde fylt med strukturert, analyserbar informasjon.\n\nEn erfaren etterforsker som følger metodikken i dette kapittelet kan kartlegge en gjennomsnittlig Telegram-bruker i løpet av 2–4 timer – uten at objektet merker noe som helst."
+          "data": "TELEGRAM-ETTERFORSKNING | Dok-ID: SIS-TELEGRAM-17 | Versjon 1.0 – April 2026\nØst politidistrikt | Spesialetterforsker Trygve Justad Bjørntvedt | UNNTATT OFFENTLIGHET | TLP:AMBER"
         }
       ]
     }

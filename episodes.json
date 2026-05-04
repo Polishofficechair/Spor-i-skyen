@@ -151,14 +151,14 @@
     "title": "Sosiale medier I straffesak",
     "description": "Episoden beskriver de spesifikke datapunktene en etterforsker bør registrere fra en sosial medieprofil, inkludert profil-URL, bilde, bio, følgerlister og tidspunkt for siste innlegg. Den omhandler Google Dorking og spesialverktøy (som Maltego og OSINT Industries) for å identifisere og kartlegge skjulte eller falske profiler. I tillegg adresserer kildene nye trusler som deepfake-innhold og algoritmisk manipulasjon, og understreker viktigheten av å bruke etiske og juridiske retningslinjer ved innsamling av informasjon. Det gis også praktiske tips for å skaffe større profilbilder fra ulike plattformer for effektiv omvendt bildesøk..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode22.mp3",
-    "releaseDate": "2025-10-18T08:00:00Z"
+    "releaseDate": "2026-05-01T08:00:00Z"
   },
   {
     "id": "e023",
     "title": "Facebook i straffesak",
     "description": "Episoden understreker at til tross for økt personvern og fjerning av verktøy som Graph Search, forblir Facebook en uvurderlig datakilde på grunn av sin enorme brukerbase og dybden i brukerdata. Sentrale etterforskningsteknikker som beskrives inkluderer Google Dorking, analyse av Facebook Marketplace for å avdekke lokasjon og økonomi, samt bruken av eksterne verktøy som Maltego. En nøkkelstrategi er å finne en brukers permanente numeriske ID via kildekode, siden denne er uforanderlig og nødvendig for avanserte søk, spesielt når profiler er private, hvilket tvinger etterforskere til å fokusere på taggede bilder og nettverket rundt målpersonen. ",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode23.mp3",
-    "releaseDate": "2025-10-19T08:00:00Z"
+    "releaseDate": "2026-05-01T08:00:00Z"
   },
   {
     "id": "e024",
@@ -172,7 +172,7 @@
     "title": "Telegram forklart – hvordan systemet faktisk fungerer",
     "description": "Episoden gir en omfattende oversikt over Telegram som plattform, både fra et teknisk og et etterforskningsperspektiv. Flere guider beskriver detaljert hvordan man utfører BRÅK på Telegram-brukere, inkludert metoder for å finne brukernavn, profilinformasjon, telefonnumre og e-postadresser ved bruk av tredjepartsverktøy og Google Dorks. Kildene understreker at til tross for Telegrams fokus på personvern, utgjør offentlige grupper og kanaler en rik kilde for etterretning, spesielt innen bekjempelse av alvorlig kriminalitet som terrorisme og cyberkriminalitet. De norske og engelske tekstene understreker viktigheten av å respektere etiske og juridiske rammer ved innsamling av informasjon.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode25.mp3",
-    "releaseDate": "2025-10-22T08:00:00Z"
+    "releaseDate": "2026-05-01T08:00:00Z"
   },
   {
     "id": "e026",
@@ -186,14 +186,14 @@
     "title": "Når vitner snakker i kanaler — Discord i praksis",
     "description": "Episoden er rettet spesifikt mot kommunikasjonsplattformen Discord. Tekstene forklarer Discords arkitektur, som er bygget rundt servere og kanaler, og understreker plattformens verdi for etterforskning på grunn av det store antallet brukere og den uformelle kommunikasjonsstilen. Flere kilder beskriver detaljerte metoder for informasjonsinnhenting, inkludert bruk av Discords innebygde søkeoperatorer, Google dorking for å finne skjulte servere, og analyse av brukerprofiler for å avdekke tilknyttede kontoer, kallenavn og medlemskap i felles servere. Kildene diskuterer også hvordan man kan identifisere brukere av interesse ved å kartlegge deres samfunnsøkosystemer og servere basert på geografisk plassering eller nisjeinteresser.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode27.mp3",
-    "releaseDate": "2025-10-23T08:00:00Z"
+    "releaseDate": "2026-05-01T08:00:00Z"
   },
   {
     "id": "e028",
     "title": "Snapchat Map som kilde – muligheter og grenser",
     "description": "Episoden omhandler etterforskning på Snapchat, og gir detaljerte metoder for å finne informasjon om brukere og innhold. Tekstene forklarer hvordan man kan søke etter Snapchat-kontoer ved hjelp av brukernavn, telefonnumre eller synkroniserte kontakter, og understreker at appens innebygde søkefunksjoner er begrensede. En betydelig del av materialet beskriver bruken av Snapchat Map og Stories for å samle inn geolokalisert innhold og hvordan man kan lagre flyktige Snaps og videoer ved å utnytte nettleserens utviklerverktøy for å hente mediefiler, enten med eller uten grafiske overlegg. Kildene advarer også om personvernrisikoer knyttet til mobilappen, som at brukere blir varslet ved skjermopptak, og foreslår bruk av emulering eller ekstern programvare for å sikre data anonymt.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode28.mp3",
-    "releaseDate": "2025-10-25T08:00:00Z"
+    "releaseDate": "2026-05-01T08:00:00Z"
   },
   {
     "id": "e029",
@@ -214,7 +214,7 @@
     "title": "Bevar bevis – korrekt håndtering av WhatsApp-data",
     "description": "Episoden omhandler folks WhatsApp-kontoer og detaljer, samt hvordan man eksporterer og overfører WhatsApp-chattelogger for etterforskning eller migrering. Den gir detaljerte instruksjoner for å eksportere chatdata fra enheten for bevisformål og veileder om overføring av chatter mellom iOS- og Android-enheter, spesielt i sammenheng med beslaglagte telefoner. De nevner også at en WhatsApp-konto er nødvendig for tilgang og at endringer i profilbilder kan avsløre informasjon om målet, selv om plattformen ikke viser profilvisninger..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode31.mp3",
-    "releaseDate": "2025-10-28T08:00:00Z"
+    "releaseDate": "2026-05-01T08:00:00Z"
   },
   {
     "id": "e032",
@@ -256,7 +256,7 @@
     "title": "Når IP blir spor: grunnleggende terminologi",
     "description": "Episoden gir en oversikt over forskjellige aspekter ved IP-adresser og deres bruk innen etterretning og sikkerhet. En kilde beskriver detaljerte metoder og verktøy for å samle informasjon om en IP-adresse, inkludert bruk av Whois, online skannere som Shodan og Censys, og teknikker for å finne den reelle opprinnelses-IP-en bak tjenester som CloudFlare eller Tor ved å utnytte feil i SSL-sertifikater eller DNS-poster. En annen kilde forklarer hvordan banker bruker IP-adresser for sikkerhet, svindeloppdagelse og for å tilrettelegge for elektroniske overføringer, kjent som IPIP-overføringer, samtidig som de må overholde GDPR-prinsippene. Det visuelle materialet presenterer en flytskjema som strukturerer prosessen med å undersøke en IP-adresse, og klassifiserer dens grunnleggende attributter (som IPv4/IPv6 og statisk/dynamisk) og ulike søkemetoder for å identifisere assosiasjoner som spam eller trusselaktører..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode37.mp3",
-    "releaseDate": "2025-11-04T08:00:00Z"
+    "releaseDate": "2026-05-01T08:00:00Z"
   },
   {
     "id": "e038",
@@ -284,7 +284,7 @@
     "title": "Mørkenettet forklart: isfjellet under internett",
     "description": "Episoden gir en omfattende introduksjon til Dark Web Intelligence (DARKInt), som er etterretningsinnhenting fra det skjulte og krypterte mørke nettet, og hvordan det supplerer informasjon fra åpne kilder. De forklarer det digitale landskapet ved å bruke isfjell-metaforen, der mørkenettet er den dypeste, mest anonyme delen, og understreker at tilgang er den primære forskjellen mellom DARKInt og OSINF. Flere kilder beskriver de spesialiserte teknikkene som brukes i DARKInt, inkludert dataskraping, deanonymisering og kryptovaluta-sporing, og identifiserer politi, etterretning og cybersikkerhet som hovedbrukerne. I tillegg presenterer kildene og en tilhørende video sikkerhetsprotokoller for etterforskere, og anbefaler den mest robuste metoden ved å bruke isolerte virtuelle maskiner (VM) med Whonix Gateway for å tvinge all trafikk gjennom Tor og forhindre IP-lekkasjer, samtidig som de anerkjenner de etiske og juridiske utfordringene knyttet til arbeidet i anonyme nettverk..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode41.mp3",
-    "releaseDate": "2025-11-08T08:00:00Z"
+    "releaseDate": "2026-05-01T08:00:00Z"
   },
   {
     "id": "e042",
@@ -354,48 +354,48 @@
       "title": "Emojies",
       "description": ".",
       "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode51.mp3",
-      "releaseDate": "2025-11-17T08:00:00Z"
+      "releaseDate": "2026-05-01T08:00:00Z"
     },
   {
       "id": "e052",
       "title": "Navn som inngangsverdi I straffesak",
       "description": ".",
       "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode52.mp3",
-      "releaseDate": "2025-11-17T08:00:00Z"
+      "releaseDate": "2026-05-01T08:00:00Z"
     },
   {
       "id": "e053",
       "title": "Avidentifiser en anonym konto I straffesak",
       "description": ".",
       "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode53.mp3",
-      "releaseDate": "2025-11-17T08:00:00Z"
+      "releaseDate": "2026-05-01T08:00:00Z"
     },
   {
       "id": "e054",
       "title": "Slik bekrefter du en forbindelse mellom personer I straffesak",
       "description": ".",
       "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode54.mp3",
-      "releaseDate": "2025-11-17T08:00:00Z"
+      "releaseDate": "2026-05-01T08:00:00Z"
     },
   {
       "id": "e055",
       "title": "xxx",
       "description": ".",
       "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode50.mp3",
-      "releaseDate": "2025-11-17T08:00:00Z"
+      "releaseDate": "2026-05-01T08:00:00Z"
     },
   {
       "id": "e056",
       "title": "xxx",
       "description": ".",
       "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode50.mp3",
-      "releaseDate": "2025-11-17T08:00:00Z"
+      "releaseDate": "2027-11-17T08:00:00Z"
     },
   {
     "id": "e057",
     "title": "xxx",
     "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode50.mp3",
-    "releaseDate": "2025-11-17T08:00:00Z"
+    "releaseDate": "2027-11-17T08:00:00Z"
   }
 ]

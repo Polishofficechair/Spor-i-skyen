@@ -1,0 +1,663 @@
+{
+  "tittel": "Metodisk støttedokument for etterforskning i åpne kilder",
+  "undertittel": "OSINT-ETTERFORSKNING AV TELEFONNUMMER – Selektor · Identifikator · Pivoteringsverktøy · Bevis",
+  "ordliste": [],
+  "seksjoner": [
+    {
+      "id": "s00",
+      "overskrift": "Dokumentinformasjon",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "Dok-ID | SIS-TLFFON-15",
+            "Versjon | 1.0 – April 2026",
+            "Status | AKTIV",
+            "Produsert av | Spesialetterforsker Trygve Justad Bjørntvedt, Øst politidistrikt",
+            "Gradering | UNNTATT OFFENTLIGHET – Kun til internt politibruk",
+            "TLP | TLP:AMBER — Kun til mottakers organisasjon",
+            "Primærkilde | SIS-SELER-07, SOWEL-norsk komplett bok, OFM Nivå 2, OSINT Industries guide, PhoneInfoga docs"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s01",
+      "overskrift": "DEL 1 — 20 TEKNISKE KRAV",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "KT-01 | DEFINISJON: Juridisk og teknisk kategorisering\n\nTeknisk kategori: Et telefonnummer er en globalt unik abonnenttilordning regulert av ITU-T E.164-standarden. Det er ikke en 'tjeneste' eller 'plattform' i seg selv, men et primært digitalt identifikasjonsnummer (selektor) som brukes som konto-ID av hundrevis av digitale tjenester.\n\nJuridisk kategori i Norge: Telefonnummer er en personopplysning etter GDPR artikkel 4(1) og Personopplysningsloven (2018). Abonnentdata (hvem eier nummeret) er lagret hos teleoperatøren og er underlagt taushetsplikt etter Ekomloven § 2-9. Trafikkdata (hvem ringtes, når, varighet) er underlagt Ekomloven § 2-7 og kan bare utleveres etter kjennelse."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Parameter | Verdi",
+            "ITU-T-standard | E.164 — maks 15 sifre inklusive landkode",
+            "Format Norge | E.164: +47XXXXXXXX (8 sifre etter landkode +47)",
+            "Teknisk type | MSISDN (Mobile Subscriber ISDN Number) for mobilnummer",
+            "Abonnentregister | HLR (Home Location Register) hos mobiloperatøren",
+            "Norsk tilsynsmyndighet | Nkom (Nasjonal kommunikasjonsmyndighet) — nkom.no",
+            "Nummerplan Norge | Nkoms nummerplan — fritt tilgjengelig på nkom.no",
+            "VoIP-nummer | E.164-format men ikke tilknyttet fysisk SIM — eks. Zoom Phone, Google Voice",
+            "Prepaid/kontantkort | Registrert med ekte ID siden 2021 (Ekomloven § 2-6a)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-02 | HISTORIKK: Tidslinje over endringer som påvirker OSINT-verdien\n\nForståelse av historisk utvikling er kritisk — mange OSINT-funn refererer til data fra perioder med andre regler."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "År | Hendelse | OSINT-konsekvens",
+            "2003 | WhatsApp-era starter — telefon som internett-ID | Telefonnummer blir primær konto-ID for apper, ikke bare telefoni",
+            "2013 | Snowden-lekkasjer avdekker NSA SS7-overvåking | SS7-sårbarhetene blir offentlig kjent — stater og kriminelle kan misbruke dem",
+            "2015 | Truecaller når 100 millioner brukere — global crowdsourced-ID | Kontaktnavn fra fremmede adressebøker tilgjengelig åpent for OSINT",
+            "2018 | GDPR trer i kraft — teleoperatørdata strengere regulert | Abonnentdata krever tydeligere hjemmel. OSINT-søk i åpne databaser fortsatt lovlig",
+            "2019 | Facebook 533 millioner bruker-eksponering (publisert 2021) | Telefonnumre koblet til Facebook-profiler tilgjengelig i lekkasjedatabaser",
+            "2021 | Norge: krav om registrering av kontantkort-SIM (Ekomloven § 2-6a) | Prepaid-numre ikke lenger anonyme i norsk nett — OSINT-verdi økt",
+            "2021 | GetContact og Truecaller sperret i flere land (personvern) | Noen land blokkerer tjenestene — verifiser tilgjengelighet per land",
+            "2022 | WhatsApp endrer nummer-synlighet — kontaktsøk begrenset | Direkte WhatsApp-søk vanskeligere uten registrert konto",
+            "2023 | PhoneInfoga v2+ port til Go — Python-versjon utdatert | Bruk kun Go-versjonen: sundowndev/phoneinfoga v2+. Python-versjon er deprecated",
+            "2024 | Telegram åpner kontosøk via telefonnummer begrenset | Telegram lar brukere skjule nummer fra søk — betyr ikke at tilknytning er borte",
+            "2026 | GetContact og OSINT Industries: 70+ moduler for telefonnummer | Mest dekkende verktøy per april 2026 for enkelt telefonnummersøk"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-03 | EIER/LOV: Juridiske enheter og lagringslovgivning"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Tjeneste/Operatør | Juridisk enhet | Lagringslov",
+            "Telenor Norge (Telenor mobil) | Telenor ASA — HQ: Fornebu, Bærum, Org.nr 986 052 145 | Ekomloven §§ 2-7 og 2-9. Trafikkdata lagres min. 6 måneder (Ekomdataforskriften § 3)",
+            "Telia Norge (OneCall, Talkmore, MyCall) | Telia Company AB (SE) — HQ: Stockholm. Norsk filial: Telia Norge AS | Som Telenor. Internt styrt fra Sverige — MLAT kan kreves ved kjennelse",
+            "ice.net (Altibox Mobil, Otera) | Ice Group AS — HQ: Fornebu, Org.nr 979 876 346 | Som Telenor/Telia. Kjennelse fra tingrett for trafikkdata",
+            "1881.no (abonnentkatalog) | Telenor Norge / Infobel — lisensiert nummerdata | Offentlig tilgjengelig. Ingen hjemmel kreves for åpent oppslag",
+            "Truecaller | True Software Scandinavia AB — HQ: Stockholm | Crowdsourcet data — GDPR-krav gjelder. LE-portal finnes (law.truecaller.com)",
+            "WhatsApp | Meta Platforms Ireland Ltd — HQ: Dublin | US Cloud Act + GDPR. Juridisk bistand: legal.whatsapp.com",
+            "Telegram | Telegram FZ-LLC — HQ: Dubai (UAE) | UAE-lovgivning + GDPR for EU-brukere. LE-henvendelse: abuse@telegram.org",
+            "Signal | Signal Technology Foundation — HQ: Mountain View, CA, USA | Minimal datalagring. LE-guide: signal.org/bigbrother",
+            "Facebook/Meta | Meta Platforms Ireland Ltd | US Cloud Act. LE-portal: facebook.com/records"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-04 | TEKNOLOGI: Stack og dataflyt for telefonnummer-OSINT\n\nTeknologikjeden bak et enkelt telefonnummersøk:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Lag | Teknologi | OSINT-relevans",
+            "Signalering | SS7 (Signaling System 7) — CCS7-protokoll. Globalt telenettverk. Meldinger i binær ASN.1-format | SS7-lekkasjer avslører IMSI, lokasjon, samtaledata. Politiet kan rekvirere via MLAT/PET.",
+            "Nummervalidering | ITU-T E.164, libphonenumber (Google) — åpen kildekode bibliotek brukt i 99% av apper | Validerer format, landkode, nummertype. Input til alle OSINT-verktøy.",
+            "Carrier Lookup | REST API-kall via HTTPS/443 → JSON-respons. Eks: Numverify API: GET /validate?number=+47XXXXXXXX | Returnerer JSON: {carrier, line_type, country, valid}. Nøyaktighet: 95%+",
+            "Abonnentdatabase | SQL-databaser hos operatør (Oracle/PostgreSQL). MSISDN som primærnøkkel. | Ikke tilgjengelig åpent — krever kjennelse. Men 1881.no er åpen katalog.",
+            "Crowdsourced ID | Distribuerte databaser hos Truecaller/GetContact — NoSQL (MongoDB-lignende). Aggregerer kontaktnavndata fra millioner av brukere. | Avslører navn slik de er lagret hos andre — sterkt OSINT-verktøy.",
+            "Lekkasjedatabaser | Structurert SQL + Elasticsearch-indekser (IntelX, Dehashed). Søk på telefonnummer som feltnøkkel. | Kobler telefonnummer til e-post, brukernavn, passord-hash og andre selektorer.",
+            "OSINT-aggregatorer | REST API fra OSINT Industries/Epieos — sammenstiller 70+ tjenestetilkoblinger asynkront | Returnerer sammenstilt profil: WhatsApp-avatar, Telegram-konto, sosiale medier."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-05 | KRYPTERING: Telefonisystemets beskyttelse og sårbarheter\n\nHva er kryptert — og hva er ikke det:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Lag | Kryptering | OSINT-konsekvens",
+            "Signal (meldinger) | E2EE: Signal Protocol (Double Ratchet, Curve25519, AES-256-GCM). Nøkler hos bruker, IKKE hos Signal. | Signal ser kun registreringstidspunkt og siste tilkoblingsdato — ikke innhold. Kjennelse gir minimalt.",
+            "WhatsApp (meldinger) | E2EE: Signal Protocol. Men metadata (hvem→hvem, når) lagres hos Meta. | Kjennelse til Meta kan gi: kontotilknytning, IP-historikk, enhets-fingeravtrykk — ikke innhold.",
+            "iMessage | E2EE for Apple→Apple. SMS-fallback er ikke kryptert. | iCloud-backup kan inneholde ukrypterte meldinger hvis brukeren ikke bruker E2EE-backup.",
+            "Telegram | Standard chatter: kryptering i transport (MTProto 2.0), men servere har nøkler. Hemmelige chatter: E2EE. | Standard Telegram-meldinger er tilgjengelig for Telegram. Hemmelige chatter er E2EE.",
+            "SMS/MMS | Ingen E2EE. A5/1 (GSM) eller A5/3 (3G/4G). A5/1 er kryptert men sårbar. | SMS-innhold tilgjengelig hos operatør. Krever kjennelse.",
+            "VoIP (Zoom, Teams) | TLS 1.3 i transport + SRTP for mediestrøm. Kryptering 'at rest' hos leverandør. | Metadata er tilgjengelig for leverandør. Innhold: varierer per leverandør.",
+            "SS7 (telefonisignalering) | SS7 har ingen kryptering — designet 1975. Kjent sårbart for MITM. | SS7-angrep lar aktører omdirigere SMS, avlytte samtaler, spore lokasjon. Krever politimyndighet."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-06 | UNIK-ID: Identifikatorer knyttet til telefonnummer"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "ID-type | Format | Etterforskningsverdi",
+            "MSISDN | E.164: +47XXXXXXXX (maks 15 sifre) | Primær selektor — brukes i all OSINT og som konto-ID",
+            "IMSI (SIM-kort) | 15 sifre: MCC(3)+MNC(2)+MSIN(10). Eks: 24201XXXXXXXXXX | Avslører operatør (MNC) og abonnent. Unikt per SIM — ikke per telefon",
+            "IMEI (enhets-ID) | 15 sifre: TAC(8)+SNR(6)+CD(1). Eks: 354403081874897 | Unikt per enhet — skifter ved nytt SIM, men IMEI følger telefonen",
+            "ICCID (SIM-serienummer) | 19-20 sifre: 89[MCC][MNC]... | Unikt per SIM-kort. Finnes på SIM-kortet og hos operatør",
+            "WhatsApp JID | [msisdn]@s.whatsapp.net — eks: 4790000001@s.whatsapp.net | Brukes i API-kall og loggfiler. Direkte kobling til MSISDN",
+            "Telegram-konto-ID | Numerisk: 1234567890 — ikke offentlig eksponert direkte | Kobles til MSISDN internt. Finnes i Telegram API-svar",
+            "Signal UUID | UUID v4 — ikke koblet til MSISDN offentlig | Signal lagrer kun UUID internt — ikke koblet til nummeret i offentlige funn",
+            "Carrier-kode (HLR) | JSON: {carrier:'Telenor', line_type:'mobile', country:'NO'} | Avslører operatør og linjeType — nøkkel for operatørforespørsel"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-07 | LEKKASJE: Navngitte datasett med telefonnummer-eksponering\n\nKritisk innsikt: Telefonnumre i lekkasjedatabaser er verdifulle fordi de kobler nummeret til e-postadresse, brukernavn og passord-hash — nøkkelen til videre pivotering (jf. SIS-PIVOT-03)."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Datasett | År | Eksponerte felt | Søk via",
+            "Facebook 533M (scraped) | 2021 | phone, name, email, location, gender, relationship_status, employer | IntelX, Dehashed, BreachDirectory",
+            "LinkedIn 700M (scraped) | 2021 | phone (noen), name, email, employer, location | IntelX, LeakPeek",
+            "Clubhouse 1.3M | 2021 | phone, name, clubhouse_user_id, follower_count | Dehashed, IntelX",
+            "AT&T 71M (USA) | 2024 | name, phone, SSN, email, address, DOB | IntelX, Dehashed",
+            "Truecaller databaser | Diverse | phone, name, caller_label, spam_status | Truecaller direkte (åpent)",
+            "Have I Been Pwned (aggregat) | Løpende | e-post + tilknyttede felter per brudd — noen datasett inkl. phone | haveibeenpwned.com",
+            "Collection #1-5 / COMB | 2019-2021 | email:password-kombinasjoner — noen med phone | IntelX (gratis preview), Dehashed (betalt)",
+            "Telenor Norge (ikke bekreftet) | Ukjent | Ingen bekreftet norsk operatørlekkasje per 2026 | Søk likevel i IntelX på +47-numre"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-08 | URL-DATA: Dekonstruksjon av telefon-relaterte URL-er"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "URL-mønster | Etterforskningsverdi",
+            "wa.me/4790000001 | WhatsApp Click-to-Chat-lenke. Avslører MSISDN direkte i URL. Finnes på nettsider, sosiale medier.",
+            "t.me/+4790000001 | Telegram Click-to-Chat. Kobler nummer til Telegram-konto hvis registrert.",
+            "truecaller.com/search/+4790000001 | Truecaller-søk-URL. Direkte lookup via URL-parameter.",
+            "1881.no/search?query=+4790000001 | Abonnentkatalog. Returnerer navn/adresse som åpen data.",
+            "intelx.io/#!search?q=+4790000001 | IntelX lekkasjesøk. Søk på E.164-formatert nummer i lekkasjedatabaser.",
+            "facebook.com/search?q=4790000001 | Facebook-søk på telefonnummer. Gir treff hvis brukeren har eksponert nummeret.",
+            "api.numverify.com/validate?number=+4790000001&access_key=XXX | Numverify API-kall (JSON). Returnerer carrier, line_type, country, valid.",
+            "lookups.twilio.com/v1/PhoneNumbers/+4790000001?Type=caller-name | Twilio Lookup API — returnerer registrert abonnent-navn."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-09 | NETTVERK: Protokollanalyse og teknisk infrastruktur\n\nSlik ser et telefonnummer-OSINT-søk ut på nettverksnivå:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Protokoll | Port | Tjeneste | PCAP-signatur",
+            "HTTPS/TLS 1.3 | 443 | Alle API-kall (Numverify, OSINT Industries, Truecaller) | SNI-feltet avslører target-domene. Ingen innholdsanalyse mulig uten sertifikat.",
+            "SS7/SCTP | 2905 | Telekomunikasjon mellom operatører | Ikke tilgjengelig i standard PCAP — krever telenettverk-tilgang.",
+            "SIP (VoIP) | 5060 (TCP/UDP) | VoIP-anrop via SIP. Noen VoIP-numre bruker SIP. | SIP-header inneholder MSISDN i From-feltet.",
+            "SMPP | 2775 (TCP) | Bulk-SMS-protokoll — brukt av bedrifts-SMS-sendere | SMPP bind_transceiver avslører kilde-MSISDN.",
+            "DNS | 53 (UDP/TCP) | Oppslag av API-domener under OSINT-søk | DNS-oppslag til api.numverify.com, osint.industries avslører verktøy brukt."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-10 | METADATA: Fullstendig feltliste i telefon-OSINT-artifacts\n\nDette er de faktiske datafeltene som returneres fra telefonnummer-OSINT-søk per april 2026:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Felt | Kilde | Verdi (eksempel) | OSINT-verdi",
+            "valid | Numverify API | true/false | Bekrefter at nummeret er aktivt tildelt",
+            "country_code | Numverify/libphonenumber | NO | Jurisdiksjon og lovvalg for kjennelse",
+            "carrier | Numverify/HLR-lookup | Telenor | Operatør for LE-henvendelse",
+            "line_type | Numverify/PhoneInfoga | mobile/landline/voip | Påvirker tilgjengelige OSINT-metoder",
+            "caller_name | Twilio Lookup v2 / OpenCNAM | Ola Nordmann | Registrert abonnent-navn — kalles CNAM",
+            "contact_label | GetContact | 'Nils fra jobben' | Navn slik andre har lagret det — avslører relasjoner",
+            "spam_score | Truecaller | HIGH/LOW | Indikerer om nummeret er rapportert som spam",
+            "whatsapp_avatar_hash | OSINT Industries / manuelt | SHA-256 av profilbilde | Kan brukes til reverse image search",
+            "telegram_username | Telegram API (passivt) | @brukernavn | Pivot til Telegram-konto",
+            "email_linked | IntelX / Dehashed | bruker@example.com | Lekkasjedata — kobler nummer til e-post",
+            "password_hash | Dehashed (betalingstjeneste) | $2b$10$... | bcrypt-hash — kan pivot til passord-mønster",
+            "last_seen_date | OSINT Industries (WhatsApp-modul) | 2026-04-10 | Aktivitetsindikator",
+            "profile_picture_url | OSINT Industries | https://... | Profilens bilde — hash og reverse image search",
+            "social_media_profiles | OSINT Industries aggregat | [{platform:'instagram', url:'...'}] | Pivot til sosiale medieprofiler",
+            "breach_sources | BreachDirectory / HIBP | ['Facebook2021', 'LinkedIn2021'] | Hvilke lekkasjer nummeret er funnet i",
+            "geolocation_estimate | Numverify / carrier data | NO-Oslo | Omtrentlig geografisk tilhørighet"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-11 | MANUELT: Trinn-for-trinn via nettleser og konsoll\n\nScenario: Du har telefonnummeret +4790123456. Du skal manuelt kartlegge hvem som eier nummeret.\n\nFase 1: Formater og valider"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Konverter til E.164: +47 90 12 34 56 → +4790123456 (fjern mellomrom, bruk + ikke 0047)",
+            "Identifiser nummertype fra Nkoms nummerplan: 9x = Telia/NetCom-serien. 4x = Telenor. Sjekk nkom.no/nummerplan"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Fase 2: Åpne kilder (ingen hjemmel kreves)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "1881.no: Søk nummeret → navn, adresse, eventuelle koblede abonnenter",
+            "Google Dork: \"4790123456\" OR \"+4790123456\" OR \"90123456\" — finn alle forekomster på nettet",
+            "Facebook-søk: facebook.com/search?q=4790123456 — søk i søkefeltet",
+            "Telegram: Åpne Telegram-app → søk (+4790123456) — om konto er synlig",
+            "GetContact.com: Søk nummeret — avslører kontaktnavn fra andres adressebøker",
+            "Truecaller.com: Søk nummeret — crowdsourcet navn og spam-status"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Fase 3: Lekkasjedatabaser"
+        },
+        {
+          "type": "list",
+          "data": [
+            "IntelX (intelx.io): Lim inn +4790123456 → søk på alle datasett",
+            "BreachDirectory.org: Gratis API-søk — krever API-nøkkel fra RapidAPI",
+            "Have I Been Pwned: Sjekk tilknyttet e-post funnet i steg 1 — kobler e-post til brudd"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Fase 4: Nettleser-konsoll — WhatsApp-validering"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Åpne WhatsApp Web, logg inn med etterforskningsprofil",
+            "Ny chat: Skriv inn +4790123456 — om konto eksisterer, vises profilbilde",
+            "Network-tab i DevTools (F12): Se XHR-kall — check_phone-respons avslører om nummeret er registrert",
+            "Hunchly logger automatisk: Aktiver Hunchly FØR du åpner nettlesersesjon"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-12 | AUTO: API-integrasjoner og Python-automatisering\n\nPhoneInfoga v2 (Go) — installasjon og bruk:\n\n# Installer (Linux/macOS)\ncurl -sSL https://raw.githubusercontent.com/sundowndev/phoneinfoga/master/support/scripts/install | bash\n\n# Kjør enkelt søk\nphoneinfoga scan -n +4790123456\n\n# Docker\ndocker run --rm -it sundowndev/phoneinfoga scan -n +4790123456\n\n# Start Web UI (lokal nettleser)\nphoneinfoga serve -p 8080\n\nNumverify API — Python-eksempel:\n\nimport requests, json\nAPI_KEY = 'din_api_nøkkel'  # numverify.com gratis: 100 kall/måned\nnummer = '+4790123456'\nr = requests.get('http://apilayer.net/api/validate', params={'access_key': API_KEY, 'number': nummer, 'format': 1})\ndata = r.json()\nprint(json.dumps(data, indent=2))\n# Output:\n# {\"valid\": true, \"country_code\": \"NO\", \"carrier\": \"Telenor\", \"line_type\": \"mobile\"}\n\nBulk-søk via PhoneInfoga (liste med numre):\n# numbers.txt: ett E.164-nummer per linje\nphoneinfoga scan -i numbers.txt -o resultater.json\n\nOSINT Industries — Python/cURL:\ncurl -X POST https://osint.industries/api/search \\\n  -H 'Authorization: Bearer DIN_API_NØKKEL' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\"type\":\"phone\",\"query\":\"+4790123456\"}'"
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-13 | VAKT: Varsling ved endring av telefon-tilknyttede profiler"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Metode | Regex / streng | Varsler om",
+            "Google Alert | \"4790123456\" OR \"+4790123456\" | Ny nettside-eksponering av nummeret",
+            "Truecaller-endring | Manuell sjekk — ingen API-varsling | Endring i registrert navn eller spam-status",
+            "WhatsApp-profilbilde | SHA-256 av profilbilde → sammenlign ved neste sjekk | Profilbildebytte — indikerer aktivitet",
+            "Telegram-profil | Hent: t.me/+4790123456 → SHA-256 av profil-siden | Endring i Telegram-konto-info",
+            "Regex i loggfiler | \\+47[0-9]{8}│004[0-9]{9} | Detektér numre i rådata, logger eller CSV-filer",
+            "Python-regex validering | ^\\+?[1-9]\\d{7,14}$ (E.164-validering) | Identifiser alle potensielle telefonnumre i en tekstdump",
+            "IntelX alert | Søk lagret som alert i IntelX-portal | Nytt lekkasjetreff på nummeret"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-14 | SOKKEDUKKE: OPSEC og etterforskningsprofil ved telefonnummer-OSINT\n\nKritisk scenario: Når du søker på et telefonnummer i Truecaller, GetContact eller OSINT Industries, logges søket hos tjenesteleverandøren. Hvis mistenkte er premium-bruker av Truecaller, kan de se hvem som søkte."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Krav | Detalj",
+            "VPN | Obligatorisk. Bruk node i annet land enn Norge for søk på norske numre. Mullvad VPN anbefalt.",
+            "Etterforskningsprofil | Separat nettleserprofil. Ingen tilknytning til politiets nett. Truecaller-konto med fiktiv identitet.",
+            "WhatsApp-søk | Kun via dedikert etterforskningsprofil med SIM-kort på tjeneste-mobil. Aldri privat nummer.",
+            "GetContact OPSEC | GetContact krever app-tilgang til din kontaktliste. Bruk isolert VM uten reelle kontakter.",
+            "Søk via API | API-kall gir en 'renere' søke-profil enn app/nettleser — men IP logges likevel.",
+            "Lebensraum | Etterforskningsprofil i Truecaller bør ha 90+ dagers aktivitet FØR bruk i aktiv sak.",
+            "Browser fingerprint | Sjekk fingeravtrykk via coveryourtracks.eff.org FØR søk — unngå unik UA-streng.",
+            "Isolasjon | Bruk Kasm Workspaces eller VM isolert fra resten av politiets infrastruktur."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-15 | AI: Bruk av kunstig intelligens i telefonnummer-OSINT\n\nTillatte og anbefalte AI-brukstilfeller:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Transkribering og tolkning av samtaleinnhold (med lovlig innhenting og hjemmel)",
+            "Dechiffrering av kryptert slang i meldinger tilknyttet nummeret — send tekstsnutter til LLM for tolkning",
+            "Kobling av fragmenterte identiteter: LLM kan hjelpe med å vurdere om to profiler tilhører samme person basert på skrivemønstre",
+            "Automatisk TPS-gradering av metadata: IKKE tillatt. TPS krever menneskelig skjønn.",
+            "Ansiktsgjenkjenning av profilbilde: PimEyes eller FaceCheck.id mot profilbilde tilknyttet nummeret. Krever særskilt juridisk hjemmel i Norge (politiloven § 17d).",
+            "ChatGPT/Claude for formatering: Bruk LLM til å strukturere rådata fra PhoneInfoga/OSINT Industries til rapportformat — men aldri last opp faktiske bevisdata til skybaserte LLM."
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "Skybaserte AI-verktøy må IKKE motta personopplysninger fra aktive saker (TLP:AMBER+). Bruk offline-modeller eller politiets godkjente systemer."
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-16 | OPSEC: Attribusjonsanalyse — spor etterforskeren etterlater"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Handling | Spor etterlatt | Risiko | Tiltak",
+            "Søk på 1881.no | Server-IP logget av 1881.no | LAV — 1881 er åpen katalog | VPN likevel for prinsipp",
+            "Søk i Truecaller-app | IP + User-Agent + tidsstempel hos Truecaller. Premium-brukere kan se hvem søkte. | MODERAT — mistenkt kan ha premium | Bruk API eller VPN + fiktiv konto",
+            "GetContact-søk | GetContact krever tilgang til kontaktliste — app logger din enhets-ID | HØY — lekkasje av etterforskerprofil | Bruk isolert VM med fiktive kontakter",
+            "WhatsApp-søk manuelt | WhatsApp-klienten sender din MSISDN til Meta og kanskje til mottakers enhet | HØY — avslører etterforskings-SIM | Bruk dedikert tjeneste-SIM i etterforskningsapp",
+            "OSINT Industries API | API-nøkkel i server-log hos tjenesteleverandør | LAV — men API-nøkkel er sporbar | Bruk delt politinøkkel — ikke personlig",
+            "PhoneInfoga — Google dork | Google-IP-blokkering etter mange søk. Cookies kan koble søk. | MODERAT | Kjør via Tor-proxy eller VPN-rotasjon",
+            "IntelX-søk | IP og søke-query logget av IntelX | LAV — IntelX er OSINT-plattform | VPN + etterforskerkonto"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-17 | KRITIKK: Kryssreferering og verifikasjonsprinsipper\n\nGrunnen til at et enkelt søk aldri er nok: Truecaller og GetContact viser navn slik andre har lagret nummeret — feil navn er mulig. Numverify gir carrier-data som kan være utdatert etter portering. IntelX gir lekkasjedata som kan knytte feil person til nummeret."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Funn | Verifiser via | Kilde 2 (uavhengig) | TPS-kobling",
+            "Abonnentnavn fra 1881.no | Folkeregisteret (intern tilgang) | BL — politiets sakssystem | Gir P=1 med to A-kilder",
+            "Carrier fra Numverify | Telenors åpne nummerplan på nkom.no | PhoneInfoga OVH-scan | Gir P=2 med én A-kilde (Nkom)",
+            "Navn fra Truecaller | GetContact (uavhengig database) | Whitepages/1881.no | Gir P=2 — to C-kilder → P=3 alene",
+            "Telegram-konto-funn | Manuell verifisering i Telegram-app | OSINT Industries Telegram-modul | Gir P=1 hvis begge bekrefter",
+            "Lekkasjedata (e-post kobling) | Kjør e-posten i OSINT Industries | BreachDirectory.org | Gir P=2 hvis e-post bekreftes i to lekkasjedatabaser",
+            "WhatsApp-tilknytning | Manuell WA-søk fra etterforskningsprofil | OSINT Industries WA-modul | Gir P=1 — direkte teknisk bekreftelse"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-18 | LE-GUIDE: Portaler og prosedyrer for juridisk bistand"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Tjeneste | LE-portal / kontakt | Krav og prosess",
+            "Telenor Norge | telenorcs@telenor.com / via BL-systemer | Kjennelse fra tingrett (strpl. § 216b). Format: BL-pålegg med saksnummer og hjemmel.",
+            "Telia Norge | legalrequests@telia.no | Kjennelse fra tingrett. Svar innen 5 virkedager standard.",
+            "ice.net | legal@ice.net | Kjennelse fra tingrett.",
+            "Meta (WhatsApp/Facebook) | facebook.com/records | Emergency: law enforcement online request. Standard: MLAT (via Kripos). Svar: 6-12 uker.",
+            "Telegram | abuse@telegram.org | Kun for terror/barneporno — betinget utlevering. Standard kjennelse respekteres sjelden.",
+            "Apple (iMessage/iCloud) | Apples LE-guide på apple.com/legal/privacy/law-enforcement-guidelines | Kjennelse fra tingrett. iCloud-backup hvis aktivert: innhold tilgjengelig.",
+            "Truecaller | law.truecaller.com | LE-portal med eget skjema. Svar innen 7 dager på emergency request.",
+            "Signal | Subpoena/kjennelse til signal.org/bigbrother | Signal utleverer kun registreringstidspunkt og siste dato online — ikke innhold eller metadata.",
+            "Kripos (internasjonale saker) | kripos@politiet.no — INTERPOL NCB | Internasjonale numre: MLAT via Kripos. EU-numre: Europol referanse."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-19 | JUS: Juridiske hjemler for telefonnummer-etterforskning"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Hjemmel | Innhold | Krav",
+            "Politiloven § 25 | Passiv observasjon av åpent tilgjengelig informasjon | Ingen beslutning. 1881.no, Google, Truecaller (åpne søk).",
+            "Strpl. § 216b | Innhenting av trafikkdata (hvem ringte hvem, når, varighet) | Kjennelse fra tingrett. Maks 4 uker, kan forlenges.",
+            "Strpl. § 216a | Kommunikasjonskontroll — innhold i samtaler og meldinger | Kjennelse fra lagmannsretten. Strengt vilkår: skjellig grunn.",
+            "Strpl. § 196 | Pålegg om å utlevere eksisterende opplysninger (abonnentdata) | Politileder-beslutning. Brukes for å kreve navn bak nummer.",
+            "Strpl. § 197 | Kjennelse for utlevering av lagret innhold fra plattformer | Tingretts kjennelse. Brukes mot Meta, WhatsApp, iCloud.",
+            "Ekomloven § 2-9 | Teleoperatørens taushetsplikt | Brytes kun ved strpl. § 216b-kjennelse eller nødrett",
+            "Ekomloven § 2-6a | Registreringsplikt for prepaid-SIM (fra 2021) | Gjør norske kontantkort-numre sporbare til kjøper",
+            "Politiloven § 17d | Politiets adgang til tekniske overvåkingsmetoder | Kan inkludere IMSI-catching. Krever PST-godkjenning.",
+            "GDPR art. 6 (1)(e) | Lovlig behandling i offentlig interesse (politiarbeid) | Behandling av personopplysninger i etterforskning er lovlig under offentlig myndighetsutøvelse",
+            "EMK art. 8 | Retten til privatliv — proporsjonalitetskrav | Alle metoder må være proporsjonale med etterforskningsmålet"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-20 | BEVIS: Integritets- og dokumentasjonskrav\n\nHvert funn fra telefonnummer-OSINT må dokumenteres slik:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Krav | Metode | Juridisk verdi",
+            "SHA-256 av hvert screenshot | sha256sum [fil.png] → logg 64 hex-tegn i Hunchly-note | Beviser at bildet er uendret siden innhentingstidspunktet (nektingsfrihet)",
+            "UTC-tidsstempel | date -u +\"%Y-%m-%d %H:%M:%S UTC\" i terminal | Fastslår eksakt innhentingstidspunkt — uavhengig av tidssone",
+            "Hunchly MHTML-logg | Hunchly logger automatisk MHTML for hvert besøk | Uavhengig kopi av siden — kan ikke manipuleres etter innhenting",
+            "API-responser lagres | Lagre rå JSON-respons fra Numverify/OSINT Industries | Beviser hva verktøyet returnerte — ikke bare etterforskerens tolkning",
+            "Wayback Machine-arkivering | save.org — arkiver URL straks etter funn | Tredjeparts arkivering — nøytral kilde som ikke kan knyttes til politiet",
+            "VPN-IP dokumenteres | Screenshot av ipinfo.io under søket | Beviser at politiets reelle IP ikke ble eksponert",
+            "Miljødokumentasjon | Maskin, OS, nettleser, Hunchly-versjon, VPN-node | Del av beviskjeden — nødvendig for metodekritikk i retten",
+            "TPS-gradering per funn | T=[A-F], P=[1-6], S=[LAV/MODERAT/HØY/KRITISK] | Viser at kildekritikk er utøvd — obligatorisk jf. SIS-RAPPORT-13"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "overskrift": "DEL 2 — TEKNISK DEKONSTRUKSJON (A–Å)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "NIVÅ 1 — BINÆRT: Rådata og artifacts på laveste nivå\n\n1.1 E.164-nummerets binære representasjon\n\nSlik lagres et norsk telefonnummer på laveste nivå i ulike systemer:\n\nE.164 streng:         +4790123456\nBCD-kodet (SIM/SS7):  74 90 21 43 65 F0  (packed BCD, little-endian)\nASCII hex:            2B 34 37 39 30 31 32 33 34 35 36\nMSISDN i HLR:         4790123456 (ingen + - kun sifre i databasen)\nWhatsApp JID:         4790123456@s.whatsapp.net (UTF-8)\nNumverify JSON:       {\"number\":\"4790123456\",\"country_code\":\"NO\",\"carrier\":\"Telenor\"}\n\n1.2 IMSI-format og IMSI-MSISDN-kobling\n\nIMSI: 242 01 1234567890\n      |   |  |\n      MCC MNC MSIN\n      242 = Norge\n      01  = Telenor Mobil\n      1234567890 = abonnentnummer (10 sifre)\n\nHLR kobler: IMSI → MSISDN (én-til-én for standard SIM)\nSIM-portert nummer: IMSI skifter operatør, MSISDN beholdes\n\n1.3 PhoneInfoga rådata-output:\n\n[+] Scanning +4790123456\n[*] Running local scan...\n[+] International format: +47 90 12 34 56\n[+] Local format: 90123456\n[+] Country: Norway (+47)\n[+] Carrier: Telenor\n[+] Line type: mobile\n[+] Timezone: Europe/Oslo\n[i] Valid and possible: true\n[*] Running Numverify scan...\n[+] Carrier: Telenor Mobil\n[*] Running Google dork scan...\n[+] Found: https://finn.no/... (\"90123456\" i annonse)"
+        },
+        {
+          "type": "paragraph",
+          "data": "NIVÅ 2 — ARKITEKTUR: Teknisk oppbygging og protokoller\n\nDataflyten i en fullstendig telefonnummer-OSINT-undersøkelse:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Lag | Teknologi og protokoll | Dataflyt",
+            "Lag 1: Validering | libphonenumber (Google open source) + E.164 ITU-T | Input +4790123456 → parser → {country:NO, type:mobile, valid:true}",
+            "Lag 2: Carrier lookup | HTTPS GET → numverify.com REST API → JSON-respons | GET /validate?number=+4790123456 → {carrier:'Telenor', line_type:'mobile'}",
+            "Lag 3: Crowdsourced ID | HTTPS POST → Truecaller API / GetContact API → JSON | Returnerer navn aggregert fra millioner brukeres kontaktbøker",
+            "Lag 4: Lekkasjesøk | HTTPS POST → intelx.io/search → JSON med treff per datasett | SQL-fullsøk i indekserte lekkasjedatabaser på telefonnummer som nøkkel",
+            "Lag 5: Sosiale medier | HTTPS + WebSocket → WhatsApp/Telegram/Facebook API | check_phone-kall avslører kontoregistrering. Avatar-URL for profilbilde.",
+            "Lag 6: Rapport | Hunchly MHTML + SHA-256 + UTC → funnrapport (SIS-RAPPORT-13) | Alle artifacts samles og hasher til beviskjede"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "NIVÅ 3 — HELHET: Strategisk verdi i etterforskningen\n\nTelefonnummeret er en av de mest verdifulle selektorene i digital etterforskning — fordi det er stabilt, personlig og koblet til fysisk identitet:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Stabilitet: Brukere bytter e-post og brukernavn hyppig. Mobilnummeret beholdes i årevis. Dermed kobler det historiske data til nåtid.",
+            "Tverr-plattform: Samme nummer brukes på WhatsApp, Telegram, Signal, Facebook, Vipps, nettbanker og offentlige registre. En selektor — mange pivoteringsmuligheter.",
+            "Rettssikkerhet: Et åpent søk på 1881.no er lovhjemlet uten beslutning. Et Numverify-kall er lovhjemlet. Disse funnene kombinert kan gi P=1 (TPS) uten kjennelse.",
+            "Pivoteringsverdi: Telefonnummer → e-post (IntelX) → brukernavn (OSINT Industries) → sosiale medieprofiler (SOSMED-09) → bildeanalyse (GEO-10). Hvert funn er inngangsverdien til neste søkesyklus (SIS-PIVOT-03)."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "overskrift": "DEL 3 — ANALOGI-PAR",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "For hvert teknisk begrep — en teknisk sannhet og en pedagogisk analogi:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "E.164-formatet: E.164 er ITU-T-standarden for internasjonale telefonnumre: landkode + abonnentnummer, maks 15 sifre. Alle OSINT-verktøy krever dette formatet som input. Feil format gir null treff. | E.164 er som personnummeret til et telefonnummer. Akkurat som et norsk personnummer (11 sifre) er entydig i Norge, er E.164 entydig globalt. Oppgir du fødselsnummeret feil — finner systemet ingen person.",
+            "MSISDN vs. IMSI: MSISDN er det nummeret brukeren kjenner (+47...). IMSI er SIM-kortets interne ID i telenettverket. Et MSISDN kan flyttes mellom SIM-kort (portert) — da endres IMSI, men ikke MSISDN. | MSISDN er byskiltet på huset — det brukeren viser utad. IMSI er kommunens offisielle matrikkel-ID på eiendommen — internt, teknisk, usynlig for eieren. Byskiltet kan flyttes til et annet hus (portert), mens matrikkel-IDen er koblet til en annen adresse.",
+            "Carrier lookup: En carrier lookup spør en HLR-database (Home Location Register) om hvilket mobilnett et nummer tilhører. Returverdien er carrier-navn og line_type (mobile/landline/voip). Nøyaktighet: ~95% ved bruk av Numverify API. | Carrier lookup er som å se på postnummeret på et brev for å forstå hvilken postregion det tilhører. Uten å åpne brevet (kreve kjennelse) kan du allerede si: 'Dette brevet tilhører Telenors sone — kontakt Telenor.'",
+            "Crowdsourced ID (Truecaller/GetContact): Truecaller og GetContact aggregerer kontaktnavndata fra millioner av brukere. Når en person lagrer et nummer som 'Ola fra jobben', distribueres det navnet til tjenestens database. Søk på nummeret gir tilbake dette lagrede navnet. | Det er som å spørre alle i nabolaget: 'Kjenner noen denne personen?' Én nabo svarer: 'Ja, det er ham som bor i gaten og jobber som elektriker.' En annen: 'Det er faren til Per.' Kombinert gir det et bilde — men feilmerking er mulig.",
+            "SS7-sårbarhet: SS7 (Signaling System 7) er protokollen som håndterer signalering mellom telenettverk globalt. Det ble designet i 1975 uten sikkerhet. SS7-sårbarheter lar aktører med nettverkstilgang omdirigere SMS, avlytte samtaler og spore lokasjon. | SS7 er som et gammelt postsystem fra 1975 der enhver som jobber på et posthus kan lese andres brev. Systemet er bygget for tillit — ikke sikkerhet. Alle posthus (telenettverk) stoler blindt på hverandre.",
+            "Nummerportering: Nummerportering lar brukere beholde MSISDN når de bytter operatør. Etter portering peker MSISDN til ny operatørs HLR. Carrier lookup-resultatet viser ny operatør, men historisk operatør kan finnes i porting-logger. | Portering er som å beholde telefonnummeret ditt på jobb-visitittkortet selv om du bytter arbeidsgiver. Nummeret er det samme — men hvem som svarer er endret. Og arkivene hos gammel arbeidsgiver finnes fortsatt.",
+            "VoIP-nummer: VoIP (Voice over IP) lar brukere registrere E.164-numre uten fysisk SIM-kort. Tjenester som Zoom Phone, Google Voice, Twilio og JMP.chat tilbyr dette. VoIP-numre er vanskeligere å spore til en fysisk person. | Et VoIP-nummer er som en virtuel postkasse i en annen by. Det ser ut som en vanlig adresse utenfra, men ingen bor der. Brev kan omdirigeres til hvem som helst, hvor som helst.",
+            "OSINT-pivotering fra telefonnummer: Telefonnummer som selektor gir funn (e-post, brukernavn) som igjen brukes som selektorer i PIVOT-03-metodikken. Hvert lag i pivoteringen bygger en mer komplett profil — og hver syklus gir nye inngangsdata. | Pivoteringen fra telefonnummer er som å finne én bit av et puslespill. Den første biten (telefonnummer) gir deg to nye biter (e-post + brukernavn). De to gir deg fire. Det fortsetter til hele bildet er komplett — eller du når en vegg."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "overskrift": "DEL 5 — H-H-H-N MIKROSTEG",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Komplett etterforskning av et telefonnummer, steg for steg.\n\nFASE 1: Forberedelse og formatering"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Formater til E.164 | Tekstbehandler/terminal: +47XXXXXXXX (fjern mellomrom og separatorer) | Alle OSINT-verktøy krever E.164 — feil format gir nulltreff | Første handling — ingen unntak",
+            "2 | Sjekk Nkoms nummerplan | nkom.no → nummerplan — identifiser nummerserie | Avslører operatør og nummertype uten API-kall | Før eksterne søk",
+            "3 | Sjekk BL og Indicia | Politiets sakssystem — søk på nummeret i kommunikasjonsprofiler | Eksisterende kunnskap prioriteres — unngå dobbeltarbeid | Alltid FØR åpne søk",
+            "4 | Aktiver OPSEC-sjekkliste | VPN → Hunchly → etterforskningsprofil i nettleser | Ingen spor av politiets nett skal nå tilbyders servere | FØR første nettlesersøk"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "FASE 2: Åpne norske kilder"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Søk på 1881.no | 1881.no — skriv inn +47XXXXXXXX | Abonnentinformasjon — navn, adresse, eventuelle koblede numre | Første åpne søk",
+            "2 | Google Dork | Google: \"90123456\" OR \"+4790123456\" filetype:pdf OR site:facebook.com | Finn alle offentlige forekomster av nummeret på internett | Etter 1881.no",
+            "3 | Søk i Finn.no / gulesider | finn.no/search?q=90123456 — gulesider.no søk | Annonser og bedriftsregistreringer der nummeret er brukt | Parallelt med Google Dork",
+            "4 | Vipps-validering | Åpne Vipps-app (etterforskningsprofil) → ny betaling → skriv nummer | Bekrefter om nummeret er registrert i Vipps — viser navn | Etter Google Dork"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "FASE 3: Crowdsourced ID"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | GetContact-søk | getcontact.com — søk nummeret — noter alle kontaktnavn | Avslører relasjoner og titler fra andres adressebøker | Etter åpne søk — bruk isolert VM",
+            "2 | Truecaller-søk | truecaller.com/search/+47XXXXXXXX — noter navn og spam-status | Aggregert identitet fra global crowdsourcet database | Parallelt med GetContact",
+            "3 | 1881.no hvem-ringte | 1881.no/hvem-ringte-meg/47XXXXXXXX — noter kommentarer | Brukerrapporter om nummeret — mønster og aktivitet | Etter GetContact/Truecaller"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "FASE 4: Teknisk carrier-analyse"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Numverify API-kall | Terminal: curl 'http://apilayer.net/api/validate?access_key=KEY&number=+47XXX' | Bekrefter carrier, line_type (mobile/VoIP/landline) | Etter crowdsourced-søk",
+            "2 | PhoneInfoga Go v2 | Terminal: phoneinfoga scan -n +47XXXXXXXX | Automatiserer carrier, VoIP-sjekk og Google Dork i én kommando | Etter manuelt Numverify-kall",
+            "3 | OSINT Industries | osint.industries — velg 'Phone' — lim inn E.164-nummer | 70+ moduler scanner WhatsApp, Telegram, sosiale medier, lekkasjer | Parallelt eller etter PhoneInfoga",
+            "4 | Twilio Lookup | curl -u SID:TOKEN 'lookups.twilio.com/v1/PhoneNumbers/+47XXX?Type=caller-name' | Returnerer CNAM — registrert abonnent-navn fra teleoperatørdatabase | Etter Numverify"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "FASE 5: Lekkasje og mørk web"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | IntelX-søk | intelx.io → søk på +47XXXXXXXX | Søk i alle indekserte lekkasjedatabaser | Etter teknisk analyse",
+            "2 | Dehashed (betalt) | dehashed.com → phone:[nummer] | Mer detaljert lekkasjedata — inkl. passord-hasher | Etter IntelX",
+            "3 | BreachDirectory | rapidapi.com → breachdirectory — søk nummer | Gratis API — gir oversikt over hvilke brudd nummeret er i | Parallelt med IntelX",
+            "4 | Have I Been Pwned | haveibeenpwned.com — søk tilknyttet e-post funnet i tidligere fase | Kobler e-post til kjente brudd — pivot fra telefon til e-post til brudd | Etter at e-post er identifisert"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "FASE 6: Meldingsapper og sosiale medier"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Telegram-søk | Telegram-app (etterforskningsprofil) → søk +47XXXXXXXX | Bekrefter om Telegram-konto eksisterer — viser brukernavn og bilde | Etter lekkasjesøk",
+            "2 | WhatsApp-validering | WhatsApp Web — etterforskningsprofil — ny chat — skriv nummer | Bekrefter WhatsApp-konto — avslører profilbilde for reverse image search | Etter Telegram-søk",
+            "3 | Signal-sjekk | Signal-app — ny samtale — skriv nummer — blå = Signal-bruker | Bekrefter om nummer er Signal-registrert — minimal info avslørt | Etter WhatsApp",
+            "4 | Facebook-søk | facebook.com/search?q=XXXXXXXX — søk uten + og landkode | Funn avhenger av om bruker har eksponert nummeret | Parallelt med meldingsapper"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "FASE 7: Dokumentasjon og pivot"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | SHA-256 av alle funn | Terminal: sha256sum [fil.png] — logg i Hunchly | Beviskjede-krav — nektingsfrihet | Umiddelbart etter hvert screenshot",
+            "2 | TPS-gradering | SIS-TPS-02 — T, P og S per funn | Kildekritikk — obligatorisk for rapport | FØR funnet tas inn i rapport",
+            "3 | Pivot: e-post → brukernavn | Identifisert e-post kjøres i OSINT Industries og Holehe | Telefon → e-post → brukernavnsøk → sosiale profiler | Etter fase 5",
+            "4 | Skriv funnrapport | SIS-RAPPORT-13 — funnskjema per funn med SHA-256 og TPS | Juridisk holdbar dokumentasjon — beviskjeden er komplett | Etter avsluttet søkesyklus"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "overskrift": "DEL 6 — REFERANSEARKIV OG VERKTØYREGISTER",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "6.1 Verktøyregister (april 2026)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Verktøy | URL | Gratis? | Bruk",
+            "1881.no | 1881.no | JA | Norsk abonnentkatalog — navn og adresse",
+            "GetContact | getcontact.com | JA (begrenset) | Crowdsourcet kontaktnavn — avslører relasjoner",
+            "Truecaller | truecaller.com | JA (begrenset) | Global crowdsourcet navn og spam-status",
+            "PhoneInfoga v2+ | github.com/sundowndev/phoneinfoga | JA (open source) | Carrier, VoIP, Google Dork — CLI-verktøy (Go)",
+            "Numverify API | numverify.com | 100/måned gratis | Carrier og linjeType via REST API",
+            "Twilio Lookup | twilio.com/lookup | Betalt per oppslag | CNAM (abonnent-navn) fra operatørdatabase",
+            "OSINT Industries | osint.industries | Betalt abonnement | 70+ moduler — aggregert telefonnummer-profil",
+            "IntelX | intelx.io | Delvis gratis | Lekkasjesøk — telefon i historiske databaser",
+            "Dehashed | dehashed.com | Betalt | Detaljert lekkasjedata inkl. passord-hash",
+            "BreachDirectory | breachdirectory.org | Gratis API (RapidAPI) | Oversikt over databrud nummeret er i",
+            "Have I Been Pwned | haveibeenpwned.com | JA | Sjekk tilknyttet e-post i kjente brudd",
+            "Epieos | epieos.com | Betalt | E-post og telefon → sosiale medieprofiler",
+            "Hunchly | hunch.ly | Betalt (Maltego-eid 2025) | Bevislogging, MHTML, SHA-256-automatisering",
+            "hvemringte.no | hvemringte.no | JA | Norsk bruker-rapportert nummeridentifikasjon",
+            "IntTech Phone Tools | inteltechniques.com/tools/Telephone.html | JA | Michael Bazzells aggregerte telefon-OSINT-verktøy"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "6.2 SIS-serie kryssreferanser"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Dok-ID | Tittel | Relevans for SIS-TLFFON-15",
+            "SIS-PIAR-01 | PIAR-metodikk | Rammeverk — TLFFON er innhentingsfasen (I) i PIAR",
+            "SIS-TPS-02 | TPS-modellen | Kildekritikk for hvert funn fra telefonnummer-søk",
+            "SIS-PIVOT-03 | Pivå-metodikk | Telefonnummer → e-post → brukernavn → profil — kjernen i pivotering",
+            "SIS-HASH-04 | Hashing og SHA-256 | Bevisintegritet for alle telefon-OSINT-artifacts",
+            "SIS-JUSS-05 | Juridisk rammeverk | Hjemler: § 216b for trafikkdata, § 25 for åpne søk",
+            "SIS-OPSEC-06 | OPSEC og digital hygiene | GetContact/Truecaller OPSEC — isolert VM og VPN",
+            "SIS-SELER-07 | Selektorer og identifikatorer | Telefonnummer som primær selektor — primærkilde for dette dokument",
+            "SIS-LEAK-08 | Datalekkasjer og -brudd | IntelX/Dehashed-søk på telefonnummer",
+            "SIS-SOSMED-09 | Sosiale medier – generell metodikk | Facebook/Instagram-søk på telefonnummer som selektor",
+            "SIS-RAPPORT-13 | Rapportmal og beviskjede | Rapportering av telefonnummer-OSINT-funn",
+            "SIS-TLFFON-15 | Dette dokumentet | Primærreferanse for telefonnummer-OSINT"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "6.3 Kildegrunnlag"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Kilde | Referanse",
+            "SIS-SELER-07 (primærkilde) | Spesialetterforsker Trygve Justad Bjørntvedt, Øst PD — Selektorer og identifikatorer",
+            "SOWEL norsk komplett bok | SOWEL-9/22 — Telefonnummer som OSINT-selektor og svakhet",
+            "OFM Nivå 2 | Open Framework for Methods — Phone Number search verktøyliste",
+            "A Guide to OSINT Reverse Phone Lookup | OSINT Industries-guide — reverse phone lookup metodikk",
+            "PhoneInfoga dokumentasjon | sundowndev.github.io/phoneinfoga — offisiell Go v2 dokumentasjon (2023+)",
+            "Open Source Intelligence Methods and Tools | Nihad Hassan, Raffaele Russo — Apress 2019 — kapittel 6",
+            "OSINT Techniques: Ultimate VM | Michael Bazzell — ISBN 978-1-7360426-5-6 — telefon-kapitler",
+            "ITU-T E.164 | Internasjonal standard for telefonnummerering, siste revisjon 2010",
+            "Nkoms nummerplan | nkom.no — norsk nasjonal nummerplan, oppdatert løpende",
+            "Ekomloven (2003) | Lov om elektronisk kommunikasjon med forskrift — særlig §§ 2-6a, 2-7, 2-9",
+            "Straffeprosessloven (1981) | §§ 196, 197, 216a, 216b — hjemler for teledata",
+            "GDPR | Forordning (EU) 2016/679 — særlig art. 4(1) og 6(1)(e)",
+            "BrightCoding: PhoneInfoga deep dive | blog.brightcoding.dev, august 2025 — Go v2 og WebAssembly v3 preview"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "OSINT-ETTERFORSKNING AV TELEFONNUMMER │ Dok-ID: SIS-TLFFON-15 │ Versjon 1.0 – April 2026\nØst politidistrikt │ Spesialetterforsker Trygve Justad Bjørntvedt │ UNNTATT OFFENTLIGHET │ TLP:AMBER"
+        }
+      ]
+    }
+  ]
+}

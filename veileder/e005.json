@@ -1,1 +1,526 @@
+{
+  "tittel": "TPS-MODELLEN – Troverdighet, Pålitelighet, Sensitivitet",
+  "undertittel": "SIS-SERIEN – METODISK GRUNNLAG FOR ETTERFORSKNING I ÅPNE KILDER",
+  "ordliste": [],
+  "seksjoner": [
+    {
+      "id": "s00",
+      "overskrift": "Dokumentinformasjon",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "Dokument-ID | SIS-TPS-02",
+            "Tittel | TPS-MODELLEN – Troverdighet, Pålitelighet, Sensitivitet",
+            "Versjon | 3.0 – April 2026 (Perfeksjonert)",
+            "Status | AKTIV",
+            "Produsert av | Spesialetterforsker Trygve Justad Bjørntvedt, Øst politidistrikt",
+            "Overordnet dokument | SIS-PIAR-01 │ Koordinert med: SIS-RAPPORT-13, SIS-JUSS-05, SIS-HASH-04",
+            "Internasjonalt fundament | NATO STANAG 2511 / AJP-2.1 (Admiralty System) │ GDPR art. 5, 9 │ TLP v2.0 (FIRST.org)",
+            "TLP | TLP:AMBER — Kun til mottakers organisasjon"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s01",
+      "overskrift": "DEL 1 — 20 TEKNISKE KRAV (KT-01 til KT-20)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "KT-01 | DEFINISJON: Juridisk og teknisk kategorisering\n\nPrimærkategori: TPS-modellen er et normativt, tredimensjonalt kildegraderingssystem for OSINT-etterforskning i norsk politi. Det er ikke en programvare, men et metodisk rammeverk for systematisk kildekritikk.\n\nTeknisk kategori: Relasjonell graderingsmatrise med tre uavhengige variabler. T (Troverdighet) vurderer kildeinstansen. P (Pålitelighet) vurderer informasjonsinnholdet. S (Sensitivitet) vurderer juridisk og etisk risiko ved bruk."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Parameter | Klassifisering | Verdi / format",
+            "Metodisk type | Tredimensjonalt graderingssystem | T=[A–F], P=[1–6], S=[4 nivåer]",
+            "Opphav | Norsk politiadaptasjon | Basert på NATO STANAG 2511 / Admiralty System",
+            "Juridisk plassering | Metode for passiv OSINT-innhenting | Primært Politiloven § 25",
+            "Kobling til PIAR | Analyse- og rapporteringsfase (A/R) | Operasjonaliserer kildekritikk i PIAR-modellen",
+            "Obligatorisk? | JA | Alle funn fra åpne kilder, ingen unntak",
+            "Internasjonal kompatibilitet | NATO STANAG 2511 AJP-2.1 | A–F / 1–6 svarer til Admiralty System"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-02 | HISTORIKK: Tidslinje over versjonendringer\n\nTPS-modellen er norsk politis implementasjon av Admiralty System – en over 80 år gammel etterretningsstandard. Forståelse av utviklingen er nødvendig for å vurdere rapporter skrevet under eldre versjoner."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "År / Periode | Hendelse | Konsekvens for metodikk",
+            "~1939–1945 | Royal Navy utvikler Admiralty Rating System | Grunnlaget for alle moderne A–F / 1–6-skalaer",
+            "2003 | NATO kodifiserer STANAG 2511 (Intelligence Reports) | A–F (kildepålitelighet) + 1–6 (informasjonstroverdighet) standardisert",
+            "2016 | NATO AJP-2.1 Edition A Version 1 oppdaterer og erstatter STANAG 2022 | Moderne NATO-doktrine – direkte forgjenger til TPS",
+            "2022 | SIS-TPS-02 v1.0 – første versjon Øst PD | TPS formalisert med T/P/S-struktur for ÅK-etterforskning",
+            "2023 | SIS-TPS-02 v1.1 | S-kriteriene utvidet med kildebeskyttelsesvurdering",
+            "2024 | SIS-TPS-02 v2.0 | Kobling til SIS-MINOR-14 for mindreårige – S=KRITISK automatisk under 15 år",
+            "April 2026 | SIS-TPS-02 v3.0 (dette dokumentet) | GDPR art. 9 eksplisitt koblet. AI-vekting master header integrert. Oppdaterte LE-portaler."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-03 | EIER/LOV: Juridisk enhet og lagringslovgivning"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Eier | Øst politidistrikt, Felles etterretningsseksjon. Postboks 65, 1751 Halden. Org.nr.: 921 628 929",
+            "Lovgrunnlag | Politiloven (2021) │ Politiregisterloven (2010) │ Straffeprosessloven (1981) │ Personopplysningsloven (2018, implementerer GDPR)",
+            "Internasjonalt | GDPR art. 5(1)(f): integritet og konfidensialitet. US Cloud Act (2018): gir US-myndigheter tilgang til data på amerikanske servere. Norsk politi bruker TPS-gradering for å klassifisere sensitive funn – høy S-gradering begrenser deling over US-baserte plattformer",
+            "Særlige kategorier | Helse, rase/etnisitet, religion, politisk oppfatning, fagforeningsmedlemskap, genetiske og biometriske data, seksuelle forhold = skjerpet S-vurdering. Automatisk S=HØY eller KRITISK ved funn om disse kategoriene",
+            "Lagring | Beslagsnett (sikret politinett) eller Politiets mediebank. Aldri på skytjenester uten klassifisert godkjenning (GDPR art. 32)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-04 | TEKNOLOGI: Stack og dataflyt\n\nTPS er ikke teknologiavhengig, men dette avsnittet beskriver den tekniske konteksten funnet opprettes i:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Kildelag | Dataformat | Overføring",
+            "Sosiale medier (åpne profiler) | HTML / JSON (API-respons / DOM) | HTTPS GET port 443 – passiv observation",
+            "Lekkasjedatabaser (Dehashed, IntelX) | JSON / CSV-eksport / søkeresultat-HTML | HTTPS POST port 443 – API-søk med nøkkel",
+            "Offentlige registre (Folkereg., Brreg.) | XML / JSON (REST API) / nettside | HTTPS GET – autentisert via Altinn/MinID",
+            "Hunchly (bevissikring) | SQLite lokalt + PNG/JPEG + SHA-256 hash | Ingen nettverkseksport – lokal lagring",
+            "Maltego (pivotering) | XML (MTGX) / GraphML / JSON-entiteter | HTTPS til transform-servere (Paterva/Maltego)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-05 | KRYPTERING: Algoritmer, E2EE og nøkkelkontroll"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Kontekst | Detalj",
+            "Kryptering og T-gradering | TPS-gradering er en analytisk vurdering – ikke en krypteringsprosess. Men kryptering i kilden påvirker T-graderingen direkte:",
+            "E2EE (Signal/WhatsApp) | AES-256-CBC + Curve25519 (Signal Protocol). Nøkkel hos enhet-eier. Politiet kan IKKE dekryptere uten beslag av enhet. Innhold fra E2EE kan IKKE gis T=A eller T=B uten selvrapportering fra bruker",
+            "Server-side kryptering (Meta/TikTok) | Snapchat, TikTok, Meta: AES-256 på server. Plattformen har nøkkelen. LE-kjennelse (strpl. § 197) kan gi tilgang via LE-portal",
+            "Åpne kilder (ingen kryptering av innhold) | Ingen kryptering av innhold fra etterforskerperspektiv. HTTPS sikrer transport, men innholdet er offentlig tilgjengelig. Påvirker ikke T-koden, men bekrefter at informasjonen er åpen",
+            "SHA-256 | SHA-256 (FIPS 180-4): deterministisk, enveis, 256 bit. Brukes for non-repudiation av bevisfiler – ikke for kryptering av innhold. Se SIS-HASH-04"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-06 | UNIK-ID: Kildeidentifikatorer i TPS-kontekst\n\nHvert funn i TPS-systemet knyttes til en sporbar kilde-ID. Formater varierer etter plattform:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Plattform / Kilde | ID-format | Eksempel",
+            "Facebook / Instagram | UID – 15-sifret heltall | 100012345678901",
+            "TikTok | UID – 19-sifret heltall | 6982304729483920384",
+            "Snapchat | Brukernavn-string | @k13_nord (ikke tall-UID i åpent grensesnitt)",
+            "Folkeregisteret | Fødselsnummer / D-nummer | DDMMYYNNNKK (11 tegn, Luhn-validert)",
+            "Enhetsregisteret / Brreg. | Organisasjonsnummer | 9 siffer (XXX XXX XXX)",
+            "Hunchly intern | Numerisk sekvens + SQLite row-ID | Automatisk tildelt ved sidebesøk",
+            "Lekkasjedatabaser (Dehashed) | Numerisk dokument-ID | Eksempel: doc_id: 87263419"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-07 | LEKKASJE: Datalekkasjer og eksponerte felter\n\nRelevans for TPS: Funn fra lekkasjedatabaser gir T=B (kjent plattform med sporbarhet) eller T=C (anonym lekkasje), men aldri T=A da ingen offentlig institusjon eier disse. P kan nå P=2 ved krysskjekk mot annen kilde."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Lekkasjedatasett (navngitt) | Eksponerte felter | TPS-implikasjon",
+            "Collection #1–5 (2019, ~773 mill. e-poster) | E-post, klartekst-passord | T=B (kjent lekkasje), P=2 ved treff + krysskjekk",
+            "LinkedIn 2012 / 2021 (533 mill. profiler) | Navn, e-post, tlf, stilling, lokasjon | T=B, P=2 ved match med LinkedIn-profil",
+            "Combination of Many Breaches – COMB (2021, 3,2 mrd.) | E-post + passord fra kombinerte lekkasjer | T=C (sammensatt, uklar opprinnelse), P=3",
+            "Snapchat 2014 (4,6 mill. brukernavn + tlf) | Brukernavn, delvis telefonnummer | T=C, P=3 – delvis obfuskert ved utgivelse",
+            "Haveibeenpwned (HIBP – Tjeneste, ikke dataset) | Sjekker e-post mot 12+ mrd. eksponerte kontoer | Passiv søkemotor – T avhenger av underliggende datasett"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "VIKTIG: Lekkasjedata som inneholder passord eller private meldinger er S=HØY minimum, da bruk kan eksponere fornærmet eller kilde."
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-08 | URL-DATA: Dekonstruksjon av parametere og base64\n\nURL-parametere kan avsløre plattform-interne ID-er, sporing og brukerdata. Relevans for TPS: Parameteranalyse kan heve T-scoren (sporbarhet) og bidra til P-verifisering."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "URL-pattern | Hva avslører det? | TPS-konsekvens",
+            "facebook.com/profile.php?id=100012345 | Numerisk UID direkte i URL | T=B – bekrefter UID, styrker P",
+            "instagram.com/p/XXXXXXXXXXX/ (base64-kodet) | Post-ID, dekodes til unikt post-nummer | T=B – identifiserbart innhold",
+            "t.me/[brukernavn] eller t.me/c/[kanal-ID]/[msg-ID] | Telegram-bruker og meldings-ID | T=C/B avhengig av om kanal er verifisert",
+            "google.com/maps/place/.../@lat,lng,zoom | GPS-koordinater i URL | T=A (Google Maps), P=1 ved to bekreftelser",
+            "?utm_source=&utm_medium=&utm_campaign= | Sporings-tags – avslører markedsføringskilde | Lav etterforskningsverdi, men viser brukeratferd"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-09 | NETTVERK: Protokollanalyse og PCAP-mønstre"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Kontekst | Detalj",
+            "Bruksområde | Nettverksanalyse brukes for å bekrefte at et funn stammer fra den oppgitte kilden (T-verifisering) og at det ikke er manipulert underveis (P-støtte)",
+            "Protokoller | HTTPS (TLS 1.3): port 443 – all moderne webtrafikk. HTTP (sjeldent): port 80. WebSocket: port 443 (wss://) – live-meldingstjenester (Discord, Teams)",
+            "Verktøy | Wireshark / tcpdump. TLS 1.3-trafikk er kryptert – kun SNI-felt (Server Name Indication) er synlig. SNI avslører hvilken plattform som kontaktes, ikke innholdet",
+            "IP-adresser | IP-adresser fra plattformer krever kjennelse (strpl. § 197). Etterforskeres egen IP er en OPSEC-risiko – se KT-16",
+            "DNS-pivotering | DNS-basert pivoting: Et domenenavn → IP → ASN → hosting-leverandør. Kan heve T-koden på en nettside fra F til C"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-10 | METADATA: Tilgjengelige felter i digitale artifacts\n\nMetadata er kritisk for TPS-gradering fordi det er data om data – det gjør TPS-en etterprøvbar."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Artifact-type | Metadatafelt | TPS-bruk",
+            "JPEG/PNG bilde (EXIF) | GPS-koordinater, kameradato, enhetsmodell, ISO/blender, orientering, programvare | T: Bekrefter autentisitet. P: GPS + tidsstempel = sterk P=1-støtte",
+            "Hunchly-logg | SHA-256 hash, innhentingstidspunkt (UTC), etterforskerprofil, sak-ID, URL | T: A-kilde (politiverktøy). P: Verifisert hash = P=1 for bevisintegritet",
+            "PDF-dokument | Author, CreationDate, ModDate, Producer, Metadata-XML | T: Forfatter/dato avslører om det er redigert etter utgivelse",
+            "Sosiale medier (rådata) | user_id, timestamp (Unix epoch), geotag, device_type, last_seen_time, timezone | T/P: Kryssverifisér mot profil og aktivitetsmønster",
+            "E-post header | Received, X-Originating-IP, Message-ID, DKIM-Signature, SPF-resultat | T: DKIM-validering løfter T fra C til B/A"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-11 | MANUELT: Utførelse via nettleser og konsoll"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Metode | Detalj",
+            "Hjemmel | Passiv observasjon via nettleser. Hjemmel: Politiloven § 25",
+            "DevTools (F12) | Åpne DevTools (F12 → Network). Last en profil. Inspiser JSON-responser for skjulte UID-er, tidsstempler og geo-data. Dette er passiv observasjon av tilgjengelige data",
+            "curl-sjekk | curl -I https://www.instagram.com/[brukernavn]/ → HTTP-headere avslører server, cache-status og eventuelle feilkoder som indikerer om profil eksisterer",
+            "Wayback Machine | web.archive.org/web/[tidsstempel]/[URL] → Passiv ÅK. Åpen kilde (T=B). Viser sider slik de så ut på et gitt tidspunkt",
+            "WHOIS | who.is eller registrant-API. Gir registrant, NS, created/updated dato. T=B (verifiserbar kilde). Privatisert WHOIS → T=C"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-12 | AUTO: API-integrasjoner og automatiserte søk"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Verktøy | Detalj",
+            "osint.industries | Søker e-post/tlf mot 200+ plattformer automatisk. Betalingstjeneste. Resultat: T=B for plattformer med kjent track record. P avhenger av krysskjekk",
+            "Hunchly | Browser-extension. Logger alle besøkte sider med SHA-256, tidsstempel og skjermbilde automatisk. Gir T=A for selve logging-prosessen",
+            "theHarvester | python3 theHarvester.py -d example.com -b all → Henter e-poster, sub-domener, IP fra søkemotorer. Passiv innhenting § 25",
+            "Sherlock | python3 sherlock.py [brukernavn] → Sjekker 400+ plattformer for brukernavn-treff. Resultater T=B for kjente plattformer, C for ukjente",
+            "Dehashed API | import requests; r = requests.get('https://api.dehashed.com/search?query=email', auth=('user','key')) → Strukturert lekkasjesøk. Resultat T=B"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-13 | VAKT: Overvåkingsstrenger og regex for endringsvarsling\n\nAutomatiske varslere lar etterforskeren reagere raskt på endringer i profil eller innhold. Relevant for å dokumentere TPS-graderingen over tid."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Overvåkingsmål | Regex / søkestreng | Verktøy",
+            "E-postadresse | ^[a-zA-Z0-9._%+\\-]+@[a-zA-Z0-9.\\-]+\\.[a-zA-Z]{2,}$ | IntelX, Maltego Monitor",
+            "Norsk mobilnummer | ^(\\+47│0047│47)?[4-9]\\d{7}$ | OSINT Industries, theHarvester",
+            "Bitcoin-adresse (P2PKH) | ^1[a-km-zA-HJ-NP-Z1-9]{25,34}$ | Blockchain.com, Breadcrumbs",
+            "IP-adresse (IPv4) | ^((25[0-5]│2[0-4]\\d│[01]?\\d\\d?)\\.){3}(25[0-5]│2[0-4]\\d│[01]?\\d\\d?)$ | Shodan Monitor, SecurityTrails",
+            "Profilendring (generell) | Sammenlign DOM-snapshot med arkivert versjon (diff) | Visualping, Hunchly Diff"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-14 | SOKKEDUKKE: VPN, fingerprinting og profilkredibilitet"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Krav | Detalj",
+            "Hjemmel | Straffeprosessloven § 196 + politiloven § 25a. Skriftlig beslutning fra påtalemyndighet FØR aktivering. Gjelder kun passiv observasjon – ikke provokasjon (§ 196a)",
+            "VPN | Dedikert IP-adresse som ikke er knyttet til politinett. Anbefalt: Mullvad VPN (no-log, betalt med kontanter/Monero) eller Tor for høy-risiko-operasjoner",
+            "Fingerprinting | Plattformer registrerer: User-Agent, skjermoppløsning, installerte fonts, canvas-fingerprint, WebGL, tidssone, språk. Bruk Firefox ESR i isolert VM med unikonfigurasjon. Sjekk: coveryourtracks.eff.org",
+            "Profilkredibilitet | Profilen må fremstå som ekte: alder (min. 3–6 måneder), aktivitetsmønster (regelmessige poster), realistisk nettverk (50–200 venner/følgere), plausibel biografi. Aldri knytt til ekte politisaker i profiltekst",
+            "TPS-konsekvens | Funn innhentet via sokkedukke: T senkes ikke av dette alene, men alle funn fra lukket miljø krever avklaring mot S-kriteriene. Aldri bruk sokkedukke til å fremprovosere (§ 196a)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-15 | AI: LLM-dechiffrering, slanganalyse og ansiktsgjenkjenning"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Funksjon | Detalj",
+            "LLM-slanganalyse | Bruk av Claude, ChatGPT eller lignende for å forstå kryptisk kommunikasjon, emoji-koder, nummersubstitusjon (13=narkotika). Input: anonymisert tekststreng. Resultat er analytisk støtte – ikke bevis (T=D inntil bekreftet av annen kilde)",
+            "Ansiktsgjenkjenning | PimEyes (pimeyes.com) og FaceCheck.ID søker åpne nettkilder mot ansiktsbilde. Hjemmel: Politiloven § 25 + personopplysningsloven § 9 (biometrisk behandling). Resultat er hypotese (P=3) inntil bekreftet manuelt",
+            "TPS-gradering AI-funn | T=D (algoritmisk kilde, ingen sporbarhet til original instans). P=3 minimum (ukonfirmert maskinanalyse). S: Ansiktsgjenkjenning på mindreårig = S=KRITISK uansett",
+            "Løfteregel | AI-funn løftes aldri over P=2 uten uavhengig menneskelig krysskjekk mot primærkilde. Rapport-tekst skal eksplisitt merke 'AI-assistert analyse'",
+            "Emoji-koder | 🍃=cannabis, 🔌=strøm (narkotikaselger), 💊=piller, 🐢=langsom levering. Se Emoji_sprak_og_narkotika (prosjektkilde). T=C (etablert kriminell slangkode), P=3 inntil bekreftet i kontekst"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-16 | OPSEC: Attribusjonsanalyse og etterforskerspor"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Sportype | Detalj",
+            "Data etterforskeren etterlater | IP-adresse (i server-logg), User-Agent-string (nettleseridentitet), HTTP Referer-header (forrige side), tidsstempel for besøk, cookie/session-ID, canvas/WebGL-fingerprint",
+            "Politiets faste IP-nett | Politiets faste IP-nett er kjent (ASN-oppslag på politiet.no avslører nettverk). Besøk fra disse IP-ene kan varsle mistenkte. Alltid bruk VPN/sokkedukke-maskin",
+            "User-Agent-risiko | Standard politimaskin: 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'. Denne er identifiserbar som kontor-PC. Endre til mer generisk UA i VM",
+            "Tidssone-lekkasje | JavaScript kan lese lokal tidssone. Bruk Tor eller VPN med tidssone-spoofing. Relevant om mistenkte er teknisk kyndig",
+            "Hunchly-sikkerhet | Hunchly logger ikke til noen ekstern server. Lokal SQLite-database. Alle spor er hos etterforskeren. Eksporter aldri rå Hunchly-fil til sky uten kryptering"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-17 | KRITIKK: Cross-referencing og to-kilde-prinsippet\n\nGrunnregel: Et funn er aldri sterkere enn sin svakeste kilde i en to-kilde-kjede. P=1 krever to uavhengige primærkilder som peker i samme retning."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Krysskjekkmetode | Beskrivelse | P-effekt",
+            "Primærkilde + primærkilde | Folkeregisteret + Brreg. bekrefter adresse | P=1 (Bekreftet)",
+            "A-kilde + C-kilde | Folkeregisteret + Instagram-stedstagging | P=1 (med merknad om C-kilde-usikkerhet)",
+            "C-kilde + C-kilde (uavhengig) | To separate Instagram-profiler, ingen relasjon mellom dem | P=2 (Sannsynligvis sant)",
+            "En C-kilde alene | Kun én Instagram-post | P=3 (Mulig – ukonfirmert)",
+            "D-kilde alene | Kun ett anonymt foruminnlegg | P=4 (Tvilsomt)",
+            "Motstrid mellom A og C | Folkeregisteret sier én adresse, Instagram annen | P=4 (Tvilsomt – noter motstrid eksplisitt)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-18 | LE-GUIDE: Portaler og format for politi-henvendelser"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Tjeneste / Eier | LE-portal / kontakt (per april 2026) | Krav og format",
+            "Meta (Facebook/Instagram) | facebook.com/records | Emergency Disclosure Request-skjema. Norske saker via MLAT. Svar: 4–6 uker. Privat innhold: strpl. § 197",
+            "Google (Gmail, Maps, YouTube) | support.google.com/transparencyreport | Google Legal Investigation Support. Emergency: dedikert telefon. Kjennelse for kontoinnhold",
+            "Snapchat | snap.com/en-US/privacy/lawenforcement | Snap Law Enforcement Guide (PDF). Vedlegg: tingretts kjennelse",
+            "TikTok | tiktok.com/legal/law-enforcement | TikTok LE-portal. Emergency: emergenices@tiktok.com",
+            "Discord | discord.com/privacy/lawenforcement | PDF-skjema per forespørsel. Transparency Report offentliggjøres halvårlig",
+            "Kripos (internt) | kripos@politiet.no / INTERPOL NCB | Internasjonale saker: Kripos Interpol-seksjon. Intern: via BL-systemet",
+            "Telenor/Telia/Ice | Via BL – kjennelse til lokal tingrett | Trafikkdata: strpl. § 216b. Innholdsdata: strpl. § 216a"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-19 | JUS: Kobling til spesifikke lovparagrafer"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Paragraf | Innhold | Relevans for TPS-bruk",
+            "Politiloven § 25 | Hjemler passiv behandling av personopplysninger | Grunnlag for T=A/B/C-søk uten beslutning",
+            "Strpl. § 196 | Skjult observasjon – påtalebeslutning | Kreves ved sokkedukke og systematisk kartlegging",
+            "Strpl. § 196a | Provokasjonsforbud – absolutt | Brytes = nullstilling av bevisverdi",
+            "Strpl. § 197 | Kjennelse fra tingrett | Kreves for private meldinger, IP-logger fra platform",
+            "Strpl. § 216b | Kommunikasjonskontroll – trafikkdata | Kjennelse for ISP-data",
+            "Strpl. § 226 (1) | Formål med etterforskning | TPS-funnene skal besvare IB-ene fra oppdragsgiver",
+            "Strpl. § 292 | Bevisregler – lovlig fremskaffet | TPS-gradering dokumenterer lovlig innhenting",
+            "Politiregisterloven § 5 | Formålsbegrensning | TPS-funn kun til dokumentert etterforskningsformål",
+            "Politiregisterloven § 7 | Sletterutiner | Høy S-graderte funn slettes etter saksavslutning",
+            "GDPR art. 5(1)(f) | Integritet og konfidensialitet | SHA-256 + TLP er de operative tiltakene",
+            "GDPR art. 9 | Særlige kategorier personopplysninger | Automatisk S=HØY/KRITISK – juridisk avklaring",
+            "EMK art. 8 | Retten til privatliv – proporsjonalitet | S-vurderingen er proposjonalitetsvurderingen",
+            "Barnekonvensjonen art. 16 | Barns rett til privatliv | Under 18: skjerpet S. Under 15: S=KRITISK",
+            "Strl. § 201 | Uberettiget datatilgang | Omgåelse av sikkerhetstiltak er straffbart"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-20 | BEVIS: Integritetskrav, hashing og non-repudiation"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Krav | Detalj",
+            "Prinsipp | Beviset er juridisk sterkt dersom det er umulig for forsvaret å hevde at det ble manipulert etter innhenting. SHA-256 er det tekniske verktøyet",
+            "Timing | Beregn hash UMIDDELBART etter screenshot – ikke etterpå. Terminal (Linux/Mac): sha256sum filnavn.png │ Windows: certutil -hashfile filnavn.png SHA256",
+            "Hunchly | Hunchly beregner SHA-256 automatisk og lagrer i lokal SQLite-database. Kontroller rødt ikon aktivert FØR sesjonen starter",
+            "Filnavnkonvensjon | Format: YYYY-MM-DD_funn001_[plattform]_[beskrivelse].png Eksempel: 2026-04-14_funn003_instagram_stedstagging.png",
+            "Bevislogg | Logg: Innhenter, tidspunkt (UTC), verktøy brukt, SHA-256-verdi, saksnummer. Alle steg i kjeden signert av etterforsker",
+            "Fireøye-prinsippet | En kollega (ikke primær etterforsker) gjennomgår TPS-graderingen og beviskjeden. Signerer funnrapporten. Se SIS-RAPPORT-13"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "overskrift": "DEL 2 — TEKNISK DEKONSTRUKSJON A–Å",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Nivå 1 – Binært: Rådata og artifacts på laveste nivå\n\nTPS-graderingen er i seg selv et metadata-artifact som produseres av etterforskeren. Den eksisterer som ren tekst i rapport-dokumentet, men funderes på binære artifacts fra den digitale verdenen:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Artifact | Detalj",
+            "SHA-256 hash | 64 hexadesimale tegn (0–9, a–f). Eksempel (fiktiv): a3f4c9d2e1b8f765...0f3b8c7a. Laveste tekniske nivå for bevisintegritet. En bit endret i kildefilen endrer ca. 128 av 256 bits i hash-verdien (lavinescheeffekten)",
+            "EXIF GPS-data | GPS-koordinater lagres som IFD-tags i JPEG. Tag 0x8825 (GPS IFD), offset 0x0002 (breddegrad) og 0x0004 (lengdegrad). Leses med ExifTool: exiftool -all filnavn.jpg",
+            "Unix-tidsstempler | Sosiale medier lagrer tid som 64-bits heltall (sekunder siden 1970-01-01T00:00:00Z). Konverter: python3 -c 'import datetime; print(datetime.datetime.fromtimestamp(1708000000))'",
+            "Plattform-interne ID-er | Plattform-interne ID-er er synlige i page source. Facebook: data-id='100012345678901'. Disse er stabile og kan brukes som T-verifisering"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Nivå 2 – Arkitektur: Teknisk oppbygging\n\nTPS-systemet opererer i et teknisk landskap av distribuerte tjenester, klientside-applikasjoner og nettverksprotokoller:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Lag | Detalj",
+            "Klient-server-kommunikasjon | Brukerens enhet sender HTTPS GET (port 443) til plattformens CDN/API. JSON-respons returnerer profildata. Etterforskeren observerer passivt den samme responsen",
+            "TLS 1.3 | TLS 1.3 (2018) er nå standard. Handshake bruker Diffie-Hellman. Innholdet er kryptert i transport, men tilgjengelig i klartekst for nettleseren (og etterforskeren) etter dekryptering",
+            "Asynkron datainnlasting | Plattformer sender HTTP-headere (Content-Type, Last-Modified, ETag) og JavaScript som laster ytterligere data asynkront (AJAX/fetch). Network-fanen i DevTools viser alle kall",
+            "Lekkasjedatabaser | Dehashed, IntelX: Indekserte Elasticsearch-databaser bak REST API. Søk som returnerer JSON med felter: email, password, username, ip_address, name, phone"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Nivå 3 – Helhet: TPS i etterforskningens store bilde\n\nTPS er ikke et isolert verktøy – det er koblingspunktet mellom OSINT-innhenting og juridisk bevisbehandling:"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "PIAR-fase | TPS-rolle",
+            "Planlegging (P) | Avklar hvilke kildetyper som vil gi T=A/B. Sett forventede P og S-nivåer. Avklar juridisk hjemmel.",
+            "Innhenting (I) | TPS-gradér HVERT funn umiddelbart etter innhenting. SHA-256 beregnes. Hunchly logger.",
+            "Analyse (A) | Funn med P=4/5/6 utelates eller brukes kun som hypotesedriver. P=1/2-funn danner bevisgrunnlag.",
+            "Rapportering (R) | Hvert funn i rapporten har eksplisitt TPS-kode. S=HØY/KRITISK krever juridisk begrunnelse. SHA-256 verifiseres mot Hunchly-logg."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "overskrift": "DEL 3 — ANALOGIPAR",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "For hvert teknisk begrep følger en teknisk sannhet og en pedagogisk analogi som gjør begrepet tilgjengelig for ikke-tekniske mottakere."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "TEKNISK: T-koden (Troverdighet [A–F]) er en vurdering av kilde-instansen. A = offentlig institusjon med dokumentert nøyaktighetshistorikk. F = ukjent kilde det ikke er mulig å vurdere. | ANALOGI: T er som referansesjekken på en CV-søker. A = sjefen har bekreftet alt. F = personen har oppgitt et navn uten telefonnummer.",
+            "TEKNISK: P-koden (Pålitelighet [1–6]) er en vurdering av informasjonsinnholdet, uavhengig av kilden. P=1 krever minimum to uavhengige primærkilder. | ANALOGI: P er holdbarhetsdatoen på matvaren. To uavhengige laboratorier har testet varen = P=1. Kun produsentens eget stempel = P=2 eller lavere.",
+            "TEKNISK: S-koden (Sensitivitet) er en juridisk og etisk risikovurdering langs fem dimensjoner: Lovlighet, Personvern, Alder, Sårbarhet, Kildebeskyttelse. | ANALOGI: S er allergimerkingen på en matvarepakke. Noen kan tåle innholdet greit (S=LAV). Andre kan få alvorlige reaksjoner (S=KRITISK). Merkingen bestemmer hvem som kan konsumere produktet.",
+            "TEKNISK: SHA-256 er en deterministisk, enveis kryptografisk hashfunksjon (FIPS 180-4) som produserer 64 hexadesimale tegn. En bit endret i input gir ca. 128 bits endring i output (lavinescheeffekten). | ANALOGI: SHA-256 er notarius publicus-seglet på beviskonvolutten. Åpner noen posen og legger til ett ark – selv ett papirark – endres vekten dramatisk. Retten kan alltid sjekke om seglet er brutt.",
+            "TEKNISK: NATO STANAG 2511 Admiralty System er den historiske kilden til TPS-skalaen. A–F + 1–6 er en internasjonal etterretningsstandard for kildepålitelighet og informasjonstroverdighet. | ANALOGI: TPS er politiets versjon av en internasjonal karakterskala. Akkurat som alle NATO-land bruker samme graderte karaktersystem for etterretning, bruker norsk politi en tilpasset versjon for åpen kildekartlegging.",
+            "TEKNISK: GDPR artikkel 9 definerer 'særlige kategorier av personopplysninger' (helse, etnisitet, religion, biometri, seksualitet m.fl.) som krever strengere behandlingsgrunnlag enn ordinære personopplysninger. | ANALOGI: GDPR art. 9 er som en rødmerket lagringsrom i arkivet. Alt annet kan du hente selv med standard tilgang. Det røde rommet krever nøkkel fra lederen og skriftlig begrunnelse.",
+            "TEKNISK: Non-repudiation (ikke-benekting) er den matematiske egenskapen som gjør det sannsynlighetsmessig umulig å hevde at en digital fil ble endret etter SHA-256-hashen ble beregnet. | ANALOGI: Non-repudiation er som et forseglet kuvert i en bankboks. Banken bekrefter dato og innhold. Ingen kan hevde at innholdet ble lagt til i etterkant uten at forseglingen ville vært brutt."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "overskrift": "DEL 5 — H-H-H-N MIKROSTEG",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Gjennomgang av TPS-graderingsprosessen steg for steg med Hva, Hvor, Hvorfor og Når."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "STEG | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Identifisér kildeinstansen (hvem leverer informasjonen?) | Plattform, register, nettside, brukerprofilens metainformasjon | For å sette T-koden korrekt: A (offentlig register) → F (ukjent nettside) | Umiddelbart ved funn, FØR analysen starter",
+            "2 | Sett T=[A–F] basert på kilde-track-record | TPS-02 tabell 2.1 (kodebok). Sammenlign med eksempler i kolonnen 'Eksempler' | T avgjør kildens grunnleggende kredibilitet – alt bygger på dette | FØR P-vurderingen",
+            "3 | Krysskjekk innholdet mot minimum én annen, uavhengig kilde | OFM-nivåene 1–5, PIAR-innhentingsfasen, lekkasjedatabaser, offentlige registre | P=1 krever to uavhengige primærkilder. Uten krysskjekk er P maksimalt 3 | Under innhentingsfasen",
+            "4 | Sett P=[1–6] basert på antall bekreftende / motstridende kilder | TPS-02 tabell 3.1 (pålitelighetsgradering). Noter alle kilder som støtter og motstrider | P-koden dokumenterer bevisstyrken og er det domstolen vurderer | Etter krysskjekk er gjennomført",
+            "5 | Vurder alle fem S-kriterier | Lovlighet (§ 25 / § 196 / § 197?), Personvern (GDPR art. 9?), Alder (under 18? under 15?), Sårbarhet, Kildebeskyttelse | S-koden bestemmer om funnet i det hele tatt kan brukes og på hvilke vilkår | Parallelt med T og P, men dokumenteres sist",
+            "6 | Sett S=[LAV / MODERAT / HØY / KRITISK] | TPS-02 tabell 4.1 (sensitivitetsnivå). Fem kriterier – strengeste nivå vinner | Én alvorlig S-faktor overstyrer de andre. Mindreårig under 15 = KRITISK uansett andre faktorer | Etter alle fem kriterier er vurdert",
+            "7 | Skriv TPS-koden på funnet | Rapport-malen (SIS-RAPPORT-13). Format: T-P-S (eks: B-2-LAV). Skriv ALLTID alle tre | Uten eksplisitt TPS-kode kan retten ikke vurdere bevisverdien av funnet | FØR funnet tas inn i rapporten",
+            "8 | Ved S=KRITISK: Stopp og kontakt jurist | Politijurist / påtalemyndighet / felles etterretningsseksjon | S=KRITISK innebærer juridisk risiko som overstiger etterforskeres fullmakter | Umiddelbart – ingen rapport-tekst skrives FØR juridisk godkjenning",
+            "9 | Hash bevisfilene (SHA-256) | Terminal eller Hunchly. SHA-256-verdien noteres i Hunchly og rapport. Se SIS-HASH-04 | Non-repudiation: ingen kan hevde filen ble endret etter innhentingen | Umiddelbart etter screenshot / fillagring",
+            "10 | Kvalitetssikre med kollega | Funnrapporten gjennomgås av ikke-primær etterforsker. Se SIS-RAPPORT-13 sjekkliste (12 punkter) | Fireøye-prinsippet: to par øyne reduserer feil og sikrer juridisk holdbarhet | Før rapporten fremlegges for oppdragsgiver"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "overskrift": "DEL 6 — KOMPLETTE EKSEMPLER MED TPS-GRADERING",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Eksempel 1 – Originalt scenario fra SIS-TPS-02 (mindreårig, Snapchat)\n\nScenario: Kurt (13 år) poster bilde av pengesedler på Snapchat Story kl. 23:45. Profilen er åpen og søkbar."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TPS-GRADERING | RAPPORT-TEKST (klar til bruk)",
+            "T = C: Snapchat-profil @k13_nord – anonym alias, konsistent bruk i 6 måneder. Ingen sporbarhet til ekte identitet. P = 3: Mulig sant – penger kan være ekte, lånte eller rekvisitter. Én C-kilde, ukonfirmert. S = HØY: Mindreårig 13 år (under 15 – nær KRITISK) + økonomisk data + mulig kriminalitet. Samlet: C-3-HØY | Bildet er observert på åpen Snapchat Story (@k13_nord) den 14.02.2026 kl. 23:45 CET. Innhenting er gjennomført som passiv observasjon av åpent tilgjengelig innhold (politiloven § 25). Grunnet objektets alder (13 år, under strafferettslig ansvar jf. strl. § 46) og usikker kontekst vurderes funnet med særlig varsomhet. Krever krysskjekk med bankdata (krever kjennelse jf. strpl. § 197) og verifisering av identitet mot Folkeregisteret (P=3 → P=1) før videre hypoteseutvikling. TPS: C-3-HØY"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Eksempel 2 – Adresseverifisering (T=A, P=1, S=LAV)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TPS-GRADERING | RAPPORT-TEKST (klar til bruk)",
+            "T = A: Folkeregisteret (primærkilde). Offentlig register med dokumentert nøyaktighetshistorikk. P = 1: Bekreftet av Folkeregisteret (A-kilde) + Instagram-stedstagging (C-kilde) – to uavhengige kilder, ingen motstrid. S = LAV: Offentlig tilgjengelig adresse, voksen (34 år), ikke-sensitiv kontekst. Samlet: A-1-LAV | Objektet er registrert med bostedsadresse Skoleveien 12, [poststed], i Folkeregisteret per [dato] (Kilde 1: Folkeregisteret, T=A, P=1). Adressen er bekreftet via stedstagging på åpen Instagram-profil (@brukernavn), der objektet har tagget samme adresse i 7 separate poster i perioden [dato] til [dato] (Kilde 2: Instagram, T=C). Ingen motstridende informasjon er funnet i øvrige åpne kilder. TPS: A-1-LAV"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "overskrift": "DEL 7 — REFERANSER OG KILDEDOKUMENTER",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "SIS-seriens relaterte dokumenter"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Dok-ID | Tittel | Bruksområde",
+            "SIS-PIAR-01 | PIAR-metodikk | Metodisk rammeverk – når TPS brukes (planlegging → rapportering)",
+            "SIS-TPS-02 | TPS-modellen (dette dokumentet) | Kildekritikk og gradering av alle funn",
+            "SIS-PIVOT-03 | Pivå-metodikk | Ny søkesyklus etter funn – TPS-gradér hvert pivå-steg",
+            "SIS-HASH-04 | Hashing og SHA-256 | Bevisintegritet og non-repudiation",
+            "SIS-JUSS-05 | Juridisk rammeverk | Lovhjemlene bak S-kriteriene",
+            "SIS-OPSEC-06 | OPSEC og digital hygiene | Beskytt etterforskerens identitet (KT-16)",
+            "SIS-RAPPORT-13 | Rapportmal og beviskjede | Standardmal for å integrere TPS i rapport",
+            "SIS-MINOR-14 | Mindreårige i digitale saker | S=KRITISK-protokollen for under 15 år"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Internasjonale standarder og referanser"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Standard / Referanse | Utgiver | Relevans",
+            "NATO STANAG 2511 / AJP-2.1 Ed.A v1 | NATO (2016) | Admiralty System – historisk fundament for T/P-skalaen",
+            "GDPR (2016/679) | EU-kommisjonen / Datatilsynet | Art. 5, 9, 10 – S-kriteriene for personopplysninger",
+            "Personopplysningsloven (2018) | Justis- og beredskapsdepartementet | Norsk implementasjon av GDPR",
+            "Politiregisterloven (2010) | Justis- og beredskapsdepartementet | Behandling av politiregisteropplysninger",
+            "TLP v2.0 (Traffic Light Protocol) | FIRST.org (2022) | Klassifisering av funnrapportens distribusjonsgrad",
+            "FIPS 180-4 (SHA-256) | NIST (2015) | Teknisk standard for bevisintegritetshashing",
+            "Barnekonvensjonen art. 16 | FN (1989) | Barns rett til privatliv – S=KRITISK under 15",
+            "INTERPOL Digital Evidence Policy 2023 | INTERPOL | Internasjonale krav til digital bevisbehandling"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "TPS-MODELLEN │ Dok-ID: SIS-TPS-02 │ Versjon 3.0 – April 2026 │ Øst politidistrikt\nUNNTATT OFFENTLIGHET – Kun til internt politibruk │ TLP:AMBER\n\nØst politidistrikt | Felles etterretningsseksjon | April 2026"
+        }
+      ]
+    }
+  ]
+}
 
