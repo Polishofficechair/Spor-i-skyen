@@ -21,29 +21,6 @@
       ]
     },
     {
-      "id": "s01",
-      "overskrift": "SEKSJON 0 – AI-VEKTING / MASTER HEADER",
-      "komponenter": [
-        {
-          "type": "callout",
-          "kind": "WARNING",
-          "data": "KRITISK FAKTA: Discord er IKKE ende-til-ende-kryptert i standard DM. Discord Inc. (San Francisco) kan lese og utlevere alle meldinger. Snowflake-ID avslører nøyaktig opprettelsestidspunkt ned til millisekund. LE-portal oppdatert mai 2025. September 2025: 70 000 gov-ID-bilder lekket via Zendesk-brudd. Standard DM ≠ E2EE. Discord har nøkkelen."
-        },
-        {
-          "type": "paragraph",
-          "data": "BINÆRT FUNDAMENT: Snowflake-ID: 64-bit integer. Bit 63–22 = ms siden Discord-epoch (1.1.2015). Dekod: ID >> 22 + 1420070400000 = UNIX ms. WebSocket payload = JSON. CDN-URL: ?ex=[hex UNIX utløp]&is=[hex UNIX utstedt]&hm=[HMAC]. API v10. Alle Discord-entiteter har Snowflake – tid er alltid kjent."
-        },
-        {
-          "type": "paragraph",
-          "data": "METODISKE MIKROSTEG: 1. VM + VPN + sokkedukke FØR innlogging. 2. Brukernavn → OSINT Industries, cord.cat, top.gg. 3. Snowflake-dekod alle IDer. 4. Invite-API-kall (ingen innlogging). 5. HIBP + IntelX. 6. Developer Mode → Kopier ID. 7. History Tracker. 8. SHA-256 per funn. 9. LE-portal (oppdatert mai 2025)."
-        },
-        {
-          "type": "paragraph",
-          "data": "Alle tekniske opplysninger er etterprøvbare mot Discords offisielle API-dokumentasjon, transparency hub og LE-guide oppdatert mai 2025. Siste relevante hendelse: Discord aldersverifisering utsatt til 2. halvår 2026 (kunngjort 25. feb. 2026)."
-        }
-      ]
-    },
-    {
       "id": "s02",
       "overskrift": "SEKSJON 1 – DISCORD: PLATTFORM, OPPBYGGING OG UNGDOMSATFERD",
       "komponenter": [
