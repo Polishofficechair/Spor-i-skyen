@@ -148,14 +148,14 @@
   },
   {
     "id": "e022",
-    "title": "Slik leser du en profil med etterforskerens blikk",
+    "title": "Sosiale medier I straffesak",
     "description": "Episoden beskriver de spesifikke datapunktene en etterforsker bør registrere fra en sosial medieprofil, inkludert profil-URL, bilde, bio, følgerlister og tidspunkt for siste innlegg. Den omhandler Google Dorking og spesialverktøy (som Maltego og OSINT Industries) for å identifisere og kartlegge skjulte eller falske profiler. I tillegg adresserer kildene nye trusler som deepfake-innhold og algoritmisk manipulasjon, og understreker viktigheten av å bruke etiske og juridiske retningslinjer ved innsamling av informasjon. Det gis også praktiske tips for å skaffe større profilbilder fra ulike plattformer for effektiv omvendt bildesøk..",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode22.mp3",
     "releaseDate": "2025-10-18T08:00:00Z"
   },
   {
     "id": "e023",
-    "title": "Facebook i en helhetlig etterforskningsstrategi",
+    "title": "Facebook i straffesak",
     "description": "Episoden understreker at til tross for økt personvern og fjerning av verktøy som Graph Search, forblir Facebook en uvurderlig datakilde på grunn av sin enorme brukerbase og dybden i brukerdata. Sentrale etterforskningsteknikker som beskrives inkluderer Google Dorking, analyse av Facebook Marketplace for å avdekke lokasjon og økonomi, samt bruken av eksterne verktøy som Maltego. En nøkkelstrategi er å finne en brukers permanente numeriske ID via kildekode, siden denne er uforanderlig og nødvendig for avanserte søk, spesielt når profiler er private, hvilket tvinger etterforskere til å fokusere på taggede bilder og nettverket rundt målpersonen. ",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode23.mp3",
     "releaseDate": "2025-10-19T08:00:00Z"
@@ -343,8 +343,57 @@
     "releaseDate": "2025-10-06T08:00:00Z"
   },
   {
-    "id": "e050",
-    "title": "Simswap",
+      "id": "e050",
+      "title": "Simswap",
+      "description": ".",
+      "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode50.mp3",
+      "releaseDate": "2025-11-17T08:00:00Z"
+    },
+  {
+      "id": "e051",
+      "title": "Emojies",
+      "description": ".",
+      "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode51.mp3",
+      "releaseDate": "2025-11-17T08:00:00Z"
+    },
+  {
+      "id": "e052",
+      "title": "Navn som inngangsverdi I straffesak",
+      "description": ".",
+      "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode52.mp3",
+      "releaseDate": "2025-11-17T08:00:00Z"
+    },
+  {
+      "id": "e053",
+      "title": "Avidentifiser en anonym konto I straffesak",
+      "description": ".",
+      "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode53.mp3",
+      "releaseDate": "2025-11-17T08:00:00Z"
+    },
+  {
+      "id": "e054",
+      "title": "Slik bekrefter du en forbindelse mellom personer I straffesak",
+      "description": ".",
+      "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode54.mp3",
+      "releaseDate": "2025-11-17T08:00:00Z"
+    },
+  {
+      "id": "e055",
+      "title": "xxx",
+      "description": ".",
+      "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode50.mp3",
+      "releaseDate": "2025-11-17T08:00:00Z"
+    },
+  {
+      "id": "e056",
+      "title": "xxx",
+      "description": ".",
+      "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode50.mp3",
+      "releaseDate": "2025-11-17T08:00:00Z"
+    },
+  {
+    "id": "e057",
+    "title": "xxx",
     "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode50.mp3",
     "releaseDate": "2025-11-17T08:00:00Z"
