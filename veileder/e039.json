@@ -1,226 +1,667 @@
 {
-  "tittel": "KRYPTOVALUTA I OSINT-ETTERFORSKNING",
-  "undertittel": "GRUNNLEGGENDE OM BLOKKJEDE, ANONYMITET OG ETTERFORSKNINGSMETODIKK",
+  "tittel": "Metodisk støttedokument for etterforskning av kryptovaluta i åpne kilder",
+  "undertittel": "Lommebokanalyse · Blokkjedesporing · De-anonymisering · Bevis",
+  "ordliste": [],
   "seksjoner": [
     {
-      "id": "s01",
-      "overskrift": "ORDLISTE",
+      "id": "s00",
+      "overskrift": "Dokumentinformasjon",
       "komponenter": [
         {
           "type": "grid",
           "data": [
-            "Begrep | Definisjon",
-            "Kryptovaluta | Digital valuta basert på kryptografi og blokkjedeteknologi. Ingen sentralbank[cite: 5].",
-            "Blokkjede | En offentlig, uforanderlig digital regnskapsbok[cite: 7].",
-            "Lommebok | Programvare som lagrer kryptografiske nøkler (bankboks-analogi)[cite: 10, 11].",
-            "Lommebokadresse | Alfanumerisk kode (kontonummer-analogi) for sending/mottak[cite: 13, 15].",
-            "Pseudonymitet | Transaksjoner er synlige, men ikke direkte koblet til navn[cite: 16, 17].",
-            "Private Key | Hemmelig kode som beviser eierskap (PIN-kode-analogi)[cite: 19, 20].",
-            "Seed-frase | Hovednøkkel på 12-24 ord som gir full tilgang til midlene[cite: 21, 22].",
-            "UTXO | Unspent Transaction Output – vekselpenger på Bitcoin[cite: 24].",
-            "On-ramp / Off-ramp | Tjenester for å kjøpe eller selge krypto mot tradisjonell valuta (fiat)[cite: 26, 28].",
-            "KYC / AML | Krav om identitetsverifikasjon og hvitvaskingsregler[cite: 30, 32].",
-            "Mixer / Tumbler | Tjeneste som blander transaksjoner for å skjule pengesporet[cite: 33].",
-            "CoinJoin | Metode der flere brukere kombinerer transaksjoner i én felles struktur[cite: 35, 36].",
-            "Chain Hopping | Veksling mellom ulike kryptovalutaer for å miste sporingslogikken[cite: 38].",
-            "Monero (XMR) | Personvernsmynt med innebygd anonymisering[cite: 40].",
-            "DEX | Desentralisert børs uten KYC og sentral aktør[cite: 43].",
-            "Clustering | Gruppering av adresser som tilhører samme person/enhet[cite: 47].",
-            "NFT | Digitalt eiersskapsbevis (Non-Fungible Token)[cite: 53].",
-            "PayID | Forenklet identifikator knyttet til en Binance-konto [cite: 59, 60]"
+            "Dok-ID | SIS-KRYPTO-12",
+            "Versjon | 2.0 · April 2026",
+            "Produsert av | Spesialetterforsker Trygve Justad Bjørntvedt · Øst politidistrikt",
+            "Gradering | UNNTATT OFFENTLIGHET – Jf. offl. § 13 jf. politiregisterloven § 23 · Kun til internt politibruk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s01",
+      "overskrift": "1. DEFINISJON – Juridisk og teknisk kategorisering",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Kryptovaluta er et desentralisert digitalt betalingsmiddel basert på kryptografisk konsensus. I norsk rett klassifiseres kryptovaluta som et formuesgode (skattelovens §§ 5-1 og 9-2), ikke som lovlig betalingsmiddel. MiCA-forordningen (EU 2023/1114) trådte i kraft i Norge 1. juli 2025 gjennom Kryptoeiendelsloven og regulerer nå utstedere og tilbydere av kryptoaktiva-tjenester."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TYPE | TEKNISK DEFINISJON | ETTERFORSKNINGSRELEVANS",
+            "P2P-nettverk | Distribuert nettverk uten sentral server – alle noder er likeverdige | Ingen enkelt leverandør å henvende seg til for data",
+            "Blokkjede (Blockchain) | Offentlig, append-only distribuert hovedbok. Kryptografisk lenket liste av blokker | Alle transaksjoner verifiserbare og uforanderlige – sterkt bevisgrunnlag",
+            "UTXO-modell (Bitcoin) | Ubrukte transaksjonsutganger – saldo = sum av UTXO-er tilhørende adresse | Muliggjør sporing av satoshi-enheter fra opprinnelse til cashout",
+            "Kontomodell (Ethereum) | Saldobasert – likner bankkontomodell. Smartkontrakter er kode på blokkjeden | Kompleksitet: kan skjule midler via DeFi-protokoller og mellomkontrakter",
+            "Privacy coin (Monero) | Ring-signaturer, stealth-adresser, RingCT skjuler avsender, mottaker og beløp | On-chain sporing umulig. Krever off-chain virkemidler (exchange, IP, beslag)"
+          ]
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "Bitcoin-blokkjeden er en append-only distribuert database lagret på over 19 000 fullnoder globalt. Hver transaksjon er en UTXO-transformasjon signert med ECDSA-privat nøkkel (secp256k1). | Tenk på blokkjeden som en uforanderlig, offentlig pantografert kassebok. Alle kan lese alle kvitteringer siden dag én, men ingen navn – bare kontonumre."
           ]
         }
       ]
     },
     {
       "id": "s02",
-      "overskrift": "A.1 HVA ER KRYPTOVALUTA OG BLOKKJEDEN?",
+      "overskrift": "2. HISTORIKK – Tidslinje over kryptovaluta og etterforskningsrelevante endringer",
       "komponenter": [
         {
-          "type": "paragraph",
-          "data": "**Analogi: Den åpne regnskapsbok i et glasshus.** Tenk deg et regnskap som alle kan lese, ingen kan slette, og som eksisterer i tusenvis av kopier verden over[cite: 63, 64]. Det finnes ingen sentralbank; alle noder i nettverket holder regnskapet[cite: 65]."
-        },
-        {
-          "type": "paragraph",
-          "data": "**Kontrast til tradisjonell bank:** Mens en Vipps-overføring er privat mellom banken og partene, er en Bitcoin-overføring synlig for alle som vet adressene[cite: 66, 67]."
-        },
-        {
-          "type": "paragraph",
-          "data": "**Pseudonymitet – ikke anonymitet:** Dette er det viktigste begrepet. Brukere er representert av adresser, noe som gjør dem teknisk anonyme, men deres fotavtrykk kan spores[cite: 70, 71]."
-        },
-        {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "ANONYMITET: Sporene finnes ikke (f.eks. kontanter, XMR-transaksjoner)[cite: 73, 74].",
-            "PSEUDONYMITET: Sporene finnes, men er ikke koblet til navn (f.eks. Bitcoin, Ethereum)[cite: 75, 76]."
+            "ÅR | HENDELSE | ETTERFORSKNINGSRELEVANS",
+            "2008 | Satoshi Nakamotos whitepaper publisert | Genesis av Bitcoin-protokollen (SHA-256, ECDSA)",
+            "2009 | Bitcoin genesis-blokk minet (3. jan) | Alle transaksjoner sporbare fra dette tidspunktet",
+            "2011 | Silk Road åpner – Bitcoin blir kriminelles valuta | Bevist at blokkjedesporing er mulig (FBI lukker SR 2013)",
+            "2014 | Monero (XMR) lanseres med ring-signaturer | On-chain sporing av XMR umulig – off-chain virkemidler nødvendig",
+            "2015 | Ethereum lanseres – smartkontrakter og ERC-20 tokens | Kompleks pengeflyt via DeFi – ny utfordring for sporing",
+            "2017 | SegWit aktivert i Bitcoin – bech32-adresser (bc1...) | Ny adresseformat – etterforsker må kjenne begge formater",
+            "2020 | Bitcoin mixer-tjenester (Wasabi, Samourai) utbredt | CoinJoin-transaksjoner vanskeligere å spore lineært",
+            "2022 | Tornado Cash (ETH-mixer) sanksjonert av USA OFAC | Første gang kode (ikke person) sanksjonert – juridisk presedens",
+            "2023 | Norsk Økokrim beslaglegger 5,9 mill USD (Axie Infinity/Lazarus) | Bevis på norsk blokkjedesporing i stor skala",
+            "2024 | Chainalysis Reactor: 134 000+ navngitte enheter i databasen | Økt attribusjonsevne – hurtigere identifisering av exchanges",
+            "2025 | MiCA trer i kraft i Norge (1. juli) – Kryptoeiendelsloven | Exchanges må ha MiCA-lisens – styrker KYC-grunnlag for kjennelser",
+            "2025 | Chainalysis lanserer AI-verktøy «Rapid» for LE | Triage uten kryptoekspertise – raskere initial vurdering",
+            "2025 | Europol avvikler Archetyp Market (Monero-only, 250 mill EUR) | Bevist at Monero-brukere kan identifiseres via off-chain data"
           ]
-        },
-        {
-          "type": "callout",
-          "kind": "TIP",
-          "data": "En Bitcoin-lommebokadresse er som et fingeravtrykk: Unikt og sporbart dersom man klarer å koble det til en database[cite: 78, 80]."
         }
       ]
     },
     {
       "id": "s03",
-      "overskrift": "A.2 HVORFOR KRIMINELLE ELSKER KRYPTOVALUTA",
+      "overskrift": "3. EIER / LOV – Juridisk rammeverk og lagringslovgivning",
       "komponenter": [
         {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "Ingen bankgodkjenning: Kan opprette lommebok uten ID eller navn[cite: 84, 85].",
-            "Grenseløse overføringer: Millionbeløp kan sendes globalt uten SWIFT-kontroll[cite: 87, 88].",
-            "Irreversibilitet: Transaksjoner kan ikke angres av en bank[cite: 91, 92].",
-            "Teknologisk barriere: Mange etterforskere mangler kompetanse på feltet[cite: 97, 98]."
+            "AKTØR / LOV | DETALJ | ETTERFORSKERENS HANDLING",
+            "Bitcoin (BTC) | Ingen eier – open source (MIT-lisens). Distribuert mellom 19 000+ fullnoder globalt | Kontakt exchange der midler ble inn-/utbetalt",
+            "Ethereum Foundation | Sveits-basert (Zug). ETH er desentralisert – Foundation eier ikke data | Etherscan.io for data – exchange for KYC",
+            "Norsk Kryptoeiendelsloven | MiCA-implementasjon – trådte i kraft 1. juli 2025. Exchanges må ha MiCA-lisens hos Finanstilsynet | Kjennelse etter strpl. § 210 mot lisensierte exchanges i Norge",
+            "EU MiCA (2023/1114) | Krever full KYC på exchanges i EØS. Travel Rule (TFR II) krever avsender/mottaker-info over 1000 EUR | Exchanges i EØS plikter å utlevere KYC-data ved rettslig pålegg",
+            "US Cloud Act (2018) | Tillater US LE å hente data fra US-baserte tjenester uavhengig av fysisk lagringssted | For Coinbase, Kraken (US) – MLA kan erstattes av Cloud Act-forespørsel",
+            "GDPR / personopplysningsloven | Gjelder exchanges i EØS – data kan ikke lagres utover nødvendig tid | Handl raskt – eldre data kan være slettet etter GDPR-sletteplikten",
+            "Strpl. § 210 (utleveringspålegg) | Primær hjemmel for å hente KYC-data fra exchange i Norge | Fremmes for tingretten – exchange plikter å etterkomme",
+            "Strpl. § 192–196 (ransaking) | Ransaking av digitale enheter – kan inkludere hardware wallets | Krever kjennelse – kan gi tilgang til private nøkler"
           ]
-        },
-        {
-          "type": "paragraph",
-          "data": "**Kriminalitetstyper:** Systematisk bruk i ransomware, narkotikahandel (dark web), hvitvasking og Violence as a Service (VaaS) [cite: 101-105]."
         }
       ]
     },
     {
       "id": "s04",
-      "overskrift": "A.3 KRIMINELLES ANONYMISERINGSTEKNIKKER",
+      "overskrift": "4. TEKNOLOGI – Stack, dataformat og dataflyt",
       "komponenter": [
         {
           "type": "paragraph",
-          "data": "**Teknikk 1: Mixers og Tumblers.** Tjenester som blander krypto fra hundrevis av brukere for å bryte pengesporet[cite: 111, 115]."
-        },
-        {
-          "type": "callout",
-          "kind": "CASE",
-          "data": "Sluk fungerer en mixer: Kriminell sender 1 BTC til tjenesten -> Mixeren blander med andre -> Kriminell mottar 0.99 BTC fra en helt annen adresse. Ny \"ren\" Bitcoin[cite: 113, 122, 124]."
-        },
-        {
-          "type": "paragraph",
-          "data": "**Teknikk 2: CoinJoin.** Kombinerer betalinger fra ulike avsendere i én enkelt transaksjon for å skjule hvem som sendte til hvem[cite: 130, 131]."
-        },
-        {
-          "type": "paragraph",
-          "data": "**Teknikk 3: Chain Hopping.** Veksling mellom ulike krypto-typer (f.eks. BTC til Monero) for å miste sporingslogikken[cite: 134, 136]."
-        },
-        {
-          "type": "paragraph",
-          "data": "**Teknikk 4: Personvernsmynter.** Monero (XMR) er gullstandarden og bruker ring-signaturer, stealth-adresser og RingCT for å skjule avsender, mottaker og beløp[cite: 150, 151, 153]."
+          "data": "4.1 Bitcoin-protokollet\n\nBitcoin bruker SHA-256 (dobbelt) for blokkhashing og TXID-generering. Lommebokadressen er en Base58Check-kodet hash av den offentlige nøkkelen. Transaksjonsdata serialiseres i et egendefinert binærformat – ikke JSON eller Protobuf."
         },
         {
           "type": "grid",
           "data": [
-            "Egenskap | CEX (Sentralisert) | DEX (Desentralisert)",
-            "KYC-krav | Ja (pass påkrevd) [cite: 175] | Nei [cite: 175]",
-            "Identitetsdata | Lagret [cite: 176] | Ingen [cite: 176]",
-            "Rettslig utlevering | Mulig [cite: 177] | Umulig (ingen eier) [cite: 177]"
+            "LAG | TEKNOLOGI | FORENSISK ARTEFAKT",
+            "Nettverkslag | P2P over TCP port 8333 (mainnet) / 18333 (testnet) | PCAP-analyse: nodes som sender/mottar blokkdata",
+            "Dataformat | Proprietært binærformat + LevelDB (chainstate/UTXO-database) | LevelDB-filer på 5–10 GB – kan leses med bitcoin-cli",
+            "Transaksjon | Versjon (4 bytes) + Inputs + Outputs + Locktime | Txid = SHA-256(SHA-256(rå transaksjonsdata))",
+            "Adresse (P2PKH) | Base58Check(RIPEMD-160(SHA-256(pubkey))). Starter med '1' | 26–34 alfanumeriske tegn – søkbar i explorer",
+            "Adresse (SegWit) | Bech32-kodet hash. Starter med 'bc1q' (P2WPKH) eller 'bc1p' (Taproot) | Lengre adresser – samme sporbarhet",
+            "Signering | ECDSA på secp256k1-kurven (256-bit privat nøkkel) | Signatur beviser eierskap – kan ikke forfalskes",
+            "Ethereum | RLP-serialisering. Kontomodell. ABI-kodet data for smartkontrakter | Adresse = siste 20 bytes av keccak256(pubkey). Starter med '0x'"
+          ]
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "En Bitcoin-transaksjon er en kryptografisk signert UTXO-transformasjon serialisert i binærformat, broadcastet til P2P-nettverket via TCP/IP port 8333, inkludert i en blokk ved SHA-256-mining, og permanent lagret i LevelDB på alle fullnoder. | Det er som å sende et rekommandert brev der alle postkontor i hele verden får en kopi. Konvolutten er forseglet med et unikt fingeravtrykk som beviser hvem som sendte det – og alle kvitteringene er offentlige for alltid."
           ]
         }
       ]
     },
     {
       "id": "s05",
-      "overskrift": "B.1 STEG 1: CLUSTERING – KARTLEGGING AV ADRESSER",
+      "overskrift": "5. KRYPTERING – Algoritmer, nøkkelhåndtering og etterforskningslukker",
       "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "Clustering er gruppering av adresser som tilhører samme person basert på mønsteranalyse[cite: 181, 184]."
-        },
-        {
-          "type": "paragraph",
-          "data": "**B.1.1 Co-spending (Samforbruk):** Den sterkeste heuristikken. Hvis flere adresser brukes som inputs i én transaksjon, tilhører de sannsynligvis samme eier[cite: 188, 189]."
-        },
-        {
-          "type": "callout",
-          "kind": "TIP",
-          "data": "Vekseladresser: Bitcoin sender automatisk \"vekslepenger\" tilbake til en ny adresse kontrollert av avsender. Dette er et effektivt verktøy for clustering[cite: 205, 216]."
-        },
         {
           "type": "grid",
           "data": [
-            "Verktøy | Beskrivelse",
-            "Chainalysis Reactor | Industristandard for politiet[cite: 249].",
-            "Breadcrumbs.app | GRATIS visuelt verktøy for nybegynnere[cite: 256, 258].",
-            "Blockchair | GRATIS multi-valuta utforsker (BTC, ETH, XMR)[cite: 272]."
-          ]
-        },
-        {
-          "type": "list",
-          "data": [
-            "Sirkulære bevegelser: Indikerer mixer-aktivitet[cite: 276, 277].",
-            "Stjerne-formasjon: Indikerer sentral kontroll (hub) som f.eks. børsinnskudd[cite: 280, 281].",
-            "Peel Chain: Gradvis reduksjon av beløp for å skjule seg i støyen[cite: 284, 286]."
-          ]
-        }
-      ]
-    },
-    {
-      "id": "s06",
-      "overskrift": "B.3 STEG 3: KORRELERING MED DIGITALE FOTAVTRYKK (BRÅK)",
-      "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "Etterforskeren kan koble en adresse til en person via \"lekkasjer\" der brukeren selv eksponerer informasjonen i sosiale medier[cite: 335, 336]."
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Signal | Betydning",
-            "Laser Eyes | Bitcoin-entusiast[cite: 341].",
-            "NFT-profilbilde | Eier av verdifulle digitale eiendeler[cite: 342, 343].",
-            "HODL / Diamond Hands | Langtidsinvestor[cite: 345, 348].",
-            "$BTC / $ETH i bio | Bruker ticker-symboler for å vise portefølje[cite: 347]."
-          ]
-        },
-        {
-          "type": "callout",
-          "kind": "TIP",
-          "data": "Binance PayID-søk: Ved å taste inn en e-post eller telefonnummer i Binance Pay, kan man få ut verifisert navn og profilbilde[cite: 399, 407, 408]."
-        },
-        {
-          "type": "callout",
-          "kind": "LEGAL",
-          "data": "Binance PayID-teknikken er passiv observasjon av informasjon gjort tilgjengelig for brukere. Det krever normalt ikke rettslig kjennelse, men dokumenter utførelsen nøye[cite: 416, 419]."
-        }
-      ]
-    },
-    {
-      "id": "s07",
-      "overskrift": "D.2 JURIDISK HJEMMELSGRUNNLAG I NORGE",
-      "komponenter": [
-        {
-          "type": "list",
-          "data": [
-            "Straffeprosessloven § 210: Utleveringspålegg for KYC-data og transaksjonshistorikk[cite: 561, 564].",
-            "Hvitvaskingsloven §§ 4-9: Rapporteringsplikt for mistenkelige transaksjoner over 15 000 kr[cite: 567, 570].",
-            "MiCA-regulering: Kommende EU-krav om full KYC og 'Travel Rule' for krypto[cite: 572, 575].",
-            "MLAT: Internasjonalt samarbeid for utlevering fra utenlandske børser[cite: 577, 579]."
+            "ELEMENT | ALGORITME | NØKKELHAVER | ETTERFORSKERENS MULIGHET",
+            "Bitcoin-signering | ECDSA (secp256k1) | Lommebokinnehaver (privat nøkkel) | Transaksjon er offentlig – privat nøkkel trengs kun for å BRUKE midler",
+            "Bitcoin-blokkhashing | SHA-256 dobbelt | Ingen – deterministisk algoritme | TXID er stabil og verifiserbar for alltid",
+            "Ethereum-signering | ECDSA (secp256k1) + keccak256 | Lommebokinnehaver | Samme som BTC – offentlig transaksjon",
+            "Hardware wallet | AES-256 intern lagring av privat nøkkel (PIN-beskyttet) | Lommebokinnehaver | Ransaking + PIN eller court order mot leverandør (Ledger/Trezor)",
+            "Monero (XMR) | Ring-signaturer, RingCT, Ed25519, stealth-adresser | Kun avsender/mottaker med privat viewkey | Off-chain metoder: exchange KYC, IP, device forensics",
+            "Exchange-lagring | AES-256 eller tilsvarende 'at rest', TLS 1.3 in transit | Exchange (ikke E2EE) | KYC-data tilgjengelig via rettslig pålegg (strpl. § 210)"
           ]
         },
         {
           "type": "callout",
           "kind": "WARNING",
-          "data": "Børser sletter ofte logger etter 90-180 dager. Send alltid preserveringsanmodning umiddelbart[cite: 725, 726]."
+          "data": "KRITISK: Monero er ikke sporbar on-chain. Ring-signaturer blander den reelle transaksjonen med 15 lokke-innganger. RingCT skjuler beløp. Stealth-adresser gjør mottakeradresse engangsbasert. Ingen kjente tilfeller av direkte on-chain breaking. Etterforskning mot Monero-brukere krever: (1) Exchange-sporing ved inn-/utgang, (2) IP-adresselogging via node-overvåking, (3) Device forensics (privat viewkey på beslaglagt enhet), (4) Tradisjonelt politiarbeid."
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "overskrift": "6. UNIK-ID – Identifikatorer og tekniske selektorer",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "ID-TYPE | FORMAT / REGEX | EKSEMPEL | SØKEVERDI",
+            "Bitcoin P2PKH | [13][a-km-zA-HJ-NP-Z1-9]{25,34} | 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa | Direkte søk i explorer og Google",
+            "Bitcoin SegWit | bc1[ac-hj-np-z02-9]{6,87} | bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq | Ny adresseformat – samme sporbarhet",
+            "Ethereum | 0x[a-fA-F0-9]{40} | 0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe | Søk i Etherscan. EIP-55 checksum",
+            "Transaksjon-ID (Txid) | [a-fA-F0-9]{64} | 4a5e1e4baab89f3a32518a88c31bc87f618f76673e2cc77ab2127b7afdeda33b | Direkte lenke til transaksjon i explorer",
+            "Blokkadresse | \\d{1,7} (blokknummer) | Blokk 0 = genesis-blokk (2009-01-03) | Tidsanker for transaksjon",
+            "Exchange-UID | Varierer – UUID eller numerisk | Coinbase: 9-sifret numerisk. Binance: UID-nummer | Fremkommer ved exchange-kjennelse",
+            "Monero XMR | 4[0-9AB][1-9A-HJ-NP-Za-km-z]{93} | 4AdUndXHHZ6cfufTMvppY6JwXNouMBzSkbLYfpAV5Usx23kNsCC6pXwaGLZd... | Ikke sporbar on-chain – kun off-chain verdi"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "6.1 Regex for automatisk ekstraksjon\n\nBitcoin P2PKH:   [13][a-km-zA-HJ-NP-Z1-9]{25,34}\nBitcoin SegWit:  bc1[ac-hj-np-z02-9]{6,87}\nEthereum:        0x[a-fA-F0-9]{40}\nTxid:            [a-fA-F0-9]{64}\nMonero:          4[0-9AB][1-9A-HJ-NP-Za-km-z]{93}\n\nDisse regex-strenger kan brukes i Grep, Python (re-modul), i2 Analyst's Notebook og Chainalysis Reactor for automatisk ekstraksjon av kryptoadresser fra store tekstmengder (chatlogger, lekkasjedatabaser, forum-scraper-resultater). Se også SIS-SELER-07 og vedlegg om regex i SIS-LEAK-08."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "Bitcoin-adressen er en Base58Check-kodet 160-bits hash av den offentlige nøkkelen. Den er dermed deterministisk utledet fra privat nøkkel, og selve adressen avslører aldri den private nøkkelen. | Tenk på adressen som et kontonummer i en offentlig bank der alle kan se inn-/utbetalinger, men ingen kan ta ut penger uten PIN-koden (privat nøkkel). Kontonummeret alene er harmløst å dele."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "overskrift": "7. LEKKASJE – Navngitte datasett og eksponerte felter",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Kryptoadresser dukker jevnlig opp i lekkasjedatabaser, enten fordi exchange-databaser er kompromittert, eller fordi brukerne selv har oppgitt adresser i kombinasjon med e-post/brukernavn."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "DATASETT | INNHOLD | RELEVANS FOR KRYPTO | SØK VIA",
+            "Coinbase-brukerregistreringer | E-post, navn, telefon (ikke lommebokadresse direkte) | Kobler e-post til exchange-kundeprofil | IntelX, Dehashed",
+            "Bitfinex 2016 (97 mill USD hack) | E-post, siste 4 siffer kredittkort, BTC-adresser | Direkte kobling e-post ↔ BTC-adresse | IntelX, HIBP",
+            "Collection #1-5 / COMB (2021) | 8,4 mrd e-post+passord. Mange krypto-relaterte tjenester | Passord-gjenbruk: finn tilgang til exchange-kontoer | IntelX, Dehashed",
+            "Dark web market-dumps | Brukernavn, BTC-adresse, PGP-nøkler fra Silk Road, AlphaBay m.fl. | Direkte kobling pseudonym ↔ BTC-adresse | IntelX, Recon-ng",
+            "Blockchain.com-brukerdata | E-post, IP-logger (ved kontoopprettelse) | Kobler adresse til e-post via exchange | Kjennelse mot selskap"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "7.1 Mikrosteg – Lekkasjesøk etter kryptoadresse\n\nSteg 1: Kopier lommebokadressen fra saken.\nSteg 2: Gå til intelx.io → søk adressen i anførselstegn.\nSteg 3: Gjenta i dehashed.com og leakcheck.io.\nSteg 4: Gjenta søk med txid og evt. e-postadresser fra funn.\nSteg 5: Screenshot → SHA-256 → Hunchly. TPS-gradér funnet."
         }
       ]
     },
     {
       "id": "s08",
-      "overskrift": "G. SJEKKLISTE FOR ETTERFORSKNING",
+      "overskrift": "8. URL-DATA – Parameteranalyse i blockchain-explorere",
       "komponenter": [
         {
-          "type": "list",
+          "type": "grid",
           "data": [
-            "Er adressen søkt i blockchain-utforsker og visualisert[cite: 729, 730]?",
-            "Er e-post/telefon sjekket mot Binance Pay[cite: 733]?",
-            "Er det sjekket for vanity wallet-elementer (f.eks. navn i adressen)[cite: 734]?",
-            "Er preserveringsanmodning sendt til relevant børs[cite: 740]?",
-            "Er KYC-data kryssverifisert mot Folkeregisteret[cite: 744]?",
-            "Er alle transaksjonshasher dokumentert med SHA-256 hash[cite: 747, 748]?"
+            "URL-MØNSTER | PARAMETER | INNHOLD",
+            "blockchain.com/btc/address/{adresse} | Adressesti | Direkte oppslag – erstatt {adresse} med BTC-adresse",
+            "blockchain.com/btc/tx/{txid} | Transaksjonsti | Full transaksjonsdetalj – input/output, fee, tidsstempel",
+            "etherscan.io/address/{adresse} | Adressesti | ETH-adresse – balanse, tokens, kontraktsinteraksjoner",
+            "etherscan.io/tx/{txid} | Transaksjonsti | ETH-transaksjon – gass, input-data (hex-kodet ABI)",
+            "blockchair.com/search?q={streng} | q= | Generelt søk – fungerer med adresse, txid, blokkhash",
+            "mempool.space/address/{adresse} | Adressesti | Sanntids mempool-status – ubekreftede transaksjoner"
           ]
         },
         {
           "type": "paragraph",
-          "data": "**Oppsummering:** Kryptosaker koker ned til å finne punktet der kryptoen berører et identifiserbart system (KYC-børs eller bank)[cite: 756, 757]. Blokkjedeanalyse er et etterforskningsinstrument (leads), mens det endelige beviset er KYC-data bekreftet via rettslig utlevering[cite: 547, 548]."
+          "data": "8.1 Dekode Ethereum input-data\n\nEtherscan viser 'Input Data' i hex for kontraktsinteraksjoner. De første 4 bytes (8 hex-tegn) er funksjonssignaturen. Eksempel: 0xa9059cbb = ERC-20 transfer(). Resten er ABI-kodet. Bruk etherscan.io sin innebygde decoder, eller 4byte.directory for å identifisere funksjonskall. Dette avslører om midler ble sendt via en mixer (eks. Tornado Cash: 0xb214faa5), DEX-handel eller direkte overføring."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "Ethereum-transaksjoner med smartkontraktsinteraksjoner inneholder ABI-kodet input-data. De første 4 bytes er keccak256-hash av funksjonssignaturen – en unik identifikator for hvilken funksjon som ble kalt. | Tenk på input-data som en forseglet ordre i en konvolutt. De første 4 tegnene på forsiden er en kode som sier 'dette er en overføring' – resten er detaljene, men de er skrevet i et språk som krever en spesiell ordbok (ABI-spesifikasjonen) for å lese."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "overskrift": "9. NETTVERK – Protokollanalyse og PCAP-signaturer",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "PROTOKOLL | PORT | KRYPTO | PCAP-SIGNATUR",
+            "Bitcoin mainnet | TCP 8333 | Nei (klartekst P2P-meldinger) | Magic bytes: F9 BE B4 D9 (start av melding)",
+            "Bitcoin testnet | TCP 18333 | Nei | Magic bytes: 0B 11 09 07",
+            "Ethereum (devp2p) | TCP/UDP 30303 | RLPx kryptert | ECDH-nøkkelutveksling ved oppstart",
+            "HTTPS (exchange/explorer) | TCP 443 | TLS 1.3 | SNI-felt avslører domenenavn (blockchain.com, etherscan.io)",
+            "Monero P2P | TCP 18080 | Nei (P2P klartekst), men transaksjonsinnhold kryptert | Identifiseres på portnummer og protokollhoder",
+            "Tor (.onion exchange) | TCP 443/9050 | Tor-kryptert | Tor-entry node trafikk i PCAP – ikke decryptbar"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "PCAP-TIPS FOR ETTERFORSKER: Wireshark-filter for Bitcoin: tcp.port == 8333 │ Vis P2P-kommunikasjon mellom noder. Dette kan avsløre hvilke noder mistenkte kommuniserte med. SNI-analyse (TLS): Filtrer ssl.handshake.extensions_server_name contains 'blockchain' for å se exchange-besøk uten å dekryptere trafikken. Merk: Dette krever trafikk-logfiler fra ISP (§ 210b strpl.) eller fra enheten."
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "overskrift": "10. METADATA – Tilgjengelige felt i blockchain-artefakter",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "FELT | KILDE | FORENSISK VERDI",
+            "block_height | Explorer / fullnode | Tidsanker – blokkens posisjon i kjeden",
+            "block_time (Unix) | Explorer / fullnode | UTC-tidsstempel for bekreftelse – brukes i tidslinje",
+            "txid | Explorer / fullnode | Primærnøkkel for transaksjonsoppslag",
+            "input_addresses[] | Explorer / fullnode | Avsenderadresser – pivot til nye selektorer",
+            "output_addresses[] | Explorer / fullnode | Mottakeradresser – spor videre",
+            "output_values[] | Explorer / fullnode | Beløp i satoshi (1 BTC = 100 000 000 sat)",
+            "fee (satoshi) | Explorer | Høy fee = haster – tidspresset transaksjon",
+            "confirmations | Explorer | Antall blokker siden inkludering – 6+ = endelig",
+            "mempool_time | mempool.space | Tidsstempel da transaksjonen entret mempool (before confirmations)",
+            "script_type | Explorer | P2PKH, P2SH, P2WPKH – avslører lommebok-type",
+            "entity_name (Chainalysis) | Chainalysis Reactor | Navngitt enhet (f.eks. Binance Hot Wallet 7)",
+            "risk_score | Chainalysis / TRM | 0–100 risikovurdering basert på transaksjonshistorikk",
+            "ip_address (ved node) | Fullnode-logg | IP som broadcastet transaksjonen – geolokasjonsverdi"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "overskrift": "11. MANUELL METODE – Etterforskning via nettleser og konsoll",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "11.1 Bitcoin-sporing via blockchain.com"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "HVA | HVOR | HVORFOR | NÅR",
+            "Spore Bitcoin-transaksjon og kartlegge lommeboknettverk manuelt | blockchain.com/explorer – fritt tilgjengelig i tjeneste-nettleser | Grunnleggende kartlegging uten spesialverktøy – bevarer sporbarhet | Fase 1 av etterforskning, etter at lommebokadresse er identifisert"
+          ]
+        },
+        {
+          "type": "list",
+          "data": [
+            "Steg 1: Identifiser lommebokadresse fra saken (chatlogg, forum, lekkasje).",
+            "Steg 2: Åpne etterforskningsnettleser (dedikert VM / OPSEC-profil).",
+            "Steg 3: Naviger til blockchain.com/explorer – lim inn adresse i søkefeltet.",
+            "Steg 4: Dokumenter: total saldo, antall transaksjoner, første og siste aktivitet.",
+            "Steg 5: Klikk på de 5 største transaksjonene – noter input/output-adresser.",
+            "Steg 6: Klikk 'Export CSV' – last ned transaksjonshistorikk.",
+            "Steg 7: Beregn SHA-256 av CSV-fil (terminal: sha256sum fil.csv).",
+            "Steg 8: Logg SHA-256 + URL + tidsstempel i Hunchly. TPS-gradér (se seksjon 23)."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "11.2 Ethereum-sporing via Etherscan"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "HVA | HVOR | HVORFOR | NÅR",
+            "Spore ETH/ERC-20 transaksjoner og smartkontraktsinteraksjoner | etherscan.io – gratis, krever ingen konto for grunnleggende oppslag | ETH er nest største krypto – DeFi og token-transaksjoner er her | Etter BTC-kartlegging, eller dersom adressen begynner med 0x"
+          ]
+        },
+        {
+          "type": "list",
+          "data": [
+            "Steg 1: Lim inn Ethereum-adresse (0x...) i etherscan.io-søkefeltet.",
+            "Steg 2: Se fanene: Transactions │ Internal Txns │ Token Transfers │ NFT Transfers.",
+            "Steg 3: Klikk 'Internal Txns' – avslører transaksjoner via smartkontrakter (mixere, DEX).",
+            "Steg 4: Klikk på txid for enkelt-transaksjon – se 'Input Data' hex. Bruk 'Decode' for lesbar format.",
+            "Steg 5: Eksporter til CSV → SHA-256 → Hunchly."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "overskrift": "12. AUTO – API-integrasjoner og Python-scripts for skalering",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "12.1 Blockchair API\n\nBlockchair tilbyr et gratis API (med rate-limiting) som støtter Bitcoin, Ethereum, Litecoin og 20+ andre kryptovalutaer. Bruk for å skalere analyse av mange adresser automatisk.\n\nPython-eksempel: Hent transaksjonsdata for BTC-adresse:\nimport requests, hashlib, datetime\naddr = '1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa'\nr = requests.get(f'https://api.blockchair.com/bitcoin/dashboards/address/{addr}')\ndata = r.json()['data'][addr]['address']\nprint(f\"Saldo: {data['balance']} sat │ Tx: {data['transaction_count']}\")"
+        },
+        {
+          "type": "paragraph",
+          "data": "12.2 Chainalysis Reactor – API-integrasjon (politilisens)\n\nChainalysis tilbyr REST API for batch-oppslag, automatisk klusteranalyse og eksport. Per 2025 støtter Reactor 134 000+ navngitte enheter og 15 blokkjeder inkludert privacy coins. Det nye AI-verktøyet 'Rapid' gir triage i klartekst uten kryptoekspertise."
+        },
+        {
+          "type": "paragraph",
+          "data": "12.3 Maltego-integrasjon\n\nMaltego har krypto-transforms som lar deg pivotere direkte fra lommebokadresse til transaksjonsnettverk, og videre til kjente exchange-clustere. Krever Maltego Pro-lisens + krypto-datapakke. Integrasjon med Chainalysis og GraphSense."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "Blockchair API returnerer JSON med feltene: balance (satoshi), transaction_count, first_seen_receiving, last_seen_receiving. Chainalysis Reactor API returnerer entity-kluster med attribution score og risikokategori. | API-tilgangen er som å ansette en assistent som sjekker alle kontonumrene dine mens du sover. Neste morgen har du en rapport over all aktivitet – du trengte ikke å klikke deg gjennom hvert enkelt."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "overskrift": "13. VAKT – Varsling ved endring i lommebokaktivitet",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Overvåking av lommebøker i sanntid gir tidlig varsling om nye transaksjoner – kritisk for å rekke å be om frys av midler på exchange før de er videresendt."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "VERKTØY | METODE | TERSKEL / REGEX",
+            "blockchain.com Alerts | Gratis e-postvarsling ved ny transaksjon til/fra adresse | Sett opp: Min. én transaksjon over 0 BTC",
+            "Whale Alert API | Varsler ved store transaksjoner (threshold: 100k USD+) | Bruk for store beløp – ikke mikrotransaksjoner",
+            "Chainalysis KYT/Reactor | Sanntidsvarsling via webhook ved risikoflagget transaksjon | Risk score > 75 / Entitet = Darknet Market",
+            "Etherscan Watchlist | E-postvarsling ved ETH-transaksjon til/fra adresse | Gratis, krever konto på Etherscan",
+            "Python cron-script | Regulér Blockchair-API hvert 15. minutt – sammenlign tx-count | Regex-match på ny txid i API-respons → send varsel"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "KRITISK TIDSVINDU: Kriminelle kan flytte midler videre innen minutter etter at de er satt inn på en exchange. Varslingssystem bør settes opp FØR du sender kjennelsen til exchanget – slik at du ser midlene flytte seg i sanntid og kan be om umiddelbar frys. Chainalysis Reactor gir estimert cashout-tid basert på historisk atferd."
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "overskrift": "14. SOKKEDUKKE OG OPSEC – Sikker etterforskning uten attribusjon",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Se SIS-OPSEC-06 for fullstendig rammeverk. Dette kapitlet tar for seg OPSEC spesifikt for kryptovaluta-etterforskning."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "RISIKO | KONSEKVENS | TILTAK",
+            "Politiets IP treffer blockchain-explorer | Explorer-leverandør logger IP – kan avsløre etterforskning | Alltid VPN (tjeneste-VPN) – aldri privat eller åpent nett",
+            "Browser fingerprinting fra exchange | Exchange kan se unikt nettleser-fingeravtrykk | Bruk etterforskningsprofil i dedikert VM. Standardiser UA-streng",
+            "Søk etter lommebokadresse i klartekst-Google | Google logger søket – kan bli innhentet via subpoena | Bruk privat søkemotor i OPSEC-nettleser, aldri privat konto",
+            "Direkte besøk til mistenkts exchange-konto | Exchange logger innlogging og IP – kan ødelegge operasjon | Aldri logg inn med mistenkts legitimasjon (ulovlig + etterforskningstap)",
+            "Tor-kjøring uten VPN | Exit-node kan observeres av LE eller trusselaktør | VPN FØR Tor – jf. SIS-OPSEC-06 og SIS-DARK-11",
+            "Bruk av privat maskin | Etterforskning blandes med private data – bevisintegritet kompromitteres | Alltid tjeneste-PC i dedikert etterforsknings-VM"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s15",
+      "overskrift": "15. AI – Bruk av kunstig intelligens i kryptoetterforskning",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "BRUKSTILFELLE | VERKTØY | METODE",
+            "Triage av ny kryptoadresse | Chainalysis Rapid | Lim inn adresse – AI-genererer klartekstsammendrag med risikoscoring og neste steg",
+            "Klusteranalyse (UTXO-heuristikk) | Chainalysis Reactor / TRM Labs | AI-modell identifiserer common-input-ownership: adresser brukt i samme tx tilhører sannsynligvis samme eier",
+            "Dechiffrering av krypto-slang | Claude / GPT-4 (intern bruk) | Lim inn chatlogg – be AI om å identifisere kryptonavn, prisreferanser, betalingsinstrukser",
+            "Oversettelse av mixer-instruksjoner | Claude (intern bruk) | Dark web-tekst på fremmedspråk – AI-oversetter og trekker ut tekniske steg",
+            "Mønstergjenkjenning i transaksjonsnettverk | Chainalysis Reactor AI | Identifiserer peeling chains, round-amount-transaksjoner og hop-counting automatisk",
+            "Ansiktsgjenkjenning fra exchange-selfie-KYC | PimEyes / FaceCheck (ekstern) | Bruk KYC-bilde fra kjennelse mot åpne kilder – jf. SIS-GEO-10 og Datatilsynets retningslinjer"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "LEGAL",
+          "data": "JURIDISK ADVARSEL – AI og bevisverdi: AI-generert output (inkl. Chainalysis Reactor) er etterforskningsverktøy, ikke bevis i seg selv. Klusteranalyse (UTXO-heuristikk) er probabilistisk – ikke deterministisk. Retten krever at metoden kan forklares og at konklusjonen er underbygget av korroborerende bevis. Dokumenter alltid hvilken versjon av verktøyet som ble brukt og hvilken metode som ble anvendt."
+        }
+      ]
+    },
+    {
+      "id": "s16",
+      "overskrift": "16. OPSEC – Attribusjonsanalyse",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Hva avslører politiets aktivitet hos mistenkte?"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "HANDLING | SPOR HOS MÅL | RISIKO | TILTAK",
+            "Besøk blockchain-explorer | Server-log: IP, User-Agent, tidsstempel | LAV – explorer har ikke mistenktes data | VPN + etterforskningsprofil",
+            "Besøk mistenkts Twitter/X-profil | Profilinnehaver kan se 'views' (ikke IP) | LAV | Bruk sokkedukke-konto uten innlogging",
+            "Søk i krypto-forum etter adresse | Forum-logger IP og søkestreng | MODERAT | VPN + privat søkemodus",
+            "Send test-transaksjon til adresse | Mistenkte ser ny innkommende tx – varsles | KRITISK HØY – aldri gjør dette | Aldri send krypto til mistenkte uten påtaleavklaring",
+            "Sende kjennelse til exchange | Exchange varsler ikke mistenkte (lovpålagt taushetsplikt) | LAV | Inkluder forbud mot varsling i kjennelsen",
+            "IP-logging ved onion-service | Tor skjuler IP – men exit-node kan observeres | MODERAT | VPN+Tor, bruk kjente .onion-adresser"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s17",
+      "overskrift": "17. KRITIKK – Kildekritikk og kryssverifisering",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Blockchain-data er teknisk verifiserbar, men tolkninger kan feile. Krav til to uavhengige kilder gjelder spesielt for identitetskobling."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "FUNNTYPE | TPS-GRADERING | KRAV TIL VERIFISERING",
+            "Lommeboktransaksjon fra offentlig blokkjede | A-1-MODERAT | Verifiserbar i to uavhengige explorere (blockchain.com + blockchair.com). Eksporter CSV + SHA-256 begge steder.",
+            "Adresse i forum-innlegg | C-3-MODERAT | Screenshot + arkivversjon (archive.org). Sjekk at adressen faktisk tilhører poster – ikke andre treff.",
+            "Adresse koblet til e-post via lekkasje | C-2-HØY | Verifiser lekkasjedatasettet (kilde, dato, feltstruktur). Kryss mot separat søk i annen database (Dehashed + IntelX).",
+            "Identitet fra exchange via kjennelse | A-1-KRITISK | Exchange bekrefter under straffansvar. Kryss mot adressekluster i Chainalysis. TPS A-1.",
+            "AI/Chainalysis-klusteranalyse | C-2-HØY (støttende) | Klusteranalyse er sannsynlighetsbasert. Krev korroborerende åpen kilde. Merk som støttebevis, ikke selvstendig bevis."
+          ]
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "Chainalysis Reactor bruker common-input-ownership heuristics: adresser co-spent i samme transaksjon tilhører sannsynligvis samme eier. Dette er statistisk valid, men ikke deterministisk. | Det er som å se to menn alltid reise fra samme stasjon. Det er sannsynlig de bor i samme nabolag – men det er ikke bevist. Du trenger et vitne som sier de bor i samme hus."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s18",
+      "overskrift": "18. LE-GUIDE – Rettslig pålegg og exchange-henvendelser",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "EXCHANGE | PORTAL / E-POST | FORMAT | RESPONSTID",
+            "Coinbase (USA) | coinbase.com/legal/le │ le@coinbase.com | Kjennelse + MLA eller Cloud Act – engelsk | 2–4 uker",
+            "Binance | binance.com/en/legal-enforcement | Kjennelse eller formell LE-forespørsel | 2–6 uker",
+            "Kraken | kraken.com/legal/law-enforcement │ lawenforcement@kraken.com | Kjennelse – engelsk | 2–4 uker",
+            "Firi (NO) | firi.com │ post@firi.com | Strpl. § 210 kjennelse fra norsk tingrett – norsk | 1–2 uker",
+            "NBX (NO) | nbx.com │ support@nbx.com | Strpl. § 210 – norsk, direkte til tingretten i Oslo | 1–2 uker",
+            "Ledger (HW wallet) | ledger.com/law-enforcement │ ledger.com/legal | MLA via franske myndigheter (Ledger HQ Paris, Frankrike) | 4–8 uker",
+            "Trezor (HW wallet) | trezor.io/law-enforcement │ trezor.io/legal | MLA via tsjekkiske myndigheter (SatoshiLabs, Praha) | 4–8 uker"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "KJENNELSESMAL – MINIMUMSKRAV: En kjennelse til exchange bør inneholde: (1) Saksnummer og etterforskningsmyndighet, (2) Spesifikk lommebokadresse eller UID, (3) Tidsrom for etterspurte data, (4) Lovhjemmel (strpl. § 210 + § 217a om taushetsplikt for exchange), (5) Hvilke data som etterspørres: KYC-data, IP-logg, transaksjonshistorikk, kommunikasjon. Se SIS-JUSS-05 for fullstendig mal."
+        }
+      ]
+    },
+    {
+      "id": "s19",
+      "overskrift": "19. JUS – Lovhjemler og juridisk rammeverk",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "HJEMMEL | INNHOLD | BRUKSTILFELLE",
+            "Strpl. § 210 | Utleveringspålegg overfor tredjeparter (inkl. exchange) | KYC-data, transaksjonslogg fra exchange",
+            "Strpl. § 210b | Kommunikasjonsovervåking – trafikkdata fra tilbyder | IP-adresseposter fra ISP, nettverkstrafikk",
+            "Strpl. § 192-196 | Ransaking av bolig/kontor/digitale enheter | Beslaglegge hardware wallet, PC med krypto-lommebok",
+            "Strpl. § 203 | Beslag av formuesgoder | Beslaglegge kryptovaluta – krever privat nøkkel eller exchange-frys",
+            "Strpl. § 217a | Taushetsplikt for exchange ved utleveringspålegg | Hindre at mistenkte varsles om kjennelsen",
+            "Hvitvaskingsloven § 26 | Exchange plikter å rapportere mistenkelige transaksjoner til Økoklim (EFE) | Sjekk om EFE allerede har SAR (Suspicious Activity Report) på adressen",
+            "MiCA / Kryptoeiendelsloven (2025) | KYC-plikt for alle lisensierte exchanges i EØS. Trer i kraft 1. juli 2025 i Norge | Styrker grunnlag for kjennelse – exchange plikter å ha fullstendig KYC",
+            "FATF Travel Rule (TFR II) | Overføringer > 1000 EUR krever avsender- og mottakerinfo lagret av exchange | Krev transaksjonsdata inkl. Travel Rule-informasjon fra exchange"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s20",
+      "overskrift": "20. BEVIS – Krav til integritet, hashing og dokumentasjon",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Bevisintegritet i kryptosaker er kritisk. Blokkjededata er per se uforanderlig, men etterforskningens dokumentasjon av den er ikke det – om den ikke er korrekt bevart."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "STEG | HANDLING | VERKTØY | DOKUMENTASJON",
+            "1 | Ta screenshot av blockchain-explorer | Hunchly (automatisk) | Automatisk URL + tidsstempel i Hunchly-logg",
+            "2 | Eksporter CSV fra explorer | Explorer 'Export'-funksjon | Lagre i saksmappe/originaler/",
+            "3 | Beregn SHA-256 av CSV | Terminal: sha256sum [fil] | Lim SHA-256-verdi inn i Hunchly-note på tilhørende side",
+            "4 | Logg UTC-tidsstempel | Terminal: date -u | Legg til i Hunchly-note – NB: bruk UTC, ikke lokal tid",
+            "5 | Gjenta beregning ved fremleggelse | sha256sum [fil] – sammenlign output | Overensstemmer SHA-256 → fil uendret siden innhenting",
+            "6 | TPS-gradér funnet | Skjønn + SIS-TPS-02 | TPS-gradering i funnrapporten",
+            "7 | Skriv funnrapport | Word-mal (SIS-RAPPORT-13) | Funnrapport med alle felter utfylt",
+            "8 | Kvalitetssikring | Kollega/leder | Signatur i rapport"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "SHA-256 SOM INTEGRITETSSIKRING: SHA-256 av en CSV-fil på 50 KB produserer en 64-tegns hex-streng som er unik for nøyaktig det filinnholdet. Endres én byte – endres hele hashen. Dette beviser at filen ikke er endret mellom innhenting og fremleggelse i retten. Se SIS-HASH-04 for fullstendig metodikk. Terminal-kommando: sha256sum transaksjonsfil.csv │ tee -a hunchly_logg.txt"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "SHA-256 av en CSV-fil på 50 KB produserer en deterministisk 256-bits hash. Kryptografisk kollisjonssikker (SHA-2-familien). Identisk input → identisk output. Én bytes endring → fullstendig annen hash (avalanche-effekt). | Tenk på SHA-256 som å forsegle en konvolutt med lakk og sette fingeravtrykket ditt i den. Enhver som åpner konvolutten – eller endrer innholdet – ødelegger forseglingen. Retten kan verifisere at forseglingen er intakt."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s21",
+      "overskrift": "21. TEKNISK DEKONSTRUKSJON (A–Å)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Nivå 1 – Binært: Rådata og artifacts på laveste nivå"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "ARTEFAKT | HEX / RÅFORMAT | ETTERFORSKNINGSVERDI",
+            "Txid | 64 hex-tegn = 256 bit. Eks: 4a5e1e4b...eda33b (little-endian i rå binær, big-endian i explorer) | Entydig identifikator for transaksjonen – aldri endret",
+            "Privat nøkkel (WIF) | 51-52 tegn Base58. Starter med '5', 'K' eller 'L'. Eks: 5J3mBb...P3A | Gir full kontroll over lommebokens midler – kritisk beslag",
+            "Seed phrase (BIP-39) | 12 eller 24 ord fra 2048-ord ordliste. Eks: 'abandon ability able...' | Rekonstruerer alle adresser og private nøkler – primært beslagsmål",
+            "Blokkheader (80 bytes) | Version(4) + PrevHash(32) + MerkleRoot(32) + Time(4) + Bits(4) + Nonce(4) | Bevisgrunnlag for blokkens eksistens og tidsstempel",
+            "UTXO (LevelDB) | Txid:vout → Amount+ScriptPubKey lagret i chainstate-database | Beslaglegge fullnode: kopier chainstate-mappe for offline analyse",
+            "ERC-20 Transfer Event | keccak256('Transfer(address,address,uint256)') = ddf252... (topic[0] i Ethereum-logg) | Identifiserer token-overføringer i ETH-transaksjoner"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Nivå 2 – Arkitektur: Internett og protokolloppbygging\n\nBitcoin-nettverket er et peer-to-peer-nettverk der alle noder er likeverdige. En transaksjon broadcastes via gossip-protokoll og inkluderes i en blokk etter proof-of-work mining. Blokkene er kryptografisk lenket via SHA-256(SHA-256(blokkheader)) – endring av én blokk krever å endre alle etterfølgende blokker, noe som er praktisk umulig med 19 000+ noder som validerer.\n\nEthereum fungerer annerledes: kontomodellen lagrer saldo direkte på adresse. Smartkontrakter er Turing-komplett kode deployet på blokkjeden. DeFi-protokoller (Uniswap, Tornado Cash) er smartkontrakter som kan flytte midler via interaksjonsmønstre som er vanskeligere å spore lineært – men fortsatt synlige på blokkjeden."
+        },
+        {
+          "type": "callout",
+          "kind": "TIP",
+          "data": "Nivå 3 – Helhet: Strategisk verdi i etterforskningen\n\nBlokkjeden er etterforskerens beste venn – og verste fiende. Best venn: Alle transaksjoner er permanente og offentlige. Bevis kan aldri slettes. Kriminelle kan ikke fornekte at pengene ble overført – det er på blokkjeden. Verste fiende: Pseudonymitet gjør identifikasjon vanskelig. Mixere og DeFi fragmenterer sporbarhet. Monero gjør on-chain sporing umulig. Privacy-bevisste kriminelle bruker lag-på-lag-obfuskering.\n\nNøkkelprinsippet: Enhver kriminell som veksler mellom krypto og fiat (NOK/USD) – enten via exchange, P2P-handel eller minibank – skaper et sporbart knutepunkt. Finn knutepunktet, og identiteten er nær."
+        }
+      ]
+    },
+    {
+      "id": "s22",
+      "overskrift": "22. KOMPLETT VERKTØYOVERSIKT – Oppdatert 2026",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "VERKTØY | FUNKSJON | TILGANG | URL",
+            "blockchain.com/explorer | Bitcoin-utforsker – transaksjoner, adresser, blokker | Gratis | blockchain.com/explorer",
+            "etherscan.io | Ethereum-utforsker – ETH og ERC-20 tokens | Gratis | etherscan.io",
+            "blockchair.com | Multi-krypto: BTC, ETH, LTC, BCH, XMR m.fl. + CSV-eksport | Gratis (API: rate-limited) | blockchair.com",
+            "mempool.space | Bitcoin mempool – ubekreftede tx, sanntids fee-estimat | Gratis | mempool.space",
+            "xmrchain.net | Monero-utforsker (viser struktur, men ikke innhold) | Gratis | xmrchain.net",
+            "IntelX | Lekkasje- og dark web-søk etter adresse, e-post, brukernavn | Abonnement (politipris) | intelx.io",
+            "Dehashed | Lekkasjesøk – e-post, passord, adresse | Abonnement | dehashed.com",
+            "Chainalysis Reactor | Profesjonell blokkjedesporing, klusteranalyse, 134k+ enheter | Politilisens | chainalysis.com",
+            "Chainalysis Rapid | AI-triage for LE – klartekst-innsikt uten kryptoekspertise | Politilisens (inkl. Reactor) | rapid.chainalysis.com",
+            "TRM Labs | Blokkjedesporing, 25+ kjeder, krysslenke-sporing | Politilisens | trmlabs.com",
+            "Elliptic Navigator | Sporing og risikovurdering – brukt av Europol | Politilisens | elliptic.co",
+            "Maltego + krypto | Grafbasert etterforskning – pivot fra adresse til nettverk | Politilisens + datapakke | maltego.com",
+            "Hunchly | Bevisinnsamling og SHA-256 logging | Abonnement | hunch.ly",
+            "Cellebrite (integr.) | Device forensics – ekstraherer krypto-wallets fra enhet | Politilisens | cellebrite.com",
+            "4byte.directory | EVM funksjonssignatur-database for ABI-dekoding | Gratis | 4byte.directory",
+            "CryptoScamDB | Database over kjente svindel-adresser | Gratis | cryptoscamdb.org"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s23",
+      "overskrift": "23. TPS-GRADERING OG DOKUMENTASJON",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "FUNNTYPE | TPS | BEGRUNNELSE",
+            "Lommeboktransaksjon fra blokkjede | A-1-MODERAT | Offentlig register – teknisk uforanderlig og verifiserbar. Pseudonym – ikke direkte personidentifiserende.",
+            "Adresse koblet til e-post via lekkasjedatabase | C-2-HØY | Teknisk kobling mellom pseudonym og e-post. Kilde kan være uryddig – verifiser lekkasjesettet.",
+            "Adresse funnet i forum-innlegg | C-3-MODERAT | Offentlig, men ukonfirmert tilknytning. Kan være spoofet eller delt av annen bruker.",
+            "Identitet fra exchange via kjennelse (strpl. § 210) | A-1-KRITISK | Sterk bevisverdi. Exchange bekrefter under straffansvar. Sensitiv persondata – TPS A-1.",
+            "AI-/klusteranalyse (Chainalysis) | C-2-HØY (støttende) | Probabilistisk – ikke deterministisk. Bruk som støttebevis kombinert med åpen kilde.",
+            "IP-adresse fra node-broadcasting | B-2-HØY | Teknisk, men VPN/Tor kan gi feil bilde. Kryss mot annen kilde.",
+            "Seed phrase / privat nøkkel (beslag) | A-1-KRITISK | Direkte tilgang til midler. Entydig eierbevis. Beslagleg og sperr umiddelbart."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s24",
+      "overskrift": "24. REFERANSER – SIS-SERIEN OG KILDER",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "DOK-ID | TITTEL | BRUKSOMRÅDE",
+            "SIS-PIAR-01 | PIAR-metodikk | Metodisk rammeverk og arbeidsflyt",
+            "SIS-TPS-02 | TPS-modellen | Kildekritikk og gradering",
+            "SIS-PIVOT-03 | Pivå-metodikk | Fra funn til ny søkesyklus",
+            "SIS-HASH-04 | Hashing og SHA-256 | Bevisintegritet og dokumentasjon",
+            "SIS-JUSS-05 | Juridisk rammeverk | Hjemler og lovlige grenser",
+            "SIS-OPSEC-06 | OPSEC og digital hygiene | Sikker etterforsker-ID og miljø",
+            "SIS-SELER-07 | Selektorer og identifikatorer | Inngangsverdier og søkevektorer",
+            "SIS-LEAK-08 | Datalekkasjer og -brudd | Lekkasjesøk fra A til Å",
+            "SIS-SOSMED-09 | Sosiale medier – generell metodikk | Felles fremgangsmåte alle plattformer",
+            "SIS-GEO-10 | Geolokasjon og bildeanalyse | EXIF, skygge, kronolokasjon",
+            "SIS-DARK-11 | Mørk web – grunnmetodikk | Tor, .onion, juridiske grenser",
+            "SIS-KRYPTO-12 | Kryptovaluta-etterforskning | Blokkjedesporing, lommebokanalyse (dette dokumentet)",
+            "SIS-RAPPORT-13 | Rapportmal og beviskjede | Standardmal, funnrapport, egenrapport",
+            "SIS-MINOR-14 | Mindreårige i digitale saker | VaaS, barnevernloven, særlige krav"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Tekniske referanser\n\nBitcoin Protocol: bitcoin.org/bitcoin.pdf (Satoshi Nakamoto, 2008)\nUTXO-modellen: learnmeabitcoin.com/technical/transaction/utxo/\nChainalysis Reactor 2025: chainalysis.com/product/reactor/\nChainalysis Rapid (AI-triage): chainalysis.com/product/rapid/\nMiCA / Kryptoeiendelsloven: Regulation (EU) 2023/1114 – implementert i Norge 1. juli 2025\nNorsk kryptoregulering 2025: globallegalinsights.com/.../norway/\nArchetyp Market (Monero) – Europol/DOJ, juni 2025: europol.europa.eu\nNorsk blokkjedesporing – Økokrim/Axie Infinity: theregister.com (februar 2023)"
+        },
+        {
+          "type": "paragraph",
+          "data": "KRYPTOVALUTA-ETTERFORSKNING │ Dok-ID: SIS-KRYPTO-12 │ Versjon 2.0 │ April 2026\nØst politidistrikt │ Spesialetterforsker Trygve Justad Bjørntvedt │ UNNTATT OFFENTLIGHET"
         }
       ]
     }
