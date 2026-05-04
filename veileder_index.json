@@ -4,16 +4,24 @@
     "tittel": "OP: FOTAVTRYKK"
   },  
   {
-    "id": 05,
+    "id": 5,
     "tittel": "TPS"
   },
   {
     "id": 11,
     "tittel": "BRÅK på person"
+  },  
+  {
+    "id": 13,
+    "tittel": "P I A R"
   },
   {
     "id": 15,
     "tittel": "SØKEMOTORER"
+  },  
+  {
+    "id": 20,
+    "tittel": "Telefonnummer"
   },
   {
     "id": 21,
@@ -54,32 +62,9 @@
   {
     "id": 44,
     "tittel": "AI & BRÅK"
-  },{
+  },
+  {
     "id": 48,
     "tittel": "SIGNAL"
-  },
-  {
-    "id": 40,
-    "tittel": "test1"
-  },
-  {
-    "id": 45,
-    "tittel": "Test2"
-  },
-  {
-    "id": 46,
-    "tittel": "Test3"
-  },
-  {
-    "id": 47,
-    "tittel": "test4"
-  },
-  {
-    "id": 49,
-    "tittel": "test5"
-  },
-  {
-    "id": 50,
-    "tittel": "test6"
   }
 ]
