@@ -1,6 +1,6 @@
 {
-  "tittel": "Metodisk støttedokument for etterforskning i Discord med åpne kilder",
-  "undertittel": "DISCORD – KOMPLETT OSINT-METODIKK",
+  "tittel": "Metodisk støttedokument for etterforskning i Telegram med åpne kilder",
+  "undertittel": "TELEGRAM-ETTERFORSKNING – Plattform · Kryptering · Emoji-kode · OSINT · Ungdomsbruk · LE-protokoll",
   "ordliste": [],
   "seksjoner": [
     {
@@ -10,776 +10,746 @@
         {
           "type": "grid",
           "data": [
-            "Dokument-ID | SIS-DISCORD-15",
-            "Serie | Spor i skyen – Metodisk grunnlag for etterforskning i åpne kilder",
-            "Versjon | 2026.1 – Oppdatert med Discord September 2025-brudd, aldersverifisering feb. 2026, LE-portal mai 2025",
+            "Dok-ID | SIS-TELEGRAM-17",
+            "Versjon | 1.0 – April 2026",
+            "Status | AKTIV",
             "Produsert av | Spesialetterforsker Trygve Justad Bjørntvedt, Øst politidistrikt",
-            "Klassifisering | UNNTATT OFFENTLIGHET – Kun til internt politibruk",
-            "Primærkilder | SIS-DISCORD-15 v1 (prosjektarkiv), Discord offisiell LE-guide (mai 2025), Discord Safety Transparency Hub"
+            "Gradering | UNNTATT OFFENTLIGHET – Kun til internt politibruk",
+            "TLP | TLP:AMBER",
+            "Primærkilder | SIS-TELEGRAM-10, core.telegram.org, LE-transparensrapport 2024/2025, Emoji-politirapport"
           ]
         }
       ]
     },
     {
       "id": "s01",
-      "overskrift": "SEKSJON 0 – AI-VEKTING / MASTER HEADER",
+      "overskrift": "DEL 1 — HVA ER TELEGRAM OG HVORDAN BRUKES DET?",
       "komponenter": [
         {
-          "type": "callout",
-          "kind": "WARNING",
-          "data": "KRITISK FAKTA: Discord er IKKE ende-til-ende-kryptert i standard DM. Discord Inc. (San Francisco) kan lese og utlevere alle meldinger. Snowflake-ID avslører nøyaktig opprettelsestidspunkt ned til millisekund. LE-portal oppdatert mai 2025. September 2025: 70 000 gov-ID-bilder lekket via Zendesk-brudd. Standard DM ≠ E2EE. Discord har nøkkelen."
+          "type": "paragraph",
+          "data": "1.1 Plattformoversikt og brukermasse\n\nTelegram i tall (april 2026): 1 milliard månedlig aktive brukere. 500 millioner daglig aktive brukere. Tredje mest populære meldingsapp globalt etter WhatsApp og WeChat. Over 15 millioner Premium-abonnenter.\n\nPrimær demografi: Alder 18–34 år dominerer (53,5% av brukerne). 56,8% menn, 43,2% kvinner. Sterk vekst blant unge i Norden, Øst-Europa, Midtøsten og Sørøst-Asia."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Kommunikasjonstype | Beskrivelse | Maks størrelse | Kryptering",
+            "Direktemelding (sky) | 1-til-1 chat lagret i Telegrams sky. Tilgjengelig på alle enheter | — | MTProto 2.0. Telegram-server HAR nøkkel",
+            "Secret Chat | Enhet-til-enhet E2EE. Sluttidspunkt innstilles av bruker | — | Diffie-Hellman 2048-bit. Server ser ALDRI innhold",
+            "Gruppe | Chatrom for opptil 200 000 medlemmer | 200 000 mdl. | MTProto 2.0 — IKKE E2EE",
+            "Supergruppe | Avansert gruppe m/admin-funksjoner, threads og polls | 200 000 mdl. | MTProto 2.0 — IKKE E2EE",
+            "Kanal (channel) | Sendingskanal — admin poster, følgere leser | Ubegrenset | MTProto 2.0 — IKKE E2EE",
+            "Bot | Automatisert konto via Bot API (HTTPS/JSON) | — | HTTPS TLS — ikke MTProto",
+            "VoIP-anrop | Kryptert tale/videosamtale | — | DTLS-SRTP. Emoji-fingerprint for verifisering",
+            "Forum (Topics) | Trådbasert diskusjon i grupper (innført 2022) | 200 000 mdl. | Som supergruppe"
+          ]
         },
         {
           "type": "paragraph",
-          "data": "BINÆRT FUNDAMENT: Snowflake-ID: 64-bit integer. Bit 63–22 = ms siden Discord-epoch (1.1.2015). Dekod: ID >> 22 + 1420070400000 = UNIX ms. WebSocket payload = JSON. CDN-URL: ?ex=[hex UNIX utløp]&is=[hex UNIX utstedt]&hm=[HMAC]. API v10. Alle Discord-entiteter har Snowflake – tid er alltid kjent."
+          "data": "1.2 Ungdommens bruk av Telegram i Norge\n\nHvorfor unge velger Telegram: Telegram er blitt det foretrukne kommunikasjonsverktøyet for norsk ungdom i kriminelle miljøer fordi: (1) ingen reklamesporing, (2) store grupper tillatt, (3) filoverføring uten begrensning, (4) anonyme kanaler uten registrert profil for lesere, og (5) lett tilgjengelig for koordinering av sosiale aktiviteter."
         },
         {
-          "type": "paragraph",
-          "data": "METODISKE MIKROSTEG: 1. VM + VPN + sokkedukke FØR innlogging. 2. Brukernavn → OSINT Industries, cord.cat, top.gg. 3. Snowflake-dekod alle IDer. 4. Invite-API-kall (ingen innlogging). 5. HIBP + IntelX. 6. Developer Mode → Kopier ID. 7. History Tracker. 8. SHA-256 per funn. 9. LE-portal (oppdatert mai 2025)."
-        },
-        {
-          "type": "paragraph",
-          "data": "Alle tekniske opplysninger er etterprøvbare mot Discords offisielle API-dokumentasjon, transparency hub og LE-guide oppdatert mai 2025. Siste relevante hendelse: Discord aldersverifisering utsatt til 2. halvår 2026 (kunngjort 25. feb. 2026)."
+          "type": "grid",
+          "data": [
+            "Bruksmønster | Beskrivelse | Etterforskningsrelevans",
+            "Vennegrupper | Koordinering av sosiale aktiviteter, fester, møtesteder. Typisk 5-20 deltakere | Etablerer sosiale nettverk og relasjoner. TPS: B-kilde",
+            "Klassegrupper | Skolekoordinering. Brukes til deling av oppgaver, beskjeder og sosialt innhold | Bekrefter alder, skole og lokasjon. TPS: A-kilde ved skoleadmin",
+            "Salgskanaler (narkotika) | Krypterte emojimeldinger. Typisk én-veis kanal + privat DM for ordre | Høy etterforskningsverdi — se emoji-seksjon",
+            "Spillgrupper | Gaming-koordinering (Fortnite, CS2, Minecraft m.fl.). Stort engasjement hos gutter 12-18 | Avslører brukermønstre og relasjoner",
+            "Ekstremistiske grupper | Politisk radikalisering via kanaler og grupper. Voksende problem blant unge menn | Høy prioritet — Strpl. §§ 147a-147c",
+            "Ulovlig innholdsdeling | CSAM, tyvegods-bilder, vold-videoer. Typisk lukkede grupper m/invitelenke | KRITISK — se SIS-MINOR-14. Straks rapport til NCMEC/Kripos",
+            "Mobbing-grupper | Grupper for å spreie ydmykende bilder og meldinger om medelever | Straffbart: strl. §§ 267-269 (ærekrenkelse, privat sfære)"
+          ]
         }
       ]
     },
     {
       "id": "s02",
-      "overskrift": "SEKSJON 1 – DISCORD: PLATTFORM, OPPBYGGING OG UNGDOMSATFERD",
+      "overskrift": "DEL 2 — 20 TEKNISKE KRAV (KT-01 til KT-20)",
       "komponenter": [
         {
           "type": "paragraph",
-          "data": "1.1 Hva er Discord – og hvorfor er det viktig for politiet?\n\nDiscord er en skybasert kommunikasjonsplattform opprinnelig designet for gamere (lansert 2015), men som i 2026 er en masseplattform med over 700 millioner registrerte brukere. Plattformen kombinerer tekst-, tale- og videomelding i organiserte 'servere' (private samfunn). Discord er særlig populært blant 13–30-åringer og er i 2026 en primærplattform for kriminelle nettverk, radikalisering, narkotikahandel og CSAM-distribusjon – ved siden av sin legitime bruk.\n\nDiscord er IKKE kun en spillkommunikasjonsapp. Det er i 2026 en generell kommunikasjonsinfrastruktur der kriminelle nettverks rekruttering, koordinering og pengetransaksjoner i stor grad foregår."
-        },
-        {
-          "type": "paragraph",
-          "data": "1.2 Plattformens oppbygging – servere, kanaler og roller"
+          "data": "KT-01 | DEFINISJON: Juridisk og teknisk kategorisering"
         },
         {
           "type": "grid",
           "data": [
-            "Komponent | Beskrivelse | Etterforskningsverdi",
-            "Server (Guild) | Privat eller offentlig fellesskap med opptil 250 000 brukere. Organisert i kanaler. | Snowflake-ID avslører opprettelsesdato. Admin/eier kan utleveres via LE-forespørsel.",
-            "Kanal | Tekstkanal, talekanal, videkanal eller forumkanal innenfor en server. | Kanalens Snowflake avslører opprettelsesdato. Meldingshistorikk bevares inntil sletting.",
-            "DM (Direct Message) | 1-til-1 privat melding mellom to brukere. | Ikke E2EE i standard. Discord kan utlevere innhold med kjennelse.",
-            "GDM (Group DM) | Privat gruppemelding med opptil 10 brukere. | Samme krypteringsstatus som DM – ikke E2EE standard.",
-            "Rolle (Role) | Admin-definerte tilgangsnivåer innenfor en server. | Avslører hierarki – hvem er admin/moderator/rekrutterer.",
-            "Bot | Automatisert konto som utfører funksjoner i server. | Bot-token kobler til eier-konto – kan spores via API.",
-            "Invitasjonslenke | discord.gg/[kode] gir tilgang til server. | API-kall avslører server-ID, navn og Snowflake til skaperen.",
-            "Thread | Undersamtale i en tekstkanal. | Egne Snowflake-IDer – eget meldingshistorikk."
+            "Kategori | Klassifisering | Teknisk detalj",
+            "Juridisk kategori | Elektronisk kommunikasjonstjeneste (EKS) | Regulert av ekomloven og GDPR i Norge. Telegram er ikke underlagt norsk telelovgivning direkte.",
+            "Arkitekturtype | Hybrid sky/klient — primært sentralisert sky | Meldinger sendes via Telegrams skytjenere (ikke P2P). Secret Chat er enhet-til-enhet via Telegrams signalering.",
+            "Protokoll | MTProto 2.0 (proprietær) | Egenutviklet av Telegram. Klient-til-server. Bruker TCP/443 eller UDP/443.",
+            "Chattype: standard | Klient-server AES-256-IGE | Telegram-server har nøkkelen. IKKE E2EE.",
+            "Chattype: Secret Chat | E2EE via Diffie-Hellman 2048-bit | Nøklene er KUN på klientenhetene. Server ser ALDRI innhold.",
+            "Chattype: gruppe/kanal | Klient-server kryptering. ALDRI E2EE | Offentlige kanaler kan leses uten konto via t.me/s/[navn]",
+            "Bot API | HTTPS REST API med JSON-svar | Bot-tokens: Bearer-tokens i HTTP-header. Format: 123456:ABCdefGHI...",
+            "VoIP/Video | DTLS-SRTP (WebRTC-lignende) | Emoji-fingerprint (4 tegn) for manuell verifisering av samtalepartner"
           ]
         },
         {
           "type": "paragraph",
-          "data": "1.3 Ungdomsatferd og kriminell bruk på Discord\n\nDiscord er ungdommens primære kommunikasjonskanal for gaming, men er i kriminelle miljøer brukt til:"
+          "data": "KT-02 | HISTORIKK: Tidslinje over versjoner og datalagring"
         },
         {
           "type": "grid",
           "data": [
-            "Kriminalitetskategori | Discord-bruksmønster | OSINT-strategi",
-            "Narkotikahandel | Åpne servere med 'plug'-kanaler og DM-salg via emoji-koder | Kanalanalyse + emoji-dekoding (Claude/AI)",
-            "Svindel/phishing | Koordinering av phishing-kampanjer, salg av kompromitterte kontoer | Server-kartlegging + lekkasjesøk (HIBP, IntelX)",
-            "CSAM-distribusjon | Private servere med rollebasert tilgang – invitasjonslenker deles i andre kriminalfora | Invite-analyse + LE-forespørsel (preservation request umiddelbart)",
-            "Radikalisering | Høyreekstreme/islamistiske servere med gradert tilgang | Passiv observasjon + server-kartlegging",
-            "Ransomware/cyberkriminalitet | Koordinering av angrep, salg av malware og RAT-verktøy | Brukernavnpivå til GitHub, hacker-forum",
-            "Grooming | Voksne kontakter mindreårige via gaming-servere | Særlig OPSEC-krav – se SIS-MINOR-14"
+            "Dato | Hendelse | Konsekvens for etterforskning",
+            "Aug 2013 | Telegram lanseres (iOS). MTProto 1.0 | MTProto 1.0 er nå utfaset. SHA-1 sårbart — ikke relevant for aktive saker",
+            "2014 | Grupper opptil 200 brukere | Gruppe-chatter lagres sentralt — tilgjengelig via LE-forespørsel",
+            "Des 2017 | MTProto 2.0 (v4.6) — SHA-256 erstatter SHA-1 | Forbedret sikkerhet. SHA-256 for msg_key-derivasjon",
+            "2018 | Kanaler og supergrupper (200 000) | Massiv offentlig innholdsmengde tilgjengelig for OSINT",
+            "2020 | Meldingssletting for alle — 'Delete for Everyone' | Slettede meldinger forsvinner fra sky — men kan finnes i cache4.db",
+            "Mars 2021 | 500 millioner månedlige brukere. 500M-lekkasje | Telefonnummer, bruker-ID, land, fornavn for 500M brukere eksponert",
+            "2022 | Topics/Forum-funksjon i supergrupper | Trådbasert kommunikasjon i grupper — nye OSINT-muligheter",
+            "2022 | Fragment.com lanseres — kjøp av +888-numre med TON | Anonyme Telegram-kontoer uten ekte SIM mulig. Utfordring for LE",
+            "Juni 2022 | Stories-funksjon lanseres | Bilder og video som forsvinner — ny kanal for ungdomskommunikasjon",
+            "2023 | Telegram Premium (2 GB filer, boost, stickers) | Større filer overføres — økt kapasitet for ulovlig innholdsdeling",
+            "Aug 2024 | Pavel Durov arrestert i Frankrike (Le Bourget) | Trigger for politikkendring — Telegram endrer LE-samarbeid",
+            "Sep 2024 | KRITISK: Telegram endrer LE-policy | Utleverer nå IP og telefon ved rettskjennelse i ALLE straffesaker, ikke kun terror",
+            "Q4 2024 | 900 US-LE-forespørsler, 14 641 India-forespørsler besvart | Bevis på endret samarbeid. Norske forespørsler via MLAT/Kripos",
+            "Jan 2026 | Telegram passerer 1 milliard månedlige brukere | Platformen vokser — etterforskning av norske brukere øker",
+            "Apr 2026 | Telegram Stars (betalingssystem) og e-handel | Ny finansiell infrastruktur på plattformen — kryptovaluta og betaling"
           ]
         },
         {
           "type": "paragraph",
-          "data": "1.4 Emoji-kommunikasjon mellom brukere\n\nDiscord-brukere, særlig i kriminelle miljøer, bruker emoji som et kodifisert kommunikasjonssystem. Dette er ikke tilfeldig – det er systematisk obfuskering designet for å unngå automatisk tekstfiltrering og gjøre innhold vanskeligere å tolke for utenforstående."
+          "data": "KT-03 | EIER/LOV: Juridisk enhet og lagringslovgivning"
         },
         {
           "type": "grid",
           "data": [
-            "Emoji | Kriminell kontekst | Klar tekst | Kategori",
-            "🌿 / 🍃 | Cannabis-salg | Gress / marijuana | Narkotika",
-            "❄️ / 🤧 | Kokain-salg | Snø / kokain | Narkotika",
-            "🍄 | Sopp / psilocybin-salg | Psilocybin-sopp | Narkotika",
-            "💊 / 🍬 | Piller – opiater/benzo | Piller/tabletter | Narkotika",
-            "🔫 / 🍌 | Våpen | Pistol (🍌 = kode) | Vold/våpen",
-            "🏧 / 💸 | Pengetransaksjoner | ATM / kontanter | Hvitvasking",
-            "📦 / 📫 | Forsendelse | Pakke i post | Narkotikalevering",
-            "🧢 | Selger/dealer | 'Cap' = begrensning eller kode | Narkotika",
-            "👀 | Tilgjengelig/åpen for salg | 'Eyes' = ser/observer | Generell kode",
-            "✅ / ☑️ | Transaksjonsbekreftelse | Godkjent/bekreftet | Generell kode",
-            "🔒 / 🛡️ | Privat/sikker kanal | Sikkerhet | OPSEC",
-            "W / L | Vinn/tap – godkjent/avvist | Win/Loss | Gamer-slang overført til krim"
+            "Parameter | Detalj",
+            "Juridisk enhet | Telegram FZ-LLC — Dubai, UAE (De forente arabiske emirater)",
+            "Offisiell adresse | Telegram FZ-LLC, Level 41, Emirates Towers, Sheikh Zayed Road, Dubai, UAE",
+            "EU/EØS-representant | Telegram Germany GmbH, Pappelallee 78/79, 10437 Berlin, Tyskland",
+            "Grunnlegger | Pavel Durov (russisk-fransk statsborger, nå bosatt i Dubai)",
+            "Lagringslov (UAE) | UAE Cybercrime Law 5/2012 + ICT regulering. Mye svakere personvern enn GDPR",
+            "GDPR-plikt | Telegram er underlagt GDPR for europeiske brukere. EU DPA-tilsyn via Irland/Tyskland",
+            "US Cloud Act | Gjelder IKKE direkte — Telegram er ikke US-selskap. MLAT kreves for EU/US-samarbeid",
+            "Norsk ekomlov | Telegram er ikke underlagt norsk ekomlov direkte. Norsk politi må gå via Kripos og MLAT",
+            "Transparensrapport | Publiseres på Telegram.org. Q4 2024: 14 641 India-forespørsler, 900 USA-forespørsler besvart",
+            "LE-policy endring | September 2024: Telegram utleverer nå IP + telefon ved rettskjennelse i ALLE straffesaker"
           ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-04 | TEKNOLOGI: Stack og dataflyt\n\nKlientarkitektur: Telegram-klientene (iOS, Android, Desktop) kommuniserer med Telegrams servere via MTProto 2.0-protokollen over TCP/443 eller UDP/443. Alt innhold krypteres av klienten FØR sending."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Teknologi-lag | Stack-komponent | OSINT-relevans",
+            "Meldingsprotokoll | MTProto 2.0 (proprietær). TL (Type Language) serialisering | Binær serialisering. cache4.db inneholder TL-serialiserte BLOB-data",
+            "Transportlag | TCP/443 (primær). UDP/443 (fallback). TLS-innpakning | Telegram-trafikk ser ut som HTTPS — vanskelig å blokkere",
+            "Serversystem | Linux-servere. PostgreSQL/MySQL for brukerdata (ikke bekreftet) | DC-ID (1-5) avslører brukerens registreringsregion",
+            "Medialagring | Distributert CDN. Media-ID er global referanse til fil | Media-ID kan brukes til å finne delt media på tvers av chatter",
+            "Bot API | HTTPS REST + JSON. Webhooks støttet | JSON-svar inneholder alle metadata om meldinger, brukere og grupper",
+            "Telegram Web (app) | React-basert SPA. web.telegram.org/k/ (ny) og /a/ (gammel) | Hunchly fungerer med web.telegram.org. Logg alle sidevisninger",
+            "TON blockchain | The Open Network — integrert kryptovaluta | Fragment.com: kjøp av +888-numre. Telegram Stars: betaling",
+            "Klientdatabasen | SQLite (cache4.db på Android/iOS). Proprietær format | BLOB-deserialisering krever Oxygen Forensic eller Belkasoft X"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-05 | KRYPTERING: Algoritmer og nøkkelhåndtering"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Chattype | Kryptering | Nøkkelholder | LE-tilgang",
+            "Sky-chat (standard) | AES-256-IGE (Infinite Garble Extension). msg_key = SHA-256 av nøkkel + melding | Telegram-server. Nøklene lagres på DC-serverne | JA — siden sep. 2024 ved rettskjennelse",
+            "Secret Chat | Diffie-Hellman 2048-bit. Session-nøkler kun på enhetene | KUN klientenhetene. Telegram-server har aldri tilgang | NEI — E2EE. Kun beslag av enhet gir tilgang",
+            "Gruppe/Kanal | AES-256-IGE via MTProto 2.0. Klient-server | Telegram-server. Som sky-chat | JA — ved rettskjennelse",
+            "VoIP/Video | DTLS-SRTP. Emoji-fingerprint for autentisering | Klientene. End-to-end for lyd og video | NEI — E2EE for selve samtalen",
+            "Lokal cache | SQLite AES-256 (passcode-kryptert). Varierer per OS | Brukerens enhet. Passord-beskyttet | KUN via beslaglagt enhet + passordcracking",
+            "Bot-kommunikasjon | HTTPS TLS 1.3 mellom bot og Telegram API | Telegram API-servere. HTTPS-kryptering | JA — Telegram-server har alle bot-meldinger"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-06 | UNIK-ID: Telegram-identifikatorer"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "ID-type | Format | Egenskaper | OSINT-verdi",
+            "Telegram user_id | int64 — opptil 19 sifre. Eks: 1234567890 | PERMANENT. Endres aldri selv om brukernavn/telefon endres | Primær selektor for pivå. A-kilde for identifikasjon",
+            "Brukernavn (@handle) | Alfanumerisk, 5-32 tegn, @-prefiks. Eks: @aliasname | IKKE permanent. Kan endres av bruker | Søkbar men ikke pålitelig over tid",
+            "Telefonnummer (MSISDN) | E.164: +4790123456 | Kobles til user_id ved registrering | Sterk identifikator — krever strpl. § 216b for innhenting fra Telegram",
+            "Kanal/Gruppe-ID | Negativt 64-bit integer. Eks: -1001234567890 | Permanent per kanal. -100 prefix for supergrupper | Brukes i API-kall og invite-linker",
+            "Meldings-ID | Sekvensielt heltall per kanal/chat | ID=1 = første melding. Tidsstempel kalkulerbar via ID | Tidsfesting: lav ID = tidlig i kanal-historikk",
+            "DC-ID | 1, 2, 4 eller 5 | Avslører opprinnelig registreringsregion. DC1=USA, DC2/4=Europa, DC5=Asia | Indikerer brukerens geografiske tilhørighet",
+            "Bot-token | Format: [bot_id]:[hash]. Eks: 123456:ABCdef... | Autentiserer bot mot API. Aldri eksponér bot-token! | Kompromittert token = full kontroll over boten",
+            "Fragment +888-nummer | Anonymt Telegram-nummer kjøpt med TON-kryptovaluta | Kobler ikke til ekte SIM. Sporing via TON blockchain | TON-blockchain-analyse kan avdekke wallet-eier"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-07 | LEKKASJE: Navngitte datasett og emoji-kommunikasjon som kode\n\nLekkasjedatasett"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Datasett | År | Eksponerte felt | Søk via",
+            "Telegram 500M Phone Numbers | 2021 | Telefonnummer, user_id, land, fornavn — 500 millioner brukere | IntelX.io, Dehashed, haveibeenpwned.com",
+            "Telegram combo-lister (løpende) | 2022–2026 | Telefon + user_id + brukernavn i CSV. Distribuert via TG-kanaler | IntelX.io, spesialiserte LE-verktøy",
+            "Rockyou2024 (TG-distribuert) | 2024 | 9,9 mrd. passord i klartekst — distribuert via Telegram | Kun passordanalyse — ikke direkte søkbart",
+            "MOAB (Mother Of All Breaches) | Jan 2024 | 26 mrd. records inkl. Telegram-data | IntelX.io, HIBP",
+            "Russiske combo-lister via TG | 2022–2024 | E-post, passord, Telegram-brukernavn i CSV | IntelX.io, spesialiserte LE-verktøy",
+            "Telegrammed (BTC/DarkWeb) | Løpende | Telegram-bruker-IDer koblet til kryptovalutaadresser | On-chain analyse + IntelX"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Emoji som kriminell kommunikasjonskode på Telegram\n\nBakgrunn: Bruk av emojier som kodet kommunikasjon er dokumentert i norsk politipraksis og internasjonalt. Telegram er den primære plattformen for organisert narkotikasalg via emoji-kode i 2026. Se politirapporten 'Emoji, språk og narkotika' for fullstendig gjennomgang."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Emoji | Kjent kode-betydning | Kontekst | TPS-vurdering",
+            "🍃 (blad) | Hasj, cannabis generelt | Brukt som varekategori i salgsmeldinger | P=2 kontekstuell — må krysssjekkes",
+            "🌿 (plante) | Marihuana/urter | Brukt av selgere som betegner produkt | P=2 kontekstuell",
+            "❄️ (snøflak) | Kokain | Vanlig i salgsannonser. Av og til kombinert med 💎 | P=2 kontekstuell",
+            "🎱 (biljardball) | Kokain (8-ball = 3,5 gram) | Spesifikk mengde-kode for kokain | P=1 med støttekontekst",
+            "🔮 (krystallkule) | MDMA/ecstasy (krystall-form) | Brukt av syntetiske stoff-selgere | P=2 kontekstuell",
+            "💊 (pille) | Tabletter generelt (Rivotril, Xanax, tramadol) | Kan referere til legale og illegale tabletter | P=3 — kontekst avgjørende",
+            "🍄 (sopp) | Psilocybin-sopp (magiske sopper) | Psykedelika-kategori | P=2 kontekstuell",
+            "🏔️ (fjell) | Methamfetamin (crystal meth) | Refererer til 'ice' eller 'crystal' via snøtopp | P=3 — sjeldnere i Norge",
+            "🦁 (løve) | Sterk/kvalitetsvare. Kan referere til bestemt leverandør | Merke-emoji for kjent selger | P=3 — meget kontekstuell",
+            "📦 (pakke) | Levering/forsendelse tilgjengelig | Brukes når vare er klar for salg | P=2 med kontekst",
+            "📍 (pin) | Drop-sted — geografisk levering | Kombinert med adresse eller koordinater | P=1 med PIN-koordinater",
+            "🏠 (hus) | Levering hjemme / møte hjemme | Brukes i DM-koordinering av møtested | P=2 kontekstuell",
+            "🚀 (rakett) | Rask levering eller sterk effekt | 'Rocket quality' — sterk vare | P=3 — kontekstuell",
+            "💰 / 💵 (penger) | Pris eller betaling-forespørsel | Standard i forhandlinger | P=2 kontekstuell",
+            "🤝 (håndtrykk) | Deal er gjort / avtale bekreftet | Avslutning av handel | P=1 i kjøp/salgskontekst",
+            "👃 (nese) | Innsniffer-referanse — kokain | Kroppsdel-emoji som produktreferanse | P=2 kontekstuell",
+            "🌡️ (termometer) | Sterk/ren vare ('hot stuff') | Brukt om potente produkter | P=3 — kontekstuell",
+            "🐍 (slange) | Advarsel om svindler / dårlig selger | Negativ advarsels-emoji | P=2 kontekstuell",
+            "✅ (hake) | Bekreftet ordre / verifisert selger | Positiv status-indikator | P=2 kontekstuell",
+            "❌ / 🚫 | Utsolgt / avvist ordre | Avslag-emoji | P=1 i kontekst"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-08 | URL-DATA: Dekonstruksjon av Telegram-URL-er"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "URL-mønster | Eksempel | Etterforskningsverdi",
+            "t.me/[brukernavn] | t.me/kriminelt_alias | Offentlig profil-URL — avslører brukernavn. Åpnes uten konto. Screenshot for bevis.",
+            "t.me/[brukernavn]/[meldings-ID] | t.me/kanal_navn/1234 | Spesifikk melding. Meldings-ID er sekvensielt — lav ID = tidlig i kanalhistorikk",
+            "t.me/+[base64url] | t.me/+xXYZ12345ABC | Privat invite-link. Dekod base64: avslører intern invite-token. Aktiv link = gruppe eksisterer",
+            "t.me/joinchat/[hash] | t.me/joinchat/ABCD1234 | Eldre invite-format (pre-2021). Mange aktive i delte linker",
+            "t.me/s/[kanalbrukernavn] | t.me/s/kanal_navn | Preview-URL. Les kanalinnhold uten konto og uten Telegram-innlogging",
+            "telegram.me/[brukernavn] | telegram.me/alias | Eldre URL-format. Omdirigerer til t.me — identisk funksjon",
+            "tg://proxy?server=...&secret=... | tg://proxy?server=vpn.example.com&port=443&secret=ee0000... | MTProto proxy-link. Secret = EE = TLS-modus. Avslører proxytjeneste brukt",
+            "t.me/transparency | t.me/transparency | Telegrams LE-transparens-bot. Se data om utleverte forespørsler per land"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-09 | NETTVERK: Protokollanalyse og PCAP-signatur"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Protokoll/Port | Bruk | PCAP-signatur | OPSEC-risiko",
+            "TCP/443 (HTTPS) | Primær MTProto-transport. TLS-innpakket | TLS ClientHello. SNI: *.telegram.org | Etterforskers IP synlig for Telegram",
+            "UDP/443 | Raskere MTProto-transport (QUIC-lignende) | UDP/443 til Telegram DC-IP-er | Samme OPSEC-risiko som TCP/443",
+            "TCP/80 | Fallback-transport. BRUK ALDRI for etterforskning | HTTP klartekst — all trafikk eksponert | KRITISK — aldri bruk uten TLS",
+            "TCP/5222 | XMPP-kompatibilitetsmodus (sjeldent brukt) | XMPP-header synlig | Minimalt brukt i 2026",
+            "Bot API: TCP/443 | HTTPS JSON-API mot api.telegram.org | HTTPS GET/POST til api.telegram.org | Bot-token i header avslører botens identitet",
+            "MTProto proxy | Obfuskert protokoll via konfigurerbar port | Tilfeldig-lignende datastrøm. Vanskelig å identifisere | Brukt for å omgå sensur — og LE-deteksjon"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-10 | METADATA: Fullstendig feltliste i Telegram-artifacts"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Felt | Kilde | Verdi / format | OSINT-verdi",
+            "user_id | Telegram API / bot | int64 — eks: 1234567890 | Permanent identifikator. Sterkeste selektor.",
+            "username | t.me/profil / @søk | String, 5-32 tegn: @aliasname | Søkbar. Kan endres — kombiner med user_id",
+            "first_name / last_name | Offentlig profil | String — kan være fiktivt | Brukes til kryssreferering. Ikke pålitelig alene",
+            "phone | Registrering / LE-utlevering | E.164: +4790123456 | Sterkeste selektor etter user_id. Krever LE-kjennelse",
+            "dc_id | API metadata | 1, 2, 4 eller 5 | Avslører registreringsregion (DC1=USA, DC2=EU)",
+            "last_seen_at | Profilbesøk (om synlig) | Timestamp/relativ: 'online', 'recently', 'this week' | Aktivitetsindikator — unngå synlighetsendringer",
+            "profile_photo | Offentlig profil | URL til CDN-fil med media-ID | Reverse image search — PimEyes/FaceCheck",
+            "bio | Offentlig profil | Fritekst — maks 70 tegn | Kan inneholde kontaktinfo, emojier, kode",
+            "is_bot | API-felt | Boolean: true/false | Identifiserer bot-kontoer",
+            "channel_id / group_id | API / invite-link | Negativt int64: -1001234567890 | Kobler meldinger til chat-kontekst",
+            "message_id | Melding i kanal/gruppe | Sekvensiell int per chat | Tidsstempling av melding via ID-sekvensnummer",
+            "forward_from | Videresend-metadata | user_id eller kanal-ID til opprinnelig avsender | Sporingspunkt — avslører opprinnelig kilde",
+            "media_id | Mediafil i melding | int64 — global referanse til fil | Kan spore samme fil på tvers av chatter",
+            "views | Kanal-melding | Antall visninger | Indikerer kanalens rekkevidde og innflytelse",
+            "edit_date | Redigert melding | Timestamp for siste redigering | Avslører endringer etter sending — viktig for bevis"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-11 | MANUELT: Trinn-for-trinn via nettleser og konsoll\n\nA — Passiv profilering uten konto (§ 25 — ingen beslutning kreves)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "t.me/s/[kanalbrukernavn]: Åpne nettleseren (VPN + Hunchly aktiv). Naviger til https://t.me/s/kanal_navn — les kanalinnhold uten innlogging",
+            "t.me/[brukernavn]: Åpne offentlig profil. Se profilbilde, bio, felles grupper (om synlig). Screenshot + SHA-256 umiddelbart",
+            "Meldingstidsstempling via ID: Kanalens første melding (ID=1) gir opprettelsesdato. Bruk online Snowflake-calculator for Telegram: telegram.id-converter.com",
+            "TGStat.io søk: Søk på kanalbrukernavn eller kanal-ID. Se statistikk, historikk, vekst og relaterte kanaler",
+            "Lekkasjesøk: Søk telefonnummer (+47XXXXXXXX) eller brukernavn i IntelX.io og Dehashed"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "B — Med etterforskningsprofil (§ 196 — påtalebeslutning kreves)"
+        },
+        {
+          "type": "list",
+          "data": [
+            "@userinfobot: Videresend melding fra målbruker til @userinfobot — bot returnerer user_id, navn, brukernavn og språk",
+            "@CreationDateBot: Videresend melding til @CreationDateBot — returnerer indikasjon på kontooprrettelsestidspunkt",
+            "@SangMata: Brukernavnsporing i delte grupper — logger endringer i navn og brukernavn over tid",
+            "Gruppemedlemsliste: I gruppe med mistenkt: se 'Admins' og 'Members'-liste. Screenshot med SHA-256",
+            "web.telegram.org (Developer Tools): F12 → Network-tab → XHR-forespørsler → API-kall til api.telegram.org avslører raw JSON-data"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-12 | AUTO: API-integrasjoner og Python-automatisering"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Verktøy | Status apr. 2026 | Funksjon | Tilgang",
+            "TGStat.io | Aktivt — gratis + betalt | Kanal-statistikk, historikk, vekst, relaterte kanaler | Gratis grunnfunksjon. API betalt",
+            "Telemetr.io | Aktivt — betalt | Kanalanalyse, meldingshistorikk, abonnentutvikling | Betalt abonnement",
+            "osint.industries | Aktivt — abonnement | Søk brukernavn og telefon mot Telegram + 500+ plattformer | Betalt abonnement",
+            "IntelX.io | Aktivt — abonnement | Lekkasjedatabaser inkl. Telegram-data | Betalt — LE-rabatter",
+            "Telepathy (GitHub) | Aktivt — oppdatert 2026 | Python: skraper offentlige kanal-meldinger via Telethon | Åpen kildekode + Telegram API-nøkkel",
+            "Telerecon (GitHub) | Aktivt | Python: Telegram-etterforskningsverktøy for kanal/bruker | Åpen kildekode",
+            "Maigret (GitHub) | Aktivt | Søker Telegram-brukernavn på 3000+ plattformer | Åpen kildekode — gratis",
+            "Geogramint (GitHub) | Aktivt — oppdatert 2025 | Geolokasjon via People Nearby-funksjon | Åpen kildekode + Telegram API",
+            "telegram-phone-number-checker | Aktivt | Sjekk om telefonnummer er koblet til Telegram-konto | Åpen kildekode — krever API-credentials",
+            "Oxygen Forensic Detective | Aktivt — 2026-versjon | Forensisk parsing av cache4.db (Android og iOS) | Kommersiell — politilisens",
+            "Belkasoft X | Aktivt | Forensisk Telegram-analyse inkl. BLOB-deserialisering | Kommersiell — politilisens",
+            "Hunchly (Maltego) | Aktivt — Maltego-integrert mai 2025 | Bevislogging av web.telegram.org-besøk | Betalt — politiabonnement"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-13 | VAKT: Overvåking og varsling"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Vakttype | Metode / verktøy | Trigger",
+            "Brukernavnendring | @SangMata-bot (i felles gruppe) | Bot varsler automatisk ved endring av brukernavn eller visningsnavn",
+            "Kanalinnhold (ny post) | TGStat.io alert. Eller RSS fra t.me/s/[kanal] | Ny melding i overvåket kanal",
+            "Profil online-status | Tredjepartsverktøy (etisk vurdering nødvendig) | Endring i 'sist sett'-status",
+            "Google Alert på brukernavn | Google Alerts: \"@telegram_username\" | Ny nettside-eksponering av Telegram-brukernavn",
+            "changedetection.io | Overvåk t.me/s/[kanal]-URL | Endring i kanalinnhold detektert automatisk",
+            "IntelX nytt datasett-varsel | IntelX.io alert på selektor (telefon eller brukernavn) | Nytt lekkasjetreff på telefonnummer eller brukernavn",
+            "Regex for numre i tekst | \\+47[0-9]{8} — detekterer norske telefonnumre i kanaltekster | Automatisk flagging av norske numre i skrapede kanaler"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-14 | SOKKEDUKKE: OPSEC og etterforskningsprofil på Telegram"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Komponent | Krav og metodikk",
+            "VPN | Alltid aktivt. Mullvad (WireGuard, fast node) anbefalt. Kill Switch aktivt. Verifiser IP på ipleak.net FØR Telegram åpnes",
+            "Etterforskningsprofil | Separat Telegram-konto registrert med burner SIM (fortrinnsvis utenlandsk). Aldri bruk privat konto.",
+            "Anonymous +888-nummer | Kjøp via Fragment.com med Toncoin for full anonymitet. Skjuler ekte telefonnummer — anbefalt for aktiv spaning",
+            "Profil-troverdighet (Lebensraum) | Konto > 90 dager gammel. Profilbilde (AI-generert, sjekket mot Hive Moderation). Noe aktivitet i åpne grupper.",
+            "Telegram 2FA (passord) | Aktiver to-faktor-autentisering på etterforskningsprofil. Forhindrer kontoovertakelse",
+            "Lesekvittering | Deaktiver i Innstillinger → Personvern → Les-kvitteringer → Av. FØR du åpner noen chatter",
+            "Hunchly + web.telegram.org | Hunchly logger automatisk alle sidevisninger på web.telegram.org. Rødt ikon FØR nettleseren åpnes",
+            "API-identifikasjon | Telegram API-kall sender app_id og device_info. Velg standard Telegram-klient-app_ids — ikke tilpassede",
+            "Fingerprinting | Standardisert Firefox-profil (arkenfox.js). Ingen Telegram-spesifikke utvidelser som skiller profilen",
+            "Isolert VM | Dedikert VM per etterforskningsprofil. Ingen krysskontaminasjon mellom saker"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-15 | AI: LLM og gjenkjenningsverktøy i Telegram-etterforskning"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Funksjon | Verktøy | Telegram-spesifikk bruk | Begrensning",
+            "Emojidekoding | Claude/ChatGPT (lokal instans) | Dechifrere narko-koder og emoji-kombinasjoner i kanalmeldinger. Se KT-07 | Sensitiv tekst MÅ IKKE til offentlig skybasert LLM",
+            "Slanganalyse | LLM med systemoppdrag om kriminell sjargong | Oversette narkotikajargong fra norsk ungdomsspråk, russisk og arabisk | Alltid krysssjekk — LLM kan hallusinere",
+            "Ansiktsgjenkjenning | PimEyes.com, FaceCheck.ID | Matche profilbilde mot kjente nettoffentlige profiler | False positives — TPS-S=HØY alltid",
+            "Maskinoversettelse | DeepL (russisk, arabisk, farsi) | Oversette kanaler fra dominante kriminelle kanalspråk | Slang og sjargong oversettes dårlig av standardverktøy",
+            "Relasjonskartlegging | Maltego med Telegram-transforms | Automatisk kartlegging av relasjoner mellom kanaler, brukere og grupper | Krever API-tilgang og LE-godkjenning",
+            "Lydtranskribering | Whisper (OpenAI — lokal) | Transkribere talemeldinger og videoposter fra Telegram | Lokal kjøring er krav — sensitiv lyd kan ikke til sky",
+            "Innholdsklassifisering | Azure AI Vision / lokal CLIP | Klassifisere bilder og videoer automatisk i masseeksport | CSAM-risiko — streng OPSEC og protokoll"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-16 | OPSEC: Attribusjonsanalyse — spor etterforskeren etterlater"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Handling | Spor lagret hos | Risiko | Tiltak",
+            "Innlogging på Telegram | Telegrams servere — IP + tidsstempel + DC-tilkobling | Telegram-server vet etterforskerens IP og tidspunkt | VPN med fast IP — obligatorisk",
+            "Profilbesøk (offentlig kanal) | Telegram: økt visningsantall. Ikke sporbar til person | LAV — akseptabelt OPSEC-nivå | Lavt risiko — bruk likevel VPN",
+            "Melding-forward til @userinfobot | Boten og Telegram-server ser forwarden | Mål-bruker kan se at meldingen er forwardet | Kun @userinfobot — ikke kommersielle tredjepartsbots",
+            "Gruppemedlemskap | Telegram-server + gruppeadministratorer | Adminlisten over gruppemedlemmer eksponerer etterforskningsprofil | Vurder nødvendighet. Alternativt: t.me/s/-lenke",
+            "Typing-status | Motpart ser 'skriver...' i direktemelding | Avslører at etterforskeren er aktiv | Aldri åpne private chatter med mål i etterforskningsmodus",
+            "Lese-kvittering (blå haker) | Synlig for avsender i direktemeldinger | Avslører at meldingen er lest — avslører aktivitet | Deaktiver lesekvitteringer i innstillinger FØR undersøkelse",
+            "User-Agent (Telegram Web) | web.telegram.org serverlogg | Nettlesertype og OS synlig | Standardisert UA i etterforskningsnettleser",
+            "API app_id | Telegram API-logg | Identifiserer hvilken klient som brukes | Bruk offisielle Telegram-klient-app_ids"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-17 | KRITIKK: Kryssverifisering via minst to uavhengige kilder"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Funn-type | Kilde 1 (primær) | Kilde 2 (uavhengig) | TPS etter verifisering",
+            "Telegram user_id | @userinfobot via videresending | Telegram API getUser direkte (med API-nøkkel) | B-2-HØY etter begge bekrefter",
+            "Telefonnummer-kobling | IntelX.io — søk etter telefonnummer | Telegram phone-number-checker (GitHub) | B-2-MODERAT — begge er avhengig av lekkasjedata",
+            "Kanal-opprettelsesdato | Meldings-ID #1 i kanalen (timestamp) | TGStat.io kanalstatistikk | B-1-LAV etter begge bekrefter dato",
+            "Brukernavnhistorikk | @SangMata-bot (hvis admin i felles gruppe) | Tredjepartsindekser (telegago.ru) | C-3-HØY — begge er usikre tredjepartskilder",
+            "Ekte identitet fra profilbilde | PimEyes.com reverse image search | FaceCheck.ID + Google Images | B-2-HØY etter alle tre bekrefter — men TPS-S=HØY",
+            "Kanalinnhold | t.me/s/[kanal] direkte skraping | TGStat.io historisk innhold | B-2-MODERAT — begge avhengig av Telegram-tilgjengelighet",
+            "Emoji-meldingsbetydning | Politirapport om emojispråk (kriminell jargong) | LLM-analyse + krysssjekk mot kjente dealer-kanaler | C-2-MODERAT — kontekst er alt"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-18 | LE-GUIDE: Portal og format for rettslig henvendelse til Telegram"
         },
         {
           "type": "callout",
-          "kind": "TIP",
-          "data": "Viktig for AI-analyse: Discord-kriminalmiljøer kombinerer emoji med l33t-speak (tall som bokstaver: 4=A, 3=E), gamer-slang ('riced'=bevæpnet, 'plug'=dealer, 'pack'=narkotika) og kodede brukernavn. Bruk Claude (lokal instans) for kontekstuell dekoding av lange meldingssekvenser. Aldri last opp saksdokumenter til skybasert AI."
+          "kind": "WARNING",
+          "data": "VIKTIG OPPDATERING September 2024: Telegram endret policy etter Durov-arrestasjonen. Telegram utleverer nå IP-adresse og telefonnummer ved rettskjennelse i ALLE straffesaker — ikke kun terrorisme. I Q4 2024 ble 900 US-forespørsler og 14 641 India-forespørsler behandlet."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Parameter | Detalj",
+            "Primær henvendelseskanal (norsk politi) | Kripos → MLAT (Mutual Legal Assistance Treaty) → Interpol NCB Dubai. Norsk politi henspiller IKKE direkte til Telegram.",
+            "Telegram LE-kontakt (intern) | Offisiell LE-kontaktkanal finnes via tjenestelige kanaler. Kripos har etablert kontakt.",
+            "Nødhenvendelse (emergency) | Telegram: abuse@telegram.org for umiddelbar trussel mot liv. Kripos koordinerer for norske politidistrikter.",
+            "Juridisk format | Kjennelse fra norsk tingrett (strpl. § 197) oversatt og fremsendt via Kripos. Krav: saksnummer, hjemmel, spesifikke data som etterspørres.",
+            "Data Telegram utleverer (etter rettskjennelse) | IP-adresse ved registrering og siste innlogging, telefonnummer, registreringsdato, DC-tilhørighet. IKKE meldingsinnhold for standard chatter.",
+            "Tidshorisont | Standard MLAT: 3-12 måneder. Emergency request: dager til uker via Kripos/Interpol.",
+            "Transparensstatistikk | t.me/transparency — Telegrams åpne transparens-bot viser LE-forespørsler per land per periode",
+            "Meldingsinnhold | Kun mulig å innhente ved beslaglagt enhet (Secret Chat) eller driftsavbrudd-scenarioer. Standard cloud-chat: forespørsel om innhold besvares ikke uten videre."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-19 | JUS: Juridiske hjemler for Telegram-etterforskning"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Hjemmel | Handling | Merknad",
+            "Politiloven § 25 | Passiv observasjon av åpne kanaler/profiler via t.me/s/ | Lovlig uten beslutning. Åpent tilgjengelig innhold.",
+            "Strpl. § 196 | Opprette etterforskningsprofil for tilgang til lukkede grupper | Skriftlig påtalebeslutning FØR iverksetting",
+            "Strpl. § 196a | Absolutt forbud — provokasjonsforbudet | Aldri fremprovosere handling fra mistenkt via Telegram",
+            "Strpl. § 197 | Kjennelse fra tingretten — utlevering av abonnementsdata fra Telegram | Brukes ved LE-forespørsel til Telegram via Kripos/MLAT",
+            "Strpl. § 216b | Kommunikasjonsdata (trafikkdata) — hvem kommuniserte med hvem | Tingretts kjennelse + strafferamme-krav",
+            "Strpl. § 216a | Kommunikasjonskontroll — avlytting av innhold | Lagmannsrettskjennelse. Strengeste hjemmel.",
+            "Strpl. § 203 | Utlevering av beslag fra enhet (cache4.db) | Beslaglagt telefon med Telegram-data — standardbeslag",
+            "Strl. §§ 147a-147c | Terroristisk innhold og finansiering på Telegram | Høy prioritet. Kripos koordinerer.",
+            "Barnekonvensjonen art. 3 | CSAM på Telegram. Mindreåriges beste interesse | Se SIS-MINOR-14. Umiddelbar rapportering til NCMEC.",
+            "GDPR art. 6 (1)(e) | Behandling av personopplysninger innhentet fra Telegram | Formålsbegrensning — kun til etterforskningsformål",
+            "EMK art. 8 | Retten til privatliv — proporsjonalitet | Telegramovervåking skal stå i rimelig forhold til saken"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-20 | BEVIS: Integritetskrav og dokumentasjon"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Steg | Handling | Verktøy | Output / Juridisk verdi",
+            "1 | Hunchly aktivt FØR Telegram åpnes | Hunchly Chrome-extension (rødt ikon) | Automatisk URL, tidsstempel og MHTML for hvert besøk",
+            "2 | Screenshot av funn umiddelbart | Shift+PrtScr (Kali) / OS-screenshot | PNG-fil med tidsstemplet filnavn",
+            "3 | SHA-256 av screenshot | sha256sum screenshot.png i terminal | 64-tegns hash-streng — bevisintegritet",
+            "4 | UTC-tidsstempel | date -u i terminal | ISO 8601 UTC — internasjonalt entydig",
+            "5 | Logg i Hunchly-note | Hunchly note-funksjon per funn | Hash + tidsstempel i Hunchly-databasen",
+            "6 | TPS-gradering per funn | SIS-TPS-02 — faglig skjønn | T=[A-F], P=[1-6], S=[LAV/MODERAT/HØY/KRITISK]",
+            "7 | Lagre rådata (meldings-JSON) | Developer Tools → Network → API-respons kopier | Rå JSON — primærbevis fremfor screenshot",
+            "8 | Wayback Machine-arkivering | web.archive.org/save/[URL] | Tredjeparts arkivering — nøytralt bevis",
+            "9 | Hunchly Full Case Export | Hunchly → Export → Full Case | ZIP med MHTML, hashes og metadata — komplett bevisdokumentasjon",
+            "10 | Dokumenter i SIS-RAPPORT-13 | Word-mal rapport_mal.docx | Funnrapport + egenrapport per innhentingsøkt"
+          ]
         }
       ]
     },
     {
       "id": "s03",
-      "overskrift": "SEKSJON 2 – 20 TEKNISKE KRAV (KT-01 til KT-20)",
+      "overskrift": "DEL 3 — TEKNISK DEKONSTRUKSJON (A–Å)",
       "komponenter": [
         {
           "type": "paragraph",
-          "data": "KT-01 | Definisjon – Juridisk og teknisk kategorisering"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Kategori | Klassifisering | Detalj",
-            "Primærkategori | VoIP-basert IM-tjeneste med sosial serverstruktur | Kombinerer tekst, tale, video og fil-deling i en hybrid arkitektur",
-            "Teknisk arkitektur | Hybrid klient-server + CDN | REST API + WebSocket Gateway + Cloudflare CDN",
-            "Juridisk kategori (Norge) | Elektronisk kommunikasjonstjeneste (EKS) | Underlagt ekomloven og GDPR",
-            "Juridisk kategori (USA) | Interactive Computer Service / Stored Communications | Regulert av ECPA, SCA, COPPA",
-            "Aldersgrense | 13 år (COPPA) | Fra mars 2026: phased aldersverifisering (utsatt til H2 2026)",
-            "Krypteringsmodell | TLS 1.3 in-transit + AES-256 at rest (server-side) | Standard DM: IKKE E2EE. Voice/video: DAVE-protokoll (E2EE)",
-            "Registreringstype | E-post eller telefonnummer | Ikke anonym registrering – men falske e-poster er enkle å opprette"
-          ]
+          "data": "NIVÅ 1 — BINÆRT: Rådata og artifacts på laveste nivå\n\n1.1 MTProto-melding på byte-nivå\n\nMTProto 2.0 kryptert melding (forenklet struktur):\n\n[auth_key_id: 8 bytes]  — identifiserer krypteringsnøkkelen\n[msg_key: 16 bytes]     — SHA-256 av nøkkel + melding (brukt til AES-derivasjon)\n[encrypted_data: N bytes] — AES-256-IGE kryptert payload\n\nDekryptert payload inneholder TL-serialisert objekt:\n  [4B: TL-type-ID (little-endian)]  — identifiserer meldingstype\n  [8B: message_id (timestamp-basert)] — unik per melding\n  [4B: seq_no]  — sekvensieringsverdi\n  [4B: bytes]   — lengde på meldingsdata\n  [N: message_data] — TL-serialisert meldingsobjekt\n\nEksempel TL-type-ID for sendMessage: 0x1c91f91c (hex, little-endian: 1c f9 91 1c)"
         },
         {
           "type": "paragraph",
-          "data": "KT-02 | Historikk – Versjonsutviklingens påvirkning på datalagring"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Dato | Hendelse | Påvirkning på etterforskning",
-            "Mai 2015 | Discord lanseres for gamere | Snowflake-epoke starter 1.1.2015 – alle eldre IDer kodet til denne datoen",
-            "2016 | Bot-API introduseres | Bots kan nå lese og skrive meldinger programmatisk",
-            "2019 | Nitro-abonnement med servereforsterkere | Betalingsdata tilgjengelig via LE-forespørsel (Stripe)",
-            "2021 | Fjernelse av discriminator i mange kontekster | Brukeridentifikasjon endres fra navn#1234 til global_name",
-            "2023 (mars) | Discriminator (#XXXX) fjernes globalt | Eldre kontoer: navn#1234. Nye kontoer: @brukernavn (unikt)",
-            "2023 (mai) | DAVE-protokoll (E2EE) for voice/video innføres | Tale og video i kanaler er nå E2EE – Discord kan ikke lese/utlevere",
-            "2023 (des.) | E2EE DM opt-in (ikke standard) | Standard DM fortsatt server-side kryptert. Kun opt-in = E2EE",
-            "2023 | CDN-URLer med HMAC-signatur og 24-timers utløp | SHA-256 av bildet OG URL – lenken utløper, filen kan bli borte",
-            "2024 (apr.) | Spy.pet-skandale: 600M+ meldinger scraped | Demonstrerte at tredjeparter kan aggregere Discord-data massivt",
-            "Sep. 2025 | Zendesk-brudd: 70 000 gov-ID-bilder lekket | Aldersverifiseringsprosessen kompromittert – relevans for LE-ID-sjekk",
-            "Feb. 2026 | Aldersverifisering utsatt til H2 2026 | k-ID (tredjepart) skal verifisere alder via selfie eller gov-ID",
-            "Mai 2025 | LE-guide oppdatert | Oppdatert prosedyre for LE-henvendelser og preservation requests"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-03 | Eier/Lov – Juridisk enhet og lagringslovgivning"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Parameter | Detalj | Etterforskningsrelevans",
-            "Juridisk enhet | Discord, Inc. | Registrert i Delaware, USA",
-            "Operasjonelt HQ | 444 De Haro Street, Suite 200, San Francisco, CA 94107, USA | Alle LE-forespørsler rutes hit via MLAT",
-            "Norsk kanal | Via Kripos (kripos@politiet.no) → Riksadvokaten → US DoJ → Discord | MLAT-prosessen er tidkrevende – preservation request umiddelbart",
-            "US Cloud Act (2018) | USA kan pålegge Discord å utlevere data lagret utenfor USA | Norske saker krever MLAT eller direct LE-forespørsel",
-            "GDPR (EU) Art. 4, 17 | Discord er databehandler for EU-brukere | Bruker har rett til sletting – LE kan blokkere med preservation request",
-            "ECPA / SCA | Innhold krever search warrant. Metadata krever subpoena | Norsk kjennelse konverteres til US-ekvivalent via MLAT",
-            "COPPA (USA) | Brukere under 13: Discord plikter å slette data | Kan vanskeliggjøre etterforskning av mindreårige",
-            "DSA (EU) 2024+ | Discord har Government Request Portal for EU-myndigheter | Trusted Flaggers og EU-myndigheter prioriteres"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-04 | Teknologi – Stack og dataflyt"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Komponent | Teknologi | Dataformat | Etterforskningsrelevans",
-            "Frontend (klient) | React + TypeScript (web), Electron (desktop), Swift/Kotlin (mobil) | HTML/CSS/JS bundle | Electron-app: DevTools tilgjengelig i debug-modus",
-            "Backend | Elixir (Gateway/WebSocket), Rust (voice), Python/Go (diverse) | JSON (API), WebSocket frames | Skalert for millioner av samtidige tilkoblinger",
-            "REST API | discord.com/api/v10 (gjeldende) | JSON over HTTPS | API v10 er current (2026) – v6 og eldre er utfaset",
-            "WebSocket Gateway | gateway.discord.gg | JSON-kodet WebSocket-rammer | Heartbeat hvert ~41 sek – mønster synlig i PCAP",
-            "CDN (vedlegg) | cdn.discordapp.com (Cloudflare) | HTTPS + signerte URLer | URL-struktur inneholder Snowflake-tidsstempler",
-            "Voice/Video | DAVE-protokoll (E2EE, 2023) | UDP/DTLS | Kryptert – Discord kan ikke utlevere innhold",
-            "Databaseinfrastruktur | AWS (primær) + Cassandra (NoSQL) + Redis (cache) | Proprietære formater | Discord lagrer meldinger i Cassandra-cluster"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-05 | Kryptering – Algoritmer og nøkkelkontroll"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Kontekst | Algoritme | E2EE | Nøkkel hos | Etterforskningsrelevans",
-            "Transport (all trafikk) | TLS 1.3 | Nei – tunnel-kryptering | Discord/Cloudflare | Discord kan lese all trafikk i transit",
-            "Lagring (at rest) | AES-256 | Nei | Discord Inc. | Discord kan lese og utlevere med kjennelse",
-            "Standard DM | TLS 1.3 + AES-256 at rest | NEI – server-side kryptert | Discord Inc. | KRITISK: Discord kan utlevere DM-innhold med kjennelse",
-            "DM (E2EE opt-in, 2023+) | MLS (Messaging Layer Security) via DAVE | JA – kun ved opt-in | Kun brukerne | Discord KAN IKKE utlevere E2EE DM-innhold",
-            "Voice/Video (kanaler, 2023+) | DAVE-protokoll / MLS | JA | Kun deltakerne | Kriminelle som bruker voice kan ikke avlyttes via Discord",
-            "Passordhashing | bcrypt (saltet) | N/A | Discord | Passord er ikke tilgjengelig for LE",
-            "Bot-token | Bearer Token i HTTPS-header | N/A | Bot-eier | Bot-token identifiserer eier-konto"
-          ]
-        },
-        {
-          "type": "callout",
-          "kind": "WARNING",
-          "data": "KRITISK: Standard Discord DM-er er IKKE E2EE. De fleste kriminelle brukere er ikke klar over E2EE opt-in og bruker standard (ukrypterte) DM-er. Discord Inc. kan lese og utlevere innholdet med gyldig rettslig pålegg."
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-06 | Unik-ID – Snowflake-format og dekoding"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Bit-posisjon | Antall bits | Innhold | Etterforskningsverdi",
-            "63–22 | 42 bits | Millisekunder siden Discord-epoch (1. jan. 2015 00:00:00 UTC) | Nøyaktig tidsstempel ned til millisekund – alltid tilgjengelig",
-            "21–17 | 5 bits | Worker-ID (intern Discord-server) | Identifiserer Discord-infrastruktur som genererte IDen",
-            "16–12 | 5 bits | Prosess-ID | Intern – ikke direkte brukbar for etterforsker",
-            "11–0 | 12 bits | Sekvensteller (opptil 4096 per ms per worker) | Indikerer om mange IDer ble generert i løpet av samme millisekund"
-          ]
+          "data": "1.2 cache4.db SQLite-struktur\n\nAndroid-database: /data/data/org.telegram.messenger/files/cache4.db\niOS: ~/Library/Application Support/Accounts/[DC-ID]/postbox.db\n\nTabeller i cache4.db:\n  messages     — lagrede meldinger (BLOB: TL-serialisert)\n  chats        — chat-metadata (BLOB)\n  users        — brukerdata (BLOB)\n  media        — mediafiler-metadata\n  securevals   — krypterte sensitive verdier\n\nBLOB deserialisering:\n  Åpne i Oxygen Forensic Detective eller Belkasoft X\n  Manuelt: python3 -c \"import tl_base; tl_base.deserialize(blob_bytes)\""
         },
         {
           "type": "callout",
           "kind": "CASE",
-          "data": "Snowflake-dekoding – praktisk eksempel: Eksempel Snowflake: 175928847299117063. Steg 1: 175928847299117063 >> 22 = 41944201. Steg 2: 41944201 + 1420070400000 = 1462014601000 (UNIX ms). Steg 3: new Date(1462014601000) → 2016-04-30T11:43:21.000Z. Verktøy: discord.dog/tools/snowflake-decoder | singhajit.com/tools/snowflake-decoder. Aktiver Developer Mode: Innstillinger → Avansert → Utviklermodus → PÅ"
+          "data": "1.3 Bot API JSON-svar\n\nGET https://api.telegram.org/bot[TOKEN]/getUpdates\n\nSvar (JSON-utdrag):\n{\n  \"ok\": true,\n  \"result\": [{\n    \"update_id\": 987654321,\n    \"message\": {\n      \"message_id\": 42,\n      \"from\": {\n        \"id\": 1234567890,    ← Telegram user_id (permanent)\n        \"first_name\": \"Ola\",\n        \"username\": \"alias\",\n        \"language_code\": \"no\"\n      },\n      \"chat\": {\"id\": -1001234567890},  ← Gruppe/kanal-ID\n      \"date\": 1713692400,  ← Unix-timestamp UTC\n      \"text\": \"🍃 100g available 📍\"\n    }\n  }]\n}"
+        },
+        {
+          "type": "paragraph",
+          "data": "NIVÅ 2 — ARKITEKTUR: Teknisk oppbygging"
         },
         {
           "type": "grid",
           "data": [
-            "Discord-objekt | URL / Lokasjon | Snowflake gir",
-            "Bruker-ID | discord.com/users/[USER_ID] | Kontopprettelsesdato og -klokkeslett ned til ms",
-            "Server (Guild) ID | discord.com/channels/[GUILD_ID] | Serverens opprettelsesdato",
-            "Kanal-ID | discord.com/channels/[GUILD]/[CHANNEL_ID] | Kanalens opprettelsesdato",
-            "Melding-ID | discord.com/channels/[G]/[C]/[MSG_ID] | Nøyaktig meldingstidspunkt",
-            "Vedlegg-ID | cdn.discordapp.com/attachments/[C]/[ATT_ID]/fil.jpg | Opplastingstidspunkt",
-            "Emoji-ID | discord.com/emojis/[EMOJI_ID] | Når custom emoji ble laget",
-            "Rolle-ID | Via Developer Mode i serversettinger | Rollens opprettelsesdato"
+            "Lag | Dataflyt | OSINT-mulighet",
+            "Klient → Telegram DC | Klienten AES-256-IGE-krypterer meldingen med MTProto 2.0. Sendes via TCP/443 til nærmeste DC | DC-ID i pakke-header avslører registreringsregion",
+            "DC-til-DC | Meldinger formidles mellom Telegrams DC-er (1-5). Lagres kryptert på sky | Telegram-server lagrer sky-chat-meldinger. LE-kjennelse kan gi tilgang",
+            "Kanal-distribusjon | Admin-post sendes via DC til alle abonnenter. Lagres i skyen | Offentlig tilgjengelig via t.me/s/. Historikk indexert av TGStat",
+            "Bot API-lag | Bot-serveren sender HTTPS-forespørsler til api.telegram.org. JSON-svar | Bot-meldinger inneholder full bruker-metadata i JSON",
+            "Mediasystem | Filer lastes til Telegram CDN med media_id. Global referanse | Samme fil (hash) kan spores på tvers av chatter via media_id",
+            "TON blockchain | Fragment.com kjøp av +888-numre betales med Toncoin | TON on-chain analyse kan koble wallet til andre transaksjoner"
           ]
         },
         {
           "type": "paragraph",
-          "data": "KT-07 | Lekkasjer – Kjente datasett og eksponerte felt"
+          "data": "NIVÅ 3 — HELHET: Strategisk plassering i etterforskningen"
         },
         {
-          "type": "grid",
+          "type": "list",
           "data": [
-            "Dato | Hendelse | Eksponerte felter | Søkeverktøy",
-            "Mars 2023 | Discord.io tredjeparts bot-plattform kompromittert | Brukernavn, e-post, Discord-ID, hashet passord (760 000 brukere) | HaveIBeenPwned, IntelX",
-            "Mai 2023 | Discord-supportsystem (Zendesk) – 180 000 poster | Brukernavn, e-post, supporttickets | IntelX, LeakCheck",
-            "Apr. 2024 | Spy.pet-dataskraper avslørt – 600M+ meldinger | Meldingsinnhold, brukernavn, server-IDer, tidsstempler | Wired/Arstechnica (referanse)",
-            "Sep. 2025 | Zendesk-partnerdatabrudd – Lapsus$/Scattered Hunters | Brukernavn, e-post, IP, gov-ID-foto (70 000 brukere), delvis billing | Discord offisiell rapport, IntelX",
-            "2025 (løpende) | Combo-lister distribuert via Discord-kanaler | E-post+passord-par fra andre lekkasjer, Discord-brukernavn inkludert | HIBP, Dehashed, IntelX"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-08 | URL-data – Parameterdekonstruksjon og Snowflake i URL"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "URL-format | Parametere | Hva det avslører",
-            "discord.com/channels/[GUILD]/[CH]/[MSG] | Tre Snowflake-IDer | Guild-, kanal- og meldingstidsstempel",
-            "discord.gg/[KODE] | 6–8 tegn base62-kode | Server-ID, navn, antall brukere, Snowflake til lenke-skaper",
-            "discord.com/users/[USER_ID] | Bruker-Snowflake | Kontopprettelsesdato",
-            "cdn.discordapp.com/attachments/[CH]/[ATT]/fil.jpg | To Snowflake-IDer | Kanal + vedlegg-opplastingstidspunkt",
-            "media.discordapp.net/...?ex=&is=&hm= | ex=utløp (hex UNIX), is=utstedt (hex UNIX), hm=HMAC | Signert URL – ex og is = nøyaktig utstedelse og utløp",
-            "discord.com/api/v10/invites/[KODE]?with_counts=true | JSON-respons | guild.id, guild.name, inviter.id (Snowflake), member_count, expires_at"
-          ]
-        },
-        {
-          "type": "callout",
-          "kind": "WARNING",
-          "data": "CDN-URL utløp – viktig for bevisinnhenting: Fra 2023 har Discord signerte CDN-URLer med 24-timers utløp. Parameteren ?ex= (hex-kodet UNIX-tidsstempel for utløp) betyr at en lenke til et Discord-vedlegg slutter å virke etter ca. 24 timer. Konsekvens: ta SHA-256 av selve bildet UMIDDELBART – ikke bare URL-en. Bruk wget eller curl for å laste ned bildet, hash filen, noter URL-en og tidsstemplet."
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-09 | Nettverk – Protokollanalyse og PCAP"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Protokoll | Port | Innhold i PCAP | Etterforskningsverdi",
-            "HTTPS/TLS 1.3 | TCP/443 | Kryptert REST API og CDN-trafikk. SNI: discord.com | Forbindelsestidspunkter loggføres",
-            "WSS (WebSocket Secure) | TCP/443 | Kryptert sanntidsmeldinger. SNI: gateway.discord.gg | Heartbeat hvert ~41 sek – identifiserbart mønster",
-            "UDP/DTLS (DAVE) | 443+ | Kryptert voice/video via DAVE-protokoll | Discord-voice-sesjonene identifiserbare via DTLS handshake",
-            "DNS | UDP/53 | discord.com, gateway.discord.gg, cdn.discordapp.com | Avsløres ved DNS-lekkasje (manglende DoH)",
-            "Cloudflare CDN | TCP/443 | 104.16.x.x (Cloudflare range) | IP-range identifiserer Discord-CDN-trafikk"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-10 | Metadata – Komplett felt-inventar"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Felt | Kilde | Datatype | Etterforskningsverdi",
-            "id (Snowflake) | Alle Discord-objekter | 64-bit int | Opprettelsestidspunkt ned til ms",
-            "username | Profil (globalt unikt siden 2023) | String | Primær identifikator – men kan endres",
-            "global_name | Profil (display name, 2023+) | String | Vises til andre – kan avvike fra username",
-            "discriminator | Historisk – fjernet 2023 | String (4 siffer) | Eldre kontoer: [navn#1234]-format",
-            "avatar hash | Profil-API | Hex-string | Spor bildehistorikk via CDN-URL",
-            "banner hash | Profil-API | Hex-string | Profilbanner – endringer tidstemples",
-            "bio | Profil | Fritekst | Kan inneholde kontaktinfo, krypterte meldinger, koder",
-            "public_flags | Profil-API | Bitmask | Badges: Staff, HypeSquad, Bug Hunter, Early Supporter, Nitro",
-            "connected_accounts | Profil | Array | GitHub, Twitter, Steam, Reddit, YouTube, Twitch, Xbox – pivå-punkt",
-            "mutual_guilds | API (med felles server) | Array | Felles servere med etterforsker-konto",
-            "created_at | Beregnet fra Snowflake | ISO8601 UTC | Kontopprettelsesdato",
-            "online_status | WebSocket event | Enum | online/idle/do_not_disturb/invisible",
-            "activities | WebSocket event | Array | Spill, musikk, custom status – brukeratferd",
-            "roles | Server-API | Array | Admin/moderator avslører hierarki",
-            "joined_at | Server-API | ISO8601 | Tidspunkt for innmelding i server",
-            "message.timestamp | Melding-objekt | ISO8601 UTC | Meldingstidspunkt",
-            "message.attachments | Melding-objekt | Array | Vedlegg: URL, filnavn, størrelse, Content-Type, Snowflake",
-            "message.edited_timestamp | Melding-objekt | ISO8601 eller null | Redigeringstidspunkt",
-            "channel.topic | Kanal-objekt | String | Kanalbeskrivelse – kan inneholde kodeord",
-            "guild.description | Server-objekt | String | Serveres beskrivelse – kriminalitetsformål kan avslørtes"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-11 | Manuelt – Etterforskning via nettleser og konsoll"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Teknikk | Fremgangsmåte | Output",
-            "Aktiver Developer Mode | Innstillinger → Avansert → Utviklermodus → PÅ | Høyreklikk-meny gir 'Kopier ID' for alle Discord-objekter",
-            "Kopier bruker-Snowflake | Høyreklikk brukernavn → Kopier ID | 64-bit Snowflake for dekoding til kontopprettelsesdato",
-            "Invite-API (uten innlogging) | curl https://discord.com/api/v10/invites/[KODE]?with_counts=true | JSON: server-ID, navn, beskrivelse, inviter-Snowflake, antall brukere",
-            "Profil-API | curl https://discord.com/api/v10/users/[USER_ID] -H 'Authorization: Bot [TOKEN]' | JSON: username, global_name, avatar, public_flags, bio",
-            "DevTools Network-tab | F12 → Nettverk → filtrer discord.com/api | Fang API-kall: guild-liste, meldingshistorikk, brukerdata",
-            "Snowflake-dekoding | discord.dog/tools/snowflake-decoder | Eksakt dato og klokkeslett for Discord-objekt",
-            "CDN-bilde-nedlasting | wget 'https://cdn.discordapp.com/...' -O bilde.jpg | Last ned vedlegg FØR URL-en utløper (24 timer)",
-            "SHA-256 hashing | sha256sum bilde.jpg > bilde.jpg.sha256 | Bevisintegritet – hash av nedlastet vedlegg",
-            "Discord History Tracker | Browser-script → lagrer SQLite-database | Lokal kopi av meldingshistorikk i servere du er med i",
-            "Disboard.org | Søk på emne/tag uten å bli med i server | Offentlig katalog over servere med beskrivelse og tematikk"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-12 | Auto – API-integrasjoner og skaleringsverktøy"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Verktøy | URL | Funksjon | Tilgang",
-            "OSINT Industries | osint.industries | Søk Discord-brukernavn/e-post mot 500+ plattformer | Betalt abonnement",
-            "Maltego | maltego.com | Graf-basert nettverksanalyse – Discord-entiteter og relasjoner | Betalt LE-lisens",
-            "cord.cat | cord.cat | Discord-spesifikk OSINT – brukernavn og ID-oppslag | Gratis",
-            "top.gg/user/[ID] | top.gg | Bot-data og profil – ofte bevart etter kontosletting | Gratis",
-            "discord.name/[ID] | discord.name | Profil-oppslag via Snowflake-ID | Gratis",
-            "Lookupguru | lookupguru.app | Discord-brukerprofil via ID | Gratis",
-            "Disboard | disboard.org | Katalog over offentlige servere – søk på emne | Gratis",
-            "Unfurl (dfir.blog) | dfir.blog/unfurl | Dekonstruerer Discord-URLer og Snowflake-tidsstempler | Gratis",
-            "ShadowDragon OIMonitor | shadowdragon.io | Monitorering av Discord-profiler over tid | Betalt (LE)",
-            "discord.py (Python) | github.com/Rapptz/discord.py | Bot-basert automatisert datainnsamling | Åpen kildekode + Bot-token"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-13 | Vakt – Regex og varsling ved profilendring"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Overvåkningsmål | Regex / Metode | Verktøy | Formål",
-            "Discord-invite-link | discord\\.gg/([a-zA-Z0-9-]{2,20}) | grep, Python re | Finn Discord-invitasjoner i tekst/logger",
-            "Discord Snowflake-ID | [0-9]{17,20} | grep, Python re | Identifiser Discord-IDer i materiale",
-            "Discord-brukernavn | @[a-zA-Z0-9_.]{2,32} | grep, Python re | Finn brukernavn i tekst",
-            "CDN-vedlegg-URL | cdn\\.discordapp\\.com/attachments/ | grep | Finn Discord-fildelinger i logger",
-            "Profilovervåking | changedetection.io mot discord.com/users/[ID] | changedetection.io | Varsler ved endring i offentlig profil",
-            "Brukernavnendring | @SangMata ikke tilgjengelig for Discord – manuell overvåking | OSINT Industries | Søk periodisk etter brukernavn-historikk",
-            "Hunchly-selektor | Konfigurer Discord-relevante søkeord som selektor i Hunchly | Hunchly | Varsler automatisk ved funn under browsing i Discord"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-14 | Sokkedukke – VPN, fingerprinting og profil-troverdighet"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Krav | Detalj | Begrunnelse",
-            "VM (SIS-VM-11) | Kali Linux VM – én per sak | Isolerer saksmappe – bevarer OVA-eksport for retten",
-            "VPN | ProtonVPN / Mullvad med WireGuard + Kill Switch | Discord logger IP ved alle innlogginger",
-            "Etterforskningskonto | Opprettet med ProtonMail via Tor – aldri tjenestee-post | Kobler ikke politistasjonen til undersøkelsen",
-            "Konto-troverdighet | Minimum 30–60 dager gammel – noe aktivitet – profilbilde | Nye kontoer flagges av Discord og serveradminer",
-            "Firefox + arkenfox.js | Normaliserer browser-fingerprint | Hindrer Discord og servere fra å fingerprinte etterforskeren",
-            "User-Agent | Bruk nettleserversjon – ikke desktop-appen | Desktop-appen sender 'DiscordBot/...' som UA i API-kall",
-            "MAC-randomisering | VirtualBox: randomiser MAC FØR oppstart | VirtualBox OUI 08:00:27 er kjent – avslører VM",
-            "Aldri like/react | Aldri klikk på reaksjoner eller 'like' | Avslører etterforsker-kontoen for server-admin"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-15 | AI – LLM og ansiktsgjenkjenning"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "AI-funksjon | Verktøy | Discord-spesifikk bruk | Begrensning",
-            "Slangdekoding | Claude/Ollama (lokal instans) | Dekod emoji-koder, gamer-sjargong, kriminell slang i meldingseksporter | SENSITIV data ALDRI til skybasert AI",
-            "Ansiktsgjenkjenning | PimEyes, FaceCheck.ID | Matche profilbilder mot internett-forekomster | Krever juridisk hjemmel i Norge",
-            "Nettverksvisualisering | Maltego + AI-transforms | Identifiser klynger i Discord-server-nettverk automatisk | Krever Snowflake-IDer som input",
-            "Tekstsummering | Claude (godkjent instans) | Summere store mengder meldingshistorikk fra Discord History Tracker | Maks datasensitivitet vurderes per sak",
-            "Oversettelse | DeepL, Whisper (lokal) | Oversette servere med russisk, arabisk, kinesisk – vanlig i kriminalnettverk | Slang oversettes dårlig – spesialist anbefales",
-            "Lydtranskripsjon | Whisper (lokal Python-instans) | Transkribere Discord-lydmeldinger (voice messages, 2023+) | Lokal kjøring er krav – sensitiv lyd"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-16 | OPSEC – Attribusjonsanalyse: spor etterforskeren etterlater"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Handling | Data registrert av Discord | Risiko | Mottiltak",
-            "Innlogging på konto | IP, User-Agent, enhetfingerprint, tidsstempel | HØY – Discord logger alt ved innlogging | VPN + arkenfox.js + etterforskningskonto",
-            "Innmelding i server | Kontoens profildata synlig for serveradmin | MODERAT – avhenger av serverens årvåkenhet | Ikke bli med med politikonto – passiv observasjon",
-            "Klikk på invitasjonslenke | IP, User-Agent, tidsstempel | HØY – Discord registrerer alle invite-klikk | VPN + Kall API direkte i stedet for å klikke",
-            "API-kall uten autentisering | IP til Discord | LAV – men etablerer søkemønster | VPN",
-            "Vedlegg-nedlasting (CDN) | IP til Cloudflare CDN (ikke målets) | LAV | Akseptabelt – CDN ser ikke mål",
-            "Bot i server | Bot-ID synlig for alle med tilgang til serverlisten | MODERAT | Bruk etterforsknings-bot, ikke privat bot",
-            "Typing indicator | Vises for motpart i DM | LAV – men avslører tilstedeværelse | Aldri åpne DM med mål i etterforskningsmodus"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-17 | Kritikk – Kryssverifisering og TPS-gradering"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Funntype | Kilde 1 | Kilde 2 (uavhengig) | TPS etter verifisering",
-            "Snowflake-ID | Discord-profil (kopiert via Developer Mode) | discord.dog/tools (dekoding bekrefter dato) | B-1-MODERAT etter begge bekrefter",
-            "Brukernavn (kan endres) | OSINT Industries – historisk søk | cord.cat – separat søk | C-2-LAV – brukernavn ikke stabilt",
-            "Invitasjonslenke – server | Invite-API (inviter-Snowflake og guild-ID) | Disboard – bekreft serverens eksistens | C-2-MODERAT etter begge",
-            "Meldingsinnhold (screenshot) | Hunchly-logg med SHA-256 | Discord History Tracker SQLite-database | C-3-LAV uten LE-utlevering",
-            "Tilkoblede kontoer (GitHub/Steam) | Discord profil – Connected Accounts | GitHub/Steam API – bekreft eksistens | B-2-MODERAT etter begge",
-            "IP fra LE-svar | Discord LE-utlevering | ISP-logg via rettslig pålegg | A-1-HØY etter begge",
-            "Breach-database-funn | HaveIBeenPwned | IntelX eller Dehashed – separat søk | C-3-LAV – kryss mot to uavhengige"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-18 | LE-Guide – Discord-politihenvendelse (oppdatert mai 2025)"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Kontaktpunkt | Detalj",
-            "LE-portal URL | https://discord.com/safety/360044157931-working-with-law-enforcement (oppdatert mai 2025)",
-            "Transparency Hub | https://discord.com/safety-transparency",
-            "Emergency disclosure | Direkte til Discord Trust & Safety via portal – for umiddelbar fare for liv",
-            "Preservation request | Sendes umiddelbart via portal – Discord bevarer data under etterforskning i opptil 90 dager",
-            "Norsk kanal | Kripos (kripos@politiet.no) → MLAT (Mutual Legal Assistance Treaty) → US DoJ → Discord",
-            "Svartid (ikke-haster) | 4–8 uker typisk – preservation request kjøpes tid",
-            "Haste-saker | 24–48 timer via emergency disclosure (live i fare – 18 U.S.C. § 2702(b)(8))",
-            "DSA (EU) | Government Request Portal for EU-myndigheter – prioritert kø"
-          ]
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Rettslig grunnlag (norsk) | US-ekvivalent | Data Discord utleverer",
-            "Begjæring til Discord (grunnleggende) | Subpoena / 18 U.S.C. § 2703(d) | Brukernavn, e-post, telefon, IP-logg (60 dager), kontoopprettelsesdato",
-            "Kjennelse tingrett – strpl. § 197 | Court Order / 18 U.S.C. § 2703(d) | Alt over + servermedlemskap, enhets-IDer, betalingshistorikk",
-            "Ransakingskjennelse – strpl. § 192 | Search Warrant | Alt over + meldingsinnhold (DM og server), vedlegg, VoIP-logger",
-            "Emergency disclosure | Voluntary disclosure 18 U.S.C. § 2702(b)(8) | IP, konto – ingen kjennelse ved overhengende fare"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-19 | Jus – Norske paragrafkoblinger"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Handling | Hjemmel | Nivå | Krav",
-            "Se offentlig Discord-server / profil | Politiloven § 25 | TILLATT | Ingen – dokumenter formål og logg",
-            "Bruk HIBP / OSINT Industries passivt | Politiloven § 25 | TILLATT | Ingen – dokumenter søk og funn",
-            "Invite-API-kall (anonym, uten innlogging) | Politiloven § 25 | TILLATT | Ingen – passiv innhenting av offentlig data",
-            "Opprette etterforskningsprofil for tilgang til lukket server | Strpl. § 196 | BESLUTNING | Skriftlig politijurist/påtale FØR handling",
-            "Bli med i server med etterforskningsprofil | Strpl. § 196 | BESLUTNING | Særlig vurdering – passiv vs. aktiv spaning",
-            "Innhenting av IP og konto-metadata fra Discord | Strpl. § 197 | KJENNELSE | Tingretts kjennelse FØR LE-forespørsel",
-            "Innhenting av meldingsinnhold (DM/server) | Strpl. § 192 (ransaking) | KJENNELSE | Ransakingskjennelse – sterkest form",
-            "Mindreårige som mål/offer | Barnekonvensjonen art. 16 + strl. § 46 | SKJERPET | Se SIS-MINOR-14 – aldri direktekontakt",
-            "Ta kontakt med mål via Discord | Strpl. § 196a | ABSOLUTT GRENSE | Provokasjonsforbud – aldri uten godkjenning"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "KT-20 | Bevis – Integritet, hashing og ikke-benektbarhet"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "Krav | Metode | Kommando | Juridisk funksjon",
-            "SHA-256 per screenshot og vedlegg | sha256sum etter hvert funn | sha256sum funn_01.png >> SHA256_logg.txt | Bevisintegritet – fil er uendret etter innhenting",
-            "Last ned CDN-vedlegg FØR utløp | wget eller curl innen 24 timer | wget 'https://cdn.discordapp.com/...' -O vedlegg.jpg | CDN-URLer utløper – filen er borte etter 24t",
-            "SHA-256 av Discord History Tracker SQLite | sha256sum discord_history.db | Lagres med SHA-256-hash | Meldingshistorikk som kryptografisk bevis",
-            "Hunchly aktivt ved all browsing | Rødt ikon i Chrome FØR discord.com åpnes | Automatisk URL + MHTML + hash | Bevislogg for alle besøkte Discord-sider",
-            "UTC-tidsstempel på alle funn | date -u etter hvert screenshot | date -u >> SHA256_logg.txt | Entydig tidsreferanse for retten",
-            "Logg Developer Mode / Snowflake-dekoding | Screenshot av dekodingsverktøy + result | sha256sum snowflake_dekod.png | Dokumenter tidsstempel-analyse",
-            "OVA-eksport av VM | VBoxManage export [VM] -o [fil].ova | sha256sum [fil].ova | Beviser hele etterforsknings-miljøet",
-            "Preservation request (Discord) | Send via LE-portal umiddelbart | Bekreftelse-e-post fra Discord = bevis på bevissikring | Stopper sletting av data under MLAT-prosessen"
+            "Telegram er ikke mørk web — det er halvåpent: Offentlige kanaler er fullt tilgjengelige uten konto. Kriminelle miljøer etablerer seg her fordi de når mange mottakere, men tror de er skjult. De er ikke det — offentlige kanaler er OSINT-gull.",
+            "Secret Chats er den reelle veggen: Enkel Telegram-bruk er ikke E2EE. Den ekte etterforskningsutfordringen er Secret Chats — men de brukes sjelden av norske kriminelle fordi de er lite intuitive og forsvinner ved enhetsskifte.",
+            "Emojispråket er nøkkelen for norsk ungdomskriminalitet: Norske tenåringer som selger narkotika via Telegram bruker emoji som primærspråk fordi det er raskt, muntlig forstått i miljøet og unnviker nøkkelordfiltre.",
+            "Fragment.com og +888-numre er den nye anonymiseringsmetoden: Post-2022 kan kriminelle bruke Telegram uten ekte SIM-kortregistrering. TON-blockchain-sporing er den eneste tekniske metoden for å koble disse til ekte identitet.",
+            "cache4.db er det digitale hukommelsessenteret: Selv om Telegram-serverne ikke gir meldingsinnhold, kan en beslaglagt telefon gi tilgang til historikk via cache4.db — inkludert potensielt slettede meldinger via WAL-fil."
           ]
         }
       ]
     },
     {
       "id": "s04",
-      "overskrift": "SEKSJON 3 – TEKNISK DEKONSTRUKSJON (A-Å)",
+      "overskrift": "DEL 4 — ANALOGI-PAR",
       "komponenter": [
-        {
-          "type": "paragraph",
-          "data": "Nivå 1 – Binært: Snowflake og WebSocket-payload\n\nDiscords primære dataprimitive er Snowflake-IDen – en 64-bit (8 byte) integer. På bit-nivå:"
-        },
-        {
-          "type": "callout",
-          "kind": "CASE",
-          "data": "Snowflake 175928847299117063 – binær representasjon:\nBinary: 0000 0010 0111 1100 1110 0001 0100 0001 0000 0000 0000 0000 0000 0001 0100 0111\nHex: 0x 02 7C E1 41 00 00 01 47\nBit 63–22 (42 bits): 0000 0010 0111 1100 1110 0001 0100 0001 = 41944201\nLegg til epoch: 41944201 + 1420070400000 = 1462014601000 ms\nKonverter: 2016-04-30T11:43:21.000Z\n\nWebSocket JSON-melding (Discord Gateway Event):\n{\"op\":0,\"d\":{\"id\":\"175928847299117063\",\"content\":\"hei\",\"author\":{\"id\":\"80351110224678912\"},\"timestamp\":\"2016-04-30T11:43:21.000000+00:00\"},\"t\":\"MESSAGE_CREATE\"}"
-        },
-        {
-          "type": "paragraph",
-          "data": "Nivå 2 – Arkitektur: Fra klient til server til LE"
-        },
         {
           "type": "grid",
           "data": [
-            "Lag | Teknologi | Protokoll | Etterforskningskonsekvens",
-            "Klient | React (web) / Electron (desktop) | HTTPS + WebSocket | Electron DevTools tilgjengelig – kan hente JWT-token i debug",
-            "TLS-handshake | TLS 1.3 – Discord server | TCP/443 | SNI-feltet avslører discord.com i Client Hello – synlig i PCAP",
-            "REST API (profil, historikk) | discord.com/api/v10 | HTTPS GET/POST JSON | IP-adresse logges per kall – tilgjengelig via LE-forespørsel",
-            "WebSocket Gateway | gateway.discord.gg | WSS (WebSocket Secure) | Sanntidsmeldinger – heartbeat hvert 41 sek – identifiserbart",
-            "CDN (vedlegg) | cdn.discordapp.com (Cloudflare) | HTTPS + signerte URLer | IP til Cloudflare – ikke målets IP. URL utløper etter 24t.",
-            "Discord-server | Cassandra NoSQL + Redis + AWS S3 | Proprietær | Meldinger lagres til sletting. LE-forespørsel gir tilgang med kjennelse.",
-            "LE-utlevering | Discord Trust & Safety → MLAT → Kripos | E-post/portal | JSON-eksport av kontodata, IP-logger, meldingsinnhold (med kjennelse)"
+            "TEKNISK SANNHET: MTProto 2.0 (teknisk) | PEDAGOGISK ANALOGI: MTProto 2.0 (pedagogisk)",
+            "MTProto 2.0 er Telegrams proprietære kryptografiske protokoll som bruker AES-256-IGE for kryptering og SHA-256 for nøkkelderivering. Klient-server-arkitektur betyr at Telegram-serverne HAR nøklene for vanlige chatter. | MTProto er som et låsbart bankbrev. Du legger brevet i en forseglet konvolutt (kryptering). Banken (Telegram-server) forsegler det og leverer det. Men banken har nøkkelen til boksene — bare Secret Chat er som en personlig safe der banken aldri ser innholdet."
           ]
         },
         {
-          "type": "paragraph",
-          "data": "Nivå 3 – Helhet: Discord i etterforskningens store bilde"
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET: Telegram user_id (teknisk) | PEDAGOGISK ANALOGI: Telegram user_id (pedagogisk)",
+            "Telegram user_id er en permanent 64-bit integer som tildeles ved registrering og aldri endres, selv om brukernavn, telefonnummer og profilbilde skiftes. Det er den eneste pålitelige permanente identifikatoren. | user_id er som personnummeret til en Telegram-bruker. Kallenavnet kan skifte, adressen kan flytte, ansiktet kan forandres — men personnummeret er det samme hele livet. Brukernavn er kallenavn. user_id er personnummer."
+          ]
         },
         {
           "type": "grid",
           "data": [
-            "Kriminalitetskategori | Discord-rolle | OSINT-strategi | SIS-referanse",
-            "Narkotikahandel | Åpne og private salgs-servere med emoji-prislister | Server-analyse + emoji-dekoding + invite-API | SIS-OFM-05 + emoji-guide",
-            "Cyberkriminalitet | Koordinering av angrep, salg av RAT/ransomware | Brukernavnpivå til GitHub, hacker-forum | SIS-LEAK-08",
-            "CSAM | Private servere med gradert rolletilgang | Invite-analyse + preservation request umiddelbart + LE | SIS-MINOR-14",
-            "Radikalisering | Servere med gradert tilgang og indoktrinering | Passiv serverovervåking + server-kartlegging | SIS-PIAR-01",
-            "Svindel | Phishing-koordinering, konto-salg, identitetstyveri | Lekkasjesøk (HIBP/IntelX) + Snowflake-dekoding | SIS-OFM-05",
-            "Hvitvasking | Krypto-transaksjoner koordinert via Discord | Krypto-lommebokanalyse + on-chain sporing | SIS-KRYPTO",
-            "Grooming | Voksne kontakter mindreårige via gaming-servere | Særlige juridiske krav – SIS-MINOR-14 | SIS-MINOR-14"
+            "TEKNISK SANNHET: Emoji-kode i narkotikahandel (teknisk) | PEDAGOGISK ANALOGI: Emoji-kode (pedagogisk)",
+            "Emojier brukes som kryptert sjargong i kriminell kommunikasjon — de er semantisk entydige innenfor et subkulturelt fellesskap, unngår tekstbaserte nøkkelordfiltre og gir plausibel forklarbarhet ('jeg snakket om planter'). | Emojier i narkotikahandel er som lommebokbilder blant kriminelle på 1970-tallet. Alle i kretsen vet at en bestemt lommebok betyr penger. Utenforstående ser bare bilder. Politiet lærer seg snart koden."
+          ]
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET: Secret Chat E2EE (teknisk) | PEDAGOGISK ANALOGI: Secret Chat (pedagogisk)",
+            "Secret Chat bruker Diffie-Hellman 2048-bit nøkkelutveksling for å etablere en session-nøkkel som KUN eksisterer på de to klientenhetene. Telegram-serveren er kun signaleringsformidler — den ser aldri innholdet. | Secret Chat er som å hviske til hverandre i et lydisolert rom. Telegrams server er veggen mellom rommene — den formidler at dere vil snakke, men hører aldri hva dere sier. Uten din enhet: ingen tilgang."
+          ]
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET: cache4.db og BLOB-deserialisering (teknisk) | PEDAGOGISK ANALOGI: cache4.db (pedagogisk)",
+            "cache4.db er en SQLite-database på brukerens enhet som lagrer Telegram-data som TL-serialiserte (Type Language) BLOB-objekter. Rådataene er binære og krever spesialisert verktøy (Oxygen Forensic, Belkasoft X) for å deserialiseres til lesbar form. | cache4.db er som en kryptert dagbok skrevet på et hemmelig språk. Dagboken (SQLite-filen) er rett foran deg på skrivebordet — men du kan ikke lese den uten Rosetta-stenen (BLOB-deserialiseringsverktøyet)."
+          ]
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET: DC-ID og geografisk tilhørighet (teknisk) | PEDAGOGISK ANALOGI: DC-ID (pedagogisk)",
+            "Telegrams Data Center-ID (1-5) bestemmes ved registrering og avslører brukerens opprinnelige registreringsregion. DC1=USA/Øst, DC2/4=Amsterdam/EU, DC5=Singapore. DC-ID endres ikke selv om brukeren flytter. | DC-ID er som hemmelig statsborgerskap i en digital stat. Du kan bo i Norge — men Telegram-pass-et ditt er utstedt i Singapore fordi du registrerte der. Passet endres ikke ved adressebytte."
+          ]
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET: Fragment +888-nummer (teknisk) | PEDAGOGISK ANALOGI: Fragment +888 (pedagogisk)",
+            "Fragment.com er Telegram-tilknyttet markedsplass på TON-blockchain der man kan kjøpe anonyme Telegram-numre (+888) med Toncoin uten å koble til ekte SIM-kort. Sporbarhet avhenger av blockchain-analyse. | Et Fragment +888-nummer er som å kjøpe et hustelefonnummer i et borettslag uten å oppgi hvem du er — betalt kontant (Toncoin). Nummerserien eksisterer, men adressen er på en wallet, ikke en person."
+          ]
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET: TGStat og Telemetr (teknisk) | PEDAGOGISK ANALOGI: Kanal-analyseverktøy (pedagogisk)",
+            "TGStat.io og Telemetr.io er tredjeparts analysetjenester som indekserer offentlige Telegram-kanaler og tilbyr statistikk over abonnent-utvikling, meldingshistorikk, geografisk distribusjon og relaterte kanaler via Telegram Bot API. | TGStat er som en offentlig bibliotekskatalog over alle åpne Telegram-kanaler. Akkurat som du kan finne alle bøker et bibliotek har hatt — kan TGStat fortelle deg all historikk for en offentlig kanal."
           ]
         }
       ]
     },
     {
       "id": "s05",
-      "overskrift": "SEKSJON 4 – ANALOGI-PAR",
+      "overskrift": "DEL 6 — H-H-H-N MIKROSTEG: Telegram-etterforskning fra A til Å",
       "komponenter": [
         {
           "type": "paragraph",
-          "data": "AP-01 | Snowflake-ID"
+          "data": "Komplett etterforskning av en Telegram-bruker — fra selektor til rapport.\n\nFASE 1: Planlegging og juridisk avklaring"
         },
         {
           "type": "grid",
           "data": [
-            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
-            "Snowflake er en 64-bit integer der bit 63–22 (42 bits) er antall millisekunder siden Discord-epoch 1.1.2015. Ingen bruker kan manipulere sin egen Snowflake. | Snowflake er som et DNA-fingeravtrykk: inneholder nøyaktig informasjon om tidspunktet for 'fødsel' – ned til millisekundet. Og i motsetning til et fødselsnummer kan ingen bruker endre sin Snowflake."
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Definer informasjonsbehov (IB) | Saksmappen (SIS-PIAR-01 planleggingsfase) | Klart formulert IB sikrer proporsjonalitet og lovlighet | FØR enhver innhenting",
+            "2 | Klassifiser innhentingstype | Juridisk sjekkliste: åpen kanal vs. lukket gruppe vs. DM | Åpen kanal = § 25. Lukket gruppe = § 196. DM = § 196 + vurder § 216 | Under planlegging",
+            "3 | Innhent § 196-beslutning om nødvendig | Politijurist — skriftlig beslutning | Obligatorisk FØR tilgang til lukkede grupper eller DM med etterforskningsprofil | FØR operasjon",
+            "4 | Identifiser selektor | Brukernavn (@handle), telefonnummer (+47...) eller kjent Telegram-ID | Selektoren er inngangsverdien til all søking — uten den: ingen søk | Etter juridisk avklaring"
           ]
         },
         {
           "type": "paragraph",
-          "data": "AP-02 | Standard DM (ikke E2EE)"
+          "data": "FASE 2: Passiv innhenting (Politiloven § 25)"
         },
         {
           "type": "grid",
           "data": [
-            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
-            "Standard Discord DM krypteres med AES-256 at rest, men Discord Inc. besitter nøkkelen. Discord kan lese og utlevere innholdet med rettslig pålegg. | Standard DM er som å sende et brev og gi en kopi til postkontoret. Mottakeren leser originalen, men postkontoret (Discord) har alltid en kopi – og kan åpne den hvis politiet ber om det."
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Åpne kanal via t.me/s/-lenke | Nettleser + VPN + Hunchly aktivt. URL: https://t.me/s/[kanalbrukernavn] | Leser kanalinnhold uten innlogging — 100% passivt og lovlig | FØR etterforskningsprofil aktiveres",
+            "2 | Søk brukerprofil via t.me/[brukernavn] | Nettleser — samme VPN + Hunchly-sesjon | Profilbilde, bio, sist sett, felles grupper (om synlig). Screenshot + SHA-256 | Etter kanalinnhenting",
+            "3 | TGStat.io kanalanalyse | tgstat.io → søk på kanalbrukernavn | Statistikk, historikk, vekst, relaterte kanaler, språkprofil | Parallelt med passiv innhenting",
+            "4 | Lekkasjesøk telefonnummer/brukernavn | IntelX.io og haveibeenpwned.com | Koble telefonnummer til Telegram-konto fra 500M-lekkasjedatasettet | Etter identifikasjon av selektor",
+            "5 | Wayback Machine — historisk profil | web.archive.org søk på t.me/[brukernavn] | Historiske snapshots av profil — bio, bilder, brukernavn som er endret | Parallelt med annen innhenting"
           ]
         },
         {
           "type": "paragraph",
-          "data": "AP-03 | Invitasjonslenke (discord.gg/kode)"
+          "data": "FASE 3: Med etterforskningsprofil (§ 196 — etter beslutning)"
         },
         {
           "type": "grid",
           "data": [
-            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
-            "Et API-kall til discord.com/api/v10/invites/[KODE]?with_counts=true returnerer guild.id, guild.name, inviter.id (Snowflake), member_count og expires_at – alt uten innlogging. | Invitasjonslenken er husleiekontrakten til et kriminelt lager. Du trenger ikke bryte deg inn for å se hvem som eier kontrakten – du plukker bare opp nøkkelen fra bakken og leser den."
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Aktiver OPSEC-infrastruktur | VPN (Mullvad, fast node) + Kill Switch + Hunchly + etterforskningsprofil i Telegram | Lesekvittering MÅ deaktiveres FØR profilen åpnes | FØR innlogging på Telegram",
+            "2 | @userinfobot: innhent user_id | Telegram-app: videresend melding fra mål til @userinfobot | Bot returnerer permanent user_id + navn + brukernavn + DC-ID | Etter beslutning er innhentet",
+            "3 | @CreationDateBot: kontoalder | Videresend melding til @CreationDateBot | Indikasjon på kontooprrettelsestidspunkt — krysskjekk med TGStat | Etter user_id er bekreftet",
+            "4 | Bli med i gruppe (passivt) | Telegram-app med etterforskningsprofil — bruk invite-link | Kan lese gruppeinnhold. Adminliste kan avsløre admin-profiler | Etter beslutning. Passiv observasjon — ingen interaksjon",
+            "5 | Medlemsliste-screenshot | Telegram → Gruppe → Deltakerinfo → Members | Beviser hvem som er i gruppen. SHA-256 + UTC umiddelbart | Under gruppeobservasjon"
           ]
         },
         {
           "type": "paragraph",
-          "data": "AP-04 | DAVE-protokoll (E2EE voice/video)"
+          "data": "FASE 4: Emoji-analyse og innholdsfortolkning"
         },
         {
           "type": "grid",
           "data": [
-            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
-            "DAVE (Discord Audio Video Encryption) bruker MLS (Messaging Layer Security) for E2EE i voice/video-kanaler siden 2023. Discord-server videresender krypterte pakker uten nøkkelen. | DAVE-krypterte talesamtaler er som et whisper-rør mellom to private rom – Discord er bare røret, ikke lytteren. Selv med ransakingskjennelse kan Discord ikke gi deg lyden av samtalen."
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Identifiser emoji-mønstre | Kanal/gruppe-meldinger — noter emojier i kontekst | Emojier uten kontekst er ikke bevis. Mønster over tid = bevis | Løpende under innhenting",
+            "2 | Sammenlign med emoji-politirapport | Interne politiressurser + SIS-TELEGRAM-17 KT-07 | Kryssreferanse mot dokumentert narkotikajargon | Etter identifikasjon av emojimønstre",
+            "3 | LLM-analyse (lokal) | Offline LLM (Llama 3) — last inn kontekst fra kanal | Systematisk analyse av meldingsmønstre, frekvens og innholdskategorier | Etter at meldingsdata er innsamlet",
+            "4 | TPS-gradering av emoji-funn | SIS-TPS-02 — emoji-fortolkning er C-kilde som krever korroborasjon | Emojier alene = C-kilde. Med kontekst og korroborasjon: B-kilde | Per funn, FØR rapport"
           ]
         },
         {
           "type": "paragraph",
-          "data": "AP-05 | CDN-URL med 24-timers utløp"
+          "data": "FASE 5: Profilbilde og visuell etterforskning"
         },
         {
           "type": "grid",
           "data": [
-            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
-            "Fra 2023 er Discord CDN-URLer signert med HMAC og parameterne ?ex= (utløp, hex UNIX) og ?is= (utstedt, hex UNIX). Etter ~24 timer slutter URLer å virke. | CDN-URLen er en billettluke med QR-kode – virker i 24 timer, deretter er billetten ugyldig. Beviset er filen, ikke lenken. Last ned umiddelbart, hash, logg."
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Hent profilbilde | Screenshot av profilbilde fra t.me/[brukernavn] via VPN | Original bildefil er primærbevis. SHA-256 umiddelbart | Etter åpning av profil",
+            "2 | PimEyes.com reverse image search | pimeyes.com — last opp profilbilde | Matcher mot milliarder av nettbilder — identifiserer mulig ekte person | Etter SHA-256 av originalbilde",
+            "3 | FaceCheck.ID + Google Images | Kryssreferanse — uavhengig kilde | Konfirmerer eller avkrefter PimEyes-funn | Etter PimEyes-søk",
+            "4 | TPS-gradering bildeidentifikasjon | Ansiktsgjenkjenning: S=HØY alltid. To uavhengige match: P=2 | Ansiktsgjenkjenning er et teknisk hjelpemiddel — ikke bevis alene | Per funn, FØR rapport"
           ]
         },
         {
           "type": "paragraph",
-          "data": "AP-06 | Tilkoblede kontoer (Connected Accounts)"
+          "data": "FASE 6: LE-forespørsel og avslutning"
         },
         {
           "type": "grid",
           "data": [
-            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
-            "Discord-brukere kan koble GitHub, Twitter, Steam, Spotify, Xbox, Reddit, YouTube, Twitch, Battle.net og Facebook til Discord-profilen. Disse er synlige for andre brukere. | Connected Accounts er som å finne personens visittkort med lenker til alle deres sosiale profiler. Én Discord-konto åpner dørene til ti andre plattformer – og ti nye pivå-punkt."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "AP-07 | Discord History Tracker"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
-            "Discord History Tracker er et browser-script som lagrer en lokal SQLite-database med alle meldinger i servere etterforsker har tilgang til. SHA-256 av SQLite-filen er bevisintegritet. | Discord History Tracker er som en sanntidsopptaker som tar kopi av alle brev som sendes gjennom klubben. Det som ellers ville blitt makulert av admin, er nå bevart i etterforskerens arkiv."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "AP-08 | MLAT-prosessen"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
-            "For norsk politi: innhenting av Discord-data krever Mutual Legal Assistance Treaty (MLAT) – norsk tingrettskjennelse → Kripos → US DoJ → Discord. Preservation request blokkerer sletting mens MLAT pågår. | MLAT er som internasjonal tollavstempling. Din norske varedeklarasjon (kjennelse) er ikke gyldig i USA alene. Du trenger Kripos som tolk og US DoJ som tullmyndighet – men preservation request er som å sette pakken i karantene mens papirene ordnes."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "AP-09 | Snowflake i URL-hierarki"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
-            "URL-en discord.com/channels/[GUILD_ID]/[CHANNEL_ID]/[MESSAGE_ID] inneholder tre Snowflake-IDer. Alle tre kan dekodes til nøyaktige tidsstempler for server-, kanal- og meldingsopprettelse. | Discord-URL-en er som en adresse med tre etasjenivåer: bygningstidspunkt (guild), roms opprettelsesdato (kanal) og tidspunktet for brevet (melding) – alt kodet i adressen."
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "AP-10 | Emoji-koder i kriminelle Discord-servere"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
-            "Kriminelle Discord-miljøer bruker emoji som systematisk obfuskering. 🌿=cannabis, ❄️=kokain, 📦=forsendelse. Kombinert med l33t-speak og gamer-slang skaper dette et flerdimensjonalt kodesystem. | Emoji-kodene er som en mafias bankersjargong – 'bananer' betyr én ting for omverdenen, noe helt annet i kretsen. Systemet er lett å dekode med kontekst, men uforståelig for utenforstående som ser meldingene isolert."
+            "# | HVA | HVOR | HVORFOR | NÅR",
+            "1 | Vurder behov for Telegram-data | Hva kan Telegram utlevere? IP + telefon ved kjennelse. Ikke meldingsinnhold | Telegram utleverer IKKE meldingsinnhold for standard chatter | Etter at OSINT er uttømt",
+            "2 | Skriv begjæring til tingrett (strpl. § 197) | Politijurist — tingretts kjennelse med saksnummer og hjemmel | Kjennelse er nødvendig for Telegram-utlevering via Kripos/MLAT | Etter vurdering med jurist",
+            "3 | Kripos koordinerer MLAT | Kripos sender via INTERPOL NCB Dubai til Telegram | Tidshorisont: standard 3-12 måneder. Emergency: dager | Etter tingretts kjennelse er innhentet",
+            "4 | SHA-256 av alle funn + Hunchly Full Export | sha256sum * → hash_logg.txt. Hunchly → Full Case Export | Komplett beviskjede for rapport. Alle artifacts hashede | Etter avsluttet innhentingsøkt",
+            "5 | Skriv funnrapport + egenrapport (SIS-RAPPORT-13) | Word-mal rapport_mal.docx — funnskjema + egenrapport | Juridisk holdbar dokumentasjon av alle Telegram-funn | Etter avsluttet etterforskning"
           ]
         }
       ]
     },
     {
       "id": "s06",
-      "overskrift": "SEKSJON 6 – H-H-H-N MIKROSTEG: KOMPLETT ETTERFORSKNING A TIL Å",
+      "overskrift": "DEL 7 — REFERANSEARKIV OG KILDEGRUNNLAG",
       "komponenter": [
         {
           "type": "paragraph",
-          "data": "6.1 – Forberedelse og passiv innhenting"
+          "data": "7.1 SIS-serie kryssreferanser"
         },
         {
           "type": "grid",
           "data": [
-            "HVA | HVOR | HVORFOR | NÅR",
-            "Aktiver VM + VPN + sokkedukke-konto | Kali Linux VM (SIS-VM-11) + ProtonVPN + etterforskningskonto | Forhindre attribusjon – etterforsker er anonym | FØR alt annet – ingen unntak",
-            "Identifiser selektor: brukernavn, Snowflake-ID, eller invite-kode | Kildemateriale fra saken, politi-registre, vitneutsagn | Etabler ankerpunkt for videre søk | Første steg i PIAR-syklusen",
-            "Passivt søk: brukernavn i OSINT Industries, cord.cat, top.gg | Nettleser i VM – ikke innlogget på Discord | Finn ekstern info uten å etterlate spor på Discord | Alltid FØR Discord-innlogging",
-            "Invite-API-kall (uten innlogging) | Terminal: curl discord.com/api/v10/invites/[KODE] | Hent server-metadata og inviter-Snowflake – ingen logging av dette kallet | Hvis invitasjonslenke er tilgjengelig",
-            "Lekkasjesøk: e-post/brukernavn i HIBP og IntelX | haveibeenpwned.com, intelx.io, dehashed.com | Finn eksponerte passord-hashes, historiske e-poster, IP-adresser | Tidlig i etterforskningen – § 25 tillatt",
-            "SHA-256 av alle passivt innhentede funn | Terminal: sha256sum [fil] >> SHA256_logg.txt | Bevisintegritet fra dag 1 | Umiddelbart etter hvert funn – aldri i batch"
+            "Dok-ID | Tittel | Relevans for SIS-TELEGRAM-17",
+            "SIS-PIAR-01 | PIAR-metodikk | Rammeverk — Telegram-etterforskning er I-fasen (innhenting) i PIAR",
+            "SIS-TPS-02 | TPS-modellen | Kildekritikk per Telegram-funn. Emoji = C-kilde. Offentlig kanal = B/C.",
+            "SIS-PIVOT-03 | Pivå-metodikk | Telegram user_id → e-post → brukernavn → sosiale profiler",
+            "SIS-HASH-04 | Hashing og SHA-256 | SHA-256 obligatorisk for alle screenshots og cache4.db-filer",
+            "SIS-JUSS-05 | Juridisk rammeverk | §§ 196, 196a, 197, 216a, 216b for Telegram-innhenting",
+            "SIS-OPSEC-06 | OPSEC og digital hygiene | Lesekvittering-deaktivering, VPN, etterforskningsprofil",
+            "SIS-LEAK-08 | Datalekkasjer og -brudd | 500M Telegram-lekkasje og combo-lister fra TG-kanaler",
+            "SIS-KRYPTO-12 | Kryptovaluta-etterforskning | TON blockchain og Fragment.com +888-numre",
+            "SIS-RAPPORT-13 | Rapportmal og beviskjede | Funnrapport for Telegram-funn — alle felter obligatoriske",
+            "SIS-MINOR-14 | Mindreårige i digitale saker | CSAM via Telegram — særlige krav og umiddelbar protokoll",
+            "SIS-SOKE-17 | Sokkedukke og legende | Etterforskningsprofil-opprettelse for Telegram",
+            "SIS-VPN-16 | VPN og proxy | Mullvad WireGuard for Telegram-etterforskning",
+            "SIS-TELEGRAM-17 | Dette dokumentet | Primærreferanse for Telegram-etterforskning 2026"
           ]
         },
         {
           "type": "paragraph",
-          "data": "6.2 – Discord-innlogging og profilanalyse"
+          "data": "7.2 Kildegrunnlag"
         },
         {
           "type": "grid",
           "data": [
-            "HVA | HVOR | HVORFOR | NÅR",
-            "Aktiver Developer Mode i Discord | Innstillinger → Avansert → Utviklermodus → PÅ | Aktiverer 'Kopier ID' for alle Discord-objekter | Første gang sokkedukke logger inn",
-            "Søk opp målprofil – kopier Snowflake | Søk på brukernavn i Discord → Høyreklikk → Kopier ID | Snowflake er permanent – gir kontopprettelsesdato | Etter innlogging med sokkedukke",
-            "Dekod alle Snowflake-IDer | discord.dog/tools/snowflake-decoder | Etabler tidsstempler for alle Discord-entiteter | Etter ID-innhenting",
-            "Analyser Connected Accounts | Klikk på profil → Se tilkoblede kontoer | GitHub, Steam, Reddit etc. = nye pivå-punkt til andre plattformer | Under profilanalyse",
-            "Kartlegg mutual_guilds og mutual_friends | Via Discord API + DevTools Network-tab | Avslør felles servere og nettverk med kriminelle | Etter profil-analyse",
-            "Hunchly aktivt ved all Discord-browsing | Chrome med Hunchly (rødt ikon) – nødvendig FØR innlogging | Automatisk URL + MHTML + hash for alle Discord-sider | FØR Discord.com åpnes i Chrome"
+            "Kilde | Referanse",
+            "SIS-TELEGRAM-10 (primærkilde) | Spesialetterforsker Trygve Justad Bjørntvedt — Telegram-etterforskning v2026.1",
+            "Telegram Core Documentation | core.telegram.org — MTProto 2.0, Bot API, TL Language spesifikasjoner",
+            "Telegram Transparensrapport Q4 2024 | Publisert på telegram.org — 900 US-forespørsler, 14 641 India-forespørsler",
+            "Emoji, språk og narkotika (politirapport) | Norsk politirapport om emoji-bruk i kriminelle miljøer (intern)",
+            "DemandSage: Telegram Users Statistics 2026 | demandsage.com — 1 milliard brukere, demografi, daglig aktive brukere",
+            "DeepStrike.io: Dark Web Telegram 2026 | deepstrike.io/blog — kriminell bruk av Telegram i 2026",
+            "OSINT Techniques (Bazzell 2024) | Michael Bazzell — Telegram OSINT-metodikk",
+            "ESPY: Telegram OSINT Guide 2025 | espysys.com — Telethon, bots, chat history analysis",
+            "Authentic8: Understanding Telegram for OSINT | authentic8.com — Telegargo, Telepathy, investigative fundamentals",
+            "TGStat API-dokumentasjon | tgstat.io/docs — kanalstatistikk og historikkindeksering",
+            "Straffeprosessloven (1981) | §§ 196, 196a, 197, 203, 216a, 216b",
+            "Politiloven (1995) | § 25 — passiv innhenting av åpen informasjon",
+            "Straffeloven (2005) | §§ 147a-147c (terror), 267-269 (ærekrenkelse)",
+            "GDPR (2018) | Forordning (EU) 2016/679 — art. 6(1)(e), formålsbegrensning",
+            "Oxygen Forensic Detective 2026 | oxygen-forensic.com — cache4.db parsing-kapabiliteter"
           ]
         },
         {
           "type": "paragraph",
-          "data": "6.3 – Server- og kanal-kartlegging"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "HVA | HVOR | HVORFOR | NÅR",
-            "Identifiser servere via Disboard og offentlige kataloger | disboard.org – søk på relevante emner og tags | Kartlegg kriminelt nettverk uten å bli med | Passivt – § 25 – ingen beslutning nødvendig",
-            "Analyser server-emoji og kanal-navn | Offentlig del av server (uten innmelding) | Kanal-navn og custom emoji avslører aktivitetstype | Passiv observasjon",
-            "Dekod invitasjonslenken til server-ID og oppretterens Snowflake | Invite-API-kall – ingen innlogging nødvendig | Server-ID + oppretterens kontopprettelsesdato | FØR evt. innmelding i server",
-            "Vurder server-innmelding juridisk | Politijurist – beslutning strpl. § 196 | Aktiv handling – avslører sokkedukken for serveradmin | Kun etter skriftlig beslutning",
-            "Discord History Tracker i servere du har tilgang til | Browser-script → SQLite-database med meldinger | Bevar meldingshistorikk lokalt – kan slettes av admin | Kontinuerlig under etterforskning",
-            "SHA-256 av SQLite-database | sha256sum discord_history.db | Bevissikring av meldingshistorikk | Etter hver History Tracker-eksport"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "6.4 – Eskalering og juridisk innhenting"
-        },
-        {
-          "type": "grid",
-          "data": [
-            "HVA | HVOR | HVORFOR | NÅR",
-            "Send preservation request til Discord LE-portal | discord.com/safety/360044157931-working-with-law-enforcement | Blokkerer sletting av data under MLAT-prosessen (90 dager) | Umiddelbart når etterforskning eskaleres",
-            "Klargjør norsk kjennelse (strpl. § 197 eller § 192) | Norsk tingrett – kjennelse på engelsk eller med sertifisert oversettelse | Kjennelse er grunnlag for MLAT-forespørselen | Etter preservation request er sendt",
-            "MLAT-forespørsel via Kripos | Kripos (kripos@politiet.no) → Riksadvokaten → US DoJ → Discord | Norsk kjennelse har ikke direkte jurisdiksjon over Discord | Parallelt med bevisinnhenting fra åpne kilder",
-            "Motta Discord-dataeksport og SHA-256 alle mottatte filer | E-post/ZIP fra Discord Trust & Safety | JSON med konto-data, IP-logger, meldingsinnhold (med kjennelse) | Etter Discord-respons (4–8 uker)",
-            "Integrer Discord-data med åpen kilde-funn i funnrapport | SIS-RAPPORT-13 mal – funnrapport + egenrapport | Discord-data som A-1-HØY kilde, OSINT som C-2–B-2 | Under rapportskrivingen",
-            "Registrer Discord-bruker-ID i Indicia | Politiets Indicia-system | Kobler digital Discord-identitet til personfane | Innen 24t etter ferdig rapport"
-          ]
-        }
-      ]
-    },
-    {
-      "id": "s07",
-      "overskrift": "SEKSJON 7 – REFERANSEARKIV OG KRYSSREFERANSER",
-      "komponenter": [
-        {
-          "type": "grid",
-          "data": [
-            "Dok-ID | Tittel | Discord-kobling",
-            "SIS-DISCORD-15 | Discord-etterforskning (dette dok.) | Primærdokument",
-            "SIS-PIAR-01 | PIAR-metodikk | Overordnet rammeverk – planlegging, endex, juridisk avklaring",
-            "SIS-TPS-02 | TPS-modellen | Gradering av Discord-funn (invite-data = C, LE-data = A)",
-            "SIS-PIVOT-03 | Pivå-metodikk | Connected Accounts = pivå til andre plattformer",
-            "SIS-HASH-04 | Hashing og SHA-256 | SHA-256 av alle Discord-artifacts – CDN-vedlegg, SQLite, OVA",
-            "SIS-JUSS-05 | Juridisk rammeverk | § 25 / § 196 / § 192 per Discord-handling",
-            "SIS-OPSEC-06 | OPSEC og digital hygiene | VM, VPN, sokkedukke for Discord-etterforskning",
-            "SIS-LEAK-08 | Datalekkasjer og -brudd | Discord.io 2023, Zendesk 2025 – HIBP/IntelX-søk",
-            "SIS-VM-11 | Dedikert VM for OSINT | Teknisk plattform for all Discord-innhenting",
-            "SIS-OFM-05 | OFM – Online Footprint Methodology | Nivå 3 (Social Avenues) og Nivå 4 (Breaches) dekker Discord",
-            "SIS-RAPPORT-13 | Rapportmal og beviskjede | Format for funnrapport med Discord-data",
-            "SIS-MINOR-14 | Mindreårige i digitale saker | CSAM og grooming på Discord – særlige krav og protokoll",
-            "SIS-TELEGRAM-10 | Telegram-etterforskning | Parallell metodikk for sammenligning"
-          ]
-        },
-        {
-          "type": "paragraph",
-          "data": "DISCORD-ETTERFORSKNING | Dok-ID: SIS-DISCORD-15 | Versjon 2026.1 | Øst politidistrikt | UNNTATT OFFENTLIGHET\n\nProdusert av: Spesialetterforsker Trygve Justad Bjørntvedt | Optimert for NotebookLM og podkast | Ground Truth-status: BEKREFTET"
+          "data": "TELEGRAM-ETTERFORSKNING | Dok-ID: SIS-TELEGRAM-17 | Versjon 1.0 – April 2026\nØst politidistrikt | Spesialetterforsker Trygve Justad Bjørntvedt | UNNTATT OFFENTLIGHET | TLP:AMBER"
         }
       ]
     }
