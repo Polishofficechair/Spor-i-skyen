@@ -1,7 +1,7 @@
 [  
   {
     "id": 5,
-    "tittel": "TPS"
+    "tittel": "Informasjons vekting"
   },
   {
     "id": 11,
@@ -9,15 +9,15 @@
   },  
   {
     "id": 13,
-    "tittel": "P I A R"
+    "tittel": "Fasene P I A R i ÅK"
   },
   {
     "id": 15,
-    "tittel": "SØKEMOTORER"
+    "tittel": "SØKEMOTORER i ÅK"
   },  
   {
     "id": 20,
-    "tittel": "Telefonnummer"
+    "tittel": "Telefonnummer i ÅK"
   },
   {
     "id": 21,
@@ -29,15 +29,15 @@
   },
   {
     "id": 23,
-    "tittel": "FACEBOOK"
+    "tittel": "FACEBOOK Veileder"
   },
   {
     "id": 25,
-    "tittel": "TELEGRAM"
+    "tittel": "TELEGRAM Veileder"
   },
   {
     "id": 27,
-    "tittel": "DISCORD"
+    "tittel": "DISCORD Veileder"
   },
   {
     "id": 35,
@@ -45,11 +45,11 @@
   },
   {
     "id": 37,
-    "tittel": "IP ADRESSER"
+    "tittel": "Veileder for IP ADRESSER"
   },
   {
     "id": 39,
-    "tittel": "KRYPTOVALUTA"
+    "tittel": "KRYPTOVALUTA Veileder"
   },
   {
     "id": 41,
@@ -61,6 +61,6 @@
   },
   {
     "id": 48,
-    "tittel": "SIGNAL"
+    "tittel": "SIGNAL Veileder"
   }
 ]
