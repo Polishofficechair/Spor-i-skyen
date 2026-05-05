@@ -37,9 +37,9 @@
   {
     "id": "e006",
     "title": "TPS ",
-    "description": ".",
+    "description": "Styrende for all informasjon er vekting. Denne episoden gir deg innføring i Troverdighet, Pålitelighet og Sensitivitet. ",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode06.mp3",
-    "releaseDate": "2026-10-24T08:00:00Z"
+    "releaseDate": "2026-10-05T08:00:00Z"
   },
   {
     "id": "e007",
@@ -381,21 +381,21 @@
       "id": "e055",
       "title": "xxx",
       "description": ".",
-      "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode50.mp3",
+      "mp3URL": "",
       "releaseDate": "2026-05-01T08:00:00Z"
     },
   {
       "id": "e056",
       "title": "xxx",
       "description": ".",
-      "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode50.mp3",
+      "mp3URL": "",
       "releaseDate": "2027-11-17T08:00:00Z"
     },
   {
     "id": "e057",
     "title": "xxx",
     "description": ".",
-    "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode50.mp3",
+    "mp3URL": "",
     "releaseDate": "2027-11-17T08:00:00Z"
   }
 ]
