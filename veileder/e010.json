@@ -1,1 +1,544 @@
-
+{
+  "tittel": "Metodisk støttedokument for etterforskning i åpne kilder",
+  "undertittel": "SOKKEDUKKER OG FIKTIVE PROFILER i OSINT-ETTERFORSKNING – Fra juridisk beslutning til ferdig profil · Teknisk fundament · Livsløp · Bevis · Avvikling",
+  "ordliste": [],
+  "seksjoner": [
+    {
+      "id": "s00",
+      "overskrift": "Dokumentinformasjon",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "Dok-ID | SIS-SOKE-18",
+            "Versjon | 1.0 – Mai 2026",
+            "Status | AKTIV",
+            "Produsert av | Spesialetterforsker Trygve Justad Bjørntvedt, Øst politidistrikt",
+            "Gradering | UNNTATT OFFENTLIGHET – Kun til internt politibruk",
+            "TLP | TLP:AMBER — Kun til mottakers organisasjon",
+            "Primærkilder | SIS-SOKE-17, SIS-OPSEC-06, SIS-VPN-16, SIS-JUSS-05, SIS-PIAR-17, SIS-RAPPORT-13"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s01",
+      "overskrift": "DEL 0 — TYPOLOGI: SOKKEDUKKE-SPEKTERET FRA PASSIV TIL AKTIV",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Ikke alle fiktive profiler er like. Sokkedukke-spekteret strekker seg fra en enkel, passiv leser-konto til en dypt integrert deep cover-persona med flerårig historikk. Juridisk hjemmel, OPSEC-krav og ressursbehov skalerer med kompleksiteten."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Type | Beskrivelse | Juridisk hjemmel | Ressursbehov | Anbefalt bruk",
+            "Passiv observatør | Konto kun for å lese/se åpne profiler og grupper. Ingen interaksjon med mål. | Politiloven § 25 (åpne) / Strpl. § 196 (lukkede grupper) | Lav — standard VM + VPN | Korttids OSINT-innhenting i åpne miljøer",
+            "Standard sokkedukke | Profil med 90+ dagers historikk, venner og aktivitet. Kan søke om gruppemedlemskap. | Strpl. § 196 — påtalebeslutning obligatorisk | Middels — opplæringsperiode 90 dager | Tilgang til lukkede grupper og private kanaler",
+            "Interaktiv profil | Kan kommunisere med gruppemedlemmer, svare på meldinger. Ikke med mistenkte direkte. | Strpl. § 196 — streng juridisk kontroll | Høy — krevende drift og juridisk styring | Dokumentasjon av offentlige koordineringer i gruppen",
+            "Deep Cover persona | Flerårig historikk, etablert nettverk, kjent deltager. Brukes ved langvarig infiltrasjon. | Strpl. § 196 + særskilt PST/Kripos-godkjenning | Svært høy — dedikert ressurs | Organisert kriminalitet, terrorisme, menneskehandel",
+            "Burner-konto | Engangsbruk. Opprettes for ett spesifikt formål og avvikles umiddelbart. | Strpl. § 196 om aktiv / § 25 om passiv | Lav — midlertidig infrastruktur | Enkeltinnhenting der sporbarhet er kritisk"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "overskrift": "DEL 1 — 20 TEKNISKE KRAV TIL EN OPERATIVT SIKKER SOKKEDUKKE",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "KT-01 | JURIDISK BESLUTNING: Ingen profil uten hjemmel\n\nTeknisk krav: Skriftlig påtalebeslutning etter Strpl. § 196 fra politijurist BEFORE profilen opprettes. Beslutningen skal spesifisere: hvilken plattform, formål, varighet (endex-dato), og type profil (passiv/aktiv). Lagres i BL med saksnummer.\n\nKonsekvens av brudd: Alle bevis innhentet via en profil uten gyldig § 196-beslutning er ulovlige. Forsvareren vil kreve frifinnelse. I alvorlige saker risikerer etterforskeren personlig ansvar."
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-02 | ISOLERT VM: Én profil = Én maskin\n\nTeknisk krav: Dedikert virtuell maskin (KVM eller VirtualBox) per sokkedukke-profil. Aldri del VM mellom ulike profiler eller saker. Snapshot tas FØR plattformregistrering — kan tilbakestilles ved kompromittering."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "VM-parameter | Konfigurasjon | Begrunnelse",
+            "OS | Kali Linux (2024.x) eller Ubuntu 24.04 LTS | Standard sikkerhetsmiljø. Forhindrer Windows-telemetri-lekkasje til Microsoft",
+            "RAM | Minimum 4 GB per VM | Sikrer stabil nettleserdrift uten swap som kan logge data til disk",
+            "Disk-kryptering | LUKS/AES-256 på VM-disk | Beslaglagt maskin kan ikke lese VM-innhold uten passfrase",
+            "Snapshot-rutine | Snapshot #1: Etter VPN-installasjon. Snapshot #2: Etter plattformregistrering | Mulighet for tilbakestilling uten å miste bevisdata",
+            "Nettverkskort | Dedikert til VM — ikke delt med vertmaskin | Forhindrer IP-lekkasje mellom VM og vert",
+            "USB-tilgang | Deaktivert i VM-innstillinger | Forhindrer utilsiktet datautveksling mellom sokkedukke og privat enhet"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-03 | VPN OG KILL SWITCH: Konsistent nettverksidentitet\n\nTeknisk krav: Mullvad VPN med WireGuard-protokoll. Fast node per sokkedukke (f.eks. NO#14 for norsk profil). Kill Switch alltid ON. Verifiser på ipleak.net etter tilkobling."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Fastnode-prinsippet: Én sokkedukke = alltid samme VPN-node. Inkonsistent IP = 'mistenkelig innlogging'-alarm fra plattformen.",
+            "Kill Switch: Blokkerer ALL nettverkstrafikk ved VPN-frafall. En frafall uten Kill Switch eksponerer politiets reelle IP.",
+            "DNS-lekkasje: Test med dnsleaktest.com. Alle DNS-servere skal tilhøre VPN-leverandøren — ikke ISP.",
+            "WebRTC: Deaktiver i Firefox: about:config → media.peerconnection.enabled → false. Ellers eksponeres lokal IP via JavaScript."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-04 | NETTLESER-HERDING: Fingeravtrykk-normalisering\n\nTeknisk krav: Firefox med arkenfox.js user.js-konfigurasjon. Standardiserer alle sporbare nettleser-parametre til felles normverdi."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Fingeravtrykk-parameter | Standard verdi med arkenfox.js | Hva det forhindrer",
+            "Canvas fingerprint | Blokkert (returnerer tom canvas) | Unik GPU-basert maskin-ID per nettleser-instans",
+            "WebGL renderer | Blokkert | Avslører GPU-modell og driver-versjon",
+            "User-Agent | Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) | Standardisert UA — identisk med millioner av Firefox-brukere",
+            "Tidssone (JavaScript) | UTC (satt via VM-OS-tidssone) | Geografisk inkonsistens: VPN i Amsterdam + Oslo-tidssone = avsløring",
+            "Skjermoppløsning | 1920×1080 (standard) | Sjeldne oppløsninger er unike identifikatorer",
+            "Installerte fonter | Kun systemfonter (blokkert deteksjon) | Unike font-kombinasjoner er sterke fingeravtrykk",
+            "Battery API | Blokkert | Batteri-nivå er unik per enhet over tid",
+            "Do Not Track | Av (paradoksalt nok: DNT ON er sjeldnere og mer unikt) | Se coveryourtracks.eff.org for aktuell optimal innstilling"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-05 | BURNER SIM: Anonym telefonnummer-tilknytning\n\nTeknisk krav: Utenlandsk prepaid SIM-kort kjøpt kontant. Norske kontantkort er registrert siden 2021 (Ekomloven § 2-6a). Aktiver SIM med VPN aktivt."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Foretrukne land: Tysk (Aldi Talk), svensk (Comviq/Hallon), nederlandsk prepaid — alle tillater kjøp uten ID",
+            "Aktivering: Gjør kun i VM med VPN aktiv. SIM-nummer skal kun brukes til 2FA for denne sokkedukken — aldri til annen kommunikasjon",
+            "Fragment.com alternativ: For Telegram-kontoer: kjøp anonymt +888-nummer via TON-blockchain på Fragment.com",
+            "MySudo (USA): Virtuelt telefonnummer via VOIP — kan brukes til SMS-2FA. Lettere tilgjengelig, men svakere anonymitet"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-06 | PROTONMAIL VIA TOR: Anonym e-post\n\nTeknisk krav: ProtonMail-konto opprettes via Tor Browser (ikke VPN alene). Tor gir tre krypterte hopp som skjuler IP enda for ProtonMail-serverne i Sveits."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Brukernavn-format: fornavn.etternavn.år@proton.me — eksempel: anna.olsen.1992@proton.me",
+            "Gjenopprettings-e-post: Ingen — sett aldri en gjenopprettings-e-post som kobler til en ekte identitet",
+            "2FA på ProtonMail: Aktiver med TOTP (KeePassXC genererer TOTP-koder). Aldri SMS-basert 2FA på ProtonMail",
+            "Alternativ: Tutanota (tysk, sterk personvern) eller Disroot (nederlandsk, åpen kildekode)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-07 | KEEPASSXC: Kryptert passorddatabase\n\nTeknisk krav: Dedikert KeePassXC-database PER sokkedukke. Inneholder: alle passord, TOTP-frø, brukernavnkombinasjoner og backup-koder. Lagret kryptert på VM-disk (AES-256-CBC)."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Passord-format: Minimum 20 tegn. Generert av KeePassXC-passordgenerator. Aldri gjenbruk mellom sokkedukker",
+            "TOTP-støtte: KeePassXC genererer TOTP-koder (erstatter Google Authenticator). Alt i én sikker database",
+            "Backup: KeePassXC-database eksporteres til Beslagsnett etter saken. SHA-256 av databasefilen logges"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-08 | GAN-PROFILBILDE: Ikke-sporbart ansikt\n\nTeknisk krav: Profilbilde generert av StyleGAN3 via thispersondoesnotexist.com. Testet mot Hive Moderation AI Detector (hivemoderationai.com) — score under 50% er akseptabelt."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Inspeksjon: Zoom inn i ørekanter, tenner, brilleinnfatning og bakgrunn. Vanlige GAN-feil: smeltede klær, glasslignende øyne, asymmetriske ører",
+            "Reverse image search: Google Images + Yandex + TinEye — NULLTREFF er kravet. Gjenta til du har et unikt bilde",
+            "Redigering: GIMP: endre bakgrunn, legg til natural noise, juster lysforhold. Eksporter som JPG 85% (ikke PNG — fjerner EXIF)",
+            "Meta AI Content Credentials (2026): Meta kan flagge AI-genererte bilder via C2PA-sertifikat. Bruk redigerte bilder der dette er et problem"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-09 | KJERNEIDENTITET: Konsistent og verifiserbar fiktiv person\n\nTeknisk krav: FakeNameGenerator.com genererer konsistent fiktiv identitet. ALLE detaljer skal samsvare: fødselsdato, oppvekststed, yrke, interesser."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Identitets-felt | Krav | Eksempel (fiktivt)",
+            "Fullt navn | Skandinavisk lydende. Ikke en ekte kjent person. Sjekk Google. | Anna Sofie Lindberg",
+            "Fødselsdato | Konsistent med profil-alder. Aldri under 25 (vekker mistanke) | 14. mars 1991 (35 år i 2026)",
+            "Hjemsted | Reell norsk by som passer profil-formålet | Hamar, Innlandet",
+            "Yrke | Ikke-verifiserbart. Selvstendig næringsdrivende, sykepleier, butikkansatt | Selvstendig konsulent innen helse og velvære",
+            "Biografi (bio) | 2-3 setninger. Konsistente interesser. Passer miljøet du skal inn i | Interessert i friluftsliv og helse. Hobbykoker. Glad i hunder.",
+            "Mors pikenavn | Nødvendig for sikkerhetsquiz | Bergstrøm (fiktivt)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-10 | PLATTFORMREGISTRERING: Teknisk isolert opprettelse\n\nTeknisk krav: Registrering skjer fra isolert VM med VPN aktivt. Rekkefølge: ProtonMail opprettet → SIM aktivert → Plattform-konto registrert. Aldri omvendt rekkefølge."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Lesekvittering OFF: Deaktiver lesekvitteringer FØR du åpner noen chatter (Facebook/Instagram/Telegram → Innstillinger → Personvern)",
+            "Online-status OFF: Deaktiver 'sist sett' og online-indikatorer i alle plattformers personvern-innstillinger",
+            "Ikke søk etter kollegaer: Plattformens algoritme kobler profilen til ditt nettverk umiddelbart ved søk",
+            "To-faktor autentisering: Aktiver TOTP via KeePassXC. Backup-koder lagret i KeePassXC-databasen"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-11 | OPPVARMINGSPERIODE: 90+ dager med troverdig aktivitet\n\nTeknisk krav: Minimum 90 dager med organisk aktivitet FØR profilen brukes i aktiv etterforskning. Plattformers ML-modeller flagger profiler med lav aktivitetsalder."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Periode | Aktiviteter | Mål",
+            "Dag 1-14 | Fyll ut profil, legg ut profilbilde og bio. Knytt til 3-5 venner (kollegaers etterforskningsprofiler) | Profilen eksisterer — ingen aktivitetshistorikk ennå",
+            "Dag 15-60 | 1-2 likes per dag på ikke-relaterte offentlige innlegg. Deling av ufarlig innhold (natur, mat, sport) | 50-100 naturlige interaksjoner over tid",
+            "Dag 61-90 | Bli med i 2-3 offentlige grupper relevante for personaens interesser. Kort kommentar her og der | Gruppe-deltakelse gir troverdighet. 20-40 venner",
+            "Dag 90+ | Profilen er klar for aktiv operasjonell bruk. Test ved å søke om tilgang til en testgruppe | Plattformens algoritme klassifiserer profilen som ekte"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-12 | HUNCHLY: Automatisk bevissikring under all sokkedukke-aktivitet\n\nTeknisk krav: Hunchly (eid av Maltego, mai 2025) skal være aktivt (rødt ikon) i nettleseren FØR sokkedukke-sesjonen begynner. Logger automatisk MHTML + SHA-256 + UTC per sidebesøk."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Case per sak: Opprett dedikert Hunchly-case med saksnummer. Alle sokkedukke-sesjoner i samme case",
+            "Note per funn: Hunchly note-funksjon: skriv inn SHA-256, UTC-tidsstempel og TPS-gradering per funn",
+            "Full Case Export: Etter endex: Hunchly → Export → Full Case → ZIP med alle MHTML + hashes. Lagres på Beslagsnett",
+            "Hunchly virker IKKE i Tor Browser: Ved dark web-søk via sokkedukke: manuell SHA-256 + skjermbilde + UTC er eneste alternativ"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "KT-13 | SHA-256 BEVISFORSEGLING — Fiktiv Sak 26-054321 — Sokkedukke 'Anna Lindberg'\n\nTeknisk krav: SHA-256 beregnes umiddelbart etter hvert screenshot — ikke i batch etterpå. Manglende eller forsinket hashing gjør beviset rettslig bestribart.\n\nFunn-001: Chat-logg i lukket Facebook-gruppe:\n$ sha256sum sak26054321_anna_chat_20260522_103015.png\ne7a3b1f9d24c8650321fedcba9087654321fedcba9087654321fedcba908765\n\n$ date -u\nFri May 22 10:30:15 UTC 2026\n\nHunchly note:\nFunn-001 | Kilde: facebook.com/groups/[ID]/posts/[PostID]\nSHA-256: e7a3b1f9...\nTidsstempel: 2026-05-22T10:30:15Z (UTC)\nSokkedukke: Anna Lindberg | VM: VM-SD-002 | VPN: Mullvad NO#14\nTPS: C-3-MODERAT | Hjemmel: Strpl. § 196 — Beslutning 26-054321-001 datert 2026-05-01"
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-14 | BETALINGSLØSNING: Anonym kontoverifikasjon\n\nTeknisk krav: Betalingskort tilknyttet sokkedukken (for plattform-abonnementer) skal ikke kobles til politiets økonomi. Godkjente løsninger:"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Prepaid VISA-gavekort: Kjøpt kontant i butikk. Aktivert med sokkedukkens identitet. Brukes til OF/Patreon/LinkedIn Premium",
+            "Kryptovaluta: Monero (XMR) for full anonymitet, eller Bitcoin via Privacy Wallet. For Fragment.com +888-numre: TON",
+            "ALDRI: Politiets betalingskort, privat kredittkort, tjenestedatamaskinens betalingsinfo — kobler sokkedukken til institusjonen umiddelbart"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-15 | SELEKTORER OG PIVOTING: Fra sokkedukke til ekte identitet\n\nTeknisk krav: Sokkedukken observerer og registrerer selektorer (UID, brukernavn, IP-lekkasjer, telefonnumre) som driver pivoteringen til ekte identitet."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Selektor funnet via sokkedukke | Pivoteringsmetode | Neste steg",
+            "Facebook UID (i URL: /profile.php?id=...) | API-kall: graph.facebook.com/[UID] (offentlig info) | Navn, by, felles grupper → nye selektorer",
+            "Telegram brukernavn (@alias) | @userinfobot videresending → user_id | Permanent Telegram-ID → API-pivå",
+            "Telefonnummer (delt i gruppe-chat) | PhoneInfoga + HIBP + Truecaller | Carrier, navn, lekkasjedata, andre kontoer",
+            "E-postadresse (profilens info) | Holehe (konto-sjekk på 115+ plattformer) | Hvilke tjenester bruker personen? Ny søkesyklus",
+            "Profilbilde (observert via sokkedukke) | PimEyes/FaceCheck.ID + Yandex Bilder | Koble ansiktet til andre plattformer og profiler",
+            "Gruppemedlemsliste (i lukket gruppe) | Screenshot + SHA-256 av fullliste | Kartlegg nettverk — hvem er admin? Hvem er mest aktiv?"
+          ]
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "KT-16 | LEKKASJEDATA VIA SOKKEDUKKE: Juridiske grenser\n\nForbudt: Bruke funnet passord for å logge inn på målpersonens konto — strl. § 201 uansett etterforskning. Tillatt: Søk i HIBP/IntelX for å bekrefte at en e-postadresse eksisterer og er involvert i datainnbrudd → pivot til brukernavn. Tillatt: Hash-pivot: identisk passord-hash i to lekkasjer = samme person har to kontoer med identisk passord. TPS-krav: Lekkasjedata er alltid C-kilde (TPS). Krever uavhengig bekreftelse for P=2 eller bedre."
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-17 | DIGITAL STØV: Troverdig digitalt fotavtrykk\n\nTeknisk krav: 'Digital støv' er de naturlige sporene en ekte bruker etterlater over tid: besøkte nettsteder, søkehistorikk-mønstre, cookies, lokasjonsdata og aktivitetstidspunkter."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Aktivitetstidspunkt: Ekte mennesker er aktive mellom 07:00 og 23:00 lokal tid. Nattlig aktivitet er flaggbart",
+            "Cookies over tid: Behold cookies mellom sesjoner (ikke inkognito-modus) — gir plattformen historisk data som beviser at profilen er brukt over tid",
+            "Søkemønster: Bruk plattformens interne søk på ikke-relatert innhold. Ekte brukere søker på oppskrifter, nyheter og sportsnyheter",
+            "URL-analyse: DevTools → Network-tab: søk etter ?id=, &ref=, user_id= i XHR-forespørsler. Disse parametrene avslører interne bruker-IDer"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-18 | PROFILPLEIE: Semi-automatisert aktivitetsmønster\n\nTeknisk krav: Under oppvarmingsperioden kan aktivitet semi-automatiseres. MERK: Automatisering av interaksjon med mistenkte er ALDRI tillatt.\n\n# Python eksempel: automatisert RSS-deling via sokkedukke (illustrativt)\n# MERK: Kun brukt under oppvarmingsperioden for å bygge historikk\n# Aldri automatiser interaksjon med mistenkte/objekter\n\nimport time, random\ndef human_delay(min_sec=30, max_sec=300):\n    delay = random.uniform(min_sec, max_sec)\n    time.sleep(delay)\n\ndef log_action(action, screenshot_path):\n    import hashlib, datetime\n    with open(screenshot_path, 'rb') as f:\n        sha256 = hashlib.sha256(f.read()).hexdigest()\n    timestamp = datetime.datetime.utcnow().isoformat()\n    print(f'{timestamp} | {action} | SHA-256: {sha256}')"
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-19 | MONITORERING: Sokkedukken som vaktpost"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Varslingsbehov | Metode | Trigger",
+            "Målprofil endrer innhold | changedetection.io → overvåk profil-URL (hvis offentlig) | Ny post, endret bio, nytt profilbilde",
+            "Ny aktivitet i lukket gruppe | Manuell daglig sjekk via sokkedukken (innlogget med Hunchly) | Nytt innlegg i gruppe sokkedukken er med i",
+            "Profil/konto suspendert | HTTP-statuskode-sjekk: curl -s -o /dev/null -w '%{http_code}' [profil-URL] | 404 = konto slettet. 403 = suspendert",
+            "VPN-frafall under sokkedukke-sesjon | Mullvad Kill Switch + ipleak.net periodisk sjekk | IP-endring = VPN falt ut. Stopp umiddelbart",
+            "Ny gruppe-invitasjon til sokkedukke | Plattformens innboks-sjekk daglig | Mål-profil inviterer sokkedukken til ny gruppe",
+            "Profilbilde-flagging fra plattform | Plattform ber om verifisering av profilbilde | GAN-bilde detektert — skift til redigert bilde"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "KT-20 | KORREKT AVVIKLING: Avslutning og dokumentasjon\n\nTeknisk krav: Sokkedukken avvikles systematisk etter saken er avsluttet eller endex-dato er nådd. Manglende avvikling er en etisk og rettslig risiko."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Avviklingssteg | Handling | Dokumentasjon",
+            "1 | Deaktiver alle plattformkontoer (Innstillinger → Slett/deaktiver konto) | Logger konto-ID, dato og bekreftelses-e-post i saksmappen",
+            "2 | Deaktiver ProtonMail (Konto-innstillinger → Slett konto) | SHA-256 av siste Hunchly-eksport tatt FØR sletting",
+            "3 | Kanseller burner SIM (kontakt operatør eller la den gå ut) | Logg SIM-nummer og opphørsdato",
+            "4 | Eksporter og arkiver Hunchly Full Case → kryptert ZIP → Beslagsnett | SHA-256 av ZIP-filen logges i BL",
+            "5 | Arkiver KeePassXC-database → kryptert → Beslagsnett | Sikrer tilgang til passord for etterforskningsformål etter saken",
+            "6 | Slett VM-snapshot og VM (om ikke bevist som relevant i saken) | Logg destruksjon med dato og ansvarlig etterforsker",
+            "7 | Skriv avviklingsrapport i BL: dato, plattformer, sokkedukke-ID | Obligatorisk dokumentasjon — beviser at politiet ikke opprettholder profiler"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "overskrift": "DEL 2 — JURIDISK RAMMEVERK: HJEMLER OG GRENSER",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "2.1 Fullstendig juridisk paragrafoversikt per livssyklus-steg"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Steg i sokkedukke-livsløpet | Hjemmel | Krav",
+            "Opprettelse av profil — åpen plattform (passiv) | Politiloven § 25 | Ingen beslutning. Men: dokumenter saksnummer og formål.",
+            "Opprettelse av profil — lukket plattform (aktiv) | Strpl. § 196 — skriftlig påtalebeslutning | Skriftlig, datert, signert av politijurist. FØR opprettelse.",
+            "Profilen søker om gruppemedlemskap | Strpl. § 196 | Aktiv handling krever beslutning. Allerede avklart i opprettelses-fasen.",
+            "Profilen observerer passivt i lukket gruppe | Strpl. § 196 (forhåndsavklart) | Observasjon er tillatt etter beslutning. Ingen ny beslutning.",
+            "Profilen interagerer (kommenterer, liker) | Strpl. § 196 — med eksplisitt formulering om interaksjon | Interaksjon må være eksplisitt nevnt i beslutningen.",
+            "Provokasjon av mistenkt | ABSOLUTT FORBUDT — Strpl. § 196a | Nulltoleranse. Frifinnelse og straffansvar for etterforskeren.",
+            "Begjæring om data fra plattform | Strpl. § 197 — tingretts kjennelse | Kjennelse nødvendig for utlevering fra Meta/Google/Telegram etc.",
+            "Sokkedukke avslører ekte identitet (§ 371-risiko) | Strl. § 371 — identitetskrenkelse | Sokkedukken SKAL baseres på fiktiv — aldri ekte persons identitet.",
+            "Bruk av falske fysiske dokumenter til støtte | Strl. § 182 — dokumentfalsk | Ikke relevant for ren digital persona. Forbudt ved fysisk legende.",
+            "Behandling av innhentede personopplysninger | Politiregisterloven § 5 / GDPR art. 5(1)(b) | Formålsbegrensning: kun til det angitte formålet i beslutningen.",
+            "Mindreårig objekt-person | SIS-MINOR-14 + Barnekonvensjonen art. 16 | S=KRITISK automatisk. Stopp og konfer med jurist.",
+            "Proporsjonalitet | EMK art. 8 — retten til privatliv | Metoden skal stå i rimelig forhold til sakens alvorlighet."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "2.2 Hva skjer hvis profilen blir «brent»?"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Scenario | Umiddelbar handling | Konsekvens for bevis",
+            "Mistenkte identifiserer profilen som politiet | Stopp ALL aktivitet umiddelbart. Informer politijurist. Dokumenter tidspunkt og omstendigheter. | Alle funn FØR avsløring er fortsatt gyldige hvis korrekt dokumentert med SHA-256",
+            "Plattform suspenderer kontoen | Ikke forsøk å reaktivere. Logg suspensjonstidspunkt. Eksporter alt fra Hunchly FØR du mister tilgang. | Suspensjonen endrer ikke bevisverdien av allerede innhentede funn",
+            "Etterforsker logger inn fra privat enhet (feil) | Stopp operasjonen. Vurder om profilen er kompromittert via Friend Suggestion. Rapporter til leder. | Potensielt bevisforurensning. Jurist vurderer videre bruk",
+            "VPN-frafall uten Kill Switch | Plattformen har logget etterforskers reelle IP. Stopp sesjon. Konfigurer Kill Switch. Ny sesjon fra ny node. | IP-logg kan avsløre etterforskning. Vurder plattformskifte eller ny profil",
+            "Feil person identifisert (falskt positiv) | Stopp innhenting om den identifiserte personen umiddelbart. Informer jurist. Korriger rapporter. | Rettslig ansvar ved feil bruk av ulovlig innhentet informasjon om tredjepart"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "overskrift": "DEL 3 — TEKNISK DEKONSTRUKSJON (A–Å)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "NIVÅ 1 — BINÆRT: Cookies, sesjons-ID-er og fingeravtrykk\n\n1.1 Facebook cookie-struktur via sokkedukke\n\nNettleser → DevTools (F12) → Application → Cookies → facebook.com:\n\nc_user   = 100098765432101  ← Sokkedukkens Facebook-UID (permanent)\nxs       = 3%3AabcXYZ...   ← Aktiv sesjonsnøkkel (64-tegn base64)\ndatr     = Abc123xyz...    ← Device-token (2 år — kobler nettleser til FB)\nfr       = 0XYZ...         ← Tracking-pixel (tredjeparts sporing)\n_fbp     = fb.1.16xxx...   ← Facebook Pixel ID\n\nKRITISK: 'datr'-tokenet kobler sokkedukke-profilen til enheten.\nÉn innlogging fra privat maskin = datr kobler privat enhet til FB-konto.\nLøsning: Aldri del VM mellom sokkedukker. Separate VM = separate datr-tokens.\n\n1.2 Canvas fingerprint — blokkert vs. ublokkert\n\nUTEN arkenfox.js (farlig):\n  document.createElement('canvas').toDataURL()\n  → SHA-256 av canvas = f7a3c9e2... (unik per GPU + OS + driver)\n  = Plattformen kan koble alle 10 politiprofiler til samme maskin\n\nMED arkenfox.js (trygt):\n  Canvas fingerprint = null / blank canvas\n  = Plattformen ser normalisert fingeravtrykk identisk med millioner andre\n\nWebGL renderer UTEN blokkering:\n  UNMASKED_RENDERER_WEBGL = 'ANGLE (Intel, Intel(R) UHD Graphics 620 D3D11)'\n  → Avslører GPU-modell, driver og Windows-versjon\n\nMED blokkering:\n  UNMASKED_RENDERER_WEBGL = null (returnerer ingenting)"
+        },
+        {
+          "type": "paragraph",
+          "data": "NIVÅ 2 — ARKITEKTUR: Sokkedukkens tekniske infrastruktur"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Lag | Komponent | Dataflyt | Synlighet for plattform",
+            "L1: Nettverkslag | Mullvad WireGuard (UDP/51820) | Kryptert tunnel: klientmaskin → VPN-server → internett | Plattform ser: VPN exit-IP. Ikke: etterforskers ISP eller maskin",
+            "L2: Virtualiseringslag | KVM VM med Kali Linux | Isolert operativsystem per sokkedukke. LUKS disk-kryptering | Plattform ser: VM-nettleserens fingeravtrykk. Ikke: vertmaskinens data",
+            "L3: Nettleserlag | Firefox med arkenfox.js + Hunchly | Normalisert fingeravtrykk. Auto-SHA-256 og MHTML per side | Plattform ser: standard Firefox UA + normalisert Canvas",
+            "L4: Identitetslag | Kjerneidentitet fra FakeNameGenerator + GAN-bilde | Konsistent fiktiv person. ProtonMail som kommunikasjons-e-post | Plattform ser: navn, bilde, e-post. Ikke: at det er fiktivt",
+            "L5: Plattformlag | Facebook, Telegram, Instagram, forum | Sokkedukken interagerer via HTTPS/TLS 1.3 | Plattform logger: VPN-IP, UA (arkenfox-normalisert), sesjon-cookies",
+            "L6: Bevislaget | Hunchly MHTML + sha256sum + UTC | Automatisk SHA-256 + MHTML per sidebesøk | Plattformen ser ingenting av dette — kun intern loggføring"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "NIVÅ 3 — HELHET: Sokkedukken i etterforskningens store bilde"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Sokkedukken er nøkkelen til lukkede dører: 99% av relevant kriminalitetsinformasjon skjer ikke på åpne profiler, men i lukkede grupper, private kanaler og hemmelige forum. Sokkedukken er den eneste lovlige mekanismen for å komme inn — uten ransaking eller kommunikasjonskontroll.",
+            "Tidsinvestering gir langsiktig verdi: En veldrevet sokkedukke med 12 måneders historikk er en ressurs. Den kan brukes i flere saker (med egen § 196-beslutning per sak) og gir tilgang til stadig dypere nettverk",
+            "Beviskjeden fra sokkedukke til dom: SHA-256 av funn → Hunchly MHTML → TPS-gradering → funnrapport (SIS-RAPPORT-13) → egenrapport → beviskjede i retten. Hvert ledd er nødvendig og ikke-substituerbart.",
+            "Proporsjonal bruk: Sokkedukke er ikke et lavterskelverktøy. EMK art. 8 krever at metoden er proporsjonal med sakens alvorlighet. Narkotikasalg, menneskehandel og terrorisme = klart ja. Mindreårig mistanke om bagatell = vurder alltid om enklere metoder rekker"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "overskrift": "DEL 4 — ANALOGI-PAR",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Dette er den viktigste pedagogiske delen. Tekniske begreper fra sokkedukke-metodikken forklares med analogier som gjør dem forståelige for dommere, aktorat og nyutdannede etterforskere."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "Sokkedukke / Legende: En sokkedukke er en fullstendig fabrikkert digital persona med konsistent identitet, visuell fremstilling (GAN-bilde), aktivitetshistorikk og teknisk isolert nettverksinfrastruktur — designet for å passere plattformers automatiserte autentisitetskontroller. | Politiets digitale forkledning: En sokkedukke er som en sivil-politimanns forkledning for undercover-arbeid. Som en etterforsker som kler seg som narkotikaselger for å observere et kriminelt miljø — sokkedukken gjør nøyaktig det samme, men digitalt. Han sitter hjemme, i sin digitale forkledning, og ser alt uten å bli sett.",
+            "Lebensraum / Historikkbygging: Lebensraum refererer til den akkumulerte digitale historikken som gjør en profil algoritmisk troverdig: antall venner, innlegg over tid, like-mønster, bilder og gruppe-deltakelse. Uten Lebensraum flagges profilen av plattformens ML-modeller som bot eller falsk konto. | Biografien ingen kan se gjennom: Lebensraum er som å bygge en komplett biografi for en skuespiller i et undercover-oppdrag. Det holder ikke å ha et falskt pass og en falsk adresse. Du trenger en barndomshistorie, nabolaget ditt husker deg, arbeidsgiveren bekrefter ansettelsen og venner vet om bursdagen din. Alt dette tar tid å bygge — men er usynlig sterkt.",
+            "Device fingerprint: Device fingerprint er en unik 128-bit identifikator beregnet fra nettleserens tekniske egenskaper: Canvas-hash, WebGL-renderer, User-Agent, skjermoppløsning og tidssone. Den er mer stabil og mer unik enn IP-adressen — og byttes ikke ved VPN-bytte. | Maskinens usynlige DNA: Device fingerprinting er som DNA-profilering av en datamaskin. Selv om du tar på deg en forkledning (VPN), skifter navn (brukernavn) og flytter by (VPN-node) — kan nettstedet fortsatt kjenne igjen akkurat din maskin. Fordi maskinens 'DNA' — GPU-mønsteret, skjermoppløsningen, instillerte fonter — aldri endres.",
+            "Fatal feil: Privat enhet: En innlogging fra en privat enhet overfører enhetens kontaktliste-hash og enhets-ID til plattformens algoritme. Friend Suggestion-algoritmen matcher deretter sokkedukken mot etterforskerens ekte sosiale nettverk — og varsler begge sider om felles bekjentskaper. | Den ene sekunden alt raser: Det er som å ta av forkledningen for én sekund foran et sikkerhetsikamera mens du er undercover. Kameraet (plattformens algoritme) registrerer ditt ekte ansikt øyeblikkelig. Det lagrer det. Og neste gang du møter målpersonen digitalt, er forbindelsen allerede etablert — og etterforskningen er kompromittert for alltid.",
+            "§ 196a — Provokasjonsforbudet: Strpl. § 196a forbyr bruk av skjult metode (inkl. sokkedukke) for å indusere en person til å begå en straffbar handling som vedkommende ellers ikke ville begått. Sokkedukken kan aldri stille spørsmål, legge til rette for eller oppfordre til kriminell aktivitet. | Grensen mellom å se og å skape: Provokasjonsforbudet er grensen mellom å se og å skape. En sivil politimann kan stå på gaten og observere hvem som selger narkotika — det er lovlig. Men han kan ikke stikke frem penger og spørre om å kjøpe. Den ene handlingen er etterforskning. Den andre er å skape forbrytelsen. Sokkedukker er alltid bare øyne — aldri hender.",
+            "arkenfox.js / Fingeravtrykk-normalisering: arkenfox.js er en Firefox user.js-konfigurasjon som standardiserer alle sporbare nettleser-parametre til en felles normverdi — identisk med millioner av andre Firefox-brukere. Canvas blokkeres, WebGL nullstilles, User-Agent standardiseres til Windows 10 + Firefox. | Å kle seg i uniform: arkenfox.js er som å kle politiet i samme uniform. Uten uniform er politimannens utseende unikt og gjenkjennelig. Med uniform er han én av tusenvis. Nettsteder og plattformer kan ikke skille ham fra mengden — fordi alle uniformerte ser identiske ut i datasystemene.",
+            "Hunchly i sokkedukke-sesjon: Hunchly logger automatisk MHTML, SHA-256 og UTC-tidsstempel for hvert nettsted som besøkes under en sokkedukke-sesjon. Loggene er kryptografisk signert og kan ikke modifiseres uten at hashen endres. | Dashbordkameraet som aldri lyver: Hunchly er politisykkelens dashbordkamera, men for digitale etterforskninger. Alt som passerer forran 'kameraet' (nettleseren) filmes og tidsstemples. Ingen kan hevde at politimannen så noe han ikke så — og ingen kan hevde han ikke var der han hevder han var. Kameraet lyver aldri.",
+            "Burner SIM: Burner SIM er et prepaid SIM-kort kjøpt kontant, uten ID-krav. IMSI (15 sifre) er unik per SIM og kobles til MSISDN (telefonnummeret). Norske prepaid-SIM er registrert siden 2021 (Ekomloven § 2-6a) — utenlandsk SIM gir full anonymitet. | Engangstelefonnummeret: Burner SIM er som et engangstelefonnummer kjøpt på kiosken i en annen by. Ingen vet hvem som kjøpte det. Det finnes ingen kontrakt. Ingen adresse. Brukes til å registrere én konto, og deretter kastes det. Som en engangskaffe-kopp — ingen spor av hvem som holdt den.",
+            "Oppvarming / Lebensraum-periode: Oppvarmingsperioden er 90+ dager med organisk plattformaktivitet FØR sokkedukken brukes operativt. Plattformers ML-modeller score-setter kontoer basert på aktivitetsalder, interaksjonskonsistens og nettverksvekst. | Å plante et frø og vente: Oppvarmingsperioden er som å plante et tre og vente til det vokser. Du kan ikke plante et tre og forvente frukt neste uke. Du vanner, du venter, du lar røttene spre seg. Etter 90 dager er treet (profilen) etablert — rotnett (venner), grener (innlegg) og alt. Da og bare da kan du høste (innhente).",
+            "SHA-256 av sokkedukke-funn: SHA-256 av et screenshot fra en sokkedukke-sesjon produserer en 64-tegns hex-streng som matematisk beviser at filen er uendret fra innhentingstidspunktet. Rettens tekniske sakkyndige kan verifisere dette uavhengig. | Notarius publicus-seglet på chat-loggen: SHA-256 av chat-loggen er som et notarius publicus-segl på et dokument. Notaren ser dokumentet, stempler det og skriver under. Hvem som helst kan se at seglet er ubrutt — og vet da at innholdet ikke er endret etter stempling. Ingen kan hevde at politiet 'la til' noe i chat-loggen etterpå."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "overskrift": "DEL 6 — H-H-H-N MIKROSTEG: FIKTIV SAK 26-077890",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Sak 26-077890: Infiltrering av lukket Facebook-gruppe for organisert omsetning av narkotika. FOI: Hvem administrerer og selger i gruppen 'Markedet for venner' på Facebook?\n\nFASE 0 — JURIDISK AVKLARING OG PLANLEGGING"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR / Eksempel Sak 26-077890 | HVORFOR | NÅR",
+            "1 | Les FOI og formuler IB-er | Saksmappen i BL — IB-1: Hvem er administrator? IB-2: Hvem er selgere? IB-3: Hva selges? | Styrer hele undersøkelsen. Rapporten besvarer ALLE IB-er | FØR noe annet",
+            "2 | Vurder sokkedukke-type | Planleggingsdokument — trenger passiv observatør i lukket gruppe | Gruppen er lukket: § 196 obligatorisk. Åpen gruppe: § 25 alene | Under planlegging",
+            "3 | Søk § 196-beslutning | Politijurist — skriftlig, datert, signert. Lagret i BL: saksnr. 26-077890-SD001 | Uten beslutning: alt er ulovlig bevis | FØR DAG 1",
+            "4 | Sett endex-tid | 45 dager fra oppstart — dato: 2026-07-15 | Disiplinerer metodikken og gir rapport-deadline | I planleggingsdokumentet",
+            "5 | OPSEC-sjekkliste | Velg VM, VPN-node, VM-disk-kryptering, burner SIM-strategi | Teknisk feil i OPSEC ugyldiggjør innhentingen | Etter juridisk avklaring"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "FASE 1 — OPPRETTELSE AV SOKKEDUKKE 'ANNA LINDBERG'"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR / Eksempel Sak 26-077890 | HVORFOR | NÅR",
+            "1 | Generer kjerneidentitet | FakeNameGenerator: Anna Sofie Lindberg, f. 14.03.1991, Hamar, konsulent | Konsistent fiktiv person som passer gruppens demografi | Dag 1 etter beslutning",
+            "2 | Generer GAN-profilbilde | thispersondoesnotexist.com — 15 forsøk. Velg bilde uten GAN-feil | Hive Moderation-score: 31% (OK). Yandex/Google: NULLTREFF | Dag 1",
+            "3 | Teknisk oppsett | KVM VM 'VM-SD-002' med Kali Linux. LUKS kryptering. Snapshot #1 | Isolert miljø per sokkedukke. Sikrer mot krysskontaminasjon | Dag 1-2",
+            "4 | ProtonMail via Tor | Tor Browser → proton.me → anna.lindberg.1991@proton.me. Ingen gjenopprettings-e-post | IP-spor: kun Tor exit-node. Sveitsisk server. | Dag 2",
+            "5 | Burner SIM (tysk) | Aldi Talk prepaid, kjøpt i Berlin under tjenestereise. Aktivert via VM + VPN | Tysk SIM er ikke registreringspliktig. Anonymt telefonnummer for 2FA | Dag 2",
+            "6 | Facebook-konto opprettet | Fra VM. Mullvad NO#14. facebook.com → Registrer. ProtonMail + burner SIM for 2FA | Hunchly aktivt. SHA-256 av registrerings-screenshot. UTC: 2026-05-01T09:14:22Z | Dag 3"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "FASE 2 — OPPVARMINGSPERIODE (Dag 3 – Dag 92)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR / Eksempel Sak 26-077890 | HVORFOR | NÅR",
+            "1 | Daglig aktivitet (7 uker) | 1-2 likes på offentlige innlegg om friluftsliv og helse. Ukentlig: ett eget innlegg | Bygger troverdige interaksjoner. Aktivitetsmønster mellom 08:00-22:00 norsk tid | Daglig — aldri nattlig aktivitet",
+            "2 | Legge til venner | Knytt til 3 kollegers etterforskningsprofiler som 'venner' i første uke. Gradvis utvidelse | Nettverket vokser naturlig. 25 venner etter 90 dager | Gradvis over 8 uker",
+            "3 | Profilkompletthet | Legg til utdanning (fiktivt: HiG 2009-2012), yrkestittel, by | Plattformens profil-kompletthets-score øker — reduserer flagging | Dag 5-10",
+            "4 | Test mot offentlig gruppe | Bli med i offentlig gruppe: 'Hamar friluftslag' (eksisterende, åpen gruppe) | Viser at profilen kan søke om gruppemedlemskap uten å flagges | Dag 60",
+            "5 | Sjekk plattformstatus | Facebook: Innstillinger → Sikkerhet → ingen mistenkelige varsler. Hunchly logger sjekken | Verifiserer at profilen er grønn hos plattformen FØR operasjonell bruk | Dag 85"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "FASE 3 — OPERASJONELL BRUK: Infiltrering av 'Markedet for venner'"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR / Eksempel Sak 26-077890 | HVORFOR | NÅR",
+            "1 | OPSEC-sjekkliste FØR sesjon | ipleak.net: Mullvad NO#14 vist. dnsleaktest.com: kun VPN-DNS. WebRTC: deaktivert. Hunchly: rødt ikon | Hele OPSEC-stacken verifisert. Loggfør i Hunchly-note | Absolutt første steg — hver sesjon",
+            "2 | Søk om gruppemedlemskap | Søk opp gruppen. Klikk 'Bli med'. Vent på admin-godkjenning | Hunchly logger søket. SHA-256 + UTC: 2026-06-05T10:22:45Z | Dag 92 — etter endex-godkjenning",
+            "3 | Godkjenning og første observasjon | Admin godkjenner. Anna Lindberg er nå gruppemedlem. Les nyere innlegg | Hunchly logger alle sidevisninger. Lesekvitteringer er deaktivert | Dag 95",
+            "4 | Dokumenter innlegg funn-001 | Innlegg fra 'Ola Hansen': '🍃 100g tilgjengelig i Hamar-området 📍'. SHA-256 + UTC umiddelbart | TPS: C-3-HØY (emoji-kode + lokasjon). Loggfør i rapport | Dag 95 kl. 14:23:07 UTC",
+            "5 | Identifiser admin via DevTools | F12 → Network → finn API-kall: /graph.facebook.com/groups/[ID]/members → admin-liste | admin_UID = 100023456789012. Ny selektor for pivå | Dag 96",
+            "6 | Pivot på admin-UID | Søk admin-UID i åpen kilde: google.com, osint.industries | Finner Instagram-profil med samme bilde: @ola_han_90, tlf +47 900 12345 | Dag 96-97"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "FASE 4 — ANALYSE OG RAPPORTERING"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR / Eksempel Sak 26-077890 | HVORFOR | NÅR",
+            "1 | TPS-gradering alle funn | Funn-001: C-3-HØY (emoji-kode, én kilde). Funn-004: B-2-HØY (admin-ID bekreftet av 2 kilder) | Systematisk kildekritikk før rapport | Etter endex",
+            "2 | Rapport: Funn-001 | FUNNRAPPORT Sak 26-077890: Funn-001. Kilde: facebook.com/groups/[ID]/posts/[PostID]. Dato: 2026-06-05. SHA-256: e7a3b1f9... UTC: 2026-06-05T14:23:07Z. TPS: C-3-HØY. Innhold: Innlegg av 'Ola Hansen' (UID 100023456789012): '🍃 100g tilgjengelig i Hamar-området 📍'. Tolkning: Antatt tilbud om hasjisj (🍃). Belov på 100 gram. Geografisk avgrensning: Hamar-regionen (📍). Hjemmel: Strpl. § 196 — Beslutning 26-077890-SD001 datert 2026-05-01. | Ordrett for rapport — nøytral, faktuell, med SHA-256 og TPS | Etter endex. FØR egenrapport",
+            "3 | Egenrapport (narrativ) | IB-1 BESVART: Administrator er med høy grad av sannsynlighet Ola Hansen (UID 100023456789012). Kryssbekreftet via Instagram @ola_han_90 og telefonnummer +47 900 12345 (TPS B-2-HØY). IB-2 DELVIS BESVART: Se funn-002 til -008 vedlagt. | Menneskelig forklaring for dommere og aktor | Etter funnrapporten",
+            "4 | Hunchly Full Export + avvikling | Hunchly → Export → Full Case → sak26077890_hunchly.zip. SHA-256 av ZIP lagret i BL. | Komplett beviskjede arkivert på Beslagsnett | Etter godkjent rapport. Avvikling av sokkedukke starter."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "overskrift": "DEL 7 — REFERANSEARKIV OG VERKTØYREGISTER",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "7.1 Fullstendig verktøyregister (Mai 2026)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Verktøy | URL | Funksjon | Fase",
+            "FakeNameGenerator | fakenamegenerator.com | Fullstendig fiktiv kjerneidentitet: navn, adresse, SSN, e-post, tlf | Fase 1 — Identitet",
+            "thispersondoesnotexist.com | thispersondoesnotexist.com | StyleGAN3 GAN-ansikter. Refresh = nytt unikt ansikt | Fase 1 — Identitet",
+            "Hive Moderation | hivemoderationai.com/demo | Detekter AI-genererte bilder. Score < 50% = godkjent | Fase 1 — Bilde-test",
+            "Mullvad VPN | mullvad.net | WireGuard VPN. RAM-only servere. Bevist no-log (politiraid 2023) | Alle faser",
+            "arkenfox.js | github.com/arkenfox/user.js | Firefox fingeravtrykk-normalisering. Blokkerer Canvas, WebGL, Battery API | Alle faser",
+            "KeePassXC | keepassxc.org | Kryptert passordarkiv per sokkedukke. TOTP-støtte. | Alle faser",
+            "ProtonMail | proton.me | Sveitsisk anonym e-posttjeneste. Opprett via Tor. | Fase 1 — E-post",
+            "Hunchly (Maltego) | hunch.ly | Automatisk MHTML + SHA-256 + UTC bevislogging | Fase 3 — Bevis",
+            "ipleak.net | ipleak.net | VPN-IP, DNS og WebRTC-lekkasjetest — oblig. FØR sesjon | Alle faser",
+            "coveryourtracks.eff.org | coveryourtracks.eff.org | Browser fingerprint-analyse — verifiser normalitet | Fase 1 + løpende",
+            "SockPuppet.io | sockpuppet.io | Managed attribution-plattform for LE. Administrerer mange profiler | Stor operasjon",
+            "KASM Workspaces | kasmweb.com | Container-streaming isolert nettleser per sesjon. Alternativ til lokal VM | Fase 2-3",
+            "PimEyes | pimeyes.com | Ansiktsgjenkjenning — pivot via profilbilde funnet via sokkedukke | Fase 3 — Pivot",
+            "Fragment.com | fragment.com | Kjøp anonymt Telegram +888-nummer med TON-kryptovaluta | Fase 1 — SIM alternativ",
+            "changedetection.io | changedetection.io | Overvåk profil-URL for endringer — sokkedukken som vaktpost | Fase 3 — Monitorering"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "7.2 SIS-serie kryssreferanser"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Dok-ID | Tittel | Kobling til SIS-SOKE-18",
+            "SIS-PIAR-17 | PIAR-metodikk | Sokkedukken er en del av I-fasen (innhenting). Juridisk avklaring i P-fasen.",
+            "SIS-TPS-02 | TPS-modellen | Funn via sokkedukke er C-kilde. Krysskjekk til P=2 obligatorisk.",
+            "SIS-JUSS-05 | Juridisk rammeverk | §§ 196, 196a, 197 — primærhjemler for sokkedukke-operasjoner",
+            "SIS-OPSEC-06 | OPSEC og digital hygiene | Primærkilde for sokkedukke-grunnlag. SIS-SOKE-18 utdyper teknisk.",
+            "SIS-VPN-16 | VPN og proxy | Mullvad WireGuard er obligatorisk for sokkedukke-operasjoner",
+            "SIS-HASH-04 | Hashing og SHA-256 | SHA-256 umiddelbart per funn — bevisintegritetsgrunnlag",
+            "SIS-RAPPORT-13 | Rapportmal og beviskjede | Funn fra sokkedukke merkes med skjult metode-merknad",
+            "SIS-MINOR-14 | Mindreårige i digitale saker | Sokkedukke mot mindreårige: S=KRITISK automatisk. Særkrav.",
+            "SIS-DARK-11 | Mørk web | Sokkedukke på .onion-plattformer: egne krav + manuell SHA-256",
+            "SIS-PIVOT-03 | Pivå-metodikk | Selektor funnet via sokkedukke driver ny søkesyklus",
+            "SIS-SOKE-18 | Sokkedukker og fiktive profiler (dette dokumentet) | Primærreferanse"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "SOKKEDUKKER OG FIKTIVE PROFILER I OSINT │ Dok-ID: SIS-SOKE-18 │ Versjon 1.0 – Mai 2026\nØst politidistrikt │ Spesialetterforsker Trygve Justad Bjørntvedt │ UNNTATT OFFENTLIGHET │ TLP:AMBER"
+        }
+      ]
+    }
+  ]
+}
