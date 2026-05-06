@@ -99,7 +99,7 @@
   },
   {
     "id": "e015",
-    "title": "Søk som etterforskningskunst",
+    "title": "Nettsøk som etterforskningskunst",
     "description": "Episoden gir en omfattende gjennomgang av avanserte søketeknikker, spesielt kjent som Google Dorking, for bruk i åpne kilder og etterforskning. hvordan man kombinerer spesialoperatorer som site:, filetype:, og intext: for å utføre presise søk og avdekke utilsiktet eksponert eller vanskelig tilgjengelig informasjon på offentlige nettsider. En sentral tematikk er viktigheten av å velge riktig søkemotor, da Google, Bing, Yahoo og regionale motorer som Yandex og Baidu gir ulike resultater basert på algoritmer og geografisk fokus. Kildene understreker at mestring av disse teknikkene er en fundamental ferdighet .",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode15.mp3",
     "releaseDate": "2025-10-11T08:00:00Z"
@@ -113,14 +113,14 @@
   },
   {
     "id": "e017",
-    "title": "Fra foto til fakta",
+    "title": "Bilder: Fra foto til fakta",
     "description": "Episoden gir en oversikt over teknikkene og verktøyene som brukes for omvendt bildesøk, spesielt fokusert på ansiktsgjenkjenning og etterforskning. En kilde forklarer i detalj hvorfor det er viktig å utføre omvendte ansiktssøk for å unngå svindel og identitetstyveri, og den presenterer flere metoder, inkludert bruk av generelle verktøy som Google Images og Microsoft Azure Face API. En annen kilde lister opp en rekke andre søkemotorer og AI-redigeringsverktøy som kan brukes til å manipulere bilder for å forbedre søkeresultatene, som å endre ansiktstrekk eller oppskalere uskarpe bilder. I tillegg presenterer de to siste kildene en visuell flytdiagram for bildeanalyse og en sjekkliste for steganografi, som illustrerer bredden av metoder som brukes for å undersøke og autentisere digitale bilder, inkludert analyse av metadata og skjulte filer. Til sammen belyser kildene både fordelene og begrensningene ved ansiktsgjenkjenningsteknologi.",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode17.mp3",
     "releaseDate": "2025-10-13T08:00:00Z"
   },
   {
     "id": "e018",
-    "title": "Fra piksel til posisjon:",
+    "title": "Geolokasjon: Fra piksel til posisjon:",
     "description": "Metodikk for å fastslå et geografisk sted utelukkende basert på visuelle ledetråder i et bilde, inkludert analyse av kjøretøy, arkitektur og veimerking. En sentral komponent i denne analysen er bruken av Google Earth og Street View, hvor kildene fremhever verktøyets funksjoner som 3D-visning og historisk funksjon. Den andre hovedtematikken fokuserer på fysisk lokasjons-OSINT, ofte fra perspektivet til en penetrasjonstester, ved å analysere et måls svakheter – som tilgangspunkter, parkeringsmønstre og utnyttelse av menneskelig atferd ved steder som røykeområder. Gjennomgående vektlegges et analytisk tankesett som dekonstruerer bilder til søkbare datapakker.,",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode18.mp3",
     "releaseDate": "2025-10-14T08:00:00Z"
@@ -246,7 +246,7 @@
   },
   {
     "id": "e036",
-    "title": "Tokens",
+    "title": "Tokens: logge på mistenktes egne kontoer",
     "description": ".",
     "mp3URL": "https://polishofficechair.github.io/Spor-i-skyen/episode36.mp3",
     "releaseDate": "2025-11-03T08:00:00Z"
