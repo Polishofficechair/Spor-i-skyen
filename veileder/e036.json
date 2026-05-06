@@ -1,0 +1,568 @@
+{
+  "tittel": "Metodisk støttedokument for etterforskning i åpne kilder",
+  "undertittel": "TOKENS I NETTLESERE OG PÅ MOBILE ENHETER – JWT · OAuth2 · Session-cookies · API-nøkler · Sosiale medier · Uttrekk på PC · iPhone · Android · Bevis · Juridisk rammeverk",
+  "ordliste": [],
+  "seksjoner": [
+    {
+      "id": "s00",
+      "overskrift": "Dokumentinformasjon",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "Dok-ID | SIS-TOKEN-17",
+            "Versjon | 1.0 – Mai 2026",
+            "Status | AKTIV",
+            "Produsert av | Spesialetterforsker Trygve Justad Bjørntvedt, Øst politidistrikt",
+            "Juridisk hjemmel | Juristens tillatelse er innhentet. Strpl. § 192, § 197, § 203. Politiloven § 25.",
+            "Gradering | UNNTATT OFFENTLIGHET – Kun til internt politibruk",
+            "TLP | TLP:AMBER",
+            "Primærkilder | SIS-TOKEN-16, SIS-RAPPORT-13, SIS-HASH-04, SIS-OPSEC-06, SIS-JUSS-05"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s01",
+      "overskrift": "DEL 1 — HVA ER ET TOKEN OG HVORFOR ER DET KRITISK FOR ETTERFORSKNING?",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "1.1 Token-typologi og etterforskningsverdi\n\nEt token er et digitalt tilgangsbevis. Det er en streng tegn som beviser overfor et system at bæreren har rett til å utføre bestemte handlinger — uten å oppgi brukernavn og passord på nytt. For politietterforskning er tokens kritiske fordi de finnes på beslaglagte enheter, i stealer-logger og i nettverkstrafikk."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Token-type | Format | Levetid | Etterforskningsverdi",
+            "JWT (JSON Web Token) | eyJ[Header].eyJ[Payload].[Signatur] — Base64Url-kodet | Minutter til dager (exp-felt) | Payload er lesbart UTEN nøkkel. Inneholder bruker-ID, e-post, roller, iat-tidsstempel",
+            "OAuth2 Access Token | Opak streng eller JWT, 32-256 tegn | Minutter til timer | Gir API-tilgang. Finnes i DevTools og stealer-logger",
+            "OAuth2 Refresh Token | Lang opak streng, 64-128 tegn | Dager til måneder | Høyest verdi — genererer nye access tokens. Sjelden rotert.",
+            "Session-cookie | Alfanumerisk, 32-128 tegn, HttpOnly-flagg | Timer til uker | Stjålet cookie = full kontotilgang. Finnes i Chrome SQLite-database",
+            "API-nøkkel | Prefiks + streng. ghp_, sk-, AKIA, xoxb-... | Måneder til år | Direkte API-tilgang. Aldri utløper automatisk. Høyeste risiko.",
+            "Personal Access Token (PAT) | ghp_ (GitHub), glpat_ (GitLab), ATB (Bitbucket) | Måneder til år | Gir bredere tilgang enn standard API-nøkkel. Finnes i kildekode og stealer-logger",
+            "Discord Token | Numerisk.streng.streng — 70 tegn | Permanent til revokering | Full Discord-kontotilgang. Selges i kriminalforum.",
+            "Telegram Bot Token | [bot_id]:[hash] — 45+ tegn | Permanent til revokering | Kontroll over Telegram-bot. Finnes i kildekode og konfigurasjonsfiler"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "1.2 Token-lagring per plattform — oversikt"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Plattform | PC/Mac Nettleser | iPhone (iOS) | Android",
+            "Facebook/Instagram | session-cookie i Chrome SQLite. localStorage: JWT-tokens | Keychain (kryptert) + app-sandbox /var/mobile/Containers/ | SharedPreferences XML + SQLite i /data/data/com.facebook.katana/",
+            "Twitter/X | auth_token cookie. ct0 CSRF-token. LocalStorage: auth_token | NSHTTPCookieStorage + Keychain-tokens | /data/data/com.twitter.android/shared_prefs/ + databases/",
+            "Snapchat | Ikke vesentlig desktop-bruk | Keychain + NSUserDefaults. Snapchat Token i plist-filer | /data/data/com.snapchat.android/ — srauth og access token",
+            "TikTok | Session-cookies: s_v_web_id, tt_chain_token | Keychain (svært kryptert). Cellebrite nødvendig | /data/data/com.zhiliaoapp.musically/ + Realm-database",
+            "Telegram | Telegram Web: dc_auth_key_{n} i localStorage | Cellebrite/GrayKey for beslaglagt, eller iOS-backup via Elcomsoft | /data/data/org.telegram.messenger/ — cache4.db + auth keys",
+            "WhatsApp | Ikke nettleserbasert (Web bruker QR-link) | Keychain: kryptert. iCloud-backup inneholder meldingsdatabase | /data/data/com.whatsapp/ — key-fil + msgstore.db",
+            "Discord | Nettleser: localStorage token. App: Leveldb | /var/mobile/Containers/Data/Application/[UUID]/Documents/ | Android: /data/data/com.discord/ — SharedPreferences",
+            "Google/Gmail | access_token + refresh_token i localStorage og cookies | iOS Keychain — Google Sign-In tokens | /data/data/com.google.android.gm/ — tokens i SharedPreferences",
+            "LinkedIn | session-cookie: li_at (JWT). JSESSIONID | Keychain — li_at cookie | /data/data/com.linkedin.android/ — cookies.db"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "overskrift": "DEL 2 — UTTREKK PÅ PC OG MAC: NETTLESER-TOKENS",
+      "komponenter": [
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "JURIDISK VARSEL: Denne metoden brukes mot en aktiv nettlesersesjon — f.eks. på en beslaglagt datamaskin der brukeren var innlogget. Juristens tillatelse er innhentet (strpl. § 203 eller ekvivalent). SHA-256 av hvert funn umiddelbart."
+        },
+        {
+          "type": "paragraph",
+          "data": "2.1 Chrome/Edge — DevTools-metoden (live sesjon)\n\nSteg-for-steg (Chrome/Edge/Brave — Chromium-basert):"
+        },
+        {
+          "type": "list",
+          "data": [
+            "Åpne DevTools: F12 (Windows/Linux) eller ⌥⌘I (Mac). Alternativt: Høyreklikk → 'Inspiser'",
+            "Navigér til Application-fanen: (Chrome: 'Applikasjon' på norsk) → venstre panel → 'Cookies' → velg domenet (f.eks. .facebook.com)",
+            "Identifiser kritiske cookies: Let etter: session_id, c_user, xs (Facebook), auth_token, ct0 (Twitter), sessionid (Instagram), li_at (LinkedIn)",
+            "Kopier token-verdi: Klikk på cookie-raden → verdi vises under. Høyreklikk → kopier value. Lim inn i tekstfil.",
+            "Sjekk localStorage: Application → Local Storage → velg domene → let etter: token, access_token, auth, jwt, bearer",
+            "Sjekk sessionStorage: Application → Session Storage — inneholder kortlevde tokens fra aktiv sesjon",
+            "Sjekk Network-fanen: Fanen 'Nettverk' (Network) → filtrer 'XHR/Fetch' → klikk en forespørsel → 'Forespørselshoder' (Request Headers) → finn 'Authorization: Bearer [token]'",
+            "SHA-256 umiddelbart: Lim token-verdien i en fil, kjør sha256sum [fil], logg hash + UTC-tidsstempel i Hunchly"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "Console-kommandoer:\n\n# Hent Facebook-cookies fra Chrome DevTools Console:\ndocument.cookie.split(';').forEach(c => { const [name, ...vals] = c.trim().split('='); console.log(name + ' = ' + vals.join('=')); })\n\n# Hent localStorage-tokens fra Console:\nObject.keys(localStorage).forEach(k => console.log(k, localStorage.getItem(k)));"
+        },
+        {
+          "type": "paragraph",
+          "data": "2.2 Chrome — SQLite-database (beslaglagt, ikke i bruk)\n\nScenario: PC er beslaglagt og avslått. Nettleseren kjøres ikke. Cookies hentes fra SQLite-databasen på disk."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "OS | Chrome Cookies-sti | Merknad",
+            "Windows 10/11 | %APPDATA%\\..\\Local\\Google\\Chrome\\User Data\\Default\\Network\\Cookies | Fra Chrome v96: nettverksdataene er i 'Network'-undermappen",
+            "Windows (gammel sti) | %APPDATA%\\..\\Local\\Google\\Chrome\\User Data\\Default\\Cookies | Fungerer for eldre Chrome-versjoner",
+            "macOS | ~/Library/Application Support/Google/Chrome/Default/Cookies | Kryptert med macOS Keychain",
+            "Linux | ~/.config/google-chrome/Default/Cookies | Kryptert med GNOME Keyring / KDE Wallet",
+            "Edge (Windows) | ..\\Local\\Microsoft\\Edge\\User Data\\Default\\Network\\Cookies | Chromium-basert — identisk struktur",
+            "Brave (Windows) | ..\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default\\Network\\Cookies | Chromium-basert"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "SQLite-spørringer:\n\n# SQLite-spørring mot Chrome Cookies-databasen:\nsqlite3 Cookies \"SELECT host_key, name, value, expires_utc, is_secure, is_httponly FROM cookies ORDER BY host_key;\"\n\n# Filtrer på spesifikke domener:\nsqlite3 Cookies \"SELECT host_key, name, value FROM cookies WHERE host_key LIKE '%.facebook.com' OR host_key LIKE '%.instagram.com';\"\n\nVIKTIG: Fra Chrome v80 er cookie-verdiene kryptert med AES-256-GCM via Windows DPAPI eller macOS Keychain. Råverdien i databasen er kryptert. Bruk HackBrowserData eller CookieDump for automatisert dekryptering."
+        },
+        {
+          "type": "paragraph",
+          "data": "2.3 HackBrowserData og CookieDump — automatisert uttrekk\n\nHackBrowserData: Go-basert åpen kildekode-verktøy som automatisk henter og dekrypterer tokens fra alle Chromium/Firefox-baserte nettlesere.\n\n# Last ned og kjør HackBrowserData (Linux/Mac)\nwget https://github.com/moonD4rk/HackBrowserData/releases/latest/download/hack-browser-data-linux-amd64\nchmod +x hack-browser-data-linux-amd64\n./hack-browser-data-linux-amd64 -b all -f json -o ./output/\n\n# Windows-versjon kjøres fra beslaglagt maskin (med juridisk tillatelse):\nhack-browser-data-windows-amd64.exe -b all -f csv -o C:\\forensics\\tokens\\\n\nOutput: JSON/CSV-filer med alle nettleserprofiler, cookies, localStorage og passord — dekryptert."
+        },
+        {
+          "type": "paragraph",
+          "data": "2.4 Firefox — SQLite cookies.sqlite"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "OS | Firefox-profil-sti",
+            "Windows | %APPDATA%\\Mozilla\\Firefox\\Profiles\\[profil-ID].default-release\\cookies.sqlite",
+            "macOS | ~/Library/Application Support/Firefox/Profiles/[profil-ID].default-release/cookies.sqlite",
+            "Linux | ~/.mozilla/firefox/[profil-ID].default-release/cookies.sqlite"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "# Hent cookies fra Firefox:\nsqlite3 cookies.sqlite \"SELECT host, name, value, expiry FROM moz_cookies WHERE host LIKE '%.facebook.com';\"\n\n# Hent localStorage fra Firefox (webappsstore.sqlite):\nsqlite3 webappsstore.sqlite \"SELECT key, value FROM webappsstore2 WHERE originKey LIKE '%twitter.com%';\""
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "overskrift": "DEL 3 — TOKEN-KATALOG: UTTREKK PER SOSIALE MEDIE-PLATTFORM",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "3.1 Facebook og Instagram (Meta) — Token-lokasjon og uttrekk"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Token/Cookie | Funksjon | Lokasjon (nettleser) | Etterforskningsverdi",
+            "c_user | Facebook-bruker-UID (numerisk) | Chrome Cookies: host=.facebook.com, name=c_user | Permanent bruker-ID — kobler cookie til Facebook-konto",
+            "xs | Session-token (base64url) | Chrome Cookies: host=.facebook.com, name=xs | Kombinert med c_user = full kontotilgang",
+            "datr | Device-token (2 år) | Chrome Cookies: host=.facebook.com, name=datr | Kobler nettleseren til Facebook-enhets-ID",
+            "fr | Tracking-pixel token | Chrome Cookies: name=fr | Tredjeparts sporing på tvers av nettsteder",
+            "sessionid (Instagram) | Instagram sesjon-token | Chrome Cookies: host=.instagram.com, name=sessionid | Instagram kontotilgang",
+            "csrftoken (Instagram) | CSRF-beskyttelse token | Chrome Cookies: host=.instagram.com, name=csrftoken | Nødvendig for Instagram API-kall",
+            "Access Token (Graph API) | Facebook Graph API-token | localStorage: fbssls_* / DevTools Network → Authorization | Brukt av tredjepartsapper og Facebook-sesjoner"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "# Facebook token-uttrekk fra Chrome (DevTools Console):\ndocument.cookie.split(';').filter(c=>c.includes('c_user')||c.includes('xs')||c.includes('datr')).forEach(c=>console.log(c.trim()))\n\n# Verifiser Facebook-token-gyldighet (curl — ikke aktiver tokenet):\ncurl -s 'https://graph.facebook.com/me?access_token=[TOKEN]' | python3 -m json.tool"
+        },
+        {
+          "type": "paragraph",
+          "data": "3.2 Twitter/X — Token-lokasjon og uttrekk"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Token/Cookie | Funksjon | Lokasjon",
+            "auth_token | Primær sesjons-token | Chrome Cookies: host=.twitter.com / .x.com",
+            "ct0 | CSRF-token (32 hex-tegn) | Chrome Cookies: host=.twitter.com / .x.com",
+            "guest_id | Gjeste-bruker-ID | Chrome Cookies: host=.twitter.com",
+            "personalization_id | Sporings-ID (base64) | Chrome Cookies: host=.twitter.com",
+            "Bearer Token (API) | OAuth2 Bearer — brukt av apper | DevTools → Network → Authorization: Bearer Ayyy...",
+            "OAuth2 Access Token | Brukes av tredjepartsapper | localStorage: twttr.privatedata / Network-header"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "# Twitter/X auth_token fra Chrome Console:\ndocument.cookie.split(';').filter(c=>c.includes('auth_token')||c.includes('ct0')).forEach(c=>console.log(c.trim()))"
+        },
+        {
+          "type": "paragraph",
+          "data": "3.3 Snapchat — Token-lokasjon og uttrekk\n\nSnapchat Web: Snapchat har begrenset web-funksjonalitet. Primær etterforskningsvei er mobilapp-uttrekk."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Token/Cookie | Lokasjon (nettleser/app) | Merknad",
+            "sc-a-session (web cookie) | Chrome Cookies: host=.snapchat.com | Snapchat web-sesjon. Begrenset funksjonalitet.",
+            "X-Snapchat-Client-Token | DevTools → Network → Request Headers | Snapchat API-autentisering. Finnes i app-nettverkstrafikk",
+            "Snap-Access-Token | Android SharedPreferences: SnapNativePreferences | Intern app-token. Krever rooted/jailbroken enhet eller Cellebrite",
+            "Blizzard Token (iOS) | Keychain-element: com.snapchat.snapchat | iOS Keychain-tilgang via iMazing eller Elcomsoft"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "3.4 TikTok — Token-lokasjon og uttrekk"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Token/Cookie | Lokasjon | Etterforskningsverdi",
+            "sessionid | Chrome Cookies: host=.tiktok.com — TikTok web-sesjon | Primær nettleser-sesjon. Kombinert med sid_guard gir kontotilgang",
+            "sid_guard | Chrome Cookies: host=.tiktok.com | Roteres ved innlogging. Komplementær til sessionid",
+            "s_v_web_id | Chrome Cookies: TikTok-sporing | Device-fingerprint-ID. Sporingsverdi over tid",
+            "tt_chain_token | Chrome Cookies: CSRF-beskyttelse | Nødvendig for TikTok API-kall fra nettleser",
+            "msToken | Chrome Cookies / localStorage | TikTok's DRM-token. Vanskelig å bruke isolert",
+            "app_language + region | localStorage: TikTok web | Avslører brukerns antatte språk og region"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "3.5 Telegram Web — Token-lokasjon og uttrekk\n\nTelegram Web lagrer autentiseringsdata i localStorage i nettleseren. Dette er kritisk for forensisk analyse av beslaglagte PC-er der Telegram Web var aktiv.\n\n# Telegram Web token-uttrekk fra Chrome Console:\nlet tgData = {};\nObject.keys(localStorage).filter(k=>k.startsWith('dc') || k.includes('auth') || k.includes('user')).forEach(k=>{tgData[k]=localStorage.getItem(k);});\nconsole.log(JSON.stringify(tgData, null, 2));"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "localStorage-nøkkel | Innhold | Etterforskningsverdi",
+            "dc1_auth_key / dc2_auth_key | Telegram MTProto-autentiseringsnøkkel for DC 1/2 | Kryptografisk nøkkel som gir tilgang til Telegram-konto via DC",
+            "dc_auth_key_id | Numerisk autentiserings-ID | Kobles til Telegram-bruker-ID",
+            "user_auth | JSON med user_id og dc_id | Avslører Telegram bruker-ID og datacenter-tilknytning",
+            "dc | Foretrukket datacenter (1-5) | DC1=USA, DC2/4=EU, DC5=Asia — geografisk indikasjon",
+            "s (Telegram-session) | Serialisert sesjonsdata | Komplett Telegram Web-sesjon"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "3.6 Discord — Token-lokasjon og uttrekk\n\nDiscord-token er særlig ettersøkt i kriminalforum. Gir full kontotilgang. Distribuert-apper lagrer token i LevelDB-database."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Klient | Token-lokasjon | Uttrekksmetode",
+            "Discord Web (Chrome) | localStorage: nøkkel 'token' på discordapp.com / discord.com | DevTools → Application → Local Storage → discord.com → 'token'",
+            "Discord Desktop (Windows) | LevelDB: %APPDATA%\\discord\\Local Storage\\leveldb\\ | strings [filer] | grep -E '[A-Za-z0-9+/]{100,}' — finn token-streng",
+            "Discord Desktop (Mac) | LevelDB: ~/Library/Application Support/discord/Local Storage/leveldb/ | Samme som Windows",
+            "Discord Desktop (Linux) | LevelDB: ~/.config/discord/Local Storage/leveldb/ | Samme metode"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "# Discord token fra LevelDB (Linux):\nstrings ~/.config/discord/Local\\ Storage/leveldb/* | grep -oE '[A-Za-z0-9_-]{24}\\.[A-Za-z0-9_-]{6}\\.[A-Za-z0-9_-]{27}'\n\n# Discord token fra Chrome Console:\n(webpackChunkdiscord_app.push([[''],{},e=>{m=[];for(let c in e.c)m.push(e.c[c])}]),m).find(m=>m?.exports?.default?.getToken!==void 0).exports.default.getToken()"
+        },
+        {
+          "type": "paragraph",
+          "data": "3.7 WhatsApp Web — QR-link og web-session\n\nWhatsApp Web bruker ikke klassiske tokens — det bruker en kryptert QR-lenket sesjon. Men sesjonsdata lagres i nettleseren og gir forensisk innsikt.\n\n# WhatsApp Web localStorage-innhold:\nObject.keys(localStorage).filter(k=>k.includes('WAToken')||k.includes('WANoiseKey')||k.includes('clientId')).forEach(k=>console.log(k,localStorage.getItem(k)))\n\nWAToken1 og WAToken2: Krypterte tokens som vedlikeholder WhatsApp Web-sesjonen. Kombinert med WANoiseKey gir de E2EE-håndtrykk-data."
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "overskrift": "DEL 4 — UTTREKK PÅ iPhone (iOS)",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "4.1 iOS-arkitektur — Hvor lagres tokens?"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Lagringstype | Lokasjon | Innhold | Tilgangsmetode",
+            "iOS Keychain | Kryptert systemlagring — Hardware-bundet (Secure Enclave) | Passord, OAuth-tokens, sertifikater, private nøkler | iTunes-backup (kryptert) → iMazing/Elcomsoft OR GrayKey/Cellebrite",
+            "App-sandbox Documents | ~/Library/Application Support/[bundle-ID]/ | App-spesifikke filer, databaser, tokens i klartekst eller plist | iTunes/Finder kryptert backup → iMazing eksport",
+            "NSUserDefaults (plist) | Library/Preferences/[bundle-ID].plist | Enkel key-value lagring. Inneholder ofte tokens og innstillinger | iTunes-backup → iMazing → plutil -convert xml1 [fil.plist]",
+            "SQLite-databaser | Library/Application Support/ eller Documents/ | Chat-historikk, meldinger, tokens i databasekolonner | iTunes-backup → iMazing → sqlitebrowser",
+            "NSHTTPCookieStorage | Cookies/Cookies.binarycookies per app | HTTP-cookies inkl. session-cookies for web-visninger | iTunes-backup → BinaryCookieReader Python-script",
+            "iCloud Drive | iCloud-synkronisert innhold | Noen apps lagrer tokens og data i iCloud | Apple LE-portal med kjennelse (strpl. § 197)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "4.2 Metode A — iTunes/Finder-backup + iMazing\n\nForutsetning: iPhone er tilgjengelig og kan kobles til PC/Mac. Brukeren har gitt samtykke, eller politiet har lovhjemmel (strpl. § 203 — beslag)."
+        },
+        {
+          "type": "list",
+          "data": [
+            "Koble iPhone til PC/Mac med Lightning/USB-C-kabel",
+            "iTunes (Windows) eller Finder (Mac): Klikk på enheten → 'Sikkerhetskopier nå' → KrypterSikkerhetskopiering aktivert (VIKTIG: kryptert backup inkluderer Keychain-data)",
+            "Vent på fullstendig backup: Windows: C:\\Users\\[navn]\\AppData\\Roaming\\Apple Computer\\MobileSync\\Backup\\ — Mac: ~/Library/Application Support/MobileSync/Backup/",
+            "Last ned iMazing: imazing.com — kommersiell programvare. Åpne backup. Naviger til 'Apps' → finn ønsket app → 'Export App Data'"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "# Søk etter tokens i alle plist-filer:\nfind /path/to/backup -name '*.plist' -exec plutil -convert xml1 {} -o {}.xml \\; && grep -r 'token\\|Token\\|auth\\|Auth\\|session' /path/to/backup --include='*.xml'\n\n# Hent cookies fra iOS Cookies.binarycookies:\n# Bruk BinaryCookieReader:\npip install binarycookiereader\npython -m binarycookiereader /path/to/Cookies.binarycookies\n\nSHA-256 av alle funn: sha256sum [fil] → logg hash + UTC i Hunchly"
+        },
+        {
+          "type": "paragraph",
+          "data": "4.3 Metode B — Elcomsoft iOS Forensic Toolkit\n\nElcomsoft iOS Forensic Toolkit (EIFT): Kommersiell verktøypakke brukt av politienheter globalt. Kan hente Keychain-innhold fra kryptert iTunes-backup — inkludert OAuth-tokens fra alle apper."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Funksjon | Detalj",
+            "Keychain-uttrekk | Henter alle Keychain-oppføringer fra kryptert iTunes-backup. Inneholder OAuth-tokens fra Meta, Twitter, Snapchat m.fl.",
+            "Fil-system-analyse | Analyserer app-sandbox-filer per app — finner SQLite-databaser og plist-filer med tokens",
+            "Cloud agent | Henter iCloud-synkronisert data med Apple-ID og passord — eller via Apple LE-portal",
+            "Logical extraction | Kan utføres mot låst enhet via Elcomsoft-agent (krever iOS-versjon-spesifikt sårbarhet-utnyttelse)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "4.4 Metode C — Cellebrite UFED og GrayKey (låst enhet)\n\nCellebrite UFED og GrayKey brukes av politiet for å hente data fra låste iOS-enheter. Disse verktøyene bruker hardware-sårbarheter og er kun tilgjengelig for godkjente LE-enheter."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Verktøy | Tilgangsnivå | Token-uttrekk",
+            "Cellebrite UFED 4PC | Full File System (FFS) extraction + Keychain | Alle app-tokens, Keychain-innhold, krypterte databaser",
+            "GrayKey (Magnet Forensics) | iOS jailbreak via hardware-exploit | Komplett filsystem-tilgang inkl. Keychain med private nøkler",
+            "Cellebrite Premium | Avansert — dekrypterer Keychain uten passord på støttede iOS | OAuth-tokens, API-nøkler, sesjonscookies — alt i Keychain"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "overskrift": "DEL 5 — UTTREKK PÅ ANDROID",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "5.1 Android-arkitektur — Hvor lagres tokens?"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Lagringstype | Lokasjon | Innhold | Tilgangsmetode",
+            "SharedPreferences | data/data/[pakkenavn]/shared_prefs/*.xml | XML-filer med key-value. Tokens i klartekst for mange apper | ADB-backup (Android < 12) / root / Cellebrite",
+            "SQLite-databaser | data/data/[pakkenavn]/databases/*.db | Chat-historikk, tokens, innstillinger | ADB pull (med root) / Cellebrite / forensisk image",
+            "Android Keystore | Kryptert — hardware-bundet (TEE/SE) | Private nøkler, kryptografiske tokens | Kun med fysisk device-tilgang og PIN/passord",
+            "Internal Storage | data/data/[pakkenavn]/files/ | Diverse app-filer — pem-filer, JSON-tokens | ADB pull (rooted) / Cellebrite",
+            "External Storage | /sdcard/ eller /storage/emulated/0/ | Bilder, filer, noen app-data (ikke sensitiv) | ADB pull uten root — men tokens sjelden her",
+            "AccountManager | data/system/accounts_de.db (Android 7+) | Google-kontoer, OAuth-tokens for synkroniserte kontoer | Root eller Cellebrite"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "5.2 Metode A — ADB (Android Debug Bridge)\n\nForutsetning: USB-debugging er aktivert på enheten, ELLER Android versjon < 12 støtter ADB-backup. USB-debugging krever skjerm-opplåsing.\n\n# Verifiser ADB-tilkobling:\nadb devices\n\n# Hent SharedPreferences fra Facebook-appen (krever root):\nadb shell run-as com.facebook.katana cat shared_prefs/com.facebook.katana_preferences.xml\n\n# Hent SQLite-database fra Twitter-appen (krever root):\nadb pull /data/data/com.twitter.android/databases/ ./twitter_databases/\n\n# ADB-backup (Android < 12, ingen root nødvendig):\nadb backup -apk -shared -all -f backup.ab\n# Konverter til tar:\npython3 adbextract.py backup.ab\n\n# Søk etter token-nøkkelord i SharedPreferences:\nadb shell run-as [pakkenavn] grep -r 'token\\|auth\\|session\\|access_key' shared_prefs/"
+        },
+        {
+          "type": "callout",
+          "kind": "WARNING",
+          "data": "JURIDISK VARSEL: ADB-tilgang uten samtykke fra enhetseier krever rettslig kjennelse (strpl. § 203 — beslag og undersøkelse av elektronisk lagringsenhet). Juristens tillatelse er innhentet og dokumentert med saksnummer."
+        },
+        {
+          "type": "paragraph",
+          "data": "5.3 Tokens per app på Android — Spesifikke stier"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "App | Pakkenavn | Token-fil | Nøkkel i filen",
+            "Facebook | com.facebook.katana | shared_prefs/com.facebook.katana_preferences.xml | access_token, session_id, user_id",
+            "Instagram | com.instagram.android | shared_prefs/instagramStandaloneSharedPrefs.xml | token, ds_user_id, sessionid",
+            "WhatsApp | com.whatsapp | databases/msgstore.db, files/key | key-fil er krypteringsnøkkel for meldingsdatabasen",
+            "Telegram | org.telegram.messenger | files/cache4.db (SQLite) | user_config tabell — auth_key, user_id",
+            "Snapchat | com.snapchat.android | shared_prefs/SnapNativePreferences.xml | srauth_token, access_token",
+            "TikTok | com.zhiliaoapp.musically | databases/AnalyticsDB (Realm/SQLite) | access_token, session_key, user_id",
+            "Twitter/X | com.twitter.android | shared_prefs/Twitter.xml | guest_token, api_token, oauth_token",
+            "Discord | com.discord | shared_prefs/com.discord_preferences.xml | token (nøkkel: 'token')",
+            "YouTube/Google | com.google.android.youtube | databases/accounts.db + AccountManager | auth_token, refresh_token i AccountManager",
+            "LinkedIn | com.linkedin.android | databases/cookie.db + shared_prefs | li_at (LinkedIn sesjon-token)"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "5.4 Metode B — Cellebrite UFED og MSAB XRY\n\nFor låste Android-enheter brukes spesialisert LE-verktøy: Cellebrite UFED 4PC, MSAB XRY eller Oxygen Forensic Detective. Disse verktøyene bruker chip-off, JTAG eller agent-baserte metoder."
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Verktøy | Metode | Dekning av tokens",
+            "Cellebrite UFED 4PC | Logical, Advanced Logical, Full File System (FFS) | SharedPreferences, SQLite, AccountManager — alle app-tokens ved FFS",
+            "MSAB XRY | Physical/logical — støtter 20 000+ enhetsmodeller | Full SharedPreferences og SQLite-tilgang",
+            "Oxygen Forensic Detective | Logical og cloud agent | App-tokens + cloud-data via Google/Facebook API med kontoopplysninger",
+            "Magnet AXIOM | Forensisk analyse + cloud-import | Kombinerer fysisk enhet + cloud-tokens for fullstendig profil"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "overskrift": "DEL 6 — BEVISKJEDE OG DOKUMENTASJON",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "6.1 SHA-256 bevissikring — steg for steg\n\nGrunnregel: SHA-256 beregnes av token-verdien umiddelbart ved funn. Hashen beviser at tokenet er uendret fra innhentingstidspunktet.\n\n# Sak 26-088765 — Funn-001: Facebook session-token\n\n# Steg 1: Lim token-verdi i en fil\necho -n 'c_user=987654321012345; xs=AbCdEf12345...' > sak26088765_fb_token_20260503.txt\n\n# Steg 2: Beregn SHA-256\nsha256sum sak26088765_fb_token_20260503.txt\n# Output:\n# f3a9b2d1c8e5f47890ab12cd34ef5678901abcdef1234567890abcdef1234567  sak26088765_fb_token_20260503.txt\n\n# Steg 3: UTC-tidsstempel\ndate -u\n# Output: Mon May  3 10:15:22 UTC 2026\n\n# Steg 4: Hunchly-note:\n# Funn-001 | Kilde: Chrome DevTools → Application → Cookies → .facebook.com\n# SHA-256: f3a9b2d1c8e5f47890ab12cd34ef5678901abcdef1234567890abcdef1234567\n# Tidsstempel: 2026-05-03T10:15:22Z (UTC)\n# Enhet: Beslaglagt HP EliteBook 850. Serienr: XYZ123\n# Juridisk hjemmel: Strpl. § 203 — Beslag 26-088765-001 datert 2026-04-28\n# TPS: A-2-HØY (fysisk beslag av enhet = A-kilde)"
+        },
+        {
+          "type": "callout",
+          "kind": "CASE",
+          "data": "6.2 Fiktivt eksempel — Rapport-tekst for token-funn\n\nFUNNRAPPORT — SAK 26-088765 — FUNN-001\nDato og tid: 2026-05-03T10:15:22Z (UTC)\nKilde: Beslaglagt PC: HP EliteBook 850 G10, serienr XYZ123. Chrome v124.0.6367.60.\nMetode: Chrome DevTools (F12) → Application-fane → Cookies → .facebook.com. Juridisk hjemmel: Strpl. § 203.\nFunn: To aktive Facebook-sesjons-cookies funnet:\nc_user = 987654321012345 (Facebook bruker-ID)\nxs = AbCdEf12345GhIjKlMnOpQr... (sesjons-token, 28 tegn)\nSHA-256 av token-fil: f3a9b2d1c8e5f47890ab12cd34ef5678901abcdef1234567890abcdef1234567\nHunchly Case-ref: Sak26088765_Hunchly.zip — Funn-ID: F001\nTPS-gradering: T=A (fysisk beslaglagt enhet, politi-kilde), P=2 (token-gyldighet ikke verifisert), S=HØY (persondata og kontotilgang)\nTolkning: c_user = 987654321012345 er mistenktes Facebook-bruker-ID. Sesjons-tokenet xs er aktivt og gir tilgang til Facebook-kontoen uten passord. SHA-256-hashen beviser at tokenet er uendret fra uttrekk til rapport.\nBegrensning: Token-gyldighet er ikke verifisert (curl-sjekk ikke utført uten særskilt hjemmel). Gyldigheten estimeres til dager-uker basert på Facebook-standard levetid."
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "overskrift": "DEL 7 — 20 TEKNISKE KRAV TIL TOKEN-ETTERFORSKNING",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "Krav | Beskrivelse",
+            "KT-01 | Juridisk hjemmel FØR uttrekk: Strpl. § 203 (beslag av elektronisk lagringsenhet), § 197 (kjennelse for utlevering fra tjeneste), § 192 (ransaking). Juristens tillatelse dokumenteres i BL med saksnummer og dato FØR token-uttrekk starter.",
+            "KT-02 | SHA-256 umiddelbart ved funn: Token-verdien lagres i en fil. sha256sum beregnes umiddelbart. Aldri batch-hashing. Tid mellom funn og hash er en bevisbar svakhet i retten.",
+            "KT-03 | Aktivér ALDRI token uten særskilt hjemmel: Å bruke et funnet token til å logge inn er strl. § 145a (urettmessig datatilgang). Kun statuskode-sjekk (curl -s -o /dev/null -w '%{http_code}') er akseptabelt — og kun etter juristavklaring.",
+            "KT-04 | Forstå Chrome DPAPI-kryptering: Chrome v80+ krypterer cookies med AES-256-GCM via Windows DPAPI. Råverdien i SQLite-databasen er kryptert. HackBrowserData eller tilsvarende verktøy dekrypterer automatisk på riktig enhet.",
+            "KT-05 | Dokumentér uttrekksmetode i rapport: Beskriv hvilken metode (DevTools, SQLite, HackBrowserData, Cellebrite) ble brukt. Rettens tekniske sakkyndige skal kunne reprodusere prosessen.",
+            "KT-06 | Prioritér iOS Keychain-innhold: iOS Keychain inneholder de mest sensitive tokens. Kryptert iTunes-backup med kjent passord + iMazing gir tilgang. Kryptert backup uten passord krever Cellebrite/GrayKey.",
+            "KT-07 | Forstå Android SharedPreferences-format: Android SharedPreferences lagrer tokens som XML key-value par i /data/data/[pakkenavn]/shared_prefs/. Mange apper lagrer tokens i klartekst her — lett tilgjengelig med ADB på rooted enhet.",
+            "KT-08 | Base64Url-dekod JWT-payload: echo 'eyJ...' | base64 -d gir JSON-innholdet. Payload inneholder sub (bruker-ID), iat (utstedelsestid), exp (utløpstid), e-post og roller. Lesbart UTEN krypteringsnøkkel.",
+            "KT-09 | Identifiser token-type via prefiks: ghp_ = GitHub PAT. sk- = OpenAI API-nøkkel. AKIA = AWS IAM-nøkkel. xoxb- = Slack Bot Token. eyJ = JWT. Discord: numerisk.streng.streng (70 tegn). Prefikset alene avslører plattform.",
+            "KT-10 | Hunchly aktivt under nettleser-uttrekk: All DevTools-aktivitet skjer med Hunchly aktivt i nettleseren. Hunchly logger tidsstempel, URL og SHA-256 for hvert besøk.",
+            "KT-11 | Stealer-logger som token-kilde: Stealer-logger (Redline, Raccoon, Vidar) er ZIP-filer med cookies.txt, passwords.txt og tokens fra kompromitterte maskiner. Disse inneholder aktive session-tokens. IntelX.io og Darknet-overvåking er primær kilde.",
+            "KT-12 | TruffleHog for token-skanning i kildekode: TruffleHog v3 skanner Git-repositories (lokalt og GitHub) for 800+ token-typer og verifiserer aktivitet. Bruk: trufflehog git --repo https://github.com/[repo]",
+            "KT-13 | TPS-gradering av hvert token-funn: T-kilde: A = fysisk beslaglagt enhet (politi), C = stealer-logg (tredjepart), F = anonym darknet-kilde. P: verifiser token-gyldighet for P=1. S: access token til e-post = HØY, admin-token = KRITISK.",
+            "KT-14 | Forstå token-levetid og utløp: Access token: minutter-timer. Refresh token: dager-måneder. Session-cookie: timer-uker. API-nøkkel: aldri utløper automatisk. Utløpt token er historisk bevis — dokumenter iat og exp fra JWT-payload.",
+            "KT-15 | Android AccountManager for OAuth-tokens: AccountManager på Android lagrer OAuth-tokens for synkroniserte kontoer (Google, Facebook, Twitter). Tilgjengelig via adb shell content query --uri content://accounts/ (krever root eller Cellebrite)",
+            "KT-16 | iOS app-sandbox og NSUserDefaults: Alle iOS-apper er begrenset til sin sandbox (/var/mobile/Containers/). NSUserDefaults lagrer token som [bundle-ID].plist. iTunes-backup med kryptering gir tilgang via iMazing.",
+            "KT-17 | WhatsApp krypteringsnøkkel (key-fil): Android WhatsApp lagrer meldingsdatabasen kryptert. key-filen i /data/data/com.whatsapp/files/ dekrypterer msgstore.db. Cellebrite dekrypterer automatisk. key-fil SHA-256 er bevismaterialet.",
+            "KT-18 | Discord LevelDB-token-uttrekk: Discord Desktop lagrer token i LevelDB (ikke SQLite). Bruk: strings ~/.config/discord/Local\\ Storage/leveldb/* | grep -oE '[A-Za-z0-9_-]{24}\\.[A-Za-z0-9_-]{6}\\.[A-Za-z0-9_-]{27}'",
+            "KT-19 | Verifisér token-type uten å bruke den: curl -s -o /dev/null -w '%{http_code}' -H 'Authorization: Bearer [TOKEN]' https://api.github.com/user → 200 = aktiv, 401 = utløpt. Dette er et statuskall, ikke en autentisert operasjon.",
+            "KT-20 | Rapporter token-funn med ordrett verdi: Rapporten inkluderer token-verdi (maskert etter de første 20 tegnene: 'AbCdEf12345GhIjKl...'), SHA-256, kilde, juridisk hjemmel og TPS. Originalfilen er bevismaterialet."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "overskrift": "DEL 8 — ANALOGI-PAR: TEKNISK SANNHET OG PEDAGOGISK BRO",
+      "komponenter": [
+        {
+          "type": "grid",
+          "data": [
+            "TEKNISK SANNHET | PEDAGOGISK ANALOGI",
+            "JWT-token — Base64Url, ikke kryptert: JWT er tre Base64Url-kodede JSON-blokker separert av punktum. Payload er ikke kryptert — kun kodet. Enhver person med tokenet kan dekode payload med echo 'eyJ...' | base64 -d uten noen nøkkel. | Brev i åpen konvolutt med vokssegl: Et JWT er som et brev du kan lese uten å bryte forseglingen. Konvolutten (tokenet) er gjennomsiktig — du ser innholdet direkte. Vokseglet (signaturen) beviser bare at brevet ikke er endret etter avsendelse. Det stopper deg ikke fra å lese.",
+            "Session-cookie = kontotilgang: En HttpOnly session-cookie er en kryptografisk opak token som serveren bruker som primærnøkkel til en aktiv bruker-sesjon. Tyvstjålet cookie gir full kontotilgang — ingen passord eller MFA trengs. | Konsertstempel som kopieres: En session-cookie er som stemplet på hånden som vaktene bruker for å slippe deg inn og ut av konserten. Noen klarer å kopiere stemplet på sin hånd. Vaktene ser stemplet og slipper dem inn — uten å vite at det er en kopi.",
+            "Chrome DPAPI-kryptering av cookies: Chrome v80+ krypterer cookie-verdier i SQLite-databasen med AES-256-GCM via Windows DPAPI. Krypteringsnøkkelen er låst til brukerens Windows-konto. Cookie-databasen er uleselig uten den rette brukerkontoen eller DPAPI-nøkkelen. | Nøkkelen henger på husets eier: DPAPI er som en sikkerhetsskap som kun åpnes med eierens fingeravtrykk. Selv om noen stjeler safedøren (SQLite-filen), kan de ikke åpne den uten fingeren (DPAPI-nøkkelen fra brukerens konto). Analyse fra riktig konto = safe åpner seg.",
+            "iOS Keychain: iOS Keychain er et kryptert lagringsystem beskyttet av Secure Enclave (en dedikert kryptografisk prosessor på iPhone-chipen). Keychain-elementer er hardware-bundet til enheten og kan ikke leses uten den rette PIN/biometri-kombinasjonen. | Bankboksen i Secure Enclave-hvelvet: iOS Keychain er som en bankboks i et ekte bankvelv (Secure Enclave). Nøkkelen til boksen (PIN-koden) er eid av brukeren. Banken (Apple/iOS) kan ikke åpne boksen uten nøkkelen. Cellebrite/GrayKey er som en låsesmed med en ukjent master-nøkkel til denne ene boksen.",
+            "Android SharedPreferences: Android SharedPreferences lagrer app-data som klartekst XML-filer i appens private sandbox-mappe. Mange apper lagrer tokens her i klartekst — uten ekstra kryptering utover sandbox-isolasjonen. | Notatblokk i åpent skrivebord: SharedPreferences er som en notatblokk i et låst rom. Romet (sandbox) er låst for fremmede. Men hvis du får nøkkelen (root-tilgang eller Cellebrite), finner du notisboken åpen på skrivebordet med alle passord og tokens skrevet i klartekst.",
+            "ADB — Android Debug Bridge: ADB er et kommandolinjegrensesnitt som gir programmatisk tilgang til Android-enheten via USB. Med USB-debugging aktivert kan etterforsker kjøre shell-kommandoer, trekke ut filer og analysere apper uten GUI. | Telefonens serviceinngang: ADB er som serviceinngang til en fabrikk. Kunder (brukere) kommer gjennom hoveddøren (skjermen). Serviceteknikere (utviklere/etterforsker med ADB) kommer gjennom baksiden og har direkte tilgang til alle maskinene inne — uten å gå gjennom resepsjonen.",
+            "Stealer-logger som token-kilde: Stealer-logger er ZIP-arkiver samlet av infostealer-malware (Redline, Raccoon, Vidar) fra infiserte maskiner. Inneholder cookies.txt, passwords.txt og localStorage-tokens fra alle nettlesere på maskinen. | Ransket garderobe på konsert: En stealer-logg er som å bryte seg inn i garderobeskapet på en konsert og kopiere alle parkeringsbilletter, adgangskort og kontantkort som ligger der. Eieren vet ikke at kopiene eksisterer. Politiet (og kriminelle) vet at kopienes fulle verdi er lik originalen.",
+            "TruffleHog token-verifisering: TruffleHog v3 identifiserer 800+ token-typer via regex-mønstre og sender et kontrollkall til tjenestens API for å verifisere om tokenet er aktivt. Returnerer verified=true/false per token-funn. | Låsesmeden med universalnøkkel: TruffleHog er som en låsesmed som finner en stor bunt nøkler. Han prøver systematisk hver nøkkel i den riktige låsen — og forteller deg hvilke nøkler som fortsatt fungerer og hvilke som er endret siden de ble laget. Forskjellen fra å bare finne nøklene: du vet hvilke som faktisk åpner dørene."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "overskrift": "DEL 10 — H-H-H-N MIKROSTEG: KOMPLETT TOKEN-ETTERFORSKNING",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "Fiktivt eksempel: Sak 26-088765. Mistenkte har brukt sosiale medier for å koordinere narkotikasalg. PC og Android-telefon er beslaglagt. Juristens tillatelse er innhentet (strpl. § 203). FOI: Identifiser hvilke kontoer mistenkte benyttet og hva slags kommunikasjon som foregikk.\n\nFASE 1 — JURIDISK KLARGJØRING"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR / Sak 26-088765 | HVORFOR | NÅR",
+            "1 | Dokumenter juridisk hjemmel | Saksmappen i BL — skriv ut beslag-beslutning + § 203-hjemmel | Uten dokumentert hjemmel er alle token-funn ulovlige bevis | FØR noen enheter åpnes",
+            "2 | Identifiser enheter | Beslagsliste: HP EliteBook 850 (serienr XYZ123) + Samsung Galaxy S24 (IMEI 35xxxx) | Enhets-ID kobles til hvert funn i rapport | Ved beslag",
+            "3 | OPSEC-sjekkliste | VM for analyse. Snapshot av disk-image. Aldri jobb mot original enhet | Bevisbeskyttelse — ingen endring av originaldata | FØR analyse starter"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "FASE 2 — PC/NETTLESER-TOKENS"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR / Sak 26-088765 | HVORFOR | NÅR",
+            "1 | Chrome DevTools — live sesjon | Åpne Chrome på beslaglagt PC. F12 → Application → Cookies | Aktive sesjons-tokens — gir innsyn i innloggingsstatus | Umiddelbart ved tilgang",
+            "2 | Facebook c_user og xs | Application → Cookies → .facebook.com → noter c_user=987654321012345 og xs=AbCdEf... | c_user = bruker-ID. xs = aktiv sesjon. SHA-256 umiddelbart | Under DevTools-analyse",
+            "3 | localStorage-sjekk | Application → Local Storage → velg alle domener → søk etter token, auth, jwt | Finn Twitter auth_token, Discord token, LinkedIn li_at | Parallelt med cookies",
+            "4 | Network-fane analyse | Klikk 'Restart'-knappen i chrome → Network-fane → filtrer XHR → finn Authorization-headere | Aktive API-kall avslører tokens i bruk | Parallelt med Application-fane",
+            "5 | SQLite — innaktiv nettleser | Kopier Cookies-fil til analyse-VM. HackBrowserData -b all -f json -o ./output/ | Dekryptert liste over alle cookies fra alle nettleser-profiler | Etter DevTools-analyse",
+            "6 | SHA-256 + Hunchly FØR lukking | sha256sum av alle token-filer. Hunchly Full Case Export | Beviskjede etablert. Hunchly ZIP til Beslagsnett. | Etter all PC-analyse"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "FASE 3 — ANDROID-TOKENS"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR / Sak 26-088765 | HVORFOR | NÅR",
+            "1 | ADB-tilkobling (USB-debug aktivert) | adb devices → bekreftet tilkobling til Samsung Galaxy S24 | Direkte tilgang til Android uten root | Etter PC er ferdig",
+            "2 | Facebook SharedPreferences | adb shell run-as com.facebook.katana cat shared_prefs/com.facebook.katana_preferences.xml | grep -i token | access_token og user_id funnet i klartekst | Under ADB-analyse",
+            "3 | Telegram cache4.db | adb pull /data/data/org.telegram.messenger/databases/cache4.db ./ | SQLite-database med Telegram auth-data. sha256sum av DB-filen | Parallelt med Facebook",
+            "4 | Discord SharedPreferences | adb shell run-as com.discord cat shared_prefs/com.discord_preferences.xml | grep token | Discord token funnet — 70-tegns streng | Etter Telegram",
+            "5 | Cellebrite for låste deler | Koble til Cellebrite UFED 4PC → Full File System extraction | Henter krypterte deler: Keystore og AccountManager | Parallelt med ADB",
+            "6 | SHA-256 alle Android-funn | sha256sum *.xml *.db > android_hashes.txt | Beviskjede for alle Android-funn | Etter all Android-analyse"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "FASE 4 — ANALYSE OG RAPPORT"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "# | HVA | HVOR / Sak 26-088765 | HVORFOR | NÅR",
+            "1 | JWT-dekoding | echo '[token]' | python3 -c 'import sys,base64,json; p=sys.stdin.read().split(\".\"); print(json.dumps(json.loads(base64.urlsafe_b64decode(p[1]+\"==\").decode()),indent=2))' | Avslører bruker-ID, e-post og tidsstempler fra JWT-payload | Etter innhenting",
+            "2 | TPS-gradering alle funn | A-kilde (fysisk beslag). P=2 (ikke verifisert). S=HØY (kontodata) | Kildekritisk vurdering per funn | Under analyse",
+            "3 | Rapport: Funn-001 Facebook token | FUNNRAPPORT: c_user=987654321012345, xs=AbCdEf... SHA-256=f3a9b2d1... TPS: A-2-HØY. Hjemmel: § 203. UTC: 2026-05-03T10:15:22Z | Ordrett rapport med alle bevisdata | Etter endex",
+            "4 | Egenrapport | IB-1 BESVART: Mistenkte brukte Facebook-konto UID 987654321012345, Discord og Telegram aktivt på beslaglagte enheter. | Narrativ rapport for dommere og aktor | Etter funnrapport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "overskrift": "DEL 11 — REFERANSEARKIV OG VERKTØYREGISTER",
+      "komponenter": [
+        {
+          "type": "paragraph",
+          "data": "11.1 Verktøy for token-uttrekk (Mai 2026)"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Verktøy | Plattform | Funksjon | Tilgang",
+            "HackBrowserData | Windows/Mac/Linux | Dekrypterer og eksporterer cookies, LocalStorage, passord fra alle Chromium/Firefox-nettlesere | Åpen kildekode — github.com/moonD4rk/HackBrowserData",
+            "iMazing | Mac/Windows | iOS backup-analyse: Keychain, app-sandbox, SQLite, plist | Kommersiell — imazing.com",
+            "Elcomsoft iOS Forensic Toolkit | Mac/Windows | iOS Keychain-uttrekk fra kryptert backup + fil-system | Kommersiell LE-lisens — elcomsoft.com",
+            "Cellebrite UFED 4PC | Windows | Full File System extraction iOS/Android. Automatisk token-identifikasjon | LE-eksklusivt — cellebrite.com",
+            "GrayKey (Magnet Forensics) | Hardware + PC | iOS jailbreak for låste enheter — full Keychain-tilgang | LE-eksklusivt — magnetforensics.com",
+            "Oxygen Forensic Detective | Windows | iOS/Android + cloud — kombinert token-analyse | Kommersiell LE-lisens — oxygen-forensic.com",
+            "TruffleHog v3 | Mac/Linux/Windows | Token-identifikasjon og verifisering i Git, kildekode, filsystem | Åpen kildekode — github.com/trufflesecurity/trufflehog",
+            "DPAPI Decoder | Windows | Dekrypterer Windows DPAPI-krypterte Chrome-cookies | Åpen kildekode — diverse GitHub-prosjekter",
+            "BinaryCookieReader | Python | Parser iOS .binarycookies-format til lesbar form | pip install binarycookiereader",
+            "jwt.io | Web | JWT-dekoder og verifiserer — ideelt for offline analyse | Gratis — jwt.io (bruk offline-versjon ved sensitiv data)",
+            "sqlitebrowser | Mac/Linux/Windows | GUI for SQLite-databaser — åpner Android/Chrome databaser | Gratis — sqlitebrowser.org",
+            "Hunchly (Maltego) | Chrome/Firefox | Automatisk bevislogging — MHTML + SHA-256 + UTC | Betalt — hunch.ly"
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "11.2 Juridisk referansetabell"
+        },
+        {
+          "type": "grid",
+          "data": [
+            "Hjemmel | Handling | Krav",
+            "Politiloven § 25 | Passiv observasjon av åpent tilgjengelig innhold | Ingen beslutning. Token-funn i offentlig kildekode: § 25.",
+            "Strpl. § 203 | Ransaking og beslag av elektronisk lagringsenhet | Beslutning fra politileder. Grunnlag for DevTools + ADB-analyse av beslaglagte enheter.",
+            "Strpl. § 192 | Ransaking av person og dens bolig | Kjennelse fra tingretten normalt. Frivillig samtykke alternativt.",
+            "Strpl. § 197 | Kjennelse for utlevering av data fra tjeneste | Tingretts kjennelse. Brukes mot Meta/Google/Apple/Discord for token-data på sky.",
+            "Strl. § 145a | Urettmessig tilgang til datasystem | AKTIVERING av token uten hjemmel = brudd. Statuskode-sjekk (curl) avklar med jurist.",
+            "GDPR art. 6 (1)(e) | Behandling av personopplysninger i offentlig interesse | Grunnlag for behandling av token-data i etterforskningssammenheng.",
+            "Politiregisterloven § 5 | Formålsbegrensning | Token-data kun brukt til formålet angitt i § 203-beslutningen."
+          ]
+        },
+        {
+          "type": "paragraph",
+          "data": "TOKENS I NETTLESERE OG PÅ MOBILE ENHETER │ Dok-ID: SIS-TOKEN-17 │ Versjon 1.0 – Mai 2026\nØst politidistrikt │ Spesialetterforsker Trygve Justad Bjørntvedt │ UNNTATT OFFENTLIGHET │ TLP:AMBER"
+        }
+      ]
+    }
+  ]
+}
